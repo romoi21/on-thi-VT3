@@ -8,7 +8,6 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background: #f0f4f8; color: #333; line-height: 1.6; }
         
-        /* Header trường học */
         header { 
             background: linear-gradient(135deg, #0056b3, #0080ff); 
             color: white; 
@@ -31,7 +30,11 @@
         .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; border-left: 5px solid #0056b3; }
         .card h2 { color: #0056b3; margin-bottom: 15px; font-size: 1.4rem; }
 
-        /* Lưới thư mục môn học */
+        /* Khối giới thiệu trường */
+        .about-school { background: #eef6ff; padding: 15px; border-radius: 8px; margin-top: 10px; font-size: 0.95rem; color: #444; }
+        .about-school p { margin-bottom: 8px; }
+
+        /* Lưới môn học */
         .subject-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -60,13 +63,66 @@
 
         .iframe-box { width: 100%; height: 420px; border: none; border-radius: 12px; margin-top: 10px; }
 
-        footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; margin-top: 40px; border-top: 1px solid #ddd; }
+        /* Khối Footer Thông tin liên hệ & Đội ngũ sáng lập */
+        footer { 
+            background: #ffffff; 
+            border-top: 2px solid #e2e8f0; 
+            padding: 30px 20px 0 20px; 
+            color: #444; 
+            margin-top: 50px;
+        }
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 25px;
+            padding-bottom: 25px;
+        }
+        .footer-info h3 { font-size: 1.2rem; color: #222; text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
+        .footer-info p { margin-bottom: 8px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+        .footer-info a { color: #0056b3; text-decoration: none; }
+        .footer-info a:hover { text-decoration: underline; }
+
+        .btn-maps {
+            display: inline-block;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            transition: 0.2s;
+        }
+        .btn-maps:hover { background: linear-gradient(135deg, #0056b3, #003d80); }
+
+        .team-box {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            max-width: 400px;
+        }
+        .team-box h4 { color: #28a745; margin-bottom: 8px; font-size: 1.05rem; }
+        .team-members { list-style: none; padding: 0; }
+        .team-members li { font-size: 0.95rem; padding: 3px 0; font-weight: 600; color: #2d3748; }
+
+        .copyright-bar {
+            background: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 12px 10px;
+            font-size: 0.9rem;
+            margin: 0 -20px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- Logo giả lập biểu tượng trường (có thể thay bằng ảnh thật sau) -->
         <div class="logo-placeholder">VT</div>
         <span class="school-badge">Trường THPT Vũng Tàu • Số 9 Thi Sách</span>
         <h1>Cổng Ôn Tập & Tài Liệu Trực Tuyến</h1>
@@ -74,7 +130,16 @@
     </header>
 
     <div class="container">
-        <!-- Khối 1: Thư mục môn học THPT -->
+        <!-- Khối Giới thiệu trường -->
+        <div class="card">
+            <h2>🏫 Giới Thiệu Trường THPT Vũng Tàu</h2>
+            <div class="about-school">
+                <p><strong>Trường THPT Vũng Tàu</strong> (Tọa lạc tại <em>Số 09 Thi Sách, Phường Tam Thắng, TP. Vũng Tàu</em>) là một trong những ngôi trường trung học phổ thông có truyền thống hiếu học lâu đời và hàng đầu của địa phương.</p>
+                <p>Nơi đây sở hữu cơ sở vật chất hiện đại, đội ngũ giáo viên tận tâm cùng cộng đồng học sinh năng động, luôn đi đầu trong các phong trào học tập, kỳ thi Học sinh giỏi và các hoạt động ngoại khóa.</p>
+            </div>
+        </div>
+
+        <!-- Khối Thư mục môn học -->
         <div class="card">
             <h2>📚 Thư Mục Tài Liệu Theo Môn Học</h2>
             <p>Chọn môn học bạn muốn ôn tập để xem hệ thống đề kiểm tra, công thức và bài tập:</p>
@@ -110,16 +175,46 @@
             </div>
         </div>
 
-        <!-- Khối 2: Tích hợp đồng hồ Pomodoro -->
+        <!-- Khối Pomodoro -->
         <div class="card" style="text-align: center;">
             <h2>⏱️ Khu Vực Tự Học Tập Trung (Pomodoro)</h2>
-            <p>Chọn mốc thời gian và bắt đầu tập trung ôn bài cùng bạn bè nhé!</p>
+            <p>Chọn mốc thời gian (25P, 45P, 60P) và bắt đầu tập trung ôn bài nhé!</p>
             <iframe src="pomodoro.html" class="iframe-box"></iframe>
         </div>
     </div>
 
+    <!-- Footer Liên hệ & Đội ngũ phát triển -->
     <footer>
-        <p>Dự án học tập phát triển bởi học sinh THPT Vũng Tàu (Số 9 Thi Sách) © 2026</p>
+        <div class="footer-container">
+            <!-- Thông tin trường chuẩn theo mẫu -->
+            <div class="footer-info">
+                <h3>TRƯỜNG THPT VŨNG TÀU</h3>
+                <p>📍 <strong>Địa chỉ:</strong> 09 Thi Sách, Phường Tam Thắng, TP. Vũng Tàu</p>
+                <p>📞 <strong>Điện thoại:</strong> +84-2543852188</p>
+                <p>✉️ <strong>Email:</strong> <a href="mailto:info@thpt-vungtau.edu.vn">info@thpt-vungtau.edu.vn</a></p>
+                <p>🌐 <strong>Website:</strong> <a href="http://thpt-vungtau.edu.vn/" target="_blank">http://thpt-vungtau.edu.vn/</a></p>
+                
+                <a href="https://maps.google.com/?q=Trường+THPT+Vũng+Tàu" target="_blank" class="btn-maps">
+                    🗺️ Bản đồ Google Maps đến Nhà trường
+                </a>
+            </div>
+
+            <!-- Đội ngũ sáng lập Khóa K71 -->
+            <div class="team-box">
+                <h4>🚀 Ban Sáng Lập & Phát Triển Website</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 8px; color: #666;">Dự án cổng thông tin & ôn thi trực tuyến được xây dựng bởi học sinh <strong>Khóa K71</strong>:</p>
+                <ul class="team-members">
+                    <li>👨‍💻 Trần Gia Bảo</li>
+                    <li>👨‍💻 Phạm Thành Phát</li>
+                    <li>👨‍💻 Nguyễn Thành Đạt</li>
+                    <li>👨‍💻 Bùi Tiến Lâm</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright-bar">
+            Bản quyền thuộc về Trường THPT Vũng Tàu & Nhóm phát triển K71 © 2026
+        </div>
     </footer>
 
 </body>
