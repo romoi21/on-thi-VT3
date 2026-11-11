@@ -3,50 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cổng Ôn Thi & Tài Liệu Học Sinh</title>
+    <title>Cổng Ôn Tập & Tài Liệu - THPT Vũng Tàu</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background: #f4f7f6; color: #333; line-height: 1.6; }
+        body { background: #f0f4f8; color: #333; line-height: 1.6; }
         
-        header { background: linear-gradient(135deg, #007bff, #0056b3); color: white; text-align: center; padding: 3rem 1rem; }
-        header h1 { font-size: 2.2rem; margin-bottom: 10px; }
-        header p { font-size: 1.1rem; opacity: 0.9; }
+        /* Header trường học */
+        header { 
+            background: linear-gradient(135deg, #0056b3, #0080ff); 
+            color: white; 
+            text-align: center; 
+            padding: 2.5rem 1rem; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .logo-placeholder {
+            width: 70px; height: 70px; background: white; color: #0056b3;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; font-weight: bold; margin: 0 auto 12px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        header h1 { font-size: 2.2rem; margin-bottom: 5px; }
+        header p { font-size: 1.1rem; opacity: 0.95; }
+        .school-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600;}
 
-        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
         
-        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; }
-        .card h2 { color: #007bff; margin-bottom: 15px; font-size: 1.4rem; }
-        
-        .btn { display: inline-block; background: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: 0.2s; }
-        .btn:hover { background: #218838; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; border-left: 5px solid #0056b3; }
+        .card h2 { color: #0056b3; margin-bottom: 15px; font-size: 1.4rem; }
+
+        /* Lưới thư mục môn học */
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .subject-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: #2d3748;
+            font-weight: 600;
+        }
+        .subject-item:hover {
+            background: #0056b3;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,86,179,0.2);
+        }
+        .subject-item span { font-size: 1.5rem; display: block; margin-bottom: 5px; }
 
         .iframe-box { width: 100%; height: 420px; border: none; border-radius: 12px; margin-top: 10px; }
+
+        footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; margin-top: 40px; border-top: 1px solid #ddd; }
     </style>
 </head>
 <body>
 
     <header>
+        <!-- Logo giả lập biểu tượng trường (có thể thay bằng ảnh thật sau) -->
+        <div class="logo-placeholder">VT</div>
+        <span class="school-badge">Trường THPT Vũng Tàu • Số 9 Thi Sách</span>
         <h1>Cổng Ôn Tập & Tài Liệu Trực Tuyến</h1>
-        <p>Nền tảng chia sẻ tài liệu, đề thi và hỗ trợ học tập tập trung cho học sinh</p>
+        <p>Nền tảng chia sẻ đề thi, tài liệu và đồng hành cùng học sinh trường ta vượt mọi kỳ thi!</p>
     </header>
 
     <div class="container">
-        <!-- Khối 1: Kho tài liệu -->
+        <!-- Khối 1: Thư mục môn học THPT -->
         <div class="card">
-            <h2>📚 Kho Đề Thi & Tài Liệu Ôn Tập</h2>
-            <p>Tổng hợp đề kiểm tra giữa kỳ, cuối kỳ các môn Toán, Văn, Anh được cập nhật liên tục từ các thầy cô và học sinh giỏi trong trường.</p>
-            <br>
-            <a href="#" class="btn" onclick="alert('Tính năng đang cập nhật kho đề thi chi tiết!')">Truy Cập Kho Đề Thi</a>
+            <h2>📚 Thư Mục Tài Liệu Theo Môn Học</h2>
+            <p>Chọn môn học bạn muốn ôn tập để xem hệ thống đề kiểm tra, công thức và bài tập:</p>
+            
+            <div class="subject-grid">
+                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Toán!')">
+                    <span>📐</span> Toán Học
+                </a>
+                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Ngữ Văn!')">
+                    <span>📖</span> Ngữ Văn
+                </a>
+                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Tiếng Anh!')">
+                    <span>🌐</span> Tiếng Anh
+                </a>
+                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Vật Lý!')">
+                    <span>⚡</span> Vật Lý
+                </a>
+                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Hóa Học!')">
+                    <span>🧪</span> Hóa Học
+                </a>
+                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Sinh Học!')">
+                    <span>🧬</span> Sinh Học
+                </a>
+                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Lịch Sử!')">
+                    <span>📜</span> Lịch Sử
+                </a>
+                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Địa Lý!')">
+                    <span>🌍</span> Địa Lý
+                </a>
+                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn GDKT & PL!')">
+                    <span>⚖️</span> GD Kinh Tế & Pháp Luật
+                </a>
+            </div>
         </div>
 
         <!-- Khối 2: Tích hợp đồng hồ Pomodoro -->
         <div class="card" style="text-align: center;">
             <h2>⏱️ Khu Vực Tự Học Tập Trung (Pomodoro)</h2>
-            <p>Chọn thời gian và bắt đầu tập trung ôn bài cùng bạn bè nhé!</p>
-            <!-- Nhúng file Pomodoro vào đây -->
+            <p>Chọn mốc thời gian và bắt đầu tập trung ôn bài cùng bạn bè nhé!</p>
             <iframe src="pomodoro.html" class="iframe-box"></iframe>
         </div>
     </div>
+
+    <footer>
+        <p>Dự án học tập phát triển bởi học sinh THPT Vũng Tàu (Số 9 Thi Sách) © 2026</p>
+    </footer>
 
 </body>
 </html>
