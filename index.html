@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cổng Ôn Thi & Tài Liệu Học Sinh</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        header { background: linear-gradient(135deg, #007bff, #0056b3); color: white; text-align: center; padding: 3rem 1rem; }
+        header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        .card h2 { color: #007bff; margin-bottom: 15px; font-size: 1.4rem; }
+        
+        .btn { display: inline-block; background: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: 0.2s; }
+        .btn:hover { background: #218838; }
+
+        .iframe-box { width: 100%; height: 420px; border: none; border-radius: 12px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cổng Ôn Tập & Tài Liệu Trực Tuyến</h1>
+        <p>Nền tảng chia sẻ tài liệu, đề thi và hỗ trợ học tập tập trung cho học sinh</p>
+    </header>
+
+    <div class="container">
+        <!-- Khối 1: Kho tài liệu -->
+        <div class="card">
+            <h2>📚 Kho Đề Thi & Tài Liệu Ôn Tập</h2>
+            <p>Tổng hợp đề kiểm tra giữa kỳ, cuối kỳ các môn Toán, Văn, Anh được cập nhật liên tục từ các thầy cô và học sinh giỏi trong trường.</p>
+            <br>
+            <a href="#" class="btn" onclick="alert('Tính năng đang cập nhật kho đề thi chi tiết!')">Truy Cập Kho Đề Thi</a>
+        </div>
+
+        <!-- Khối 2: Tích hợp đồng hồ Pomodoro -->
+        <div class="card" style="text-align: center;">
+            <h2>⏱️ Khu Vực Tự Học Tập Trung (Pomodoro)</h2>
+            <p>Chọn thời gian và bắt đầu tập trung ôn bài cùng bạn bè nhé!</p>
+            <!-- Nhúng file Pomodoro vào đây -->
+            <iframe src="pomodoro.html" class="iframe-box"></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
