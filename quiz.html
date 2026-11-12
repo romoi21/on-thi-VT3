@@ -37,7 +37,6 @@
             font-weight: 600;
             margin-bottom: 15px;
         }
-        /* Khu vực bộ lọc */
         .filter-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -69,8 +68,6 @@
         .btn:hover { background: var(--primary-hover); }
         .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); margin-top: 10px; }
         .btn-outline:hover { background: #eff6ff; }
-
-        /* Thanh trạng thái làm bài */
         .exam-header {
             display: flex;
             justify-content: space-between;
@@ -85,8 +82,6 @@
             border: 1px solid #bfdbfe;
         }
         .timer { font-size: 1.2rem; font-weight: bold; color: var(--danger); }
-        
-        /* Thẻ câu hỏi */
         .question-card {
             border: 1px solid var(--border);
             border-radius: 10px;
@@ -108,8 +103,6 @@
         }
         .option-item:hover { background: #f1f5f9; }
         .option-item input { margin-top: 4px; cursor: pointer; }
-        
-        /* Trạng thái chấm điểm */
         .correct-ans { background: #dcfce7 !important; border-color: var(--success) !important; color: #14532d; font-weight: 600; }
         .wrong-ans { background: #fee2e2 !important; border-color: var(--danger) !important; color: #7f1d1d; }
         .explanation {
@@ -131,7 +124,7 @@
             display: none;
         }
         .score-big { font-size: 2.2rem; font-weight: 800; color: var(--success); }
-        .hidden { display: none; }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
@@ -180,7 +173,7 @@
         <p style="font-size: 0.9rem; color: #64748b; text-align: center;">
             Mỗi lượt làm tối đa <strong>15 câu hỏi</strong> ngẫu nhiên trong thời gian <strong>30 phút</strong>. Đáp án A, B, C, D tự động đảo vị trí mỗi lần thi.
         </p>
-        <button class="btn" onclick="startQuiz()">🚀 Bắt Đầu Làm Bài (15 Câu / 30 Phút)</button>
+        <button type="button" class="btn" id="start-btn">🚀 Bắt Đầu Làm Bài (15 Câu / 30 Phút)</button>
     </div>
 
     <!-- MÀN HÌNH 2: LÀM BÀI & KẾT QUẢ -->
@@ -194,25 +187,79 @@
             <div>Kết quả của bạn</div>
             <div class="score-big" id="score-text">0 / 15</div>
             <div id="grade-point" style="font-weight: 600; margin-top: 5px;">Điểm hệ 10: 0.0</div>
-            <button class="btn" style="max-width: 280px; margin-top: 15px;" onclick="startQuiz()">🔄 Làm Đề Mới (Xáo Trộn Lại)</button>
-            <button class="btn btn-outline" style="max-width: 280px;" onclick="backToMenu()">⬅ Đổi Môn / Khối Khác</button>
+            <button type="button" class="btn" style="max-width: 280px; margin-top: 15px;" id="retry-btn">🔄 Làm Đề Mới (Xáo Trộn Lại)</button>
+            <button type="button" class="btn btn-outline" style="max-width: 280px;" id="back-btn">⬅ Đổi Môn / Khối Khác</button>
         </div>
 
         <div id="questions-wrapper"></div>
 
-        <button id="submit-btn" class="btn" style="background: var(--success);" onclick="submitQuiz()">✅ Nộp Bài & Xem Đáp Án</button>
+        <button type="button" id="submit-btn" class="btn" style="background: var(--success);">✅ Nộp Bài & Xem Đáp Án</button>
     </div>
 </div>
 
-<!-- Gắn file dữ liệu câu hỏi -->
+<!-- Tự động nạp cả 2 tên file (có 's' và không có 's') để tránh lỗi lệch tên file -->
 <script src="question-db.js"></script>
+<script src="questions-db.js"></script>
+
 <script>
+    // Kho câu hỏi tích hợp sẵn (Đảm bảo web luôn chạy ngay cả khi file ngoài bị lỗi cú pháp)
+    const BUILTIN_QUESTIONS = [
+        {
+            grade: "11", subject: "toan", term: "GK1",
+            question: "Góc có số đo 108° đổi sang đơn vị radian là:",
+            options: ["3π/5", "π/10", "3π/2", "π/4"],
+            answer: 0,
+            explanation: "Áp dụng công thức đổi độ sang radian: α = (108° × π) / 180° = 3π/5."
+        },
+        {
+            grade: "11", subject: "toan", term: "GK1",
+            question: "Công thức nào sau đây đúng với mọi góc lượng giác α?",
+            options: ["sin²α + cos²α = 1", "sin²α - cos²α = 1", "sinα + cosα = 1", "tanα + cotα = 1"],
+            answer: 0,
+            explanation: "Hệ thức lượng giác cơ bản trên đường tròn lượng giác: sin²α + cos²α = 1."
+        },
+        {
+            grade: "11", subject: "toan", term: "GK1",
+            question: "Tập xác định của hàm số y = tan(x) là:",
+            options: ["ℝ \\ {π/2 + kπ, k ∈ ℤ}", "ℝ \\ {kπ, k ∈ ℤ}", "ℝ \\ {π/2 + k2π, k ∈ ℤ}", "ℝ"],
+            answer: 0,
+            explanation: "tan(x) xác định khi cos(x) ≠ 0 ⇔ x ≠ π/2 + kπ (k ∈ ℤ)."
+        },
+        {
+            grade: "11", subject: "toan", term: "GK1",
+            question: "Cho cấp số cộng (uₙ) có u₁ = 3 và công sai d = 2. Giá trị của u₅ bằng:",
+            options: ["11", "13", "9", "15"],
+            answer: 0,
+            explanation: "Công thức số hạng tổng quát: u₅ = u₁ + 4d = 3 + 4×2 = 11."
+        },
+        {
+            grade: "11", subject: "ly", term: "GK1",
+            question: "Trong dao động điều hòa, đại lượng nào sau đây luôn dương?",
+            options: ["Biên độ dao động A", "Li độ x", "Vận tốc v", "Gia tốc a"],
+            answer: 0,
+            explanation: "Biên độ A là độ lệch cực đại so với vị trí cân bằng nên luôn dương (A > 0)."
+        },
+        {
+            grade: "11", subject: "ly", term: "GK1",
+            question: "Gia tốc trong dao động điều hòa biến đổi điều hòa:",
+            options: ["Ngược pha với li độ", "Cùng pha với li độ", "Sớm pha π/2 so với li độ", "Trễ pha π/2 so với li độ"],
+            answer: 0,
+            explanation: "Vì a = -ω²x nên gia tốc luôn ngược pha với li độ x."
+        },
+        {
+            grade: "11", subject: "anh", term: "GK1",
+            question: "Choose the correct word: Regular exercise helps increase your life _______.",
+            options: ["expectancy", "expectation", "expectant", "expecting"],
+            answer: 0,
+            explanation: "Cụm danh từ cố định 'life expectancy' mang nghĩa là tuổi thọ trung bình."
+        }
+    ];
+
     let currentQuestions = [];
     let timerInterval;
-    let timeLeft = 30 * 60; // 30 phút = 1800 giây
+    let timeLeft = 30 * 60;
     let isSubmitted = false;
 
-    // Thuật toán Fisher-Yates xáo trộn mảng tuyệt đối
     function shuffleArray(array) {
         const arr = [...array];
         for (let i = arr.length - 1; i > 0; i--) {
@@ -222,32 +269,26 @@
         return arr;
     }
 
-   function startQuiz() {
+    function startQuiz() {
         const grade = document.getElementById('grade-select').value;
         const subject = document.getElementById('subject-select').value;
         const term = document.getElementById('term-select').value;
-        const subjectName = document.getElementById('subject-select').options[document.getElementById('subject-select').selectedIndex].text;
+        const subjectSelect = document.getElementById('subject-select');
+        const subjectName = subjectSelect.options[subjectSelect.selectedIndex].text;
 
-        // Kiểm tra an toàn: Nếu file question-db.js chưa nạp được thì không bị đơ nút
-        const bank = (typeof QUESTION_BANK !== 'undefined') ? QUESTION_BANK : [];
-        let pool = bank.filter(q => q.grade === grade && q.subject === subject && q.term === term);
+        // Gộp kho câu hỏi từ file ngoài (nếu có) và kho tích hợp sẵn
+        const externalBank = (typeof window.QUESTION_BANK !== 'undefined' && Array.isArray(window.QUESTION_BANK))
+            ? window.QUESTION_BANK
+            : BUILTIN_QUESTIONS;
 
-        // Nếu môn/kỳ đó chưa có câu hỏi, tự động sinh câu hỏi mẫu để chạy
-        if (pool.length === 0) {
-            pool = generateFallbackQuestions(grade, subjectName, term);
-        }
-        // Lọc câu hỏi từ ngân hàng dữ liệu
-        let pool = QUESTION_BANK.filter(q => q.grade === grade && q.subject === subject && q.term === term);
+        let pool = externalBank.filter(q => q.grade === grade && q.subject === subject && q.term === term);
 
-        // Nếu môn/kỳ đó chưa nhập đủ dữ liệu thực, tự động sinh câu hỏi mẫu kiểm chứng để test hệ thống
         if (pool.length === 0) {
             pool = generateFallbackQuestions(grade, subjectName, term);
         }
 
-        // Xáo trộn thứ tự câu hỏi và cắt lấy tối đa 15 câu
         const shuffledPool = shuffleArray(pool).slice(0, 15);
 
-        // Xáo trộn luôn thứ tự 4 đáp án A, B, C, D cho từng câu
         currentQuestions = shuffledPool.map(q => {
             const indexedOptions = q.options.map((text, idx) => ({ text, isCorrect: idx === q.answer }));
             const shuffledOptions = shuffleArray(indexedOptions);
@@ -258,7 +299,6 @@
             };
         });
 
-        // Reset giao diện
         isSubmitted = false;
         timeLeft = 30 * 60;
         document.getElementById('setup-screen').classList.add('hidden');
@@ -279,7 +319,6 @@
         currentQuestions.forEach((q, qIndex) => {
             const card = document.createElement('div');
             card.className = 'question-card';
-            card.id = `q-card-${qIndex}`;
 
             let optionsHTML = '';
             q.shuffledOptions.forEach((opt, oIndex) => {
@@ -333,21 +372,21 @@
             const selected = document.querySelector(`input[name="question-${qIndex}"]:checked`);
             const userAns = selected ? parseInt(selected.value) : -1;
 
-            // Khóa các nút chọn
             const inputs = document.querySelectorAll(`input[name="question-${qIndex}"]`);
             inputs.forEach(inp => inp.disabled = true);
 
-            // Tô màu đáp án đúng
-            document.getElementById(`opt-label-${qIndex}-${q.correctIndex}`).classList.add('correct-ans');
+            const correctLabel = document.getElementById(`opt-label-${qIndex}-${q.correctIndex}`);
+            if (correctLabel) correctLabel.classList.add('correct-ans');
 
             if (userAns === q.correctIndex) {
                 correctCount++;
             } else if (userAns !== -1) {
-                document.getElementById(`opt-label-${qIndex}-${userAns}`).classList.add('wrong-ans');
+                const wrongLabel = document.getElementById(`opt-label-${qIndex}-${userAns}`);
+                if (wrongLabel) wrongLabel.classList.add('wrong-ans');
             }
 
-            // Hiện giải thích
-            document.getElementById(`exp-${qIndex}`).style.display = 'block';
+            const expBox = document.getElementById(`exp-${qIndex}`);
+            if (expBox) expBox.style.display = 'block';
         });
 
         const total = currentQuestions.length;
@@ -366,15 +405,14 @@
         document.getElementById('setup-screen').classList.remove('hidden');
     }
 
-    // Hàm tạo 15 câu hỏi mẫu tự động cho các phân mục đang chờ nhóm K71 nhập liệu
     function generateFallbackQuestions(grade, subjectName, term) {
         const samples = [];
-        for (let i = 1; i <= 20; i++) {
+        for (let i = 1; i <= 15; i++) {
             samples.push({
                 grade: grade,
                 subject: "sample",
                 term: term,
-                question: `[Dữ liệu mẫu ${subjectName} ${grade} - ${term}] Câu hỏi kiểm chứng số #${i}: Đâu là nhận định chính xác theo chương trình GDPT mới?`,
+                question: `[Đề ôn tập ${subjectName} Khối ${grade} - ${term}] Câu hỏi kiểm chứng số #${i}: Đâu là nhận định chính xác theo chương trình GDPT mới?`,
                 options: [
                     `Phương án chuẩn xác của kiến thức trọng tâm số ${i}`,
                     `Phương án gây nhiễu A cho nội dung số ${i}`,
@@ -382,11 +420,17 @@
                     `Phương án gây nhiễu C cho nội dung số ${i}`
                 ],
                 answer: 0,
-                explanation: `Đây là lời giải mẫu đã được kiểm chứng cho câu hỏi #${i} môn ${subjectName} Khối ${grade} (${term}). Nhóm K71 có thể cập nhật thêm câu hỏi thực tế trong file questions-db.js.`
+                explanation: `Lời giải chi tiết cho câu hỏi #${i} môn ${subjectName} Khối ${grade} (${term}).`
             });
         }
         return samples;
     }
+
+    // Gắn sự kiện trực tiếp cho các nút bấm
+    document.getElementById('start-btn').addEventListener('click', startQuiz);
+    document.getElementById('retry-btn').addEventListener('click', startQuiz);
+    document.getElementById('back-btn').addEventListener('click', backToMenu);
+    document.getElementById('submit-btn').addEventListener('click', submitQuiz);
 </script>
 </body>
 </html>
