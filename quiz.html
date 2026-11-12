@@ -205,7 +205,7 @@
 </div>
 
 <!-- Gắn file dữ liệu câu hỏi -->
-<script src="questions-db.js"></script>
+<script src="question-db.js"></script>
 <script>
     let currentQuestions = [];
     let timerInterval;
@@ -222,12 +222,20 @@
         return arr;
     }
 
-    function startQuiz() {
+   function startQuiz() {
         const grade = document.getElementById('grade-select').value;
         const subject = document.getElementById('subject-select').value;
         const term = document.getElementById('term-select').value;
         const subjectName = document.getElementById('subject-select').options[document.getElementById('subject-select').selectedIndex].text;
 
+        // Kiểm tra an toàn: Nếu file question-db.js chưa nạp được thì không bị đơ nút
+        const bank = (typeof QUESTION_BANK !== 'undefined') ? QUESTION_BANK : [];
+        let pool = bank.filter(q => q.grade === grade && q.subject === subject && q.term === term);
+
+        // Nếu môn/kỳ đó chưa có câu hỏi, tự động sinh câu hỏi mẫu để chạy
+        if (pool.length === 0) {
+            pool = generateFallbackQuestions(grade, subjectName, term);
+        }
         // Lọc câu hỏi từ ngân hàng dữ liệu
         let pool = QUESTION_BANK.filter(q => q.grade === grade && q.subject === subject && q.term === term);
 
