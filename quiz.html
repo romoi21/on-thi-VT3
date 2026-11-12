@@ -277,9 +277,9 @@
         const subjectName = subjectSelect.options[subjectSelect.selectedIndex].text;
 
         // Gộp kho câu hỏi từ file ngoài (nếu có) và kho tích hợp sẵn
-        const externalBank = (typeof window.QUESTION_BANK !== 'undefined' && Array.isArray(window.QUESTION_BANK))
-            ? window.QUESTION_BANK
-            : BUILTIN_QUESTIONS;
+       const externalBank = (typeof QUESTION_BANK !== 'undefined' && Array.isArray(QUESTION_BANK))
+    ? QUESTION_BANK
+    : BUILTIN_QUESTIONS;
 
         let pool = externalBank.filter(q => q.grade === grade && q.subject === subject && q.term === term);
 
