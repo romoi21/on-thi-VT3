@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Liệu Chi Tiết: Unit 4 - ASEAN AND VIET NAM</title>
+    <!-- Khởi tạo màu chủ đạo ngay lập tức -->
+    <script>
+        (function() {
+            try {
+                const savedColor = localStorage.getItem('k71_theme_color') || '#e58547';
+                const savedTheme = localStorage.getItem('k71_theme') || 'dark';
+                function hexToRgb(hex) {
+                    hex = hex.replace('#', '');
+                    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+                    const num = parseInt(hex, 16);
+                    return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+                }
+                function adjustBrightness(hex, percent) {
+                    const { r, g, b } = hexToRgb(hex);
+                    const amt = Math.round(2.55 * percent);
+                    const R = Math.min(255, Math.max(0, r + amt));
+                    const G = Math.min(255, Math.max(0, g + amt));
+                    const B = Math.min(255, Math.max(0, b + amt));
+                    return '#' + ((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1);
+                }
+                const rgb = hexToRgb(savedColor);
+                const rgbStr = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+                const hoverHex = adjustBrightness(savedColor, -15);
+                document.documentElement.style.setProperty('--primary-color', savedColor);
+                document.documentElement.style.setProperty('--primary-hover', hoverHex);
+                document.documentElement.style.setProperty('--primary-rgb', rgbStr);
+                if (savedTheme === 'light') document.documentElement.classList.add('light-mode');
+            } catch(e) {}
+        })();
+    </script>
+    <style>
+        :root {
+            --primary-color: #e58547;
+            --primary-hover: #cf7337;
+            --primary-rgb: 229, 133, 71;
+            --bg-body: #0d0c0b;
+            --bg-card: #191614;
+            --bg-card-subtle: #201a16;
+            --text-main: #ede3da;
+            --text-muted: #9c8e82;
+            --border-color: #26201b;
+            --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 6px 22px rgba(0, 0, 0, 0.55);
+            --primary-glow: rgba(var(--primary-rgb), 0.35);
+        }
+        .light-mode {
+            --bg-body: #f4f6fa;
+            --bg-card: #ffffff;
+            --bg-card-subtle: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: var(--bg-body); color: var(--text-main); line-height: 1.75; padding: 24px 20px; transition: background 0.25s, color 0.25s; }
+        .doc-container { max-width: 960px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 36px 32px; box-shadow: var(--shadow-md); }
+        .doc-top-bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); margin-bottom: 28px; }
+        .btn-action { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; cursor: pointer; transition: all 0.2s; border: none; }
+        .btn-primary { background: var(--primary-color); color: #fff !important; box-shadow: 0 2px 8px var(--primary-glow); }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-secondary { background: #26201b; color: #fff !important; border: 1px solid var(--border-color); }
+        .light-mode .btn-secondary { background: #475569; color: #fff !important; border-color: #334155; }
+        .btn-secondary:hover { background: var(--primary-color); }
+        .doc-hero { text-align: center; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px dashed var(--border-color); }
+        .doc-flag { max-width: 140px; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.3); margin-bottom: 16px; border: 2px solid rgba(255,255,255,0.1); }
+        .doc-hero h1 { font-size: 2.1rem; color: var(--primary-color); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+        .doc-hero p { color: var(--text-muted); font-size: 1.05rem; }
+        .section-badge { display: inline-block; background: rgba(var(--primary-rgb), 0.14); color: var(--primary-color); padding: 5px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; }
+        .doc-section { margin-bottom: 40px; }
+        .doc-section h2 { font-size: 1.45rem; color: var(--primary-color); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid rgba(var(--primary-rgb), 0.25); padding-bottom: 8px; }
+        .vocab-table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 0.94rem; }
+        .vocab-table th, .vocab-table td { border: 1px solid var(--border-color); padding: 11px 14px; text-align: left; }
+        .vocab-table th { background: rgba(var(--primary-rgb), 0.14); color: var(--primary-color); font-weight: 700; }
+        .vocab-table tr:hover { background: rgba(var(--primary-rgb), 0.05); }
+        .type-tag { font-size: 0.8rem; background: rgba(var(--primary-rgb), 0.12); color: var(--primary-color); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+        .grammar-block { background: var(--bg-card-subtle); border-left: 4px solid var(--primary-color); padding: 18px 22px; border-radius: 0 10px 10px 0; margin: 18px 0; }
+        .grammar-block h3 { font-size: 1.15rem; color: var(--primary-color); margin-bottom: 8px; }
+        .verbs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; margin: 12px 0; }
+        .verb-tag { background: var(--bg-card); border: 1px solid var(--border-color); padding: 6px 10px; border-radius: 6px; text-align: center; font-size: 0.88rem; font-weight: 600; }
+        .exercise-item { background: var(--bg-card-subtle); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px 20px; margin-bottom: 14px; }
+        .exercise-item .q-text { font-weight: 600; margin-bottom: 10px; line-height: 1.55; color: var(--text-main); }
+        .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+        .opt-choice { padding: 9px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-card); font-size: 0.92rem; }
+        .reading-passage { background: var(--bg-card-subtle); border: 1px solid var(--border-color); border-radius: 10px; padding: 22px; margin: 20px 0; line-height: 1.8; font-size: 0.96rem; }
+        .reading-passage h4 { color: var(--primary-color); margin-bottom: 10px; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <div class="doc-container">
+        <!-- Top bar điều hướng -->
+        <div class="doc-top-bar">
+            <div>
+                <a href="index.html#documents" class="btn-action btn-secondary">⬅ Quay Lại Cổng Ôn Tập</a>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="Unit-4-Tieng-Anh-11.docx" download="Unit-4-Tieng-Anh-11.docx" class="btn-action btn-primary">📥 Tải File Gốc (.DOCX)</a>
+                <button onclick="window.print()" class="btn-action btn-secondary">🖨️ In Tài Liệu</button>
+            </div>
+        </div>
+
+        <!-- Banner tiêu đề tài liệu -->
+        <div class="doc-hero">
+            <img src="docs_assets/image2.png" alt="Cờ ASEAN" class="doc-flag">
+            <h1>UNIT 4: ASEAN AND VIET NAM</h1>
+            <p>Hệ thống kiến thức Từ Vựng, Ngữ Pháp Gerund (V-ing) & Bộ Đề Ôn Tập Toàn Diện</p>
+        </div>
+
+        <!-- PHẦN A: VOCABULARY -->
+        <section class="doc-section">
+            <span class="section-badge">PHẦN A</span>
+            <h2>📖 VOCABULARY (TỪ VỰNG TRỌNG TÂM)</h2>
+            <div style="overflow-x: auto;">
+                <table class="vocab-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 35%;">Từ vựng & Cụm từ</th>
+                            <th style="width: 15%;">Từ loại</th>
+                            <th style="width: 25%;">Phiên âm (IPA)</th>
+                            <th style="width: 25%;">Ý nghĩa Tiếng Việt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">1. apply (+for)</td>
+        <td><span class="type-tag">(v)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/əˈplaɪ/</td>
+        <td>nộp đơn xin (việc, học bổng...)</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">celebration</td>
+        <td><span class="type-tag">(n)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/ˌselɪˈbreɪʃn/</td>
+        <td>lễ kỷ niệm, sự tán dương</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">contribute + to<br>🡺 contribution<br>🡺 make a contribution to sth</td>
+        <td><span class="type-tag">(v)<br>(n)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/kənˈtrɪbjuːt/<br>/ˌkɑːntrɪˈbjuːʃn/</td>
+        <td>đóng góp, cống hiến cho...</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">cultural exchange</td>
+        <td><span class="type-tag">(np)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/ˈkʌltʃərəl ɪksˈtʃeɪndʒ/</td>
+        <td>giao lưu / trao đổi văn hóa</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">eye-opening</td>
+        <td><span class="type-tag">(adj)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/ˈaɪ əʊpənɪŋ/</td>
+        <td>mở mang tầm mắt / hiểu biết</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">current issue</td>
+        <td><span class="type-tag">(np)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/ˌkɜːrənt ˈɪʃuː/</td>
+        <td>vấn đề thời sự, hiện hành</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">promote</td>
+        <td><span class="type-tag">(v)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/prəˈməʊt/</td>
+        <td>thúc đẩy, quảng bá</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">live-stream</td>
+        <td><span class="type-tag">(v)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/ˈlaɪv striːm/</td>
+        <td>phát trực tiếp</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">leadership skill</td>
+        <td><span class="type-tag">(np)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/ˈliːdərʃɪp skɪl/</td>
+        <td>kỹ năng lãnh đạo</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">qualified + for sth + to do sth</td>
+        <td><span class="type-tag">(adj)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/ˈkwɑːlɪfaɪd/</td>
+        <td>đủ điều kiện, có năng lực</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">represent<br>representative</td>
+        <td><span class="type-tag">(v)<br>(n)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/ˌreprɪˈzent/<br>/ˌreprɪˈzentətɪv/</td>
+        <td>đại diện, người đại diện</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">strengthen</td>
+        <td><span class="type-tag">(v)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/ˈstreŋkθn/</td>
+        <td>củng cố, tăng cường</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">reply + to sb/sth</td>
+        <td><span class="type-tag">(v)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/rɪˈplaɪ/</td>
+        <td>phản hồi, trả lời</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">propose</td>
+        <td><span class="type-tag">(v)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/prəˈpəʊz/</td>
+        <td>đề xuất, cầu hôn</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">opportunity<br>have the opportunity to do</td>
+        <td><span class="type-tag">(n)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/ˌɑːpərˈtuːnəti/</td>
+        <td>cơ hội, dịp làm gì đó</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">relation<br>🡺 relationship</td>
+        <td><span class="type-tag">(n)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);">/rɪˈleɪʃn/<br>/rɪˈleɪʃnʃɪp/</td>
+        <td>mối quan hệ, mối liên hệ</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 600; color: var(--primary-color);">break the ice</td>
+        <td><span class="type-tag">(idm)</span></td>
+        <td style="font-family: monospace; color: var(--text-muted);"></td>
+        <td>phá vỡ không khí ngượng ngùng ban đầu</td>
+    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PHẦN B: GRAMMAR -->
+        <section class="doc-section">
+            <span class="section-badge">PHẦN B</span>
+            <h2>📝 GRAMMAR: GERUND (DANH ĐỘNG TỪ V-ING)</h2>
+            <p style="margin-bottom: 14px;"><strong>Gerund</strong> được dùng như một danh từ và có thể đảm nhiệm các chức năng ngữ pháp sau trong câu:</p>
+
+            <div class="grammar-block">
+                <h3>1. Làm Chủ ngữ (Subject - S)</h3>
+                <p>• <strong>Smoking</strong> is bad for health. (Hút thuốc lá có hại cho sức khỏe)</p>
+                <p>• <strong>Dancing</strong> bored him. (Việc nhảy múa làm anh ấy thấy nhàm chán)</p>
+            </div>
+
+            <div class="grammar-block">
+                <h3>2. Làm Bổ ngữ cho Chủ ngữ (Subject Complement - SC)</h3>
+                <p>• His interest is <strong>collecting</strong> stamps. (Sở thích của anh ấy là sưu tầm tem)</p>
+                <p>• Her hobby is <strong>sleeping</strong>. (Sở thích của cô ấy là ngủ)</p>
+            </div>
+
+            <div class="grammar-block">
+                <h3>3. Làm Tân ngữ (Object - O)</h3>
+                <p>• He disliked <strong>working</strong> late. (Anh ấy không thích làm việc muộn)</p>
+                <p>• I enjoy <strong>staying</strong> at home. (Tôi thích ở nhà)</p>
+            </div>
+
+            <div class="grammar-block">
+                <h3>4. Theo sau các động từ đặc biệt (Verbs + V-ing)</h3>
+                <p style="margin-bottom: 10px; font-size: 0.92rem; color: var(--text-muted);">Ghi nhớ các động từ luôn đi kèm với dạng V-ing:</p>
+                <div class="verbs-grid">
+                    <div class="verb-tag">avoid</div>
+                    <div class="verb-tag">forgive</div>
+                    <div class="verb-tag">enjoy</div>
+                    <div class="verb-tag">hate</div>
+                    <div class="verb-tag">(not) mind</div>
+                    <div class="verb-tag">risk</div>
+                    <div class="verb-tag">postpone</div>
+                    <div class="verb-tag">quit</div>
+                    <div class="verb-tag">dislike</div>
+                    <div class="verb-tag">keep</div>
+                    <div class="verb-tag">finish</div>
+                    <div class="verb-tag">suggest</div>
+                    <div class="verb-tag">consider</div>
+                    <div class="verb-tag">delay</div>
+                    <div class="verb-tag">deny</div>
+                    <div class="verb-tag">detest</div>
+                </div>
+                <p style="margin-top: 10px;">• Have you considered <strong>starting</strong> your own business?</p>
+                <p>• I suggested <strong>going</strong> in my car.</p>
+            </div>
+
+            <div class="grammar-block">
+                <h3>5. Theo sau Giới từ (Preposition + V-ing)</h3>
+                <p>• He was accused <strong>of smuggling</strong>.</p>
+                <p>• I gave <strong>up smoking</strong> 2 years ago.</p>
+                <p>• She insists <strong>on paying</strong> the bill.</p>
+            </div>
+
+            <div class="grammar-block">
+                <h3>6. Các cấu trúc thông dụng khác với V-ing</h3>
+                <p>• <strong>It’s (no) good / no use + V-ing:</strong> vô ích khi làm gì đó</p>
+                <p>• <strong>There is no point in + V-ing:</strong> không có lý do gì / vô ích khi làm gì</p>
+                <p>• <strong>It’s not worth + V-ing:</strong> không đáng để làm gì</p>
+                <p>• <strong>Do you mind / Would you mind + V-ing:</strong> bạn có phiền...</p>
+            </div>
+        </section>
+
+        <!-- PHẦN C: EXERCISES -->
+        <section class="doc-section">
+            <span class="section-badge">PHẦN C</span>
+            <h2>🎯 EXERCISES (BÀI TẬP VẬN DỤNG)</h2>
+
+            <h3 style="color: var(--primary-color); margin: 20px 0 12px 0;">Task 1: Complete sentences with the correct forms of words in capitals</h3>
+            <div class="exercise-item">
+                <p class="q-text">1. The money we lost is relatively ________, but the emotional stress of being robbed is hard to get over. (IMPORTANCE)</p>
+                <p style="font-size: 0.88rem; color: var(--primary-color); font-weight: 600;">➔ Đáp án: unimportant</p>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">2. ________ are important members of any company since they're responsible for managing employees. (SUPERVISE)</p>
+                <p style="font-size: 0.88rem; color: var(--primary-color); font-weight: 600;">➔ Đáp án: Supervisors</p>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">3. Getting a ________ typically means your supervisor notices your impressive performance and believes you're ready to accomplish more complex tasks. (PROMOTE)</p>
+                <p style="font-size: 0.88rem; color: var(--primary-color); font-weight: 600;">➔ Đáp án: promotion</p>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">4. The summit between the leaders of the countries of Europe, Latin America and the Caribbean was a great ________. (SUCCEED)</p>
+                <p style="font-size: 0.88rem; color: var(--primary-color); font-weight: 600;">➔ Đáp án: success</p>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">5. A ________ is an award of financial aid for a student to further their education. (SCHOLAR)</p>
+                <p style="font-size: 0.88rem; color: var(--primary-color); font-weight: 600;">➔ Đáp án: scholarship</p>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">6. Development policy has a critical role to play in supporting ________ to reduce conflict and violence over the long term. (STABLE)</p>
+                <p style="font-size: 0.88rem; color: var(--primary-color); font-weight: 600;">➔ Đáp án: stability</p>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">7. CMA stands for The California Medical ________ which is a professional organization representing the physicians. (ASSOCIATE)</p>
+                <p style="font-size: 0.88rem; color: var(--primary-color); font-weight: 600;">➔ Đáp án: Association</p>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">8. ________ is important because it allows people and groups to work together to achieve a common goal. (COOPERATE)</p>
+                <p style="font-size: 0.88rem; color: var(--primary-color); font-weight: 600;">➔ Đáp án: Cooperation</p>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">9. ________ is unity which produces or is based on unity of interests, objectives, standards, and sympathies. (SOLID)</p>
+                <p style="font-size: 0.88rem; color: var(--primary-color); font-weight: 600;">➔ Đáp án: Solidarity</p>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">10. There are some Vietnamese ________ games such as bamboo dancing, stilt walking. (TRADITION)</p>
+                <p style="font-size: 0.88rem; color: var(--primary-color); font-weight: 600;">➔ Đáp án: traditional</p>
+            </div>
+
+            <h3 style="color: var(--primary-color); margin: 30px 0 12px 0;">Task 2: Multiple Choice Trắc Nghiệm Trọng Tâm</h3>
+            <div class="exercise-item">
+                <p class="q-text">1. ASEAN _________ Association of Southeast Asian Nations.</p>
+                <div class="q-options">
+                    <div class="opt-choice">A. stands back</div>
+                    <div class="opt-choice">B. stands on</div>
+                    <div class="opt-choice">C. stands aside</div>
+                    <div class="opt-choice" style="border-color: #22c55e; font-weight: 700;">D. stands for ✔</div>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">2. The main goals of AYVP are promoting youth volunteering and helping the _________ of the ASEAN community.</p>
+                <div class="q-options">
+                    <div class="opt-choice">A. developing</div>
+                    <div class="opt-choice">B. developed</div>
+                    <div class="opt-choice">C. develop</div>
+                    <div class="opt-choice" style="border-color: #22c55e; font-weight: 700;">D. development ✔</div>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">3. Taking part in the programme was an __________ experience for Mai’s cousin.</p>
+                <div class="q-options">
+                    <div class="opt-choice">A. forget</div>
+                    <div class="opt-choice">B. forgot</div>
+                    <div class="opt-choice">C. forgettable</div>
+                    <div class="opt-choice" style="border-color: #22c55e; font-weight: 700;">D. unforgettable ✔</div>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">4. ASEAN has made a major ________ to peace in the region.</p>
+                <div class="q-options">
+                    <div class="opt-choice" style="border-color: #22c55e; font-weight: 700;">A. contribution ✔</div>
+                    <div class="opt-choice">B. development</div>
+                    <div class="opt-choice">C. communication</div>
+                    <div class="opt-choice">D. measurement</div>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">5. I do not have enough money _________ this book.</p>
+                <div class="q-options">
+                    <div class="opt-choice">A. buy</div>
+                    <div class="opt-choice" style="border-color: #22c55e; font-weight: 700;">B. to buy ✔</div>
+                    <div class="opt-choice">C. buying</div>
+                    <div class="opt-choice">D. bought</div>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">6. It is no use _________ to school if you _________ to work hard.</p>
+                <div class="q-options">
+                    <div class="opt-choice">A. going / do not ready</div>
+                    <div class="opt-choice">B. to go / do not ready</div>
+                    <div class="opt-choice" style="border-color: #22c55e; font-weight: 700;">C. going / are not ready ✔</div>
+                    <div class="opt-choice">D. go / are not ready</div>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="q-text">7. They spent all day _________ and _________ on the beach.</p>
+                <div class="q-options">
+                    <div class="opt-choice">A. to swim / sunbathing</div>
+                    <div class="opt-choice">B. to swim / to sunbathe</div>
+                    <div class="opt-choice">C. swimming / to sunbathe</div>
+                    <div class="opt-choice" style="border-color: #22c55e; font-weight: 700;">D. swimming / sunbathing ✔</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHẦN D: PRACTICE TEST -->
+        <section class="doc-section">
+            <span class="section-badge">PHẦN D</span>
+            <h2>📑 PRACTICE TEST FOR UNIT 4 (ĐỀ KIỂM TRA THỬ)</h2>
+
+            <div class="reading-passage">
+                <h4>Bài đọc 1: Discover VietNature – The Taste of ASEAN!</h4>
+                <p>VietNature is a leading Vietnamese brand that brings the fresh and natural taste of Vietnam (1)_______ every ASEAN country. Our products, such as dried mango and banana chips, are made from fruits grown in the Mekong Delta. (2)_______ healthy snacks is becoming a new lifestyle trend in ASEAN, and VietNature helps make it easy and delicious. Choosing VietNature products (3)_______ supporting local farmers and protecting the environment. We believe that sharing (4)_______ is a great way to connect ASEAN people through culture and taste. Join us in (5)_______ ASEAN (6)_______ through healthy living and sustainable choices!</p>
+                <div style="margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; font-size: 0.9rem;">
+                    <div>Q1: <strong>A. to</strong></div>
+                    <div>Q2: <strong>A. Eating</strong></div>
+                    <div>Q3: <strong>C. means</strong></div>
+                    <div>Q4: <strong>D. Vietnam’s natural flavors</strong></div>
+                    <div>Q5: <strong>B. celebrating</strong></div>
+                    <div>Q6: <strong>C. unity</strong></div>
+                </div>
+            </div>
+
+            <div class="reading-passage">
+                <h4>Bài đọc 2: What Is ASEAN?</h4>
+                <p>The Association of Southeast Asian Nations (ASEAN) was founded in 1967 to promote peace, stability, and cooperation in the (7)______. It now has eleven members, including Vietnam, Thailand, Malaysia, and Singapore. ASEAN’s main goal is to create a community where people can (8)______ and share progress...</p>
+                <div style="margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; font-size: 0.9rem;">
+                    <div>Q7: <strong>A. region</strong></div>
+                    <div>Q8: <strong>B. live in harmony</strong></div>
+                    <div>Q9: <strong>B. Learning</strong></div>
+                    <div>Q10: <strong>A. allows</strong></div>
+                    <div>Q11: <strong>B. its</strong></div>
+                    <div>Q12: <strong>D. make</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 20px; flex-wrap: wrap; gap: 14px;">
+            <a href="index.html#documents" class="btn-action btn-secondary">⬅ Quay Lại Kho Tài Liệu</a>
+            <div style="display: flex; gap: 10px;">
+                <a href="Unit-4-Tieng-Anh-11.docx" download="Unit-4-Tieng-Anh-11.docx" class="btn-action btn-primary">📥 Tải File Word (.DOCX)</a>
+                <a href="quiz.html?v=99" class="btn-action btn-primary" style="background: #22c55e;">📝 Luyện Trắc Nghiệm</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function hexToRgb(hex) {
+            hex = hex.replace('#', '');
+            if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+            const num = parseInt(hex, 16);
+            return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+        }
+        function adjustBrightness(hex, percent) {
+            const { r, g, b } = hexToRgb(hex);
+            const amt = Math.round(2.55 * percent);
+            const R = Math.min(255, Math.max(0, r + amt));
+            const G = Math.min(255, Math.max(0, g + amt));
+            const B = Math.min(255, Math.max(0, b + amt));
+            return '#' + ((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1);
+        }
+        window.setThemeColor = function(color) {
+            if (!color || !/^#[0-9A-Fa-f]{6}$/i.test(color)) return;
+            const rgb = hexToRgb(color);
+            const rgbStr = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+            const hoverHex = adjustBrightness(color, -15);
+            document.documentElement.style.setProperty('--primary-color', color);
+            document.documentElement.style.setProperty('--primary-hover', hoverHex);
+            document.documentElement.style.setProperty('--primary-rgb', rgbStr);
+            document.documentElement.style.setProperty('--primary-glow', `rgba(${rgbStr}, 0.35)`);
+        };
+        window.setThemeMode = function(mode) {
+            if (mode === 'light') {
+                document.documentElement.classList.add('light-mode');
+                document.body.classList.add('light-mode');
+            } else {
+                document.documentElement.classList.remove('light-mode');
+                document.body.classList.remove('light-mode');
+            }
+        };
+        window.addEventListener('message', (e) => {
+            if (e.data && e.data.type === 'THEME_SYNC') {
+                if (e.data.color) window.setThemeColor(e.data.color);
+                if (e.data.mode) window.setThemeMode(e.data.mode);
+            }
+        });
+    </script>
+</body>
+</html>

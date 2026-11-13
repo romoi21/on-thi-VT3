@@ -571,6 +571,299 @@
             transform: scale(1.12);
         }
 
+        .subject-item.selected {
+            background: rgba(var(--primary-rgb), 0.16) !important;
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 0 0 2px var(--primary-color), 0 8px 24px rgba(var(--primary-rgb), 0.3) !important;
+            color: var(--primary-color) !important;
+        }
+
+        .subject-item.selected span {
+            transform: scale(1.15);
+        }
+
+        /* Vùng hiển thị danh sách tài liệu bên dưới môn học */
+        .subject-docs-wrapper {
+            margin-top: 28px;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 24px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .docs-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+        }
+
+        .docs-header-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .docs-header-title .subj-badge-icon {
+            font-size: 2rem;
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: rgba(var(--primary-rgb), 0.12);
+            border: 1px solid rgba(var(--primary-rgb), 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .docs-header-title h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .docs-header-title p {
+            margin: 4px 0 0 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .docs-header-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(var(--primary-rgb), 0.12);
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid rgba(var(--primary-rgb), 0.25);
+        }
+
+        .doc-list-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .doc-item-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            transition: all 0.22s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .doc-item-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.18);
+            transform: translateY(-2px);
+        }
+
+        .doc-item-card.highlight {
+            border: 1.5px solid var(--primary-color);
+            background: rgba(var(--primary-rgb), 0.04);
+        }
+
+        .doc-left {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            flex: 1;
+        }
+
+        .doc-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: rgba(var(--primary-rgb), 0.12);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .doc-info {
+            flex: 1;
+        }
+
+        .doc-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 6px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .doc-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .doc-badge-docx {
+            background: rgba(43, 114, 186, 0.2);
+            color: #58a6ff;
+            border: 1px solid rgba(88, 166, 255, 0.35);
+        }
+
+        .doc-badge-pdf {
+            background: rgba(239, 68, 68, 0.18);
+            color: #f87171;
+            border: 1px solid rgba(248, 113, 113, 0.35);
+        }
+
+        .doc-badge-new {
+            background: rgba(var(--primary-rgb), 0.2);
+            color: var(--primary-color);
+            border: 1px solid rgba(var(--primary-rgb), 0.4);
+        }
+
+        .doc-title {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0 0 6px 0;
+            line-height: 1.4;
+        }
+
+        .doc-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .doc-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+
+        .btn-doc-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            background: var(--primary-color);
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 10px var(--primary-glow);
+            transition: all 0.2s;
+        }
+
+        .btn-doc-primary:hover {
+            background: var(--primary-hover);
+            color: #ffffff !important;
+            transform: translateY(-1px);
+        }
+
+        .btn-doc-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            background: #2b2622;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        body.light-mode .btn-doc-secondary {
+            background: #475569;
+            color: #ffffff !important;
+        }
+
+        .btn-doc-secondary:hover {
+            background: #3a332d;
+            color: #ffffff !important;
+        }
+
+        body.light-mode .btn-doc-secondary:hover {
+            background: #334155;
+            color: #ffffff !important;
+        }
+
+        .btn-doc-accent {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            background: #16a34a;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-doc-accent:hover {
+            background: #15803d;
+            color: #ffffff !important;
+            transform: translateY(-1px);
+        }
+
+        .unit4-inline-container {
+            margin-top: 18px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1.5px solid var(--primary-color);
+            background: var(--bg-card);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 0.25s ease;
+        }
+
+        .unit4-inline-header {
+            background: rgba(var(--primary-rgb), 0.12);
+            padding: 12px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
         /* Khung Iframe */
         .iframe-container {
             width: 100%;
@@ -1150,34 +1443,37 @@
                     <p class="card-desc">Bấm vào bất kỳ môn học nào bên dưới để xem kho tài liệu, tóm tắt lý thuyết và hệ thống bài tập:</p>
                     
                     <div class="subject-grid">
-                        <div class="subject-item" onclick="openSubjectModal('Toán Học', '📐', 'Hàm số, Hình học không gian, Tích phân, Xác suất thống kê, Đề thi thử đại học có đáp án chi tiết.')">
-                            <span>📐</span> Toán Học
-                        </div>
-                        <div class="subject-item" onclick="openSubjectModal('Ngữ Văn', '📖', 'Sơ đồ tư duy các tác phẩm văn học, bộ đề nghị luận xã hội và mở bài - kết bài mẫu đạt điểm 9+.')">
-                            <span>📖</span> Ngữ Văn
-                        </div>
-                        <div class="subject-item" onclick="openSubjectModal('Tiếng Anh', '🌐', 'Bộ từ vựng trọng tâm theo chủ đề, chuyên đề ngữ pháp then chốt và các bẫy thường gặp trong đề thi.')">
+                        <div class="subject-item" id="subj-anh" onclick="selectSubject('anh', this)">
                             <span>🌐</span> Tiếng Anh
                         </div>
-                        <div class="subject-item" onclick="openSubjectModal('Vật Lý', '⚡', 'Tập hợp các công thức Dao động cơ, Sóng cơ, Điện xoay chiều và tuyển tập câu hỏi vận dụng cao.')">
+                        <div class="subject-item" id="subj-toan" onclick="selectSubject('toan', this)">
+                            <span>📐</span> Toán Học
+                        </div>
+                        <div class="subject-item" id="subj-van" onclick="selectSubject('van', this)">
+                            <span>📖</span> Ngữ Văn
+                        </div>
+                        <div class="subject-item" id="subj-ly" onclick="selectSubject('ly', this)">
                             <span>⚡</span> Vật Lý
                         </div>
-                        <div class="subject-item" onclick="openSubjectModal('Hóa Học', '🧪', 'Phương pháp giải nhanh Hóa hữu cơ, Kim loại kiềm, Este - Lipit và bảng phản ứng đặc trưng.')">
+                        <div class="subject-item" id="subj-hoa" onclick="selectSubject('hoa', this)">
                             <span>🧪</span> Hóa Học
                         </div>
-                        <div class="subject-item" onclick="openSubjectModal('Sinh Học', '🧬', 'Cơ chế di truyền và biến dị, Quy luật di truyền Men-đen, Sinh thái học và câu hỏi lý thuyết đếm.')">
+                        <div class="subject-item" id="subj-sinh" onclick="selectSubject('sinh', this)">
                             <span>🧬</span> Sinh Học
                         </div>
-                        <div class="subject-item" onclick="openSubjectModal('Lịch Sử', '📜', 'Bảng mốc thời gian lịch sử Việt Nam 1919 - 1975, Lịch sử thế giới hiện đại và mẹo nhớ sự kiện.')">
+                        <div class="subject-item" id="subj-su" onclick="selectSubject('su', this)">
                             <span>📜</span> Lịch Sử
                         </div>
-                        <div class="subject-item" onclick="openSubjectModal('Địa Lý', '🌍', 'Kỹ năng khai thác Atlat Địa lí Việt Nam, nhận dạng biểu đồ và phân tích kinh tế các vùng.')">
+                        <div class="subject-item" id="subj-dia" onclick="selectSubject('dia', this)">
                             <span>🌍</span> Địa Lý
                         </div>
-                        <div class="subject-item" onclick="openSubjectModal('GD Kinh Tế & Pháp Luật', '⚖️', 'Hệ thống quy phạm pháp luật, quyền và nghĩa vụ công dân, tình huống thực tế thi trắc nghiệm.')">
+                        <div class="subject-item" id="subj-gdktpl" onclick="selectSubject('gdktpl', this)">
                             <span>⚖️</span> GD Kinh Tế & PL
                         </div>
                     </div>
+
+                    <!-- Vùng tài liệu hiển thị bên dưới khi bấm môn học (không dùng modal popup) -->
+                    <div id="subjectDocsContainer" class="subject-docs-wrapper"></div>
                 </div>
             </section>
 
@@ -1382,20 +1678,6 @@
         </main>
     </div>
 
-    <!-- Modal Chi Tiết Môn Học -->
-    <div class="modal-backdrop" id="subjectModal" onclick="closeSubjectModal(event)">
-        <div class="modal-box">
-            <button class="modal-close" onclick="closeSubjectModal()">&times;</button>
-            <div style="font-size: 2.8rem; margin-bottom: 10px;" id="modalSubjectIcon">📐</div>
-            <h2 id="modalSubjectTitle" style="color: var(--primary-color); margin-bottom: 12px;">Toán Học</h2>
-            <p id="modalSubjectDesc" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 22px;">Nội dung tài liệu...</p>
-            <div style="display: flex; gap: 12px; justify-content: flex-end;">
-                <button class="modal-btn-primary" onclick="triggerNav('quiz')">Luyện Thi Môn Này ➔</button>
-                <button class="modal-btn-close" onclick="closeSubjectModal()">Đóng</button>
-            </div>
-        </div>
-    </div>
-
     <!-- ================= SCRIPT ĐIỀU HƯỚNG VÀ HỆ THỐNG THEME TOÀN CẦU ================= -->
     <script>
         const titles = {
@@ -1453,9 +1735,6 @@
         // Bấm các nút tắt ở Trang chủ để chuyển trang
         function triggerNav(sectionId) {
             switchSection(sectionId);
-            if (document.getElementById('subjectModal')) {
-                closeSubjectModal();
-            }
         }
 
         // Đóng/Mở Sidebar trên Mobile
@@ -1476,19 +1755,455 @@
             }
         }
 
-        // Mở Modal chi tiết tài liệu môn học
-        function openSubjectModal(name, icon, desc) {
-            document.getElementById('modalSubjectTitle').innerText = 'Môn: ' + name;
-            document.getElementById('modalSubjectIcon').innerText = icon;
-            document.getElementById('modalSubjectDesc').innerText = desc;
-            document.getElementById('subjectModal').classList.add('show');
+        /* ================= DỮ LIỆU TÀI LIỆU CÁC MÔN HỌC ================= */
+        const SUBJECT_DOCS = {
+            'anh': {
+                name: 'Tiếng Anh',
+                icon: '🌐',
+                desc: 'Hệ thống tài liệu ôn tập Unit trọng tâm, ngữ pháp - từ vựng then chốt và các bộ đề thi thử bám sát chương trình THPT.',
+                docs: [
+                    {
+                        id: 'unit4',
+                        title: 'Unit 4: ASEAN AND VIET NAM (Tài liệu ôn tập & Đề thi thử)',
+                        badges: [
+                            { text: 'WORD DOCX (4.4 MB)', class: 'doc-badge-docx' },
+                            { text: 'BẢN ĐỌC ONLINE', class: 'doc-badge-new' },
+                            { text: 'MỚI CẬP NHẬT', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Tài liệu chi tiết Unit 4: Toàn bộ từ vựng chủ đề ASEAN & Việt Nam, Ngữ pháp Danh động từ (Gerund V-ing), Bài tập chia từ loại, 43 câu trắc nghiệm trọng tâm, Viết lại câu & Đề thi thử 40 câu có đáp án giải thích.',
+                        fileUrl: 'Unit-4-Tieng-Anh-11.docx',
+                        fileName: 'Unit-4-Tieng-Anh-11.docx',
+                        viewUrl: 'unit4.html',
+                        hasViewer: true,
+                        isPrimary: true
+                    },
+                    {
+                        id: 'anh-grammar',
+                        title: 'Chuyên Đề 25 Chủ Điểm Ngữ Pháp Tiếng Anh Trọng Tâm 10-11-12',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'TỔNG ÔN', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Hệ thống hóa toàn bộ kiến thức ngữ pháp cốt lõi: 12 thì cơ bản, Câu bị động, Câu điều kiện, Mệnh đề quan hệ và các cấu trúc đảo ngữ thường gặp trong các kỳ thi.',
+                        fileUrl: '#',
+                        fileName: '25-Chuyen-De-Ngu-Phap-Tieng-Anh.pdf',
+                        hasViewer: false
+                    },
+                    {
+                        id: 'anh-vocab',
+                        title: 'Tuyển Tập 3000 Từ Vựng Tiếng Anh Bứt Phá Điểm 9+ Theo Chủ Đề',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'TỪ VỰNG', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Tổng hợp từ vựng bám sát SGK mới, phiên âm quốc tế chuẩn IPA, cụm từ cố định (Collocations) và bài tập trắc nghiệm vận dụng.',
+                        fileUrl: '#',
+                        fileName: '3000-Tu-Vung-Tieng-Anh-Chu-De.pdf',
+                        hasViewer: false
+                    }
+                ]
+            },
+            'toan': {
+                name: 'Toán Học',
+                icon: '📐',
+                desc: 'Hàm số, Hình học không gian, Tích phân, Xác suất thống kê, Đề thi thử đại học có đáp án chi tiết.',
+                docs: [
+                    {
+                        id: 'toan-1',
+                        title: 'Chuyên Đề Hàm Số & Khảo Sát Đồ Thị Toàn Diện (Khóa K71)',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'LÝ THUYẾT & BÀI TẬP', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Tổng hợp các dạng bài toán cực trị, tính đơn điệu, tiệm cận đồ thị hàm số và các dạng toán tương giao đồ thị vận dụng cao.',
+                        fileUrl: '#',
+                        fileName: 'Chuyen-De-Ham-So-K71.pdf',
+                        hasViewer: false
+                    },
+                    {
+                        id: 'toan-2',
+                        title: 'Tuyển Tập 50 Đề Thi Thử Toán THPT Kèm Lời Giải Chi Tiết',
+                        badges: [
+                            { text: 'PDF ĐỀ THI', class: 'doc-badge-pdf' },
+                            { text: 'ĐỀ THI THỬ', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Bộ đề thi chuẩn cấu trúc Bộ GD&ĐT với thang điểm chi tiết, có phân tích phương pháp giải nhanh bấm máy tính Casio.',
+                        fileUrl: '#',
+                        fileName: '50-De-Thi-Thu-Toan-THPT.pdf',
+                        hasViewer: false
+                    },
+                    {
+                        id: 'toan-3',
+                        title: 'Sổ Tay Công Thức Giải Nhanh Toán 10 - 11 - 12 (Bản Cập Nhật)',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'TRA CỨU NHANH', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Cô đọng toàn bộ công thức hình học không gian, lượng giác, tích phân và tọa độ Oxyz giúp tra cứu thần tốc.',
+                        fileUrl: '#',
+                        fileName: 'So-Tay-Cong-Thuc-Toan.pdf',
+                        hasViewer: false
+                    }
+                ]
+            },
+            'van': {
+                name: 'Ngữ Văn',
+                icon: '📖',
+                desc: 'Sơ đồ tư duy các tác phẩm văn học, bộ đề nghị luận xã hội và mở bài - kết bài mẫu đạt điểm 9+.',
+                docs: [
+                    {
+                        id: 'van-1',
+                        title: 'Sơ Đồ Tư Duy Các Tác Phẩm Văn Học Trọng Tâm Chương Trình Mới',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'SƠ ĐỒ TƯ DUY', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Hệ thống hóa luận điểm, hình tượng nhân vật và giá trị tư tưởng nghệ thuật qua sơ đồ hình ảnh trực quan, dễ nhớ.',
+                        fileUrl: '#',
+                        fileName: 'So-Do-Tu-Duy-Van-Hoc-K71.pdf',
+                        hasViewer: false
+                    },
+                    {
+                        id: 'van-2',
+                        title: 'Tuyển Tập 60 Đề Nghị Luận Xã Hội Điểm 9+ Kèm Dàn Ý Chi Tiết',
+                        badges: [
+                            { text: 'DOCX / WORD', class: 'doc-badge-docx' },
+                            { text: 'BÀI MẪU 9+', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Phân tích các vấn đề thời sự nóng hổi, lối sống thanh niên, cung cấp dẫn chứng thực tế sắc sảo và đoạn văn mẫu.',
+                        fileUrl: '#',
+                        fileName: 'Tuyen-Tap-NLXH-Diem-9+.docx',
+                        hasViewer: false
+                    }
+                ]
+            },
+            'ly': {
+                name: 'Vật Lý',
+                icon: '⚡',
+                desc: 'Tập hợp các công thức Dao động cơ, Sóng cơ, Điện xoay chiều và tuyển tập câu hỏi vận dụng cao.',
+                docs: [
+                    {
+                        id: 'ly-1',
+                        title: 'Hệ Thống Toàn Bộ Công Thức Dao Động Cơ & Sóng Cơ',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'CÔNG THỨC VÀNG', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Tóm lược công thức, phương pháp đường tròn lượng giác và bài tập đồ thị dao động phân loại học sinh.',
+                        fileUrl: '#',
+                        fileName: 'Cong-Thuc-Dao-Dong-Song-Co.pdf',
+                        hasViewer: false
+                    },
+                    {
+                        id: 'ly-2',
+                        title: 'Tuyển Tập 300 Câu Hỏi Vận Dụng Cao Môn Vật Lý Có Lời Giải',
+                        badges: [
+                            { text: 'PDF ĐỀ THI', class: 'doc-badge-pdf' },
+                            { text: 'VẬN DỤNG CAO', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Các bài toán thực tế, đồ thị dao động, mạch điện xoay chiều biến thiên và hiện tượng quang học hay gặp.',
+                        fileUrl: '#',
+                        fileName: '300-Cau-Hoi-VDC-Vat-Ly.pdf',
+                        hasViewer: false
+                    }
+                ]
+            },
+            'hoa': {
+                name: 'Hóa Học',
+                icon: '🧪',
+                desc: 'Phương pháp giải nhanh Hóa hữu cơ, Kim loại kiềm, Este - Lipit và bảng phản ứng đặc trưng.',
+                docs: [
+                    {
+                        id: 'hoa-1',
+                        title: 'Sổ Tay Phản Ứng & Phương Pháp Nhận Biết Hóa Hữu Cơ',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'TRA CỨU NHANH', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Bảng tổng hợp phương trình hóa học hữu cơ trọng tâm, tính chất hóa học đặc trưng của hiđrocacbon và dẫn xuất.',
+                        fileUrl: '#',
+                        fileName: 'So-Tay-Phan-Ung-Hoa-Huu-Co.pdf',
+                        hasViewer: false
+                    },
+                    {
+                        id: 'hoa-2',
+                        title: 'Phương Pháp Quy Đổi & Giải Nhanh Bài Toán Este - Peptit',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'GIẢI NHANH', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Kỹ thuật đồng đẳng hóa, dồn chất và bảo toàn nguyên tố giúp giải quyết câu hỏi vận dụng cao trong 3 phút.',
+                        fileUrl: '#',
+                        fileName: 'Phuong-Phap-Quy-Doi-Hoa-Hoc.pdf',
+                        hasViewer: false
+                    }
+                ]
+            },
+            'sinh': {
+                name: 'Sinh Học',
+                icon: '🧬',
+                desc: 'Cơ chế di truyền và biến dị, Quy luật di truyền Men-đen, Sinh thái học và câu hỏi lý thuyết đếm.',
+                docs: [
+                    {
+                        id: 'sinh-1',
+                        title: 'Cơ Chế Di Truyền Ở Cấp Phân Tử & Tế Bào (Kèm Sơ Đồ ADN - ARN)',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'LÝ THUYẾT TRỌNG TÂM', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Toàn bộ lý thuyết nhân đôi ADN, phiên mã, dịch mã, đột biến gen và bài tập xác định axit amin.',
+                        fileUrl: '#',
+                        fileName: 'Di-Truyen-Phan-Tu-Sinh-Hoc.pdf',
+                        hasViewer: false
+                    },
+                    {
+                        id: 'sinh-2',
+                        title: 'Bộ Câu Hỏi Lý Thuyết Đếm Sinh Học Chống Sai Ngu Tuyệt Đối',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'LUYỆN ĐỀ', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Tổng hợp 200 câu trắc nghiệm dạng đếm mệnh đề đúng/sai về quy luật di truyền và tiến hóa sinh học.',
+                        fileUrl: '#',
+                        fileName: 'Bo-Cau-Hoi-Dem-Sinh-Hoc.pdf',
+                        hasViewer: false
+                    }
+                ]
+            },
+            'su': {
+                name: 'Lịch Sử',
+                icon: '📜',
+                desc: 'Bảng mốc thời gian lịch sử Việt Nam 1919 - 1975, Lịch sử thế giới hiện đại và mẹo nhớ sự kiện.',
+                docs: [
+                    {
+                        id: 'su-1',
+                        title: 'Bảng Niên Biểu Mốc Thời Gian Lịch Sử Việt Nam (1919 - 1975)',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'TRA CỨU NHANH', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Bảng tổng hợp đối sánh các chiến dịch, hội nghị quan trọng và bước ngoặt lịch sử chống Pháp - chống Mỹ.',
+                        fileUrl: '#',
+                        fileName: 'Nien-Bieu-Lich-Su-VN-1919-1975.pdf',
+                        hasViewer: false
+                    },
+                    {
+                        id: 'su-2',
+                        title: 'Sơ Đồ Tư Duy Lịch Sử Thế Giới Hiện Đại (Từ 1945 Đến Nay)',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'SƠ ĐỒ TƯ DUY', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Hệ thống hóa Chiến tranh lạnh, tổ chức Liên Hợp Quốc, xu thế toàn cầu hóa và các trung tâm kinh tế lớn.',
+                        fileUrl: '#',
+                        fileName: 'Lich-Su-The-Gioi-Hien-Dai.pdf',
+                        hasViewer: false
+                    }
+                ]
+            },
+            'dia': {
+                name: 'Địa Lý',
+                icon: '🌍',
+                desc: 'Kỹ năng khai thác Atlat Địa lí Việt Nam, nhận dạng biểu đồ và phân tích kinh tế các vùng.',
+                docs: [
+                    {
+                        id: 'dia-1',
+                        title: 'Bí Kíp Đọc & Khai Thác Atlat Địa Lí Việt Nam Đạt Điểm Tuyệt Đối',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'KỸ NĂNG VÀNG', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Hướng dẫn từng trang Atlat: ký hiệu chung, khoáng sản, khí hậu, các vùng kinh tế và mẹo tìm nhanh vị trí.',
+                        fileUrl: '#',
+                        fileName: 'Ky-Nang-Atlat-Dia-Li.pdf',
+                        hasViewer: false
+                    },
+                    {
+                        id: 'dia-2',
+                        title: 'Cẩm Nang Nhận Dạng Biểu Đồ & Kỹ Năng Xử Lý Số Liệu Địa Lý',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'CẨM NANG', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Dấu hiệu nhận biết biểu đồ tròn, cột, đường, miền, kết hợp và công thức tính mật độ, tốc độ tăng trưởng.',
+                        fileUrl: '#',
+                        fileName: 'Nhan-Dang-Bieu-Do-Dia-Ly.pdf',
+                        hasViewer: false
+                    }
+                ]
+            },
+            'gdktpl': {
+                name: 'GD Kinh Tế & PL',
+                icon: '⚖️',
+                desc: 'Hệ thống quy phạm pháp luật, quyền và nghĩa vụ công dân, tình huống thực tế thi trắc nghiệm.',
+                docs: [
+                    {
+                        id: 'gdktpl-1',
+                        title: 'Hệ Thống Quy Phạm Pháp Luật & Quyền Nghĩa Vụ Công Dân Lớp 11',
+                        badges: [
+                            { text: 'PDF TÀI LIỆU', class: 'doc-badge-pdf' },
+                            { text: 'LÝ THUYẾT', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Tóm lược quyền bình đẳng, quyền bầu cử, ứng cử, khiếu nại, tố cáo và các nghĩa vụ cơ bản của công dân.',
+                        fileUrl: '#',
+                        fileName: 'Phap-Luat-Quyen-Nghia-Vu.pdf',
+                        hasViewer: false
+                    },
+                    {
+                        id: 'gdktpl-2',
+                        title: 'Bộ Câu Hỏi Tình Huống Thực Tế Thi Trắc Nghiệm Môn GDKT&PL',
+                        badges: [
+                            { text: 'DOCX / WORD', class: 'doc-badge-docx' },
+                            { text: 'TÌNH HUỐNG THỰC TẾ', class: 'doc-badge-new' }
+                        ],
+                        desc: 'Phân tích các tình huống pháp lý phức tạp nhiều nhân vật, mẹo xác định người vi phạm chuẩn xác.',
+                        fileUrl: '#',
+                        fileName: 'Cau-Hoi-Tinh-Huong-GDKTPL.docx',
+                        hasViewer: false
+                    }
+                ]
+            }
+        };
+
+        let currentSubjectKey = 'anh';
+
+        // Chọn môn học và hiển thị danh sách tài liệu bên dưới
+        function selectSubject(key, el) {
+            currentSubjectKey = key;
+            const data = SUBJECT_DOCS[key];
+            if (!data) return;
+
+            // Đổi trạng thái active trên các thẻ môn học
+            document.querySelectorAll('.subject-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            if (el) {
+                el.classList.add('selected');
+            } else {
+                const targetEl = document.getElementById('subj-' + key);
+                if (targetEl) targetEl.classList.add('selected');
+            }
+
+            renderSubjectDocs(data);
         }
 
-        // Đóng Modal môn học
-        function closeSubjectModal(e) {
-            if (!e || e.target.id === 'subjectModal' || e.target.classList.contains('modal-close')) {
-                document.getElementById('subjectModal').classList.remove('show');
+        // Render HTML danh sách tài liệu môn học
+        function renderSubjectDocs(data) {
+            const container = document.getElementById('subjectDocsContainer');
+            if (!container) return;
+
+            let docsHtml = '';
+            data.docs.forEach(doc => {
+                const badgesHtml = doc.badges.map(b => `<span class="doc-badge ${b.class}">${b.text}</span>`).join('');
+                const isDocx = doc.fileName.endsWith('.docx');
+                const fileIcon = isDocx ? '📄' : '📑';
+
+                let actionsHtml = '';
+                if (doc.hasViewer) {
+                    actionsHtml = `
+                        <button onclick="toggleUnit4InlineReader()" class="btn-doc-primary" title="Xem trực tiếp lý thuyết và đề thi ngay trên trang">
+                            📖 Xem Trực Tiếp
+                        </button>
+                        <a href="${doc.viewUrl}" target="_blank" class="btn-doc-secondary" title="Mở trang đọc ở tab mới">
+                            Mở Tab Mới ↗
+                        </a>
+                        <a href="${doc.fileUrl}" download="${doc.fileName}" class="btn-doc-secondary" title="Tải file Word về máy tính">
+                            ⬇ Tải Bản Word (.docx)
+                        </a>
+                        <button onclick="triggerNav('quiz')" class="btn-doc-accent" title="Làm bài thi trắc nghiệm">
+                            📝 Luyện Trắc Nghiệm ➔
+                        </button>
+                    `;
+                } else {
+                    actionsHtml = `
+                        <a href="${doc.fileUrl}" onclick="handleDocDownload(event, '${doc.fileName}')" class="btn-doc-secondary">
+                            ⬇ Tải Tài Liệu
+                        </a>
+                        <button onclick="triggerNav('quiz')" class="btn-doc-primary">
+                            📝 Luyện Thi Môn Này ➔
+                        </button>
+                    `;
+                }
+
+                docsHtml += `
+                    <div class="doc-item-card ${doc.isPrimary ? 'highlight' : ''}">
+                        <div class="doc-left">
+                            <div class="doc-icon-box">${fileIcon}</div>
+                            <div class="doc-info">
+                                <div class="doc-badges">${badgesHtml}</div>
+                                <h4 class="doc-title">${doc.title}</h4>
+                                <p class="doc-desc">${doc.desc}</p>
+                            </div>
+                        </div>
+                        <div class="doc-actions">
+                            ${actionsHtml}
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Nếu là môn Tiếng Anh, kèm theo khung xem trực tiếp nội dung Unit 4
+            let viewerBoxHtml = '';
+            if (data.name === 'Tiếng Anh') {
+                viewerBoxHtml = `
+                    <div id="unit4InlineReaderBox" class="unit4-inline-container" style="display: none;">
+                        <div class="unit4-inline-header">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="font-size: 1.3rem;">📖</span>
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Trình Xem Chi Tiết: Unit 4 - ASEAN AND VIET NAM (Đầy Đủ Lý Thuyết, Bài Tập & Đề Thi)</strong>
+                            </div>
+                            <div style="display: flex; gap: 10px; align-items: center;">
+                                <a href="unit4.html" target="_blank" class="btn-doc-primary" style="padding: 6px 14px; font-size: 0.82rem;">Mở toàn màn hình ↗</a>
+                                <button onclick="toggleUnit4InlineReader(false)" class="btn-doc-secondary" style="padding: 6px 14px; font-size: 0.82rem;">✕ Đóng xem</button>
+                            </div>
+                        </div>
+                        <iframe src="unit4.html" id="unit4Iframe" style="width: 100%; height: 750px; border: none; display: block; background: var(--bg-body);"></iframe>
+                    </div>
+                `;
             }
+
+            container.innerHTML = `
+                <div class="docs-header-bar">
+                    <div class="docs-header-title">
+                        <div class="subj-badge-icon">${data.icon}</div>
+                        <div>
+                            <h3>Kho Tài Liệu: Môn ${data.name}</h3>
+                            <p>${data.desc}</p>
+                        </div>
+                    </div>
+                    <div class="docs-header-count">
+                        📁 ${data.docs.length} Tài liệu có sẵn
+                    </div>
+                </div>
+
+                <div class="doc-list-grid">
+                    ${docsHtml}
+                </div>
+
+                ${viewerBoxHtml}
+            `;
+        }
+
+        // Bật / tắt trình xem tài liệu Unit 4 trực tiếp trên trang
+        function toggleUnit4InlineReader(forceState) {
+            const box = document.getElementById('unit4InlineReaderBox');
+            if (!box) return;
+            if (forceState !== undefined) {
+                box.style.display = forceState ? 'block' : 'none';
+            } else {
+                box.style.display = box.style.display === 'none' ? 'block' : 'none';
+            }
+            if (box.style.display === 'block') {
+                box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const activeColor = localStorage.getItem('k71_theme_color') || '#e58547';
+                syncIframes(activeColor);
+            }
+        }
+
+        // Xử lý thông báo tải tài liệu
+        function handleDocDownload(event, fileName) {
+            if (event) event.preventDefault();
+            alert(`📥 Bạn đang yêu cầu tải: "${fileName}". Tài liệu đang được chuẩn bị để đồng bộ!`);
         }
 
         /* ================= HỆ THỐNG QUẢN LÝ THEME TOÀN CỤC ================= */
@@ -1656,6 +2371,9 @@
                     syncIframes(savedColor);
                 });
             });
+
+            // Khởi tạo sẵn danh sách tài liệu môn Tiếng Anh (có file Unit 4)
+            selectSubject('anh');
 
             // Đọc hash trên URL khi mở trang hoặc F5
             const hash = window.location.hash.replace('#', '');
