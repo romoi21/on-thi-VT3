@@ -4,38 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luyện Tập Trắc Nghiệm - Cổng Ôn Tập K71</title>
+    <!-- Khởi tạo màu chủ đạo ngay lập tức để tránh chớp màu -->
+    <script>
+        (function() {
+            try {
+                const savedColor = localStorage.getItem('k71_theme_color') || '#e58547';
+                const savedTheme = localStorage.getItem('k71_theme') || 'dark';
+                
+                function hexToRgb(hex) {
+                    hex = hex.replace('#', '');
+                    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+                    const num = parseInt(hex, 16);
+                    return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+                }
+                function adjustBrightness(hex, percent) {
+                    const { r, g, b } = hexToRgb(hex);
+                    const amt = Math.round(2.55 * percent);
+                    const R = Math.min(255, Math.max(0, r + amt));
+                    const G = Math.min(255, Math.max(0, g + amt));
+                    const B = Math.min(255, Math.max(0, b + amt));
+                    return '#' + ((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1);
+                }
+                
+                const rgb = hexToRgb(savedColor);
+                const rgbStr = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+                const hoverHex = adjustBrightness(savedColor, -15);
+                
+                document.documentElement.style.setProperty('--primary-color', savedColor);
+                document.documentElement.style.setProperty('--primary-hover', hoverHex);
+                document.documentElement.style.setProperty('--primary-rgb', rgbStr);
+                document.documentElement.style.setProperty('--primary', savedColor);
+                
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                }
+            } catch(e) {}
+        })();
+    </script>
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --success: #16a34a;
-            --danger: #dc2626;
+            --primary-color: #e58547;
+            --primary-hover: #cf7337;
+            --primary-rgb: 229, 133, 71;
+            --primary: var(--primary-color);
+            --success: #22c55e;
+            --danger: #ef4444;
+            --bg: #0d0c0b;
+            --card: #191614;
+            --card-subtle: #201a16;
+            --text: #ede3da;
+            --text-muted: #9c8e82;
+            --border: #2b231d;
+            --input-bg: #221c18;
+        }
+
+        .light-mode {
             --bg: #f8fafc;
             --card: #ffffff;
+            --card-subtle: #f1f5f9;
             --text: #1e293b;
+            --text-muted: #64748b;
             --border: #e2e8f0;
+            --input-bg: #ffffff;
         }
+
         * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; }
+        body { background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; transition: background-color 0.25s, color 0.25s; }
         .quiz-container {
             max-width: 850px;
             margin: 0 auto;
             background: var(--card);
             padding: 28px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             border: 1px solid var(--border);
+            transition: background-color 0.25s, border-color 0.25s;
         }
-        h2 { margin-top: 0; color: var(--primary); text-align: center; }
+        h2 { margin-top: 0; color: var(--primary-color); text-align: center; }
         .badge-verified {
             display: inline-block;
-            background: #dcfce7;
-            color: #15803d;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
             font-size: 0.8rem;
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
             font-weight: 600;
             margin-bottom: 15px;
+            border: 1px solid rgba(34, 197, 94, 0.25);
         }
         .filter-grid {
             display: grid;
@@ -43,19 +98,29 @@
             gap: 15px;
             margin-bottom: 20px;
         }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; color: var(--text); }
         select {
             width: 100%;
             padding: 10px 12px;
             border: 1px solid var(--border);
             border-radius: 8px;
             font-size: 0.95rem;
-            background: #fff;
+            background: var(--input-bg);
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        select option {
+            background: var(--card);
+            color: var(--text);
+        }
+        select:focus {
+            border-color: var(--primary-color);
         }
         .btn {
             display: inline-block;
-            background: var(--primary);
-            color: #fff;
+            background: var(--primary-color);
+            color: #ffffff !important;
             border: none;
             padding: 12px 24px;
             border-radius: 8px;
@@ -64,66 +129,70 @@
             cursor: pointer;
             transition: 0.2s;
             width: 100%;
+            box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
         }
         .btn:hover { background: var(--primary-hover); }
-        .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); margin-top: 10px; }
-        .btn-outline:hover { background: #eff6ff; }
+        .btn-outline { background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); margin-top: 10px; }
+        .btn-outline:hover { background: rgba(var(--primary-rgb), 0.12); }
         .exam-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #eff6ff;
+            background: rgba(var(--primary-rgb), 0.12);
             padding: 12px 18px;
             border-radius: 8px;
             margin-bottom: 20px;
             position: sticky;
             top: 10px;
             z-index: 10;
-            border: 1px solid #bfdbfe;
+            border: 1px solid var(--border);
         }
-        .timer { font-size: 1.2rem; font-weight: bold; color: var(--danger); }
+        .timer { font-size: 1.2rem; font-weight: bold; color: #f87171; }
         .question-card {
             border: 1px solid var(--border);
             border-radius: 10px;
             padding: 18px;
             margin-bottom: 18px;
-            background: #fff;
+            background: var(--card-subtle);
         }
-        .q-title { font-weight: 600; margin-bottom: 12px; line-height: 1.5; }
+        .q-title { font-weight: 600; margin-bottom: 12px; line-height: 1.5; color: var(--text); }
         .options-list { display: flex; flex-direction: column; gap: 10px; }
         .option-item {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            padding: 10px 14px;
+            padding: 11px 14px;
             border: 1px solid var(--border);
             border-radius: 8px;
             cursor: pointer;
             transition: 0.15s;
+            background: var(--card);
+            color: var(--text);
         }
-        .option-item:hover { background: #f1f5f9; }
-        .option-item input { margin-top: 4px; cursor: pointer; }
-        .correct-ans { background: #dcfce7 !important; border-color: var(--success) !important; color: #14532d; font-weight: 600; }
-        .wrong-ans { background: #fee2e2 !important; border-color: var(--danger) !important; color: #7f1d1d; }
+        .option-item:hover { background: rgba(var(--primary-rgb), 0.1); border-color: var(--primary-color); }
+        .option-item input { margin-top: 4px; cursor: pointer; accent-color: var(--primary-color); }
+        .correct-ans { background: #143520 !important; border-color: #22c55e !important; color: #86efac !important; font-weight: 600; }
+        .wrong-ans { background: #3d1717 !important; border-color: #ef4444 !important; color: #fca5a5 !important; }
         .explanation {
             margin-top: 12px;
             padding: 10px 14px;
-            background: #f8fafc;
-            border-left: 4px solid var(--primary);
+            background: var(--card);
+            border-left: 4px solid var(--primary-color);
             font-size: 0.9rem;
-            color: #334155;
+            color: var(--text-muted);
             display: none;
+            border-radius: 0 6px 6px 0;
         }
         .result-box {
             text-align: center;
             padding: 20px;
-            background: #f0fdf4;
-            border: 1px solid #86efac;
+            background: #152419;
+            border: 1px solid #22c55e;
             border-radius: 10px;
             margin-bottom: 20px;
             display: none;
         }
-        .score-big { font-size: 2.2rem; font-weight: 800; color: var(--success); }
+        .score-big { font-size: 2.2rem; font-weight: 800; color: #4ade80; }
         .hidden { display: none !important; }
     </style>
 </head>
@@ -431,6 +500,57 @@
     document.getElementById('retry-btn').addEventListener('click', startQuiz);
     document.getElementById('back-btn').addEventListener('click', backToMenu);
     document.getElementById('submit-btn').addEventListener('click', submitQuiz);
+
+    /* ===== ĐỒNG BỘ MÀU CHỦ ĐẠO TOÀN CỤC (GLOBAL THEME SYNC) ===== */
+    function setThemeColor(hex) {
+        if (!hex) return;
+        function hexToRgb(h) {
+            h = h.replace('#', '');
+            if (h.length === 3) h = h.split('').map(c => c + c).join('');
+            const num = parseInt(h, 16);
+            return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+        }
+        function adjustBrightness(h, percent) {
+            const { r, g, b } = hexToRgb(h);
+            const amt = Math.round(2.55 * percent);
+            const R = Math.min(255, Math.max(0, r + amt));
+            const G = Math.min(255, Math.max(0, g + amt));
+            const B = Math.min(255, Math.max(0, b + amt));
+            return '#' + ((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1);
+        }
+        const rgb = hexToRgb(hex);
+        const rgbStr = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+        const hoverHex = adjustBrightness(hex, -15);
+        document.documentElement.style.setProperty('--primary-color', hex);
+        document.documentElement.style.setProperty('--primary-hover', hoverHex);
+        document.documentElement.style.setProperty('--primary-rgb', rgbStr);
+        document.documentElement.style.setProperty('--primary', hex);
+    }
+
+    function setThemeMode(mode) {
+        if (mode === 'light') {
+            document.documentElement.classList.add('light-mode');
+        } else {
+            document.documentElement.classList.remove('light-mode');
+        }
+    }
+
+    window.setThemeColor = setThemeColor;
+    window.setThemeMode = setThemeMode;
+
+    // Nhận thông điệp đổi màu từ trang cha (index.html)
+    window.addEventListener('message', (e) => {
+        if (e.data && e.data.type === 'THEME_SYNC') {
+            if (e.data.color) setThemeColor(e.data.color);
+            if (e.data.mode) setThemeMode(e.data.mode);
+        }
+    });
+
+    // Nhận thông điệp khi đổi màu từ tab khác qua storage
+    window.addEventListener('storage', (e) => {
+        if (e.key === 'k71_theme_color' && e.newValue) setThemeColor(e.newValue);
+        if (e.key === 'k71_theme' && e.newValue) setThemeMode(e.newValue);
+    });
 </script>
 </body>
 </html>

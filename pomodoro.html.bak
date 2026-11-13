@@ -1,0 +1,107 @@
+<<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng hồ Pomodoro</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
+        
+        .timer-display { font-size: 3.5rem; font-weight: bold; color: #0056b3; margin: 15px 0; }
+        
+        .btn-group { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 15px; }
+        
+        button {
+            padding: 8px 14px;
+            border: 1px solid #0056b3;
+            background: white;
+            color: #0056b3;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:hover, button.active { background: #0056b3; color: white; }
+        
+        .controls { display: flex; gap: 10px; margin-top: 5px; }
+        .btn-main { padding: 10px 24px; font-size: 1rem; border-radius: 20px; border: none; }
+        .btn-start { background: #28a745; color: white; }
+        .btn-start:hover { background: #218838; }
+        .btn-reset { background: #dc3545; color: white; }
+        .btn-reset:hover { background: #c82333; }
+    </style>
+</head>
+<body>
+
+    <div class="btn-group">
+        <button onclick="setTimer(25, this)" class="active">25 Phút</button>
+        <button onclick="setTimer(45, this)">45 Phút</button>
+        <button onclick="setTimer(60, this)">60 Phút</button>
+        <button onclick="setTimer(5, this)">Nghỉ 5P</button>
+        <button onclick="setTimer(15, this)">Nghỉ 15P</button>
+    </div>
+
+    <div class="timer-display" id="time">25:00</div>
+
+    <div class="controls">
+        <button class="btn-main btn-start" id="startBtn" onclick="toggleTimer()">Bắt đầu</button>
+        <button class="btn-main btn-reset" onclick="resetTimer()">Đặt lại</button>
+    </div>
+
+    <script>
+        let timeLeft = 25 * 60;
+        let timerId = null;
+        let defaultTime = 25 * 60;
+
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('time').innerText = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function setTimer(minutes, btnElement) {
+            clearInterval(timerId);
+            timerId = null;
+            document.getElementById('startBtn').innerText = 'Bắt đầu';
+            defaultTime = minutes * 60;
+            timeLeft = defaultTime;
+            updateDisplay();
+
+            document.querySelectorAll('.btn-group button').forEach(b => b.classList.remove('active'));
+            if(btnElement) btnElement.classList.add('active');
+        }
+
+        function toggleTimer() {
+            const startBtn = document.getElementById('startBtn');
+            if (timerId === null) {
+                timerId = setInterval(() => {
+                    if (timeLeft > 0) {
+                        timeLeft--;
+                        updateDisplay();
+                    } else {
+                        clearInterval(timerId);
+                        timerId = null;
+                        alert('Đã hết giờ tập trung! Hãy nghỉ ngơi chút nhé.');
+                        startBtn.innerText = 'Bắt đầu';
+                    }
+                }, 1000);
+                startBtn.innerText = 'Tạm dừng';
+            } else {
+                clearInterval(timerId);
+                timerId = null;
+                startBtn.innerText = 'Tiếp tục';
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerId);
+            timerId = null;
+            timeLeft = defaultTime;
+            updateDisplay();
+            document.getElementById('startBtn').innerText = 'Bắt đầu';
+        }
+    </script>
+</body>
+</html>

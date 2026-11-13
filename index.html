@@ -3,206 +3,1666 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cổng Ôn Tập & Tài Liệu </title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background: #f0f4f8; color: #333; line-height: 1.6; }
-        
-        header { 
-            background: linear-gradient(135deg, #0056b3, #0080ff); 
-            color: white; 
-            text-align: center; 
-            padding: 2.5rem 1rem; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .logo-placeholder {
-            width: 70px; height: 70px; background: white; color: #0056b3;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; font-weight: bold; margin: 0 auto 12px auto;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        header h1 { font-size: 2.2rem; margin-bottom: 5px; }
-        header p { font-size: 1.1rem; opacity: 0.95; }
-        .school-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600;}
+    <title>Cổng Ôn Tập & Tài Liệu Trực Tuyến - K71</title>
 
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        
-        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; border-left: 5px solid #0056b3; }
-        .card h2 { color: #0056b3; margin-bottom: 15px; font-size: 1.4rem; }
+    <!-- ================= KHỞI TẠO MÀU TOÀN CỤC NGAY LẬP TỨC (TRÁNH CHỚP MÀU) ================= -->
+    <script>
+        (function() {
+            try {
+                const savedColor = localStorage.getItem('k71_theme_color') || '#e58547';
+                const savedTheme = localStorage.getItem('k71_theme') || 'dark';
+
+                function hexToRgb(hex) {
+                    hex = hex.replace('#', '');
+                    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+                    const num = parseInt(hex, 16);
+                    return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+                }
+                function adjustBrightness(hex, percent) {
+                    const { r, g, b } = hexToRgb(hex);
+                    const amt = Math.round(2.55 * percent);
+                    const R = Math.min(255, Math.max(0, r + amt));
+                    const G = Math.min(255, Math.max(0, g + amt));
+                    const B = Math.min(255, Math.max(0, b + amt));
+                    return '#' + ((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1);
+                }
+
+                const rgb = hexToRgb(savedColor);
+                const rgbStr = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+                const hoverHex = adjustBrightness(savedColor, -15);
+
+                const root = document.documentElement;
+                root.style.setProperty('--primary-color', savedColor);
+                root.style.setProperty('--primary-hover', hoverHex);
+                root.style.setProperty('--primary-rgb', rgbStr);
+                root.style.setProperty('--primary-light', `rgba(${rgbStr}, 0.14)`);
+                root.style.setProperty('--primary-glow', `rgba(${rgbStr}, 0.35)`);
+                root.style.setProperty('--sidebar-active-bg', `rgba(${rgbStr}, 0.16)`);
+                root.style.setProperty('--sidebar-active-text', savedColor);
+                root.style.setProperty('--sidebar-active-indicator', savedColor);
+                root.style.setProperty('--sidebar-label', savedColor);
+                root.style.setProperty('--primary', savedColor);
+                root.style.setProperty('--accent-orange', savedColor);
+
+                if (savedTheme === 'light') {
+                    root.classList.add('light-mode');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <style>
+        /* ================= HỆ THỐNG BIẾN GIAO DIỆN TẬP TRUNG (CENTRALIZED THEME) ================= */
+        :root {
+            /* Biến màu chủ đạo toàn cầu */
+            --primary-color: #e58547;
+            --primary-hover: #cf7337;
+            --primary-rgb: 229, 133, 71;
+            --primary-light: rgba(var(--primary-rgb), 0.14);
+            --primary-glow: rgba(var(--primary-rgb), 0.35);
+
+            /* Thanh Menu bên trái (Sidebar) */
+            --sidebar-bg: #141210;
+            --sidebar-border: #231d19;
+            --sidebar-hover: #1f1915;
+            --sidebar-active-bg: rgba(var(--primary-rgb), 0.16);
+            --sidebar-active-text: var(--primary-color);
+            --sidebar-active-indicator: var(--primary-color);
+            --sidebar-text: #ad9e92;
+            --sidebar-label: var(--primary-color);
+            --sidebar-width: 250px;
+
+            /* Khung nội dung chính (Chế độ Tối mặc định) */
+            --bg-body: #0d0c0b;
+            --bg-card: #191614;
+            --bg-card-hover: #221c17;
+            --topbar-bg: #141210;
+            --text-main: #ede3da;
+            --text-muted: #9c8e82;
+            --border-color: #26201b;
+            --border-highlight: rgba(var(--primary-rgb), 0.35);
+
+            /* Biến tương thích */
+            --primary: var(--primary-color);
+            --accent-orange: var(--primary-color);
+            --accent-glow: var(--primary-glow);
+
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 6px 22px rgba(0, 0, 0, 0.55);
+        }
+
+        /* Chế độ Sáng (Light Mode) */
+        body.light-mode, html.light-mode body {
+            --bg-body: #f4f6fa;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8fafc;
+            --topbar-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --border-highlight: rgba(var(--primary-rgb), 0.25);
+            --sidebar-active-bg: rgba(var(--primary-rgb), 0.18);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        /* Tùy chỉnh thanh cuộn đồng bộ màu tối và màu chủ đạo */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #141210;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2b231d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        /* ================= SIDEBAR (THANH MENU BÊN TRÁI) ================= */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--sidebar-border);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            min-height: 100vh;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Logo thương hiệu đồng bộ gradient màu chủ đạo */
+        .sidebar-brand {
+            padding: 22px 18px 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            color: #ffffff;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 12px var(--primary-glow);
+            transition: all 0.25s ease;
+        }
+
+        .brand-text h2 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #f7ede5;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 0.72rem;
+            color: #8c7b6f;
+            margin-top: 2px;
+        }
+
+        /* Tiêu đề NAVIGATION đổi theo màu chủ đạo */
+        .sidebar-nav-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            color: var(--sidebar-label);
+            text-transform: uppercase;
+            padding: 22px 18px 8px 18px;
+            user-select: none;
+            transition: color 0.25s ease;
+        }
+
+        /* Danh sách nút menu */
+        .sidebar-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 0 8px;
+            list-style: none;
+            flex: 1;
+        }
+
+        .sidebar-menu li {
+            position: relative;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: var(--sidebar-text);
+            text-decoration: none;
+            font-size: 0.94rem;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+
+        .nav-item svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            transition: stroke 0.18s;
+        }
+
+        /* Hover menu */
+        .nav-item:hover {
+            background-color: var(--sidebar-hover);
+            color: #f0e6dc;
+        }
+        .nav-item:hover svg {
+            stroke: var(--primary-color);
+        }
+
+        /* Active: Trạng thái được chọn đồng bộ màu chủ đạo */
+        .nav-item.active {
+            background-color: var(--sidebar-active-bg);
+            color: var(--sidebar-active-text);
+            font-weight: 600;
+        }
+
+        .nav-item.active svg {
+            stroke: var(--sidebar-active-text);
+        }
+
+        /* Chỉ báo vạch màu mép trái đổi theo màu chủ đạo */
+        .nav-item.active::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background-color: var(--sidebar-active-indicator);
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 0 10px var(--primary-glow);
+            transition: all 0.25s ease;
+        }
+
+        /* Chân trang Sidebar */
+        .sidebar-footer {
+            padding: 16px 18px;
+            border-top: 1px solid var(--sidebar-border);
+            font-size: 0.78rem;
+            color: #7b6d63;
+        }
+        .sidebar-footer strong {
+            color: #baa89b;
+        }
+
+        /* ================= VÙNG NỘI DUNG CHÍNH (MAIN WRAPPER) ================= */
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            height: 100vh;
+            overflow-y: auto;
+            background-color: var(--bg-body);
+        }
+
+        /* Topbar điều hướng trên cùng */
+        .topbar {
+            background: var(--topbar-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 90;
+            box-shadow: var(--shadow-sm);
+            transition: background-color 0.25s, border-color 0.25s;
+        }
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-hamburger {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 7px;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        .topbar-title {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Container chứa các view */
+        .content-container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 26px 24px 60px 24px;
+        }
+
+        /* Section View: Ẩn mặc định, hiển thị khi active */
+        .section-view {
+            display: none;
+            animation: fadeIn 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .section-view.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Thẻ nội dung Card */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 26px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            transition: background-color 0.25s, border-color 0.25s;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.25s ease;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.96rem;
+            margin-bottom: 20px;
+        }
+
+        /* Banner Chào Mừng (Trang Chủ) */
+        .hero-banner {
+            background: linear-gradient(135deg, #181512 0%, #241c16 100%);
+            color: #ffffff;
+            padding: 32px 28px;
+            border-radius: var(--radius-md);
+            margin-bottom: 26px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(var(--primary-rgb), 0.3);
+            transition: border-color 0.25s ease;
+        }
+
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: -30px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(var(--primary-rgb), 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transition: background 0.25s ease;
+        }
+
+        .hero-banner h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .hero-banner p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+            max-width: 680px;
+            line-height: 1.55;
+            color: #ede3da;
+        }
+
+        .badge-k71 {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            color: #ffffff;
+            font-size: 0.8rem;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 8px rgba(var(--primary-rgb), 0.3);
+            transition: all 0.25s ease;
+        }
+
+        /* Lưới phím tắt điều hướng nhanh (Quick Cards) */
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-bottom: 26px;
+        }
+
+        .quick-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .quick-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+            background: var(--bg-card-hover);
+        }
+
+        .quick-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 14px;
+            background: rgba(var(--primary-rgb), 0.15);
+            color: var(--primary-color);
+            transition: all 0.25s ease;
+        }
+
+        .quick-card h3 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .quick-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+            margin-bottom: 14px;
+        }
+
+        .quick-card-btn {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.25s ease;
+        }
 
         /* Lưới môn học */
         .subject-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 16px;
             margin-top: 15px;
         }
+
         .subject-item {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 15px;
-            border-radius: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 22px 16px;
+            border-radius: 10px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.22s ease;
             text-decoration: none;
-            color: #2d3748;
+            color: var(--text-main);
             font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-sm);
         }
+
+        .subject-item span {
+            font-size: 2.3rem;
+            transition: transform 0.2s;
+        }
+
         .subject-item:hover {
-            background: #0056b3;
-            color: white;
+            background: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.35);
+        }
+
+        .subject-item:hover span {
+            transform: scale(1.12);
+        }
+
+        /* Khung Iframe */
+        .iframe-container {
+            width: 100%;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .iframe-toolbar {
+            background: #141210;
+            border-bottom: 1px solid var(--border-color);
+            padding: 11px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .iframe-box {
+            width: 100%;
+            border: none;
+            display: block;
+            background: var(--bg-body);
+        }
+
+        /* Ban sáng lập */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .member-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 22px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .member-card:hover {
+            border-color: var(--primary-color);
             transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,86,179,0.2);
+            box-shadow: 0 6px 16px rgba(var(--primary-rgb), 0.25);
         }
-        .subject-item span { font-size: 1.5rem; display: block; margin-bottom: 5px; }
 
-        .iframe-box { width: 100%; height: 420px; border: none; border-radius: 12px; margin-top: 10px; }
-
-        /* Khối Footer Thông tin liên hệ & Đội ngũ sáng lập */
-        footer { 
-            background: #ffffff; 
-            border-top: 2px solid #e2e8f0; 
-            padding: 30px 20px 0 20px; 
-            color: #444; 
-            margin-top: 50px;
+        .member-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(var(--primary-rgb), 0.15);
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px auto;
+            transition: all 0.25s ease;
         }
-        .footer-container {
-            max-width: 1000px;
-            margin: 0 auto;
+
+        .member-name {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .member-role {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+
+        /* ================= COLOR PICKER / BẢNG CHỌN MÀU GIAO DIỆN ================= */
+        .color-palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin: 18px 0;
+        }
+
+        .color-swatch-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background: var(--bg-card);
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+            position: relative;
+        }
+
+        .color-swatch-btn:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-highlight);
+            transform: translateY(-2px);
+        }
+
+        .color-swatch-btn.active {
+            border-color: var(--primary-color);
+            background: rgba(var(--primary-rgb), 0.12);
+            box-shadow: 0 0 12px rgba(var(--primary-rgb), 0.35);
+            font-weight: 700;
+        }
+
+        .color-swatch-circle {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .color-swatch-name {
+            font-size: 0.85rem;
+            flex: 1;
+            text-align: left;
+        }
+
+        .color-check-icon {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .color-swatch-btn.active .color-check-icon {
+            opacity: 1;
+        }
+
+        /* Custom color row */
+        .custom-color-row {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-color);
             display: flex;
             flex-wrap: wrap;
+            align-items: center;
             justify-content: space-between;
-            gap: 25px;
-            padding-bottom: 25px;
+            gap: 14px;
         }
-        .footer-info h3 { font-size: 1.2rem; color: #222; text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
-        .footer-info p { margin-bottom: 8px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
-        .footer-info a { color: #0056b3; text-decoration: none; }
-        .footer-info a:hover { text-decoration: underline; }
 
-        .btn-maps {
-            display: inline-block;
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 10px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-            transition: 0.2s;
+        .custom-color-info h4 {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-bottom: 2px;
         }
-        .btn-maps:hover { background: linear-gradient(135deg, #0056b3, #003d80); }
 
-        .team-box {
-            background: #f8fafc;
-            padding: 15px;
+        .custom-color-info p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .custom-color-inputs {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .custom-color-inputs input[type="color"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 44px;
+            height: 38px;
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            border-left: 4px solid #28a745;
-            max-width: 400px;
+            background: transparent;
+            cursor: pointer;
+            padding: 2px;
         }
-        .team-box h4 { color: #28a745; margin-bottom: 8px; font-size: 1.05rem; }
-        .team-members { list-style: none; padding: 0; }
-        .team-members li { font-size: 0.95rem; padding: 3px 0; font-weight: 600; color: #2d3748; }
 
-        .copyright-bar {
-            background: #0056b3;
-            color: white;
+        .custom-color-inputs input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        .custom-color-inputs input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 6px;
+        }
+
+        .custom-color-inputs input[type="text"] {
+            width: 105px;
+            padding: 8px 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: monospace;
+            font-size: 0.92rem;
             text-align: center;
-            padding: 12px 10px;
-            font-size: 0.9rem;
-            margin: 0 -20px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .custom-color-inputs input[type="text"]:focus {
+            border-color: var(--primary-color);
+        }
+
+        .btn-apply-color {
+            padding: 8px 16px;
+            background: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px var(--primary-glow);
+            transition: all 0.2s;
+        }
+
+        .btn-apply-color:hover {
+            background: var(--primary-hover);
+        }
+
+        /* ================= CÀI ĐẶT (SETTINGS) ================= */
+        .settings-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 15px;
+        }
+
+        .setting-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background: var(--bg-card);
+        }
+
+        .setting-info h4 {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 3px;
+        }
+
+        .setting-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Switch Toggle */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 26px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #362d26;
+            transition: .3s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px; width: 20px;
+            left: 3px; bottom: 3px;
+            background-color: #ede3da;
+            transition: .3s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+        input:checked + .slider:before {
+            transform: translateX(22px);
+        }
+
+        /* Modal chi tiết môn học */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-backdrop.show {
+            display: flex;
+        }
+
+        .modal-box {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            max-width: 550px;
+            width: 100%;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--border-color);
+            position: relative;
+            animation: zoomIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+        .modal-close:hover {
+            color: var(--text-main);
+        }
+
+        .modal-btn-primary {
+            padding: 10px 18px;
+            background: var(--primary-color);
+            color: #ffffff !important;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px var(--primary-glow);
+            transition: all 0.2s;
+        }
+        .modal-btn-primary:hover {
+            background: var(--primary-hover);
+            color: #ffffff !important;
+        }
+
+        .modal-btn-close {
+            padding: 10px 18px;
+            background: #362d26;
+            color: #ffffff !important;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .modal-btn-close:hover {
+            background: #4a3e35;
+            color: #ffffff !important;
+        }
+        body.light-mode .modal-btn-close, html.light-mode .modal-btn-close {
+            background: #475569;
+            color: #ffffff !important;
+            border-color: #334155;
+        }
+        body.light-mode .modal-btn-close:hover, html.light-mode .modal-btn-close:hover {
+            background: #334155;
+            color: #ffffff !important;
+        }
+
+        /* Mobile Overlay */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 95;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 868px) {
+            .sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                transform: translateX(-100%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .sidebar-overlay.open {
+                display: block;
+            }
+
+            .btn-hamburger {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .topbar {
+                padding: 12px 18px;
+            }
+
+            .content-container {
+                padding: 20px 16px 50px 16px;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.55rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Cổng Ôn Tập & Tài Liệu Trực Tuyến</h1>
-        <p>Nền tảng chia sẻ đề thi, tài liệu và đồng hành cùng học sinh trường ta vượt mọi kỳ thi!</p>
-    </header>
+    <!-- Lớp phủ màn mờ khi mở menu trên điện thoại -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar(false)"></div>
 
+    <!-- ================= SIDEBAR MENU (THEO HÌNH MẪU 100%) ================= -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Logo thương hiệu -->
+        <div class="sidebar-brand">
+            <div class="brand-icon">K71</div>
+            <div class="brand-text">
+                <h2>CỔNG ÔN TẬP</h2>
+                <p>Khóa K71 THPT</p>
+            </div>
         </div>
 
-        <!-- Khối Thư mục môn học -->
-        <div class="card">
-            <h2>📚 Thư Mục Tài Liệu Theo Môn Học</h2>
-            <p>Chọn môn học bạn muốn ôn tập để xem hệ thống đề kiểm tra, công thức và bài tập:</p>
+        <!-- Nhãn tiêu đề NAVIGATION đồng bộ màu chủ đạo -->
+        <div class="sidebar-nav-label">NAVIGATION</div>
+
+        <!-- Danh sách mục Menu -->
+        <ul class="sidebar-menu">
+            <li>
+                <a class="nav-item active" onclick="switchSection('overview', this)">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><line x1="7" y1="7" x2="7.01" y2="7"/><line x1="7" y1="17" x2="7.01" y2="17"/></svg>
+                    <span>Tổng Quan</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-item" onclick="switchSection('documents', this)">
+                    <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    <span>Tài Liệu Môn Học</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-item" onclick="switchSection('quiz', this)">
+                    <svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><polyline points="8 9 12 12 8 15"/><line x1="14" y1="15" x2="16" y2="15"/></svg>
+                    <span>Luyện Trắc Nghiệm</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-item" onclick="switchSection('pomodoro', this)">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>Tự Học Pomodoro</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-item" onclick="switchSection('team', this)">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>Ban Sáng Lập K71</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-item" onclick="switchSection('settings', this)">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    <span>Cài Đặt</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Chân trang sidebar -->
+        <div class="sidebar-footer">
+            <p>Hệ thống ôn thi <strong>K71</strong></p>
+            <p style="margin-top: 3px; font-size: 0.74rem;">Phiên bản v2.0 • 2026</p>
+        </div>
+    </aside>
+
+    <!-- ================= VÙNG NỘI DUNG CHÍNH (ĐỒNG BỘ MÀU TỐI) ================= -->
+    <div class="main-wrapper">
+        <!-- Topbar điều hướng trên cùng -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="btn-hamburger" onclick="toggleSidebar()" aria-label="Mở menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+                <div class="topbar-title" id="currentSectionTitle">
+                    🏠 Tổng Quan Cổng Ôn Tập
+                </div>
+            </div>
             
-            <div class="subject-grid">
-                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Toán!')">
-                    <span>📐</span> Toán Học
-                </a>
-                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Ngữ Văn!')">
-                    <span>📖</span> Ngữ Văn
-                </a>
-                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Tiếng Anh!')">
-                    <span>🌐</span> Tiếng Anh
-                </a>
-                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Vật Lý!')">
-                    <span>⚡</span> Vật Lý
-                </a>
-                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Hóa Học!')">
-                    <span>🧪</span> Hóa Học
-                </a>
-                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Sinh Học!')">
-                    <span>🧬</span> Sinh Học
-                </a>
-                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Lịch Sử!')">
-                    <span>📜</span> Lịch Sử
-                </a>
-                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn Địa Lý!')">
-                    <span>🌍</span> Địa Lý
-                </a>
-                <a href="#" class="subject-item" onclick="alert('Đang mở kho tài liệu môn GDKT & PL!')">
-                    <span>⚖️</span> GD Kinh Tế & Pháp Luật
-                </a>
+            <div class="topbar-right"></div>
+        </header>
+
+        <!-- Container chứa các phần nội dung (Chỉ hiện phần được bấm trên menu) -->
+        <main class="content-container">
+
+            <!-- ================= PHẦN 1: TỔNG QUAN (DASHBOARD) ================= -->
+            <section id="section-overview" class="section-view active">
+                <div class="hero-banner">
+                    <span class="badge-k71" style="margin-bottom: 12px; display: inline-block;">Khóa K71 Ôn Thi Tốt Nghiệp</span>
+                    <h1>Cổng Ôn Tập & Tài Liệu Trực Tuyến</h1>
+                    <p>Hệ thống ôn luyện toàn diện: tổng hợp ngân hàng đề kiểm tra, công thức tóm tắt, thi trắc nghiệm ngẫu nhiên và đồng hồ Pomodoro giúp bạn học sâu, nhớ lâu!</p>
+                </div>
+
+                <!-- Lưới phím tắt điều hướng nhanh -->
+                <div class="quick-grid">
+                    <div class="quick-card" onclick="triggerNav('documents')">
+                        <div>
+                            <div class="quick-card-icon">📚</div>
+                            <h3>Tài Liệu Môn Học</h3>
+                            <p>Kho đề thi, tóm tắt công thức và đề cương kiểm tra 9 môn học trọng tâm.</p>
+                        </div>
+                        <div class="quick-card-btn">Mở kho tài liệu ➔</div>
+                    </div>
+
+                    <div class="quick-card" onclick="triggerNav('quiz')">
+                        <div>
+                            <div class="quick-card-icon">📝</div>
+                            <h3>Luyện Thi Trắc Nghiệm</h3>
+                            <p>Đề thi chuẩn 15 câu trong 30 phút, bấm giờ và chấm điểm tự động.</p>
+                        </div>
+                        <div class="quick-card-btn">Làm đề ngay ➔</div>
+                    </div>
+
+                    <div class="quick-card" onclick="triggerNav('pomodoro')">
+                        <div>
+                            <div class="quick-card-icon">⏰</div>
+                            <h3>Tự Học Pomodoro</h3>
+                            <p>Đồng hồ bấm giờ 25P, 45P, 60P rèn luyện thói quen học tập trung tuyệt đối.</p>
+                        </div>
+                        <div class="quick-card-btn">Bật đồng hồ ➔</div>
+                    </div>
+
+                    <div class="quick-card" onclick="triggerNav('team')">
+                        <div>
+                            <div class="quick-card-icon">🚀</div>
+                            <h3>Ban Sáng Lập</h3>
+                            <p>Đội ngũ học sinh Khóa K71 xây dựng và duy trì hệ thống ôn tập trực tuyến.</p>
+                        </div>
+                        <div class="quick-card-btn">Xem thông tin nhóm ➔</div>
+                    </div>
+                </div>
+
+                <!-- Thẻ Hướng Dẫn Nhanh -->
+                <div class="card">
+                    <h2>🎯 Hướng Dẫn Sử Dụng Nhanh</h2>
+                    <ul style="padding-left: 20px; line-height: 1.8; color: var(--text-muted); font-size: 0.95rem;">
+                        <li><strong>Thanh Menu bên trái (Navigation):</strong> Bấm vào từng mục để hiển thị độc lập từng phần chức năng, tránh bị rối mắt.</li>
+                        <li><strong>Tài Liệu Môn Học:</strong> Bấm chọn môn học bạn muốn ôn tập để xem nhanh chuyên đề và tài liệu tương ứng.</li>
+                        <li><strong>Luyện Trắc Nghiệm:</strong> Chọn Khối lớp (10, 11, 12), Môn học và Kỳ thi (GK1, CK1, GK2, CK2) để tạo đề thi thử.</li>
+                        <li><strong>Pomodoro:</strong> Khởi động chu kỳ 25 phút học tập trung và 5 phút giải lao giúp bạn ghi nhớ bài học lâu hơn.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ================= PHẦN 2: TÀI LIỆU MÔN HỌC ================= -->
+            <section id="section-documents" class="section-view">
+                <div class="card">
+                    <h2>📚 Thư Mục Tài Liệu Theo Môn Học</h2>
+                    <p class="card-desc">Bấm vào bất kỳ môn học nào bên dưới để xem kho tài liệu, tóm tắt lý thuyết và hệ thống bài tập:</p>
+                    
+                    <div class="subject-grid">
+                        <div class="subject-item" onclick="openSubjectModal('Toán Học', '📐', 'Hàm số, Hình học không gian, Tích phân, Xác suất thống kê, Đề thi thử đại học có đáp án chi tiết.')">
+                            <span>📐</span> Toán Học
+                        </div>
+                        <div class="subject-item" onclick="openSubjectModal('Ngữ Văn', '📖', 'Sơ đồ tư duy các tác phẩm văn học, bộ đề nghị luận xã hội và mở bài - kết bài mẫu đạt điểm 9+.')">
+                            <span>📖</span> Ngữ Văn
+                        </div>
+                        <div class="subject-item" onclick="openSubjectModal('Tiếng Anh', '🌐', 'Bộ từ vựng trọng tâm theo chủ đề, chuyên đề ngữ pháp then chốt và các bẫy thường gặp trong đề thi.')">
+                            <span>🌐</span> Tiếng Anh
+                        </div>
+                        <div class="subject-item" onclick="openSubjectModal('Vật Lý', '⚡', 'Tập hợp các công thức Dao động cơ, Sóng cơ, Điện xoay chiều và tuyển tập câu hỏi vận dụng cao.')">
+                            <span>⚡</span> Vật Lý
+                        </div>
+                        <div class="subject-item" onclick="openSubjectModal('Hóa Học', '🧪', 'Phương pháp giải nhanh Hóa hữu cơ, Kim loại kiềm, Este - Lipit và bảng phản ứng đặc trưng.')">
+                            <span>🧪</span> Hóa Học
+                        </div>
+                        <div class="subject-item" onclick="openSubjectModal('Sinh Học', '🧬', 'Cơ chế di truyền và biến dị, Quy luật di truyền Men-đen, Sinh thái học và câu hỏi lý thuyết đếm.')">
+                            <span>🧬</span> Sinh Học
+                        </div>
+                        <div class="subject-item" onclick="openSubjectModal('Lịch Sử', '📜', 'Bảng mốc thời gian lịch sử Việt Nam 1919 - 1975, Lịch sử thế giới hiện đại và mẹo nhớ sự kiện.')">
+                            <span>📜</span> Lịch Sử
+                        </div>
+                        <div class="subject-item" onclick="openSubjectModal('Địa Lý', '🌍', 'Kỹ năng khai thác Atlat Địa lí Việt Nam, nhận dạng biểu đồ và phân tích kinh tế các vùng.')">
+                            <span>🌍</span> Địa Lý
+                        </div>
+                        <div class="subject-item" onclick="openSubjectModal('GD Kinh Tế & Pháp Luật', '⚖️', 'Hệ thống quy phạm pháp luật, quyền và nghĩa vụ công dân, tình huống thực tế thi trắc nghiệm.')">
+                            <span>⚖️</span> GD Kinh Tế & PL
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PHẦN 3: LUYỆN TRẮC NGHIỆM ================= -->
+            <section id="section-quiz" class="section-view">
+                <div class="card" style="padding-bottom: 16px;">
+                    <h2>📝 Khu Vực Luyện Tập Trắc Nghiệm (15 Câu / 30 Phút)</h2>
+                    <p class="card-desc">Lựa chọn Khối lớp, Môn học và Giai đoạn (GK1, CK1, GK2, CK2) để làm bài thi trực tiếp với hệ thống chấm điểm tức thì:</p>
+                </div>
+
+                <div class="iframe-container">
+                    <div class="iframe-toolbar">
+                        <span>💡 Đề thi mô phỏng định dạng chuẩn của Bộ GD&ĐT</span>
+                        <a href="quiz.html?v=99" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Mở rộng trang mới ↗</a>
+                    </div>
+                    <iframe src="quiz.html?v=99" class="iframe-box" id="quizIframe" style="height: 840px;"></iframe>
+                </div>
+            </section>
+
+            <!-- ================= PHẦN 4: ĐỒNG HỒ POMODORO ================= -->
+            <section id="section-pomodoro" class="section-view">
+                <div class="card" style="text-align: center; max-width: 700px; margin: 0 auto 24px auto;">
+                    <h2>⏰ Khu Vực Tự Học Tập Trung (Pomodoro)</h2>
+                    <p class="card-desc">Chọn mốc thời gian (25P, 45P, 60P) và khởi động chu kỳ học không xao nhãng:</p>
+                    
+                    <div class="iframe-container" style="box-shadow: none; border: 1px solid var(--border-color); background: var(--bg-card);">
+                        <iframe src="pomodoro.html" class="iframe-box" id="pomodoroIframe" style="height: 380px;"></iframe>
+                    </div>
+                </div>
+
+                <div class="card" style="max-width: 700px; margin: 0 auto;">
+                    <h3 style="color: var(--text-main); margin-bottom: 10px; font-size: 1.1rem;">💡 Lợi ích của phương pháp Pomodoro khi ôn thi:</h3>
+                    <ul style="padding-left: 20px; line-height: 1.7; color: var(--text-muted); font-size: 0.95rem;">
+                        <li><strong>Chống trì hoãn:</strong> Chia nhỏ thời gian học giúp bạn dễ dàng bắt tay vào việc hơn.</li>
+                        <li><strong>Bảo vệ mắt & não:</strong> 5 phút nghỉ giữa giờ giúp giảm căng thẳng và tăng khả năng tiếp thu bài mới.</li>
+                        <li><strong>Duy trì năng lượng bền bỉ:</strong> Học liên tục cả ngày mà không bị kiệt sức trước kỳ thi.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ================= PHẦN 5: BAN SÁNG LẬP & LIÊN HỆ ================= -->
+            <section id="section-team" class="section-view">
+                <div class="card">
+                    <h2>🚀 Ban Sáng Lập & Phát Triển Website</h2>
+                    <p class="card-desc">Dự án được xây dựng và duy trì bởi nhóm học sinh <strong>Khóa K71</strong> với mục tiêu hỗ trợ bạn bè cùng vượt qua các kỳ thi:</p>
+
+                    <div class="team-grid">
+                        <div class="member-card">
+                            <div class="member-avatar">👨‍💻</div>
+                            <div class="member-name">Trần Gia Bảo</div>
+                            <div class="member-role">Ban Phát Triển K71</div>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-avatar">👨‍💻</div>
+                            <div class="member-name">Phạm Thành Phát</div>
+                            <div class="member-role">Ban Phát Triển K71</div>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-avatar">👨‍💻</div>
+                            <div class="member-name">Nguyễn Thành Đạt</div>
+                            <div class="member-role">Ban Phát Triển K71</div>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-avatar">👨‍💻</div>
+                            <div class="member-name">Bùi Tiến Lâm</div>
+                            <div class="member-role">Ban Phát Triển K71</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="border-left: 4px solid var(--primary-color);">
+                    <h3 style="color: var(--text-main); margin-bottom: 8px;">Thông Tin Dự Án</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Cổng Ôn Tập & Tài Liệu Trực Tuyến K71 là dự án học tập phi thương mại phục vụ học sinh trung học phổ thông toàn trường.</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">© 2026 Bản quyền thuộc về Nhóm phát triển K71.</p>
+                </div>
+            </section>
+
+            <!-- ================= PHẦN 6: CÀI ĐẶT & TÙY CHỌN ================= -->
+            <section id="section-settings" class="section-view">
+                <!-- KHỐI CHỌN MÀU THEME TOÀN CẦU (YÊU CẦU MỤC 3) -->
+                <div class="card">
+                    <h2>🎨 THEME COLOR / MÀU GIAO DIỆN</h2>
+                    <p class="card-desc">Chọn màu sắc chủ đạo yêu thích. Toàn bộ thanh Menu bên trái, nút bấm, tiêu đề, hiệu ứng active và đồng hồ sẽ được đồng bộ ngay lập tức:</p>
+
+                    <!-- Lưới 8 màu dựng sẵn -->
+                    <div class="color-palette-grid">
+                        <!-- 1. Orange -->
+                        <button type="button" class="color-swatch-btn active" data-color="#e58547" onclick="applyThemeColor('#e58547')" title="Cam (Orange)">
+                            <span class="color-swatch-circle" style="background-color: #e58547;"></span>
+                            <span class="color-swatch-name">Cam / Orange</span>
+                            <span class="color-check-icon">✓</span>
+                        </button>
+                        <!-- 2. Blue -->
+                        <button type="button" class="color-swatch-btn" data-color="#2563eb" onclick="applyThemeColor('#2563eb')" title="Xanh Dương (Blue)">
+                            <span class="color-swatch-circle" style="background-color: #2563eb;"></span>
+                            <span class="color-swatch-name">Xanh / Blue</span>
+                            <span class="color-check-icon">✓</span>
+                        </button>
+                        <!-- 3. Purple -->
+                        <button type="button" class="color-swatch-btn" data-color="#8b5cf6" onclick="applyThemeColor('#8b5cf6')" title="Tím (Purple)">
+                            <span class="color-swatch-circle" style="background-color: #8b5cf6;"></span>
+                            <span class="color-swatch-name">Tím / Purple</span>
+                            <span class="color-check-icon">✓</span>
+                        </button>
+                        <!-- 4. Green -->
+                        <button type="button" class="color-swatch-btn" data-color="#10b981" onclick="applyThemeColor('#10b981')" title="Xanh Lá (Green)">
+                            <span class="color-swatch-circle" style="background-color: #10b981;"></span>
+                            <span class="color-swatch-name">Xanh Lá / Green</span>
+                            <span class="color-check-icon">✓</span>
+                        </button>
+                        <!-- 5. Red -->
+                        <button type="button" class="color-swatch-btn" data-color="#ef4444" onclick="applyThemeColor('#ef4444')" title="Đỏ (Red)">
+                            <span class="color-swatch-circle" style="background-color: #ef4444;"></span>
+                            <span class="color-swatch-name">Đỏ / Red</span>
+                            <span class="color-check-icon">✓</span>
+                        </button>
+                        <!-- 6. Pink -->
+                        <button type="button" class="color-swatch-btn" data-color="#ec4899" onclick="applyThemeColor('#ec4899')" title="Hồng (Pink)">
+                            <span class="color-swatch-circle" style="background-color: #ec4899;"></span>
+                            <span class="color-swatch-name">Hồng / Pink</span>
+                            <span class="color-check-icon">✓</span>
+                        </button>
+                        <!-- 7. Cyan -->
+                        <button type="button" class="color-swatch-btn" data-color="#06b6d4" onclick="applyThemeColor('#06b6d4')" title="Xanh Lơ (Cyan)">
+                            <span class="color-swatch-circle" style="background-color: #06b6d4;"></span>
+                            <span class="color-swatch-name">Xanh Lơ / Cyan</span>
+                            <span class="color-check-icon">✓</span>
+                        </button>
+                        <!-- 8. Teal -->
+                        <button type="button" class="color-swatch-btn" data-color="#14b8a6" onclick="applyThemeColor('#14b8a6')" title="Xanh Ngọc (Teal)">
+                            <span class="color-swatch-circle" style="background-color: #14b8a6;"></span>
+                            <span class="color-swatch-name">Xanh Ngọc / Teal</span>
+                            <span class="color-check-icon">✓</span>
+                        </button>
+                    </div>
+
+                    <!-- Tùy chỉnh mã HEX riêng -->
+                    <div class="custom-color-row">
+                        <div class="custom-color-info">
+                            <h4>Tùy chọn mã màu HEX riêng:</h4>
+                            <p>Chọn bất kỳ sắc màu nào từ bảng màu trực quan hoặc nhập mã HEX tùy chỉnh</p>
+                        </div>
+                        <div class="custom-color-inputs">
+                            <input type="color" id="customColorPicker" value="#e58547" oninput="onCustomColorInput(this.value)" title="Chọn màu tùy ý">
+                            <input type="text" id="customHexText" value="#E58547" maxlength="7" placeholder="#e58547" onchange="onCustomHexTextChange(this.value)">
+                            <button type="button" class="btn-apply-color" onclick="applyCustomHex()">Áp dụng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KHỐI CHẾ ĐỘ SÁNG / TỐI & TIỆN ÍCH -->
+                <div class="card">
+                    <h2>⚙️ Chế Độ Hiển Thị & Tiện Ích</h2>
+                    <p class="card-desc">Tùy biến không gian học tập trực quan và hiệu quả theo sở thích của bạn:</p>
+
+                    <div class="settings-list">
+                        <div class="setting-row">
+                            <div class="setting-info">
+                                <h4>Chế Độ Tối (Dark Theme Mặc Định)</h4>
+                                <p>Giao diện tối giúp dịu mắt khi học đêm. Bỏ chọn để chuyển sang Chế độ Sáng.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked id="darkModeSwitch" onchange="handleDarkModeToggle(this.checked)">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div class="setting-info">
+                                <h4>Âm Thanh Thông Báo</h4>
+                                <p>Phát chuông thông báo khi hoàn thành một phiên Pomodoro hoặc khi nộp bài thi.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked id="soundSwitch">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div class="setting-info">
+                                <h4>Tự Động Lưu Trạng Thái Tab</h4>
+                                <p>Ghi nhớ phần bạn đang mở để khi tải lại trang sẽ không bị mất vị trí.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked id="saveTabSwitch">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin-bottom: 10px; color: var(--text-main);">📌 Thông Tin Phiên Bản</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">• Cổng Ôn Tập & Tài Liệu Trực Tuyến - Bản dựng v2.5 (Khóa K71)</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 5px;">• Tích hợp hệ thống đồng bộ màu chủ đạo toàn cầu (Global Theme Color Synchronization).</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Modal Chi Tiết Môn Học -->
+    <div class="modal-backdrop" id="subjectModal" onclick="closeSubjectModal(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeSubjectModal()">&times;</button>
+            <div style="font-size: 2.8rem; margin-bottom: 10px;" id="modalSubjectIcon">📐</div>
+            <h2 id="modalSubjectTitle" style="color: var(--primary-color); margin-bottom: 12px;">Toán Học</h2>
+            <p id="modalSubjectDesc" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 22px;">Nội dung tài liệu...</p>
+            <div style="display: flex; gap: 12px; justify-content: flex-end;">
+                <button class="modal-btn-primary" onclick="triggerNav('quiz')">Luyện Thi Môn Này ➔</button>
+                <button class="modal-btn-close" onclick="closeSubjectModal()">Đóng</button>
             </div>
         </div>
-
-    <!-- Khối Pomodoro -->
-    <div class="card" style="text-align: center;">
-        <h2>⏰ Khu Vực Tự Học Tập Trung (Pomodoro)</h2>
-        <p>Chọn mốc thời gian (25P, 45P, 60P) và bắt đầu tập trung ôn bài nhé!</p>
-        <iframe src="pomodoro.html" class="iframe-box"></iframe>
     </div>
 
-    <!-- Khu vực Luyện Đề Trắc Nghiệm -->
-    <div class="card" style="text-align: center; margin-top: 25px;">
-        <h2>📝 Khu Vực Luyện Tập Trắc Nghiệm (15 Câu / 30 Phút)</h2>
-        <p>Chọn Khối lớp, Môn học và Giai đoạn (GK1, CK1, GK2, CK2) để bắt đầu làm đề ngẫu nhiên!</p>
-       <iframe src="quiz.html?v=99" class="iframe-box" style="width: 100%; height: 780px; border: none;"></iframe>
-    </div>
-</div>
-  
-<!-- Footer Liên hệ & Đội ngũ phát triển -->
-<footer class="site-footer">
-    <div class="footer-content">
-        <h3>Cổng Ôn Tập & Tài Liệu Trực Tuyến</h3>
-        <p>Nền tảng hỗ trợ học tập và quản lý thời gian hiệu quả dành cho học sinh trung học phổ thông.</p>
-        <p class="copyright">
-            &copy; 2026 Bản quyền thuộc về nhóm phát triển (Khóa K71).
-        </p>
-    </div>
+    <!-- ================= SCRIPT ĐIỀU HƯỚNG VÀ HỆ THỐNG THEME TOÀN CẦU ================= -->
+    <script>
+        const titles = {
+            'overview': '🏠 Tổng Quan Cổng Ôn Tập',
+            'documents': '📚 Thư Mục Tài Liệu Môn Học',
+            'quiz': '📝 Khu Vực Luyện Tập Trắc Nghiệm',
+            'pomodoro': '⏰ Khu Vực Tự Học Pomodoro',
+            'team': '🚀 Ban Sáng Lập & Giới Thiệu K71',
+            'settings': '⚙️ Cài Đặt Giao Diện & Tiện Ích'
+        };
 
-            <!-- Đội ngũ sáng lập Khóa K71 -->
-            <div class="team-box">
-                <h4>🚀 Ban Sáng Lập & Phát Triển Website</h4>
-                <p style="font-size: 0.9rem; margin-bottom: 8px; color: #666;">Dự án cổng thông tin & ôn thi trực tuyến được xây dựng bởi học sinh <strong>Khóa K71</strong>:</p>
-                <ul class="team-members">
-                    <li>👨‍💻 Trần Gia Bảo</li>
-                    <li>👨‍💻 Phạm Thành Phát</li>
-                    <li>👨‍💻 Nguyễn Thành Đạt</li>
-                    <li>👨‍💻 Bùi Tiến Lâm</li>
-                </ul>
-            </div>
-        </div>
+        const navKeys = ['overview', 'documents', 'quiz', 'pomodoro', 'team', 'settings'];
 
-        <div class="copyright-bar">
-            Bản quyền thuộc về Nhóm phát triển K71 © 2026
-        </div>
-    </footer>
+        // Chuyển tab khi bấm nút menu bên sidebar
+        function switchSection(sectionId, el) {
+            document.querySelectorAll('.sidebar-menu .nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
 
+            if (el) {
+                el.classList.add('active');
+            } else {
+                const targetIdx = navKeys.indexOf(sectionId);
+                const items = document.querySelectorAll('.sidebar-menu .nav-item');
+                if (targetIdx !== -1 && items[targetIdx]) {
+                    items[targetIdx].classList.add('active');
+                }
+            }
+
+            // Hiển thị section view tương ứng và ẩn các section khác
+            document.querySelectorAll('.section-view').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            const targetSection = document.getElementById('section-' + sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Cập nhật tiêu đề Topbar
+            const titleEl = document.getElementById('currentSectionTitle');
+            if (titleEl && titles[sectionId]) {
+                titleEl.innerText = titles[sectionId];
+            }
+
+            // Lưu URL hash để tiện F5 hoặc chia sẻ link
+            window.location.hash = sectionId;
+
+            // Cuộn lên đầu trang mượt mà
+            document.querySelector('.main-wrapper').scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Đóng menu nếu đang ở màn hình điện thoại
+            toggleSidebar(false);
+        }
+
+        // Bấm các nút tắt ở Trang chủ để chuyển trang
+        function triggerNav(sectionId) {
+            switchSection(sectionId);
+            if (document.getElementById('subjectModal')) {
+                closeSubjectModal();
+            }
+        }
+
+        // Đóng/Mở Sidebar trên Mobile
+        function toggleSidebar(forceState) {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            if (forceState !== undefined) {
+                if (forceState) {
+                    sidebar.classList.add('open');
+                    overlay.classList.add('open');
+                } else {
+                    sidebar.classList.remove('open');
+                    overlay.classList.remove('open');
+                }
+            } else {
+                sidebar.classList.toggle('open');
+                overlay.classList.toggle('open');
+            }
+        }
+
+        // Mở Modal chi tiết tài liệu môn học
+        function openSubjectModal(name, icon, desc) {
+            document.getElementById('modalSubjectTitle').innerText = 'Môn: ' + name;
+            document.getElementById('modalSubjectIcon').innerText = icon;
+            document.getElementById('modalSubjectDesc').innerText = desc;
+            document.getElementById('subjectModal').classList.add('show');
+        }
+
+        // Đóng Modal môn học
+        function closeSubjectModal(e) {
+            if (!e || e.target.id === 'subjectModal' || e.target.classList.contains('modal-close')) {
+                document.getElementById('subjectModal').classList.remove('show');
+            }
+        }
+
+        /* ================= HỆ THỐNG QUẢN LÝ THEME TOÀN CỤC ================= */
+        function hexToRgb(hex) {
+            hex = hex.replace('#', '');
+            if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+            const num = parseInt(hex, 16);
+            return {
+                r: (num >> 16) & 255,
+                g: (num >> 8) & 255,
+                b: num & 255
+            };
+        }
+
+        function adjustBrightness(hex, percent) {
+            const { r, g, b } = hexToRgb(hex);
+            const amt = Math.round(2.55 * percent);
+            const R = Math.min(255, Math.max(0, r + amt));
+            const G = Math.min(255, Math.max(0, g + amt));
+            const B = Math.min(255, Math.max(0, b + amt));
+            return '#' + ((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1);
+        }
+
+        // Áp dụng màu chủ đạo toàn cầu cho toàn trang, menu và iframes
+        function applyThemeColor(hex, save = true) {
+            if (!hex || !/^#[0-9A-Fa-f]{6}$/i.test(hex)) return;
+
+            const rgb = hexToRgb(hex);
+            const rgbStr = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+            const hoverHex = adjustBrightness(hex, -15);
+
+            const root = document.documentElement;
+            root.style.setProperty('--primary-color', hex);
+            root.style.setProperty('--primary-hover', hoverHex);
+            root.style.setProperty('--primary-rgb', rgbStr);
+            root.style.setProperty('--primary-light', `rgba(${rgbStr}, 0.14)`);
+            root.style.setProperty('--primary-glow', `rgba(${rgbStr}, 0.35)`);
+            root.style.setProperty('--sidebar-active-bg', `rgba(${rgbStr}, 0.16)`);
+            root.style.setProperty('--sidebar-active-text', hex);
+            root.style.setProperty('--sidebar-active-indicator', hex);
+            root.style.setProperty('--sidebar-label', hex);
+            root.style.setProperty('--primary', hex);
+            root.style.setProperty('--accent-orange', hex);
+
+            // Cập nhật giao diện Color Picker
+            updateColorPickerUI(hex);
+
+            // Lưu vào localStorage
+            if (save) {
+                localStorage.setItem('k71_theme_color', hex);
+            }
+
+            // Đồng bộ lập tức sang các iframes (Pomodoro & Quiz)
+            syncIframes(hex);
+        }
+
+        // Cập nhật trạng thái hiển thị của các nút chọn màu
+        function updateColorPickerUI(hex) {
+            const normalized = hex.toLowerCase();
+            document.querySelectorAll('.color-swatch-btn').forEach(btn => {
+                const btnColor = btn.getAttribute('data-color').toLowerCase();
+                if (btnColor === normalized) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            const customPicker = document.getElementById('customColorPicker');
+            const customHex = document.getElementById('customHexText');
+            if (customPicker) customPicker.value = hex;
+            if (customHex) customHex.value = hex.toUpperCase();
+        }
+
+        // Sự kiện khi người dùng kéo chọn màu ở color picker
+        function onCustomColorInput(val) {
+            const customHex = document.getElementById('customHexText');
+            if (customHex) customHex.value = val.toUpperCase();
+            applyThemeColor(val, true);
+        }
+
+        // Sự kiện khi người dùng gõ mã HEX vào ô text
+        function onCustomHexTextChange(val) {
+            let hex = val.trim();
+            if (!hex.startsWith('#')) hex = '#' + hex;
+            if (/^#[0-9A-Fa-f]{6}$/i.test(hex)) {
+                applyThemeColor(hex, true);
+            } else {
+                alert('Mã màu HEX không hợp lệ! Vui lòng nhập định dạng ví dụ: #E58547');
+            }
+        }
+
+        // Nút bấm "Áp dụng" mã HEX tùy chọn
+        function applyCustomHex() {
+            const customHex = document.getElementById('customHexText');
+            if (customHex) {
+                onCustomHexTextChange(customHex.value);
+            }
+        }
+
+        // Đồng bộ chủ đề màu sắc và chế độ sáng/tối sang iframes
+        function syncIframes(hex) {
+            const activeHex = hex || localStorage.getItem('k71_theme_color') || '#e58547';
+            const isLight = document.body.classList.contains('light-mode') || document.documentElement.classList.contains('light-mode');
+            const iframes = document.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+                try {
+                    if (iframe.contentWindow) {
+                        if (typeof iframe.contentWindow.setThemeColor === 'function') {
+                            iframe.contentWindow.setThemeColor(activeHex);
+                        }
+                        if (typeof iframe.contentWindow.setThemeMode === 'function') {
+                            iframe.contentWindow.setThemeMode(isLight ? 'light' : 'dark');
+                        }
+                        iframe.contentWindow.postMessage({
+                            type: 'THEME_SYNC',
+                            color: activeHex,
+                            mode: isLight ? 'light' : 'dark'
+                        }, '*');
+                    }
+                } catch (e) {
+                    console.warn('Iframe sync notice:', e);
+                }
+            });
+        }
+
+        // Bật / tắt chế độ Dark Mode
+        function handleDarkModeToggle(isDark) {
+            if (isDark) {
+                document.body.classList.remove('light-mode');
+                document.documentElement.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.documentElement.classList.add('light-mode');
+            }
+            localStorage.setItem('k71_theme', isDark ? 'dark' : 'light');
+
+            // Đồng bộ sang iframes
+            const activeColor = localStorage.getItem('k71_theme_color') || '#e58547';
+            syncIframes(activeColor);
+        }
+
+        // Khởi tạo trang khi tải xong DOM
+        window.addEventListener('DOMContentLoaded', () => {
+            // Đọc cấu hình Theme Color
+            const savedColor = localStorage.getItem('k71_theme_color') || '#e58547';
+            applyThemeColor(savedColor, false);
+
+            // Đọc cấu hình Dark Mode
+            const savedTheme = localStorage.getItem('k71_theme');
+            const switchEl = document.getElementById('darkModeSwitch');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                document.documentElement.classList.add('light-mode');
+                if (switchEl) switchEl.checked = false;
+            } else {
+                document.body.classList.remove('light-mode');
+                document.documentElement.classList.remove('light-mode');
+                if (switchEl) switchEl.checked = true;
+            }
+
+            // Gắn sự kiện khi iframe tải xong để đồng bộ ngay lập tức
+            document.querySelectorAll('iframe').forEach(iframe => {
+                iframe.addEventListener('load', () => {
+                    syncIframes(savedColor);
+                });
+            });
+
+            // Đọc hash trên URL khi mở trang hoặc F5
+            const hash = window.location.hash.replace('#', '');
+            if (hash && titles[hash]) {
+                switchSection(hash);
+            }
+        });
+    </script>
 </body>
 </html>
