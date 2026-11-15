@@ -2211,16 +2211,451 @@
     }
 };
 
-        // Sao chép đầy đủ 40 câu Reading & 40 câu Listening cho bộ Cam 18 và Cam 17
-        CAMBRIDGE_DB.cam18_t1 = JSON.parse(JSON.stringify(CAMBRIDGE_DB.cam19_t1));
-        CAMBRIDGE_DB.cam18_t1.readingPassages[0].title = "READING PASSAGE 1: Urban farming in Paris (Q1–13)";
-        CAMBRIDGE_DB.cam18_t1.readingPassages[1].title = "READING PASSAGE 2: Forest management in Pennsylvania (Q14–26)";
-        CAMBRIDGE_DB.cam18_t1.readingPassages[2].title = "READING PASSAGE 3: Conquering Earth's space debris problem (Q27–40)";
+        function buildReadingPassages(passages) {
+            return passages.map((passage, pIdx) => ({
+                passageNum: pIdx + 1,
+                title: passage.title,
+                subtitle: passage.subtitle,
+                paragraphs: passage.paragraphs.map((text, idx) => ({
+                    label: String.fromCharCode(65 + idx),
+                    text
+                })),
+                questions: passage.questions
+            }));
+        }
 
-        CAMBRIDGE_DB.cam17_t1 = JSON.parse(JSON.stringify(CAMBRIDGE_DB.cam19_t1));
-        CAMBRIDGE_DB.cam17_t1.readingPassages[0].title = "READING PASSAGE 1: The development of the London underground railway (Q1–13)";
-        CAMBRIDGE_DB.cam17_t1.readingPassages[1].title = "READING PASSAGE 2: Stadiums: past, present and future (Q14–26)";
-        CAMBRIDGE_DB.cam17_t1.readingPassages[2].title = "READING PASSAGE 3: To catch a king (Q27–40)";
+        /* ==================== CAMBRIDGE IELTS 18 – ACADEMIC TEST 1 ==================== */
+        CAMBRIDGE_DB.cam18_t1 = {
+            readingPassages: buildReadingPassages([
+                {
+                    title: "READING PASSAGE 1: Urban farming in Paris and beyond",
+                    subtitle: "You should spend about 20 minutes on Questions 1–13, which are based on Reading Passage 1 below.",
+                    paragraphs: [
+                        "On top of a striking exhibition hall in southern Paris, the world's largest urban rooftop farm has begun to bear fruit. Strawberries, small red radishes, lettuce and aromatic herbs sprout from vertical plastic tubes and horizontal trays filled with coconut fibre. Developed by the company Agripolis, the 14,000-square-metre rooftop site aims to produce up to a thousand kilograms of fresh produce daily during the summer season.",
+                        "Rather than using heavy soil—which would overload the roof structure—Pascal Hardy and his team rely on aeroponic and hydroponic cultivation. Water enriched with organic nutrients trickles down through the vertical columns in a closed-loop system that uses roughly 90 percent less water than conventional field agriculture. Because the crops sit high above street level, they absorb minimal exhaust pollution and require no chemical pesticides.",
+                        "Twenty young urban farmers tend the rooftop plots, harvesting berries and leafy greens that are sold directly to local residents, canteen kitchens, and restaurants inside the exhibition complex. Hardy acknowledges that rooftop farms cannot replace rural grain fields or feed an entire metropolis, yet they drastically reduce food miles and reconnect city dwellers with seasonal agriculture.",
+                        "Elsewhere in Paris, an underground startup called Cycloponics has converted an abandoned subterranean car park in the 18th arrondissement into 'La Caverne'. Beneath concrete ceilings fitted with low-energy LED lamps, workers cultivate organic shiitake and oyster mushrooms alongside chicory roots. The cool, humid cavern environment needs no air conditioning, turning neglected urban infrastructure into productive farmland."
+                    ],
+                    questions: [
+                        { id: 1, type: "gap", group: "Questions 1–6: Complete the notes below. Choose ONE WORD AND/OR A NUMBER from the passage for each answer.", prompt: "The rooftop farm in southern Paris covers an area of ______ square metres.", answer: "14,000", explain: "Đoạn A: 'the 14,000-square-metre rooftop site'." },
+                        { id: 2, type: "gap", prompt: "Plants are grown in vertical plastic ______ and horizontal trays.", answer: "tubes", explain: "Đoạn A: 'sprout from vertical plastic tubes and horizontal trays'." },
+                        { id: 3, type: "gap", prompt: "Instead of heavy soil, the trays are filled with ______ fibre.", answer: "coconut", explain: "Đoạn A: 'trays filled with coconut fibre'." },
+                        { id: 4, type: "gap", prompt: "The closed-loop irrigation system uses 90% less ______ than traditional farming.", answer: "water", explain: "Đoạn B: 'uses roughly 90 percent less water than conventional field agriculture'." },
+                        { id: 5, type: "gap", prompt: "Because the farm is high above the street, no chemical ______ are needed.", answer: "pesticides", explain: "Đoạn B: 'require no chemical pesticides'." },
+                        { id: 6, type: "gap", prompt: "In northern Paris, 'La Caverne' operates inside a former underground car ______.", answer: "park", explain: "Đoạn D: 'converted an abandoned subterranean car park'." },
+                        { id: 7, type: "tfng", group: "Questions 7–13: Do the following statements agree with the information given in Reading Passage 1? Choose TRUE, FALSE, or NOT GIVEN.", prompt: "The Paris rooftop farm can harvest up to 1,000 kilograms of food per day in summer.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "TRUE", explain: "Đoạn A: 'produce up to a thousand kilograms of fresh produce daily during the summer season'." },
+                        { id: 8, type: "tfng", prompt: "Deep natural soil is used on the exhibition hall roof to support large root crops.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "FALSE", explain: "Đoạn B: 'Rather than using heavy soil—which would overload the roof structure'." },
+                        { id: 9, type: "tfng", prompt: "Agripolis exports most of its strawberries to supermarkets in other countries.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "FALSE", explain: "Đoạn C: sản phẩm bán trực tiếp cho cư dân địa phương, căng tin và nhà hàng ngay trong khu triển lãm." },
+                        { id: 10, type: "tfng", prompt: "Pascal Hardy believes urban rooftop farms will soon replace all rural grain farms.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "FALSE", explain: "Đoạn C: 'Hardy acknowledges that rooftop farms cannot replace rural grain fields'." },
+                        { id: 11, type: "tfng", prompt: "The farmers working on the Agripolis roof are all university agriculture graduates.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "NOT GIVEN", explain: "Đoạn C chỉ nói 'Twenty young urban farmers', không đề cập bằng cấp đại học." },
+                        { id: 12, type: "tfng", prompt: "La Caverne uses LED lighting to grow mushrooms and chicory underground.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "TRUE", explain: "Đoạn D: 'fitted with low-energy LED lamps, workers cultivate organic shiitake and oyster mushrooms alongside chicory'." },
+                        { id: 13, type: "tfng", prompt: "La Caverne spends more money on electricity than rooftop farms.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "NOT GIVEN", explain: "Đoạn D không so sánh chi phí tiền điện giữa La Caverne và nông trại sân thượng." }
+                    ]
+                },
+                {
+                    title: "READING PASSAGE 2: Forest management in Pennsylvania, USA",
+                    subtitle: "You should spend about 20 minutes on Questions 14–26, which are based on Reading Passage 2 below.",
+                    paragraphs: [
+                        "Across the state of Pennsylvania, hardwood forests of oak, maple, and black cherry cover millions of hectares. Historically, timber companies practiced 'high-grading'—cutting down only the tallest, straightest, and most commercially valuable trees while leaving behind diseased, crooked, or shade-tolerant species. Over decades, this short-sighted method degraded genetic diversity and prevented sun-loving oak seedlings from regenerating.",
+                        "Today, foresters like Hassan Tukhi advocate 'silviculture' that mimics natural disturbances. Surprisingly, removing low-quality wood and thinning overcrowded canopies allows sunlight to reach the forest floor, encouraging a diverse new generation of trees. Rather than viewing all tree cutting as destructive, sustainable forestry uses selective harvesting to keep woodlands resilient against invasive pests such as the emerald ash borer.",
+                        "Low-grade timber and woody residue removed during thinning operations do not go to waste. Bioenergy plants chip crooked branches and diseased trunks to fuel modern wood-gasification boilers, heating local schools and hospitals with renewable thermal energy that replaces fossil heating oil.",
+                        "To protect wildlife during management projects, foresters retain 'legacy trees'—ancient hollow oaks that provide nesting cavities for owls, bats, and woodpeckers—as well as protective buffer zones along mountain streams to prevent soil erosion and keep trout habitats cool."
+                    ],
+                    questions: [
+                        { id: 14, type: "mcq", group: "Questions 14–18: Reading Passage 2 has four paragraphs, A–D. Which paragraph contains the following information? Choose the correct letter, A–D.", prompt: "How low-value wood is used to generate heat for community buildings.", options: ["A", "B", "C", "D"], answer: "C", explain: "Đoạn C: 'fuel modern wood-gasification boilers, heating local schools and hospitals'." },
+                        { id: 15, type: "mcq", prompt: "The negative long-term effects of only cutting down the best trees in a forest.", options: ["A", "B", "C", "D"], answer: "A", explain: "Đoạn A giải thích hệ quả của 'high-grading' làm suy giảm đa dạng di truyền." },
+                        { id: 16, type: "mcq", prompt: "Measures taken to preserve bird habitats and stream water quality.", options: ["A", "B", "C", "D"], answer: "D", explain: "Đoạn D nói về việc giữ lại 'legacy trees' cho chim cú, dơi và vùng đệm ven suối." },
+                        { id: 17, type: "mcq", prompt: "An explanation of how letting more light into the forest helps young trees grow.", options: ["A", "B", "C", "D"], answer: "B", explain: "Đoạn B: 'thinning overcrowded canopies allows sunlight to reach the forest floor'." },
+                        { id: 18, type: "mcq", prompt: "Reference to an insect pest that threatens forest health.", options: ["A", "B", "C", "D"], answer: "B", explain: "Đoạn B: 'invasive pests such as the emerald ash borer'." },
+                        { id: 19, type: "gap", group: "Questions 19–26: Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.", prompt: "The practice of cutting only the most valuable trees is known as high-______.", answer: "grading", explain: "Đoạn A: 'practiced high-grading—cutting down only the tallest... trees'." },
+                        { id: 20, type: "gap", prompt: "High-grading prevented young ______ seedlings from getting enough sunlight.", answer: "oak", explain: "Đoạn A: 'prevented sun-loving oak seedlings from regenerating'." },
+                        { id: 21, type: "gap", prompt: "Thinning dense tree canopies allows ______ to reach the ground.", answer: "sunlight", explain: "Đoạn B: 'allows sunlight to reach the forest floor'." },
+                        { id: 22, type: "gap", prompt: "Wood chips from low-grade branches are burned in boilers to heat schools and ______.", answer: "hospitals", explain: "Đoạn C: 'heating local schools and hospitals'." },
+                        { id: 23, type: "gap", prompt: "Wood bioenergy helps replace fossil heating ______.", answer: "oil", explain: "Đoạn C: 'replaces fossil heating oil'." },
+                        { id: 24, type: "gap", prompt: "Foresters leave ancient hollow oaks, called ______ trees, for wildlife.", answer: "legacy", explain: "Đoạn D: 'foresters retain legacy trees—ancient hollow oaks'." },
+                        { id: 25, type: "gap", prompt: "Hollow trunks provide nesting spaces for woodpeckers, bats, and ______.", answer: "owls", explain: "Đoạn D: 'nesting cavities for owls, bats, and woodpeckers'." },
+                        { id: 26, type: "gap", prompt: "Buffer zones beside mountain streams prevent soil ______.", answer: "erosion", explain: "Đoạn D: 'prevent soil erosion and keep trout habitats cool'." }
+                    ]
+                },
+                {
+                    title: "READING PASSAGE 3: Conquering Earth's space junk problem",
+                    subtitle: "You should spend about 20 minutes on Questions 27–40, which are based on Reading Passage 3 below.",
+                    paragraphs: [
+                        "Since the launch of Sputnik 1 in 1957, human activity in low Earth orbit has left behind a hazardous cloud of orbital debris. Alongside roughly 9,000 active satellites providing GPS, weather forecasting, and broadband internet, space agencies track more than 30,000 pieces of debris larger than 10 centimetres—from spent rocket stages to fragments from past collisions.",
+                        "Traveling at velocities of around 28,000 kilometres per hour, even a fleck of paint or a millimetre-sized aluminum bolt carries enough kinetic energy to shatter a satellite solar panel. In 1978, NASA scientist Donald Kessler warned of a runaway chain reaction—now termed the 'Kessler Syndrome'—in which a single collision between large objects generates thousands of shrapnel fragments, triggering further crashes until entire orbital shells become unusable.",
+                        "Astrodynamicists such as Moriba Jah at the University of Texas compare near-Earth space to a shared environmental commons, much like the world's oceans. Because ground radar and optical telescopes yield slightly different trajectory estimates, Jah's team developed 'ASTRIAGraph', an open database that aggregates global tracking data so satellite operators can avoid false alarms and execute fuel-saving avoidance manoeuvres only when necessary.",
+                        "Meanwhile, aerospace engineers are testing active debris-removal (ADR) technologies. Missions led by ClearSpace and Astroscale are trialing robotic arms, magnetic docking plates, and harpoon nets to capture defunct satellites and guide them into the upper atmosphere, where they burn up harmlessly. International regulators are also pressing for a binding five-year de-orbit rule requiring every new satellite to dispose of itself promptly at the end of its operational life."
+                    ],
+                    questions: [
+                        { id: 27, type: "mcq", group: "Questions 27–31: Choose the correct letter, A, B, C, or D.", prompt: "Why are even tiny fragments of debris dangerous in low Earth orbit?", options: ["A. They block radio signals from Earth", "B. They travel at extremely high speeds of around 28,000 km/h", "C. They are radioactive", "D. They attract lightning"], answer: "B. They travel at extremely high speeds of around 28,000 km/h", explain: "Đoạn B: 'Traveling at velocities of around 28,000 kilometres per hour, even a fleck of paint... carries enough kinetic energy'." },
+                        { id: 28, type: "mcq", prompt: "What is the 'Kessler Syndrome' described in Paragraph B?", options: ["A. A sickness experienced by astronauts", "B. A self-sustaining chain reaction of orbital collisions", "C. A method for launching rockets", "D. A telescope calibration error"], answer: "B. A self-sustaining chain reaction of orbital collisions", explain: "Đoạn B: 'a runaway chain reaction... in which a single collision... triggers further crashes'." },
+                        { id: 29, type: "mcq", prompt: "Why does Moriba Jah compare low Earth orbit to the world's oceans?", options: ["A. Both are shared environments threatened by human pollution", "B. Both have the same temperature", "C. Satellites float on water after landing", "D. Radar only works underwater"], answer: "A. Both are shared environments threatened by human pollution", explain: "Đoạn C: 'compare near-Earth space to a shared environmental commons, much like the world's oceans'." },
+                        { id: 30, type: "mcq", prompt: "What is the main purpose of the ASTRIAGraph database?", options: ["A. To sell satellite television subscriptions", "B. To combine tracking data from multiple sources to improve orbit predictions", "C. To design larger rocket engines", "D. To photograph distant galaxies"], answer: "B. To combine tracking data from multiple sources to improve orbit predictions", explain: "Đoạn C: 'an open database that aggregates global tracking data'." },
+                        { id: 31, type: "mcq", prompt: "How do ClearSpace and Astroscale plan to dispose of captured defunct satellites?", options: ["A. Send them to the Moon", "B. Guide them into the upper atmosphere to burn up", "C. Repair and sell them in orbit", "D. Bury them under the ocean"], answer: "B. Guide them into the upper atmosphere to burn up", explain: "Đoạn D: 'guide them into the upper atmosphere, where they burn up harmlessly'." },
+                        { id: 32, type: "tfng", group: "Questions 32–36: Do the following statements agree with the claims of the writer in Reading Passage 3? Choose YES, NO, or NOT GIVEN.", prompt: "Space agencies currently track over 30,000 pieces of debris larger than 10 centimetres.", options: ["YES", "NO", "NOT GIVEN"], answer: "YES", explain: "Đoạn A: 'track more than 30,000 pieces of debris larger than 10 centimetres'." },
+                        { id: 33, type: "tfng", prompt: "Donald Kessler first proposed his collision theory in the 21st century.", options: ["YES", "NO", "NOT GIVEN"], answer: "NO", explain: "Đoạn B: 'In 1978, NASA scientist Donald Kessler warned...' (thế kỷ 20)." },
+                        { id: 34, type: "tfng", prompt: "Ground radar and optical telescopes always produce identical trajectory measurements.", options: ["YES", "NO", "NOT GIVEN"], answer: "NO", explain: "Đoạn C: 'Because ground radar and optical telescopes yield slightly different trajectory estimates'." },
+                        { id: 35, type: "tfng", prompt: "Magnetic docking plates are more expensive than robotic arms.", options: ["YES", "NO", "NOT GIVEN"], answer: "NOT GIVEN", explain: "Đoạn D liệt kê cả hai công nghệ nhưng không so sánh chi phí." },
+                        { id: 36, type: "tfng", prompt: "Regulators want new satellites to be removed within five years after their mission ends.", options: ["YES", "NO", "NOT GIVEN"], answer: "YES", explain: "Đoạn D: 'pressing for a binding five-year de-orbit rule'." },
+                        { id: 37, type: "gap", group: "Questions 37–40: Complete the summary below. Write ONE WORD AND/OR A NUMBER from the passage for each answer.", prompt: "Human space activity began with the launch of Sputnik 1 in ______.", answer: "1957", explain: "Đoạn A: 'Since the launch of Sputnik 1 in 1957'." },
+                        { id: 38, type: "gap", prompt: "Avoidance manoeuvres help satellites save ______ when false alarms are filtered out.", answer: "fuel", explain: "Đoạn C: 'execute fuel-saving avoidance manoeuvres'." },
+                        { id: 39, type: "gap", prompt: "Active debris-removal missions test robotic arms, harpoon nets, and ______ plates.", answer: "magnetic", explain: "Đoạn D: 'robotic arms, magnetic docking plates, and harpoon nets'." },
+                        { id: 40, type: "gap", prompt: "Captured space junk burns up harmlessly in the upper ______.", answer: "atmosphere", explain: "Đoạn D: 'guide them into the upper atmosphere, where they burn up harmlessly'." }
+                    ]
+                }
+            ]),
+            listeningParts: [
+                {
+                    partNum: 1,
+                    title: "PART 1 (Questions 1–10): Transport Survey (Cam 18 Test 1)",
+                    script: [
+                        { speaker: "Interviewer", text: "Excuse me, would you mind answering a few questions for a local transport survey while you wait for your bus?" },
+                        { speaker: "Sadie", text: "Sure, no problem. My name is Sadie Jones, and I moved to this area last year. My postcode is DW30 7YZ." },
+                        { speaker: "Interviewer", text: "Thank you, Sadie. How did you travel into the city centre today, and what was the purpose of your trip?" },
+                        { speaker: "Sadie", text: "I came by bus today because I had an appointment at the dentist. Normally I drive my car, but parking near the clinic is far too expensive." },
+                        { speaker: "Interviewer", text: "Why did you stop using the local train service?" },
+                        { speaker: "Sadie", text: "The station platform is too far from my house, and the evening trains are often cancelled without warning." },
+                        { speaker: "Interviewer", text: "Do you ever cycle into town? And what improvements would encourage you to use buses more often?" },
+                        { speaker: "Sadie", text: "I bought a bicycle, but I need a safe lock rack at the shopping mall. Also, the number 17 bus service really needs a shelter with a roof at the main stop, and a digital timetable screen." },
+                        { speaker: "Interviewer", text: "Finally, what is your occupation and hobbies?" },
+                        { speaker: "Sadie", text: "I work as a cashier at a supermarket, and on weekends I go swimming at the municipal pool." }
+                    ],
+                    questions: [
+                        { id: 1, type: "gap", group: "Questions 1–10: Complete the survey notes below. Write ONE WORD AND/OR A NUMBER for each answer.", prompt: "Respondent's postcode: DW30 ______.", answer: "7YZ", explain: "Sadie: 'My postcode is DW30 7YZ'." },
+                        { id: 2, type: "gap", prompt: "Reason for travelling into the city centre today: visit to the ______.", answer: "dentist", explain: "Sadie: 'I had an appointment at the dentist'." },
+                        { id: 3, type: "gap", prompt: "Disadvantage of driving into town: car ______ is too expensive.", answer: "parking", explain: "Sadie: 'parking near the clinic is far too expensive'." },
+                        { id: 4, type: "gap", prompt: "Problem with evening trains: they are frequently ______.", answer: "cancelled", explain: "Sadie: 'the evening trains are often cancelled'." },
+                        { id: 5, type: "gap", prompt: "Facility needed for cyclists at the shopping mall: a secure lock ______.", answer: "rack", explain: "Sadie: 'I need a safe lock rack at the shopping mall'." },
+                        { id: 6, type: "gap", prompt: "Bus route used by Sadie today: Number ______.", answer: "17", explain: "Sadie: 'the number 17 bus service'." },
+                        { id: 7, type: "gap", prompt: "Improvement needed at the main bus stop: a covered ______ with a roof.", answer: "shelter", explain: "Sadie: 'needs a shelter with a roof at the main stop'." },
+                        { id: 8, type: "gap", prompt: "Passengers also want a digital ______ screen at the stop.", answer: "timetable", explain: "Sadie: 'and a digital timetable screen'." },
+                        { id: 9, type: "gap", prompt: "Sadie's current job: works as a supermarket ______.", answer: "cashier", explain: "Sadie: 'I work as a cashier at a supermarket'." },
+                        { id: 10, type: "gap", prompt: "Weekend leisure activity: goes ______ at the municipal pool.", answer: "swimming", explain: "Sadie: 'on weekends I go swimming'." }
+                    ]
+                },
+                {
+                    partNum: 2,
+                    title: "PART 2 (Questions 11–20): Becoming a Volunteer for ACE Charity",
+                    script: [
+                        { speaker: "Coordinator", text: "Good evening, everyone, and thank you for coming to our information session on volunteering with ACE Community Charity." },
+                        { speaker: "Coordinator", text: "Many people assume volunteers join just to improve their CVs, but our annual survey shows the main reason volunteers stay with us is that they feel part of a supportive community." },
+                        { speaker: "Coordinator", text: "Right now, our most urgent shortage is in the mobile library team, because several drivers retired last month." },
+                        { speaker: "Coordinator", text: "Before starting, every volunteer must attend a two-hour induction workshop on Thursday evening at the youth centre. You will also need a referee letter from a former employer or teacher." },
+                        { speaker: "Coordinator", text: "We also run three special projects: our 'Green Gardens' team helps elderly residents mow their lawns; our 'Digital Buddies' teach pensioners how to use smartphones and banking apps; and our 'Beach Rangers' collect litter along the harbour every Sunday morning." }
+                    ],
+                    questions: [
+                        { id: 11, type: "mcq", group: "Questions 11–15: Choose the correct letter, A, B, or C.", prompt: "According to the speaker, what is the main reason people continue volunteering with ACE?", options: ["A. To gain work experience for their CV", "B. To feel part of a supportive community", "C. To receive free training courses"], answer: "B. To feel part of a supportive community", explain: "Coordinator: 'the main reason volunteers stay with us is that they feel part of a supportive community'." },
+                        { id: 12, type: "mcq", prompt: "Which department currently has the greatest need for new volunteers?", options: ["A. The charity shop", "B. The mobile library team", "C. The fundraising office"], answer: "B. The mobile library team", explain: "Coordinator: 'our most urgent shortage is in the mobile library team'." },
+                        { id: 13, type: "mcq", prompt: "How long does the mandatory induction workshop last?", options: ["A. Two hours", "B. A full weekend", "C. Five days"], answer: "A. Two hours", explain: "Coordinator: 'attend a two-hour induction workshop'." },
+                        { id: 14, type: "mcq", prompt: "Where is the Thursday induction workshop held?", options: ["A. At the central hospital", "B. At the youth centre", "C. At the public library"], answer: "B. At the youth centre", explain: "Coordinator: 'on Thursday evening at the youth centre'." },
+                        { id: 15, type: "mcq", prompt: "What do volunteers in the 'Digital Buddies' project do?", options: ["A. Repair broken televisions", "B. Teach older people how to use smartphones", "C. Design websites for local shops"], answer: "B. Teach older people how to use smartphones", explain: "Coordinator: 'teach pensioners how to use smartphones and banking apps'." },
+                        { id: 16, type: "gap", group: "Questions 16–20: Complete the notes below. Write ONE WORD ONLY for each answer.", prompt: "The mobile library is short of staff because several ______ retired.", answer: "drivers", explain: "Coordinator: 'because several drivers retired last month'." },
+                        { id: 17, type: "gap", prompt: "Applicants must provide a reference letter from an employer or ______.", answer: "teacher", explain: "Coordinator: 'a referee letter from a former employer or teacher'." },
+                        { id: 18, type: "gap", prompt: "The 'Green Gardens' team helps elderly residents cut their ______.", answer: "lawns", explain: "Coordinator: 'helps elderly residents mow their lawns'." },
+                        { id: 19, type: "gap", prompt: "Beach Rangers clear litter along the ______ every Sunday.", answer: "harbour", explain: "Coordinator: 'collect litter along the harbour every Sunday morning'." },
+                        { id: 20, type: "gap", prompt: "Beach clean-up sessions take place in the ______.", answer: "morning", explain: "Coordinator: 'every Sunday morning'." }
+                    ]
+                },
+                {
+                    partNum: 3,
+                    title: "PART 3 (Questions 21–30): Talk on Jobs in Fashion Design",
+                    script: [
+                        { speaker: "Hugo", text: "Chantal, what did you think of that career talk on the fashion industry?" },
+                        { speaker: "Chantal", text: "It was really eye-opening, Hugo! The speaker, Stella Vance, admitted that when she graduated, she had no idea how important spreadsheet and budgeting skills were for a fashion buyer." },
+                        { speaker: "Hugo", text: "I was surprised when she talked about her first internship at a sportswear brand. She spent three months just testing fabric durability in a laboratory!" },
+                        { speaker: "Chantal", text: "Yes, and she warned us that fast-fashion retailers often reject graduate portfolios because students only draw extravagant evening gowns instead of practical everyday jackets." },
+                        { speaker: "Hugo", text: "What about her advice on sustainable textiles? She mentioned that recycled nylon from fishing nets is growing fast, and bamboo fabric is popular for activewear." },
+                        { speaker: "Chantal", text: "For our next module, I'm going to apply for a placement in costume design at the regional theatre, while you wanted to work on footwear prototypes, right?" }
+                    ],
+                    questions: [
+                        { id: 21, type: "mcq", group: "Questions 21–25: Choose the correct letter, A, B, or C.", prompt: "What skill did Stella Vance say she lacked when she first graduated?", options: ["A. Sketching by hand", "B. Budgeting and spreadsheet management", "C. Sewing leather garments"], answer: "B. Budgeting and spreadsheet management", explain: "Chantal: 'she had no idea how important spreadsheet and budgeting skills were'." },
+                        { id: 22, type: "mcq", prompt: "What did Stella do during her first internship at a sportswear company?", options: ["A. Organised a catwalk show", "B. Tested fabric durability in a lab", "C. Photographed models"], answer: "B. Tested fabric durability in a lab", explain: "Hugo: 'spent three months just testing fabric durability in a laboratory'." },
+                        { id: 23, type: "mcq", prompt: "Why do retailers often reject student design portfolios?", options: ["A. They focus too much on impractical evening gowns", "B. They contain too many black-and-white drawings", "C. They are submitted late"], answer: "A. They focus too much on impractical evening gowns", explain: "Chantal: 'students only draw extravagant evening gowns instead of practical everyday jackets'." },
+                        { id: 24, type: "mcq", prompt: "Where is recycled nylon increasingly sourced from?", options: ["A. Old car carpets", "B. Discarded fishing nets", "C. Plastic shopping bags"], answer: "B. Discarded fishing nets", explain: "Hugo: 'recycled nylon from fishing nets is growing fast'." },
+                        { id: 25, type: "mcq", prompt: "Where does Chantal hope to do her work placement?", options: ["A. At a regional theatre", "B. At a fashion magazine", "C. At a department store"], answer: "A. At a regional theatre", explain: "Chantal: 'apply for a placement in costume design at the regional theatre'." },
+                        { id: 26, type: "gap", group: "Questions 26–30: Complete the summary below. Write ONE WORD ONLY for each answer.", prompt: "Stella Vance worked as a fashion ______ early in her career.", answer: "buyer", explain: "Chantal: 'skills were for a fashion buyer'." },
+                        { id: 27, type: "gap", prompt: "Retailers prefer portfolios that include practical everyday ______.", answer: "jackets", explain: "Chantal: 'instead of practical everyday jackets'." },
+                        { id: 28, type: "gap", prompt: "Fabric made from ______ is becoming popular for activewear.", answer: "bamboo", explain: "Hugo: 'bamboo fabric is popular for activewear'." },
+                        { id: 29, type: "gap", prompt: "Chantal is interested in designing theatre ______.", answer: "costume", explain: "Chantal: 'placement in costume design at the regional theatre'." },
+                        { id: 30, type: "gap", prompt: "Hugo wants to design prototypes for ______.", answer: "footwear", explain: "Chantal: 'you wanted to work on footwear prototypes'." }
+                    ]
+                },
+                {
+                    partNum: 4,
+                    title: "PART 4 (Questions 31–40): Elephant Translocation in Malawi",
+                    script: [
+                        { speaker: "Lecturer", text: "In today's wildlife conservation lecture, we will examine one of Africa's largest elephant translocation projects, which moved 500 elephants from Liwonde National Park to Nkhotakota Wildlife Reserve in Malawi." },
+                        { speaker: "Lecturer", text: "Why was this relocation necessary? In Liwonde, the elephant population had grown so dense that herds were stripping bark from baobab trees and raiding farmers' maize fields outside the park boundary, leading to dangerous conflict." },
+                        { speaker: "Lecturer", text: "Meanwhile, Nkhotakota Reserve had lost over 90 percent of its elephants to poaching in previous decades, but new electric perimeter fencing and ranger patrols had made the sanctuary safe again." },
+                        { speaker: "Lecturer", text: "Moving a six-tonne mammal requires careful logistics. Veterinary teams darted entire family groups from a helicopter so mothers and calves were never separated. A crane then lifted each sleeping elephant onto a ventilated truck for the 350-kilometre journey north." },
+                        { speaker: "Lecturer", text: "Before release, rangers fitted the matriarch of each herd with a GPS satellite collar to monitor their adaptation. Since the translocation, tourist lodges have created 200 local jobs, and elephant dung is naturally dispersing seeds across the forest." }
+                    ],
+                    questions: [
+                        { id: 31, type: "gap", group: "Questions 31–40: Complete the lecture notes below. Write ONE WORD AND/OR A NUMBER for each answer.", prompt: "Total number of elephants moved in Malawi: ______.", answer: "500", explain: "Lecturer: 'moved 500 elephants from Liwonde National Park'." },
+                        { id: 32, type: "gap", prompt: "In Liwonde, overcrowding caused elephants to strip bark from ______ trees.", answer: "baobab", explain: "Lecturer: 'stripping bark from baobab trees'." },
+                        { id: 33, type: "gap", prompt: "Elephants were also damaging local farmers' ______ crops.", answer: "maize", explain: "Lecturer: 'raiding farmers' maize fields'." },
+                        { id: 34, type: "gap", prompt: "Nkhotakota Reserve was made secure by building an electric perimeter ______.", answer: "fence", explain: "Lecturer: 'electric perimeter fencing' (chấp nhận fence/fencing)." },
+                        { id: 35, type: "gap", prompt: "Vets tranquilized elephant families from a ______.", answer: "helicopter", explain: "Lecturer: 'darted entire family groups from a helicopter'." },
+                        { id: 36, type: "gap", prompt: "Whole family groups were moved together so mothers and ______ stayed together.", answer: "calves", explain: "Lecturer: 'so mothers and calves were never separated'." },
+                        { id: 37, type: "gap", prompt: "A ______ was used to lift each sleeping elephant onto a truck.", answer: "crane", explain: "Lecturer: 'A crane then lifted each sleeping elephant'." },
+                        { id: 38, type: "gap", prompt: "The leader of each herd was fitted with a satellite ______.", answer: "collar", explain: "Lecturer: 'fitted the matriarch of each herd with a GPS satellite collar'." },
+                        { id: 39, type: "gap", prompt: "Ecotourism lodges around the reserve have created ______ local jobs.", answer: "200", explain: "Lecturer: 'created 200 local jobs'." },
+                        { id: 40, type: "gap", prompt: "Elephants help the forest regenerate by spreading ______ in their dung.", answer: "seeds", explain: "Lecturer: 'naturally dispersing seeds across the forest'." }
+                    ]
+                }
+            ],
+            writing: {
+                task1: {
+                    prompt: "The graph below gives information about the percentage of the population living in urban areas in four Asian countries between 1970 and 2020, with predictions for 2030 and 2040.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    keywords: ["malaysia", "philippines", "thailand", "indonesia", "urban", "1970", "2040"],
+                    svgChart: "<svg viewBox=\"0 0 560 260\" style=\"width:100%; background:#141210; border-radius:8px; padding:10px; border:1px solid #2b2520;\">\n                    <text x=\"280\" y=\"20\" fill=\"#ede3da\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">Urban Population Percentage in Four Asian Countries (1970–2040)</text>\n                    <line x1=\"50\" y1=\"35\" x2=\"50\" y2=\"215\" stroke=\"#666\" stroke-width=\"1.5\"/>\n                    <line x1=\"50\" y1=\"215\" x2=\"510\" y2=\"215\" stroke=\"#666\" stroke-width=\"1.5\"/>\n                    <polyline fill=\"none\" stroke=\"#e58547\" stroke-width=\"3\" points=\"55,155 145,130 235,100 325,75 415,60 500,50\"/>\n                    <polyline fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"2.5\" points=\"55,180 145,160 235,125 325,105 415,90 500,80\"/>\n                    <polyline fill=\"none\" stroke=\"#22c55e\" stroke-width=\"2.5\" points=\"55,152 145,140 235,142 325,135 415,120 500,110\"/>\n                    <polyline fill=\"none\" stroke=\"#a855f7\" stroke-width=\"2.5\" points=\"55,190 145,178 235,168 325,155 415,142 500,130\"/>\n                    <text x=\"60\" y=\"245\" fill=\"#e58547\" font-size=\"10\" font-weight=\"bold\">● Malaysia (30%→83%)</text>\n                    <text x=\"185\" y=\"245\" fill=\"#3b82f6\" font-size=\"10\" font-weight=\"bold\">● Indonesia (18%→68%)</text>\n                    <text x=\"315\" y=\"245\" fill=\"#22c55e\" font-size=\"10\" font-weight=\"bold\">● Philippines (31%→55%)</text>\n                    <text x=\"445\" y=\"245\" fill=\"#a855f7\" font-size=\"10\" font-weight=\"bold\">● Thailand (19%→48%)</text>\n                </svg>",
+                    modelAnswer: "The line graph compares the proportion of city dwellers in four Southeast Asian nations—Malaysia, the Philippines, Thailand, and Indonesia—from 1970 to 2020, alongside projections through to 2040.\n\nOverall, all four countries are expected to experience significant urbanization over the 70-year period, with Malaysia and Indonesia showing the most dramatic upward trends.\n\nIn 1970, the Philippines and Malaysia had similar urban populations at roughly 31% and 30%, respectively. However, Malaysia's rate climbed steeply after 1990, reaching 74% in 2020 and a projected peak of over 80% by 2040. Similarly, Indonesia's urban share surged from just 18% in 1970 to 56% in 2020, surpassing both Thailand and the Philippines, and is forecast to reach 68% in 2040. Meanwhile, Thailand consistently recorded the lowest urbanization rate, rising gradually from 19% to a predicted 48%."
+                },
+                task2: {
+                    prompt: "The most important aim of science should be to improve people's lives.\n\nTo what extent do you agree or disagree with this statement? Write at least 250 words.",
+                    keywords: ["science", "scientific", "research", "lives", "medicine", "technology", "environment"],
+                    modelAnswer: "It is widely argued that the primary objective of scientific inquiry ought to be the enhancement of human well-being. While pure theoretical curiosity and ecological conservation are also vital, I strongly agree that improving people's quality of life should remain the guiding principle of science.\n\nFirst and foremost, breakthroughs in medical and agricultural science have directly alleviated human suffering. From vaccines and antibiotics to drought-resistant crops, applied research has extended life expectancy and lifted millions out of hunger. Furthermore, clean energy technologies—such as solar photovoltaics and battery storage—protect human communities from climate disasters while safeguarding the planet.\n\nIn conclusion, although fundamental research into space and physics expands human knowledge, the highest moral duty of science is to solve pressing human challenges in health, food security, and sustainability."
+                }
+            },
+            speaking: {
+                part1: [
+                    "1. How Do you usually pay for things: by cash, card, or mobile phone?",
+                    "2. Do you think people save enough money for the future nowadays?",
+                    "3. What kind of weather do you like best in your country?",
+                    "4. Do you often visit public libraries or study cafes?"
+                ],
+                part2: {
+                    title: "Describe a person from another culture whom you enjoy spending time with.",
+                    bullets: [
+                        "Who this person is and where they are from",
+                        "How you first met them",
+                        "What activities you do together",
+                        "And explain what you have learned from their culture"
+                    ]
+                },
+                part3: [
+                    "1. What are the main advantages of living in a multicultural society?",
+                    "2. Why do some people find it difficult to adapt when they move to a foreign country?",
+                    "3. Has globalization made different cultures around the world too similar?"
+                ],
+                modelAnswer: "I would like to talk about my university project partner, Kenji, who comes from Osaka, Japan. We first met during an international student exchange workshop in Hanoi last year. Whenever we hang out on weekends, we exchange language lessons over coffee and cook traditional dishes together. Through Kenji, I have learned the Japanese concept of 'omotenashi'—thoughtful hospitality and respect for others' time—which has made me much more punctual and considerate."
+            }
+        };
+
+        /* ==================== CAMBRIDGE IELTS 17 – ACADEMIC TEST 1 ==================== */
+        CAMBRIDGE_DB.cam17_t1 = {
+            readingPassages: buildReadingPassages([
+                {
+                    title: "READING PASSAGE 1: The development of the London underground railway",
+                    subtitle: "You should spend about 20 minutes on Questions 1–13, which are based on Reading Passage 1 below.",
+                    paragraphs: [
+                        "In the first half of the 1800s, London's population grew at an astonishing rate, and the central area became increasingly congested. Horse-drawn carriages, carts, and pedestrians competed for space on narrow cobbled streets, while the major mainline railway terminals were built on the edge of the historic city because Parliament prohibited demolishing central neighbourhoods for surface tracks.",
+                        "Among the visionaries proposing a solution was Charles Pearson, a solicitor for the City of London, who campaigned for an underground railway linking the northern terminals with the financial district. Pearson argued that affordable worker trains would allow labourers living in crowded inner-city slums to relocate to cleaner suburbs while still commuting to work.",
+                        "In 1860, construction began on the Metropolitan Railway between Paddington and Farringdon using the 'cut-and-cover' technique: workers dug a deep trench along existing streets, built brick tunnel walls, roofed the trench with timber and iron girders, and restored the roadway above. When the line opened in January 1863, 38,000 passengers rode it on the very first day.",
+                        "Despite its commercial success, the early underground had a severe flaw: steam locomotives burned coal inside poorly ventilated brick tunnels, filling carriages with sulphurous smoke. The breakthrough came in the late 1880s when engineer James Henry Greathead perfected a cylindrical iron tunnelling shield and electric traction became viable. In 1890, the City and South London Railway opened the world's first deep-level electric 'Tube' line, laying the foundation for the modern London Underground."
+                    ],
+                    questions: [
+                        { id: 1, type: "gap", group: "Questions 1–6: Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.", prompt: "Charles Pearson worked as a ______ for the City of London.", answer: "solicitor", explain: "Đoạn B: 'Charles Pearson, a solicitor for the City of London'." },
+                        { id: 2, type: "gap", prompt: "Pearson believed cheap trains would let workers move from inner-city slums to cleaner ______.", answer: "suburbs", explain: "Đoạn B: 'relocate to cleaner suburbs while still commuting'." },
+                        { id: 3, type: "gap", prompt: "The Metropolitan Railway was built using the 'cut-and-cover' method, which involved digging a deep ______ along streets.", answer: "trench", explain: "Đoạn C: 'workers dug a deep trench along existing streets'." },
+                        { id: 4, type: "gap", prompt: "The tunnel walls of the 1860s line were constructed of ______.", answer: "brick", explain: "Đoạn C: 'built brick tunnel walls'." },
+                        { id: 5, type: "gap", prompt: "Early steam trains filled the underground carriages with unpleasant ______.", answer: "smoke", explain: "Đoạn D: 'filling carriages with sulphurous smoke'." },
+                        { id: 6, type: "gap", prompt: "In 1890, the first deep-level 'Tube' line used ______ trains instead of steam.", answer: "electric", explain: "Đoạn D: 'opened the world's first deep-level electric Tube line'." },
+                        { id: 7, type: "tfng", group: "Questions 7–13: Do the following statements agree with the information given in Reading Passage 1? Choose TRUE, FALSE, or NOT GIVEN.", prompt: "In the early 1800s, mainline railway stations were built right in the centre of historic London.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "FALSE", explain: "Đoạn A: 'mainline railway terminals were built on the edge of the historic city'." },
+                        { id: 8, type: "tfng", prompt: "Charles Pearson personally invested his entire fortune in the Metropolitan Railway.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "NOT GIVEN", explain: "Đoạn B chỉ nói Pearson vận động cho dự án, không đề cập việc ông bỏ toàn bộ tài sản cá nhân." },
+                        { id: 9, type: "tfng", prompt: "The first underground line connected Paddington and Farringdon.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "TRUE", explain: "Đoạn C: 'between Paddington and Farringdon'." },
+                        { id: 10, type: "tfng", prompt: "Very few people used the Metropolitan Railway on its opening day in 1863.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "FALSE", explain: "Đoạn C: '38,000 passengers rode it on the very first day'." },
+                        { id: 11, type: "tfng", prompt: "Early underground tunnels had excellent air ventilation systems.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "FALSE", explain: "Đoạn D: 'inside poorly ventilated brick tunnels'." },
+                        { id: 12, type: "tfng", prompt: "James Henry Greathead improved a cylindrical iron shield for digging deep tunnels.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "TRUE", explain: "Đoạn D: 'James Henry Greathead perfected a cylindrical iron tunnelling shield'." },
+                        { id: 13, type: "tfng", prompt: "Tickets on the 1890 electric Tube were cheaper than horse-drawn bus fares.", options: ["TRUE", "FALSE", "NOT GIVEN"], answer: "NOT GIVEN", explain: "Đoạn D không so sánh giá vé tàu điện ngầm năm 1890 với xe buýt ngựa kéo." }
+                    ]
+                },
+                {
+                    title: "READING PASSAGE 2: Stadiums: past, present and future",
+                    subtitle: "You should spend about 20 minutes on Questions 14–26, which are based on Reading Passage 2 below.",
+                    paragraphs: [
+                        "Sports stadiums have stood at the heart of urban life for millennia. In the Roman Empire, stone amphitheatres such as the Arles arena in France and the Verona arena in Italy were engineered for acoustics and rapid crowd movement. Remarkably, instead of falling into total ruin, many Roman amphitheatres were adapted during the Middle Ages into fortified towns with houses and chapels built inside their arches, before being restored as open-air concert venues today.",
+                        "By contrast, twentieth-century stadiums were frequently built as single-purpose concrete bowls on cheap land on the outskirts of cities. Surrounded by vast asphalt car parks, these arenas stood empty for more than 300 days a year and consumed enormous amounts of electricity during match nights.",
+                        "In the twenty-first century, architects are reinventing the stadium as a mixed-use community hub and a clean-energy power plant. Completed in 2001, the Wankdorf Stadium in Bern, Switzerland, integrated a shopping centre, schools, and offices beneath its stands, alongside a massive rooftop solar array that feeds electricity into the municipal grid.",
+                        "Similarly, the Kaohsiung National Stadium in Taiwan, designed by architect Toyo Ito for the 2009 World Games, features a dragon-shaped spiral roof covered with 8,844 solar panels. The venue generates 100 percent of its own match-day power and exports surplus green electricity to neighbouring districts when no sporting events are taking place."
+                    ],
+                    questions: [
+                        { id: 14, type: "mcq", group: "Questions 14–18: Reading Passage 2 has four paragraphs, A–D. Which paragraph contains the following information? Choose the correct letter, A–D.", prompt: "An example of a modern Asian stadium whose roof is shaped like a dragon.", options: ["A", "B", "C", "D"], answer: "D", explain: "Đoạn D: 'Kaohsiung National Stadium in Taiwan... features a dragon-shaped spiral roof'." },
+                        { id: 15, type: "mcq", prompt: "Why many 20th-century stadiums remained unused for most of the year.", options: ["A", "B", "C", "D"], answer: "B", explain: "Đoạn B: 'single-purpose concrete bowls... stood empty for more than 300 days a year'." },
+                        { id: 16, type: "mcq", prompt: "How ancient amphitheatres were converted into defensive settlements in medieval times.", options: ["A", "B", "C", "D"], answer: "A", explain: "Đoạn A: 'adapted during the Middle Ages into fortified towns with houses and chapels'." },
+                        { id: 17, type: "mcq", prompt: "A European stadium that combines sports facilities with schools and offices.", options: ["A", "B", "C", "D"], answer: "C", explain: "Đoạn C: 'Wankdorf Stadium in Bern, Switzerland, integrated a shopping centre, schools, and offices'." },
+                        { id: 18, type: "mcq", prompt: "A reference to ancient arenas being used for modern musical performances.", options: ["A", "B", "C", "D"], answer: "A", explain: "Đoạn A: 'restored as open-air concert venues today'." },
+                        { id: 19, type: "gap", group: "Questions 19–26: Complete the summary below. Choose ONE WORD AND/OR A NUMBER from the passage for each answer.", prompt: "During the Middle Ages, Roman amphitheatres in Arles and Verona were turned into fortified ______.", answer: "towns", explain: "Đoạn A: 'adapted during the Middle Ages into fortified towns'." },
+                        { id: 20, type: "gap", prompt: "Twentieth-century stadiums were surrounded by huge asphalt car ______.", answer: "parks", explain: "Đoạn B: 'Surrounded by vast asphalt car parks'." },
+                        { id: 21, type: "gap", prompt: "Single-purpose 20th-century arenas stood empty for over ______ days each year.", answer: "300", explain: "Đoạn B: 'stood empty for more than 300 days a year'." },
+                        { id: 22, type: "gap", prompt: "The Wankdorf Stadium in Bern opened in the year ______.", answer: "2001", explain: "Đoạn C: 'Completed in 2001, the Wankdorf Stadium'." },
+                        { id: 23, type: "gap", prompt: "Wankdorf Stadium includes shops, offices, and ______ under its seating stands.", answer: "schools", explain: "Đoạn C: 'integrated a shopping centre, schools, and offices'." },
+                        { id: 24, type: "gap", prompt: "Kaohsiung National Stadium in Taiwan was designed by Toyo ______.", answer: "Ito", explain: "Đoạn D: 'designed by architect Toyo Ito'." },
+                        { id: 25, type: "gap", prompt: "The roof of Kaohsiung Stadium is fitted with 8,844 ______ panels.", answer: "solar", explain: "Đoạn D: 'covered with 8,844 solar panels'." },
+                        { id: 26, type: "gap", prompt: "When no matches are held, the stadium sends surplus green ______ to nearby districts.", answer: "electricity", explain: "Đoạn D: 'exports surplus green electricity to neighbouring districts'." }
+                    ]
+                },
+                {
+                    title: "READING PASSAGE 3: To catch a king – Charles II's dramatic escape",
+                    subtitle: "You should spend about 20 minutes on Questions 27–40, which are based on Reading Passage 3 below.",
+                    paragraphs: [
+                        "In September 1651, following the decisive defeat of the Royalist army by Oliver Cromwell's Parliamentary forces at the Battle of Worcester, the twenty-one-year-old Charles Stuart—future King Charles II of England—became the most wanted fugitive in Britain. Parliament posted a massive reward of 1,000 pounds for his capture and declared that anyone sheltering him would be executed for treason.",
+                        "What followed was a six-week game of cat and mouse across the English countryside, chronicled vividly in historian Charles Spencer's book 'To Catch a King'. Realizing that travelling with a large cavalry escort would attract immediate attention, Charles cut off his long dark curls, stained his pale hands and face with walnut juice, and dressed in the coarse woollen clothes of a country woodcutter.",
+                        "At Boscobel House in Shropshire, as Parliamentary soldiers searched the surrounding woods, Charles and a loyal officer named Major William Careless spent an entire day hiding inside the dense branches of a pollarded oak tree—forever remembered in British folklore as the 'Royal Oak'. While Careless stayed awake to hold the exhausted prince from falling, soldiers walked directly beneath their feet.",
+                        "Later in the escape, Charles disguised himself as the servant of a courageous gentlewoman, Jane Lane, riding pillion on horseback through enemy checkpoints toward the south coast. After several failed attempts to hire a vessel, Charles finally boarded a coal brig at Shoreham-by-Sea in October 1651 and sailed safely to France. Nine years later, in 1660, he returned to London to restore the monarchy, forever rewarding the ordinary families who had risked their lives to keep his secret."
+                    ],
+                    questions: [
+                        { id: 27, type: "mcq", group: "Questions 27–31: Choose the correct letter, A, B, C, or D.", prompt: "What happened immediately after the Battle of Worcester in September 1651?", options: ["A. Charles Stuart was crowned King in London", "B. Parliament offered a £1,000 reward for Charles's capture", "C. Oliver Cromwell fled to France", "D. The Royalist army won a major victory"], answer: "B. Parliament offered a £1,000 reward for Charles's capture", explain: "Đoạn A: 'Parliament posted a massive reward of 1,000 pounds for his capture'." },
+                        { id: 28, type: "mcq", prompt: "Why did Charles Stuart stain his skin with walnut juice?", options: ["A. To treat a battle wound", "B. To disguise himself as a working country woodcutter", "C. To protect his face from sunburn", "D. To follow a royal tradition"], answer: "B. To disguise himself as a working country woodcutter", explain: "Đoạn B: 'stained his pale hands and face with walnut juice, and dressed in the coarse woollen clothes of a country woodcutter'." },
+                        { id: 29, type: "mcq", prompt: "Who hid with Charles inside the oak tree at Boscobel House?", options: ["A. Oliver Cromwell", "B. Major William Careless", "C. Charles Spencer", "D. A French sea captain"], answer: "B. Major William Careless", explain: "Đoạn C: 'Charles and a loyal officer named Major William Careless spent an entire day hiding inside... a pollarded oak tree'." },
+                        { id: 30, type: "mcq", prompt: "How did Jane Lane help Charles travel toward the south coast?", options: ["A. She lent him a royal carriage", "B. He rode on horseback disguised as her servant", "C. She bribed Parliamentary generals", "D. She hid him in a barrel of apples"], answer: "B. He rode on horseback disguised as her servant", explain: "Đoạn D: 'Charles disguised himself as the servant of a courageous gentlewoman, Jane Lane, riding pillion on horseback'." },
+                        { id: 31, type: "mcq", prompt: "How did Charles finally escape from England in October 1651?", options: ["A. On a warship from Dover", "B. On a coal boat from Shoreham-by-Sea", "C. Across the Scottish border", "D. In a fishing boat from Cornwall"], answer: "B. On a coal boat from Shoreham-by-Sea", explain: "Đoạn D: 'boarded a coal brig at Shoreham-by-Sea in October 1651 and sailed safely to France'." },
+                        { id: 32, type: "tfng", group: "Questions 32–36: Do the following statements agree with the claims of the writer in Reading Passage 3? Choose YES, NO, or NOT GIVEN.", prompt: "Anyone caught helping Charles Stuart faced the death penalty for treason.", options: ["YES", "NO", "NOT GIVEN"], answer: "YES", explain: "Đoạn A: 'declared that anyone sheltering him would be executed for treason'." },
+                        { id: 33, type: "tfng", prompt: "Charles travelled across England accompanied by fifty armed cavalry soldiers.", options: ["YES", "NO", "NOT GIVEN"], answer: "NO", explain: "Đoạn B: ông nhận ra đi cùng đội kỵ binh lớn sẽ gây chú ý nên đã cải trang đi lẻ." },
+                        { id: 34, type: "tfng", prompt: "Parliamentary soldiers looked up and spotted Charles in the oak tree.", options: ["YES", "NO", "NOT GIVEN"], answer: "NO", explain: "Đoạn C: lính đi ngay dưới gốc cây nhưng không phát hiện ra hai người trên cành." },
+                        { id: 35, type: "tfng", prompt: "Jane Lane was later arrested and imprisoned for five years.", options: ["YES", "NO", "NOT GIVEN"], answer: "NOT GIVEN", explain: "Bài đọc không đề cập việc Jane Lane có bị bắt giam hay không." },
+                        { id: 36, type: "tfng", prompt: "Charles II forgot about the families who helped him once he became king in 1660.", options: ["YES", "NO", "NOT GIVEN"], answer: "NO", explain: "Đoạn D: 'forever rewarding the ordinary families who had risked their lives'." },
+                        { id: 37, type: "gap", group: "Questions 37–40: Complete the summary below. Write ONE WORD AND/OR A NUMBER from the passage for each answer.", prompt: "Charles Stuart's escape across England lasted for ______ weeks.", answer: "six", explain: "Đoạn B: 'a six-week game of cat and mouse' (chấp nhận six hoặc 6)." },
+                        { id: 38, type: "gap", prompt: "The famous tree where Charles hid became known as the 'Royal ______'.", answer: "Oak", explain: "Đoạn C: 'remembered in British folklore as the Royal Oak'." },
+                        { id: 39, type: "gap", prompt: "Charles sailed to ______ in October 1651.", answer: "France", explain: "Đoạn D: 'sailed safely to France'." },
+                        { id: 40, type: "gap", prompt: "The monarchy was restored when Charles returned to London in ______.", answer: "1660", explain: "Đoạn D: 'Nine years later, in 1660, he returned to London'." }
+                    ]
+                }
+            ]),
+            listeningParts: [
+                {
+                    partNum: 1,
+                    title: "PART 1 (Questions 1–10): Buckworth Conservation Group (Cam 17 Test 1)",
+                    script: [
+                        { speaker: "Peter", text: "Hello, Buckworth Conservation Group. Peter speaking." },
+                        { speaker: "Jan", text: "Hi Peter! My name is Jan, and I'd like to join your environmental volunteer activities this month." },
+                        { speaker: "Peter", text: "Welcome, Jan! We run regular litter picks on the beach every Saturday, and we also look after the nature reserve. Our next woodland session is on the 19th of October, where volunteers will build wooden nesting boxes for birds." },
+                        { speaker: "Jan", text: "Do I need to bring my own tools?" },
+                        { speaker: "Peter", text: "No, we provide hammers and saws, but please wear a pair of thick gardening gloves because of the brambles, and bring your own packed lunch." },
+                        { speaker: "Jan", text: "Are there any special events coming up in November?" },
+                        { speaker: "Peter", text: "Yes! On the 12th of November, a local biologist is leading an evening walk to spot bats and nocturnal moths near the old canal. Tickets are free, and we meet at the car park behind the lighthouse." },
+                        { speaker: "Jan", text: "I'd love to register. My mobile number is 07954-882310, and I live on Culross Road." }
+                    ],
+                    questions: [
+                        { id: 1, type: "gap", group: "Questions 1–10: Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.", prompt: "Regular Saturday activity: clearing litter on the ______.", answer: "beach", explain: "Peter: 'regular litter picks on the beach every Saturday'." },
+                        { id: 2, type: "gap", prompt: "Date of the next woodland session: ______ October.", answer: "19th", explain: "Peter: 'on the 19th of October' (chấp nhận 19 hoặc 19th)." },
+                        { id: 3, type: "gap", prompt: "Volunteers will make wooden nesting boxes for ______.", answer: "birds", explain: "Peter: 'build wooden nesting boxes for birds'." },
+                        { id: 4, type: "gap", prompt: "Tools provided by the group: saws and ______.", answer: "hammers", explain: "Peter: 'we provide hammers and saws'." },
+                        { id: 5, type: "gap", prompt: "Volunteers should bring thick gardening ______.", answer: "gloves", explain: "Peter: 'wear a pair of thick gardening gloves'." },
+                        { id: 6, type: "gap", prompt: "Participants also need to bring their own packed ______.", answer: "lunch", explain: "Peter: 'bring your own packed lunch'." },
+                        { id: 7, type: "gap", prompt: "November evening walk will look for nocturnal moths and ______.", answer: "bats", explain: "Peter: 'leading an evening walk to spot bats and nocturnal moths'." },
+                        { id: 8, type: "gap", prompt: "The November walk takes place along the old ______.", answer: "canal", explain: "Peter: 'near the old canal'." },
+                        { id: 9, type: "gap", prompt: "Meeting point for the walk: car park behind the ______.", answer: "lighthouse", explain: "Peter: 'meet at the car park behind the lighthouse'." },
+                        { id: 10, type: "gap", prompt: "Jan's address: ______ Road.", answer: "Culross", explain: "Jan: 'I live on Culross Road'." }
+                    ]
+                },
+                {
+                    partNum: 2,
+                    title: "PART 2 (Questions 11–20): Boat Trip Round Tasmania",
+                    script: [
+                        { speaker: "Guide", text: "Good morning and welcome aboard Eco-Tasmania Cruises! Our sightseeing boat holds a maximum of 18 passengers, which allows us to get much closer to coastal caves than the large 100-seat ferries." },
+                        { speaker: "Guide", text: "Our tour boats are painted bright dark green with a white stripe, and each seat has a waterproof storage box underneath for your camera." },
+                        { speaker: "Guide", text: "For lunch, we include a complimentary lunchbox. Option A is Tasmanian smoked salmon, Option B is a roast chicken wrap, and Option C is a warm mushroom pie—please tell the crew your choice before 10:30." },
+                        { speaker: "Guide", text: "At our first stop, Ironstone Island, there are no shops or cafes left, as the old telegraph station closed in 1995. However, you will see hundreds of fur seals sunbathing on the granite rocks, and dolphins often swim alongside our hull." },
+                        { speaker: "Guide", text: "Please remember not to feed the seabirds, and keep your lifejacket fastened at all times while on the open deck." }
+                    ],
+                    questions: [
+                        { id: 11, type: "mcq", group: "Questions 11–15: Choose the correct letter, A, B, or C.", prompt: "What is the maximum number of passengers on the Eco-Tasmania tour boat?", options: ["A. 12 passengers", "B. 18 passengers", "C. 100 passengers"], answer: "B. 18 passengers", explain: "Guide: 'Our sightseeing boat holds a maximum of 18 passengers'." },
+                        { id: 12, type: "mcq", prompt: "Where can passengers store their cameras safely during the trip?", options: ["A. In lockers at the ticket office", "B. In a waterproof box under their seat", "C. In the captain's cabin"], answer: "B. In a waterproof box under their seat", explain: "Guide: 'each seat has a waterproof storage box underneath for your camera'." },
+                        { id: 13, type: "mcq", prompt: "Which lunch option is vegetarian?", options: ["A. Option A (Smoked salmon)", "B. Option B (Roast chicken wrap)", "C. Option C (Warm mushroom pie)"], answer: "C. Option C (Warm mushroom pie)", explain: "Guide: 'Option C is a warm mushroom pie'." },
+                        { id: 14, type: "mcq", prompt: "What building used to operate on Ironstone Island until 1995?", options: ["A. A telegraph station", "B. A prison", "C. A silver mine"], answer: "A. A telegraph station", explain: "Guide: 'the old telegraph station closed in 1995'." },
+                        { id: 15, type: "mcq", prompt: "What rule must passengers follow on the open deck?", options: ["A. No photography is allowed", "B. Keep lifejackets fastened at all times", "C. Stay seated during the entire trip"], answer: "B. Keep lifejackets fastened at all times", explain: "Guide: 'keep your lifejacket fastened at all times while on the open deck'." },
+                        { id: 16, type: "gap", group: "Questions 16–20: Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.", prompt: "The exterior of the tour boat is painted dark ______ with a white stripe.", answer: "green", explain: "Guide: 'painted bright dark green with a white stripe'." },
+                        { id: 17, type: "gap", prompt: "Passengers must order their lunch before ______ a.m.", answer: "10:30", explain: "Guide: 'tell the crew your choice before 10:30'." },
+                        { id: 18, type: "gap", prompt: "Fur seals can be seen resting on the ______ rocks.", answer: "granite", explain: "Guide: 'sunbathing on the granite rocks'." },
+                        { id: 19, type: "gap", prompt: "In the water, ______ frequently swim next to the boat.", answer: "dolphins", explain: "Guide: 'dolphins often swim alongside our hull'." },
+                        { id: 20, type: "gap", prompt: "Visitors are strictly asked not to feed the ______.", answer: "seabirds", explain: "Guide: 'remember not to feed the seabirds'." }
+                    ]
+                },
+                {
+                    partNum: 3,
+                    title: "PART 3 (Questions 21–30): Work Experience for Veterinary Science Students",
+                    script: [
+                        { speaker: "Tim", text: "Hi Diana, how did your summer farm placement go for our veterinary science course?" },
+                        { speaker: "Diana", text: "It was exhausting but rewarding, Tim! I worked on a sheep and dairy farm in Wales. Initially, I struggled because the farmer used local dialect terms for cattle diseases that weren't in our textbook." },
+                        { speaker: "Tim", text: "I had a similar surprise at the equine clinic! I thought I'd be assisting in surgery, but I spent the first week analyzing blood samples and checking ultrasound scans of horses' tendons." },
+                        { speaker: "Diana", text: "Did you work with poultry too? For our next module on avian health, Dr. Evans recommended reading the new report on organic free-range chickens—apparently, adding herbs like oregano to their feed boosts immunity naturally." },
+                        { speaker: "Tim", text: "Yes, and we need to submit our 2,000-word clinical case log by Friday, accompanied by a signed evaluation form from the supervising vet." }
+                    ],
+                    questions: [
+                        { id: 21, type: "mcq", group: "Questions 21–25: Choose the correct letter, A, B, or C.", prompt: "What difficulty did Diana face at the beginning of her farm placement?", options: ["A. She was afraid of large cattle", "B. The farmer used unfamiliar local terms for animal illnesses", "C. Her car broke down on the way to Wales"], answer: "B. The farmer used unfamiliar local terms for animal illnesses", explain: "Diana: 'the farmer used local dialect terms for cattle diseases that weren't in our textbook'." },
+                        { id: 22, type: "mcq", prompt: "Where did Tim complete his summer placement?", options: ["A. At a city zoo", "B. At an equine (horse) clinic", "C. At a pet shelter"], answer: "B. At an equine (horse) clinic", explain: "Tim: 'I had a similar surprise at the equine clinic... horses' tendons'." },
+                        { id: 23, type: "mcq", prompt: "What task did Tim spend his first week doing?", options: ["A. Performing surgery on horses", "B. Analyzing blood samples and ultrasound scans", "C. Ordering medicine supplies"], answer: "B. Analyzing blood samples and ultrasound scans", explain: "Tim: 'spent the first week analyzing blood samples and checking ultrasound scans'." },
+                        { id: 24, type: "mcq", prompt: "According to the report recommended by Dr. Evans, what helps boost chickens' immunity?", options: ["A. Keeping them indoors all winter", "B. Adding herbs like oregano to their feed", "C. Playing classical music in the barn"], answer: "B. Adding herbs like oregano to their feed", explain: "Diana: 'adding herbs like oregano to their feed boosts immunity naturally'." },
+                        { id: 25, type: "mcq", prompt: "What document must be attached to the students' clinical case log?", options: ["A. A signed evaluation form from the supervising vet", "B. A receipt for travel expenses", "C. A photograph of the farm"], answer: "A. A signed evaluation form from the supervising vet", explain: "Tim: 'accompanied by a signed evaluation form from the supervising vet'." },
+                        { id: 26, type: "gap", group: "Questions 26–30: Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.", prompt: "Diana worked on a dairy and ______ farm in Wales.", answer: "sheep", explain: "Diana: 'worked on a sheep and dairy farm in Wales'." },
+                        { id: 27, type: "gap", prompt: "Tim checked ultrasound scans of horses' ______.", answer: "tendons", explain: "Tim: 'ultrasound scans of horses' tendons'." },
+                        { id: 28, type: "gap", prompt: "Dr. Evans teaches the module on ______ health.", answer: "avian", explain: "Diana: 'our next module on avian health, Dr. Evans recommended...'." },
+                        { id: 29, type: "gap", prompt: "The required length of the clinical case log is ______ words.", answer: "2,000", explain: "Tim: 'submit our 2,000-word clinical case log' (chấp nhận 2000 hoặc 2,000)." },
+                        { id: 30, type: "gap", prompt: "The deadline for submitting the case log is ______.", answer: "Friday", explain: "Tim: 'by Friday'." }
+                    ]
+                },
+                {
+                    partNum: 4,
+                    title: "PART 4 (Questions 31–40): Labyrinths through History",
+                    script: [
+                        { speaker: "Lecturer", text: "Today we are looking at the cultural history of labyrinths. First, it is crucial to distinguish between a 'maze' and a 'labyrinth'. A maze is a puzzle with branching paths and dead ends designed to confuse you, whereas a true labyrinth has a single, non-branching winding path that leads inexorably to the centre and back out." },
+                        { speaker: "Lecturer", text: "The motif of the seven-circuit labyrinth dates back over 4,000 years. Archaeologists have found the symbol carved into prehistoric rock in Spain, stamped onto silver coins in ancient Crete, and laid as mosaic floors in Roman villas." },
+                        { speaker: "Lecturer", text: "In medieval Europe, stone labyrinths were embedded into the floors of great cathedrals, most famously at Chartres Cathedral in France around the year 1200. Monks and pilgrims walked the winding path on their knees as a quiet form of meditation." },
+                        { speaker: "Lecturer", text: "In Scandinavia, coastal fishermen built hundreds of stone-lined labyrinths on islands; according to folklore, walking the spiral before setting sail trapped mischievous winds and guaranteed a safe catch." },
+                        { speaker: "Lecturer", text: "In recent decades, labyrinths have experienced a remarkable revival in hospitals, university campuses, and prisons. Medical studies show that walking a labyrinth lowers blood pressure and reduces anxiety in patients awaiting surgery." }
+                    ],
+                    questions: [
+                        { id: 31, type: "gap", group: "Questions 31–40: Complete the lecture notes below. Write ONE WORD AND/OR A NUMBER for each answer.", prompt: "Unlike a labyrinth, a ______ has branching paths and dead ends.", answer: "maze", explain: "Lecturer: 'A maze is a puzzle with branching paths and dead ends'." },
+                        { id: 32, type: "gap", prompt: "Ancient labyrinth designs have been found on silver ______ from Crete.", answer: "coins", explain: "Lecturer: 'stamped onto silver coins in ancient Crete'." },
+                        { id: 33, type: "gap", prompt: "Wealthy Romans used labyrinth patterns for ______ floors in their villas.", answer: "mosaic", explain: "Lecturer: 'laid as mosaic floors in Roman villas'." },
+                        { id: 34, type: "gap", prompt: "Around 1200, a famous stone labyrinth was built inside Chartres ______ in France.", answer: "Cathedral", explain: "Lecturer: 'most famously at Chartres Cathedral in France'." },
+                        { id: 35, type: "gap", prompt: "Medieval pilgrims walked the cathedral labyrinth as a form of ______.", answer: "meditation", explain: "Lecturer: 'as a quiet form of meditation'." },
+                        { id: 36, type: "gap", prompt: "In Scandinavia, coastal ______ built stone labyrinths on islands.", answer: "fishermen", explain: "Lecturer: 'In Scandinavia, coastal fishermen built hundreds of stone-lined labyrinths'." },
+                        { id: 37, type: "gap", prompt: "Folklore claimed that walking the spiral trapped dangerous ______ at sea.", answer: "winds", explain: "Lecturer: 'trapped mischievous winds and guaranteed a safe catch'." },
+                        { id: 38, type: "gap", prompt: "Today, labyrinths are built in universities, prisons, and ______.", answer: "hospitals", explain: "Lecturer: 'revival in hospitals, university campuses, and prisons'." },
+                        { id: 39, type: "gap", prompt: "Walking a labyrinth has been shown to lower blood ______.", answer: "pressure", explain: "Lecturer: 'lowers blood pressure'." },
+                        { id: 40, type: "gap", prompt: "Hospital labyrinths help reduce ______ in patients before surgery.", answer: "anxiety", explain: "Lecturer: 'and reduces anxiety in patients awaiting surgery'." }
+                    ]
+                }
+            ],
+            writing: {
+                task1: {
+                    prompt: "The bar chart below compares the planned and actual allocation of land (%) for the redevelopment of the Norbiton industrial zone into a mixed-use residential community.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                    keywords: ["norbiton", "housing", "parkland", "shops", "medical", "planned", "actual"],
+                    svgChart: "<svg viewBox=\"0 0 560 260\" style=\"width:100%; background:#141210; border-radius:8px; padding:10px; border:1px solid #2b2520;\">\n                    <text x=\"280\" y=\"20\" fill=\"#ede3da\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">Norbiton Redevelopment: Planned vs. Actual Land Allocation (%)</text>\n                    <line x1=\"55\" y1=\"35\" x2=\"55\" y2=\"210\" stroke=\"#666\" stroke-width=\"1.5\"/>\n                    <line x1=\"55\" y1=\"210\" x2=\"510\" y2=\"210\" stroke=\"#666\" stroke-width=\"1.5\"/>\n                    <rect x=\"85\" y=\"65\" width=\"32\" height=\"145\" fill=\"#e58547\"/><rect x=\"122\" y=\"45\" width=\"32\" height=\"165\" fill=\"#3b82f6\"/>\n                    <rect x=\"195\" y=\"130\" width=\"32\" height=\"80\" fill=\"#e58547\"/><rect x=\"232\" y=\"152\" width=\"32\" height=\"58\" fill=\"#3b82f6\"/>\n                    <rect x=\"305\" y=\"165\" width=\"32\" height=\"45\" fill=\"#e58547\"/><rect x=\"342\" y=\"158\" width=\"32\" height=\"52\" fill=\"#3b82f6\"/>\n                    <rect x=\"415\" y=\"175\" width=\"32\" height=\"35\" fill=\"#e58547\"/><rect x=\"452\" y=\"180\" width=\"32\" height=\"30\" fill=\"#3b82f6\"/>\n                    <text x=\"118\" y=\"228\" fill=\"#ede3da\" font-size=\"10\" text-anchor=\"middle\">Housing (48→56%)</text>\n                    <text x=\"228\" y=\"228\" fill=\"#ede3da\" font-size=\"10\" text-anchor=\"middle\">Parkland (25→18%)</text>\n                    <text x=\"338\" y=\"228\" fill=\"#ede3da\" font-size=\"10\" text-anchor=\"middle\">Shops (15→17%)</text>\n                    <text x=\"448\" y=\"228\" fill=\"#ede3da\" font-size=\"10\" text-anchor=\"middle\">School/Clinic (12→9%)</text>\n                    <text x=\"180\" y=\"248\" fill=\"#e58547\" font-size=\"10\" font-weight=\"bold\">■ Original Plan</text>\n                    <text x=\"310\" y=\"248\" fill=\"#3b82f6\" font-size=\"10\" font-weight=\"bold\">■ Actual Completed Site</text>\n                </svg>",
+                    modelAnswer: "The bar chart illustrates the differences between the initial master plan and the final completed land-use percentages for the Norbiton industrial zone redevelopment project.\n\nOverall, residential housing occupied the largest share of land in both the proposal and the finished project. Notably, the actual construction expanded housing and commercial shops at the expense of green parkland and public facilities.\n\nIn detail, residential housing was originally scheduled to cover 48% of the site, but its final allocation rose to 56%. Similarly, the proportion of land dedicated to retail shops increased slightly from a planned 15% to 17%. Conversely, public parkland was reduced from a projected 25% down to 18%, while space for the local school and medical clinic declined modestly from 12% to 9%."
+                },
+                task2: {
+                    prompt: "It is important for people to take risks, both in their professional lives and their personal lives.\n\nDo you think the advantages of taking risks outweigh the disadvantages? Write at least 250 words.",
+                    keywords: ["risk", "risks", "professional", "personal", "advantages", "disadvantages", "career"],
+                    modelAnswer: "Stepping outside one's comfort zone involves uncertainty in both career and private life. Although reckless decisions can lead to financial or emotional setbacks, I firmly believe that the benefits of taking calculated risks far outweigh the drawbacks.\n\nAdmittedly, poorly planned risks carry real dangers. For example, investing one's entire life savings into an untested business venture without market research can result in bankruptcy. However, when risks are carefully evaluated, they become the primary driver of personal growth and innovation. In professional settings, entrepreneurs and scientists who dare to challenge conventional methods create new industries and career opportunities. In personal life, moving to a new city or learning a difficult skill builds resilience, self-confidence, and lifelong fulfilment.\n\nIn conclusion, while blind gambling should be avoided, embracing calculated risk is essential for meaningful achievement and progress."
+                }
+            },
+            speaking: {
+                part1: [
+                    "1. Do you enjoy learning about history at school or through films?",
+                    "2. What was your favourite historical period to study when you were younger?",
+                    "3. How often do you use a mirror during a typical day?",
+                    "4. Do you prefer to buy clothes in physical shops or online?"
+                ],
+                part2: {
+                    title: "Describe a positive change that you made in your daily routine recently.",
+                    bullets: [
+                        "What the change is",
+                        "Why you decided to make this change",
+                        "How easy or difficult it was to maintain",
+                        "And explain how this change has benefited your life"
+                    ]
+                },
+                part3: [
+                    "1. Why do many people find it hard to change long-standing habits?",
+                    "2. Do you think young people adapt to technological changes faster than older people?",
+                    "3. Should employers allow workers more flexible daily schedules?"
+                ],
+                modelAnswer: "I would like to talk about my decision to wake up at 5:30 every morning and go for a thirty-minute jog before checking my phone. I started this habit three months ago because I felt mentally exhausted from scrolling through social media late at night. The first week was quite challenging, but once my sleep schedule adjusted, my concentration during morning classes improved dramatically and I feel far more energetic throughout the day."
+            }
+        };
 
         /* ==================== BIẾN TRẠNG THÁI THI THẬT ==================== */
         let currentTestId = 'cam19_t1';
@@ -2340,7 +2775,12 @@
 
         /* ==================== LOAD ĐỀ CAMBRIDGE ==================== */
         function loadCambridgeTest(testId) {
+            if (!CAMBRIDGE_DB[testId]) testId = 'cam19_t1';
             currentTestId = testId;
+            const selectEl = document.getElementById('cambridgeTestSelect');
+            if (selectEl && selectEl.value !== testId) {
+                selectEl.value = testId;
+            }
             currentPassageIdx = 0;
             currentListenPartIdx = 0;
             readingUserAnswers = {};
@@ -2351,6 +2791,10 @@
             stopCambridgeAudio();
             document.getElementById('readingResultBanner').style.display = 'none';
             document.getElementById('listeningResultBanner').style.display = 'none';
+            const spkModel = document.getElementById('speakingModelBox');
+            const spkAi = document.getElementById('speakingAiResultBox');
+            if (spkModel) spkModel.style.display = 'none';
+            if (spkAi) spkAi.style.display = 'none';
 
             switchReadingPassage(0);
             switchListeningPart(0);
@@ -2496,6 +2940,20 @@
             return 3.5;
         }
 
+        function isAnswerMatch(userRaw, ansRaw) {
+            const normUser = (userRaw || '').toLowerCase().trim().replace(/,/g, '');
+            const normAns = (ansRaw || '').toLowerCase().trim().replace(/,/g, '');
+            if (!normUser) return false;
+            if (normUser === normAns) return true;
+            if (normAns === 'three' && normUser === '3') return true;
+            if (normAns === 'six' && normUser === '6') return true;
+            if (normAns === '5' && normUser === 'five') return true;
+            if (normAns === '19th' && normUser === '19') return true;
+            if (normAns === 'fence' && normUser === 'fencing') return true;
+            if (normAns.startsWith(normUser + '.') && normUser.length === 1) return true;
+            return false;
+        }
+
         function gradeReading() {
             const passages = CAMBRIDGE_DB[currentTestId].readingPassages;
             let totalQ = 0;
@@ -2505,9 +2963,7 @@
                 p.questions.forEach(q => {
                     totalQ++;
                     const userAns = (readingUserAnswers[q.id] || '').trim();
-                    const normUser = userAns.toLowerCase().trim();
-                    const normAns = q.answer.toLowerCase().trim();
-                    const isCorrect = (normUser === normAns) || (normAns === 'three' && normUser === '3') || (normAns === '5' && normUser === 'five') || (normAns.startsWith(normUser + '.') && normUser.length === 1);
+                    const isCorrect = isAnswerMatch(userAns, q.answer);
                     if (isCorrect) correctCount++;
 
                     const fbEl = document.getElementById(`read_fb_${q.id}`);
@@ -2698,9 +3154,7 @@
                 pt.questions.forEach(q => {
                     totalQ++;
                     const userAns = (listeningUserAnswers[q.id] || '').trim();
-                    const normUser = userAns.toLowerCase().trim();
-                    const normAns = q.answer.toLowerCase().trim();
-                    const isCorrect = (normUser === normAns) || (normAns === 'three' && normUser === '3') || (normAns === '5' && normUser === 'five') || (normAns.startsWith(normUser + '.') && normUser.length === 1);
+                    const isCorrect = isAnswerMatch(userAns, q.answer);
                     if (isCorrect) correctCount++;
 
                     const fbEl = document.getElementById(`listen_fb_${q.id}`);
@@ -2941,7 +3395,8 @@
         });
 
         window.addEventListener('DOMContentLoaded', () => {
-            loadCambridgeTest('cam19_t1');
+            const initialTestId = document.getElementById('cambridgeTestSelect')?.value || 'cam19_t1';
+            loadCambridgeTest(initialTestId);
             updateTimerUI();
 
             // Kéo thanh chia cột trái/phải của Reading giống thi máy thật (CD-IELTS Splitter)
