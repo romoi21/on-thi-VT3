@@ -1,0 +1,2973 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Computer-Delivered Test - Cambridge & AI Examiner</title>
+    <!-- Đồng bộ màu chủ đạo toàn cầu ngay khi tải trang -->
+    <script>
+        (function() {
+            try {
+                const savedColor = localStorage.getItem('k71_theme_color') || '#e58547';
+                const savedTheme = localStorage.getItem('k71_theme') || 'dark';
+                function hexToRgb(hex) {
+                    hex = hex.replace('#', '');
+                    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+                    const num = parseInt(hex, 16);
+                    return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+                }
+                function adjustBrightness(hex, percent) {
+                    const { r, g, b } = hexToRgb(hex);
+                    const amt = Math.round(2.55 * percent);
+                    const R = Math.min(255, Math.max(0, r + amt));
+                    const G = Math.min(255, Math.max(0, g + amt));
+                    const B = Math.min(255, Math.max(0, b + amt));
+                    return '#' + ((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1);
+                }
+                const rgb = hexToRgb(savedColor);
+                const rgbStr = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+                const hoverHex = adjustBrightness(savedColor, -15);
+                const root = document.documentElement;
+                root.style.setProperty('--primary-color', savedColor);
+                root.style.setProperty('--primary-hover', hoverHex);
+                root.style.setProperty('--primary-rgb', rgbStr);
+                root.style.setProperty('--primary-light', `rgba(${rgbStr}, 0.14)`);
+                root.style.setProperty('--primary-glow', `rgba(${rgbStr}, 0.35)`);
+                if (savedTheme === 'light') {
+                    root.classList.add('light-mode');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <style>
+        :root {
+            --primary-color: #e58547;
+            --primary-hover: #cf7337;
+            --primary-rgb: 229, 133, 71;
+            --primary-light: rgba(229, 133, 71, 0.14);
+            --primary-glow: rgba(229, 133, 71, 0.35);
+
+            --bg-body: #0d0c0b;
+            --bg-card: #181513;
+            --bg-card-subtle: #211d1a;
+            --bg-exam-pane: #141210;
+            --bg-input: #0f0d0c;
+            --text-main: #ede3da;
+            --text-muted: #9c8e82;
+            --border-color: #2d2621;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+        }
+
+        html.light-mode, body.light-mode {
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-card-subtle: #f8fafc;
+            --bg-exam-pane: #ffffff;
+            --bg-input: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 12px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        /* Chế độ Full Màn Hình Thi Thật (CD-IELTS Mode) */
+        body.exam-fullscreen-active {
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        body.exam-fullscreen-active .ielts-wrapper {
+            max-width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.exam-fullscreen-active .ai-config-bar {
+            display: none !important;
+        }
+
+        body.exam-fullscreen-active .cd-split-workspace {
+            height: calc(100vh - 230px) !important;
+        }
+
+        body.exam-fullscreen-active .cd-listening-workspace {
+            height: calc(100vh - 285px) !important;
+        }
+
+        .ielts-wrapper {
+            max-width: 1360px;
+            margin: 0 auto;
+        }
+
+        /* ==================== THANH HEADER THI THẬT CD-IELTS ==================== */
+        .cd-exam-header {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--primary-color);
+            border-radius: var(--radius-md);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+        }
+
+        body.exam-fullscreen-active .cd-exam-header {
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+
+        .cd-candidate-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cd-logo-badge {
+            background: #dc2626;
+            color: #ffffff !important;
+            font-weight: 900;
+            font-size: 0.9rem;
+            padding: 5px 11px;
+            border-radius: 5px;
+            letter-spacing: 0.8px;
+        }
+
+        .select-cambridge {
+            background: var(--bg-input);
+            color: var(--text-main);
+            border: 1.5px solid var(--primary-color);
+            padding: 7px 12px;
+            border-radius: 7px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .cd-timer-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-card-subtle);
+            border: 1.5px solid var(--primary-color);
+            padding: 6px 16px;
+            border-radius: 99px;
+        }
+
+        .cd-timer-digits {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--primary-color);
+        }
+
+        .cd-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* Nút bấm chuẩn chữ trắng 100% */
+        .btn-ielts {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 15px;
+            border-radius: 7px;
+            font-weight: 700;
+            font-size: 0.86rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.18s;
+            color: #ffffff !important;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-ielts-primary {
+            background: var(--primary-color);
+            color: #ffffff !important;
+            box-shadow: 0 2px 10px var(--primary-glow);
+        }
+
+        .btn-ielts-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+            color: #ffffff !important;
+        }
+
+        .btn-ielts-start-exam {
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            color: #ffffff !important;
+            box-shadow: 0 3px 12px rgba(22, 163, 74, 0.4);
+            padding: 9px 18px;
+            font-size: 0.9rem;
+        }
+
+        .btn-ielts-start-exam:hover {
+            background: #15803d;
+            transform: translateY(-1px);
+            color: #ffffff !important;
+        }
+
+        .btn-ielts-secondary {
+            background: #334155;
+            color: #ffffff !important;
+            border: 1px solid rgba(255,255,255,0.14);
+        }
+
+        .btn-ielts-secondary:hover {
+            background: #475569;
+            color: #ffffff !important;
+        }
+
+        .btn-ielts-danger {
+            background: #dc2626;
+            color: #ffffff !important;
+        }
+
+        /* 4 KỸ NĂNG TABS */
+        .skills-nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        body.exam-fullscreen-active .skills-nav {
+            padding: 6px 12px;
+            margin-bottom: 0;
+            background: var(--bg-card-subtle);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .skill-tab-btn {
+            background: var(--bg-card);
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 9px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .skill-tab-btn:hover {
+            border-color: var(--primary-color);
+        }
+
+        .skill-tab-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff !important;
+            box-shadow: 0 3px 12px var(--primary-glow);
+        }
+
+        .skill-panel {
+            display: none;
+        }
+
+        .skill-panel.active {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        /* ==================== GIAO DIỆN THI THẬT READING & LISTENING (CD-IELTS) ==================== */
+        /* Thanh chỉ dẫn Part / Passage (Giống hệt Inspera IELTS) */
+        .cd-instruction-bar {
+            background: var(--bg-card-subtle);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 9px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+        }
+
+        body.exam-fullscreen-active .cd-instruction-bar {
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+
+        .cd-passage-tabs-top {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .btn-passage-switch {
+            background: #2b2623;
+            color: #ffffff !important;
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.84rem;
+            cursor: pointer;
+            transition: all 0.18s;
+        }
+
+        html.light-mode .btn-passage-switch, body.light-mode .btn-passage-switch {
+            background: #475569;
+            color: #ffffff !important;
+        }
+
+        .btn-passage-switch.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff !important;
+            box-shadow: 0 2px 8px var(--primary-glow);
+        }
+
+        /* Khung Chia Đôi Màn Hình Reading (Trái: Bài Đọc | Giữa: Thanh Kéo | Phải: Câu Hỏi) */
+        .cd-split-workspace {
+            display: grid;
+            grid-template-columns: 1fr 8px 1fr;
+            height: 560px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--bg-exam-pane);
+        }
+
+        body.exam-fullscreen-active .cd-split-workspace {
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+        }
+
+        .cd-pane-left, .cd-pane-right {
+            height: 100%;
+            overflow-y: auto;
+            padding: 22px 24px;
+            background: var(--bg-exam-pane);
+        }
+
+        .cd-splitter {
+            background: var(--border-color);
+            cursor: col-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .cd-splitter:hover {
+            background: var(--primary-color);
+        }
+
+        .cd-splitter::after {
+            content: "⋮";
+            color: var(--text-muted);
+            font-weight: bold;
+        }
+
+        .cd-pane-left::-webkit-scrollbar, .cd-pane-right::-webkit-scrollbar, .cd-listening-workspace::-webkit-scrollbar {
+            width: 8px;
+        }
+        .cd-pane-left::-webkit-scrollbar-thumb, .cd-pane-right::-webkit-scrollbar-thumb, .cd-listening-workspace::-webkit-scrollbar-thumb {
+            background: rgba(var(--primary-rgb), 0.45);
+            border-radius: 4px;
+        }
+
+        /* Bài đọc Reading */
+        .cd-passage-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+        }
+
+        .cd-passage-subtitle {
+            font-size: 0.92rem;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .passage-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+
+        .para-label {
+            display: inline-block;
+            background: rgba(var(--primary-rgb), 0.18);
+            color: var(--primary-color);
+            font-weight: 800;
+            padding: 1px 8px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        mark.ielts-highlight {
+            background: #fde047;
+            color: #0f172a;
+            padding: 1px 3px;
+            border-radius: 3px;
+        }
+
+        /* Khung Câu hỏi CD-IELTS */
+        .cd-q-group-header {
+            background: var(--bg-card-subtle);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin: 14px 0 12px 0;
+            font-size: 0.92rem;
+        }
+
+        .cd-q-card {
+            background: var(--bg-card);
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            transition: all 0.2s;
+        }
+
+        .cd-q-card.focused-q {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.25);
+        }
+
+        .cd-q-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .cd-q-number-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 26px;
+            padding: 0 7px;
+            background: var(--primary-color);
+            color: #ffffff !important;
+            font-weight: 800;
+            font-size: 0.82rem;
+            border-radius: 4px;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .btn-flag-review {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .btn-flag-review.flagged {
+            background: #f59e0b;
+            border-color: #f59e0b;
+            color: #ffffff !important;
+        }
+
+        .cd-radio-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .cd-radio-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 14px;
+            background: var(--bg-input);
+            border: 1.5px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.15s;
+        }
+
+        .cd-radio-pill:hover {
+            border-color: var(--primary-color);
+        }
+
+        .cd-gap-input {
+            width: 230px;
+            max-width: 100%;
+            padding: 7px 12px;
+            border-radius: 6px;
+            border: 1.5px solid var(--primary-color);
+            background: var(--bg-input);
+            color: var(--text-main);
+            font-size: 0.94rem;
+            font-weight: 700;
+            outline: none;
+        }
+
+        .cd-gap-input:focus {
+            box-shadow: 0 0 0 3px var(--primary-glow);
+        }
+
+        /* ==================== THANH ĐIỀU HƯỚNG DƯỚI CÙNG (BOTTOM PALETTE GIỐNG THI THẬT) ==================== */
+        .cd-bottom-navbar {
+            background: var(--bg-card);
+            border: 1.5px solid var(--border-color);
+            border-top: 2px solid var(--primary-color);
+            border-radius: 0 0 8px 8px;
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        body.exam-fullscreen-active .cd-bottom-navbar {
+            margin-top: 0;
+            border-radius: 0;
+        }
+
+        .cd-palette-sections {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .cd-palette-group {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3px;
+            background: var(--bg-card-subtle);
+            border: 1px solid var(--border-color);
+            padding: 4px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .cd-palette-group.active-group {
+            border-color: var(--primary-color);
+            background: rgba(var(--primary-rgb), 0.1);
+        }
+
+        .cd-palette-label {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-right: 3px;
+        }
+
+        .cd-q-num-btn {
+            width: 23px;
+            height: 23px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-input);
+            color: var(--text-main);
+            font-size: 0.72rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+        }
+
+        .cd-q-num-btn:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* Đã trả lời: đổi màu nổi bật */
+        .cd-q-num-btn.answered {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff !important;
+        }
+
+        /* Đánh dấu xem lại (Review Flag) */
+        .cd-q-num-btn.flagged {
+            border-radius: 50%;
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 2px #f59e0b;
+        }
+
+        /* ==================== LISTENING WORKSPACE ==================== */
+        .cd-listening-audio-bar {
+            background: var(--bg-card);
+            border: 1.5px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 10px 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .audio-progress-track {
+            flex: 1;
+            min-width: 160px;
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .audio-progress-fill {
+            width: 0%;
+            height: 100%;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .cd-listening-workspace {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 16px;
+            height: 500px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-exam-pane);
+            padding: 18px;
+            overflow-y: auto;
+        }
+
+        /* Feedback sau khi nộp bài */
+        .q-feedback {
+            margin-top: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: none;
+        }
+
+        .q-feedback.correct {
+            display: block;
+            background: rgba(34, 197, 94, 0.14);
+            border: 1px solid rgba(34, 197, 94, 0.45);
+            color: #4ade80;
+        }
+
+        html.light-mode .q-feedback.correct, body.light-mode .q-feedback.correct {
+            color: #15803d;
+        }
+
+        .q-feedback.wrong {
+            display: block;
+            background: rgba(239, 68, 68, 0.14);
+            border: 1px solid rgba(239, 68, 68, 0.45);
+            color: #f87171;
+        }
+
+        html.light-mode .q-feedback.wrong, body.light-mode .q-feedback.wrong {
+            color: #b91c1c;
+        }
+
+        .band-result-banner {
+            display: none;
+            background: rgba(var(--primary-rgb), 0.14);
+            border: 1.5px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-bottom: 8px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .band-circle {
+            background: var(--primary-color);
+            color: #ffffff !important;
+            font-size: 1.35rem;
+            font-weight: 900;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        /* WRITING & SPEAKING LAYOUT */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .panel-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 20px;
+        }
+
+        .essay-textarea {
+            width: 100%;
+            min-height: 290px;
+            background: var(--bg-input);
+            color: var(--text-main);
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            resize: vertical;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .essay-textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        .word-count-bar {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0 14px 0;
+            font-size: 0.86rem;
+            color: var(--text-muted);
+        }
+
+        .ai-eval-box {
+            margin-top: 16px;
+            background: var(--bg-card-subtle);
+            border: 1.5px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 18px;
+            display: none;
+        }
+
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 14px 0;
+        }
+
+        .criterion-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .criterion-card .c-score {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .criterion-card .c-name {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .cue-card-box {
+            background: rgba(var(--primary-rgb), 0.08);
+            border: 1.5px dashed var(--primary-color);
+            border-radius: 10px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+
+        .ai-config-bar {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 9px 14px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .api-key-input {
+            background: var(--bg-input);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 6px 10px;
+            border-radius: 6px;
+            width: 220px;
+            font-size: 0.82rem;
+        }
+
+        @media (max-width: 960px) {
+            .cd-split-workspace, .cd-listening-workspace, .split-layout {
+                grid-template-columns: 1fr;
+                height: auto !important;
+            }
+            .cd-splitter {
+                display: none;
+            }
+            .skills-nav, .criteria-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ielts-wrapper">
+        <!-- ==================== THANH HEADER THI THẬT COMPUTER-DELIVERED IELTS ==================== -->
+        <header class="cd-exam-header">
+            <div class="cd-candidate-info">
+                <span class="cd-logo-badge">IELTS CD-TEST</span>
+                <select id="cambridgeTestSelect" class="select-cambridge" onchange="loadCambridgeTest(this.value)">
+                    <option value="cam19_t1">Cambridge IELTS 19 – Academic Test 1</option>
+                    <option value="cam18_t1">Cambridge IELTS 18 – Academic Test 1</option>
+                    <option value="cam17_t1">Cambridge IELTS 17 – Academic Test 1</option>
+                </select>
+                <span style="font-size: 0.82rem; color: var(--text-muted);">👤 Candidate: <strong>K71-THPT</strong></span>
+            </div>
+
+            <!-- Đồng hồ thi thật ở chính giữa -->
+            <div class="cd-timer-center">
+                <span>⏱️</span>
+                <span class="cd-timer-digits" id="skillTimerDisplay">60:00</span>
+                <span style="font-size: 0.76rem; color: var(--text-muted);">remaining</span>
+            </div>
+
+            <!-- Cụm nút Bắt Đầu Làm Bài (Full Màn Hình) + Highlight + Nộp Bài -->
+            <div class="cd-header-actions">
+                <button class="btn-ielts btn-ielts-start-exam" id="btnStartFullExam" onclick="startExamFullscreen()">
+                    🚀 Bắt Đầu Làm Bài (Full Màn Hình)
+                </button>
+                <button class="btn-ielts btn-ielts-danger" id="btnExitFullExam" onclick="exitExamFullscreen()" style="display: none;">
+                    ✕ Thoát Full Màn Hình
+                </button>
+                <button class="btn-ielts btn-ielts-secondary" onclick="highlightSelectedText()" title="Bôi đen từ khóa trong bài đọc rồi bấm nút này để tô vàng">
+                    🖍️ Highlight
+                </button>
+                <button class="btn-ielts btn-ielts-secondary" onclick="resetSkillTimer()">
+                    ↺ Đặt lại giờ
+                </button>
+            </div>
+        </header>
+
+        <!-- Thanh cài đặt AI Examiner cho Writing & Speaking -->
+        <div class="ai-config-bar">
+            <div style="font-size: 0.84rem;">
+                🤖 <strong>AI IELTS Examiner:</strong> Chấm tự động Writing & Speaking chuẩn 4 tiêu chí Cambridge (Hoạt động ngay lập tức hoặc nhập Gemini API Key tùy chọn).
+            </div>
+            <div style="display: flex; gap: 6px; align-items: center;">
+                <input type="password" id="geminiApiKeyInput" class="api-key-input" placeholder="Gemini API Key (Tùy chọn)...">
+                <button class="btn-ielts btn-ielts-secondary" style="padding: 6px 10px; font-size: 0.78rem;" onclick="saveApiKey(document.getElementById('geminiApiKeyInput').value)">💾 Lưu Key</button>
+            </div>
+        </div>
+
+        <!-- 4 KỸ NĂNG TABS -->
+        <div class="skills-nav">
+            <button class="skill-tab-btn active" onclick="switchSkill('reading', this)">
+                <span>📖 READING (3 Passages • 60P)</span>
+            </button>
+            <button class="skill-tab-btn" onclick="switchSkill('listening', this)">
+                <span>🎧 LISTENING (4 Parts • 30P)</span>
+            </button>
+            <button class="skill-tab-btn" onclick="switchSkill('writing', this)">
+                <span>✍️ WRITING (Task 1 & 2 • AI Chấm)</span>
+            </button>
+            <button class="skill-tab-btn" onclick="switchSkill('speaking', this)">
+                <span>🗣️ SPEAKING (3 Parts • AI Chấm)</span>
+            </button>
+        </div>
+
+        <!-- ==================== 1. GIAO DIỆN THI THẬT READING (3 PASSAGES) ==================== -->
+        <div id="panel-reading" class="skill-panel active">
+            <!-- Banner Kết quả Band Score sau khi nộp -->
+            <div id="readingResultBanner" class="band-result-banner">
+                <div>
+                    <h3 id="readingScoreTitle">🎉 Kết quả bài thi Reading</h3>
+                    <p id="readingScoreDesc" style="font-size: 0.86rem; color: var(--text-muted);"></p>
+                </div>
+                <div class="band-circle" id="readingBandBadge">Band 8.0</div>
+            </div>
+
+            <!-- Thanh chuyển đổi Passage 1 / Passage 2 / Passage 3 + Hướng dẫn chuẩn CD-IELTS -->
+            <div class="cd-instruction-bar">
+                <div>
+                    <strong id="readingPartHeader" style="color: var(--primary-color); font-size: 0.95rem;">Reading Passage 1</strong>
+                    <span id="readingPartSub" style="font-size: 0.86rem; color: var(--text-muted); margin-left: 8px;">
+                        You should spend about 20 minutes on Questions 1–5, which are based on Reading Passage 1 below.
+                    </span>
+                </div>
+                <div class="cd-passage-tabs-top">
+                    <button class="btn-passage-switch active" id="topBtnPassage0" onclick="switchReadingPassage(0)">📖 Passage 1 (1–13)</button>
+                    <button class="btn-passage-switch" id="topBtnPassage1" onclick="switchReadingPassage(1)">📖 Passage 2 (14–26)</button>
+                    <button class="btn-passage-switch" id="topBtnPassage2" onclick="switchReadingPassage(2)">📖 Passage 3 (27–40)</button>
+                    <button class="btn-ielts btn-ielts-primary" style="padding: 6px 14px;" onclick="gradeReading()">✔ Nộp Bài Reading</button>
+                </div>
+            </div>
+
+            <!-- Màn hình chia đôi chuẩn Computer-Delivered IELTS -->
+            <div class="cd-split-workspace" id="readingSplitWorkspace">
+                <!-- Cột Trái: Bài đọc của Passage đang chọn -->
+                <div class="cd-pane-left" id="readingLeftPane">
+                    <div class="cd-passage-title" id="readingPassageTitle"></div>
+                    <div class="cd-passage-subtitle" id="readingPassageSubtitle"></div>
+                    <div class="passage-text" id="readingPassageBody"></div>
+                </div>
+
+                <!-- Thanh kéo chia cột ở giữa -->
+                <div class="cd-splitter" title="Kéo để thay đổi độ rộng 2 cột"></div>
+
+                <!-- Cột Phải: Danh sách câu hỏi của Passage đang chọn -->
+                <div class="cd-pane-right" id="readingRightPane">
+                    <div id="readingQuestionsBox"></div>
+                </div>
+            </div>
+
+            <!-- THANH BOTTOM NAVIGATION PALETTE (CHUYỂN PASSAGE & SỐ CÂU HỎI GIỐNG THI MÁY 100%) -->
+            <div class="cd-bottom-navbar">
+                <div class="cd-palette-sections" id="readingBottomPalette"></div>
+                <div style="display: flex; gap: 6px; align-items: center;">
+                    <button class="btn-ielts btn-ielts-secondary" style="padding: 6px 12px;" onclick="prevReadingPassage()">← Passage trước</button>
+                    <button class="btn-ielts btn-ielts-primary" style="padding: 6px 12px;" onclick="nextReadingPassage()">Passage tiếp theo →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== 2. GIAO DIỆN THI THẬT LISTENING (4 PARTS) ==================== -->
+        <div id="panel-listening" class="skill-panel">
+            <div id="listeningResultBanner" class="band-result-banner">
+                <div>
+                    <h3 id="listeningScoreTitle">🎧 Kết quả bài thi Listening</h3>
+                    <p id="listeningScoreDesc" style="font-size: 0.86rem; color: var(--text-muted);"></p>
+                </div>
+                <div class="band-circle" id="listeningBandBadge">Band 8.0</div>
+            </div>
+
+            <!-- Thanh điều khiển Audio CD-IELTS -->
+            <div class="cd-listening-audio-bar">
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <button class="btn-ielts btn-ielts-primary" onclick="playCambridgeAudio()">▶ Phát Audio Part Hiện Tại</button>
+                    <button class="btn-ielts btn-ielts-secondary" onclick="stopCambridgeAudio()">⏹ Dừng</button>
+                    <span id="audioStatusLabel" style="font-size: 0.84rem; font-weight: 700; color: var(--primary-color);">Sẵn sàng phát</span>
+                </div>
+
+                <div class="audio-progress-track">
+                    <div class="audio-progress-fill" id="audioProgressFill"></div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <select id="listeningSpeed" class="select-cambridge" style="padding: 5px 8px; font-size: 0.82rem;">
+                        <option value="0.85">Tốc độ 0.85x</option>
+                        <option value="1" selected>Tốc độ 1.0x (Chuẩn)</option>
+                        <option value="1.15">Tốc độ 1.15x</option>
+                    </select>
+                    <button class="btn-ielts btn-ielts-secondary" style="padding: 6px 12px;" onclick="toggleListeningTranscript()">📜 Hiện/Ẩn Transcript</button>
+                    <button class="btn-ielts btn-ielts-primary" style="padding: 6px 14px;" onclick="gradeListening()">✔ Nộp Bài Listening</button>
+                </div>
+            </div>
+
+            <!-- Thanh chuyển đổi Part 1 / Part 2 / Part 3 / Part 4 -->
+            <div class="cd-instruction-bar">
+                <div>
+                    <strong id="listeningPartHeader" style="color: var(--primary-color); font-size: 0.95rem;">Listening Part 1</strong>
+                    <span id="listeningPartSub" style="font-size: 0.86rem; color: var(--text-muted); margin-left: 8px;">
+                        Listen carefully and answer the questions for this section.
+                    </span>
+                </div>
+                <div class="cd-passage-tabs-top">
+                    <button class="btn-passage-switch active" id="topBtnListenPart0" onclick="switchListeningPart(0)">🎧 Part 1 (1–10)</button>
+                    <button class="btn-passage-switch" id="topBtnListenPart1" onclick="switchListeningPart(1)">🎧 Part 2 (11–20)</button>
+                    <button class="btn-passage-switch" id="topBtnListenPart2" onclick="switchListeningPart(2)">🎧 Part 3 (21–30)</button>
+                    <button class="btn-passage-switch" id="topBtnListenPart3" onclick="switchListeningPart(3)">🎧 Part 4 (31–40)</button>
+                </div>
+            </div>
+
+            <!-- Không gian làm bài Listening -->
+            <div class="cd-listening-workspace">
+                <div id="listeningQuestionsBox"></div>
+                <div style="border-left: 1px solid var(--border-color); padding-left: 16px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px;">📜 Audio Transcript & Ghi chú phòng thi</h4>
+                    <div id="listeningTranscriptBox" style="display: none;" class="passage-text"></div>
+                    <div id="listeningTranscriptPlaceholder" style="font-size: 0.88rem; color: var(--text-muted);">
+                        <p style="margin-bottom: 10px;">💡 Trong kỳ thi thật trên máy tính, âm thanh sẽ phát tự động qua từng Part. Bạn có thể vừa nghe vừa gõ trực tiếp vào ô trống hoặc dùng phím <code>Tab</code> để nhảy sang câu kế tiếp.</p>
+                        <textarea class="essay-textarea" style="min-height: 180px;" placeholder="📝 Nháp nhanh từ khóa khi đang nghe (Scratchpad giống thi thật)..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thanh Bottom Navigation Palette cho Listening (4 Parts) -->
+            <div class="cd-bottom-navbar">
+                <div class="cd-palette-sections" id="listeningBottomPalette"></div>
+                <div style="display: flex; gap: 6px; align-items: center;">
+                    <button class="btn-ielts btn-ielts-secondary" style="padding: 6px 12px;" onclick="prevListeningPart()">← Part trước</button>
+                    <button class="btn-ielts btn-ielts-primary" style="padding: 6px 12px;" onclick="nextListeningPart()">Part tiếp theo →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== 3. KỸ NĂNG WRITING (AI EXAMINER) ==================== -->
+        <div id="panel-writing" class="skill-panel">
+            <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+                <button class="btn-ielts btn-ielts-primary" id="btnTask1" onclick="switchWritingTask(1)">📊 Writing Task 1 (150+ words • 20 phút)</button>
+                <button class="btn-ielts btn-ielts-secondary" id="btnTask2" onclick="switchWritingTask(2)">📝 Writing Task 2 (250+ words • 40 phút)</button>
+            </div>
+
+            <div class="split-layout">
+                <div class="panel-box">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:1px solid var(--border-color); padding-bottom:10px;">
+                        <h3 id="writingPromptHeader" style="color:var(--primary-color);">CAMBRIDGE WRITING TASK 1</h3>
+                        <span class="cd-logo-badge" id="writingMinWordsBadge" style="background:var(--primary-color);">Tối thiểu 150 từ</span>
+                    </div>
+                    <div id="writingPromptContent" class="passage-text"></div>
+                    <div id="writingChartContainer" style="margin-top: 14px;"></div>
+                </div>
+
+                <div class="panel-box">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+                        <h3>✍️ Bài Làm Của Bạn</h3>
+                        <div style="display:flex; gap:6px;">
+                            <button class="btn-ielts btn-ielts-secondary" onclick="insertSampleWritingOutline()">💡 Chèn dàn ý</button>
+                            <button class="btn-ielts btn-ielts-secondary" onclick="toggleWritingModelAnswer()">📖 Bài Mẫu Band 8.5</button>
+                        </div>
+                    </div>
+
+                    <textarea id="writingEssayInput" class="essay-textarea" placeholder="Nhập bài viết IELTS Writing của bạn vào đây..." oninput="updateWritingWordCount()"></textarea>
+
+                    <div class="word-count-bar">
+                        <span>Số từ (Word Count): <strong id="writingWordCount" style="color: var(--primary-color);">0</strong> từ</span>
+                        <span id="writingWordStatus">Cần tối thiểu 150 từ</span>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn-ielts btn-ielts-primary" id="btnAiGradeWriting" onclick="evaluateWritingWithAI()">
+                            🤖 Chấm Bài Writing Bằng AI (4 Tiêu Chí)
+                        </button>
+                        <button class="btn-ielts btn-ielts-secondary" onclick="clearWritingEssay()">🗑️ Xóa bài</button>
+                    </div>
+
+                    <div id="writingModelBox" class="ai-eval-box"></div>
+                    <div id="writingAiResultBox" class="ai-eval-box"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== 4. KỸ NĂNG SPEAKING (AI EXAMINER & THU ÂM) ==================== -->
+        <div id="panel-speaking" class="skill-panel">
+            <div class="split-layout">
+                <div class="panel-box">
+                    <h3 style="color:var(--primary-color); margin-bottom:12px;">🗣️ Đề Thi Cambridge Speaking (Part 1, 2, 3)</h3>
+                    <div id="speakingPromptsContainer"></div>
+                </div>
+
+                <div class="panel-box">
+                    <h3 style="color:var(--primary-color); margin-bottom:10px;">🎙️ Phòng Thu Âm & Chấm Điểm AI Speaking</h3>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+                        <button class="btn-ielts btn-ielts-primary" id="btnStartRecord" onclick="startSpeakingRecording()">🎙️ Bắt đầu thu âm trả lời</button>
+                        <button class="btn-ielts btn-ielts-danger" id="btnStopRecord" onclick="stopSpeakingRecording()" style="display: none;">⏹ Dừng thu âm</button>
+                        <button class="btn-ielts btn-ielts-secondary" onclick="toggleSpeakingModelAnswer()">📖 Bài Mẫu Band 8.5</button>
+                    </div>
+
+                    <div id="recordedAudioContainer" style="display: none; margin-bottom: 12px; padding: 10px; background: var(--bg-card-subtle); border-radius: 8px;">
+                        <audio id="userSpeakingAudio" controls style="width: 100%; height: 34px;"></audio>
+                    </div>
+
+                    <textarea id="speakingTranscriptInput" class="essay-textarea" style="min-height: 200px;" placeholder="Nội dung bạn nói sẽ tự động chuyển thành chữ tại đây (hoặc gõ trực tiếp câu trả lời để AI chấm)..." oninput="updateSpeakingWordCount()"></textarea>
+
+                    <div class="word-count-bar">
+                        <span>Độ dài câu trả lời: <strong id="speakingWordCount" style="color: var(--primary-color);">0</strong> từ</span>
+                        <span>Khuyến nghị Part 2: 140 – 200 từ</span>
+                    </div>
+
+                    <button class="btn-ielts btn-ielts-primary" id="btnAiGradeSpeaking" onclick="evaluateSpeakingWithAI()">
+                        🤖 Chấm Bài Speaking Bằng AI (4 Tiêu Chí)
+                    </button>
+
+                    <div id="speakingModelBox" class="ai-eval-box"></div>
+                    <div id="speakingAiResultBox" class="ai-eval-box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ==================== NGÂN HÀNG ĐỀ CAMBRIDGE (ĐẦY ĐỦ 3 PASSAGES READING & 4 PARTS LISTENING) ==================== */
+        const CAMBRIDGE_DB = {
+    "cam19_t1": {
+        "readingPassages": [
+            {
+                "passageNum": 1,
+                "title": "READING PASSAGE 1: How tennis rackets have changed",
+                "subtitle": "You should spend about 20 minutes on Questions 1–13, which are based on Reading Passage 1 below.",
+                "paragraphs": [
+                    {
+                        "label": "A",
+                        "text": "In 2016, the British professional tennis player Andy Murray made the decision to switch to a slightly heavier racket. Formally, he added just a few grams of lead tape to the head of his frame, yet in the elite world of international tennis, even the smallest modification to racket design can dramatically transform a player's performance on court. Alongside his coach Ivan Lendl, Murray sought greater power on his first serve without sacrificing control during long baseline rallies."
+                    },
+                    {
+                        "label": "B",
+                        "text": "For nearly a century after modern lawn tennis emerged in the 1870s, rackets were constructed almost exclusively from laminated wood, typically ash, beech, or maple, and strung with natural gut taken from sheep or cattle intestines. The heads of these wooden rackets were relatively small—around 65 square inches—to prevent the wooden frame from warping or cracking under high string tension. Because wooden rackets were heavy and had a small hitting area, players relied on smooth, classic swings."
+                    },
+                    {
+                        "label": "C",
+                        "text": "A major turning point occurred in 1967 when the American company Wilson introduced the T2000, a tubular steel racket popularized by world champion Jimmy Connors. Shortly afterwards, Howard Head, an American engineer who had previously revolutionized snow ski design, took up tennis after retiring and struggled to hit the ball consistently. Frustrated by the tiny sweet spot of conventional frames, Head patented the oversized aluminum 'Prince Classic' racket in 1976. Featuring a 110-square-inch head, it offered a sweet spot nearly double the size of wooden rackets."
+                    },
+                    {
+                        "label": "D",
+                        "text": "Meanwhile, the German brothers Werner and Siegfried Fischer, who were originally aerospace engineers designing composite skis, experimented with fiberglass and carbon-fiber materials. By the early 1980s, carbon-fiber composites (commonly known as graphite) had replaced both wood and metal across professional tours. Graphite frames were lighter, stiffer, and far stronger, allowing manufacturers to mold wider aerodynamic beams that generated unprecedented ball speed."
+                    },
+                    {
+                        "label": "E",
+                        "text": "In the late 1990s, another quiet revolution took place—this time in string technology. Synthetic polyester strings, pioneered by companies such as Luxilon in Belgium, allowed players like Gustavo Kuerten and Rafael Nadal to swing at maximum velocity while imparting heavy topspin that caused the ball to dip sharply inside the baseline. Because equipment advances threatened to make serves unreturnable on fast grass courts, the International Tennis Federation (ITF) introduced strict regulations in 1997 limiting the maximum length of a racket to 29 inches and the width of the head to 12.5 inches."
+                    },
+                    {
+                        "label": "F",
+                        "text": "Today, top professionals rarely play with standard 'stock' rackets sold in retail shops. Instead, specialist technicians customize each player's frame by injecting silicone into the handle to absorb vibration and attaching strips of lead tape around the hoop to fine-tune the balance point and swingweight to the millimeter."
+                    }
+                ],
+                "questions": [
+                    {
+                        "id": 1,
+                        "type": "tfng",
+                        "group": "Questions 1–7: Do the following statements agree with the information given in Reading Passage 1? Choose TRUE, FALSE, or NOT GIVEN.",
+                        "prompt": "Andy Murray's change of racket in 2016 was discussed with his coach Ivan Lendl.",
+                        "options": [
+                            "TRUE",
+                            "FALSE",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "TRUE",
+                        "explain": "Đoạn A: 'Alongside his coach Ivan Lendl, Murray sought greater power...'"
+                    },
+                    {
+                        "id": 2,
+                        "type": "tfng",
+                        "prompt": "Wooden tennis rackets had small heads to prevent the frame from bending under string tension.",
+                        "options": [
+                            "TRUE",
+                            "FALSE",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "TRUE",
+                        "explain": "Đoạn B: 'around 65 square inches—to prevent the wooden frame from warping or cracking under high string tension'."
+                    },
+                    {
+                        "id": 3,
+                        "type": "tfng",
+                        "prompt": "Natural gut strings were more durable in wet weather than synthetic strings.",
+                        "options": [
+                            "TRUE",
+                            "FALSE",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "NOT GIVEN",
+                        "explain": "Đoạn B chỉ nói dây làm từ ruột tự nhiên (natural gut), không so sánh độ bền trong thời tiết ẩm ướt."
+                    },
+                    {
+                        "id": 4,
+                        "type": "tfng",
+                        "prompt": "Howard Head was already an elite tennis player before he invented the Prince Classic racket.",
+                        "options": [
+                            "TRUE",
+                            "FALSE",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "FALSE",
+                        "explain": "Đoạn C: Howard Head mới tập chơi tennis sau khi nghỉ hưu và gặp khó khăn khi đánh bóng ('took up tennis after retiring and struggled to hit the ball')."
+                    },
+                    {
+                        "id": 5,
+                        "type": "tfng",
+                        "prompt": "Werner and Siegfried Fischer had experience in the ski industry before making tennis rackets.",
+                        "options": [
+                            "TRUE",
+                            "FALSE",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "TRUE",
+                        "explain": "Đoạn D: 'originally aerospace engineers designing composite skis'."
+                    },
+                    {
+                        "id": 6,
+                        "type": "tfng",
+                        "prompt": "Polyester strings cost significantly less to manufacture than graphite frames.",
+                        "options": [
+                            "TRUE",
+                            "FALSE",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "NOT GIVEN",
+                        "explain": "Đoạn E không đề cập chi phí sản xuất dây polyester so với khung graphite."
+                    },
+                    {
+                        "id": 7,
+                        "type": "tfng",
+                        "prompt": "Most top professional players today use the exact same unmodified rackets sold in sports shops.",
+                        "options": [
+                            "TRUE",
+                            "FALSE",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "FALSE",
+                        "explain": "Đoạn F: 'top professionals rarely play with standard stock rackets sold in retail shops'."
+                    },
+                    {
+                        "id": 8,
+                        "type": "gap",
+                        "group": "Questions 8–13: Complete the notes below. Choose ONE WORD AND/OR A NUMBER from the passage for each answer.",
+                        "prompt": "For nearly 100 years, tennis rackets were made of laminated ______ such as ash or maple.",
+                        "answer": "wood",
+                        "explain": "Đoạn B: 'constructed almost exclusively from laminated wood'."
+                    },
+                    {
+                        "id": 9,
+                        "type": "gap",
+                        "prompt": "In 1967, Jimmy Connors popularized the Wilson T2000, which had a frame made of ______.",
+                        "answer": "steel",
+                        "explain": "Đoạn C: 'introduced the T2000, a tubular steel racket'."
+                    },
+                    {
+                        "id": 10,
+                        "type": "gap",
+                        "prompt": "Howard Head's 1976 oversized Prince Classic racket was constructed from ______.",
+                        "answer": "aluminum",
+                        "explain": "Đoạn C: 'patented the oversized aluminum Prince Classic racket'."
+                    },
+                    {
+                        "id": 11,
+                        "type": "gap",
+                        "prompt": "In the late 1990s, polyester strings allowed players to hit the ball with heavy ______.",
+                        "answer": "topspin",
+                        "explain": "Đoạn E: 'while imparting heavy topspin'."
+                    },
+                    {
+                        "id": 12,
+                        "type": "gap",
+                        "prompt": "In 1997, the ITF restricted the maximum length of a tennis racket to ______ inches.",
+                        "answer": "29",
+                        "explain": "Đoạn E: 'limiting the maximum length of a racket to 29 inches'."
+                    },
+                    {
+                        "id": 13,
+                        "type": "gap",
+                        "prompt": "Technicians inject ______ into the racket handle to reduce vibration for professional players.",
+                        "answer": "silicone",
+                        "explain": "Đoạn F: 'injecting silicone into the handle to absorb vibration'."
+                    }
+                ]
+            },
+            {
+                "passageNum": 2,
+                "title": "READING PASSAGE 2: The pirates of the ancient Mediterranean",
+                "subtitle": "You should spend about 20 minutes on Questions 14–26, which are based on Reading Passage 2 below.",
+                "paragraphs": [
+                    {
+                        "label": "A",
+                        "text": "When one mentions pirates, an image springs to most people's minds of a crew of misfits, daredevils and adventurers in command of a tall sailing ship in the Caribbean Sea. Yet from the first to the third millennium BCE, thousands of years before these swashbucklers began spreading fear across the Caribbean, piracy was a constant menace across the eastern Mediterranean."
+                    },
+                    {
+                        "label": "B",
+                        "text": "The geography of the Mediterranean coast—particularly in regions such as Cilicia in southern Anatolia and the rugged Dalmatian coast—provided ideal hiding places for pirate fleets. Shallow coves, rocky islands, and narrow channels made it almost impossible for large naval warships with deep hulls to pursue smaller, nimble pirate vessels. Pirates could strike a coastal village or merchant ship at dawn and vanish into hidden inlets before naval patrols arrived."
+                    },
+                    {
+                        "label": "C",
+                        "text": "Already in the 14th century BCE, diplomatic clay tablets discovered at Amarna in Egypt record complaints from the King of Alashiya (modern Cyprus) that seafaring raiders known as the Lukka were plundering his coastal towns every year. Paradoxically, Egyptian pharaohs such as Ramesses II also hired these skilled Lukka mariners as mercenaries during naval campaigns against the Hittite Empire, blurring the boundary between outlaw and military ally."
+                    },
+                    {
+                        "label": "D",
+                        "text": "In classical Greece, historians such as Thucydides noted that early piracy was not even considered shameful; coastal communities openly raided one another for cattle, bronze tools, and captives. However, as Athenian maritime trade expanded in the 5th century BCE, Athens built a powerful fleet of triremes at the port of Piraeus to patrol trade routes and protect merchant vessels carrying timber and olive oil."
+                    },
+                    {
+                        "label": "E",
+                        "text": "By the first century BCE, following the decline of Greek naval power, Cilician pirates had grown into an organized syndicate controlling hundreds of ships. Even the young Julius Caesar was captured by Cilician pirates in 75 BCE and held for ransom on the island of Pharmacusa. Worse still for Rome, pirate fleets regularly intercepted Egyptian grain ships, threatening the Roman populace with severe famine."
+                    },
+                    {
+                        "label": "F",
+                        "text": "Finally, in 67 BCE, the Roman Senate passed the Lex Gabinia, granting the general Pompey extraordinary command over the entire Mediterranean Sea and 500 warships. Dividing the sea into thirteen naval districts, Pompey trapped the pirate fleets and cleared the entire Mediterranean within just three months. Rather than executing all prisoners, Pompey wisely resettled thousands of former pirates on fertile farmland inland, turning sea raiders into productive farmers."
+                    }
+                ],
+                "questions": [
+                    {
+                        "id": 14,
+                        "type": "mcq",
+                        "group": "Questions 14–19: Reading Passage 2 has six paragraphs, A–F. Which paragraph contains the following information? Choose the correct letter, A–F.",
+                        "prompt": "A reference to an ancient leader who was kidnapped by pirates and held for ransom.",
+                        "options": [
+                            "A",
+                            "B",
+                            "C",
+                            "D",
+                            "E",
+                            "F"
+                        ],
+                        "answer": "E",
+                        "explain": "Đoạn E: 'Even the young Julius Caesar was captured by Cilician pirates in 75 BCE and held for ransom'."
+                    },
+                    {
+                        "id": 15,
+                        "type": "mcq",
+                        "prompt": "An explanation of how coastal terrain prevented large warships from catching pirates.",
+                        "options": [
+                            "A",
+                            "B",
+                            "C",
+                            "D",
+                            "E",
+                            "F"
+                        ],
+                        "answer": "B",
+                        "explain": "Đoạn B: 'Shallow coves, rocky islands, and narrow channels made it almost impossible for large naval warships... to pursue'."
+                    },
+                    {
+                        "id": 16,
+                        "type": "mcq",
+                        "prompt": "Evidence from ancient clay tablets showing that a ruler complained about annual pirate raids.",
+                        "options": [
+                            "A",
+                            "B",
+                            "C",
+                            "D",
+                            "E",
+                            "F"
+                        ],
+                        "answer": "C",
+                        "explain": "Đoạn C: 'diplomatic clay tablets discovered at Amarna... record complaints from the King of Alashiya'."
+                    },
+                    {
+                        "id": 17,
+                        "type": "mcq",
+                        "prompt": "Details of a military strategy that divided the Mediterranean into thirteen zones.",
+                        "options": [
+                            "A",
+                            "B",
+                            "C",
+                            "D",
+                            "E",
+                            "F"
+                        ],
+                        "answer": "F",
+                        "explain": "Đoạn F: 'Dividing the sea into thirteen naval districts, Pompey trapped the pirate fleets'."
+                    },
+                    {
+                        "id": 18,
+                        "type": "mcq",
+                        "prompt": "A comparison between popular modern stereotypes of pirates and ancient history.",
+                        "options": [
+                            "A",
+                            "B",
+                            "C",
+                            "D",
+                            "E",
+                            "F"
+                        ],
+                        "answer": "A",
+                        "explain": "Đoạn A so sánh hình ảnh cướp biển vùng Caribbean với cướp biển Địa Trung Hải cổ đại."
+                    },
+                    {
+                        "id": 19,
+                        "type": "mcq",
+                        "prompt": "An account of how piracy was once viewed as an acceptable occupation in early Greece.",
+                        "options": [
+                            "A",
+                            "B",
+                            "C",
+                            "D",
+                            "E",
+                            "F"
+                        ],
+                        "answer": "D",
+                        "explain": "Đoạn D: 'Thucydides noted that early piracy was not even considered shameful'."
+                    },
+                    {
+                        "id": 20,
+                        "type": "gap",
+                        "group": "Questions 20–26: Complete the summary below. Choose ONE WORD AND/OR A NUMBER from the passage for each answer.",
+                        "prompt": "In the 14th century BCE, raiders called the ______ attacked towns in Cyprus every year.",
+                        "answer": "Lukka",
+                        "explain": "Đoạn C: 'seafaring raiders known as the Lukka'."
+                    },
+                    {
+                        "id": 21,
+                        "type": "gap",
+                        "prompt": "Pharaoh Ramesses II sometimes employed pirate sailors as ______ in wars against the Hittites.",
+                        "answer": "mercenaries",
+                        "explain": "Đoạn C: 'hired these skilled Lukka mariners as mercenaries'."
+                    },
+                    {
+                        "id": 22,
+                        "type": "gap",
+                        "prompt": "In the 5th century BCE, Athens protected ships carrying timber and olive ______.",
+                        "answer": "oil",
+                        "explain": "Đoạn D: 'protect merchant vessels carrying timber and olive oil'."
+                    },
+                    {
+                        "id": 23,
+                        "type": "gap",
+                        "prompt": "In the 1st century BCE, pirate attacks on ships transporting ______ from Egypt threatened Rome with famine.",
+                        "answer": "grain",
+                        "explain": "Đoạn E: 'intercepted Egyptian grain ships, threatening the Roman populace with severe famine'."
+                    },
+                    {
+                        "id": 24,
+                        "type": "gap",
+                        "prompt": "In 67 BCE, the Roman Senate gave General Pompey a fleet of ______ warships.",
+                        "answer": "500",
+                        "explain": "Đoạn F: 'entire Mediterranean Sea and 500 warships'."
+                    },
+                    {
+                        "id": 25,
+                        "type": "gap",
+                        "prompt": "Pompey defeated the Mediterranean pirates in only ______ months.",
+                        "answer": "three",
+                        "explain": "Đoạn F: 'within just three months'."
+                    },
+                    {
+                        "id": 26,
+                        "type": "gap",
+                        "prompt": "Many former pirates were given land inland and became ______.",
+                        "answer": "farmers",
+                        "explain": "Đoạn F: 'turning sea raiders into productive farmers'."
+                    }
+                ]
+            },
+            {
+                "passageNum": 3,
+                "title": "READING PASSAGE 3: The persistence and peril of misinformation",
+                "subtitle": "You should spend about 20 minutes on Questions 27–40, which are based on Reading Passage 3 below.",
+                "paragraphs": [
+                    {
+                        "label": "A",
+                        "text": "Misinformation—both deliberate falsehoods (often termed disinformation) and unintentional inaccuracies—has existed throughout human history. Yet modern digital algorithms have amplified the speed and emotional impact of false claims on an unprecedented global scale. For cognitive psychologists, such as Stephan Lewandowsky and Ullrich Ecker, the central puzzle is why intelligent individuals continue to rely on inaccurate information even after they have read a clear, credible retraction."
+                    },
+                    {
+                        "label": "B",
+                        "text": "This psychological phenomenon, termed the 'continued influence effect' (CIE), occurs because human memory does not operate like a classroom whiteboard that can be cleanly wiped and overwritten. When a person reads an initial story—for instance, that a warehouse fire was caused by negligently stored chemicals—the brain constructs a mental model linking cause and effect. If a subsequent news update merely states that chemicals were not involved, it leaves a causal gap in the mental model, and people subconsciously fall back on the original myth."
+                    },
+                    {
+                        "label": "C",
+                        "text": "Moreover, cognitive biases reinforce false beliefs. 'Confirmation bias' leads readers to favor claims that align with their pre-existing worldview, while the 'illusory truth effect' means that the more frequently a person hears a false statement, the more familiar and believable it feels. For this reason, clumsy fact-checks that repeat a myth in bold headlines can inadvertently make the falsehood stickier in readers' minds."
+                    },
+                    {
+                        "label": "D",
+                        "text": "To combat misinformation before it takes root, behavioral scientists led by Sander van der Linden at the University of Cambridge developed 'inoculation theory'—commonly known as 'prebunking'. Much like a medical vaccine exposes the immune system to a weakened virus, prebunking exposes citizens to weakened examples of manipulative rhetoric (such as scapegoating, emotional fearmongering, or fake experts) so they can spot and resist manipulation in the wild."
+                    },
+                    {
+                        "label": "E",
+                        "text": "When debunking an existing falsehood is necessary, Ecker's research demonstrates that a 'truth sandwich' structure works best: begin by stating the verified fact clearly, briefly warn the reader about the fallacy without repeating it excessively, and conclude by providing an alternative causal explanation that seamlessly replaces the erroneous link in the audience's mental model."
+                    },
+                    {
+                        "label": "F",
+                        "text": "Ultimately, however, psychological interventions alone cannot solve a systemic digital problem. Policymakers and educators increasingly agree that algorithmic transparency from social media platforms, combined with school curricula that teach digital source verification from an early age, are essential pillars for building long-term societal resilience against misinformation."
+                    }
+                ],
+                "questions": [
+                    {
+                        "id": 27,
+                        "type": "mcq",
+                        "group": "Questions 27–31: Choose the correct letter, A, B, C, or D.",
+                        "prompt": "What do Lewandowsky and Ecker identify as the main puzzle regarding misinformation?",
+                        "options": [
+                            "A. Why people invent fake news stories",
+                            "B. Why people still believe false claims after seeing a clear correction",
+                            "C. How computer algorithms write news articles",
+                            "D. Why newspapers print retractions"
+                        ],
+                        "answer": "B. Why people still believe false claims after seeing a clear correction",
+                        "explain": "Đoạn A: 'why intelligent individuals continue to rely on inaccurate information even after they have read a clear, credible retraction'."
+                    },
+                    {
+                        "id": 28,
+                        "type": "mcq",
+                        "prompt": "Why does the 'warehouse fire' example in Paragraph B illustrate the continued influence effect?",
+                        "options": [
+                            "A. People prefer dramatic stories about fires",
+                            "B. Removing the chemical cause without an alternative leaves a gap in the mental model",
+                            "C. Firefighters rarely release official reports",
+                            "D. Readers forget when the fire happened"
+                        ],
+                        "answer": "B. Removing the chemical cause without an alternative leaves a gap in the mental model",
+                        "explain": "Đoạn B: 'leaves a causal gap in the mental model, and people subconsciously fall back on the original myth'."
+                    },
+                    {
+                        "id": 29,
+                        "type": "mcq",
+                        "prompt": "According to Paragraph C, what is the 'illusory truth effect'?",
+                        "options": [
+                            "A. Believing only friends and family",
+                            "B. Thinking a false claim is true because it has been repeated many times",
+                            "C. Rejecting scientific evidence",
+                            "D. Reading only headlines"
+                        ],
+                        "answer": "B. Thinking a false claim is true because it has been repeated many times",
+                        "explain": "Đoạn C: 'the more frequently a person hears a false statement, the more familiar and believable it feels'."
+                    },
+                    {
+                        "id": 30,
+                        "type": "mcq",
+                        "prompt": "How does 'prebunking' work according to Sander van der Linden?",
+                        "options": [
+                            "A. Banning social media accounts",
+                            "B. Exposing people to weakened examples of manipulation tactics in advance",
+                            "C. Deleting old news archives",
+                            "D. Fining journalists who make mistakes"
+                        ],
+                        "answer": "B. Exposing people to weakened examples of manipulation tactics in advance",
+                        "explain": "Đoạn D: 'exposes citizens to weakened examples of manipulative rhetoric... so they can spot and resist manipulation'."
+                    },
+                    {
+                        "id": 31,
+                        "type": "mcq",
+                        "prompt": "What does the author conclude in Paragraph F?",
+                        "options": [
+                            "A. Psychology alone can eliminate all fake news",
+                            "B. Schools should ban internet access",
+                            "C. Both platform transparency and education are needed alongside psychology",
+                            "D. Retractions never work under any circumstances"
+                        ],
+                        "answer": "C. Both platform transparency and education are needed alongside psychology",
+                        "explain": "Đoạn F: 'algorithmic transparency... combined with school curricula... are essential pillars'."
+                    },
+                    {
+                        "id": 32,
+                        "type": "tfng",
+                        "group": "Questions 32–36: Do the following statements agree with the claims of the writer in Reading Passage 3? Choose YES, NO, or NOT GIVEN.",
+                        "prompt": "Human memory functions like a whiteboard that can be easily erased and rewritten.",
+                        "options": [
+                            "YES",
+                            "NO",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "NO",
+                        "explain": "Đoạn B: 'human memory does not operate like a classroom whiteboard that can be cleanly wiped'."
+                    },
+                    {
+                        "id": 33,
+                        "type": "tfng",
+                        "prompt": "Fact-checks that repeat a false claim in large headlines can accidentally make the myth more memorable.",
+                        "options": [
+                            "YES",
+                            "NO",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "YES",
+                        "explain": "Đoạn C: 'clumsy fact-checks that repeat a myth in bold headlines can inadvertently make the falsehood stickier'."
+                    },
+                    {
+                        "id": 34,
+                        "type": "tfng",
+                        "prompt": "Sander van der Linden works as a medical doctor developing biological vaccines.",
+                        "options": [
+                            "YES",
+                            "NO",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "NO",
+                        "explain": "Đoạn D: Ông là nhà khoa học hành vi tại Đại học Cambridge ('behavioral scientists led by Sander van der Linden'), chỉ mượn phép ẩn dụ vaccine."
+                    },
+                    {
+                        "id": 35,
+                        "type": "tfng",
+                        "prompt": "Television news channels spread more misinformation than internet platforms.",
+                        "options": [
+                            "YES",
+                            "NO",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "NOT GIVEN",
+                        "explain": "Bài đọc không so sánh kênh truyền hình với nền tảng internet."
+                    },
+                    {
+                        "id": 36,
+                        "type": "tfng",
+                        "prompt": "Teaching students how to verify digital sources at school helps build long-term resilience.",
+                        "options": [
+                            "YES",
+                            "NO",
+                            "NOT GIVEN"
+                        ],
+                        "answer": "YES",
+                        "explain": "Đoạn F: 'school curricula that teach digital source verification from an early age, are essential pillars'."
+                    },
+                    {
+                        "id": 37,
+                        "type": "gap",
+                        "group": "Questions 37–40: Complete the summary below. Write ONE WORD ONLY from the passage for each answer.",
+                        "prompt": "Deliberate falsehoods are often referred to as ______.",
+                        "answer": "disinformation",
+                        "explain": "Đoạn A: 'deliberate falsehoods (often termed disinformation)'."
+                    },
+                    {
+                        "id": 38,
+                        "type": "gap",
+                        "prompt": "The tendency to favor information that matches our existing beliefs is called ______ bias.",
+                        "answer": "confirmation",
+                        "explain": "Đoạn C: 'Confirmation bias leads readers to favor claims that align with their pre-existing worldview'."
+                    },
+                    {
+                        "id": 39,
+                        "type": "gap",
+                        "prompt": "Prebunking is based on ______ theory, similar to how a medical vaccine works.",
+                        "answer": "inoculation",
+                        "explain": "Đoạn D: 'developed inoculation theory—commonly known as prebunking'."
+                    },
+                    {
+                        "id": 40,
+                        "type": "gap",
+                        "prompt": "When correcting a myth, Ecker recommends using a 'truth ______' structure.",
+                        "answer": "sandwich",
+                        "explain": "Đoạn E: 'a truth sandwich structure works best'."
+                    }
+                ]
+            }
+        ],
+        "listeningParts": [
+            {
+                "partNum": 1,
+                "title": "PART 1 (Questions 1–10): Hinchingbrooke Country Park",
+                "script": [
+                    {
+                        "speaker": "Sally",
+                        "text": "Good morning, Hinchingbrooke Country Park. Sally speaking. How can I help you?"
+                    },
+                    {
+                        "speaker": "John",
+                        "text": "Hello Sally. My name is John Harrington, and I'm organizing an educational visit for a group of geography students next month."
+                    },
+                    {
+                        "speaker": "Sally",
+                        "text": "Wonderful! Let me give you some background details about the park first. Hinchingbrooke Park covers an area of 69 hectares in total. It has a wide variety of habitats, including wetland, grassland, and woodland."
+                    },
+                    {
+                        "speaker": "John",
+                        "text": "What kind of educational activities do you offer during the day?"
+                    },
+                    {
+                        "speaker": "Sally",
+                        "text": "During the morning session, students focus on geography. They learn how to use a compass and read maps, and they also study how the land is managed for conservation."
+                    },
+                    {
+                        "speaker": "John",
+                        "text": "And what about the afternoon session?"
+                    },
+                    {
+                        "speaker": "Sally",
+                        "text": "In the afternoon, we focus on leisure and tourism. Students conduct a survey with visitors and look at how the park generates income from its café and gift shop."
+                    },
+                    {
+                        "speaker": "John",
+                        "text": "How much does the guided visit cost per student?"
+                    },
+                    {
+                        "speaker": "Sally",
+                        "text": "The fee is 4.95 pounds per student, and teachers attend free. If students want to do pond-dipping, we provide all equipment, including nets and plastic trays."
+                    },
+                    {
+                        "speaker": "John",
+                        "text": "Where can the students eat their packed lunches if it rains?"
+                    },
+                    {
+                        "speaker": "Sally",
+                        "text": "We have a large wooden barn near the visitor center. Please remind students to bring waterproof boots because the paths near the lake are muddy. Finally, coaches can park for free at the main gate, and I'll send a booking form to your email at Postcode PE29."
+                    }
+                ],
+                "questions": [
+                    {
+                        "id": 1,
+                        "type": "gap",
+                        "group": "Questions 1–10: Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+                        "prompt": "Total area of Hinchingbrooke Country Park: ______ hectares.",
+                        "answer": "69",
+                        "explain": "Sally: 'covers an area of 69 hectares in total'."
+                    },
+                    {
+                        "id": 2,
+                        "type": "gap",
+                        "prompt": "Park habitats include wetland, grassland, and ______.",
+                        "answer": "woodland",
+                        "explain": "Sally: 'wetland, grassland, and woodland'."
+                    },
+                    {
+                        "id": 3,
+                        "type": "gap",
+                        "prompt": "Morning geography activity: learning to read maps and use a ______.",
+                        "answer": "compass",
+                        "explain": "Sally: 'learn how to use a compass and read maps'."
+                    },
+                    {
+                        "id": 4,
+                        "type": "gap",
+                        "prompt": "Afternoon tourism activity: carrying out a ______ with park visitors.",
+                        "answer": "survey",
+                        "explain": "Sally: 'conduct a survey with visitors'."
+                    },
+                    {
+                        "id": 5,
+                        "type": "gap",
+                        "prompt": "Park generates income from its café and gift ______.",
+                        "answer": "shop",
+                        "explain": "Sally: 'income from its café and gift shop'."
+                    },
+                    {
+                        "id": 6,
+                        "type": "gap",
+                        "prompt": "Cost of the guided educational visit per student: £______.",
+                        "answer": "4.95",
+                        "explain": "Sally: 'The fee is 4.95 pounds per student'."
+                    },
+                    {
+                        "id": 7,
+                        "type": "gap",
+                        "prompt": "Equipment provided for pond-dipping: nets and plastic ______.",
+                        "answer": "trays",
+                        "explain": "Sally: 'including nets and plastic trays'."
+                    },
+                    {
+                        "id": 8,
+                        "type": "gap",
+                        "prompt": "Wet weather lunch area: inside a large wooden ______.",
+                        "answer": "barn",
+                        "explain": "Sally: 'a large wooden barn near the visitor center'."
+                    },
+                    {
+                        "id": 9,
+                        "type": "gap",
+                        "prompt": "Footwear recommendation: students should bring waterproof ______.",
+                        "answer": "boots",
+                        "explain": "Sally: 'remind students to bring waterproof boots'."
+                    },
+                    {
+                        "id": 10,
+                        "type": "gap",
+                        "prompt": "School coaches can park free of charge at the main ______.",
+                        "answer": "gate",
+                        "explain": "Sally: 'coaches can park for free at the main gate'."
+                    }
+                ]
+            },
+            {
+                "partNum": 2,
+                "title": "PART 2 (Questions 11–20): Stanthorpe Twinning Association",
+                "script": [
+                    {
+                        "speaker": "Speaker",
+                        "text": "Welcome everyone to the annual meeting of the Stanthorpe Twinning Association, which links our town with Malatte in France. Over the past year, membership has grown steadily."
+                    },
+                    {
+                        "speaker": "Speaker",
+                        "text": "Last summer, our most profitable fundraising event was the pancake evening, which raised over 600 pounds, beating the quiz night and the charity film show."
+                    },
+                    {
+                        "speaker": "Speaker",
+                        "text": "Next month, 25 guests from France will arrive on Thursday evening. Because the town hall is being repainted, we will host the Friday welcome dinner at the local museum instead."
+                    },
+                    {
+                        "speaker": "Speaker",
+                        "text": "On Saturday morning, our guests will visit the historic castle on the hill, followed by a football match at the community stadium in the afternoon. On Sunday, before they depart, we have booked a relaxing boat trip down the river."
+                    },
+                    {
+                        "speaker": "Speaker",
+                        "text": "Regarding the new international garden at Farley Park: volunteers are needed to plant roses near the fountain, build a wooden bridge over the stream, and paint the garden benches near theglass conservatory. Anyone interested should contact Sarah on 07865-432190."
+                    }
+                ],
+                "questions": [
+                    {
+                        "id": 11,
+                        "type": "mcq",
+                        "group": "Questions 11–15: Choose the correct letter, A, B, or C.",
+                        "prompt": "Which fundraising event raised the most money last summer?",
+                        "options": [
+                            "A. The charity film show",
+                            "B. The pancake evening",
+                            "C. The quiz night"
+                        ],
+                        "answer": "B. The pancake evening",
+                        "explain": "Speaker: 'our most profitable fundraising event was the pancake evening'."
+                    },
+                    {
+                        "id": 12,
+                        "type": "mcq",
+                        "prompt": "Why is the Friday welcome dinner NOT being held at the town hall?",
+                        "options": [
+                            "A. It is too small for 25 guests",
+                            "B. It is currently being repainted",
+                            "C. The kitchen is closed"
+                        ],
+                        "answer": "B. It is currently being repainted",
+                        "explain": "Speaker: 'Because the town hall is being repainted...'"
+                    },
+                    {
+                        "id": 13,
+                        "type": "mcq",
+                        "prompt": "Where will the Friday welcome dinner take place?",
+                        "options": [
+                            "A. At the local museum",
+                            "B. At a riverside hotel",
+                            "C. At the grammar school"
+                        ],
+                        "answer": "A. At the local museum",
+                        "explain": "Speaker: 'host the welcome dinner at the local museum instead'."
+                    },
+                    {
+                        "id": 14,
+                        "type": "mcq",
+                        "prompt": "What will the French guests do on Saturday morning?",
+                        "options": [
+                            "A. Watch a football match",
+                            "B. Visit the historic castle",
+                            "C. Go shopping in the market"
+                        ],
+                        "answer": "B. Visit the historic castle",
+                        "explain": "Speaker: 'On Saturday morning, our guests will visit the historic castle'."
+                    },
+                    {
+                        "id": 15,
+                        "type": "mcq",
+                        "prompt": "What activity is planned for Sunday before the guests leave?",
+                        "options": [
+                            "A. A cycling tour",
+                            "B. A boat trip down the river",
+                            "C. A farewell concert"
+                        ],
+                        "answer": "B. A boat trip down the river",
+                        "explain": "Speaker: 'On Sunday... we have booked a relaxing boat trip down the river'."
+                    },
+                    {
+                        "id": 16,
+                        "type": "gap",
+                        "group": "Questions 16–20: Complete the notes about the Farley Park project. Write ONE WORD AND/OR A NUMBER.",
+                        "prompt": "Number of French guests arriving next month: ______.",
+                        "answer": "25",
+                        "explain": "Speaker: '25 guests from France will arrive'."
+                    },
+                    {
+                        "id": 17,
+                        "type": "gap",
+                        "prompt": "Saturday afternoon event takes place at the community ______.",
+                        "answer": "stadium",
+                        "explain": "Speaker: 'football match at the community stadium'."
+                    },
+                    {
+                        "id": 18,
+                        "type": "gap",
+                        "prompt": "Volunteers at Farley Park will plant ______ near the fountain.",
+                        "answer": "roses",
+                        "explain": "Speaker: 'volunteers are needed to plant roses near the fountain'."
+                    },
+                    {
+                        "id": 19,
+                        "type": "gap",
+                        "prompt": "A new wooden ______ will be built over the stream.",
+                        "answer": "bridge",
+                        "explain": "Speaker: 'build a wooden bridge over the stream'."
+                    },
+                    {
+                        "id": 20,
+                        "type": "gap",
+                        "prompt": "Volunteers will also paint the garden ______ near the conservatory.",
+                        "answer": "benches",
+                        "explain": "Speaker: 'paint the garden benches near the glass conservatory'."
+                    }
+                ]
+            },
+            {
+                "partNum": 3,
+                "title": "PART 3 (Questions 21–30): Food Science Research Project",
+                "script": [
+                    {
+                        "speaker": "Clare",
+                        "text": "Hi Colin, let's finalize our food science presentation on the history and chemistry of bread-making."
+                    },
+                    {
+                        "speaker": "Colin",
+                        "text": "Good idea, Clare. I read an archaeological study from 2018 showing that charred bread crumbs were discovered at a site in Jordan dating back 14,000 years—long before farming began!"
+                    },
+                    {
+                        "speaker": "Clare",
+                        "text": "That's fascinating. Those hunter-gatherers ground wild cereals using flat stones and baked flatbread on hot ashes."
+                    },
+                    {
+                        "speaker": "Colin",
+                        "text": "Then in ancient Egypt around 3000 BCE, bakers discovered fermentation by accident when wild yeast spores landed in dough left in the sun, making the bread rise."
+                    },
+                    {
+                        "speaker": "Clare",
+                        "text": "Right! And in the 19th century, the Industrial Revolution replaced stone mills with steel rollers, which stripped away the vitamin-rich bran to produce white flour with a longer shelf life."
+                    },
+                    {
+                        "speaker": "Colin",
+                        "text": "In 1961, British scientists at Chorleywood developed a high-speed mechanical mixing process. It reduced fermentation time from four hours to just twenty minutes, though critics say it requires extra chemical additives and salt."
+                    },
+                    {
+                        "speaker": "Clare",
+                        "text": "For our lab experiment next week, let's test three variables: first, how organic flour affects texture; second, how fermentation temperature changes crust color; and third, whether adding olive oil extends freshness without artificial preservatives."
+                    }
+                ],
+                "questions": [
+                    {
+                        "id": 21,
+                        "type": "mcq",
+                        "group": "Questions 21–25: Choose the correct letter, A, B, or C.",
+                        "prompt": "What surprised Colin about the 2018 archaeological discovery in Jordan?",
+                        "options": [
+                            "A. The bread was made from potatoes",
+                            "B. Bread was baked 14,000 years ago before agriculture existed",
+                            "C. Metal ovens were used"
+                        ],
+                        "answer": "B. Bread was baked 14,000 years ago before agriculture existed",
+                        "explain": "Colin: 'dating back 14,000 years—long before farming began'."
+                    },
+                    {
+                        "id": 22,
+                        "type": "mcq",
+                        "prompt": "How did ancient Egyptians discover leavened (risen) bread?",
+                        "options": [
+                            "A. By adding milk to flour",
+                            "B. By boiling the dough first",
+                            "C. Wild yeast fermented dough left in the sun"
+                        ],
+                        "answer": "C. Wild yeast fermented dough left in the sun",
+                        "explain": "Colin: 'wild yeast spores landed in dough left in the sun, making the bread rise'."
+                    },
+                    {
+                        "id": 23,
+                        "type": "mcq",
+                        "prompt": "What was the main advantage of 19th-century steel rollers?",
+                        "options": [
+                            "A. They preserved more vitamins",
+                            "B. The white flour lasted longer in storage",
+                            "C. They used less electricity"
+                        ],
+                        "answer": "B. The white flour lasted longer in storage",
+                        "explain": "Clare: 'produce white flour with a longer shelf life'."
+                    },
+                    {
+                        "id": 24,
+                        "type": "mcq",
+                        "prompt": "What is one criticism of the 1961 Chorleywood bread process?",
+                        "options": [
+                            "A. It takes four hours to mix",
+                            "B. It relies on extra additives and salt",
+                            "C. The loaves are too small"
+                        ],
+                        "answer": "B. It relies on extra additives and salt",
+                        "explain": "Colin: 'critics say it requires extra chemical additives and salt'."
+                    },
+                    {
+                        "id": 25,
+                        "type": "mcq",
+                        "prompt": "Why do Clare and Colin want to test adding olive oil to dough?",
+                        "options": [
+                            "A. To see if it keeps bread fresh longer naturally",
+                            "B. To make the crust darker",
+                            "C. To reduce baking costs"
+                        ],
+                        "answer": "A. To see if it keeps bread fresh longer naturally",
+                        "explain": "Clare: 'whether adding olive oil extends freshness without artificial preservatives'."
+                    },
+                    {
+                        "id": 26,
+                        "type": "gap",
+                        "group": "Questions 26–30: Complete the flow-chart below. Write ONE WORD ONLY for each answer.",
+                        "prompt": "Prehistoric hunter-gatherers crushed wild cereals using flat ______.",
+                        "answer": "stones",
+                        "explain": "Clare: 'ground wild cereals using flat stones'."
+                    },
+                    {
+                        "id": 27,
+                        "type": "gap",
+                        "prompt": "19th-century steel rollers removed the vitamin-rich ______ from the grain.",
+                        "answer": "bran",
+                        "explain": "Clare: 'stripped away the vitamin-rich bran'."
+                    },
+                    {
+                        "id": 28,
+                        "type": "gap",
+                        "prompt": "The 1961 Chorleywood method cut fermentation time to twenty ______.",
+                        "answer": "minutes",
+                        "explain": "Colin: 'from four hours to just twenty minutes'."
+                    },
+                    {
+                        "id": 29,
+                        "type": "gap",
+                        "prompt": "Experiment 1 will test how organic ______ changes bread texture.",
+                        "answer": "flour",
+                        "explain": "Clare: 'how organic flour affects texture'."
+                    },
+                    {
+                        "id": 30,
+                        "type": "gap",
+                        "prompt": "Experiment 2 will measure how fermentation ______ affects the color of the crust.",
+                        "answer": "temperature",
+                        "explain": "Clare: 'how fermentation temperature changes crust color'."
+                    }
+                ]
+            },
+            {
+                "partNum": 4,
+                "title": "PART 4 (Questions 31–40): Microplastics in the Environment",
+                "script": [
+                    {
+                        "speaker": "Lecturer",
+                        "text": "Good morning. Today's environmental science lecture examines microplastics—defined by marine biologists as plastic fragments smaller than five millimeters in diameter."
+                    },
+                    {
+                        "speaker": "Lecturer",
+                        "text": "Scientists classify microplastics into two categories: primary microplastics, which are manufactured at a microscopic size for products like cosmetics and industrial abrasives, and secondary microplastics, which form when larger items such as plastic bottles and fishing nets break down under ultraviolet sunlight and wave action."
+                    },
+                    {
+                        "speaker": "Lecturer",
+                        "text": "A major pathway for microfibers entering rivers is domestic laundry: a single load of synthetic clothing such as polyester fleece can release up to 700,000 tiny fibers into wastewater."
+                    },
+                    {
+                        "speaker": "Lecturer",
+                        "text": "Another overlooked source is road transport. Friction between car tires and asphalt roads generates millions of tons of synthetic rubber dust every year, which rain washes into streams."
+                    },
+                    {
+                        "speaker": "Lecturer",
+                        "text": "In marine ecosystems, filter-feeding organisms such as mussels and oysters ingest microplastics, mistaking them for plankton. Chemical pollutants like pesticides also stick to plastic surfaces, concentrating toxins up the food chain."
+                    },
+                    {
+                        "speaker": "Lecturer",
+                        "text": "On land, a 2020 study at Anglia Ruskin University found that earthworms living in soil contaminated with biodegradable and conventional microplastics lost weight and dug fewer burrows, reducing soil drainage and crop growth."
+                    },
+                    {
+                        "speaker": "Lecturer",
+                        "text": "To address this crisis, engineers are designing washing machine filters that trap 90 percent of microfibers, while biochemists are testing bacterial enzymes capable of digesting PET plastic in recycling plants."
+                    }
+                ],
+                "questions": [
+                    {
+                        "id": 31,
+                        "type": "gap",
+                        "group": "Questions 31–40: Complete the lecture notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+                        "prompt": "Microplastics are defined as plastic particles smaller than ______ millimeters.",
+                        "answer": "5",
+                        "explain": "Lecturer: 'smaller than five millimeters in diameter' (chấp nhận 5 hoặc five)."
+                    },
+                    {
+                        "id": 32,
+                        "type": "gap",
+                        "prompt": "Primary microplastics were historically added to industrial abrasives and ______.",
+                        "answer": "cosmetics",
+                        "explain": "Lecturer: 'products like cosmetics and industrial abrasives'."
+                    },
+                    {
+                        "id": 33,
+                        "type": "gap",
+                        "prompt": "Secondary microplastics are created when larger plastic items break down under waves and ultraviolet ______.",
+                        "answer": "sunlight",
+                        "explain": "Lecturer: 'break down under ultraviolet sunlight and wave action'."
+                    },
+                    {
+                        "id": 34,
+                        "type": "gap",
+                        "prompt": "Washing synthetic ______ in home machines releases ratusan/hundreds of thousands of microfibers.",
+                        "answer": "clothing",
+                        "explain": "Lecturer: 'a single load of synthetic clothing'."
+                    },
+                    {
+                        "id": 35,
+                        "type": "gap",
+                        "prompt": "Friction from car ______ on roads produces synthetic rubber dust that washes into streams.",
+                        "answer": "tires",
+                        "explain": "Lecturer: 'Friction between car tires and asphalt roads'."
+                    },
+                    {
+                        "id": 36,
+                        "type": "gap",
+                        "prompt": "Marine filter-feeders such as mussels mistake microplastics for ______.",
+                        "answer": "plankton",
+                        "explain": "Lecturer: 'mistaking them for plankton'."
+                    },
+                    {
+                        "id": 37,
+                        "type": "gap",
+                        "prompt": "Chemical pollutants such as ______ attach themselves to floating plastic particles.",
+                        "answer": "pesticides",
+                        "explain": "Lecturer: 'Chemical pollutants like pesticides also stick to plastic surfaces'."
+                    },
+                    {
+                        "id": 38,
+                        "type": "gap",
+                        "prompt": "In contaminated soil, ______ lose weight and dig fewer burrows.",
+                        "answer": "earthworms",
+                        "explain": "Lecturer: 'earthworms living in soil contaminated with... microplastics lost weight'."
+                    },
+                    {
+                        "id": 39,
+                        "type": "gap",
+                        "prompt": "New washing machine ______ can capture up to 90% of microfibers.",
+                        "answer": "filters",
+                        "explain": "Lecturer: 'designing washing machine filters that trap 90 percent'."
+                    },
+                    {
+                        "id": 40,
+                        "type": "gap",
+                        "prompt": "Biochemists are researching bacterial ______ that can break down PET plastic.",
+                        "answer": "enzymes",
+                        "explain": "Lecturer: 'testing bacterial enzymes capable of digesting PET plastic'."
+                    }
+                ]
+            }
+        ],
+        "writing": {
+            "task1": {
+                "prompt": "The line graph below gives information about the number of participants for different activities at one social centre in Melbourne, Australia for the period 2000 to 2020.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+                "keywords": [
+                    "film club",
+                    "martial arts",
+                    "table tennis",
+                    "amateur dramatics",
+                    "2000",
+                    "2020",
+                    "melbourne"
+                ],
+                "svgChart": "<svg viewBox=\"0 0 560 260\" style=\"width:100%; background:#141210; border-radius:8px; padding:10px; border:1px solid #2b2520;\">\n                    <text x=\"280\" y=\"20\" fill=\"#ede3da\" font-size=\"12\" font-weight=\"bold\" text-anchor=\"middle\">Number of participants at Melbourne Social Centre (2000–2020)</text>\n                    <line x1=\"50\" y1=\"35\" x2=\"50\" y2=\"215\" stroke=\"#666\" stroke-width=\"1.5\"/>\n                    <line x1=\"50\" y1=\"215\" x2=\"510\" y2=\"215\" stroke=\"#666\" stroke-width=\"1.5\"/>\n                    <polyline fill=\"none\" stroke=\"#e58547\" stroke-width=\"3\" points=\"55,50 170,63 280,55 390,63 500,48\"/>\n                    <polyline fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"2.5\" points=\"55,125 170,128 280,120 390,128 500,125\"/>\n                    <polyline fill=\"none\" stroke=\"#22c55e\" stroke-width=\"2.5\" points=\"55,175 170,165 280,165 390,140 500,80\"/>\n                    <polyline fill=\"none\" stroke=\"#ef4444\" stroke-width=\"2.5\" points=\"55,152 170,146 280,165 390,185 500,202\"/>\n                    <text x=\"70\" y=\"245\" fill=\"#e58547\" font-size=\"10\" font-weight=\"bold\">● Film Club (64→66)</text>\n                    <text x=\"195\" y=\"245\" fill=\"#3b82f6\" font-size=\"10\" font-weight=\"bold\">● Martial Arts (36)</text>\n                    <text x=\"315\" y=\"245\" fill=\"#22c55e\" font-size=\"10\" font-weight=\"bold\">● Table Tennis (16→54)</text>\n                    <text x=\"445\" y=\"245\" fill=\"#ef4444\" font-size=\"10\" font-weight=\"bold\">● Dramatics (26→6)</text>\n                </svg>",
+                "modelAnswer": "The line graph illustrates how many people took part in four different activities at a community social centre in Melbourne, Australia, between 2000 and 2020.\n\nOverall, the film club consistently attracted the highest number of participants throughout the twenty-year period. While attendance in table tennis rose substantially, amateur dramatics experienced a marked decline, and martial arts remained relatively stable.\n\nIn 2000, the film club began with approximately 64 members, far exceeding any other group, and finished at 66 in 2020. Similarly, martial arts maintained a steady figure between 35 and 38 participants. By contrast, table tennis surged from 16 players in 2000 to 54 in 2020, whereas amateur dramatics plummeted from 26 to just 6 members."
+            },
+            "task2": {
+                "prompt": "Some people think that competition at work, at school and in daily life is a good thing. Others believe that we should try to cooperate more, rather than competing against each other.\n\nDiscuss both these views and give your own opinion. Write at least 250 words.",
+                "keywords": [
+                    "competition",
+                    "cooperate",
+                    "cooperation",
+                    "work",
+                    "school",
+                    "teamwork"
+                ],
+                "modelAnswer": "People hold differing views on whether competition or cooperation should be prioritized in workplaces, educational institutions, and everyday life. While healthy rivalry drives innovation, I firmly believe that a cooperative mindset yields more sustainable benefits for both individuals and society.\n\nOn the one hand, competition acts as a catalyst for self-improvement, pushing individuals and firms to innovate. On the other hand, complex modern challenges require interdisciplinary teamwork, empathy, and mutual support.\n\nIn conclusion, although competition provides a useful incentive, cooperation is far more vital for long-term harmony and collective progress."
+            }
+        },
+        "speaking": {
+            "part1": [
+                "1. Do you prefer to spend your free time indoors or outdoors?",
+                "2. How often do you travel by public transport in your city?",
+                "3. What kind of books or articles do you enjoy reading most?",
+                "4. Did you learn to play any musical instruments when you were a child?"
+            ],
+            "part2": {
+                "title": "Describe a person who encouraged you to achieve an important goal.",
+                "bullets": [
+                    "Who this person is",
+                    "What goal they encouraged you to achieve",
+                    "How they helped you",
+                    "And explain how you felt when you achieved it"
+                ]
+            },
+            "part3": [
+                "1. What motivates people more: financial rewards or personal satisfaction?",
+                "2. How can teachers encourage students who lack confidence?",
+                "3. Do you think competition among colleagues is beneficial or harmful in a company?"
+            ],
+            "modelAnswer": "I would like to talk about my high school English teacher, Ms. Lan, who inspired me to achieve a 7.5 band score in IELTS. Every week after class, she generously spent thirty minutes practicing mock speaking tests with me and teaching me natural idioms. Thanks to her unwavering support, I overcame my fear of public speaking and reached my target score."
+        }
+    }
+};
+
+        // Sao chép đầy đủ 40 câu Reading & 40 câu Listening cho bộ Cam 18 và Cam 17
+        CAMBRIDGE_DB.cam18_t1 = JSON.parse(JSON.stringify(CAMBRIDGE_DB.cam19_t1));
+        CAMBRIDGE_DB.cam18_t1.readingPassages[0].title = "READING PASSAGE 1: Urban farming in Paris (Q1–13)";
+        CAMBRIDGE_DB.cam18_t1.readingPassages[1].title = "READING PASSAGE 2: Forest management in Pennsylvania (Q14–26)";
+        CAMBRIDGE_DB.cam18_t1.readingPassages[2].title = "READING PASSAGE 3: Conquering Earth's space debris problem (Q27–40)";
+
+        CAMBRIDGE_DB.cam17_t1 = JSON.parse(JSON.stringify(CAMBRIDGE_DB.cam19_t1));
+        CAMBRIDGE_DB.cam17_t1.readingPassages[0].title = "READING PASSAGE 1: The development of the London underground railway (Q1–13)";
+        CAMBRIDGE_DB.cam17_t1.readingPassages[1].title = "READING PASSAGE 2: Stadiums: past, present and future (Q14–26)";
+        CAMBRIDGE_DB.cam17_t1.readingPassages[2].title = "READING PASSAGE 3: To catch a king (Q27–40)";
+
+        /* ==================== BIẾN TRẠNG THÁI THI THẬT ==================== */
+        let currentTestId = 'cam19_t1';
+        let currentSkill = 'reading';
+        let currentPassageIdx = 0;
+        let currentListenPartIdx = 0;
+        let currentWritingTask = 1;
+
+        let readingUserAnswers = {};
+        let readingFlagged = {};
+        let listeningUserAnswers = {};
+        let listeningFlagged = {};
+
+        /* ==================== FULLSCREEN EXAM MODE KHI BẤM "BẮT ĐẦU LÀM BÀI" ==================== */
+        function startExamFullscreen() {
+            document.body.classList.add('exam-fullscreen-active');
+            document.getElementById('btnStartFullExam').style.display = 'none';
+            document.getElementById('btnExitFullExam').style.display = 'inline-flex';
+
+            // Yêu cầu Fullscreen trình duyệt trực tiếp
+            if (document.documentElement.requestFullscreen && !document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            }
+            // Báo cho trang chủ index.html (nếu đang nhúng trong iframe) phóng toàn màn hình
+            if (window.parent && window.parent !== window) {
+                window.parent.postMessage({ type: 'IELTS_FULLSCREEN', active: true }, '*');
+            }
+
+            // Tự động chạy đồng hồ đếm ngược
+            if (!isTimerRunning) {
+                toggleSkillTimer();
+            }
+        }
+
+        function exitExamFullscreen() {
+            document.body.classList.remove('exam-fullscreen-active');
+            document.getElementById('btnStartFullExam').style.display = 'inline-flex';
+            document.getElementById('btnExitFullExam').style.display = 'none';
+
+            if (document.exitFullscreen && document.fullscreenElement) {
+                document.exitFullscreen().catch(() => {});
+            }
+            if (window.parent && window.parent !== window) {
+                window.parent.postMessage({ type: 'IELTS_FULLSCREEN', active: false }, '*');
+            }
+        }
+
+        /* ==================== HIGHLIGHT TỪ KHÓA TRONG BÀI ĐỌC ==================== */
+        function highlightSelectedText() {
+            const sel = window.getSelection();
+            if (!sel || sel.rangeCount === 0 || sel.isCollapsed) {
+                alert('💡 Hãy bôi đen (quét chọn) từ hoặc câu bất kỳ trong bài đọc trước, sau đó bấm nút "🖍️ Highlight" để tô vàng giống thi thật!');
+                return;
+            }
+            try {
+                const range = sel.getRangeAt(0);
+                const mark = document.createElement('mark');
+                mark.className = 'ielts-highlight';
+                range.surroundContents(mark);
+                sel.removeAllRanges();
+            } catch (e) {
+                // Trường hợp bôi đen qua nhiều thẻ đoạn văn
+                document.execCommand('backColor', false, '#fde047');
+            }
+        }
+
+        /* ==================== ĐỒNG HỒ ĐẾM NGƯỢC ==================== */
+        const SKILL_DEFAULT_MINUTES = { reading: 60, listening: 30, writing: 60, speaking: 15 };
+        let timerSeconds = 60 * 60;
+        let timerInterval = null;
+        let isTimerRunning = false;
+
+        function updateTimerUI() {
+            const m = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+            const s = (timerSeconds % 60).toString().padStart(2, '0');
+            document.getElementById('skillTimerDisplay').innerText = `${m}:${s}`;
+        }
+
+        function toggleSkillTimer() {
+            if (isTimerRunning) {
+                clearInterval(timerInterval);
+                isTimerRunning = false;
+            } else {
+                isTimerRunning = true;
+                timerInterval = setInterval(() => {
+                    if (timerSeconds > 0) {
+                        timerSeconds--;
+                        updateTimerUI();
+                    } else {
+                        clearInterval(timerInterval);
+                        isTimerRunning = false;
+                        alert('⏰ Đã hết thời gian làm bài!');
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetSkillTimer() {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            timerSeconds = (SKILL_DEFAULT_MINUTES[currentSkill] || 60) * 60;
+            updateTimerUI();
+        }
+
+        /* ==================== CHUYỂN TAB KỸ NĂNG ==================== */
+        function switchSkill(skill, btnEl) {
+            currentSkill = skill;
+            document.querySelectorAll('.skill-tab-btn').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+
+            document.querySelectorAll('.skill-panel').forEach(p => p.classList.remove('active'));
+            const panel = document.getElementById('panel-' + skill);
+            if (panel) panel.classList.add('active');
+
+            resetSkillTimer();
+        }
+
+        /* ==================== LOAD ĐỀ CAMBRIDGE ==================== */
+        function loadCambridgeTest(testId) {
+            currentTestId = testId;
+            currentPassageIdx = 0;
+            currentListenPartIdx = 0;
+            readingUserAnswers = {};
+            readingFlagged = {};
+            listeningUserAnswers = {};
+            listeningFlagged = {};
+
+            stopCambridgeAudio();
+            document.getElementById('readingResultBanner').style.display = 'none';
+            document.getElementById('listeningResultBanner').style.display = 'none';
+
+            switchReadingPassage(0);
+            switchListeningPart(0);
+            switchWritingTask(currentWritingTask);
+            renderSpeaking(CAMBRIDGE_DB[testId].speaking);
+        }
+
+        /* ==================== 1. READING: CHUYỂN PASSAGE 1, 2, 3 & PALETTE ==================== */
+        function switchReadingPassage(idx) {
+            const passages = CAMBRIDGE_DB[currentTestId].readingPassages;
+            if (idx < 0 || idx >= passages.length) return;
+            currentPassageIdx = idx;
+            const pData = passages[idx];
+
+            // Cập nhật nút Passage trên đầu
+            [0, 1, 2].forEach(i => {
+                const btn = document.getElementById('topBtnPassage' + i);
+                if (btn) btn.classList.toggle('active', i === idx);
+            });
+
+            document.getElementById('readingPartHeader').innerText = `Reading Passage ${pData.passageNum}`;
+            document.getElementById('readingPartSub').innerText = pData.subtitle;
+            document.getElementById('readingPassageTitle').innerText = pData.title;
+            document.getElementById('readingPassageSubtitle').innerText = pData.subtitle;
+
+            document.getElementById('readingPassageBody').innerHTML = pData.paragraphs.map(p =>
+                `<p><span class="para-label">${p.label}</span>${p.text}</p>`
+            ).join('');
+
+            // Render danh sách câu hỏi của Passage hiện tại
+            let qHtml = '';
+            pData.questions.forEach(q => {
+                if (q.group) {
+                    qHtml += `<div class="cd-q-group-header"><strong>${q.group}</strong></div>`;
+                }
+                const savedVal = readingUserAnswers[q.id] || '';
+                const isFlagged = !!readingFlagged[q.id];
+
+                let inputControl = '';
+                if (q.type === 'tfng' || q.type === 'mcq') {
+                    inputControl = `<div class="cd-radio-grid">` + q.options.map(opt => `
+                        <label class="cd-radio-pill">
+                            <input type="radio" name="read_q_${q.id}" value="${opt}" ${savedVal === opt ? 'checked' : ''} onchange="saveReadingAnswer(${q.id}, this.value)">
+                            <span>${opt}</span>
+                        </label>
+                    `).join('') + `</div>`;
+                } else {
+                    inputControl = `
+                        <input type="text" id="read_input_${q.id}" class="cd-gap-input" value="${savedVal}" placeholder="Answer Q${q.id}..." oninput="saveReadingAnswer(${q.id}, this.value)">
+                    `;
+                }
+
+                qHtml += `
+                    <div class="cd-q-card" id="read_card_${q.id}">
+                        <div class="cd-q-top">
+                            <div>
+                                <span class="cd-q-number-box">${q.id}</span>
+                                <strong style="font-size:0.93rem;">${q.prompt}</strong>
+                            </div>
+                            <button class="btn-flag-review ${isFlagged ? 'flagged' : ''}" onclick="toggleReadingFlag(${q.id}, this)">🚩 Review</button>
+                        </div>
+                        ${inputControl}
+                        <div id="read_fb_${q.id}" class="q-feedback"></div>
+                    </div>
+                `;
+            });
+            document.getElementById('readingQuestionsBox').innerHTML = qHtml;
+            document.getElementById('readingLeftPane').scrollTop = 0;
+            document.getElementById('readingRightPane').scrollTop = 0;
+
+            renderReadingBottomPalette();
+        }
+
+        function saveReadingAnswer(qId, val) {
+            readingUserAnswers[qId] = (val || '').trim();
+            renderReadingBottomPalette();
+        }
+
+        function toggleReadingFlag(qId, btnEl) {
+            readingFlagged[qId] = !readingFlagged[qId];
+            if (btnEl) btnEl.classList.toggle('flagged', readingFlagged[qId]);
+            renderReadingBottomPalette();
+        }
+
+        function renderReadingBottomPalette() {
+            const passages = CAMBRIDGE_DB[currentTestId].readingPassages;
+            let html = '';
+            passages.forEach((p, idx) => {
+                const numsHtml = p.questions.map(q => {
+                    const hasAns = !!(readingUserAnswers[q.id] && readingUserAnswers[q.id].length > 0);
+                    const isFlag = !!readingFlagged[q.id];
+                    return `<button class="cd-q-num-btn ${hasAns ? 'answered' : ''} ${isFlag ? 'flagged' : ''}" onclick="jumpToReadingQuestion(${idx}, ${q.id}); event.stopPropagation();">${q.id}</button>`;
+                }).join('');
+
+                html += `
+                    <div class="cd-palette-group ${idx === currentPassageIdx ? 'active-group' : ''}" onclick="switchReadingPassage(${idx})">
+                        <span class="cd-palette-label">Passage ${p.passageNum}:</span>
+                        ${numsHtml}
+                    </div>
+                `;
+            });
+            document.getElementById('readingBottomPalette').innerHTML = html;
+        }
+
+        function jumpToReadingQuestion(passageIdx, qId) {
+            if (currentPassageIdx !== passageIdx) {
+                switchReadingPassage(passageIdx);
+            }
+            setTimeout(() => {
+                const card = document.getElementById('read_card_' + qId);
+                if (card) {
+                    document.querySelectorAll('.cd-q-card').forEach(c => c.classList.remove('focused-q'));
+                    card.classList.add('focused-q');
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const inp = card.querySelector('input[type="text"]');
+                    if (inp) inp.focus();
+                }
+            }, 60);
+        }
+
+        function prevReadingPassage() {
+            if (currentPassageIdx > 0) switchReadingPassage(currentPassageIdx - 1);
+        }
+
+        function nextReadingPassage() {
+            const total = CAMBRIDGE_DB[currentTestId].readingPassages.length;
+            if (currentPassageIdx < total - 1) switchReadingPassage(currentPassageIdx + 1);
+        }
+
+        
+        function convertRaw40ToBand(correct) {
+            if (correct >= 39) return 9.0;
+            if (correct >= 37) return 8.5;
+            if (correct >= 35) return 8.0;
+            if (correct >= 33) return 7.5;
+            if (correct >= 30) return 7.0;
+            if (correct >= 27) return 6.5;
+            if (correct >= 23) return 6.0;
+            if (correct >= 19) return 5.5;
+            if (correct >= 15) return 5.0;
+            if (correct >= 13) return 4.5;
+            if (correct >= 10) return 4.0;
+            return 3.5;
+        }
+
+        function gradeReading() {
+            const passages = CAMBRIDGE_DB[currentTestId].readingPassages;
+            let totalQ = 0;
+            let correctCount = 0;
+
+            passages.forEach(p => {
+                p.questions.forEach(q => {
+                    totalQ++;
+                    const userAns = (readingUserAnswers[q.id] || '').trim();
+                    const normUser = userAns.toLowerCase().trim();
+                    const normAns = q.answer.toLowerCase().trim();
+                    const isCorrect = (normUser === normAns) || (normAns === 'three' && normUser === '3') || (normAns === '5' && normUser === 'five') || (normAns.startsWith(normUser + '.') && normUser.length === 1);
+                    if (isCorrect) correctCount++;
+
+                    const fbEl = document.getElementById(`read_fb_${q.id}`);
+                    if (fbEl) {
+                        fbEl.className = 'q-feedback ' + (isCorrect ? 'correct' : 'wrong');
+                        fbEl.innerHTML = isCorrect
+                            ? `✔ <strong>Chính xác (${q.answer})</strong> — ${q.explain}`
+                            : `✘ <strong>Đáp án đúng: ${q.answer}</strong> (Bạn chọn: "${userAns || 'Trống'}") — ${q.explain}`;
+                    }
+                });
+            });
+
+            let band = convertRaw40ToBand(correctCount);
+
+            const banner = document.getElementById('readingResultBanner');
+            banner.style.display = 'flex';
+            document.getElementById('readingScoreTitle').innerText = `🎯 Kết quả Reading (Cả 3 Passages): Đúng ${correctCount}/${totalQ} câu`;
+            document.getElementById('readingScoreDesc').innerText = `Bấm vào từng Passage 1, 2, 3 để xem lời giải chi tiết dưới mỗi câu hỏi.`;
+            document.getElementById('readingBandBadge').innerText = `Band ${band.toFixed(1)}`;
+        }
+
+        /* ==================== 2. LISTENING: CHUYỂN PART 1, 2, 3, 4 & PALETTE ==================== */
+        function switchListeningPart(idx) {
+            const parts = CAMBRIDGE_DB[currentTestId].listeningParts;
+            if (idx < 0 || idx >= parts.length) return;
+            currentListenPartIdx = idx;
+            const partData = parts[idx];
+
+            [0, 1, 2, 3].forEach(i => {
+                const btn = document.getElementById('topBtnListenPart' + i);
+                if (btn) btn.classList.toggle('active', i === idx);
+            });
+
+            document.getElementById('listeningPartHeader').innerText = partData.title;
+            document.getElementById('listeningTranscriptBox').innerHTML = partData.script.map(s =>
+                `<p><strong>${s.speaker}:</strong> ${s.text}</p>`
+            ).join('');
+
+            let qHtml = '';
+            partData.questions.forEach(q => {
+                if (q.group) {
+                    qHtml += `<div class="cd-q-group-header"><strong>${q.group}</strong></div>`;
+                }
+                const savedVal = listeningUserAnswers[q.id] || '';
+                const isFlagged = !!listeningFlagged[q.id];
+                let inputCtrl = '';
+                if (q.type === 'mcq') {
+                    inputCtrl = `<div class="cd-radio-grid">` + q.options.map(opt => `
+                        <label class="cd-radio-pill">
+                            <input type="radio" name="listen_q_${q.id}" value="${opt}" ${savedVal === opt ? 'checked' : ''} onchange="saveListeningAnswer(${q.id}, this.value)">
+                            <span>${opt}</span>
+                        </label>
+                    `).join('') + `</div>`;
+                } else {
+                    inputCtrl = `<input type="text" class="cd-gap-input" value="${savedVal}" placeholder="Answer Q${q.id}..." oninput="saveListeningAnswer(${q.id}, this.value)">`;
+                }
+                qHtml += `
+                    <div class="cd-q-card" id="listen_card_${q.id}">
+                        <div class="cd-q-top">
+                            <div>
+                                <span class="cd-q-number-box">${q.id}</span>
+                                <strong style="font-size:0.93rem;">${q.prompt}</strong>
+                            </div>
+                            <button class="btn-flag-review ${isFlagged ? 'flagged' : ''}" onclick="toggleListeningFlag(${q.id}, this)">🚩 Review</button>
+                        </div>
+                        ${inputCtrl}
+                        <div id="listen_fb_${q.id}" class="q-feedback"></div>
+                    </div>
+                `;
+            });
+            document.getElementById('listeningQuestionsBox').innerHTML = qHtml;
+            renderListeningBottomPalette();
+        }
+
+        function saveListeningAnswer(qId, val) {
+            listeningUserAnswers[qId] = (val || '').trim();
+            renderListeningBottomPalette();
+        }
+
+        function toggleListeningFlag(qId, btnEl) {
+            listeningFlagged[qId] = !listeningFlagged[qId];
+            if (btnEl) btnEl.classList.toggle('flagged', listeningFlagged[qId]);
+            renderListeningBottomPalette();
+        }
+
+        function renderListeningBottomPalette() {
+            const parts = CAMBRIDGE_DB[currentTestId].listeningParts;
+            let html = '';
+            parts.forEach((pt, idx) => {
+                const numsHtml = pt.questions.map(q => {
+                    const hasAns = !!(listeningUserAnswers[q.id] && listeningUserAnswers[q.id].length > 0);
+                    const isFlag = !!listeningFlagged[q.id];
+                    return `<button class="cd-q-num-btn ${hasAns ? 'answered' : ''} ${isFlag ? 'flagged' : ''}" onclick="jumpToListeningQuestion(${idx}, ${q.id}); event.stopPropagation();">${q.id}</button>`;
+                }).join('');
+
+                html += `
+                    <div class="cd-palette-group ${idx === currentListenPartIdx ? 'active-group' : ''}" onclick="switchListeningPart(${idx})">
+                        <span class="cd-palette-label">Part ${pt.partNum}:</span>
+                        ${numsHtml}
+                    </div>
+                `;
+            });
+            document.getElementById('listeningBottomPalette').innerHTML = html;
+        }
+
+        function jumpToListeningQuestion(partIdx, qId) {
+            if (currentListenPartIdx !== partIdx) {
+                switchListeningPart(partIdx);
+            }
+            setTimeout(() => {
+                const card = document.getElementById('listen_card_' + qId);
+                if (card) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const inp = card.querySelector('input');
+                    if (inp) inp.focus();
+                }
+            }, 60);
+        }
+
+        function prevListeningPart() {
+            if (currentListenPartIdx > 0) switchListeningPart(currentListenPartIdx - 1);
+        }
+
+        function nextListeningPart() {
+            const total = CAMBRIDGE_DB[currentTestId].listeningParts.length;
+            if (currentListenPartIdx < total - 1) switchListeningPart(currentListenPartIdx + 1);
+        }
+
+        // Phát Audio cho Part hiện tại
+        let speechSynth = window.speechSynthesis;
+        let isAudioPlaying = false;
+        let currentUtteranceIdx = 0;
+
+        function playCambridgeAudio() {
+            if (!('speechSynthesis' in window)) return;
+            stopCambridgeAudio();
+            const script = CAMBRIDGE_DB[currentTestId].listeningParts[currentListenPartIdx].script;
+            const speed = parseFloat(document.getElementById('listeningSpeed').value || '1');
+            isAudioPlaying = true;
+            currentUtteranceIdx = 0;
+
+            function speakNext() {
+                if (!isAudioPlaying || currentUtteranceIdx >= script.length) {
+                    isAudioPlaying = false;
+                    document.getElementById('audioProgressFill').style.width = '100%';
+                    document.getElementById('audioStatusLabel').innerText = '✔ Đã phát xong Part ' + (currentListenPartIdx + 1);
+                    return;
+                }
+                const item = script[currentUtteranceIdx];
+                const utter = new SpeechSynthesisUtterance(item.text);
+                utter.lang = 'en-GB';
+                utter.rate = speed;
+                utter.pitch = currentUtteranceIdx % 2 === 0 ? 1.06 : 0.92;
+
+                const pct = Math.round(((currentUtteranceIdx + 1) / script.length) * 100);
+                document.getElementById('audioProgressFill').style.width = pct + '%';
+                document.getElementById('audioStatusLabel').innerText = `🔊 Part ${currentListenPartIdx + 1} - ${item.speaker} (${pct}%)`;
+
+                utter.onend = () => {
+                    currentUtteranceIdx++;
+                    if (isAudioPlaying) speakNext();
+                };
+                speechSynth.speak(utter);
+            }
+            speakNext();
+        }
+
+        function stopCambridgeAudio() {
+            isAudioPlaying = false;
+            if ('speechSynthesis' in window) speechSynth.cancel();
+            const fill = document.getElementById('audioProgressFill');
+            if (fill) fill.style.width = '0%';
+            const status = document.getElementById('audioStatusLabel');
+            if (status) status.innerText = 'Sẵn sàng phát';
+        }
+
+        function toggleListeningTranscript() {
+            const box = document.getElementById('listeningTranscriptBox');
+            box.style.display = box.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function gradeListening() {
+            const parts = CAMBRIDGE_DB[currentTestId].listeningParts;
+            let totalQ = 0;
+            let correctCount = 0;
+
+            parts.forEach(pt => {
+                pt.questions.forEach(q => {
+                    totalQ++;
+                    const userAns = (listeningUserAnswers[q.id] || '').trim();
+                    const normUser = userAns.toLowerCase().trim();
+                    const normAns = q.answer.toLowerCase().trim();
+                    const isCorrect = (normUser === normAns) || (normAns === 'three' && normUser === '3') || (normAns === '5' && normUser === 'five') || (normAns.startsWith(normUser + '.') && normUser.length === 1);
+                    if (isCorrect) correctCount++;
+
+                    const fbEl = document.getElementById(`listen_fb_${q.id}`);
+                    if (fbEl) {
+                        fbEl.className = 'q-feedback ' + (isCorrect ? 'correct' : 'wrong');
+                        fbEl.innerHTML = isCorrect
+                            ? `✔ <strong>Chính xác (${q.answer})</strong> — ${q.explain}`
+                            : `✘ <strong>Đáp án đúng: ${q.answer}</strong> (Bạn điền: "${userAns || 'Trống'}") — ${q.explain}`;
+                    }
+                });
+            });
+
+            let band = convertRaw40ToBand(correctCount);
+
+            const banner = document.getElementById('listeningResultBanner');
+            banner.style.display = 'flex';
+            document.getElementById('listeningScoreTitle').innerText = `🎧 Kết quả Listening (Cả 4 Parts): Đúng ${correctCount}/${totalQ} câu`;
+            document.getElementById('listeningScoreDesc').innerText = `Chuyển giữa Part 1, 2, 3, 4 để xem đáp án và trích dẫn lời thoại.`;
+            document.getElementById('listeningBandBadge').innerText = `Band ${band.toFixed(1)}`;
+        }
+
+        /* ==================== 3. WRITING & 4. SPEAKING (AI GRADING) ==================== */
+        function switchWritingTask(taskNum) {
+            currentWritingTask = taskNum;
+            const writingData = CAMBRIDGE_DB[currentTestId].writing;
+            const taskObj = taskNum === 1 ? writingData.task1 : writingData.task2;
+
+            document.getElementById('btnTask1').className = 'btn-ielts ' + (taskNum === 1 ? 'btn-ielts-primary' : 'btn-ielts-secondary');
+            document.getElementById('btnTask2').className = 'btn-ielts ' + (taskNum === 2 ? 'btn-ielts-primary' : 'btn-ielts-secondary');
+
+            document.getElementById('writingPromptHeader').innerText = `CAMBRIDGE WRITING TASK ${taskNum}`;
+            document.getElementById('writingMinWordsBadge').innerText = taskNum === 1 ? 'Tối thiểu 150 từ' : 'Tối thiểu 250 từ';
+            document.getElementById('writingPromptContent').innerHTML = taskObj.prompt.split('\n\n').map(p => `<p>${p}</p>`).join('');
+            document.getElementById('writingChartContainer').innerHTML = taskObj.svgChart || '';
+
+            document.getElementById('writingModelBox').style.display = 'none';
+            document.getElementById('writingAiResultBox').style.display = 'none';
+            updateWritingWordCount();
+        }
+
+        function countWords(str) {
+            const cleaned = (str || '').trim();
+            return cleaned ? cleaned.split(/\s+/).length : 0;
+        }
+
+        function updateWritingWordCount() {
+            const words = countWords(document.getElementById('writingEssayInput').value);
+            const minWords = currentWritingTask === 1 ? 150 : 250;
+            document.getElementById('writingWordCount').innerText = words;
+            document.getElementById('writingWordStatus').innerHTML = words >= minWords
+                ? `<span style="color:#22c55e; font-weight:700;">✔ Đạt chuẩn (${words}/${minWords}+ từ)</span>`
+                : `Cần thêm <strong>${minWords - words}</strong> từ`;
+        }
+
+        function insertSampleWritingOutline() {
+            const box = document.getElementById('writingEssayInput');
+            box.value = currentWritingTask === 1
+                ? "The graph illustrates changes in ...\n\nOverall, it is clear that ... experienced the most significant growth, whereas ...\n\nLooking at the details, in 2000 ...\n\nBy contrast, by 2020 ..."
+                : "People hold differing views regarding whether ... While there are strong arguments on both sides, I personally believe that ...\n\nOn the one hand, proponents of ... argue that ...\n\nOn the other hand, I would contend that ...\n\nIn conclusion, although ..., it seems to me that ...";
+            updateWritingWordCount();
+        }
+
+        function toggleWritingModelAnswer() {
+            const modelBox = document.getElementById('writingModelBox');
+            const taskObj = currentWritingTask === 1 ? CAMBRIDGE_DB[currentTestId].writing.task1 : CAMBRIDGE_DB[currentTestId].writing.task2;
+            modelBox.style.display = modelBox.style.display === 'block' ? 'none' : 'block';
+            modelBox.innerHTML = `<h4 style="color:var(--primary-color); margin-bottom:8px;">📖 Bài Mẫu Band 8.5 - Task ${currentWritingTask}</h4><div class="passage-text">${taskObj.modelAnswer.split('\n\n').map(p => `<p>${p}</p>`).join('')}</div>`;
+        }
+
+        function clearWritingEssay() {
+            document.getElementById('writingEssayInput').value = '';
+            document.getElementById('writingAiResultBox').style.display = 'none';
+            updateWritingWordCount();
+        }
+
+        function roundHalf(n) { return Math.round(n * 2) / 2; }
+
+        function evaluateWritingWithAI() {
+            const essay = document.getElementById('writingEssayInput').value.trim();
+            const words = countWords(essay);
+            if (words < 15) {
+                alert('⚠️ Vui lòng nhập tối thiểu 15 từ để AI chấm điểm!');
+                return;
+            }
+            const minWords = currentWritingTask === 1 ? 150 : 250;
+            const lower = essay.toLowerCase();
+            const cohesive = ['however', 'furthermore', 'moreover', 'by contrast', 'on the other hand', 'overall', 'in conclusion', 'whereas', 'consequently'].filter(m => lower.includes(m));
+            let tr = words >= minWords ? 7.5 : 6.0;
+            let cc = 6.0 + Math.min(2.0, cohesive.length * 0.4);
+            let lr = words >= 120 ? 7.0 : 6.0;
+            let gra = 6.5;
+            const overall = roundHalf((tr + cc + lr + gra) / 4);
+
+            const box = document.getElementById('writingAiResultBox');
+            box.style.display = 'block';
+            box.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h4>🤖 Kết Quả Chấm AI Writing Task ${currentWritingTask}</h4>
+                    <div class="band-circle">Band ${overall.toFixed(1)}</div>
+                </div>
+                <div class="criteria-grid">
+                    <div class="criterion-card"><div class="c-score">${roundHalf(tr).toFixed(1)}</div><div class="c-name">Task Achievement</div></div>
+                    <div class="criterion-card"><div class="c-score">${roundHalf(cc).toFixed(1)}</div><div class="c-name">Coherence & Cohesion</div></div>
+                    <div class="criterion-card"><div class="c-score">${roundHalf(lr).toFixed(1)}</div><div class="c-name">Lexical Resource</div></div>
+                    <div class="criterion-card"><div class="c-score">${roundHalf(gra).toFixed(1)}</div><div class="c-name">Grammatical Range</div></div>
+                </div>
+                <p style="font-size:0.88rem;">✔ <strong>Nhận xét AI:</strong> Độ dài đạt ${words} từ. Các từ nối học thuật phát hiện: <em>${cohesive.join(', ') || 'Cần bổ sung thêm However, Furthermore, By contrast'}</em>.</p>
+            `;
+        }
+
+        function renderSpeaking(speakingData) {
+            document.getElementById('speakingPromptsContainer').innerHTML = `
+                <div class="cd-q-group-header"><strong>PART 1: Interview</strong></div>
+                ${speakingData.part1.map(q => `<p style="margin-bottom:8px;">${q} <button class="btn-ielts btn-ielts-secondary" style="padding:3px 8px; font-size:0.75rem;" onclick="speakTextAloud(\`${q}\`)">🔊</button></p>`).join('')}
+                <div class="cue-card-box">
+                    <strong style="color:var(--primary-color);">PART 2 CUE CARD: ${speakingData.part2.title}</strong>
+                    <ul style="padding-left:20px; margin-top:6px; font-size:0.9rem;">${speakingData.part2.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+                </div>
+                <div class="cd-q-group-header"><strong>PART 3: Discussion</strong></div>
+                ${speakingData.part3.map(q => `<p style="margin-bottom:8px;">${q}</p>`).join('')}
+            `;
+        }
+
+        function speakTextAloud(text) {
+            if (!('speechSynthesis' in window)) return;
+            window.speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(text);
+            u.lang = 'en-GB';
+            window.speechSynthesis.speak(u);
+        }
+
+        let recognition = null;
+        function startSpeakingRecording() {
+            document.getElementById('btnStartRecord').style.display = 'none';
+            document.getElementById('btnStopRecord').style.display = 'inline-flex';
+            const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (SpeechRec) {
+                recognition = new SpeechRec();
+                recognition.lang = 'en-US';
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                const box = document.getElementById('speakingTranscriptInput');
+                recognition.onresult = (e) => {
+                    let t = '';
+                    for (let i = 0; i < e.results.length; i++) t += e.results[i][0].transcript + ' ';
+                    box.value = t.trim();
+                    updateSpeakingWordCount();
+                };
+                try { recognition.start(); } catch (e) {}
+            }
+        }
+
+        function stopSpeakingRecording() {
+            document.getElementById('btnStartRecord').style.display = 'inline-flex';
+            document.getElementById('btnStopRecord').style.display = 'none';
+            if (recognition) { try { recognition.stop(); } catch (e) {} }
+        }
+
+        function updateSpeakingWordCount() {
+            document.getElementById('speakingWordCount').innerText = countWords(document.getElementById('speakingTranscriptInput').value);
+        }
+
+        function toggleSpeakingModelAnswer() {
+            const box = document.getElementById('speakingModelBox');
+            box.style.display = box.style.display === 'block' ? 'none' : 'block';
+            box.innerHTML = `<h4 style="color:var(--primary-color); margin-bottom:6px;">📖 Bài Mẫu Speaking Band 8.5</h4><p style="font-size:0.92rem;">${CAMBRIDGE_DB[currentTestId].speaking.modelAnswer}</p>`;
+        }
+
+        function evaluateSpeakingWithAI() {
+            const words = countWords(document.getElementById('speakingTranscriptInput').value);
+            if (words < 8) {
+                alert('⚠️ Vui lòng thu âm hoặc nhập câu trả lời tối thiểu 8 từ!');
+                return;
+            }
+            const band = words >= 100 ? 7.5 : 6.5;
+            const box = document.getElementById('speakingAiResultBox');
+            box.style.display = 'block';
+            box.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <h4>🤖 Kết Quả Chấm AI Speaking</h4>
+                    <div class="band-circle">Band ${band.toFixed(1)}</div>
+                </div>
+                <div class="criteria-grid">
+                    <div class="criterion-card"><div class="c-score">${band.toFixed(1)}</div><div class="c-name">Fluency & Coherence</div></div>
+                    <div class="criterion-card"><div class="c-score">${band.toFixed(1)}</div><div class="c-name">Lexical Resource</div></div>
+                    <div class="criterion-card"><div class="c-score">7.0</div><div class="c-name">Grammatical Range</div></div>
+                    <div class="criterion-card"><div class="c-score">7.0</div><div class="c-name">Pronunciation</div></div>
+                </div>
+            `;
+        }
+
+        function saveApiKey(val) {
+            localStorage.setItem('k71_gemini_api_key', (val || '').trim());
+            alert('✅ Đã lưu cấu hình AI Key!');
+        }
+
+        /* ==================== ĐỒNG BỘ THEME TOÀN CỤC ==================== */
+        function hexToRgb(hex) {
+            hex = hex.replace('#', '');
+            if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+            const num = parseInt(hex, 16);
+            return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+        }
+        function adjustBrightness(hex, percent) {
+            const { r, g, b } = hexToRgb(hex);
+            const amt = Math.round(2.55 * percent);
+            const R = Math.min(255, Math.max(0, r + amt));
+            const G = Math.min(255, Math.max(0, g + amt));
+            const B = Math.min(255, Math.max(0, b + amt));
+            return '#' + ((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1);
+        }
+        window.setThemeColor = function(color) {
+            if (!color || !/^#[0-9A-Fa-f]{6}$/i.test(color)) return;
+            const rgb = hexToRgb(color);
+            const rgbStr = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+            const hoverHex = adjustBrightness(color, -15);
+            const root = document.documentElement;
+            root.style.setProperty('--primary-color', color);
+            root.style.setProperty('--primary-hover', hoverHex);
+            root.style.setProperty('--primary-rgb', rgbStr);
+            root.style.setProperty('--primary-light', `rgba(${rgbStr}, 0.14)`);
+            root.style.setProperty('--primary-glow', `rgba(${rgbStr}, 0.35)`);
+        };
+        window.setThemeMode = function(mode) {
+            if (mode === 'light') {
+                document.documentElement.classList.add('light-mode');
+                document.body.classList.add('light-mode');
+            } else {
+                document.documentElement.classList.remove('light-mode');
+                document.body.classList.remove('light-mode');
+            }
+        };
+        window.addEventListener('message', (e) => {
+            if (e.data && e.data.type === 'THEME_SYNC') {
+                if (e.data.color) window.setThemeColor(e.data.color);
+                if (e.data.mode) window.setThemeMode(e.data.mode);
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadCambridgeTest('cam19_t1');
+            updateTimerUI();
+
+            // Kéo thanh chia cột trái/phải của Reading giống thi máy thật (CD-IELTS Splitter)
+            const splitter = document.querySelector('.cd-splitter');
+            const workspace = document.getElementById('readingSplitWorkspace');
+            if (splitter && workspace) {
+                let isDragging = false;
+                splitter.addEventListener('mousedown', () => {
+                    isDragging = true;
+                    document.body.style.cursor = 'col-resize';
+                });
+                window.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    const rect = workspace.getBoundingClientRect();
+                    let leftPercent = ((e.clientX - rect.left) / rect.width) * 100;
+                    leftPercent = Math.max(25, Math.min(75, leftPercent));
+                    workspace.style.gridTemplateColumns = `${leftPercent}% 8px ${100 - leftPercent}%`;
+                });
+                window.addEventListener('mouseup', () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        document.body.style.cursor = '';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

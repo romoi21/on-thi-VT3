@@ -1332,6 +1332,12 @@
                 </a>
             </li>
             <li>
+                <a class="nav-item" onclick="switchSection('ielts', this)">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span>Luyện IELTS 4 Kỹ Năng</span>
+                </a>
+            </li>
+            <li>
                 <a class="nav-item" onclick="switchSection('pomodoro', this)">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     <span>Tự Học Pomodoro</span>
@@ -1403,6 +1409,15 @@
                             <p>Đề thi chuẩn 15 câu trong 30 phút, bấm giờ và chấm điểm tự động.</p>
                         </div>
                         <div class="quick-card-btn">Làm đề ngay ➔</div>
+                    </div>
+
+                    <div class="quick-card" onclick="triggerNav('ielts')">
+                        <div>
+                            <div class="quick-card-icon">🎓</div>
+                            <h3>Luyện IELTS 4 Kỹ Năng</h3>
+                            <p>Đề thi Cambridge 17–19 (Reading, Listening, Writing, Speaking) tích hợp AI chấm bài chi tiết.</p>
+                        </div>
+                        <div class="quick-card-btn">Luyện IELTS ngay ➔</div>
                     </div>
 
                     <div class="quick-card" onclick="triggerNav('pomodoro')">
@@ -1490,6 +1505,22 @@
                         <a href="quiz.html?v=99" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Mở rộng trang mới ↗</a>
                     </div>
                     <iframe src="quiz.html?v=99" class="iframe-box" id="quizIframe" style="height: 840px;"></iframe>
+                </div>
+            </section>
+
+            <!-- ================= PHẦN 3B: LUYỆN THI IELTS 4 KỸ NĂNG (CAMBRIDGE & AI) ================= -->
+            <section id="section-ielts" class="section-view">
+                <div class="card" style="padding-bottom: 16px;">
+                    <h2>🎓 Trung Tâm Luyện Thi IELTS 4 Kỹ Năng (Cambridge IELTS 17–19 & AI Examiner)</h2>
+                    <p class="card-desc">Hệ thống luyện đề toàn diện 4 kỹ năng: <strong>Reading</strong> (True/False/Not Given, Gap-fill), <strong>Listening</strong> (Audio Cambridge đa giọng đọc & Transcript), <strong>Writing Task 1 & 2</strong> (AI chấm 4 tiêu chí kèm bài mẫu Band 8.5) và <strong>Speaking Part 1, 2, 3</strong> (Thu âm giọng nói & AI chấm điểm tức thì):</p>
+                </div>
+
+                <div class="iframe-container" id="ieltsIframeContainer">
+                    <div class="iframe-toolbar">
+                        <span>🤖 Tích hợp bộ đề chuẩn Cambridge Academic & AI IELTS Examiner chấm Writing/Speaking</span>
+                        <a href="ielts.html" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Mở rộng toàn màn hình ↗</a>
+                    </div>
+                    <iframe src="ielts.html" class="iframe-box" id="ieltsIframe" allow="fullscreen; microphone" allowfullscreen style="height: 980px;"></iframe>
                 </div>
             </section>
 
@@ -1684,12 +1715,13 @@
             'overview': '🏠 Tổng Quan Cổng Ôn Tập',
             'documents': '📚 Thư Mục Tài Liệu Môn Học',
             'quiz': '📝 Khu Vực Luyện Tập Trắc Nghiệm',
+            'ielts': '🎓 Luyện Thi IELTS 4 Kỹ Năng (Cambridge & AI)',
             'pomodoro': '⏰ Khu Vực Tự Học Pomodoro',
             'team': '🚀 Ban Sáng Lập & Giới Thiệu K71',
             'settings': '⚙️ Cài Đặt Giao Diện & Tiện Ích'
         };
 
-        const navKeys = ['overview', 'documents', 'quiz', 'pomodoro', 'team', 'settings'];
+        const navKeys = ['overview', 'documents', 'quiz', 'ielts', 'pomodoro', 'team', 'settings'];
 
         // Chuyển tab khi bấm nút menu bên sidebar
         function switchSection(sectionId, el) {
@@ -2379,6 +2411,33 @@
             const hash = window.location.hash.replace('#', '');
             if (hash && titles[hash]) {
                 switchSection(hash);
+            }
+        });
+
+        // Lắng nghe sự kiện phóng toàn màn hình khi bắt đầu làm bài thi IELTS
+        window.addEventListener('message', (e) => {
+            if (e.data && e.data.type === 'IELTS_FULLSCREEN') {
+                const iframe = document.getElementById('ieltsIframe');
+                if (!iframe) return;
+                if (e.data.active) {
+                    iframe.style.position = 'fixed';
+                    iframe.style.inset = '0';
+                    iframe.style.width = '100vw';
+                    iframe.style.height = '100vh';
+                    iframe.style.zIndex = '99999';
+                    if (document.documentElement.requestFullscreen && !document.fullscreenElement) {
+                        document.documentElement.requestFullscreen().catch(() => {});
+                    }
+                } else {
+                    iframe.style.position = '';
+                    iframe.style.inset = '';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '980px';
+                    iframe.style.zIndex = '';
+                    if (document.exitFullscreen && document.fullscreenElement) {
+                        document.exitFullscreen().catch(() => {});
+                    }
+                }
             }
         });
     </script>
