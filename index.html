@@ -1539,6 +1539,12 @@
                 </a>
             </li>
             <li>
+                <a class="nav-item" onclick="switchSection('history', this)">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Tài Khoản & Lịch Sử</span>
+                </a>
+            </li>
+            <li>
                 <a class="nav-item" onclick="switchSection('pomodoro', this)">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     <span>Tự Học Pomodoro</span>
@@ -1578,7 +1584,14 @@
                 </div>
             </div>
             
-            <div class="topbar-right"></div>
+            <div class="topbar-right" id="topbarAuthArea" style="display:flex; align-items:center; gap:10px;">
+                <button type="button" onclick="window.K71Auth && window.K71Auth.openLoginModal({ tab: 'login' })" class="btn-doc-secondary" style="padding: 8px 13px; font-size: 0.83rem; border-radius: 10px;">
+                    🔑 Đăng nhập
+                </button>
+                <button type="button" onclick="window.K71Auth && window.K71Auth.openLoginModal({ tab: 'register' })" class="btn-doc-primary" style="padding: 8px 14px; font-size: 0.83rem; border-radius: 10px;">
+                    ✨ Tạo tài khoản
+                </button>
+            </div>
         </header>
 
         <!-- Container chứa các phần nội dung (Chỉ hiện phần được bấm trên menu) -->
@@ -1598,7 +1611,7 @@
                         <div>
                             <div class="quick-card-icon">📚</div>
                             <h3>Tài Liệu Môn Học</h3>
-                            <p>Kho đề thi, tóm tắt công thức và đề cương kiểm tra 9 môn học trọng tâm.</p>
+                            <p>Kho đề thi, tóm tắt công thức và đề cương kiểm tra 10 môn học trọng tâm.</p>
                         </div>
                         <div class="quick-card-btn">Mở kho tài liệu ➔</div>
                     </div>
@@ -1619,6 +1632,15 @@
                             <p>Đề thi Cambridge 17–19 (Reading, Listening, Writing, Speaking) tích hợp AI chấm bài chi tiết.</p>
                         </div>
                         <div class="quick-card-btn">Luyện IELTS ngay ➔</div>
+                    </div>
+
+                    <div class="quick-card" onclick="triggerNav('history')">
+                        <div>
+                            <div class="quick-card-icon">👤</div>
+                            <h3>Tài Khoản & Lịch Sử</h3>
+                            <p>Liên kết Google / Facebook cá nhân để lưu điểm số và xem lại toàn bộ đề đã làm.</p>
+                        </div>
+                        <div class="quick-card-btn">Xem lịch sử làm bài ➔</div>
                     </div>
 
                     <div class="quick-card" onclick="triggerNav('pomodoro')">
@@ -1706,9 +1728,9 @@
                 <div class="iframe-container" id="quizIframeContainer">
                     <div class="iframe-toolbar">
                         <span>💡 Đề thi mô phỏng định dạng chuẩn của Bộ GD&ĐT</span>
-                        <a href="quiz.html?v=101" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Mở rộng trang mới ↗</a>
+                        <a href="quiz.html?v=102" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Mở rộng trang mới ↗</a>
                     </div>
-                    <iframe src="quiz.html?v=101" class="iframe-box" id="quizIframe" allow="fullscreen" allowfullscreen style="height: 840px;"></iframe>
+                    <iframe src="quiz.html?v=102" class="iframe-box" id="quizIframe" allow="fullscreen" allowfullscreen style="height: 840px;"></iframe>
                 </div>
             </section>
 
@@ -1722,9 +1744,66 @@
                 <div class="iframe-container" id="ieltsIframeContainer">
                     <div class="iframe-toolbar">
                         <span>🤖 Tích hợp bộ đề chuẩn Cambridge Academic & AI IELTS Examiner chấm Writing/Speaking</span>
-                        <a href="ielts.html" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Mở rộng toàn màn hình ↗</a>
+                        <a href="ielts.html?v=102" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Mở rộng toàn màn hình ↗</a>
                     </div>
-                    <iframe src="ielts.html" class="iframe-box" id="ieltsIframe" allow="fullscreen; microphone" allowfullscreen style="height: 980px;"></iframe>
+                    <iframe src="ielts.html?v=102" class="iframe-box" id="ieltsIframe" allow="fullscreen; microphone" allowfullscreen style="height: 980px;"></iframe>
+                </div>
+            </section>
+
+            <!-- ================= PHẦN 3C: TÀI KHOẢN CÁ NHÂN (GOOGLE / FACEBOOK) & LỊCH SỬ LÀM BÀI ================= -->
+            <section id="section-history" class="section-view">
+                <!-- Khung Hồ sơ tài khoản & Liên kết Google / Facebook -->
+                <div class="card" id="accountProfileCard">
+                    <!-- Được render động bởi renderAccountAndHistorySection() -->
+                </div>
+
+                <!-- 4 Thẻ Thống Kê Học Tập Cá Nhân -->
+                <div class="quick-grid" id="historyStatsGrid" style="margin-bottom: 24px;">
+                    <!-- Được render động -->
+                </div>
+
+                <!-- Danh sách Lịch sử làm bài chi tiết & Bộ lọc -->
+                <div class="card">
+                    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; margin-bottom:18px;">
+                        <div>
+                            <h2 style="margin-bottom:4px;">📊 Bảng Lịch Sử Làm Bài Của Bạn</h2>
+                            <p class="card-desc" style="margin-bottom:0;">Toàn bộ các bài thi Trắc nghiệm THPT & IELTS được lưu trữ tự động theo tài khoản cá nhân:</p>
+                        </div>
+                        <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+                            <select id="histFilterSubject" onchange="renderAccountAndHistorySection()" style="padding:9px 12px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-body); color:var(--text-main); font-size:0.88rem; font-weight:600;">
+                                <option value="all">📚 Tất cả môn học</option>
+                                <option value="toan">Toán học</option>
+                                <option value="ly">Vật lí</option>
+                                <option value="hoa">Hóa học</option>
+                                <option value="sinh">Sinh học</option>
+                                <option value="van">Ngữ văn</option>
+                                <option value="anh">Tiếng Anh</option>
+                                <option value="congnghe">Công nghệ</option>
+                                <option value="su">Lịch sử</option>
+                                <option value="dia">Địa lí</option>
+                                <option value="gdktpl">GD Kinh tế & PL</option>
+                                <option value="ielts">IELTS Academic</option>
+                            </select>
+
+                            <select id="histFilterGrade" onchange="renderAccountAndHistorySection()" style="padding:9px 12px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-body); color:var(--text-main); font-size:0.88rem; font-weight:600;">
+                                <option value="all">🎓 Tất cả khối</option>
+                                <option value="10">Khối 10</option>
+                                <option value="11">Khối 11</option>
+                                <option value="12">Khối 12</option>
+                                <option value="IELTS">IELTS</option>
+                            </select>
+
+                            <button type="button" onclick="window.K71Auth && window.K71Auth.exportAccountBackup()" class="btn-doc-secondary" style="padding:9px 13px; font-size:0.84rem;">
+                                📥 Xuất file sao lưu
+                            </button>
+                            <label class="btn-doc-secondary" style="padding:9px 13px; font-size:0.84rem; cursor:pointer; margin:0;">
+                                📤 Nhập file sao lưu
+                                <input type="file" accept=".json" style="display:none;" onchange="handleImportBackupFile(this)">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="historyTableContainer"></div>
                 </div>
             </section>
 
@@ -1913,6 +1992,9 @@
         </main>
     </div>
 
+    <!-- ================= SCRIPT TÀI KHOẢN GOOGLE/FB & LỊCH SỬ LÀM BÀI ================= -->
+    <script src="auth-history.js?v=102"></script>
+
     <!-- ================= SCRIPT ĐIỀU HƯỚNG VÀ HỆ THỐNG THEME TOÀN CẦU ================= -->
     <script>
         const titles = {
@@ -1920,12 +2002,13 @@
             'documents': '📚 Thư Mục Tài Liệu Môn Học',
             'quiz': '📝 Khu Vực Luyện Tập Trắc Nghiệm',
             'ielts': '🎓 Luyện Thi IELTS 4 Kỹ Năng (Cambridge & AI)',
+            'history': '👤 Tài Khoản Cá Nhân & Lịch Sử Làm Bài',
             'pomodoro': '⏰ Khu Vực Tự Học Pomodoro',
             'team': '🚀 Ban Sáng Lập & Giới Thiệu K71',
             'settings': '⚙️ Cài Đặt Giao Diện & Tiện Ích'
         };
 
-        const navKeys = ['overview', 'documents', 'quiz', 'ielts', 'pomodoro', 'team', 'settings'];
+        const navKeys = ['overview', 'documents', 'quiz', 'ielts', 'history', 'pomodoro', 'team', 'settings'];
 
         // Chuyển tab khi bấm nút menu bên sidebar
         function switchSection(sectionId, el) {
@@ -1950,6 +2033,9 @@
             const targetSection = document.getElementById('section-' + sectionId);
             if (targetSection) {
                 targetSection.classList.add('active');
+            }
+            if (sectionId === 'history') {
+                renderAccountAndHistorySection();
             }
 
             // Cập nhật tiêu đề Topbar
@@ -2613,6 +2699,324 @@
             syncIframes(activeColor);
         }
 
+        /* ================= GIAO DIỆN ĐĂNG NHẬP, TẠO TÀI KHOẢN HỌC SINH (GMAIL) & LỊCH SỬ LÀM BÀI ================= */
+        function renderTopbarAuth() {
+            const area = document.getElementById('topbarAuthArea');
+            if (!area || !window.K71Auth) return;
+            const user = window.K71Auth.getCurrentUser();
+            const stats = window.K71Auth.getUserStats();
+
+            if (!user) {
+                area.innerHTML = `
+                    <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'login' })" class="btn-doc-secondary" style="padding: 8px 13px; font-size: 0.83rem; border-radius: 10px;">
+                        🔑 Đăng nhập
+                    </button>
+                    <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'register' })" class="btn-doc-primary" style="padding: 8px 14px; font-size: 0.83rem; border-radius: 10px;">
+                        ✨ Tạo tài khoản
+                    </button>
+                `;
+            } else {
+                const hasGG = (user.providers || []).includes('google') || (user.googleEmail && user.googleEmail.includes('@'));
+                const hasFB = (user.providers || []).includes('facebook');
+                area.innerHTML = `
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <button type="button" onclick="switchSection('history')" style="display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-main); cursor:pointer; font-size:0.84rem; font-weight:700;">
+                            <span class="k71-user-avatar" style="width:28px; height:28px; font-size:0.75rem; background:${user.color || 'var(--primary-color)'};">
+                                ${window.K71Auth.getInitials(user.name)}
+                            </span>
+                            <span style="max-width:130px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${user.name}</span>
+                            ${hasGG ? `<span class="k71-provider-pill k71-provider-google">Gmail</span>` : ''}
+                            ${hasFB ? `<span class="k71-provider-pill k71-provider-facebook">FB</span>` : ''}
+                            <span style="padding:2px 7px; border-radius:99px; background:rgba(var(--primary-rgb),0.18); color:var(--primary-color); font-size:0.74rem;">
+                                ${stats.totalTests} đề
+                            </span>
+                        </button>
+                        <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'login' })" title="Đổi tài khoản / Liên kết thêm Gmail" style="padding:7px 10px; border-radius:10px; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-main); cursor:pointer; font-size:0.82rem; font-weight:700;">
+                            🔄
+                        </button>
+                    </div>
+                `;
+            }
+        }
+
+        function handleInlineLogin(e) {
+            if (e) e.preventDefault();
+            const idVal = document.getElementById('inline-login-id')?.value || '';
+            const pwVal = document.getElementById('inline-login-pw')?.value || '';
+            const res = window.K71Auth.loginWithCredentials(idVal, pwVal);
+            if (!res.ok) {
+                alert('⚠️ ' + res.message);
+                return;
+            }
+            window.K71Auth.showToast(`✅ Đăng nhập thành công: Học sinh ${res.user.name}!`);
+            renderTopbarAuth();
+            renderAccountAndHistorySection();
+        }
+
+        function handleInlineRegister(e) {
+            if (e) e.preventDefault();
+            const name = document.getElementById('inline-reg-name')?.value || '';
+            const className = document.getElementById('inline-reg-class')?.value || 'Khối 11';
+            const gmail = document.getElementById('inline-reg-gmail')?.value || '';
+            const pw = document.getElementById('inline-reg-pw')?.value || '';
+            const res = window.K71Auth.registerStudentAccount({
+                name: name,
+                email: gmail,
+                gmail: gmail,
+                password: pw,
+                className: className
+            });
+            if (!res.ok) {
+                alert('⚠️ ' + res.message);
+                return;
+            }
+            window.K71Auth.showToast(`🎉 Đã tạo tài khoản & liên kết Gmail thành công cho ${res.user.name}!`);
+            renderTopbarAuth();
+            renderAccountAndHistorySection();
+        }
+
+        function renderAccountAndHistorySection() {
+            if (!window.K71Auth) return;
+            const user = window.K71Auth.getCurrentUser();
+            const stats = window.K71Auth.getUserStats();
+            const profileCard = document.getElementById('accountProfileCard');
+            const statsGrid = document.getElementById('historyStatsGrid');
+            const tableContainer = document.getElementById('historyTableContainer');
+            if (!profileCard || !statsGrid || !tableContainer) return;
+
+            // 1. Render Khu vực Đăng nhập & Tạo tài khoản Học sinh (Liên kết Gmail)
+            if (!user) {
+                profileCard.innerHTML = `
+                    <div style="margin-bottom:18px;">
+                        <h2>🎓 Đăng Nhập & Tạo Tài Khoản Học Sinh (Liên Kết Gmail)</h2>
+                        <p class="card-desc" style="margin-bottom:0;">
+                            Tạo tài khoản riêng hoặc liên kết trực tiếp với <strong>Gmail</strong> của bạn. Khi đăng nhập và làm bài xong, toàn bộ điểm số & đáp án sẽ tự động lưu vào lịch sử cá nhân!
+                        </p>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:22px;">
+                        <!-- Cột 1: Đăng nhập -->
+                        <div style="padding:20px; border-radius:14px; border:1px solid var(--border-color); background:rgba(var(--primary-rgb),0.04);">
+                            <h3 style="margin:0 0 12px 0; color:var(--primary-color); font-size:1.1rem;">🔑 Đã Có Tài Khoản? Đăng Nhập Ngay</h3>
+                            <form onsubmit="handleInlineLogin(event)">
+                                <label style="font-size:0.84rem; font-weight:700; display:block;">📧 Địa chỉ Gmail hoặc Tên đăng nhập:</label>
+                                <input type="text" id="inline-login-id" class="k71-input" required placeholder="VD: hocsinh.k71@gmail.com">
+
+                                <label style="font-size:0.84rem; font-weight:700; display:block;">🔒 Mật khẩu:</label>
+                                <input type="password" id="inline-login-pw" class="k71-input" required placeholder="Nhập mật khẩu">
+
+                                <button type="submit" class="btn-doc-primary" style="width:100%; justify-content:center; padding:12px; font-size:0.94rem; margin-bottom:10px;">
+                                    🔑 Đăng Nhập Học Sinh
+                                </button>
+                            </form>
+
+                            <button type="button" onclick="window.K71Auth.openLoginModal({ provider: 'google' })" style="width:100%; padding:11px 16px; border-radius:10px; border:1px solid #cbd5e1; background:#ffffff; color:#1e293b; font-weight:800; font-size:0.88rem; display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer; margin-bottom:8px;">
+                                ${window.K71Auth.getGoogleSvg()}
+                                <span>Đăng nhập / Liên kết nhanh với Gmail</span>
+                            </button>
+
+                            ${window.K71Auth.getAllAccounts().length > 0 ? `
+                                <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'login' })" class="btn-doc-secondary" style="width:100%; justify-content:center;">
+                                    🔄 Chọn từ ${window.K71Auth.getAllAccounts().length} tài khoản đã lưu trên máy
+                                </button>
+                            ` : ''}
+                        </div>
+
+                        <!-- Cột 2: Tạo tài khoản học sinh mới -->
+                        <div style="padding:20px; border-radius:14px; border:1px solid var(--border-color); background:rgba(16,185,129,0.04);">
+                            <h3 style="margin:0 0 12px 0; color:#10b981; font-size:1.1rem;">✨ Tạo Tài Khoản Học Sinh Mới</h3>
+                            <form onsubmit="handleInlineRegister(event)">
+                                <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:10px;">
+                                    <div>
+                                        <label style="font-size:0.84rem; font-weight:700; display:block;">👤 Họ và tên học sinh:</label>
+                                        <input type="text" id="inline-reg-name" class="k71-input" required placeholder="VD: Nguyễn Văn An">
+                                    </div>
+                                    <div>
+                                        <label style="font-size:0.84rem; font-weight:700; display:block;">🏫 Lớp / Khối:</label>
+                                        <input type="text" id="inline-reg-class" class="k71-input" required placeholder="VD: 11A1" value="Khối 11">
+                                    </div>
+                                </div>
+
+                                <label style="font-size:0.84rem; font-weight:700; display:block;">📧 Địa chỉ Gmail liên kết:</label>
+                                <input type="email" id="inline-reg-gmail" class="k71-input" required placeholder="VD: nguyenvanan@gmail.com">
+
+                                <label style="font-size:0.84rem; font-weight:700; display:block;">🔒 Đặt mật khẩu (tối thiểu 4 ký tự):</label>
+                                <input type="password" id="inline-reg-pw" class="k71-input" required placeholder="Nhập mật khẩu dễ nhớ">
+
+                                <button type="submit" class="btn-doc-accent" style="width:100%; justify-content:center; padding:12px; font-size:0.94rem;">
+                                    ✨ Tạo Tài Khoản & Liên Kết Gmail Ngay
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                `;
+            } else {
+                const hasGG = (user.providers || []).includes('google') || (user.googleEmail && user.googleEmail.includes('@'));
+                const hasFB = (user.providers || []).includes('facebook');
+                profileCard.innerHTML = `
+                    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
+                        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+                            <div class="k71-user-avatar" style="width:64px; height:64px; font-size:1.45rem; background:${user.color || 'var(--primary-color)'};">
+                                ${window.K71Auth.getInitials(user.name)}
+                            </div>
+                            <div>
+                                <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                                    <h2 style="margin:0; font-size:1.35rem;">Học sinh: ${user.name}</h2>
+                                    <span class="badge-k71">${user.className || 'Khóa K71'}</span>
+                                </div>
+                                <p style="color:var(--text-muted); font-size:0.9rem; margin:4px 0 10px 0;">
+                                    📧 Tài khoản / Gmail: <strong>${user.googleEmail || user.email || user.username}</strong>
+                                </p>
+                                <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+                                    ${hasGG
+                                        ? `<span class="k71-provider-pill k71-provider-google">✔ Đã liên kết Gmail (${user.googleEmail || user.email})</span>`
+                                        : `<button type="button" onclick="window.K71Auth.openLoginModal({ provider: 'google', isLinking: true })" style="padding:5px 11px; border-radius:99px; border:1px dashed #ef4444; background:transparent; color:#f87171; font-size:0.78rem; font-weight:700; cursor:pointer;">+ Liên kết địa chỉ Gmail</button>`
+                                    }
+                                    ${hasFB
+                                        ? `<span class="k71-provider-pill k71-provider-facebook">✔ Đã liên kết Facebook (${user.facebookName || user.name})</span>`
+                                        : `<button type="button" onclick="window.K71Auth.openLoginModal({ provider: 'facebook', isLinking: true })" style="padding:5px 11px; border-radius:99px; border:1px dashed #3b82f6; background:transparent; color:#60a5fa; font-size:0.78rem; font-weight:700; cursor:pointer;">+ Liên kết thêm Facebook</button>`
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                            <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'login' })" class="btn-doc-primary">
+                                🔄 Đổi / Thêm Tài Khoản Khác
+                            </button>
+                            <button type="button" onclick="window.K71Auth.logout()" class="btn-doc-secondary">
+                                🚪 Đăng xuất
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // 2. Render 4 Thẻ Thống Kê Học Tập
+            statsGrid.innerHTML = `
+                <div class="quick-card" style="cursor:default;">
+                    <div>
+                        <div class="quick-card-icon">📝</div>
+                        <h3 style="font-size:1.75rem; color:var(--primary-color); margin-bottom:2px;">${stats.totalTests} đề</h3>
+                        <p>Tổng số lượt đề thi trắc nghiệm & IELTS đã hoàn thành.</p>
+                    </div>
+                </div>
+                <div class="quick-card" style="cursor:default;">
+                    <div>
+                        <div class="quick-card-icon">⭐</div>
+                        <h3 style="font-size:1.75rem; color:#10b981; margin-bottom:2px;">${stats.avgScore} / 10</h3>
+                        <p>Điểm trung bình tích lũy của tất cả các lần làm bài.</p>
+                    </div>
+                </div>
+                <div class="quick-card" style="cursor:default;">
+                    <div>
+                        <div class="quick-card-icon">🏆</div>
+                        <h3 style="font-size:1.75rem; color:#f59e0b; margin-bottom:2px;">${stats.bestScore} / 10</h3>
+                        <p>Điểm số kỷ lục cao nhất bạn đã đạt được.</p>
+                    </div>
+                </div>
+                <div class="quick-card" style="cursor:default;">
+                    <div>
+                        <div class="quick-card-icon">🎯</div>
+                        <h3 style="font-size:1.75rem; color:#3b82f6; margin-bottom:2px;">${stats.accuracyPct}% (${stats.totalCorrect} câu)</h3>
+                        <p>Tỉ lệ trả lời chính xác • Tổng thời gian luyện: ${stats.totalDurationMin} phút.</p>
+                    </div>
+                </div>
+            `;
+
+            // 3. Render Bảng Lịch Sử Làm Bài (kèm bộ lọc)
+            const subjFilter = document.getElementById('histFilterSubject')?.value || 'all';
+            const gradeFilter = document.getElementById('histFilterGrade')?.value || 'all';
+            let history = window.K71Auth.getUserHistory();
+
+            if (subjFilter !== 'all') {
+                history = history.filter(item => {
+                    if (subjFilter === 'ielts') return item.type === 'ielts' || String(item.subject).startsWith('ielts');
+                    return item.subject === subjFilter;
+                });
+            }
+            if (gradeFilter !== 'all') {
+                history = history.filter(item => String(item.grade) === gradeFilter);
+            }
+
+            if (history.length === 0) {
+                tableContainer.innerHTML = `
+                    <div style="text-align:center; padding:42px 20px; border:1.5px dashed var(--border-color); border-radius:14px;">
+                        <div style="font-size:2.6rem; margin-bottom:10px;">📭</div>
+                        <h3 style="color:var(--text-main); margin-bottom:6px;">Chưa có bài làm nào trong danh mục này</h3>
+                        <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:18px;">
+                            Mỗi khi bạn bấm <strong>Nộp bài</strong> ở mục Luyện Trắc Nghiệm hoặc chấm điểm IELTS, kết quả và chi tiết từng câu hỏi sẽ tự động được lưu tại đây!
+                        </p>
+                        <button type="button" onclick="switchSection('quiz')" class="btn-doc-primary">
+                            🚀 Bắt Đầu Làm Đề Ngay
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            const itemsHtml = history.map(item => {
+                const score = Number(item.score10 || 0);
+                const badgeColor = score >= 8 ? '#10b981' : (score >= 5 ? '#3b82f6' : '#ef4444');
+                const isIelts = item.type === 'ielts';
+                return `
+                    <div class="doc-item-card" style="padding:18px 20px;">
+                        <div class="doc-left">
+                            <div class="doc-icon-box" style="background:rgba(var(--primary-rgb),0.12); font-size:1.35rem; font-weight:900; color:${badgeColor};">
+                                ${isIelts ? `B${score.toFixed(1)}` : score.toFixed(1)}
+                            </div>
+                            <div class="doc-info">
+                                <div class="doc-badges">
+                                    <span class="doc-badge doc-badge-new">KHỐI ${item.grade} • ${item.term}</span>
+                                    <span class="doc-badge doc-badge-docx">${item.mode === 'exam' ? '⏱ CHẾ ĐỘ THI THỬ' : '📖 CHẾ ĐỘ ÔN TẬP'}</span>
+                                    <span class="doc-badge" style="background:rgba(16,185,129,0.15); color:${badgeColor}; border:1px solid ${badgeColor};">
+                                        ✓ ĐÚNG ${item.correctCount}/${item.totalQuestions} CÂU (${item.percent}%)
+                                    </span>
+                                </div>
+                                <h4 class="doc-title" style="margin-bottom:4px;">
+                                    ${item.subjectName} — ${isIelts ? `Band ${score.toFixed(1)}` : `Điểm hệ 10: ${score.toFixed(2)} đ`}
+                                </h4>
+                                <p class="doc-desc" style="font-size:0.84rem;">
+                                    🕒 Nộp lúc: <strong>${window.K71Auth.formatDateTime(item.timestamp)}</strong> •
+                                    ⏱ Thời gian làm bài: <strong>${window.K71Auth.formatDuration(item.durationSec)}</strong> •
+                                    👤 Tài khoản: <strong>${item.userName || (user ? user.name : 'Khách')}</strong>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="doc-actions">
+                            <button type="button" onclick="window.K71Auth.openAttemptDetailModal('${item.id}')" class="btn-doc-primary" style="padding:9px 14px; font-size:0.84rem;">
+                                👁️ Xem lại bài làm
+                            </button>
+                            <button type="button" onclick="handleDeleteHistoryItem('${item.id}')" class="btn-doc-secondary" style="padding:9px 12px; font-size:0.84rem;">
+                                🗑️ Xóa
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            tableContainer.innerHTML = `<div class="doc-list-grid">${itemsHtml}</div>`;
+        }
+
+        function handleDeleteHistoryItem(id) {
+            if (!window.K71Auth) return;
+            if (confirm('Bạn có chắc muốn xóa lượt làm bài này khỏi lịch sử?')) {
+                window.K71Auth.deleteHistoryItem(id);
+                renderAccountAndHistorySection();
+            }
+        }
+
+        function handleImportBackupFile(inputEl) {
+            const file = inputEl && inputEl.files && inputEl.files[0];
+            if (!file || !window.K71Auth) return;
+            window.K71Auth.importAccountBackupFile(file, (addedCount, importedUser) => {
+                renderTopbarAuth();
+                renderAccountAndHistorySection();
+                window.K71Auth.showToast(`✅ Đã khôi phục ${addedCount} bài làm${importedUser ? ' của tài khoản ' + importedUser.name : ''}!`);
+                inputEl.value = '';
+            });
+        }
+
         // Khởi tạo trang khi tải xong DOM
         window.addEventListener('DOMContentLoaded', () => {
             // Đọc cấu hình Theme Color
@@ -2641,6 +3045,16 @@
 
             // Khởi tạo sẵn danh sách tài liệu môn Tiếng Anh (có file Unit 4)
             selectSubject('anh');
+
+            // Khởi tạo giao diện Tài khoản & Lịch sử làm bài
+            renderTopbarAuth();
+            renderAccountAndHistorySection();
+            if (window.K71Auth) {
+                window.K71Auth.onChange(() => {
+                    renderTopbarAuth();
+                    renderAccountAndHistorySection();
+                });
+            }
 
             // Đọc hash trên URL khi mở trang hoặc F5
             const hash = window.location.hash.replace('#', '');

@@ -3088,6 +3088,26 @@
             document.getElementById('readingScoreTitle').innerText = `🎯 Kết quả Reading (Cả 3 Passages): Đúng ${correctCount}/${totalQ} câu`;
             document.getElementById('readingScoreDesc').innerText = `Bấm vào từng Passage 1, 2, 3 để xem lời giải chi tiết dưới mỗi câu hỏi.`;
             document.getElementById('readingBandBadge').innerText = `Band ${band.toFixed(1)}`;
+
+            if (window.K71Auth) {
+                const testName = CAMBRIDGE_DB[currentTestId]?.name || currentTestId;
+                window.K71Auth.recordExamResult({
+                    type: 'ielts',
+                    grade: 'IELTS',
+                    subject: 'ielts_reading',
+                    subjectName: `IELTS Reading (${testName})`,
+                    term: `Band ${band.toFixed(1)}`,
+                    mode: 'exam',
+                    score10: band,
+                    band: band,
+                    percent: Math.round((correctCount / totalQ) * 100),
+                    correctCount: correctCount,
+                    wrongCount: totalQ - correctCount,
+                    emptyCount: 0,
+                    totalQuestions: totalQ,
+                    durationSec: Math.max(60, 3600 - (timerSeconds || 0))
+                });
+            }
         }
 
         /* ==================== 2. LISTENING: CHUYỂN PART 1, 2, 3, 4 & PALETTE ==================== */
@@ -3279,6 +3299,26 @@
             document.getElementById('listeningScoreTitle').innerText = `🎧 Kết quả Listening (Cả 4 Parts): Đúng ${correctCount}/${totalQ} câu`;
             document.getElementById('listeningScoreDesc').innerText = `Chuyển giữa Part 1, 2, 3, 4 để xem đáp án và trích dẫn lời thoại.`;
             document.getElementById('listeningBandBadge').innerText = `Band ${band.toFixed(1)}`;
+
+            if (window.K71Auth) {
+                const testName = CAMBRIDGE_DB[currentTestId]?.name || currentTestId;
+                window.K71Auth.recordExamResult({
+                    type: 'ielts',
+                    grade: 'IELTS',
+                    subject: 'ielts_listening',
+                    subjectName: `IELTS Listening (${testName})`,
+                    term: `Band ${band.toFixed(1)}`,
+                    mode: 'exam',
+                    score10: band,
+                    band: band,
+                    percent: Math.round((correctCount / totalQ) * 100),
+                    correctCount: correctCount,
+                    wrongCount: totalQ - correctCount,
+                    emptyCount: 0,
+                    totalQuestions: totalQ,
+                    durationSec: Math.max(60, 1800 - (timerSeconds || 0))
+                });
+            }
         }
 
         /* ==================== 3. WRITING & 4. SPEAKING (AI GRADING) ==================== */
@@ -3529,5 +3569,6 @@
             }
         });
     </script>
+    <script src="auth-history.js?v=102"></script>
 </body>
 </html>

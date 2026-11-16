@@ -313,8 +313,14 @@
                 </div>
             </div>
 
-            <!-- Bên phải: Nút Nộp bài / Thoát & Nút chuyển đổi Dark/Light Mode -->
+            <!-- Bên phải: Tài khoản / Lịch sử / Nút Nộp bài / Thoát & Nút chuyển đổi Dark/Light Mode -->
             <div class="flex items-center gap-2 shrink-0">
+                <!-- Nút Tài khoản Google / Facebook trên Header -->
+                <button type="button" id="quiz-user-btn" onclick="window.K71Auth && window.K71Auth.openLoginModal()" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-blue-50 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-slate-700 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-slate-700 text-xs sm:text-sm font-bold transition cursor-pointer">
+                    <span id="quiz-user-avatar" class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-extrabold flex items-center justify-center">👤</span>
+                    <span id="quiz-user-label" class="max-w-[120px] truncate">Đăng nhập GG/FB</span>
+                </button>
+
                 <button type="button" id="topbar-submit-btn" onclick="openSubmitConfirm()" class="hidden px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold shadow-sm transition cursor-pointer">
                     ✓ Nộp bài
                 </button>
@@ -376,8 +382,13 @@
                     </div>
                 </div>
 
-                <!-- Nút Ôn tập các câu hay sai (Từ localStorage) -->
-                <div class="flex items-center gap-2">
+                <!-- Nút Lịch sử làm bài & Nút Ôn tập các câu hay sai -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <button type="button" id="history-bank-btn" onclick="window.K71Auth && window.K71Auth.openHistoryModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 font-bold text-sm transition cursor-pointer">
+                        <span>📊 Lịch sử làm bài</span>
+                        <span id="history-count-badge" class="px-2 py-0.5 rounded-full bg-emerald-600 text-white text-xs font-extrabold">0</span>
+                    </button>
+
                     <button type="button" id="wrong-bank-btn" onclick="startWrongQuestionsReview()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-rose-50 dark:bg-rose-950/50 hover:bg-rose-100 dark:hover:bg-rose-900/60 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800 font-bold text-sm transition cursor-pointer">
                         <span>🔥 Ôn tập câu hay sai</span>
                         <span id="wrong-bank-badge" class="px-2 py-0.5 rounded-full bg-rose-600 text-white text-xs font-extrabold">0</span>
@@ -662,6 +673,14 @@
                             </div>
                         </div>
 
+                        <!-- Thông báo đã lưu kết quả vào Tài khoản -->
+                        <div id="result-account-notice" class="mb-4 p-3.5 rounded-xl bg-emerald-50/80 dark:bg-slate-900 border border-emerald-200 dark:border-emerald-800/70 text-xs sm:text-sm text-slate-700 dark:text-slate-300 flex flex-wrap items-center justify-between gap-2">
+                            <span id="result-account-text">💾 Đã tự động lưu kết quả vào lịch sử làm bài.</span>
+                            <button type="button" onclick="window.K71Auth && window.K71Auth.openHistoryModal()" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs cursor-pointer">
+                                📊 Xem lịch sử
+                            </button>
+                        </div>
+
                         <div class="flex flex-wrap gap-3">
                             <button type="button" id="retry-wrong-only-btn" onclick="retryWrongFromCurrentResult()" class="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm shadow-sm transition cursor-pointer">
                                 🔥 Làm lại các câu sai
@@ -703,9 +722,10 @@
         </div>
     </div>
 
-    <!-- Nạp ngân hàng câu hỏi gốc (100% giữ nguyên dữ liệu) -->
-    <script src="question-db.js?v=101"></script>
-    <script src="questions-db.js?v=101"></script>
+    <!-- Nạp ngân hàng câu hỏi gốc & Hệ thống Tài khoản / Lịch sử -->
+    <script src="question-db.js?v=102"></script>
+    <script src="questions-db.js?v=102"></script>
+    <script src="auth-history.js?v=102"></script>
 
     <script>
         /* ==================== 1. DỮ LIỆU CÂU HỎI CỐT LÕI (GIỮ NGUYÊN 100%) ==================== */
@@ -1362,11 +1382,74 @@
 
             document.getElementById('retry-wrong-only-btn').classList.toggle('hidden', (wrongCount + emptyCount) === 0);
 
+            // Lưu kết quả vào Hệ thống Tài khoản & Lịch sử làm bài (Google / Facebook)
+            if (window.K71Auth) {
+                const durationSec = Math.max(1, (30 * 60) - Math.max(0, timeLeft));
+                const attemptDetails = currentQuestions.map((q, idx) => ({
+                    question: q.question,
+                    options: q.shuffledOptions.map(o => o.text),
+                    userAns: userAnswers[idx],
+                    correctIndex: q.correctIndex,
+                    explanation: q.explanation
+                }));
+
+                window.K71Auth.recordExamResult({
+                    type: 'quiz',
+                    grade: currentMeta.grade,
+                    subject: currentMeta.subject,
+                    subjectName: currentMeta.subjectName,
+                    term: currentMeta.term,
+                    mode: quizMode,
+                    score10: parseFloat(point10),
+                    percent: pctCorrect,
+                    correctCount: correctCount,
+                    wrongCount: wrongCount,
+                    emptyCount: emptyCount,
+                    totalQuestions: total,
+                    durationSec: durationSec,
+                    details: attemptDetails
+                });
+
+                const currentUser = window.K71Auth.getCurrentUser();
+                const accNotice = document.getElementById('result-account-text');
+                if (accNotice) {
+                    if (currentUser) {
+                        const emailInfo = currentUser.googleEmail || currentUser.email || currentUser.className || 'K71';
+                        accNotice.innerHTML = `✅ Đã tự động lưu bài thi vào lịch sử của học sinh <strong>${currentUser.name}</strong> (${emailInfo}).`;
+                    } else {
+                        accNotice.innerHTML = `💾 Đã lưu tạm trên máy — <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'login' })" class="underline font-bold text-blue-600 dark:text-blue-400 cursor-pointer">Đăng nhập / Tạo tài khoản liên kết Gmail</button> để lưu vĩnh viễn vào hồ sơ của bạn!`;
+                    }
+                }
+                syncQuizAuthUI();
+            }
+
             document.getElementById('exam-active-workspace').classList.add('hidden');
             document.getElementById('mobile-bottom-bar').classList.add('hidden');
             document.getElementById('topbar-submit-btn').classList.add('hidden');
             document.getElementById('result-screen').classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function syncQuizAuthUI() {
+            if (!window.K71Auth) return;
+            const user = window.K71Auth.getCurrentUser();
+            const stats = window.K71Auth.getUserStats();
+            const badge = document.getElementById('history-count-badge');
+            if (badge) badge.innerText = stats.totalTests;
+
+            const avatarEl = document.getElementById('quiz-user-avatar');
+            const labelEl = document.getElementById('quiz-user-label');
+            if (avatarEl && labelEl) {
+                if (user) {
+                    avatarEl.innerText = window.K71Auth.getInitials(user.name);
+                    avatarEl.style.backgroundColor = user.color || '#2563eb';
+                    labelEl.innerText = user.name;
+                } else {
+                    avatarEl.innerText = '👤';
+                    avatarEl.style.backgroundColor = '#2563eb';
+                    labelEl.innerText = 'Đăng nhập / Tạo TK';
+                }
+            }
         }
 
         function exitExam() {
@@ -1456,6 +1539,10 @@
             updateThemeIcons();
             updateWrongBankBadge();
             checkSavedQuizStateOnLoad();
+            syncQuizAuthUI();
+            if (window.K71Auth) {
+                window.K71Auth.onChange(syncQuizAuthUI);
+            }
             if (window.lucide && typeof window.lucide.createIcons === 'function') {
                 window.lucide.createIcons();
             }
