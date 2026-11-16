@@ -1131,30 +1131,31 @@
                 ? 'inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl border-2 border-amber-500 bg-amber-50 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400 text-xs sm:text-sm font-bold transition cursor-pointer'
                 : 'inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-bold hover:border-amber-500 transition cursor-pointer';
 
-            // Render 4 thẻ đáp án độc lập
+            // Render 4 thẻ đáp án độc lập (Khóa không cho đổi nếu đã chọn phương án sai hoặc đã hiện đáp án ở chế độ Ôn tập)
+            const isQuestionLocked = selectedIdx !== -1 && (quizMode === 'study' || selectedIdx !== q.correctIndex);
             const optionsContainer = document.getElementById('options-container');
             optionsContainer.innerHTML = q.shuffledOptions.map((opt, oIndex) => {
-                let stateClass = '';
+                let stateClass = isQuestionLocked ? 'locked' : '';
                 let feedbackIcon = '';
 
                 if (selectedIdx !== -1) {
                     if (quizMode === 'study') {
                         // Chế độ Ôn tập: Hiện đúng/sai ngay lập tức
                         if (oIndex === q.correctIndex) {
-                            stateClass = 'is-correct';
+                            stateClass += ' is-correct';
                             feedbackIcon = `<span class="text-emerald-600 dark:text-emerald-400 font-extrabold text-lg shrink-0">✓</span>`;
                         } else if (oIndex === selectedIdx && selectedIdx !== q.correctIndex) {
-                            stateClass = 'is-wrong';
+                            stateClass += ' is-wrong';
                             feedbackIcon = `<span class="text-rose-600 dark:text-rose-400 font-extrabold text-lg shrink-0">✕</span>`;
                         }
                     } else if (oIndex === selectedIdx) {
                         // Chế độ Thi thử: Chỉ hiện viền xanh #3B82F6 đang chọn
-                        stateClass = 'is-selected';
+                        stateClass += ' is-selected';
                     }
                 }
 
                 return `
-                    <div class="option-card ${stateClass}" onclick="selectAnswer(${currentQuestionIndex}, ${oIndex})">
+                    <div class="option-card ${stateClass}" style="${isQuestionLocked ? 'cursor: not-allowed;' : ''}" onclick="selectAnswer(${currentQuestionIndex}, ${oIndex})">
                         <div class="flex items-center gap-3.5 min-w-0 flex-1">
                             <span class="opt-badge">${labels[oIndex]}</span>
                             <span class="text-sm sm:text-base font-medium leading-snug break-words">${opt.text}</span>
@@ -1171,7 +1172,7 @@
                 expBox.classList.remove('hidden');
                 expBox.innerHTML = `
                     <div class="font-bold mb-1 ${isCorrect ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}">
-                        ${isCorrect ? '✓ Chính xác! Bạn đã nắm vững kiến thức câu này.' : `✕ Chưa chính xác! Đáp án đúng là ${labels[q.correctIndex]}.`}
+                        ${isCorrect ? '✓ Chính xác! Bạn đã nắm vững kiến thức câu này.' : `✕ Chưa chính xác! Đáp án đúng là ${labels[q.correctIndex]} (🔒 Đã khóa câu này, không thể đổi lại đáp án).`}
                     </div>
                     <div><strong>💡 Giải thích chi tiết:</strong> ${q.explanation}</div>
                 `;
@@ -1188,9 +1189,27 @@
 
         function selectAnswer(qIndex, optionIndex) {
             if (isSubmitted) return;
+            const q = currentQuestions[qIndex];
+            const prevAns = userAnswers[qIndex];
+
+            // Khi đã chọn phương án sai (hoặc đã hiện đáp án ở chế độ Ôn tập) thì khóa lại, tuyệt đối không cho đổi sang phương án đúng
+            if (prevAns !== -1) {
+                if (prevAns !== q.correctIndex) {
+                    if (window.K71Auth && typeof window.K71Auth.showToast === 'function') {
+                        window.K71Auth.showToast('🔒 Bạn đã chọn phương án sai rồi, không được đổi qua phương án đúng!');
+                    }
+                    return;
+                }
+                if (quizMode === 'study') {
+                    if (window.K71Auth && typeof window.K71Auth.showToast === 'function') {
+                        window.K71Auth.showToast('🔒 Câu hỏi này đã chốt đáp án, không thể thay đổi!');
+                    }
+                    return;
+                }
+            }
+
             userAnswers[qIndex] = optionIndex;
 
-            const q = currentQuestions[qIndex];
             if (optionIndex !== q.correctIndex) {
                 recordWrongQuestionToBank(q);
             } else if (currentMeta.subject === 'wrong_bank') {
