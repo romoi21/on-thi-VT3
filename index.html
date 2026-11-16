@@ -353,7 +353,7 @@
 
         /* Container chứa các view */
         .content-container {
-            max-width: 1100px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 26px 24px 60px 24px;
@@ -667,9 +667,13 @@
             border-radius: 12px;
             padding: 20px 22px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: stretch;
             justify-content: space-between;
-            gap: 20px;
+            gap: 16px;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
             transition: all 0.22s ease;
             box-shadow: var(--shadow-sm);
         }
@@ -688,31 +692,35 @@
         .doc-left {
             display: flex;
             align-items: flex-start;
-            gap: 16px;
-            flex: 1;
+            gap: 14px;
+            width: 100%;
+            min-width: 0;
         }
 
         .doc-icon-box {
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             border-radius: 10px;
             background: rgba(var(--primary-rgb), 0.12);
             color: var(--primary-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             flex-shrink: 0;
         }
 
         .doc-info {
             flex: 1;
+            min-width: 0;
+            overflow-wrap: break-word;
+            word-break: break-word;
         }
 
         .doc-badges {
             display: flex;
-            gap: 8px;
-            margin-bottom: 6px;
+            gap: 6px;
+            margin-bottom: 8px;
             align-items: center;
             flex-wrap: wrap;
         }
@@ -723,7 +731,8 @@
             text-transform: uppercase;
             padding: 3px 8px;
             border-radius: 6px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
+            max-width: 100%;
         }
 
         .doc-badge-docx {
@@ -749,39 +758,53 @@
             font-weight: 700;
             color: var(--text-main);
             margin: 0 0 6px 0;
-            line-height: 1.4;
+            line-height: 1.45;
+            overflow-wrap: break-word;
         }
 
         .doc-desc {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.55;
+            overflow-wrap: break-word;
         }
 
         .doc-actions {
             display: flex;
             gap: 10px;
             align-items: center;
-            flex-shrink: 0;
+            justify-content: flex-start;
+            width: 100%;
+            max-width: 100%;
             flex-wrap: wrap;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border-color);
         }
 
-        .btn-doc-primary {
+        .btn-doc-primary,
+        .btn-doc-secondary,
+        .btn-doc-accent {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
             padding: 10px 16px;
-            background: var(--primary-color);
             color: #ffffff !important;
             text-decoration: none;
             border-radius: 8px;
             font-size: 0.88rem;
             font-weight: 600;
-            border: none;
             cursor: pointer;
-            box-shadow: 0 2px 10px var(--primary-glow);
             transition: all 0.2s;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .btn-doc-primary {
+            background: var(--primary-color);
+            border: none;
+            box-shadow: 0 2px 10px var(--primary-glow);
         }
 
         .btn-doc-primary:hover {
@@ -791,19 +814,8 @@
         }
 
         .btn-doc-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 16px;
             background: #2b2622;
-            color: #ffffff !important;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 0.88rem;
-            font-weight: 600;
             border: 1px solid var(--border-color);
-            cursor: pointer;
-            transition: all 0.2s;
         }
 
         body.light-mode .btn-doc-secondary {
@@ -822,19 +834,8 @@
         }
 
         .btn-doc-accent {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 16px;
             background: #16a34a;
-            color: #ffffff !important;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 0.88rem;
-            font-weight: 600;
             border: none;
-            cursor: pointer;
-            transition: all 0.2s;
         }
 
         .btn-doc-accent:hover {
@@ -867,6 +868,7 @@
         /* Khung Iframe */
         .iframe-container {
             width: 100%;
+            max-width: 100%;
             border-radius: var(--radius-md);
             overflow: hidden;
             background: var(--bg-card);
@@ -877,10 +879,12 @@
         .iframe-toolbar {
             background: #141210;
             border-bottom: 1px solid var(--border-color);
-            padding: 11px 18px;
+            padding: 11px 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
             font-size: 0.88rem;
             color: var(--text-muted);
         }
@@ -1254,7 +1258,16 @@
             z-index: 95;
         }
 
-        /* Responsive Breakpoints */
+        /* Responsive Breakpoints Toàn Diện (Tablet & Mobile) */
+        html {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        img, iframe, svg, video, table {
+            max-width: 100%;
+        }
+
         @media (max-width: 868px) {
             .sidebar {
                 position: fixed;
@@ -1262,6 +1275,7 @@
                 top: 0;
                 bottom: 0;
                 transform: translateX(-100%);
+                z-index: 1000;
             }
 
             .sidebar.open {
@@ -1276,18 +1290,205 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-shrink: 0;
             }
 
             .topbar {
-                padding: 12px 18px;
+                padding: 10px 14px;
+            }
+
+            .topbar-left {
+                gap: 10px;
+                min-width: 0;
+                flex: 1;
+            }
+
+            .topbar-title {
+                font-size: 1rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .content-container {
-                padding: 20px 16px 50px 16px;
+                padding: 16px 12px 45px 12px;
+            }
+
+            .card {
+                padding: 18px 15px;
+                margin-bottom: 18px;
+                border-radius: 12px;
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+            }
+
+            .card h2 {
+                font-size: 1.22rem;
+                line-height: 1.35;
+            }
+
+            .card-desc {
+                font-size: 0.9rem;
+                margin-bottom: 16px;
+            }
+
+            .hero-banner {
+                padding: 22px 18px;
+                margin-bottom: 18px;
             }
 
             .hero-banner h1 {
-                font-size: 1.55rem;
+                font-size: 1.45rem;
+                line-height: 1.3;
+            }
+
+            .hero-banner p {
+                font-size: 0.94rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .quick-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .quick-card {
+                padding: 16px;
+            }
+
+            .subject-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .subject-item {
+                padding: 14px 10px;
+                font-size: 0.9rem;
+            }
+
+            .subject-item span {
+                font-size: 1.85rem;
+            }
+
+            .subject-docs-wrapper {
+                margin-top: 20px;
+                padding-top: 18px;
+            }
+
+            .docs-header-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 14px;
+                gap: 10px;
+            }
+
+            .docs-header-title {
+                align-items: flex-start;
+                gap: 12px;
+                width: 100%;
+                min-width: 0;
+            }
+
+            .docs-header-title .subj-badge-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 1.5rem;
+            }
+
+            .docs-header-title h3 {
+                font-size: 1.1rem;
+                line-height: 1.35;
+            }
+
+            .docs-header-title p {
+                font-size: 0.84rem;
+            }
+
+            .doc-item-card {
+                padding: 16px 14px;
+                gap: 14px;
+            }
+
+            .doc-left {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .doc-icon-box {
+                width: 40px;
+                height: 40px;
+                font-size: 1.35rem;
+            }
+
+            .doc-title {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+
+            .doc-desc {
+                font-size: 0.86rem;
+                line-height: 1.5;
+            }
+
+            .doc-actions {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+                width: 100%;
+            }
+
+            .btn-doc-primary,
+            .btn-doc-secondary,
+            .btn-doc-accent {
+                width: 100%;
+                padding: 10px 10px;
+                font-size: 0.82rem;
+            }
+
+            .unit4-inline-header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px;
+            }
+
+            .color-palette-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .custom-color-row,
+            .setting-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 14px;
+            }
+
+            .custom-color-inputs {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .iframe-toolbar {
+                padding: 10px 12px;
+                font-size: 0.82rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .doc-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .subject-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .color-palette-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1502,12 +1703,12 @@
                     <p class="card-desc">Lựa chọn Khối lớp, Môn học và Giai đoạn (GK1, CK1, GK2, CK2) để làm bài thi trực tiếp với hệ thống chấm điểm tức thì:</p>
                 </div>
 
-                <div class="iframe-container">
+                <div class="iframe-container" id="quizIframeContainer">
                     <div class="iframe-toolbar">
                         <span>💡 Đề thi mô phỏng định dạng chuẩn của Bộ GD&ĐT</span>
                         <a href="quiz.html?v=101" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Mở rộng trang mới ↗</a>
                     </div>
-                    <iframe src="quiz.html?v=101" class="iframe-box" id="quizIframe" style="height: 840px;"></iframe>
+                    <iframe src="quiz.html?v=101" class="iframe-box" id="quizIframe" allow="fullscreen" allowfullscreen style="height: 840px;"></iframe>
                 </div>
             </section>
 
@@ -2448,10 +2649,13 @@
             }
         });
 
-        // Lắng nghe sự kiện phóng toàn màn hình khi bắt đầu làm bài thi IELTS
+        // Lắng nghe sự kiện phóng toàn màn hình khi bắt đầu làm bài thi IELTS hoặc Trắc Nghiệm
         window.addEventListener('message', (e) => {
-            if (e.data && e.data.type === 'IELTS_FULLSCREEN') {
-                const iframe = document.getElementById('ieltsIframe');
+            if (!e.data) return;
+            if (e.data.type === 'IELTS_FULLSCREEN' || e.data.type === 'QUIZ_FULLSCREEN') {
+                const targetId = e.data.type === 'IELTS_FULLSCREEN' ? 'ieltsIframe' : 'quizIframe';
+                const defaultHeight = e.data.type === 'IELTS_FULLSCREEN' ? '980px' : '840px';
+                const iframe = document.getElementById(targetId);
                 if (!iframe) return;
                 if (e.data.active) {
                     iframe.style.position = 'fixed';
@@ -2466,7 +2670,7 @@
                     iframe.style.position = '';
                     iframe.style.inset = '';
                     iframe.style.width = '100%';
-                    iframe.style.height = '980px';
+                    iframe.style.height = defaultHeight;
                     iframe.style.zIndex = '';
                     if (document.exitFullscreen && document.fullscreenElement) {
                         document.exitFullscreen().catch(() => {});

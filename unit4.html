@@ -91,6 +91,20 @@
         .opt-choice { padding: 9px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-card); font-size: 0.92rem; }
         .reading-passage { background: var(--bg-card-subtle); border: 1px solid var(--border-color); border-radius: 10px; padding: 22px; margin: 20px 0; line-height: 1.8; font-size: 0.96rem; }
         .reading-passage h4 { color: var(--primary-color); margin-bottom: 10px; font-size: 1.1rem; }
+        html, body { max-width: 100%; overflow-x: hidden; }
+        @media (max-width: 768px) {
+            body { padding: 12px 10px; }
+            .doc-container { padding: 18px 14px; border-radius: 10px; }
+            .doc-hero h1 { font-size: 1.45rem; }
+            .doc-hero p { font-size: 0.92rem; }
+            .doc-section h2 { font-size: 1.18rem; }
+            .q-options { grid-template-columns: 1fr; }
+            .doc-top-bar { flex-direction: column; align-items: stretch; }
+            .doc-top-bar > div { display: flex; flex-wrap: wrap; gap: 8px; width: 100%; }
+            .btn-action { flex: 1; justify-content: center; text-align: center; font-size: 0.84rem; padding: 9px 12px; }
+            .vocab-table th, .vocab-table td { padding: 8px 10px; font-size: 0.84rem; }
+            .exercise-item, .reading-passage, .grammar-block { padding: 14px 12px; }
+        }
     </style>
 </head>
 <body>

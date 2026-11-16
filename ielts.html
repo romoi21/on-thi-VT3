@@ -847,16 +847,121 @@
             font-size: 0.82rem;
         }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        img, svg, audio, video, iframe {
+            max-width: 100%;
+        }
+
         @media (max-width: 960px) {
+            body.exam-fullscreen-active {
+                overflow-y: auto;
+                height: auto;
+            }
+            body.exam-fullscreen-active .ielts-wrapper {
+                height: auto;
+            }
             .cd-split-workspace, .cd-listening-workspace, .split-layout {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
                 height: auto !important;
+            }
+            .cd-pane-left, .cd-pane-right {
+                max-height: 440px;
+                padding: 16px 14px;
+            }
+            .cd-pane-left {
+                border-bottom: 2px solid var(--border-color);
             }
             .cd-splitter {
                 display: none;
             }
             .skills-nav, .criteria-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 8px;
+            }
+            .cd-exam-header {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px;
+                gap: 10px;
+            }
+            .cd-candidate-info {
+                width: 100%;
+            }
+            .select-cambridge {
+                width: 100%;
+                max-width: 100%;
+            }
+            .cd-timer-center {
+                justify-content: center;
+                width: 100%;
+            }
+            .cd-header-actions {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .cd-header-actions .btn-ielts-start-exam,
+            .cd-header-actions .btn-ielts-danger {
+                grid-column: 1 / -1;
+                width: 100%;
+            }
+            .skills-nav {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+            .skill-tab-btn {
+                font-size: 0.78rem;
+                padding: 8px 6px;
+                text-align: center;
+            }
+            .cd-instruction-bar {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 10px 12px;
+            }
+            .cd-passage-tabs-top {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+            .btn-passage-switch {
+                width: 100%;
+                text-align: center;
+                padding: 7px 8px;
+                font-size: 0.78rem;
+            }
+            .cd-q-top {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .cd-gap-input {
+                width: 100%;
+            }
+            .cd-bottom-navbar {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 10px;
+            }
+            .api-key-input {
+                width: 100%;
+            }
+            .panel-box {
+                padding: 14px 12px;
+            }
+            .word-count-bar {
+                flex-direction: column;
+                gap: 4px;
             }
         }
     </style>
