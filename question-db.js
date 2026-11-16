@@ -1778,5 +1778,877 @@ var QUESTION_BANK = [
         options: ["Vì tận mắt thấy công trình tâm huyết sụp đổ trong ngọn lửa căm phẫn của dân chúng, ông mới nhận ra ảo mộng của mình đã tan vỡ", "Vì ông muốn được nhà vua ban thưởng thêm tiền bạc", "Vì ông đã hoàn thành xong toàn bộ bản vẽ mới", "Vì quân khởi nghĩa hứa sẽ xây lại đài lớn hơn"],
         answer: 0,
         explanation: "Trước đó Vũ Như Tô vẫn đinh ninh mình vô tội, chỉ đến khi ánh lửa thiêu rụi Cửu Trùng Đài, ông mới đau đớn tuyệt vọng nhận ra bi kịch tan vỡ của mộng lớn nghệ thuật."
+    },
+
+    // ===================================================================
+    // 8. HÓA HỌC 11 - GIỮA KÌ 1 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Khi một phản ứng thuận nghịch đạt tới trạng thái cân bằng hóa học thì:",
+        options: ["Tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch (v_t = v_n)", "Phản ứng thuận và phản ứng nghịch đều dừng lại hoàn toàn", "Nồng độ chất phản ứng luôn bằng nồng độ sản phẩm", "Khối lượng các chất tham gia bằng không"],
+        answer: 0,
+        explanation: "Cân bằng hóa học là cân bằng động: tại đó tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch và nồng độ các chất không đổi."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Cho phản ứng thuận nghịch ở trạng thái cân bằng: N₂(g) + 3H₂(g) ⇌ 2NH₃(g). Biểu thức hằng số cân bằng K_C của phản ứng trên là:",
+        options: ["K_C = [NH₃]² / ([N₂].[H₂]³)", "K_C = ([N₂].[H₂]³) / [NH₃]²", "K_C = 2[NH₃] / ([N₂] + 3[H₂])", "K_C = [NH₃] / ([N₂].[H₂])"],
+        answer: 0,
+        explanation: "Biểu thức hằng số cân bằng K_C cho phản ứng aA + bB ⇌ cC + dD là K_C = ([C]^c.[D]^d) / ([A]^a.[B]^b)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Hằng số cân bằng K_C của một phản ứng thuận nghịch chỉ phụ thuộc vào yếu tố nào sau đây?",
+        options: ["Nhiệt độ và bản chất của phản ứng", "Áp suất chung của hệ", "Chất xúc tác thêm vào hệ", "Nồng độ ban đầu của các chất"],
+        answer: 0,
+        explanation: "Với một phản ứng xác định, hằng số cân bằng K_C chỉ phụ thuộc vào nhiệt độ, không phụ thuộc nồng độ, áp suất hay chất xúc tác."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Cho cân bằng: CaCO₃(s) ⇌ CaO(s) + CO₂(g). Biểu thức hằng số cân bằng K_C của phản ứng này là:",
+        options: ["K_C = [CO₂]", "K_C = ([CaO].[CO₂]) / [CaCO₃]", "K_C = 1 / [CO₂]", "K_C = [CaCO₃] / [CO₂]"],
+        answer: 0,
+        explanation: "Trong biểu thức K_C của hệ dị thể, không biểu diễn nồng độ của chất rắn nguyên chất (CaCO₃ và CaO), nên K_C = [CO₂]."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Theo nguyên lí chuyển dịch cân bằng Le Chatelier, khi tăng nhiệt độ của một hệ đang ở trạng thái cân bằng thì cân bằng sẽ chuyển dịch theo chiều nào?",
+        options: ["Chiều phản ứng thu nhiệt (Δ_r H°₂₉₈ > 0)", "Chiều phản ứng tỏa nhiệt (Δ_r H°₂₉₈ < 0)", "Chiều làm tăng số mol khí", "Không làm chuyển dịch cân bằng"],
+        answer: 0,
+        explanation: "Khi tăng nhiệt độ, cân bằng chuyển dịch theo chiều chống lại sự tăng nhiệt độ, tức là chiều phản ứng thu nhiệt (ΔH > 0)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Chất nào sau đây là chất điện li mạnh khi tan trong nước?",
+        options: ["NaCl", "CH₃COOH", "HF", "C₂H₅OH"],
+        answer: 0,
+        explanation: "NaCl là muối tan hầu hết phân li hoàn toàn thành ion trong nước (NaCl → Na⁺ + Cl⁻); CH₃COOH và HF là chất điện li yếu, C₂H₅OH là chất không điện li."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Theo thuyết acid – base của Brønsted – Lowry, định nghĩa nào sau đây là ĐÚNG?",
+        options: ["Acid là chất cho proton (H⁺), base là chất nhận proton (H⁺)", "Acid là chất nhận proton (H⁺), base là chất cho proton (H⁺)", "Acid là chất cho cặp electron, base là chất nhận cặp electron", "Base là chất khi tan trong nước chỉ phân li ra ion H⁺"],
+        answer: 0,
+        explanation: "Theo thuyết Brønsted – Lowry: Acid là phân tử hoặc ion nhường proton (H⁺), còn Base là phân tử hoặc ion nhận proton (H⁺)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Theo thuyết Brønsted – Lowry, ion hay phân tử nào sau đây có tính chất lưỡng tính (vừa có thể cho H⁺, vừa có thể nhận H⁺)?",
+        options: ["Ion HCO₃⁻", "Ion CO₃²⁻", "Ion Cl⁻", "Ion Na⁺"],
+        answer: 0,
+        explanation: "Ion HCO₃⁻ vừa có khả năng nhường H⁺ tạo CO₃²⁻, vừa có khả năng nhận H⁺ tạo H₂CO₃ (CO₂ + H₂O) nên là phần tử lưỡng tính."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Một dung dịch ở 25 °C có nồng độ ion [H⁺] = 1,0.10⁻³ M. Giá trị pH của dung dịch này là:",
+        options: ["pH = 3", "pH = 11", "pH = -3", "pH = 7"],
+        answer: 0,
+        explanation: "Áp dụng công thức pH = -log[H⁺] = -log(10⁻³) = 3."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Dung dịch NaOH 0,01 M ở 25 °C (biết tích số ion của nước K_w = 10⁻¹⁴) có giá trị pH bằng bao nhiêu?",
+        options: ["pH = 12", "pH = 2", "pH = 10", "pH = 13"],
+        answer: 0,
+        explanation: "NaOH điện li hoàn toàn: [OH⁻] = 0,01 = 10⁻² M ⇒ pOH = 2 ⇒ pH = 14 - 2 = 12."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Khi nhỏ vài giọt chất chỉ thị phenolphthalein vào dung dịch NaOH loãng, dung dịch sẽ chuyển sang màu gì?",
+        options: ["Màu hồng", "Màu xanh lam", "Màu đỏ tươi", "Màu vàng"],
+        answer: 0,
+        explanation: "Trong môi trường kiềm (pH > 8,3) như dung dịch NaOH, phenolphthalein chuyển từ không màu sang màu hồng."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Trong phép chuẩn độ dung dịch HCl chưa biết nồng độ bằng dung dịch chuẩn NaOH 0,1 M (dùng chỉ thị phenolphthalein), thời điểm kết thúc chuẩn độ (điểm tương đương thực nghiệm) được nhận biết khi:",
+        options: ["Dung dịch trong bình tam giác vừa chuyển từ không màu sang màu hồng nhạt bền trong khoảng 20–30 giây", "Dung dịch xuất hiện kết tủa trắng dưới đáy bình", "Dung dịch sủi bọt khí mạnh", "Dung dịch chuyển sang màu xanh tím đậm"],
+        answer: 0,
+        explanation: "Khi lượng NaOH vừa đủ trung hòa hết HCl và dư một giọt nhỏ, phenolphthalein làm dung dịch xuất hiện màu hồng nhạt bền."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Cho cân bằng: 2SO₂(g) + O₂(g) ⇌ 2SO₃(g) có Δ_r H°₂₉₈ < 0. Yếu tố nào sau đây KHÔNG làm dịch chuyển cân bằng trên?",
+        options: ["Thêm chất xúc tác V₂O₅ vào hệ phản ứng", "Tăng áp suất chung của hệ", "Giảm nhiệt độ của hệ", "Tăng nồng độ khí O₂"],
+        answer: 0,
+        explanation: "Chất xúc tác làm tăng tốc độ phản ứng thuận và phản ứng nghịch với số lần bằng nhau nên chỉ giúp cân bằng nhanh đạt tới chứ không làm chuyển dịch cân bằng."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Chất nào sau đây là chất điện li yếu trong dung dịch nước?",
+        options: ["CH₃COOH (acetic acid)", "HNO₃", "KOH", "BaCl₂"],
+        answer: 0,
+        explanation: "Acetic acid (CH₃COOH) là acid hữu cơ yếu, trong nước chỉ phân li một phần thành CH₃COO⁻ và H⁺."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK1",
+        question: "Vì sao dung dịch muối Al₂(SO₄)₃ hoặc FeCl₃ trong nước có môi trường acid (pH < 7)?",
+        options: ["Do các cation Al³⁺, Fe³⁺ bị thủy phân trong nước tạo ra ion H⁺", "Do ion SO₄²⁻ và Cl⁻ nhường proton H⁺ cho nước", "Do các muối này không tan trong nước", "Do các muối này hấp thụ khí H₂ trong không khí"],
+        answer: 0,
+        explanation: "Cation kim loại của base yếu như Al³⁺, Fe³⁺ phản ứng thủy phân với nước giải phóng H⁺ (đóng vai trò là acid theo Brønsted – Lowry) làm pH < 7."
+    },
+
+    // ===================================================================
+    // 9. HÓA HỌC 11 - CUỐI KÌ 1 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Vì sao ở điều kiện thường, đơn chất khí nitrogen (N₂) rất trơ về mặt hóa học?",
+        options: ["Do phân tử N₂ có liên kết ba bền vững (N≡N) với năng lượng liên kết rất lớn", "Do nguyên tử nitrogen có bán kính nguyên tử rất lớn", "Do phân tử N₂ là phân tử phân cực mạnh", "Do N₂ chỉ tồn tại ở tầng bình lưu"],
+        answer: 0,
+        explanation: "Phân tử N₂ chứa liên kết ba cộng hóa trị không phân cực N≡N có năng lượng liên kết rất lớn (945 kJ/mol), nên rất khó bị phá vỡ ở nhiệt độ thường."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Phân tử ammonia (NH₃) có tính base và khả năng tạo phức là do trên nguyên tử nitrogen còn:",
+        options: ["Một cặp electron hóa trị chưa liên kết", "Một obitan trống chưa có electron", "Ba liên kết pi (π) kém bền", "Điện tích dương tự do"],
+        answer: 0,
+        explanation: "Nguyên tử N trong NH₃ còn một cặp electron riêng chưa tham gia liên kết nên dễ nhận proton H⁺ (tính base) và tạo liên kết cho nhận."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Để nhận biết sự có mặt của ion ammonium (NH₄⁺) trong dung dịch phân đạm, người ta đun nóng dung dịch đó với thuốc thử nào?",
+        options: ["Dung dịch kiềm mạnh (NaOH, KOH) thấy thoát ra khí mùi khai làm xanh giấy quỳ tím ẩm", "Dung dịch HCl loãng", "Dung dịch AgNO₃", "Dung dịch BaCl₂"],
+        answer: 0,
+        explanation: "Khi đun nóng muối ammonium với dung dịch kiềm: NH₄⁺ + OH⁻ → NH₃↑ + H₂O; khí NH₃ thoát ra có mùi khai và làm giấy quỳ tím ẩm hóa xanh."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Hiện tượng phú dưỡng (eutrophication) ở các ao hồ tù đọng xảy ra do nguyên nhân chính nào?",
+        options: ["Dư thừa hàm lượng các chất dinh dưỡng chứa nguyên tố nitrogen (N) và phosphorus (P) trong nước", "Nước hồ bị nhiễm mặn do thủy triều", "Nồng độ khí oxygen hòa tan trong nước quá cao", "Nhiệt độ nước hồ giảm xuống dưới 0 °C"],
+        answer: 0,
+        explanation: "Nước thải sinh hoạt, nông nghiệp chứa nhiều ion nitrate (NO₃⁻) và phosphate (PO₄³⁻) gây hiện tượng phú dưỡng, làm tảo sinh sôi bùng phát và gây thiếu hụt oxygen cho thủy sinh vật."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Những kim loại nào sau đây bị thụ động hóa (không phản ứng) trong dung dịch HNO₃ đặc, nguội và H₂SO₄ đặc, nguội?",
+        options: ["Al, Fe, Cr", "Cu, Ag, Zn", "Mg, Cu, Pb", "Na, K, Ca"],
+        answer: 0,
+        explanation: "Ba kim loại Al, Fe, Cr bị thụ động hóa trong HNO₃ đặc nguội và H₂SO₄ đặc nguội do tạo màng oxide bền bảo vệ bề mặt."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Khí sulfur dioxide (SO₂) là một trong các tác nhân chính gây ra hiện tượng môi trường nào sau đây?",
+        options: ["Mưa acid (Acid rain)", "Thủng tầng ozone", "Băng tan ở hai cực do khí hiếm", "Sương mù quang hóa từ khí helium"],
+        answer: 0,
+        explanation: "Khí SO₂ và NOₓ phát thải từ đốt nhiên liệu hóa thạch bị oxi hóa trong khí quyển tạo thành H₂SO₄ và HNO₃ hòa tan trong nước mưa gây mưa acid."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Khi pha loãng dung dịch H₂SO₄ đặc trong phòng thí nghiệm, thao tác nào sau đây là ĐÚNG và an toàn?",
+        options: ["Rót từ từ acid H₂SO₄ đặc vào cốc nước và khuấy nhẹ bằng đũa thủy tinh (tuyệt đối không làm ngược lại)", "Đổ nhanh nước lạnh vào bình đựng H₂SO₄ đặc", "Đun sôi H₂SO₄ đặc rồi mới đổ nước vào", "Lắc mạnh bình kín chứa H₂SO₄ đặc và nước"],
+        answer: 0,
+        explanation: "Quá trình hòa tan H₂SO₄ đặc tỏa nhiệt rất lớn; phải rót từ từ acid vào nước và khuấy đều để nhiệt phân tán, tránh bắn acid gây bỏng."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Thuốc thử dùng để nhận biết ion sulfate (SO₄²⁻) trong dung dịch H₂SO₄ hoặc muối sulfate là:",
+        options: ["Dung dịch muối barium (BaCl₂, Ba(NO₃)₂) tạo kết tủa trắng BaSO₄ không tan trong acid", "Dung dịch NaOH loãng", "Dung dịch KNO₃", "Quỳ tím khô"],
+        answer: 0,
+        explanation: "Ion Ba²⁺ kết hợp với SO₄²⁻ tạo kết tủa trắng BaSO₄ bền vững, không tan trong các dung dịch acid mạnh (HCl, HNO₃)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Hợp chất nào sau đây là hợp chất hữu cơ?",
+        options: ["CH₃COOH (acetic acid)", "Na₂CO₃ (sodium carbonate)", "CO₂ (carbon dioxide)", "Al₄C₃ (aluminium carbide)"],
+        answer: 0,
+        explanation: "Hợp chất hữu cơ là hợp chất của carbon (trừ các oxide của carbon, muối carbonate, cyanide, carbide...). Do đó CH₃COOH là hợp chất hữu cơ."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Phương pháp phổ nào thường được sử dụng để xác định sự có mặt của các nhóm chức đặc trưng (như -OH, C=O, -COOH) trong phân tử hợp chất hữu cơ?",
+        options: ["Phổ hồng ngoại (IR – Infrared spectroscopy)", "Phổ khối lượng (MS) chỉ dùng đo nguyên tử khối kim loại", "Chuẩn độ bằng quỳ tím", "Cân khối lượng trên cân điện tử"],
+        answer: 0,
+        explanation: "Trên phổ hồng ngoại (IR), mỗi liên kết và nhóm chức hữu cơ hấp thụ bức xạ ở số sóng đặc trưng (cm⁻¹), giúp nhận diện nhóm chức."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Phương pháp tách biệt và tinh chế chất dựa trên sự khác nhau về nhiệt độ sôi của các chất lỏng hòa tan vào nhau (ví dụ nấu rượu truyền thống) được gọi là:",
+        options: ["Phương pháp chưng cất", "Phương pháp kết tinh", "Phương pháp sắc kí cột", "Phương pháp lọc kết tủa"],
+        answer: 0,
+        explanation: "Chưng cất là phương pháp tách các chất lỏng có nhiệt độ sôi khác nhau bằng cách chuyển chất lỏng thành hơi rồi ngưng tụ thu lấy phần cất."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Việc ngâm hoa quả, thảo dược vào rượu hoặc dùng dung môi hữu cơ (như hexane) để lấy tinh dầu ra khỏi hỗn hợp nước – tinh dầu là ứng dụng của phương pháp nào?",
+        options: ["Phương pháp chiết (chiết lỏng – rắn và chiết lỏng – lỏng)", "Phương pháp chưng cất phân đoạn", "Phương pháp thăng hoa", "Phương pháp cô cạn"],
+        answer: 0,
+        explanation: "Phương pháp chiết dùng dung môi thích hợp để hòa tan và tách chất cần lấy ra khỏi chất rắn (chiết lỏng – rắn) hoặc dung dịch khác không đồng tan (chiết lỏng – lỏng)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Các chất hữu cơ có tính chất hóa học tương tự nhau và thành phần phân tử hơn kém nhau một hay nhiều nhóm CH₂ được gọi là:",
+        options: ["Các chất đồng đẳng", "Các chất đồng phân", "Các dạng thù hình", "Các đồng vị"],
+        answer: 0,
+        explanation: "Dãy đồng đẳng gồm các chất có cấu tạo và tính chất hóa học tương tự nhau, phân tử hơn kém nhau k nhóm -CH₂-."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Hai hợp chất ethanol (CH₃-CH₂-OH) và dimethyl ether (CH₃-O-CH₃) có cùng công thức phân tử C₂H₆O nhưng khác nhau về nhóm chức. Chúng là:",
+        options: ["Đồng phân nhóm chức của nhau", "Hai chất đồng đẳng kế tiếp", "Đồng phân hình học cis – trans", "Cùng một chất hóa học"],
+        answer: 0,
+        explanation: "C₂H₅OH (nhóm -OH alcohol) và CH₃OCH₃ (nhóm -O- ether) có cùng CTPT C₂H₆O nhưng khác loại nhóm chức nên là đồng phân nhóm chức."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK1",
+        question: "Trên phổ khối lượng (MS – Mass Spectrum) của hợp chất hữu cơ đơn giản, mảnh ion phân tử [M⁺] (thường có giá trị m/z lớn nhất) cho biết thông tin gì?",
+        options: ["Phân tử khối (M) của hợp chất hữu cơ đó", "Nhiệt độ sôi của hợp chất", "Độ pH của dung dịch", "Màu sắc của hợp chất ở trạng thái rắn"],
+        answer: 0,
+        explanation: "Giá trị m/z của peak ion phân tử [M⁺] trên phổ khối lượng MS chính bằng phân tử khối của hợp chất hữu cơ."
+    },
+
+    // ===================================================================
+    // 10. HÓA HỌC 11 - GIỮA KÌ 2 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Công thức tổng quát của dãy đồng đẳng alkane (hydrocarbon no, mạch hở) là:",
+        options: ["CₙH₂ₙ₊₂ (n ≥ 1)", "CₙH₂ₙ (n ≥ 2)", "CₙH₂ₙ₋₂ (n ≥ 2)", "CₙH₂ₙ₋₆ (n ≥ 6)"],
+        answer: 0,
+        explanation: "Alkane là các hydrocarbon no mạch hở, chỉ chứa liên kết đơn C-C và C-H, có công thức chung CₙH₂ₙ₊₂ (n ≥ 1)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Theo danh pháp thay thế IUPAC, alkane mạch nhánh CH₃-CH(CH₃)-CH₂-CH₃ có tên gọi là:",
+        options: ["2-methylbutane", "3-methylbutane", "isopentane (tên thay thế)", "2-ethylpropane"],
+        answer: 0,
+        explanation: "Chọn mạch chính dài nhất 4C (butane), đánh số từ đầu gần nhánh nhất để nhánh methyl ở vị trí số 2 → tên IUPAC là 2-methylbutane."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Phản ứng hóa học đặc trưng nhất của các alkane (khi có chiếu sáng hoặc đun nóng với Cl₂, Br₂) là:",
+        options: ["Phản ứng thế nguyên tử hydrogen bằng nguyên tử halogen", "Phản ứng cộng vào liên kết bội", "Phản ứng trùng hợp tạo polymer", "Phản ứng tráng bạc"],
+        answer: 0,
+        explanation: "Do phân tử chỉ có liên kết σ bền vững nên alkane đặc trưng bởi phản ứng thế halogen (ví dụ CH₄ + Cl₂ → CH₃Cl + HCl)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Trong công nghiệp lọc hóa dầu, quá trình bẻ gãy mạch carbon của các alkane mạch dài thành các alkane mạch ngắn hơn và alkene (để sản xuất xăng) được gọi là:",
+        options: ["Phản ứng cracking", "Phản ứng trùng hợp", "Phản ứng thủy phân", "Phản ứng ester hóa"],
+        answer: 0,
+        explanation: "Cracking là quá trình phân cắt liên kết C-C của alkane mạch dài ở nhiệt độ cao/xúc tác tạo hỗn hợp alkane và alkene mạch ngắn hơn."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Chất nào sau đây có đồng phân hình học (cis – trans)?",
+        options: ["CH₃-CH=CH-CH₃ (but-2-ene)", "CH₂=CH-CH₂-CH₃ (but-1-ene)", "CH₂=C(CH₃)₂ (2-methylpropene)", "CH₂=CH₂ (ethene)"],
+        answer: 0,
+        explanation: "Điều kiện có đồng phân cis – trans là mỗi nguyên tử C ở liên kết đôi C=C phải liên kết với hai nhóm nguyên tử khác nhau (R₁ ≠ R₂ và R₃ ≠ R₄). But-2-ene thỏa mãn điều kiện này."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Theo quy tắc Markovnikov, khi cho propene (CH₂=CH-CH₃) cộng hợp với HBr thì sản phẩm chính thu được là:",
+        options: ["CH₃-CHBr-CH₃ (2-bromopropane)", "CH₂Br-CH₂-CH₃ (1-bromopropane)", "CH₃-CH₂-CH₃ (propane)", "CH₂Br-CHBr-CH₃"],
+        answer: 0,
+        explanation: "Theo quy tắc Markovnikov: nguyên tử H ưu tiên cộng vào nguyên tử C bậc thấp hơn (nhiều H hơn là CH₂), còn Br cộng vào C bậc cao hơn (CH) tạo sản phẩm chính 2-bromopropane."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Để phân biệt khí acetylene (CH≡CH) với khí ethylene (CH₂=CH₂), người ta dẫn từng khí qua dung dịch nào sau đây?",
+        options: ["Dung dịch AgNO₃ trong NH₃ (tạo kết tủa vàng nhạt với acetylene)", "Dung dịch nước bromine (cả hai đều làm mất màu)", "Dung dịch KMnO₄ loãng (cả hai đều làm mất màu)", "Dung dịch NaCl bão hòa"],
+        answer: 0,
+        explanation: "Các alk-1-yne có liên kết ba đầu mạch như acetylene (HC≡CH) phản ứng thế ion kim loại với dung dịch AgNO₃/NH₃ tạo kết tủa vàng nhạt AgC≡CAg↓, còn ethylene không phản ứng."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Trong phòng thí nghiệm và công nghiệp, phản ứng cộng nước (hydrate hóa) vào acetylene (CH≡CH) với xúc tác muối Hg²⁺ trong môi trường H₂SO₄ loãng đun nóng tạo ra sản phẩm chính là:",
+        options: ["CH₃-CHO (ethanal / acetaldehyde)", "CH₃-CH₂-OH (ethanol)", "CH₃-COOH (acetic acid)", "CH₃-CO-CH₃ (acetone)"],
+        answer: 0,
+        explanation: "CH≡CH + H₂O (HgSO₄/H⁺, t°) → [CH₂=CH-OH] (không bền) chuyển vị tạo thành aldehyde CH₃-CHO."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Trùng hợp hoàn toàn monomer ethylene (CH₂=CH₂) ở nhiệt độ, áp suất và xúc tác thích hợp sẽ thu được polymer nào?",
+        options: ["Polyethylene (PE)", "Polypropylene (PP)", "Poly(vinyl chloride) (PVC)", "Polystyrene (PS)"],
+        answer: 0,
+        explanation: "nCH₂=CH₂ → (-CH₂-CH₂-)ₙ là phản ứng trùng hợp tạo nhựa polyethylene (PE)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Hợp chất thơm toluene (methylbenzene) có công thức phân tử là:",
+        options: ["C₇H₈ (C₆H₅-CH₃)", "C₆H₆", "C₈H₈ (C₆H₅-CH=CH₂)", "C₈H₁₀"],
+        answer: 0,
+        explanation: "Toluene có cấu tạo gồm vòng phenyl (-C₆H₅) gắn với nhóm methyl (-CH₃), công thức phân tử là C₇H₈."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Tính chất hóa học chung thể hiện đặc tính 'thơm' của vòng benzene là:",
+        options: ["Dễ tham gia phản ứng thế, khó tham gia phản ứng cộng và bền với các chất oxi hóa thông thường", "Rất dễ làm mất màu dung dịch nước bromine ở điều kiện thường", "Rất dễ bị oxi hóa bởi dung dịch KMnO₄ ở nhiệt độ thường", "Chỉ tham gia phản ứng trùng hợp"],
+        answer: 0,
+        explanation: "Hệ liên hợp vòng 6 electron π bền vững làm cho benzene có tính thơm: dễ thế (halogen hóa, nitro hóa), khó cộng và bền với tác nhân oxi hóa như KMnO₄."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Khi cho toluene (C₆H₅CH₃) tác dụng với HNO₃ đặc (xúc tác H₂SO₄ đặc, tỉ lệ 1:1), nhóm nitro (-NO₂) ưu tiên thế vào vị trí nào trên vòng benzene?",
+        options: ["Vị trí ortho (số 2) và para (số 4)", "Chỉ thế vào vị trí meta (số 3)", "Thế trực tiếp vào nguyên tử C số 1", "Không xảy ra phản ứng thế trên vòng"],
+        answer: 0,
+        explanation: "Nhóm alkyl (-CH₃) là nhóm đẩy electron làm giàu mật độ e ở vòng benzene và định hướng nhóm thế tiếp theo vào vị trí ortho và para."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Chất nào sau đây vừa làm mất màu dung dịch nước bromine ở điều kiện thường, vừa làm mất màu dung dịch KMnO₄ ở nhiệt độ thường?",
+        options: ["Styrene (C₆H₅-CH=CH₂)", "Benzene (C₆H₆)", "Toluene (C₆H₅-CH₃)", "Ethane (C₂H₆)"],
+        answer: 0,
+        explanation: "Styrene có liên kết đôi C=C ở nhánh ngoài vòng benzene nên phản ứng tương tự alkene: làm mất màu dung dịch Br₂ và KMnO₄ ngay ở nhiệt độ thường."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Khi đun nóng toluene (C₆H₅CH₃) với dung dịch KMnO₄ trong môi trường H₂SO₄ loãng, nhóm -CH₃ bị oxi hóa tạo thành nhóm chức nào gắn trên vòng benzene?",
+        options: ["Nhóm -COOH (tạo benzoic acid C₆H₅COOH)", "Nhóm -OH (tạo phenol C₆H₅OH)", "Nhóm -NH₂ (tạo aniline)", "Nhóm -NO₂ (tạo nitrobenzene)"],
+        answer: 0,
+        explanation: "Nhánh alkyl gắn trực tiếp với vòng benzene bị KMnO₄ đun nóng oxi hóa ở nguyên tử C_α tạo muối potassium benzoate, khi acid hóa thu được benzoic acid (C₆H₅COOH)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "GK2",
+        question: "Chỉ số octane (RON 92, RON 95) của xăng đặc trưng cho tính chất nào của nhiên liệu trong động cơ đốt trong?",
+        options: ["Khả năng chống kích nổ của xăng khi bị nén", "Hàm lượng lưu huỳnh có trong xăng", "Nhiệt độ đóng băng của xăng vào mùa đông", "Độ nhớt của dầu bôi trơn"],
+        answer: 0,
+        explanation: "Chỉ số octane càng cao thì khả năng chịu nén mà không tự phát nổ sớm (chống kích nổ) của xăng càng tốt."
+    },
+
+    // ===================================================================
+    // 11. HÓA HỌC 11 - CUỐI KÌ 2 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Khi đun nóng dẫn xuất halogen C₂H₅Br với dung dịch NaOH loãng, xảy ra phản ứng thế nguyên tử Br bằng nhóm -OH tạo thành sản phẩm hữu cơ nào?",
+        options: ["C₂H₅OH (ethanol)", "CH₂=CH₂ (ethylene)", "CH₃CHO (ethanal)", "C₂H₆ (ethane)"],
+        answer: 0,
+        explanation: "Đun dẫn xuất monohalogen no với dung dịch kiềm loãng xảy ra phản ứng thủy phân (thế nhóm -OH): C₂H₅Br + NaOH (loãng, t°) → C₂H₅OH + NaBr."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Theo quy tắc tách Zaitsev (Giai-xép), khi đun nóng 2-bromobutane (CH₃-CHBr-CH₂-CH₃) với KOH trong ethanol (C₂H₅OH), sản phẩm alkene chính thu được là:",
+        options: ["CH₃-CH=CH-CH₃ (but-2-ene)", "CH₂=CH-CH₂-CH₃ (but-1-ene)", "CH₂=C(CH₃)₂", "CH₃-CH₂-CH₂-CH₃"],
+        answer: 0,
+        explanation: "Quy tắc Zaitsev: nguyên tử halogen (-Br) ưu tiên tách ra cùng nguyên tử H ở carbon bậc cao hơn bên cạnh để tạo alkene có nhiều nhóm thế hơn ở nối đôi (but-2-ene)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Vì sao các alcohol (như ethanol C₂H₅OH) có nhiệt độ sôi cao hơn hẳn các hydrocarbon hoặc dẫn xuất halogen có phân tử khối tương đương?",
+        options: ["Do giữa các phân tử alcohol tạo được liên kết hydrogen liên phân tử", "Do phân tử alcohol có liên kết ion bền vững", "Do alcohol không tan trong nước", "Do alcohol có khối lượng riêng lớn hơn kim loại"],
+        answer: 0,
+        explanation: "Nhóm -OH phân cực mạnh giúp các phân tử alcohol tạo liên kết hydrogen liên phân tử với nhau, làm tăng nhiệt độ sôi và độ tan trong nước."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Khi oxi hóa không hoàn toàn alcohol bậc I (R-CH₂OH) bằng CuO đun nóng, sản phẩm hữu cơ thu được thuộc loại hợp chất nào?",
+        options: ["Aldehyde (R-CHO)", "Ketone (R-CO-R')", "Alkane", "Ether"],
+        answer: 0,
+        explanation: "Alcohol bậc I bị CuO đun nóng oxi hóa thành aldehyde: R-CH₂OH + CuO (t°) → R-CHO + Cu + H₂O (còn alcohol bậc II tạo ketone)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Thuốc thử dùng để nhận biết các polyalcohol có các nhóm -OH liền kề nhau (như ethylene glycol, glycerol) là gì?",
+        options: ["Cu(OH)₂ ở nhiệt độ thường (hòa tan kết tủa tạo dung dịch phức chất màu xanh lam đậm)", "Dung dịch NaCl bão hòa", "Quỳ tím ẩm", "Khí CO₂"],
+        answer: 0,
+        explanation: "Các alcohol đa chức có ít nhất hai nhóm -OH kề nhau (như glycerol) hòa tan được Cu(OH)₂ ở điều kiện thường tạo dung dịch màu xanh lam đặc trưng."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Khác với ethanol (C₂H₅OH), phenol (C₆H₅OH) phản ứng được với dung dịch nào sau đây để chứng minh tính acid yếu của nhóm -OH gắn trực tiếp vào vòng benzene?",
+        options: ["Dung dịch NaOH (tạo C₆H₅ONa và H₂O)", "Kim loại Cu", "Dung dịch NaCl", "Khí H₂"],
+        answer: 0,
+        explanation: "Do gốc phenyl (-C₆H₅) hút electron làm tăng độ phân cực liên kết O-H, phenol thể hiện tính acid yếu và tác dụng được với dung dịch NaOH (còn alcohol thì không)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Khi nhỏ nước bromine vào dung dịch phenol (C₆H₅OH), hiện tượng quan sát được là:",
+        options: ["Nước bromine mất màu và xuất hiện kết tủa trắng 2,4,6-tribromophenol", "Có khí không màu sủi bọt mạnh", "Xuất hiện kết tủa màu đỏ gạch", "Dung dịch chuyển sang màu xanh tím"],
+        answer: 0,
+        explanation: "Nhóm -OH hoạt hóa mạnh vòng benzene làm phenol dễ dàng thế 3 nguyên tử Br vào các vị trí 2, 4, 6 tạo kết tủa trắng 2,4,6-tribromophenol."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Hợp chất carbonyl nào sau đây là ketone đơn giản nhất (thường dùng làm dung môi tẩy sơn móng tay)?",
+        options: ["CH₃-CO-CH₃ (acetone / propanone)", "HCHO (methanal)", "CH₃-CHO (ethanal)", "HCOOH (formic acid)"],
+        answer: 0,
+        explanation: "Propanone (tên thông thường là acetone, CH₃-CO-CH₃) là ketone đơn giản nhất, có 3 nguyên tử carbon."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Phản ứng nào sau đây dùng để phân biệt aldehyde (như CH₃CHO) với ketone (như CH₃COCH₃)?",
+        options: ["Phản ứng tráng bạc với thuốc thử Tollens [Ag(NH₃)₂]OH đun nóng", "Phản ứng cháy với khí O₂", "Phản ứng cộng H₂ (xúc tác Ni, t°)", "Hòa tan vào nước cất"],
+        answer: 0,
+        explanation: "Aldehyde có tính khử nên phản ứng với thuốc thử Tollens tạo lớp bạc sáng bóng bám trên thành ống nghiệm (phản ứng tráng bạc), còn ketone không có phản ứng này."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Khi đun nóng dung dịch ethanal (CH₃CHO) với Cu(OH)₂ trong môi trường kiềm (NaOH), hiện tượng thu được là:",
+        options: ["Xuất hiện kết tủa màu đỏ gạch của copper(I) oxide (Cu₂O)", "Xuất hiện kết tủa trắng bạc", "Dung dịch không đổi màu", "Xuất hiện kết tủa màu vàng nhạt"],
+        answer: 0,
+        explanation: "CH₃CHO khử Cu(OH)₂/OH⁻ khi đun nóng tạo kết tủa Cu₂O màu đỏ gạch: CH₃CHO + 2Cu(OH)₂ + NaOH (t°) → CH₃COONa + Cu₂O↓ + 3H₂O."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Hợp chất carbonyl có chứa nhóm methyl ketone (CH₃-CO-) như acetone hoặc ethanal khi tác dụng với I₂ trong dung dịch NaOH sẽ tạo ra kết tủa màu vàng của chất nào?",
+        options: ["CHI₃ (iodoform)", "AgI (silver iodide)", "PbI₂ (lead iodide)", "CuI"],
+        answer: 0,
+        explanation: "Phản ứng iodoform đặc trưng cho các hợp chất có nhóm CH₃-C=O: tác dụng với I₂/NaOH tạo kết tủa vàng nhạt iodoform (CHI₃)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Nhóm chức đặc trưng của hợp chất carboxylic acid là:",
+        options: ["Nhóm carboxyl (-COOH)", "Nhóm carbonyl (>C=O)", "Nhóm hydroxyl (-OH)", "Nhóm amino (-NH₂)"],
+        answer: 0,
+        explanation: "Carboxylic acid là hợp chất hữu cơ trong phân tử có nhóm carboxyl (-COOH) liên kết trực tiếp với nguyên tử C hoặc H."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Trong giấm ăn thông thường có chứa từ 2% – 5% khối lượng của carboxylic acid nào sau đây?",
+        options: ["Acetic acid (CH₃COOH)", "Formic acid (HCOOH)", "Oxalic acid (HOOC-COOH)", "Benzoic acid (C₆H₅COOH)"],
+        answer: 0,
+        explanation: "Giấm ăn là dung dịch acetic acid (CH₃COOH) có nồng độ khoảng 2% – 5%."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "Khi đun nóng hỗn hợp gồm acetic acid (CH₃COOH) và ethanol (C₂H₅OH) có mặt H₂SO₄ đặc làm xúc tác, thu được sản phẩm ester có mùi thơm là:",
+        options: ["Ethyl acetate (CH₃COOC₂H₅)", "Methyl acetate (CH₃COOCH₃)", "Ethyl formate (HCOOC₂H₅)", "Diethyl ether (C₂H₅OC₂H₅)"],
+        answer: 0,
+        explanation: "Phản ứng ester hóa: CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ (ethyl acetate) + H₂O (xúc tác H₂SO₄ đặc, t°)."
+    },
+    {
+        grade: "11", subject: "hoa", term: "CK2",
+        question: "So sánh nhiệt độ sôi của ba chất có phân tử khối xấp xỉ nhau: propanal (CH₃CH₂CHO), propan-1-ol (CH₃CH₂CH₂OH) và ethanoic acid (CH₃COOH). Thứ tự nhiệt độ sôi tăng dần là:",
+        options: ["CH₃CH₂CHO < CH₃CH₂CH₂OH < CH₃COOH", "CH₃COOH < CH₃CH₂CH₂OH < CH₃CH₂CHO", "CH₃CH₂CH₂OH < CH₃CH₂CHO < CH₃COOH", "CH₃CH₂CHO < CH₃COOH < CH₃CH₂CH₂OH"],
+        answer: 0,
+        explanation: "Aldehyde không có liên kết hydrogen liên phân tử nên nhiệt độ sôi thấp nhất; carboxylic acid tạo liên kết hydrogen bền hơn alcohol (dạng dimer) nên có nhiệt độ sôi cao nhất."
+    },
+
+    // ===================================================================
+    // 12. SINH HỌC 11 - GIỮA KÌ 1 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Ở thực vật trên cạn, bộ phận chủ yếu trực tiếp hấp thụ nước và ion khoáng từ đất là:",
+        options: ["Các tế bào lông hút ở miền lông hút của rễ", "Lớp biểu bì của thân cây", "Khí khổng ở mặt dưới của lá", "Chóp rễ ở tận cùng đầu rễ"],
+        answer: 0,
+        explanation: "Tế bào lông hút ở rễ có thành tế bào mỏng, không thấm cutin và có không bào trung tâm lớn tạo áp suất thẩm thấu cao để hấp thụ nước và muối khoáng."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Cơ chế hấp thụ nước từ đất vào tế bào lông hút của rễ cây là:",
+        options: ["Cơ chế thẩm thấu (thụ động) từ nơi có thế nước cao (dịch đất) đến nơi có thế nước thấp (dịch bào lông hút)", "Cơ chế vận chuyển chủ động cần tiêu tốn nhiều năng lượng ATP", "Cơ chế thực bào qua màng sinh chất", "Cơ chế khuếch tán từ nơi ưu trương sang nơi nhược trương"],
+        answer: 0,
+        explanation: "Nước luôn xâm nhập thụ động theo cơ chế thẩm thấu từ môi trường nhược trương (thế nước cao) vào tế bào lông hút ưu trương (thế nước thấp)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Trong quá trình vận chuyển nước và chất khoáng từ lông hút vào mạch gỗ của rễ, cấu trúc nào ở lớp nội bì giúp kiểm soát lượng nước và chất khoáng đi theo con đường gian bào?",
+        options: ["Đai Caspary", "Mạch rây", "Khí khổng", "Tầng sinh bần"],
+        answer: 0,
+        explanation: "Đai Caspary ở thành tế bào nội bì không thấm nước và ion khoáng, buộc dòng nước và ion đi theo con đường gian bào phải chuyển sang con đường tế bào chất để được kiểm soát trước khi vào trung trụ."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Dòng mạch gỗ (xylem) trong thân cây vận chuyển chủ yếu các chất nào và theo chiều nào?",
+        options: ["Nước và các ion khoáng từ rễ lên thân, lá (vận chuyển một chiều đi lên)", "Chất hữu cơ tổng hợp từ lá xuống rễ", "Khí CO₂ từ lá xuống rễ", "Chỉ vận chuyển đường sucrose theo hai chiều"],
+        answer: 0,
+        explanation: "Mạch gỗ gồm các tế bào chết (quản bào và mạch ống) nối kế tiếp nhau, vận chuyển nước và ion khoáng từ rễ lên lá nhờ lực đẩy của rễ, lực hút do thoát hơi nước và lực liên kết."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Thành phần chủ yếu của dịch mạch rây (phloem) được vận chuyển từ lá (cơ quan nguồn) đến rễ, quả, hạt (cơ quan chứa) là:",
+        options: ["Sucrose, các amino acid, vitamin và một số hormone thực vật", "Chỉ có nước tinh khiết và khí oxygen", "Tinh bột không tan và cellulose", "Chỉ có các ion kim loại nặng"],
+        answer: 0,
+        explanation: "Dịch mạch rây chứa chủ yếu là đường sucrose (sản phẩm quang hợp ở lá) cùng các amino acid, hormone thực vật và một số ion khoáng tái sử dụng (như K⁺)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Ở thực vật trưởng thành, quá trình thoát hơi nước qua lá diễn ra chủ yếu qua con đường nào?",
+        options: ["Con đường qua khí khổng (chiếm phần lớn lượng nước thoát ra và được điều tiết)", "Con đường qua lớp cutin", "Con đường qua mạch rây", "Con đường qua bì khổng ở rễ"],
+        answer: 0,
+        explanation: "Thoát hơi nước qua khí khổng là con đường chủ yếu ở cây trưởng thành, có tốc độ lớn và được điều chỉnh thông qua cơ chế đóng mở khí khổng."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Thực vật trên cạn có thể hấp thụ trực tiếp nguyên tố nitrogen (N) từ đất dưới hai dạng ion khoáng nào?",
+        options: ["Ion ammonium (NH₄⁺) và ion nitrate (NO₃⁻)", "Khí nitrogen tự do (N₂) và khí NO₂", "Dạng protein nguyên phân tử", "Dạng khí NH₃ trong không khí"],
+        answer: 0,
+        explanation: "Rễ cây chỉ hấp thụ được nitrogen vô cơ hòa tan trong đất dưới dạng ion NH₄⁺ (dạng khử) và NO₃⁻ (dạng oxi hóa)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Nguyên tố khoáng thiết yếu nào là thành phần cấu tạo trung tâm của phân tử diệp lục (chlorophyll) ở thực vật?",
+        options: ["Magnesium (Mg) và Nitrogen (N)", "Calcium (Ca)", "Potassium (K)", "Chlorine (Cl)"],
+        answer: 0,
+        explanation: "Phân tử chlorophyll có nhân porphyrin chứa nguyên tử Mg ở trung tâm liên kết với 4 nguyên tử N; thiếu Mg hoặc N lá cây sẽ bị vàng (mất màu lục)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Trong bộ máy quang hợp của thực vật, sắc tố duy nhất có khả năng trực tiếp chuyển hóa năng lượng ánh sáng thành năng lượng hóa học trong các liên kết ATP và NADPH là:",
+        options: ["Diệp lục a (Chlorophyll a) ở trung tâm phản ứng", "Diệp lục b (Chlorophyll b)", "Carotenoid (Carotene và Xanthophyll)", "Anthocyanin"],
+        answer: 0,
+        explanation: "Các sắc tố phụ (Carotenoid, Diệp lục b) hấp thụ ánh sáng rồi truyền năng lượng về Diệp lục a ở trung tâm phản ứng để trực tiếp thực hiện quang hóa."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Pha sáng của quá trình quang hợp ở thực vật diễn ra tại vị trí nào của lục lạp và tạo ra các sản phẩm gì?",
+        options: ["Tại màng thylakoid; tạo ra ATP, NADPH và giải phóng O₂", "Tại chất nền stroma; tạo ra glucose (C₆H₁₂O₆)", "Tại màng ngoài lục lạp; tạo ra CO₂ và H₂O", "Tại ti thể; tạo ra pyruvic acid"],
+        answer: 0,
+        explanation: "Pha sáng diễn ra trên hệ màng thylakoid (hạt grana), thực hiện quang phân li nước giải phóng O₂ và tổng hợp ATP, NADPH cung cấp cho pha tối."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Khí O₂ giải phóng ra môi trường trong quá trình quang hợp ở cây xanh có nguồn gốc từ phân tử nào?",
+        options: ["Từ phân tử nước (H₂O) thông qua quá trình quang phân li nước ở pha sáng", "Từ sự phân giải khí CO₂ ở pha tối", "Từ phân tử glucose", "Từ ion NO₃⁻ hút từ đất"],
+        answer: 0,
+        explanation: "Ở pha sáng, dưới tác dụng của ánh sáng: 2H₂O → 4H⁺ + 4e⁻ + O₂↑. Do đó toàn bộ O₂ giải phóng có nguồn gốc từ H₂O."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Ở nhóm thực vật C₃ (như lúa, khoai, đậu), chất nhận CO₂ đầu tiên và sản phẩm cố định CO₂ đầu tiên trong chu trình Calvin (pha tối) lần lượt là:",
+        options: ["Chất nhận là RuBP (5C) và sản phẩm đầu tiên là PGA (3C)", "Chất nhận là PEP (3C) và sản phẩm đầu tiên là OAA (4C)", "Chất nhận là glucose (6C) và sản phẩm là tinh bột", "Chất nhận là ATP và sản phẩm là pyruvic acid"],
+        answer: 0,
+        explanation: "Trong chu trình Calvin (C₃), ribulose-1,5-bisphosphate (RuBP – 5C) kết hợp với CO₂ tạo hợp chất 3 carbon đầu tiên là 3-phosphoglyceric acid (PGA – 3C)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Để thích nghi với điều kiện sống khô hạn ở sa mạc, nhóm thực vật CAM (như xương rồng, dứa, thanh long) có đặc điểm đóng mở khí khổng và cố định CO₂ như thế nào?",
+        options: ["Đóng khí khổng vào ban ngày để tiết kiệm nước, mở khí khổng vào ban đêm để nhận CO₂", "Mở khí khổng suốt ban ngày và đóng vào ban đêm", "Không có khí khổng trên bề mặt cơ thể", "Chỉ quang hợp vào mùa mưa, ngừng hoàn toàn vào mùa khô"],
+        answer: 0,
+        explanation: "Thực vật CAM mở khí khổng ban đêm để thu nhận CO₂ (cố định tạm thời thành malate) và đóng khí khổng ban ngày để tránh mất nước khi thực hiện chu trình Calvin."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Trong quá trình hô hấp hiếu khí ở tế bào thực vật, giai đoạn nào tạo ra nhiều phân tử ATP nhất?",
+        options: ["Chuỗi truyền electron hô hấp (ở màng trong ti thể)", "Đường phân (ở tế bào chất)", "Chu trình Krebs (ở chất nền ti thể)", "Lên men rượu"],
+        answer: 0,
+        explanation: "Đường phân chỉ tạo 2 ATP, chu trình Krebs tạo 2 ATP, trong khi chuỗi truyền electron hô hấp tạo ra khoảng 26 – 28 ATP trên mỗi phân tử glucose."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK1",
+        question: "Vì sao khi bảo quản nông sản (hạt giống, rau quả), người ta cần khống chế cường độ hô hấp của nông sản ở mức tối thiểu?",
+        options: ["Để hạn chế sự tiêu hao chất hữu cơ, tránh tăng nhiệt độ và độ ẩm làm nông sản nhanh hỏng nhưng vẫn giữ phôi sống", "Để làm chết hoàn toàn phôi hạt giống", "Để tăng hàm lượng đường trong hạt khô lên gấp đôi", "Để kích thích hạt nảy mầm ngay trong kho"],
+        answer: 0,
+        explanation: "Hô hấp mạnh làm hao hụt chất khô, tỏa nhiệt và sinh nước gây thối mốc; do đó bảo quản khô, lạnh hoặc nồng độ CO₂ cao giúp giảm hô hấp xuống mức tối thiểu."
+    },
+
+    // ===================================================================
+    // 13. SINH HỌC 11 - CUỐI KÌ 1 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Nhóm động vật nào sau đây chưa có cơ quan tiêu hóa chuyên biệt và chỉ thực hiện tiêu hóa nội bào?",
+        options: ["Động vật nguyên sinh (trùng giày, trùng biến hình) và bọt biển (thân lỗ)", "Thủy tức và sứa (ngành Ruột khoang)", "Giun đất và châu chấu", "Cá chép và chim bồ câu"],
+        answer: 0,
+        explanation: "Động vật chưa có cơ quan tiêu hóa (như bọt biển, trùng biến hình) bắt mồi bằng thực bào và tiêu hóa thức ăn bên trong không bào tiêu hóa (tiêu hóa nội bào)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Ở các loài thú ăn thực vật nhai lại (như trâu, bò, cừu, dê), dạ dày chia làm 4 ngăn. Ngăn nào được gọi là 'dạ dày chính thức' tiết ra pepsin và HCl để tiêu hóa protein?",
+        options: ["Dạ múi khế", "Dạ cỏ", "Dạ tổ ong", "Dạ lá sách"],
+        answer: 0,
+        explanation: "Dạ dày thú nhai lại gồm 4 ngăn: dạ cỏ (chứa vi sinh vật cộng sinh phân giải cellulose) → dạ tổ ong → ợ lên nhai lại → dạ lá sách (hấp thụ bớt nước) → dạ múi khế (tiết HCl và pepsin tiêu hóa hóa học)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Các loài côn trùng (như châu chấu, gián, ong) trao đổi khí với môi trường xung quanh thông qua hình thức hô hấp nào?",
+        options: ["Hô hấp bằng hệ thống ống khí thông ra ngoài qua các lỗ thở", "Hô hấp qua mang", "Hô hấp bằng phổi và túi khí", "Hô hấp hoàn toàn qua bề mặt da ẩm ướt"],
+        answer: 0,
+        explanation: "Côn trùng có hệ thống ống khí phân nhánh nhỏ dần tiếp xúc trực tiếp với từng tế bào cơ thể để trao đổi O₂ và CO₂ qua các lỗ thở trên thành bụng."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Loài động vật nào trên cạn có hiệu quả trao đổi khí cao nhất nhờ phổi cấu tạo từ các ống khí và có hệ thống 9 túi khí giúp không khí giàu O₂ luôn lưu thông một chiều qua phổi cả khi hít vào lẫn thở ra?",
+        options: ["Các loài chim (như chim bồ câu, đại bàng)", "Các loài lưỡng cư (ếch đồng)", "Các loài bò sát (thằn lằn)", "Các loài thú ăn thịt"],
+        answer: 0,
+        explanation: "Nhờ sự phối hợp của hệ thống túi khí và phổi ống khí, chim không có khí cặn trong phổi nên hiệu quả trao đổi khí trên cạn đạt mức cao nhất."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Hệ tuần hoàn hở (máu có đoạn thoát khỏi mạch máu tràn vào khoang cơ thể trộn lẫn với dịch mô) có ở những nhóm động vật nào sau đây?",
+        options: ["Đa số động vật thân mềm (ốc sên, trai sông) và chân khớp (tôm, côn trùng)", "Cá xương, lưỡng cư và bò sát", "Giun đốt (giun đất), mực ống và bạch tuộc", "Chim và thú (động vật có vú)"],
+        answer: 0,
+        explanation: "Đa số ngành Thân mềm (trừ mực ống, bạch tuộc) và ngành Chân khớp có hệ tuần hoàn hở với áp lực máu thấp, tốc độ máu chảy chậm."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Khả năng co dãn tự động theo chu kì của tim (ngay cả khi tách rời khỏi cơ thể và được nuôi trong dung dịch sinh lí có đủ O₂) là do cấu trúc nào phát xung điện đầu tiên?",
+        options: ["Hệ dẫn truyền tim, đứng đầu là nút xoang nhĩ", "Các van nhĩ – thất và van tổ chim", "Hệ thống mao mạch vành", "Tâm thất trái"],
+        answer: 0,
+        explanation: "Hệ dẫn truyền tim gồm: nút xoang nhĩ (tự phát xung điện) → nút nhĩ thất → bó His → mạng lưới Purkinje làm tim co bóp tự động theo chu kì."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Ở người trưởng thành bình thường, một chu kì hoạt động của tim kéo dài khoảng 0,8 giây bao gồm 3 pha với thời gian lần lượt là:",
+        options: ["Pha co tâm nhĩ (0,1 s) → Pha co tâm thất (0,3 s) → Pha dãn chung (0,4 s)", "Pha co tâm nhĩ (0,4 s) → Pha co tâm thất (0,3 s) → Pha dãn chung (0,1 s)", "Pha co tâm thất (0,5 s) → Pha co tâm nhĩ (0,2 s) → Pha dãn chung (0,1 s)", "Cả ba pha đều kéo dài 0,27 s"],
+        answer: 0,
+        explanation: "Mỗi chu kì tim 0,8 s gồm: tâm nhĩ co 0,1 s, tâm thất co 0,3 s và pha dãn chung 0,4 s (giúp cơ tim có đủ thời gian nghỉ ngơi phục hồi)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Trong hệ mạch máu của người, huyết áp (áp lực của máu lên thành mạch) biến đổi như thế nào từ động mạch chủ đến tĩnh mạch chủ?",
+        options: ["Giảm dần từ động mạch chủ → tiểu động mạch → mao mạch → tiểu tĩnh mạch → tĩnh mạch chủ", "Tăng dần từ động mạch sang tĩnh mạch", "Đạt giá trị cao nhất tại hệ thống mao mạch", "Không thay đổi trong suốt hệ mạch"],
+        answer: 0,
+        explanation: "Do ma sát giữa máu với thành mạch và giữa các phần tử máu với nhau, huyết áp giảm dần suốt chiều dài hệ mạch (cao nhất ở động mạch chủ và thấp nhất ở tĩnh mạch chủ)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Vì sao vận tốc máu chảy trong hệ thống mao mạch lại chậm nhất (chỉ khoảng 0,5 mm/s) so với động mạch và tĩnh mạch?",
+        options: ["Vì tổng tiết diện của hệ thống mao mạch là lớn nhất", "Vì tổng tiết diện của mao mạch là nhỏ nhất", "Vì mao mạch nằm gần tim nhất", "Vì máu trong mao mạch không chứa hồng cầu"],
+        answer: 0,
+        explanation: "Vận tốc máu tỉ lệ nghịch với tổng tiết diện mạch. Hệ mao mạch có số lượng cực lớn nên tổng tiết diện lớn nhất, làm máu chảy chậm nhất giúp trao đổi chất hiệu quả với tế bào."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Hàng rào bảo vệ tự nhiên gồm da, niêm mạc, dịch tiết (nước mắt, dịch vị dạ dày) và phản ứng thực bào, phản ứng sốt/viêm thuộc loại miễn dịch nào?",
+        options: ["Miễn dịch không đặc hiệu (miễn dịch bẩm sinh)", "Miễn dịch đặc hiệu thể dịch", "Miễn dịch đặc hiệu tế bào", "Miễn dịch nhân tạo nhờ tiêm kháng huyết thanh"],
+        answer: 0,
+        explanation: "Miễn dịch không đặc hiệu mang tính bẩm sinh, đáp ứng tức thời với mọi tác nhân gây bệnh mà không cần tiếp xúc trước với kháng nguyên."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Trong đáp ứng miễn dịch đặc hiệu, tế bào lympho B sau khi nhận diện kháng nguyên sẽ biệt hóa thành tương bào (plasma cell) để sản xuất ra chất gì chống lại tác nhân gây bệnh?",
+        options: ["Kháng thể (Antibody / Immunoglobulin)", "Histamine gây dị ứng", "Hormone insulin", "Dịch mật"],
+        answer: 0,
+        explanation: "Miễn dịch thể dịch có sự tham gia của tế bào B biệt hóa thành tương bào sản xuất các kháng thể đặc hiệu để bất hoạt kháng nguyên."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Việc tiêm vaccine phòng bệnh cho trẻ em và người lớn giúp cơ thể chủ động tạo ra:",
+        options: ["Kháng thể và các tế bào nhớ miễn dịch (tế bào B nhớ, tế bào T nhớ) đặc hiệu với mầm bệnh", "Hồng cầu vận chuyển nhiều oxygen hơn", "Các enzyme tiêu hóa thức ăn nhanh hơn", "Kháng sinh tiêu diệt mọi vi khuẩn có lợi"],
+        answer: 0,
+        explanation: "Vaccine chứa kháng nguyên đã làm yếu hoặc bất hoạt, kích thích hệ miễn dịch tạo kháng thể và tế bào nhớ để phản ứng nhanh, mạnh khi gặp mầm bệnh thật."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Một hệ thống điều hòa cân bằng nội môi luôn bao gồm 3 bộ phận chính theo trình tự nào?",
+        options: ["Bộ phận tiếp nhận kích thích (thụ thể) → Bộ phận điều khiển (trung ương thần kinh/tuyến nội tiết) → Bộ phận thực hiện", "Bộ phận thực hiện → Bộ phận tiếp nhận → Môi trường ngoài", "Tim → Phổi → Dạ dày", "Tủy xương → Khớp xương → Cơ vân"],
+        answer: 0,
+        explanation: "Cơ chế duy trì cân bằng nội môi gồm: Bộ phận tiếp nhận kích thích → Bộ phận điều khiển → Bộ phận thực hiện (kèm theo liên hệ ngược âm tính)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Khi nồng độ glucose trong máu tăng cao sau bữa ăn nhiều tinh bột, tuyến tụy sẽ tiết ra hormone nào để chuyển hóa glucose thành glycogen dự trữ ở gan và cơ?",
+        options: ["Insulin", "Glucagon", "Adrenaline", "Thyroxine"],
+        answer: 0,
+        explanation: "Tế bào β đảo tụy tiết hormone insulin giúp tế bào tăng nhận glucose và chuyển glucose thành glycogen dự trữ, đưa đường huyết về mức ổn định."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK1",
+        question: "Đơn vị chức năng cấu tạo nên thận ở người và thú, nơi diễn ra quá trình lọc máu tạo nước tiểu đầu và tái hấp thụ tạo nước tiểu chính thức, được gọi là gì?",
+        options: ["Nephron", "Neuron", "Sarcomere", "Phế nang"],
+        answer: 0,
+        explanation: "Mỗi quả thận người chứa khoảng 1 triệu đơn vị chức năng gọi là nephron (gồm cầu thận, nang Bowman và hệ thống ống thận)."
+    },
+
+    // ===================================================================
+    // 14. SINH HỌC 11 - GIỮA KÌ 2 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Hình thức vận động sinh trưởng của cơ quan thực vật định hướng theo một phía xác định của tác nhân kích thích từ môi trường (như ánh sáng, trọng lực, nước) được gọi là:",
+        options: ["Hướng động (vận động định hướng)", "Ứng động không sinh trưởng", "Ứng động sức trương", "Phản xạ có điều kiện"],
+        answer: 0,
+        explanation: "Hướng động là hình thức phản ứng của cơ quan thực vật đối với tác nhân kích thích từ một hướng xác định (hướng động dương khi vươn tới, hướng động âm khi tránh xa)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Khi đặt một chậu cây non nằm ngang, sau một thời gian ngọn cây cong lên phía trên còn rễ cây uốn cong xuống phía dưới đất. Hiện tượng này thể hiện:",
+        options: ["Thân (ngọn) có tính hướng trọng lực âm, còn rễ có tính hướng trọng lực dương", "Cả thân và rễ đều hướng trọng lực dương", "Thân hướng hóa dương, rễ hướng sáng dương", "Ứng động không sinh trưởng do va chạm"],
+        answer: 0,
+        explanation: "Đối với tác nhân trọng lực: đỉnh rễ sinh trưởng hướng về phía trọng lực (hướng trọng lực dương), còn đỉnh thân sinh trưởng ngược chiều trọng lực (hướng trọng lực âm)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Nguyên nhân tế bào học của hiện tượng ngọn cây uốn cong về phía có ánh sáng (hướng sáng dương) là do:",
+        options: ["Hormone auxin di chuyển nhiều về phía khuất sáng, kích thích các tế bào phía tối dãn dài nhanh hơn phía được chiếu sáng", "Các tế bào phía được chiếu sáng phân chia nhanh gấp đôi phía tối", "Ánh sáng mặt trời làm khô héo toàn bộ tế bào phía sáng", "Hormone ethylene tập trung ở đỉnh sinh trưởng"],
+        answer: 0,
+        explanation: "Ở thân non, auxin phân bố nhiều hơn ở phía không được chiếu sáng, kích thích tế bào phía tối sinh trưởng kéo dài nhanh hơn làm ngọn cây uốn cong về phía nguồn sáng."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Hiện tượng lá cây trinh nữ (cây xấu hổ) cụp xuống nhanh chóng khi bị tay chạm vào là kiểu cảm ứng nào ở thực vật?",
+        options: ["Ứng động không sinh trưởng (do sự biến đổi sức trương nước ở thể gối gốc lá)", "Hướng sáng âm", "Hướng tiếp xúc sinh trưởng", "Hướng hóa âm"],
+        answer: 0,
+        explanation: "Tác nhân cơ học không định hướng làm ion K⁺ và nước thoát khỏi tế bào thể gối ở cuống lá cây trinh nữ, gây giảm sức trương nước làm lá cụp lại (ứng động không sinh trưởng)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Hiện tượng hoa mười giờ nở vào buổi sáng khi có ánh nắng và nhiệt độ ấm áp, hoặc lá cây họ Đậu xòe ra ban ngày và khép lại ban đêm là ví dụ về:",
+        options: ["Ứng động sinh trưởng (vận động theo chu kì đồng hồ sinh học và nhiệt/quang)", "Hướng động tiếp xúc", "Hướng nước dương", "Phản xạ thần kinh"],
+        answer: 0,
+        explanation: "Ứng động nở hoa và vận động ngủ – thức của lá theo chu kì ngày đêm liên quan đến tốc độ sinh trưởng không đều giữa mặt trên và mặt dưới cánh hoa/cuống lá."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Nhóm động vật đa bào nào có hệ thần kinh dạng lưới (các tế bào thần kinh nằm rải rác khắp cơ thể và nối với nhau qua các sợi thần kinh)?",
+        options: ["Ngành Ruột khoang (thủy tức, sứa, san hô)", "Ngành Giun đốt (giun đất)", "Ngành Chân khớp (châu chấu)", "Động vật có xương sống"],
+        answer: 0,
+        explanation: "Thủy tức và các loài ngành Ruột khoang có hệ thần kinh dạng lưới; khi bị kích thích tại một điểm, toàn thân co lại."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Cấu tạo điển hình của một tế bào thần kinh (neuron) gồm 3 thành phần chính là:",
+        options: ["Thân neuron (chứa nhân), các sợi nhánh và một sợi trục (axon)", "Màng trước synapse, khe synapse và màng sau synapse", "Thụ thể cảm giác, cơ vân và tuyến tiết", "Tâm nhĩ, tâm thất và van tim"],
+        answer: 0,
+        explanation: "Mỗi neuron gồm thân chứa nhân, nhiều sợi nhánh tiếp nhận xung thần kinh và một sợi trục truyền xung đi tới các tế bào khác qua synapse."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Ở trạng thái nghỉ ngơi (không bị kích thích), mặt trong của màng neuron tích điện gì so với mặt ngoài của màng?",
+        options: ["Mặt trong tích điện âm (-), mặt ngoài tích điện dương (+)", "Mặt trong tích điện dương (+), mặt ngoài tích điện âm (-)", "Cả hai mặt đều không mang điện (điện thế bằng 0)", "Điện thế đảo chiều liên tục mỗi mili-giây"],
+        answer: 0,
+        explanation: "Ở trạng thái điện thế nghỉ (khoảng -70 mV), mặt trong màng neuron mang điện tích âm so với mặt ngoài mang điện tích dương do sự phân bố ion K⁺, Na⁺ và bơm Na⁺-K⁺."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Vì sao trên sợi trục thần kinh có bao myelin, xung thần kinh lại lan truyền với tốc độ nhanh hơn nhiều so với sợi trục không có bao myelin?",
+        options: ["Vì xung thần kinh lan truyền theo kiểu nhảy cóc từ eo Ranvier này sang eo Ranvier kế tiếp", "Vì bao myelin tự phát ra dòng điện cao thế", "Vì sợi có bao myelin ngắn hơn gấp 100 lần", "Vì không cần sử dụng ion Na⁺ và K⁺"],
+        answer: 0,
+        explanation: "Bao myelin có bản chất lipid cách điện; sự khử cực và đảo cực chỉ xảy ra tại các eo Ranvier nên xung thần kinh truyền nhảy cóc rất nhanh và tiết kiệm năng lượng."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Trong quá trình truyền tin qua synapse hóa học, chất trung gian hóa học phổ biến nhất ở động vật có vú là:",
+        options: ["Acetylcholine và noradrenaline", "Hormone insulin và glucagon", "Enzyme amylase và pepsin", "Diệp lục và carotenoid"],
+        answer: 0,
+        explanation: "Acetylcholine và noradrenaline (cùng dopamine, serotonin) là các chất trung gian hóa học chứa trong bóng synapse ở chùy synapse."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Vì sao thông tin truyền qua synapse hóa học chỉ đi theo một chiều duy nhất từ màng trước sang màng sau synapse mà không thể truyền ngược lại?",
+        options: ["Vì chỉ ở chùy synapse (màng trước) mới có bóng chứa chất trung gian hóa học và chỉ ở màng sau mới có thụ thể tiếp nhận đặc hiệu", "Vì khe synapse có van một chiều cơ học", "Vì màng sau synapse không có màng sinh chất", "Vì xung thần kinh bị tiêu hủy hoàn toàn ở sợi nhánh"],
+        answer: 0,
+        explanation: "Do cấu tạo bất đối xứng: bóng chứa chất trung gian hóa học chỉ nằm ở chùy synapse (trước), còn thụ thể tiếp nhận chất này chỉ nằm trên màng sau synapse."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Một cung phản xạ hoàn chỉnh ở động vật có hệ thần kinh gồm 5 khâu theo đúng trình tự nào?",
+        options: ["Bộ phận tiếp nhận kích thích (thụ thể) → Đường dẫn truyền hướng tâm → Trung ương thần kinh → Đường dẫn truyền li tâm → Bộ phận đáp ứng (cơ, tuyến)", "Trung ương thần kinh → Thụ thể → Cơ vân → Não bộ → Tủy sống", "Đường li tâm → Thụ thể → Đường hướng tâm → Cơ quan trả lời", "Thụ thể → Cơ vân → Tuyến nội tiết"],
+        answer: 0,
+        explanation: "Cung phản xạ 5 khâu: Thụ thể cảm giác → Neuron cảm giác (hướng tâm) → Trung ương thần kinh xử lí → Neuron vận động (li tâm) → Cơ quan đáp ứng (cơ/tuyến)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Đặc điểm nào sau đây là của 'phản xạ không điều kiện' (bẩm sinh)?",
+        options: ["Sinh ra đã có, mang tính đặc trưng cho loài, rất bền vững và có tính di truyền", "Hình thành trong đời sống cá thể qua học tập và rèn luyện", "Dễ mất đi nếu không được củng cố thường xuyên", "Có số lượng không hạn định và phụ thuộc từng cá thể"],
+        answer: 0,
+        explanation: "Phản xạ không điều kiện (như rụt tay khi chạm vật nóng, trẻ sơ sinh bú mẹ) là bẩm sinh, di truyền, bền vững suốt đời và đặc trưng cho loài."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Hiện tượng chim non mới nở đi theo vật chuyển động đầu tiên mà chúng nhìn thấy (thường là chim mẹ) thuộc hình thức học tập nào ở động vật?",
+        options: ["In vết (Imprinting)", "Quen nhờn (Habituation)", "Học giải quyết vấn đề (Reasoning)", "Điều kiện hóa hành động"],
+        answer: 0,
+        explanation: "In vết là hình thức học tập nhanh ở giai đoạn nhạy cảm ngay sau khi sinh (đặc biệt ở các loài chim như ngỗng, vịt con), giúp con non nhận biết và bám theo bố mẹ."
+    },
+    {
+        grade: "11", subject: "sinh", term: "GK2",
+        question: "Loại chất gây nghiện nào có trong khói thuốc lá và thuốc lá điện tử tác động trực tiếp lên các thụ thể ở synapse thần kinh trung ương, gây lệ thuộc và hại tim mạch, hô hấp?",
+        options: ["Nicotine", "Vitamin C", "Glucose", "Cellulose"],
+        answer: 0,
+        explanation: "Nicotine trong thuốc lá kích thích giải phóng dopamine ở não gây cảm giác hưng phấn tạm thời và gây nghiện mạnh, đồng thời làm tổn thương mạch máu và phổi."
+    },
+
+    // ===================================================================
+    // 15. SINH HỌC 11 - CUỐI KÌ 2 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Ở cây Hai lá mầm, sự sinh trưởng thứ cấp làm tăng đường kính (bề ngang) của thân và rễ là nhờ hoạt động nguyên phân của loại mô phân sinh nào?",
+        options: ["Mô phân sinh bên (tầng sinh mạch và tầng sinh bần)", "Mô phân sinh đỉnh ngọn", "Mô phân sinh lóng", "Biểu bì lá"],
+        answer: 0,
+        explanation: "Sinh trưởng sơ cấp (tăng chiều dài) do mô phân sinh đỉnh và mô phân sinh lóng; còn sinh trưởng thứ cấp (tăng đường kính thân gỗ cây Hai lá mầm) do mô phân sinh bên đảm nhiệm."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Trong các hormone thực vật sau đây, nhóm nào gồm các hormone có vai trò KÍCH THÍCH sinh trưởng?",
+        options: ["Auxin, Gibberellin (GA) và Cytokinin", "Ethylene và Abscisic acid (ABA)", "Auxin và Abscisic acid", "Chỉ có Ethylene"],
+        answer: 0,
+        explanation: "Hormone thực vật chia làm 2 nhóm: nhóm kích thích sinh trưởng (Auxin, Gibberellin, Cytokinin) và nhóm ức chế sinh trưởng / thúc đẩy già hóa (Ethylene, Abscisic acid)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Hormone thực vật dạng khí nào có vai trò thúc đẩy quả chín nhanh và kích thích sự rụng lá, rụng quả?",
+        options: ["Ethylene (C₂H₄)", "Cytokinin", "Gibberellin", "Auxin"],
+        answer: 0,
+        explanation: "Ethylene là hormone thực vật tồn tại ở thể khí, được tổng hợp mạnh khi quả bước vào giai đoạn chín (nên xếp quả chín cạnh quả xanh giúp quả xanh nhanh chín)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Loài động vật nào sau đây phát triển qua biến thái hoàn toàn (ấu trùng có hình thái, cấu tạo và sinh lí rất khác với con trưởng thành)?",
+        options: ["Bướm, ruồi, muỗi, ong và ếch đồng", "Châu chấu, cào cào, gián (biến thái không hoàn toàn)", "Chó, mèo, thỏ và người (không qua biến thái)", "Cá chép, gà và chim bồ câu"],
+        answer: 0,
+        explanation: "Bướm (sâu bướm → nhộng → bướm), muỗi (bọ gậy → lăng quăng → muỗi), ếch (nòng nọc có đuôi thở bằng mang → ếch trưởng thành thở bằng phổi) phát triển qua biến thái hoàn toàn."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Ở động vật có xương sống và người, hormone nào do tuyến giáp tiết ra (có thành phần chứa iodine) đóng vai trò thúc đẩy chuyển hóa cơ bản ở tế bào và kích thích biến thái từ nòng nọc thành ếch?",
+        options: ["Thyroxine", "Hormone sinh trưởng (GH) của tuyến yên", "Ecdysone", "Juvenile"],
+        answer: 0,
+        explanation: "Thyroxine do tuyến giáp tiết ra kích thích chuyển hóa ở tế bào và phát triển hệ thần kinh; ở lưỡng cư, thyroxine điều khiển quá trình biến thái nòng nọc thành ếch."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Sự lột xác và biến thái của sâu bướm thành nhộng rồi thành bướm trưởng thành được điều hòa bởi hai loại hormone đối kháng nào ở côn trùng?",
+        options: ["Ecdysone và Juvenile", "Testosterone và Estrogen", "Insulin và Glucagon", "Auxin và Cytokinin"],
+        answer: 0,
+        explanation: "Ở côn trùng, hormone Ecdysone gây lột xác và thúc đẩy biến thái thành nhộng/bướm, còn hormone Juvenile ức chế sự biến thái khi nồng độ còn cao."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Cơ sở tế bào học của hình thức sinh sản vô tính ở sinh vật là quá trình phân bào nào?",
+        options: ["Quá trình nguyên phân (giúp cơ thể con có bộ nhiễm sắc thể giống hệt cơ thể mẹ)", "Quá trình giảm phân và thụ tinh", "Sự tiếp hợp trao đổi chéo nhiễm sắc thể", "Sự đột biến đa bội hóa"],
+        answer: 0,
+        explanation: "Sinh sản vô tính dựa trên cơ sở nguyên phân và biệt hóa tế bào, nên thế hệ con mang bộ gene giống hệt cá thể mẹ ban đầu."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Phương pháp nhân giống vô tính hiện đại nào cho phép tạo ra hàng vạn cây giống đồng nhất về mặt di truyền, sạch bệnh virus từ một mảnh mô nhỏ (đỉnh sinh trưởng) trong môi trường dinh dưỡng vô trùng?",
+        options: ["Nuôi cấy mô và tế bào thực vật (vi nhân giống / in vitro)", "Giâm cành truyền thống ngoài ruộng", "Gieo hạt tự nhiên sau thụ phấn chéo", "Chiết cành thủ công"],
+        answer: 0,
+        explanation: "Nuôi cấy mô tế bào dựa trên tính toàn năng của tế bào thực vật, giúp nhân nhanh giống cây quý hiếm, sạch bệnh với hệ số nhân giống rất cao."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Ở thực vật có hoa (Thực vật Hạt kín), túi phôi (thể giao tử cái trưởng thành) tiêu biểu chứa bao nhiêu tế bào và bao nhiêu nhân?",
+        options: ["7 tế bào với 8 nhân (gồm 1 tế bào trứng, 2 tế bào kèm, 3 tế bào đối cực và 1 tế bào trung tâm chứa 2 nhân cực)", "4 tế bào đơn bội giống hệt nhau", "2 tế bào gồm tế bào sinh dưỡng và tế bào sinh sản", "1 tế bào duy nhất mang bộ NST 2n"],
+        answer: 0,
+        explanation: "Từ 1 đại bào tử (n) nguyên phân 3 lần liên tiếp tạo túi phôi 8 nhân phân bố trong 7 tế bào (riêng tế bào trung tâm chứa 2 nhân cực)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Hiện tượng 'thụ tinh kép' đặc trưng chỉ có ở Thực vật Hạt kín (thực vật có hoa) diễn ra như thế nào?",
+        options: ["Một tinh tử (n) kết hợp với trứng (n) tạo hợp tử (2n), đồng thời tinh tử thứ hai (n) kết hợp với nhân lưỡng bội/2 nhân cực (2n) tạo nhân nội nhũ tam bội (3n)", "Hai tinh tử cùng thụ tinh với một tế bào trứng duy nhất", "Hai hạt phấn cùng nảy mầm trên một đầu nhụy", "Một trứng kết hợp với hai hạt phấn khác loài"],
+        answer: 0,
+        explanation: "Thụ tinh kép: Giao tử đực 1 (n) + Trứng (n) → Hợp tử (2n, phát triển thành phôi); Giao tử đực 2 (n) + 2 nhân cực (2n) → Nhân tam bội (3n, phát triển thành nội nhũ nuôi phôi)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Sau khi thụ tinh ở thực vật có hoa, bộ phận nào của hoa sẽ phát triển thành QUẢ và bộ phận nào phát triển thành HẠT?",
+        options: ["Bầu nhụy phát triển thành quả; noãn đã thụ tinh phát triển thành hạt", "Đài hoa phát triển thành hạt; cánh hoa phát triển thành quả", "Bao phấn phát triển thành quả; hạt phấn thành hạt", "Cuống hoa phát triển thành hạt"],
+        answer: 0,
+        explanation: "Sau thụ tinh, noãn chứa hợp tử và nội nhũ biến đổi thành hạt, còn bầu nhụy sinh trưởng dày lên tạo thành quả bảo vệ hạt."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Hình thức sinh sản mà tế bào trứng không qua thụ tinh vẫn nguyên phân phát triển thành cơ thể mới (như sự hình thành ong đực mang bộ NST đơn bội n từ trứng không thụ tinh của ong chúa) được gọi là:",
+        options: ["Trinh sinh (trinh sản / parthenogenesis)", "Nảy chồi vô tính", "Phân mảnh cơ thể", "Thụ tinh ngoài"],
+        answer: 0,
+        explanation: "Trinh sinh là hình thức sinh sản trong đó giao tử cái (trứng) không thụ tinh phát triển thành cá thể mới, thường gặp ở ong, kiến, rệp."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Ở người và thú, quá trình sản sinh tinh trùng và sản sinh trứng chịu sự điều hòa trực tiếp của hai loại hormone hướng sinh dục nào do thùy trước tuyến yên tiết ra?",
+        options: ["FSH và LH", "Insulin và Glucagon", "Adrenaline và Thyroxine", "Oxytocin và Calcitonin"],
+        answer: 0,
+        explanation: "Vùng dưới đồi tiết GnRH kích thích tuyến yên tiết FSH (kích thích ống sinh tinh / nang trứng phát triển) và LH (kích thích tế bào Leydig tiết testosterone / gây rụng trứng và tạo thể vàng)."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Trong chu kì kinh nguyệt của phụ nữ, thể vàng (hoàng thể) tiết ra một lượng lớn hai loại hormone nào để làm dày niêm mạc tử cung chuẩn bị đón hợp tử làm tổ và ức chế ngược tuyến yên tiết FSH, LH?",
+        options: ["Progesterone và Estrogen", "Testosterone và GH", "FSH và GnRH", "Thyroxine và Insulin"],
+        answer: 0,
+        explanation: "Sau khi trứng rụng, phần nang trứng còn lại biến thành thể vàng tiết Progesterone và Estrogen duy trì niêm mạc tử cung và ức chế chín, rụng trứng mới."
+    },
+    {
+        grade: "11", subject: "sinh", term: "CK2",
+        question: "Cơ chế tác dụng chủ yếu của viên thuốc tránh thai hàng ngày (chứa progesterone và estrogen tổng hợp) là gì?",
+        options: ["Duy trì nồng độ progesterone và estrogen trong máu cao để ức chế vùng dưới đồi và tuyến yên tiết GnRH, FSH, LH, từ đó ngăn cản trứng chín và rụng", "Làm tiêu hủy hoàn toàn buồng trứng vĩnh viễn", "Kích thích nhiều trứng rụng cùng một lúc", "Chỉ có tác dụng tiêu diệt vi khuẩn đường ruột"],
+        answer: 0,
+        explanation: "Dựa vào cơ chế liên hệ ngược âm tính: uống viên tránh thai hàng ngày giữ nồng độ progesterone + estrogen cao, ức chế tuyến yên tiết FSH và LH nên trứng không chín và không rụng."
     }
 ];
