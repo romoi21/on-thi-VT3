@@ -1,5 +1,5 @@
 // =========================================================================
-// NGÂN HÀNG CÂU HỎI KHỐI 11 - 4 KÌ (ĐỦ 15 CÂU/KÌ: TOÁN, LÝ, ANH, VĂN, HÓA, SINH) - NHÓM K71
+// NGÂN HÀNG CÂU HỎI KHỐI 11 - 4 KÌ (ĐỦ 15 CÂU/KÌ: TOÁN, LÝ, ANH, VĂN, HÓA, SINH, CÔNG NGHỆ) - NHÓM K71
 // =========================================================================
 
 var QUESTION_BANK = [
@@ -2650,5 +2650,441 @@ var QUESTION_BANK = [
         options: ["Duy trì nồng độ progesterone và estrogen trong máu cao để ức chế vùng dưới đồi và tuyến yên tiết GnRH, FSH, LH, từ đó ngăn cản trứng chín và rụng", "Làm tiêu hủy hoàn toàn buồng trứng vĩnh viễn", "Kích thích nhiều trứng rụng cùng một lúc", "Chỉ có tác dụng tiêu diệt vi khuẩn đường ruột"],
         answer: 0,
         explanation: "Dựa vào cơ chế liên hệ ngược âm tính: uống viên tránh thai hàng ngày giữ nồng độ progesterone + estrogen cao, ức chế tuyến yên tiết FSH và LH nên trứng không chín và không rụng."
+    },
+
+    // ===================================================================
+    // 16. CÔNG NGHỆ 11 - GIỮA KÌ 1 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Theo tiêu chuẩn Việt Nam (TCVN 7285:2003) về bản vẽ kĩ thuật, khổ giấy A4 có kích thước chuẩn ( tính theo đơn vị mm) là bao nhiêu?",
+        options: ["297 × 210 mm", "420 × 297 mm", "594 × 420 mm", "841 × 594 mm"],
+        answer: 0,
+        explanation: "Các khổ giấy chính theo TCVN: A0 (1189 × 841), A1 (841 × 594), A2 (594 × 420), A3 (420 × 297) và A4 (297 × 210 mm)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Trên bản vẽ kĩ thuật, tỉ lệ nào sau đây là 'tỉ lệ thu nhỏ'?",
+        options: ["1 : 2", "2 : 1", "5 : 1", "1 : 1"],
+        answer: 0,
+        explanation: "Tỉ lệ là tỉ số giữa kích thước đo trên hình biểu diễn và kích thước thực của vật thể. Tỉ lệ 1 : 2 là tỉ lệ thu nhỏ; 1 : 1 là nguyên hình; 2 : 1 là phóng to."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Trong các loại nét vẽ trên bản vẽ kĩ thuật, 'nét liền đậm' được dùng để biểu diễn yếu tố nào?",
+        options: ["Đường bao thấy và cạnh thấy của vật thể", "Đường bao khuất và cạnh khuất", "Đường tâm và đường trục đối xứng", "Đường gióng và đường kích thước"],
+        answer: 0,
+        explanation: "Nét liền đậm biểu diễn đường bao thấy, cạnh thấy; nét đứt mảnh biểu diễn đường khuất; nét gạch chấm mảnh biểu diễn đường tâm/trục đối xứng; nét liền mảnh biểu diễn đường kích thước, đường gióng."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Nếu trên bản vẽ kĩ thuật không ghi kèm đơn vị đo sau con số kích thước dài thì đơn vị mặc định được quy ước là gì?",
+        options: ["Milimét (mm)", "Xentimét (cm)", "Mét (m)", "Inch (in)"],
+        answer: 0,
+        explanation: "Theo TCVN về bản vẽ kĩ thuật, kích thước độ dài luôn tính bằng milimét (mm) và không cần ghi đơn vị đo trên bản vẽ."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Trong phương pháp chiếu góc thứ nhất (tiêu chuẩn Việt Nam và châu Âu), vị trí của 'hình chiếu bằng' và 'hình chiếu cạnh' so với 'hình chiếu đứng' được bố trí như thế nào?",
+        options: ["Hình chiếu bằng ở dưới hình chiếu đứng; hình chiếu cạnh ở bên phải hình chiếu đứng", "Hình chiếu bằng ở trên hình chiếu đứng; hình chiếu cạnh ở bên trái hình chiếu đứng", "Ba hình chiếu đặt chồng khít lên nhau", "Hình chiếu cạnh ở dưới hình chiếu bằng"],
+        answer: 0,
+        explanation: "Trong phương pháp chiếu góc thứ nhất: Hình chiếu đứng ở góc trên bên trái, hình chiếu bằng đặt ngay dưới hình chiếu đứng, và hình chiếu cạnh đặt bên phải hình chiếu đứng."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Điểm khác biệt cơ bản giữa 'Mặt cắt' và 'Hình cắt' trên bản vẽ kĩ thuật là gì?",
+        options: ["Mặt cắt chỉ biểu diễn các đường bao nằm ngay trên mặt phẳng cắt, còn hình cắt biểu diễn cả mặt cắt và các đường bao của vật thể nằm sau mặt phẳng cắt", "Mặt cắt vẽ bằng nét đứt, hình cắt vẽ bằng nét chấm gạch", "Mặt cắt chỉ dùng cho chi tiết gỗ, hình cắt chỉ dùng cho kim loại", "Mặt cắt luôn phóng to gấp đôi hình cắt"],
+        answer: 0,
+        explanation: "Mặt cắt là hình biểu diễn phần vật thể nằm trên mặt phẳng cắt; còn hình cắt là hình biểu diễn mặt cắt cùng với các đường bao của vật thể ở phía sau mặt phẳng cắt."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Hình chiếu trục đo vuông góc đều có các góc trục đo (X'O'Y', Y'O'Z', X'O'Z') và các hệ số biến dạng (p, q, r) bằng bao nhiêu?",
+        options: ["X'O'Y' = Y'O'Z' = X'O'Z' = 120° và p = q = r = 1", "X'O'Z' = 90°, X'O'Y' = Y'O'Z' = 135° và p = r = 1, q = 0,5", "Tất cả các góc bằng 90° và p = q = r = 0,5", "X'O'Y' = 60° và p = 2"],
+        answer: 0,
+        explanation: "Hình chiếu trục đo vuông góc đều có 3 góc trục đo bằng nhau bằng 120° và hệ số biến dạng quy ước trên cả 3 trục p = q = r = 1."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Hình chiếu trục đo xiên góc cân có hệ số biến dạng theo trục O'Y' (trục chiều rộng q) bằng bao nhiêu?",
+        options: ["q = 0,5 (trong khi p = r = 1)", "q = 1", "q = 2", "q = 0,82"],
+        answer: 0,
+        explanation: "Hình chiếu trục đo xiên góc cân có góc X'O'Z' = 90°, hai góc còn lại 135°; hệ số biến dạng theo trục O'X' và O'Z' bằng 1 (p = r = 1), còn theo trục O'Y' giảm một nửa (q = 0,5)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Nội dung nào sau đây có trong 'Bản vẽ lắp' nhưng KHÔNG có trong 'Bản vẽ chi tiết'?",
+        options: ["Bảng kê (liệt kê tên gọi, số lượng, vật liệu của từng chi tiết trong bộ phận lắp)", "Khung tên", "Hình biểu diễn vật thể", "Kích thước chung"],
+        answer: 0,
+        explanation: "Bản vẽ lắp diễn tả hình dạng và vị trí tương quan của một nhóm chi tiết được lắp với nhau nên có thêm 'Bảng kê' các chi tiết và kích thước lắp."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Trong cơ khí chế tạo, hai hợp kim chính của sắt với carbon (kim loại đen) là Thép và Gang được phân biệt dựa trên hàm lượng nguyên tố Carbon (C) ở mốc bao nhiêu phần trăm?",
+        options: ["2,14% (Thép có C ≤ 2,14%; Gang có C > 2,14% đến 6,67%)", "0,5% (Thép có C > 0,5%)", "10% (Thép có C > 10%)", "50%"],
+        answer: 0,
+        explanation: "Hợp kim Fe – C có hàm lượng C ≤ 2,14% là Thép (dẻo, dễ gia công biến dạng), còn hàm lượng C > 2,14% là Gang (cứng, giòn, đúc tốt)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Tính chất cơ học đặc trưng cho khả năng của vật liệu cơ khí chống lại sự biến dạng dẻo hoặc phá hủy dưới tác dụng của ngoại lực được gọi là:",
+        options: ["Độ bền", "Độ dẻo", "Độ dẫn điện", "Tính chịu ăn mòn hóa học"],
+        answer: 0,
+        explanation: "Các tính chất cơ học cơ bản của vật liệu gồm: độ bền (chống phá hủy), độ dẻo (khả năng biến dạng vĩnh cửu mà không bị phá hủy) và độ cứng (chống biến dạng cục bộ bề mặt)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Nhóm vật liệu nào sau đây thuộc nhóm 'kim loại màu và hợp kim kim loại màu' dùng phổ biến trong cơ khí?",
+        options: ["Đồng (Cu), Nhôm (Al) và các hợp kim của chúng (đồng thau, đuy-ra)", "Gang xám và gang cầu", "Thép carbon và thép hợp kim", "Cao su và chất dẻo nhiệt rắn"],
+        answer: 0,
+        explanation: "Kim loại ngoài sắt và hợp kim sắt được gọi là kim loại màu, phổ biến nhất trong cơ khí là nhôm, đồng và hợp kim của chúng (dẫn điện, dẫn nhiệt tốt, chống ăn mòn cao)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Vật liệu được tổ hợp từ hai hay nhiều vật liệu khác nhau (gồm vật liệu nền và vật liệu cốt) tạo nên vật liệu mới có tính năng vượt trội hơn hẳn từng vật liệu thành phần được gọi là:",
+        options: ["Vật liệu composite", "Gang trắng", "Thép gió", "Gốm sứ truyền thống"],
+        answer: 0,
+        explanation: "Vật liệu composite (ví dụ composite cốt sợi carbon, sợi thủy tinh) kết hợp vật liệu cốt chịu lực và vật liệu nền liên kết, tạo ra độ bền riêng rất cao và khối lượng nhẹ."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Trên bản vẽ mặt bằng tổng thể hoặc bản vẽ nhà, kí hiệu mặt cắt của vật liệu 'bê tông cốt thép' hoặc 'gạch xây' thường được thể hiện ở đâu?",
+        options: ["Trên các hình cắt mặt bằng và mặt cắt đứng của công trình", "Chỉ ghi bằng chữ ở ngoài lề giấy", "Trên đường kích thước", "Trong khung tên"],
+        answer: 0,
+        explanation: "Trong bản vẽ xây dựng, hình cắt mặt bằng (cắt ngang qua cửa sổ) và hình cắt đứng dùng các kí hiệu vật liệu quy ước để thể hiện tường gạch, cột bê tông, cửa đi, cửa sổ."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK1",
+        question: "Phần mềm nào sau đây là phần mềm hỗ trợ thiết kế và lập bản vẽ kĩ thuật trên máy tính (CAD – Computer Aided Design) phổ biến nhất trong ngành cơ khí và xây dựng?",
+        options: ["AutoCAD / SolidWorks", "Microsoft Word", "Adobe Audition", "Windows Media Player"],
+        answer: 0,
+        explanation: "AutoCAD, SolidWorks, Inventor là các phần mềm CAD chuyên dụng để vẽ kĩ thuật 2D và mô hình hóa 3D chi tiết cơ khí, bản vẽ xây dựng."
+    },
+
+    // ===================================================================
+    // 17. CÔNG NGHỆ 11 - CUỐI KÌ 1 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Phương pháp gia công cơ khí nào sau đây thuộc nhóm 'gia công không phoi' (chế tạo phôi)?",
+        options: ["Đúc, gia công áp lực (rèn, dập) và hàn", "Tiện và phay", "Khoan và doa", "Bào và mài"],
+        answer: 0,
+        explanation: "Đúc, rèn, dập và hàn là các phương pháp gia công không tách phoi kim loại, thường dùng để chế tạo phôi hoặc tạo hình sản phẩm cơ khí."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Bản chất của phương pháp 'Đúc kim loại trong khuôn cát' là gì?",
+        options: ["Nấu chảy kim loại thành trạng thái lỏng rồi rót vào lòng khuôn có hình dạng, kích thước xác định; sau khi kim loại kết tinh và nguội sẽ thu được vật đúc", "Dùng búa đập mạnh vào phôi kim loại ở trạng thái nguội", "Dùng dao cắt bỏ lớp kim loại thừa trên máy tiện", "Nung nóng chảy cục bộ chỗ nối hai chi tiết bằng tia lửa điện"],
+        answer: 0,
+        explanation: "Đúc là phương pháp rót kim loại lỏng vào khuôn, chờ kim loại đông đặc kết tinh tạo thành vật đúc có hình dạng giống lòng khuôn."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Phương pháp 'Hàn hồ quang tay' và 'Hàn hơi (hàn khí)' thuộc nhóm công nghệ hàn nào?",
+        options: ["Hàn nóng chảy (nung kim loại tại chỗ nối đến trạng thái nóng chảy để liên kết với nhau)", "Hàn áp lực ở trạng thái rắn", "Ghép bằng bu lông – đai ốc", "Ghép bằng đinh tán"],
+        answer: 0,
+        explanation: "Hàn hồ quang điện và hàn khí dùng nhiệt của ngọn lửa hồ quang hoặc phản ứng cháy khí (acetylene – oxygen) làm nóng chảy kim loại chỗ nối và que hàn."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Trên máy tiện vạn năng, khi gia công cắt gọt các chi tiết tròn xoay (như trục bậc, trục trơn, côn), chuyển động cắt chính và chuyển động tiến dao diễn ra như thế nào?",
+        options: ["Phôi (chi tiết gia công) quay tròn tạo chuyển động cắt chính; dao tiện chuyển động tịnh tiến dọc hoặc ngang tạo chuyển động tiến dao", "Dao tiện quay tròn tốc độ cao; phôi đứng yên hoàn toàn", "Cả phôi và dao đều đứng yên", "Phôi chuyển động tịnh tiến thẳng; dao quay tròn"],
+        answer: 0,
+        explanation: "Nguyên lí gia công trên máy tiện: phôi kẹp trên mâm cặp quay tròn (chuyển động chính), còn dao tiện gắn trên bàn dao chuyển động tịnh tiến dọc/ngang (chuyển động tiến dao)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Ngược lại với máy tiện, khi gia công mặt phẳng hoặc rãnh trên 'Máy phay', chuyển động quay tròn chính thuộc về bộ phận nào?",
+        options: ["Dao phay (dụng cụ cắt có nhiều lưỡi cắt) quay tròn tạo chuyển động chính, còn phôi gắn trên bàn máy chuyển động tịnh tiến", "Phôi quay tròn còn dao phay đứng yên", "Chỉ có bàn máy quay tròn", "Dao phay chỉ chuyển động thẳng lên xuống"],
+        answer: 0,
+        explanation: "Khi phay, dao phay nhiều lưỡi cắt gắn trên trục chính quay tròn (chuyển động cắt chính), còn phôi kẹp trên bàn máy di chuyển tịnh tiến theo các phương X, Y, Z."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Phương pháp gia công cắt gọt phổ biến nhất dùng để tạo lỗ trụ mới trên phôi đặc hoặc mở rộng lỗ có sẵn là:",
+        options: ["Phương pháp Khoan (trên máy khoan hoặc máy tiện)", "Phương pháp Bào", "Phương pháp Chuốt mặt ngoài", "Phương pháp Cán kim loại"],
+        answer: 0,
+        explanation: "Khoan sử dụng mũi khoan ruột gà vừa quay tròn vừa tịnh tiến dọc trục để gia công lỗ trên vật đặc hoặc mở rộng lỗ."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Quy trình công nghệ chế tạo một sản phẩm cơ khí thông thường diễn ra theo trình tự các bước chính nào sau đây?",
+        options: ["Bản vẽ kĩ thuật → Chế tạo phôi → Gia công tạo hình chi tiết → Xử lí và bảo vệ bề mặt → Lắp ráp và kiểm tra đóng gói", "Lắp ráp → Đúc phôi → Thiết kế bản vẽ → Sơn chống gỉ", "Sơn phủ bề mặt → Tiện phay → Nấu chảy kim loại", "Đóng gói → Chế tạo phôi → Gia công cắt gọt"],
+        answer: 0,
+        explanation: "Trình tự chuẩn của quá trình sản xuất cơ khí: Thiết kế bản vẽ → Chế tạo phôi (đúc, rèn, dập) → Gia công cắt gọt → Xử lí nhiệt / bảo vệ bề mặt → Lắp ráp & Kiểm tra chất lượng."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Thuật ngữ 'Máy công cụ CNC' trong sản xuất cơ khí hiện đại là viết tắt của cụm từ tiếng Anh nào?",
+        options: ["Computer Numerical Control (Điều khiển số bằng máy tính)", "Central Network Connection", "Chemical Nano Coating", "Carbon Nickel Composite"],
+        answer: 0,
+        explanation: "CNC (Computer Numerical Control) là các máy gia công cơ khí (máy tiện CNC, máy phay CNC) được điều khiển tự động theo chương trình số lập trình trên máy tính."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Ưu điểm vượt trội của việc ứng dụng Robot công nghiệp trong dây chuyền hàn, lắp ráp và sơn ô tô là gì?",
+        options: ["Năng suất và độ chính xác lặp lại rất cao, làm việc liên tục 24/7 và thay thế con người trong môi trường độc hại, nguy hiểm", "Không cần sử dụng điện năng hay bảo dưỡng định kì", "Chi phí đầu tư ban đầu bằng không", "Chỉ làm việc được vào ban ngày"],
+        answer: 0,
+        explanation: "Robot công nghiệp tự động hóa các thao tác nặng nhọc, độc hại (hàn, sơn, bốc xếp phôi nóng) với độ chính xác và năng suất ổn định vượt trội."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Công nghệ sản xuất bồi đắp (tạo ra vật thể 3 chiều bằng cách đắp từng lớp vật liệu chồng lên nhau từ thiết kế số) được gọi phổ biến là gì?",
+        options: ["Công nghệ in 3D (3D Printing / Additive Manufacturing)", "Công nghệ tiện thủ công", "Công nghệ rèn tự do", "Công nghệ dập nguội"],
+        answer: 0,
+        explanation: "Công nghệ in 3D (gia công bồi đắp) đắp từng lớp vật liệu (nhựa, bột kim loại) theo mô hình 3D CAD, giúp chế tạo nhanh các chi tiết có hình dáng phức tạp."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Trong dây chuyền sản xuất thông minh của cuộc Cách mạng công nghiệp lần thứ tư (Công nghiệp 4.0), công nghệ nào giúp kết nối các máy móc, cảm biến và thiết bị trong nhà máy qua mạng Internet để trao đổi dữ liệu thời gian thực?",
+        options: ["Internet vạn vật công nghiệp (IIoT – Industrial Internet of Things)", "Động cơ hơi nước cổ điển", "Băng tải kéo tay", "Khuôn đúc cát thủ công"],
+        answer: 0,
+        explanation: "IIoT kết hợp với Trí tuệ nhân tạo (AI), Dữ liệu lớn (Big Data) và Điện toán đám mây tạo nên nhà máy thông minh (Smart Factory) trong Công nghiệp 4.0."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Góc tạo bởi mặt trước và mặt sau của phần lưỡi cắt trên dao tiện được gọi là góc gì?",
+        options: ["Góc sắc (β)", "Góc trước (γ)", "Góc sau (α)", "Góc cắt (δ)"],
+        answer: 0,
+        explanation: "Trên dao tiện: Góc trước (γ) tạo bởi mặt trước và mặt phẳng đáy; Góc sau (α) tạo bởi mặt sau và mặt phẳng cắt; Góc sắc (β) là góc giữa mặt trước và mặt sau của lưỡi cắt (α + β + γ = 90°)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Để bảo vệ chi tiết máy bằng thép không bị ăn mòn (gỉ sét) trong môi trường không khí ẩm, người ta thường áp dụng phương pháp bảo vệ bề mặt nào?",
+        options: ["Sơn chống gỉ, mạ kẽm, mạ crôm hoặc nhuộm đen hóa học", "Để chi tiết thép ngoài mưa nắng tự nhiên", "Ngâm chi tiết thép trong dung dịch nước muối", "Dùng giấy nhám chà xát hàng ngày"],
+        answer: 0,
+        explanation: "Phủ lớp bảo vệ (sơn, tráng men, mạ điện kim loại chống ăn mòn như Zn, Ni, Cr) giúp cách li bề mặt chi tiết thép với tác nhân oxi hóa của môi trường."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Khi vận hành máy tiện, máy phay, máy khoan hoặc hàn hồ quang điện trong xưởng cơ khí, quy tắc an toàn lao động nào sau đây là BẮT BUỘC?",
+        options: ["Mặc quần áo bảo hộ gọn gàng, đeo kính bảo hộ / mặt nạ hàn, kiểm tra nối đất an toàn điện và không dùng tay không gạt phoi khi máy đang quay", "Đeo khăn quàng cổ dài và găng tay sợi xù khi điều khiển mâm cặp đang quay tốc độ cao", "Tháo bỏ che chắn an toàn của đá mài và đai truyền", "Dùng tay chạm vào phôi và mũi dao khi trục chính đang quay"],
+        answer: 0,
+        explanation: "Trang bị bảo hộ lao động đúng chuẩn và tuân thủ quy trình vận hành máy cắt gọt giúp phòng tránh tai nạn cuốn vào trục quay, bắn phoi nóng hoặc điện giật."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK1",
+        question: "Giải pháp nào sau đây góp phần bảo vệ môi trường và phát triển bền vững trong sản xuất cơ khí?",
+        options: ["Thu gom, phân loại phoi kim loại để tái chế và xử lí triệt để dầu mỡ bôi trơn, nước làm mát thải, khí thải trước khi xả ra môi trường", "Đổ trực tiếp dầu trơn nguội đã qua sử dụng xuống cống thoát nước sinh hoạt", "Xả thẳng khói bụi lò đúc ra khu dân cư không qua lọc bụi", "Đốt chất thải nhựa và cao su ngoài trời"],
+        answer: 0,
+        explanation: "Sản xuất cơ khí xanh đòi hỏi tái chế phế liệu kim loại, lọc bụi khí thải và xử lí hóa – lí nước thải nhiễm dầu cắt gọt đạt chuẩn môi trường."
+    },
+
+    // ===================================================================
+    // 18. CÔNG NGHỆ 11 - GIỮA KÌ 2 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Một hệ thống cơ khí động lực hoàn chỉnh (như ô tô, tàu thủy, máy kéo) luôn cấu tạo gồm 3 bộ phận chính kết nối theo sơ đồ nào?",
+        options: ["Nguồn động lực → Hệ thống truyền lực → Máy công tác", "Máy công tác → Nguồn động lực → Bánh xe", "Bình nhiên liệu → Khung xe → Đèn chiếu sáng", "Hệ thống phanh → Hệ thống lái → Còi điện"],
+        answer: 0,
+        explanation: "Cấu trúc chung của hệ thống cơ khí động lực: Nguồn động lực (động cơ) sinh ra cơ năng → Hệ thống truyền lực truyền và biến đổi mômen/tốc độ → Máy công tác thực hiện nhiệm vụ."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Động cơ đốt trong là loại động cơ nhiệt mà quá trình đốt cháy nhiên liệu sinh nhiệt và quá trình biến đổi nhiệt năng thành cơ năng diễn ra ở đâu?",
+        options: ["Diễn ra ngay bên trong xi lanh của động cơ", "Diễn ra ở lò hơi đặt bên ngoài động cơ", "Diễn ra trong bình ắc quy điện", "Diễn ra ở bộ tản nhiệt nước làm mát"],
+        answer: 0,
+        explanation: "Đúng như tên gọi 'động cơ đốt trong', cả quá trình cháy nhiên liệu và dãn nở sinh công đều diễn ra trực tiếp trong buồng cháy (xi lanh) của động cơ."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Trong động cơ đốt trong, vị trí mà tại đó pít-tông đổi chiều chuyển động và ở gần tâm trục khuỷu nhất được gọi là gì?",
+        options: ["Điểm chết dưới (ĐCD)", "Điểm chết trên (ĐCT)", "Hành trình pít-tông (S)", "Thể tích buồng cháy (V_c)"],
+        answer: 0,
+        explanation: "Điểm chết là vị trí pít-tông đổi chiều chuyển động: vị trí xa tâm trục khuỷu nhất là Điểm chết trên (ĐCT), vị trí gần tâm trục khuỷu nhất là Điểm chết dưới (ĐCD)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Khi pít-tông dịch chuyển được một hành trình S (từ ĐCT xuống ĐCD hoặc từ ĐCD lên ĐCT) thì trục khuỷu của động cơ quay được một góc bằng bao nhiêu độ?",
+        options: ["180° (nửa vòng quay, với S = 2R)", "360° (một vòng quay)", "720° (hai vòng quay)", "90°"],
+        answer: 0,
+        explanation: "Mỗi hành trình pít-tông S = 2R (với R là bán kính quay của trục khuỷu) ứng với góc quay trục khuỷu là 180° (nửa vòng)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Tỉ số nén (ε) của động cơ đốt trong được tính bằng tỉ số giữa hai đại lượng thể tích nào?",
+        options: ["ε = V_a / V_c = (V_c + V_h) / V_c (Tỉ số giữa thể tích toàn phần và thể tích buồng cháy)", "ε = V_c / V_a", "ε = V_h / V_a", "ε = V_a - V_c"],
+        answer: 0,
+        explanation: "Tỉ số nén ε = V_a / V_c cho biết hòa khí hoặc không khí trong xi lanh bị nén nhỏ đi bao nhiêu lần khi pít-tông đi từ ĐCD lên ĐCT (động cơ xăng ε ≈ 6–12; động cơ diesel ε ≈ 15–21)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Trong một chu trình làm việc của động cơ đốt trong 4 kì (Nạp – Nén – Cháy dãn nở – Thải), pít-tông thực hiện bao nhiêu hành trình và trục khuỷu quay bao nhiêu vòng?",
+        options: ["Pít-tông thực hiện 4 hành trình; trục khuỷu quay 2 vòng (720°)", "Pít-tông thực hiện 2 hành trình; trục khuỷu quay 1 vòng (360°)", "Pít-tông thực hiện 4 hành trình; trục khuỷu quay 4 vòng", "Pít-tông thực hiện 1 hành trình; trục khuỷu quay nửa vòng"],
+        answer: 0,
+        explanation: "Ở động cơ 4 kì, chu trình công tác hoàn thành sau 4 hành trình của pít-tông, tương ứng với 2 vòng quay (720°) của trục khuỷu, trong đó chỉ có 1 kì sinh công."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Trong 4 kì của động cơ đốt trong 4 kì, kì duy nhất trực tiếp sinh công làm quay trục khuỷu là kì nào và trạng thái của hai xu-páp (nạp, thải) ở kì đó ra sao?",
+        options: ["Kì 3 (Kì cháy – dãn nở); cả hai xu-páp nạp và xu-páp thải đều đóng kín", "Kì 1 (Kì nạp); xu-páp nạp mở, xu-páp thải đóng", "Kì 2 (Kì nén); cả hai xu-páp đều mở", "Kì 4 (Kì thải); xu-páp thải mở"],
+        answer: 0,
+        explanation: "Ở kì cháy – dãn nở (kì nổ) và kì nén, cả hai xu-páp nạp và thải đều phải đóng kín hoàn toàn để áp suất khí cháy đẩy pít-tông từ ĐCT xuống ĐCD sinh công."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Điểm khác biệt cơ bản trong kì nạp và cách đốt cháy nhiên liệu giữa 'Động cơ Diesel 4 kì' và 'Động cơ Xăng 4 kì' là gì?",
+        options: ["Động cơ Diesel ở kì nạp chỉ hút không khí sạch và cuối kì nén nhiên liệu diesel phun vào tự bốc cháy do áp suất, nhiệt độ cao (không dùng bugi)", "Động cơ Diesel hút hòa khí xăng – không khí và dùng bugi bật tia lửa điện", "Động cơ xăng có tỉ số nén cao gấp đôi động cơ Diesel", "Động cơ Diesel không có xu-páp nạp và thải"],
+        answer: 0,
+        explanation: "Động cơ Diesel nạp không khí sạch, nén ở tỉ số nén rất cao (ε = 15 – 21) làm nhiệt độ khí nén vượt nhiệt độ tự bốc cháy của dầu diesel khi vòi phun phun tơi vào cuối kì nén."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Trong cơ cấu trục khuỷu thanh truyền của động cơ đốt trong, chi tiết nào làm nhiệm vụ truyền lực giữa pít-tông và trục khuỷu, đồng thời biến chuyển động tịnh tiến của pít-tông thành chuyển động quay tròn của trục khuỷu?",
+        options: ["Thanh truyền", "Xu-páp", "Bánh đà", "Trục cam"],
+        answer: 0,
+        explanation: "Thanh truyền có đầu nhỏ lắp với chốt pít-tông và đầu to lắp với chốt khuỷu, giúp truyền lực và biến đổi chuyển động tịnh tiến khứ hồi của pít-tông thành chuyển động quay của trục khuỷu."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Nhiệm vụ của 'Cơ cấu phân phối khí' trong động cơ đốt trong 4 kì là gì?",
+        options: ["Đóng mở các cửa nạp và cửa thải (xu-páp) đúng lúc để động cơ thực hiện quá trình nạp khí mới vào xi lanh và thải khí đã cháy ra ngoài", "Phun nhiên liệu vào buồng cháy", "Bơm dầu bôi trơn lên các bề mặt ma sát", "Làm mát thành xi lanh bằng nước"],
+        answer: 0,
+        explanation: "Cơ cấu phân phối khí dùng trục cam dẫn động đóng mở các xu-páp nạp và xu-páp thải theo đúng pha phối khí của chu trình."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Trong hệ thống bôi trơn cưỡng bức của động cơ đốt trong, bộ phận nào có nhiệm vụ giữ lại khi dầu bị quá bẩn hoặc khi bầu lọc tinh bị tắc, van nào sẽ mở để dầu vẫn đi tắt lên bôi trơn các bề mặt ma sát mà không làm cháy ổ trục?",
+        options: ["Van an toàn ở bơm dầu và van khống chế (van перепуск / bypass) ở bầu lọc dầu", "Van hằng nhiệt của két nước", "Xu-páp thải", "Vòi phun nhiên liệu"],
+        answer: 0,
+        explanation: "Khi bầu lọc dầu bị tắc, van khống chế mở ra cho dầu đi tắt thẳng lên đường dầu chính để đảm bảo các cổ trục không bị thiếu dầu bôi trơn."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Trong hệ thống làm mát bằng nước tuần hoàn cưỡng bức của động cơ ô tô, 'Van hằng nhiệt' có tác dụng gì?",
+        options: ["Tự động điều chỉnh lưu lượng nước qua két làm mát theo nhiệt độ động cơ (khi nước còn lạnh thì cho quay về trước bơm để động cơ nhanh đạt nhiệt độ làm việc tối ưu)", "Đun sôi nước làm mát trước khi nổ máy", "Lọc sạch cặn bẩn trong dầu bôi trơn", "Hòa trộn xăng với nước làm mát"],
+        answer: 0,
+        explanation: "Van hằng nhiệt giúp giữ nhiệt độ nước làm mát luôn ở mức tối ưu (khoảng 80–95 °C): khi máy mới nổ còn nguội thì đóng đường ra két nước, khi máy quá nóng thì mở hoàn toàn cho nước qua két giải nhiệt."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "So với hệ thống nhiên liệu dùng bộ chế hòa khí truyền thống, 'Hệ thống phun xăng điện tử (EFI)' trên ô tô, xe máy hiện đại có ưu điểm nổi bật nào?",
+        options: ["Điều chỉnh chính xác tỉ lệ hòa khí theo mọi chế độ làm việc của động cơ nhờ bộ điều khiển điện tử ECU và các cảm biến, giúp tiết kiệm nhiên liệu và giảm khí thải độc hại", "Không cần dùng bơm xăng và vòi phun", "Không cần sử dụng điện từ ắc quy", "Chỉ hoạt động được khi xe chạy ở tốc độ cố định"],
+        answer: 0,
+        explanation: "Hệ thống phun xăng điện tử dùng các cảm biến gửi tín hiệu về ECU để tính toán lượng xăng phun tối ưu ở từng chu trình, tiết kiệm nhiên liệu và giảm ô nhiễm môi trường."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Trong hệ thống nhiên liệu động cơ Diesel, hai bộ phận có độ chính xác gia công cơ khí cực cao để tạo áp suất nhiên liệu lớn và phun tơi dầu diesel vào buồng cháy là:",
+        options: ["Bơm cao áp và Vòi phun", "Bộ chế hòa khí và Bugi", "Bình ắc quy và Máy phát điện", "Két nước và Quạt gió"],
+        answer: 0,
+        explanation: "Ở động cơ Diesel, bơm cao áp cung cấp nhiên liệu với áp suất rất lớn (hàng trăm đến hàng nghìn bar) qua vòi phun để phun sương nhiên liệu đúng thời điểm cuối kì nén."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "GK2",
+        question: "Trên ô tô và xe máy hiện đại, hệ thống khởi động bằng động cơ điện một chiều sử dụng nguồn năng lượng từ đâu để quay trục khuỷu động cơ lúc mới đề máy?",
+        options: ["Từ bình ắc quy (accu) trên xe", "Từ sức tay quay trực tiếp của người lái", "Từ áp lực gió tự nhiên", "Từ nhiệt lượng của ống xả"],
+        answer: 0,
+        explanation: "Khi bấm nút khởi động (đề), dòng điện một chiều từ bình ắc quy cấp cho động cơ điện khởi động làm quay bánh đà và trục khuỷu để động cơ tự nổ máy."
+    },
+
+    // ===================================================================
+    // 19. CÔNG NGHỆ 11 - CUỐI KÌ 2 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Trên hệ thống truyền lực của ô tô (động cơ đặt trước, cầu chủ động phía sau), các cụm chi tiết truyền mômen quay từ động cơ tới bánh xe chủ động được sắp xếp theo thứ tự nào?",
+        options: ["Động cơ → Li hợp (côn) → Hộp số → Truyền lực các-đăng → Truyền lực chính và bộ vi sai → Bán trục → Bánh xe chủ động", "Động cơ → Bánh xe → Hộp số → Li hợp", "Động cơ → Bộ vi sai → Li hợp → Hộp số", "Bánh xe → Các-đăng → Li hợp → Động cơ"],
+        answer: 0,
+        explanation: "Sơ đồ hệ thống truyền lực ô tô: Động cơ → Li hợp → Hộp số → Truyền lực các-đăng → Truyền lực chính & Vi sai → Bán trục → Bánh xe chủ động."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Trong hệ thống truyền lực trên ô tô, xe máy, bộ phận 'Li hợp (bộ côn)' có nhiệm vụ chính là gì?",
+        options: ["Nối hoặc ngắt tạm thời dòng truyền mômen từ động cơ đến hộp số (để sang số êm dịu, dừng xe ngắn hạn và bảo vệ hệ thống truyền lực khi quá tải)", "Thay đổi tỉ số truyền để xe chạy tiến hoặc chạy lùi", "Phân phối mômen cho hai bánh xe quay với tốc độ khác nhau khi vào cua", "Giảm tốc độ góc và tăng mômen ở cầu chủ động"],
+        answer: 0,
+        explanation: "Li hợp đặt giữa động cơ và hộp số dùng để ngắt tạm thời truyền động khi chuyển số hoặc phanh dừng xe và trượt bảo vệ khi quá tải."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Bộ phận nào trong cầu chủ động của ô tô giúp hai bánh xe chủ động bên trái và bên phải có thể quay với vận tốc khác nhau khi xe chuyển động vào đường vòng (vào cua) hoặc đi trên đường gồ ghề mà không bị trượt lết bánh xe?",
+        options: ["Bộ vi sai", "Trục các-đăng", "Đĩa ma sát của li hợp", "Bánh đà động cơ"],
+        answer: 0,
+        explanation: "Khi ô tô vào cua, bánh xe phía ngoài đi quãng đường dài hơn bánh phía trong; bộ vi sai tự động phân phối chuyển động để hai bán trục quay với tốc độ khác nhau."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Trên tàu thủy dùng động cơ đốt trong, bộ phận công tác cuối cùng trực tiếp đẩy nước để tạo lực đẩy cho tàu tiến hoặc lùi là gì?",
+        options: ["Chân vịt (Propeller)", "Bánh xe cao su", "Truyền lực các-đăng ô tô", "Xích tải máy kéo"],
+        answer: 0,
+        explanation: "Hệ thống truyền lực trên tàu thủy gồm: Động cơ → Li hợp → Hộp số (kèm bộ đảo chiều) → Hệ trục tàu → Chân vịt quay đẩy nước."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Ở máy phát điện dự phòng kéo bởi động cơ đốt trong, vì sao tốc độ quay của trục khuỷu động cơ cần phải được bộ điều tốc giữ ổn định gần như không đổi khi phụ tải thay đổi?",
+        options: ["Để giữ cho tần số (f = 50 Hz) và điện áp của dòng điện xoay chiều phát ra luôn ổn định, không làm hỏng thiết bị điện", "Để tiết kiệm nước làm mát", "Để làm giảm khối lượng máy phát", "Để máy phát điện có thể tự di chuyển trên đường"],
+        answer: 0,
+        explanation: "Tần số dòng điện xoay chiều tỉ lệ thuận với tốc độ quay của rôto máy phát (f = p.n/60), nên động cơ kéo máy phát phải giữ vòng quay ổn định."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Trong công nghệ chăn nuôi hiện đại, khái niệm 'Giống vật nuôi' được hiểu là:",
+        options: ["Quần thể vật nuôi cùng loài, cùng nguồn gốc, có ngoại hình và cấu trúc di truyền tương tự nhau, hình thành do bàn tay con người chọn lọc và có số lượng đủ lớn để nhân giống", "Bất kì tập hợp các con vật khác loài nhốt chung trong một trang trại", "Những động vật hoang dã sống tự nhiên trong rừng nguyên sinh", "Một cá thể vật nuôi đột biến duy nhất"],
+        answer: 0,
+        explanation: "Giống vật nuôi là sản phẩm lao động sáng tạo của con người: cùng loài, có đặc điểm ngoại hình và năng suất ổn định, di truyền được cho đời sau và đạt số lượng quy định."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Phương pháp nhân giống cho giao phối giữa các cá thể đực và cái thuộc HAI GIỐNG KHÁC NHAU nhằm tạo ra con lai F1 có ưu thế lai cao (lớn nhanh, tiêu tốn ít thức ăn) để nuôi lấy thịt thương phẩm được gọi là gì?",
+        options: ["Lai kinh tế", "Nhân giống thuần chủng", "Giao phối cận huyết", "Chọn lọc hàng loạt"],
+        answer: 0,
+        explanation: "Lai kinh tế tận dụng ưu thế lai ở thế hệ con lai F1 (toàn bộ con lai F1 được dùng làm thương phẩm lấy thịt, trứng chứ không dùng làm giống tiếp vì đời sau sẽ phân tính giảm ưu thế lai)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Kĩ thuật 'Thụ tinh nhân tạo' trong chăn nuôi bò, lợn mang lại lợi ích vượt trội nào so với nhảy trực tiếp tự nhiên?",
+        options: ["Khai thác tối đa tiềm năng di truyền của con đực giống tốt (một lần lấy tinh pha loãng phối được cho nhiều con cái), bảo quản tinh đông lạnh lâu dài và hạn chế lây truyền bệnh qua đường sinh dục", "Không cần nuôi bất kì con đực giống nào trên thế giới", "Giúp vật nuôi không cần ăn thức ăn vẫn lớn", "Rút ngắn thời gian mang thai của bò mẹ từ 9 tháng xuống 1 tháng"],
+        answer: 0,
+        explanation: "Thụ tinh nhân tạo giúp nhân nhanh giống tốt với chi phí thấp, vận chuyển tinh đông lạnh trong nitrogen lỏng (-196 °C) đi xa và phòng ngừa bệnh truyền nhiễm sinh sản."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Công nghệ sinh học hiện đại nào trong nhân giống bò sữa cho phép lấy nhiều phôi từ một bò mẹ cao sản (nhờ gây rụng trứng hàng loạt) rồi cấy vào tử cung của những bò cái nhận phôi bình thường để mang thai hộ?",
+        options: ["Công nghệ cấy truyền phôi (MOET)", "Phương pháp ấp trứng nhân tạo", "Phương pháp thiến vật nuôi đực", "Phương pháp ủ chua thức ăn xanh"],
+        answer: 0,
+        explanation: "Công nghệ cấy truyền phôi giúp khai thác triệt để tiềm năng di truyền của cả con đực giống và con cái giống cao sản quý hiếm."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Trong khẩu phần thức ăn chăn nuôi, nhóm chất dinh dưỡng nào đóng vai trò chính là nguyên liệu kiến tạo tế bào cơ thể, tạo cơ bắp, sữa, trứng và các enzyme, kháng thể?",
+        options: ["Protein (chất đạm) và các amino acid thiết yếu", "Chỉ có nước uống", "Chất xơ thô không tiêu hóa", "Muối ăn (NaCl)"],
+        answer: 0,
+        explanation: "Protein cung cấp các amino acid để tổng hợp protein cấu trúc (cơ, trứng, sữa) và protein chức năng (enzyme, hormone, kháng thể) cho vật nuôi."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Phương pháp chế biến thức ăn thô xanh (cỏ voi, thân cây ngô sau thu hoạch) bằng cách cắt nhỏ, nén chặt trong hố/túi kín yếm khí để vi khuẩn lactic lên men giúp bảo quản thức ăn lâu dài qua mùa đông được gọi là:",
+        options: ["Phương pháp ủ chua thức ăn xanh", "Phương pháp rang nổ hạt ngũ cốc", "Phương pháp ép viên nhiệt độ cao", "Phương pháp đốt thành tro"],
+        answer: 0,
+        explanation: "Ủ chua thức ăn thô xanh trong điều kiện yếm khí tạo môi trường pH thấp (nhờ lactic acid) ức chế vi khuẩn gây thối, giúp thức ăn có mùi thơm chua dịu, giàu dinh dưỡng và bảo quản được nhiều tháng."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Biện pháp phòng bệnh chủ động, hiệu quả và kinh tế nhất để ngăn chặn các dịch bệnh truyền nhiễm nguy hiểm ở vật nuôi (như dịch tả lợn, lở mồm long móng, cúm gia cầm) là gì?",
+        options: ["Tiêm phòng vaccine đầy đủ đúng lịch kết hợp thực hiện nghiêm ngặt an toàn sinh học (vệ sinh, sát trùng chuồng trại, cách li kiểm dịch)", "Trộn thật nhiều thuốc kháng sinh liều cao vào thức ăn hàng ngày cho mọi vật nuôi khỏe mạnh", "Chỉ điều trị khi toàn bộ đàn vật nuôi đã phát bệnh nặng", "Đóng kín hoàn toàn chuồng nuôi không cho thông gió"],
+        answer: 0,
+        explanation: "Tiêm vaccine tạo miễn dịch chủ động kết hợp chăn nuôi an toàn sinh học là nguyên tắc vàng 'Phòng bệnh hơn chữa bệnh', đồng thời tránh lạm dụng kháng sinh gây tồn dư và kháng thuốc."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Trong chăn nuôi gà, lợn hiện đại, công nghệ sử dụng 'Đệm lót sinh học' (trấu, mùn cưa trộn chế phẩm vi sinh vật có lợi) trên nền chuồng có tác dụng chính là gì?",
+        options: ["Phân hủy tại chỗ phân và nước tiểu vật nuôi, khử mùi hôi khí độc (NH₃, H₂S), giảm ô nhiễm môi trường và giữ ấm nền chuồng", "Làm thức ăn thay thế hoàn toàn cho cám công nghiệp", "Làm tăng độ ẩm nền chuồng lên 100%", "Tiêu diệt hết mọi vi sinh vật phân giải trong tự nhiên"],
+        answer: 0,
+        explanation: "Hệ vi sinh vật hữu ích trong đệm lót sinh học lên men phân hủy chất thải ngay trên nền chuồng, triệt tiêu mùi hôi, giảm công rửa chuồng và bảo vệ sức khỏe vật nuôi."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Khi xử lí chất thải chăn nuôi bằng 'Hầm Biogas (công trình khí sinh học)' yếm khí, loại khí đốt chủ yếu được tạo ra dùng để đun nấu hoặc chạy máy phát điện trang trại là khí nào?",
+        options: ["Khí Methane (CH₄ – chiếm khoảng 60% – 70% thể tích khí sinh học)", "Khí Oxygen (O₂)", "Khí Chlorine (Cl₂)", "Khí Argon (Ar)"],
+        answer: 0,
+        explanation: "Vi sinh vật kị khí trong hầm Biogas phân giải chất hữu cơ trong phân vật nuôi tạo thành hỗn hợp khí sinh học mà thành phần cháy chính là khí methane (CH₄)."
+    },
+    {
+        grade: "11", subject: "congnghe", term: "CK2",
+        question: "Mô hình 'Chăn nuôi công nghệ cao / Chăn nuôi thông minh' hiện nay ứng dụng các công nghệ nào để nâng cao năng suất và phúc lợi động vật?",
+        options: ["Chuồng kín điều khiển vi khí hậu tự động, hệ thống cho ăn – uống tự động, gắn chip/cảm biến IoT theo dõi sức khỏe từng cá thể và robot vệ sinh chuồng trại", "Chăn thả tự do hoàn toàn không kiểm soát dịch bệnh", "Không sử dụng bất kì thiết bị điện hay vaccine nào", "Chỉ ghi chép sổ sách thủ công sau khi xuất bán"],
+        answer: 0,
+        explanation: "Chăn nuôi thông minh ứng dụng cảm biến IoT, tự động hóa điều hòa nhiệt – ẩm, cho ăn theo khẩu phần chính xác và giám sát sớm dấu hiệu bệnh."
     }
 ];
