@@ -1,5 +1,5 @@
 // =========================================================================
-// NGÂN HÀNG CÂU HỎI KHỐI 11 - GK1 (ĐỦ 15 CÂU/MÔN: TOÁN, LÝ, ANH) - NHÓM K71
+// NGÂN HÀNG CÂU HỎI KHỐI 11 - 4 KÌ (ĐỦ 15 CÂU/KÌ: TOÁN, LÝ, ANH, VĂN, HÓA, SINH) - NHÓM K71
 // =========================================================================
 
 var QUESTION_BANK = [
@@ -1342,5 +1342,441 @@ var QUESTION_BANK = [
         options: ["time-management", "money-making", "note-taking", "decision-making"],
         answer: 0,
         explanation: "'time-management skills' (kỹ năng quản lý thời gian) giúp cân bằng giữa việc học và hoạt động ngoại khóa."
+    },
+
+    // ===================================================================
+    // 4. NGỮ VĂN 11 - GIỮA KÌ 1 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Tác phẩm truyện ngắn 'Chí Phèo' của nhà văn Nam Cao lúc mới in lần đầu năm 1941 có nhan đề là gì?",
+        options: ["Cái lò gạch cũ", "Đôi lứa xứng đôi", "Nửa đêm", "Sống mòn"],
+        answer: 0,
+        explanation: "Truyện ngắn 'Chí Phèo' ban đầu có tên là 'Cái lò gạch cũ', sau đó NXB Đời mới đổi thành 'Đôi lứa xứng đôi' và đến tập 'Luống cày' (1946) Nam Cao đặt lại là 'Chí Phèo'."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Trong truyện ngắn 'Chí Phèo' (Nam Cao), chi tiết nào đánh dấu bước ngoặt thức tỉnh phần người trong tâm hồn Chí Phèo sau đêm gặp Thị Nở?",
+        options: ["Bát cháo hành của Thị Nở và những âm thanh cuộc sống buổi sáng", "Cuộc gặp gỡ với Bá Kiến tại nhà riêng", "Tiếng chửi vu vơ đầu tác phẩm", "Lời khuyên của ông Tư Đạm"],
+        answer: 0,
+        explanation: "Hơi ấm và hương vị bát cháo hành của Thị Nở cùng những âm thanh quen thuộc buổi sáng (tiếng chim hót, tiếng người đi chợ, tiếng gõ mái chèo) đã đánh thức lương tri và khát vọng hoàn lương của Chí Phèo."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Trong tác phẩm 'Chữ người tử tù' (Nguyễn Tuân), nhân vật Huấn Cao được khắc họa nổi bật với vẻ đẹp của:",
+        options: ["Tài hoa nghệ sĩ, khí phách hiên ngang và thiên lương trong sáng", "Quyền lực tuyệt đối chốn quan trường", "Sự nhẫn nhục cam chịu trước số phận", "Tài mưu lược quân sự xuất chúng"],
+        answer: 0,
+        explanation: "Huấn Cao là hình tượng con người tài hoa (viết chữ vuông tươi rất đẹp), có khí phách anh hùng bất khuất và thiên lương trong sáng ('ta nhất sinh không vì vàng ngọc hay quyền thế mà ép mình viết câu đối bao giờ')."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Cảnh Huấn Cao cho chữ viên quản ngục trong 'Chữ người tử tù' được tác giả Nguyễn Tuân gọi là gì?",
+        options: ["Một cảnh tượng xưa nay chưa từng có", "Một buổi dạ tiệc chốn lao tù", "Một cuộc hội ngộ tri âm nơi thôn dã", "Một nghi lễ truyền nghề trang nghiêm"],
+        answer: 0,
+        explanation: "Nguyễn Tuân gọi cảnh cho chữ trong buồng tối chật hẹp, ẩm ướt của nhà tù là 'một cảnh tượng xưa nay chưa từng có' bởi sự đối lập gay gắt giữa cái đẹp, cái thiện với nơi tối tăm, nhơ bẩn."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Truyện ngắn 'Hai đứa trẻ' của nhà văn Thạch Lam được trần thuật chủ yếu từ điểm nhìn của nhân vật nào?",
+        options: ["Nhân vật Liên", "Nhân vật An", "Bác phở Siêu", "Chị Tí bán hàng nước"],
+        answer: 0,
+        explanation: "Câu chuyện phố huyện lúc chiều tà đến đêm khuya được kể bằng ngôi thứ ba nhưng điểm nhìn trần thuật chủ yếu đặt vào tâm trạng và cảm nhận tinh tế của cô bé Liên."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Hình ảnh đoàn tàu đêm đi qua phố huyện từ Hà Nội về trong truyện ngắn 'Hai đứa trẻ' (Thạch Lam) mang ý nghĩa biểu tượng cho điều gì?",
+        options: ["Thế giới rực rỡ ánh sáng, giàu sang và khát vọng đổi thay cuộc sống tù đọng", "Sự ồn ào phá vỡ giấc ngủ yên bình của người dân quê", "Nỗi sợ hãi trước nền văn minh công nghiệp", "Biểu tượng cho sự chia ly vĩnh viễn của gia đình Liên"],
+        answer: 0,
+        explanation: "Đoàn tàu rực sáng từ Hà Nội chạy qua phố huyện nghèo tối tăm là biểu tượng của một thế giới tươi sáng, sôi động trong kí ức tuổi thơ Liên và niềm mong mỏi thoát khỏi kiếp sống mòn mỏi, quẩn quanh."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Câu thơ mở đầu bài 'Đây thôn Vĩ Dạ' của Hàn Mặc Tử ('Sao anh không về chơi thôn Vĩ?') sử dụng biện pháp tu từ nổi bật nào?",
+        options: ["Câu hỏi tu từ", "Nói quá (khoa trương)", "Chơi chữ", "Liệt kê"],
+        answer: 0,
+        explanation: "Câu thơ 'Sao anh không về chơi thôn Vĩ?' vừa là lời hỏi han, trách nhẹ dịu dàng của cô gái xứ Huế, vừa là câu hỏi tu từ bộc lộ nỗi niềm khao khát trở về Vĩ Dạ của chính thi nhân."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Lời đề từ 'Bâng khuâng trời rộng nhớ sông dài' thuộc bài thơ nào trong phong trào Thơ mới?",
+        options: ["Tràng giang – Huy Cận", "Đây thôn Vĩ Dạ – Hàn Mặc Tử", "Vội vàng – Xuân Diệu", "Tống biệt hành – Thâm Tâm"],
+        answer: 0,
+        explanation: "'Bâng khuâng trời rộng nhớ sông dài' là lời đề từ nổi tiếng thâu tóm cảm hứng chủ đạo (nỗi sầu trước vũ trụ mênh mông, rợn ngợp) của bài thơ 'Tràng giang' (Huy Cận)."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Trong khổ cuối bài thơ 'Tràng giang' (Huy Cận), câu thơ 'Không khói hoàng hôn cũng nhớ nhà' được gợi cảm hứng từ điển tích trong bài thơ Đường nào?",
+        options: ["Hoàng Hạc lâu – Thôi Hiệu", "Tĩnh dạ tứ – Lý Bạch", "Phong Kiều dạ bạc – Trương Kế", "Đăng Cao – Đỗ Phủ"],
+        answer: 0,
+        explanation: "Ý thơ đối sánh với câu kết bài 'Hoàng Hạc lâu' của Thôi Hiệu ('Yên ba giang thượng sử nhân sầu' – Khói sóng trên sông làm người buồn nhớ quê); Huy Cận khẳng định nỗi nhớ quê hương luôn thường trực ngay cả khi không có khói hoàng hôn."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Đặc trưng cơ bản giúp phân biệt ngôi kể thứ nhất với ngôi kể thứ ba trong văn bản truyện là gì?",
+        options: ["Người kể chuyện xưng 'tôi' và trực tiếp tham gia hoặc chứng kiến câu chuyện", "Người kể chuyện giấu mình hoàn toàn và biết hết mọi suy nghĩ của mọi nhân vật", "Truyện không có lời đối thoại giữa các nhân vật", "Truyện chỉ sử dụng ngôn ngữ độc thoại nội tâm"],
+        answer: 0,
+        explanation: "Ở ngôi kể thứ nhất, người kể chuyện lộ diện qua đại từ 'tôi' (hoặc 'chúng tôi'), kể lại những gì mình trực tiếp trải qua, chứng kiến."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Lời khuyên cuối cùng của Huấn Cao dành cho viên quản ngục trong 'Chữ người tử tù' là gì?",
+        options: ["Hãy thoát khỏi nghề coi ngục, về quê ở rồi hãy chơi chữ để giữ thiên lương lành vững", "Hãy xin thăng chức để cải tạo lại toàn bộ nhà giam", "Hãy đốt hết các bức thư pháp sau khi Huấn Cao chịu án", "Hãy tiếp tục giấu kín sở thích chơi chữ suốt đời"],
+        answer: 0,
+        explanation: "Huấn Cao khuyên quản ngục: 'Ở đây lẫn lộn. Ta khuyên thầy Quản nên thay chốn ở đi... Ở đây, khó giữ thiên lương cho lành vững và rồi cũng đến nhem nhuốc mất cái đời lương thiện đi'."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Trong bài thơ 'Đây thôn Vĩ Dạ' (Hàn Mặc Tử), hai câu thơ 'Gió theo lối gió, mây đường mây / Dòng nước buồn thiu, hoa bắp lay' gợi lên tâm trạng gì?",
+        options: ["Nỗi buồn chia lìa, mặc cảm cô đơn và dự cảm xa cách giữa thi nhân với cuộc đời", "Niềm vui sướng trước cảnh thiên nhiên xứ Huế nhộn nhịp", "Sự bình thản, vô tư của người lữ khách", "Khát vọng chinh phục thiên nhiên hùng vĩ"],
+        answer: 0,
+        explanation: "Hình ảnh gió - mây chia ngả và dòng nước 'buồn thiu' được nhân hóa thể hiện nỗi đau chia lìa, mặc cảm bơ vơ của nhà thơ trước thực tại."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Khi chuyển từ ngôn ngữ nói sang ngôn ngữ viết trong văn bản học thuật, người viết cần tránh điều nào sau đây?",
+        options: ["Sử dụng nhiều từ ngữ khẩu ngữ, trợ từ, thán từ suồng sã và câu tỉnh lược tùy tiện", "Sử dụng hệ thống dấu câu chuẩn xác để ngắt ý", "Lựa chọn từ ngữ chính xác, chặt chẽ, mạch lạc", "Tổ chức câu văn đầy đủ thành phần chủ - vị"],
+        answer: 0,
+        explanation: "Ngôn ngữ viết đòi hỏi tính chuẩn mực, chặt chẽ, có dấu câu rõ ràng, tránh lạm dụng khẩu ngữ suồng sã hoặc các yếu tố dư thừa của hội thoại tự nhiên."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Hình ảnh 'Nắng hàng cau nắng mới lên' trong khổ đầu bài thơ 'Đây thôn Vĩ Dạ' miêu tả vẻ đẹp nào của thiên nhiên thôn Vĩ?",
+        options: ["Vẻ đẹp tinh khôi, trong trẻo và tràn đầy sức sống của buổi bình minh", "Vẻ đẹp u buồn, héo úa lúc chiều tà", "Cảnh nắng gắt oi bức của trưa hè miền Trung", "Ánh trăng huyền ảo chiếu qua tàu lá cau"],
+        answer: 0,
+        explanation: "Điệp từ 'nắng' cùng hình ảnh hàng cau thẳng tắp đón ánh nắng ban mai tinh khiết gợi vẻ đẹp trong trẻo, tươi tắn của vườn thôn Vĩ buổi sớm."
+    },
+    {
+        grade: "11", subject: "van", term: "GK1",
+        question: "Lời văn vừa là lời của người kể chuyện, vừa tái hiện tiếng nói/suy nghĩ nội tâm của nhân vật (không đặt trong dấu ngoặc kép) được gọi là:",
+        options: ["Lời nửa trực tiếp", "Lời đối thoại trực tiếp", "Lời chú thích của biên tập viên", "Lời chỉ dẫn sân khấu"],
+        answer: 0,
+        explanation: "Lời nửa trực tiếp (rất tiêu biểu trong 'Chí Phèo' của Nam Cao) là sự hòa trộn giữa giọng người kể chuyện và giọng điệu, ý thức của nhân vật."
+    },
+
+    // ===================================================================
+    // 5. NGỮ VĂN 11 - CUỐI KÌ 1 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Trong văn bản nghị luận, yếu tố nào đóng vai trò là vấn đề chính, xuyên suốt mà văn bản nêu lên để bàn luận?",
+        options: ["Luận đề", "Bằng chứng (dẫn chứng)", "Số liệu thống kê", "Lời bình mở rộng"],
+        answer: 0,
+        explanation: "Luận đề là vấn đề trung tâm, bao trùm toàn bộ văn bản nghị luận; từ luận đề, người viết triển khai thành hệ thống các luận điểm, lí lẽ và bằng chứng."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Mối quan hệ giữa luận đề, luận điểm, lí lẽ và bằng chứng trong văn bản nghị luận được sắp xếp theo trình tự nào là hợp lí nhất?",
+        options: ["Luận đề → Các luận điểm → Lí lẽ và bằng chứng làm sáng tỏ từng luận điểm", "Bằng chứng → Luận đề → Lí lẽ → Nhan đề", "Lí lẽ → Luận đề → Tiểu kết → Mở bài", "Luận điểm → Luận đề → Cước chú"],
+        answer: 0,
+        explanation: "Cấu trúc tầng bậc của văn nghị luận: Luận đề (vấn đề chính) được cụ thể hóa thành các Luận điểm; mỗi Luận điểm được chứng minh bằng Lí lẽ và Bằng chứng xác thực."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Đoạn trích 'Lời tiễn dặn' (trích truyện thơ 'Xống chụ xôn xao') là kiệt tác truyện thơ dân gian của dân tộc nào?",
+        options: ["Dân tộc Thái", "Dân tộc Mường", "Dân tộc Tày", "Dân tộc H'Mông"],
+        answer: 0,
+        explanation: "'Xống chụ xôn xao' (Tiễn dặn người yêu) là truyện thơ dân gian nổi tiếng nhất của dân tộc Thái ở vùng Tây Bắc."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Trong đoạn trích 'Lời tiễn dặn' (Xống chụ xôn xao), ước nguyện 'Không lấy được nhau mùa hạ, ta sẽ lấy nhau mùa đông / Không lấy được nhau thời trẻ, ta sẽ lấy nhau khi góa bụa về già' thể hiện điều gì?",
+        options: ["Tình yêu thủy chung son sắt và khát vọng tự do yêu đương vượt lên lễ giáo ép duyên", "Sự buông xuôi, chấp nhận từ bỏ tình yêu đầu đời", "Mong muốn giàu sang phú quý nơi nhà chồng", "Sự oán trách cha mẹ hai bên"],
+        answer: 0,
+        explanation: "Lời thề nguyền tha thiết khẳng định lòng chung thủy sắt son, quyết tâm gắn bó trọn đời bất chấp hôn nhân ép buộc."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Trong đoạn trích 'Trao duyên' (Truyện Kiều – Nguyễn Du), vì sao Thúy Kiều lại dùng từ 'cậy' ('Cậy em, em có chịu lời') và từ 'lạy' ('Ngồi lên cho chị lạy rồi sẽ thưa') khi nói với Thúy Vân?",
+        options: ["Thể hiện sự tin tưởng tuyệt đối gắn với nỗi hàm ơn, trân trọng trước sự hi sinh tuổi xuân của em", "Vì Thúy Vân lớn tuổi hơn Thúy Kiều", "Vì Thúy Kiều muốn ra lệnh cho em gái", "Do thói quen giao tiếp thông thường trong gia đình"],
+        answer: 0,
+        explanation: "Từ 'cậy' có sức nặng gửi gắm niềm tin cậy thiết tha hơn từ 'nhờ', còn hành động 'lạy' đặt Thúy Vân vào vị thế ân nhân cao cả khi Kiều trao gửi mối tình dang dở với Kim Trọng."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Những kỉ vật tình yêu nào được Thúy Kiều trao lại cho Thúy Vân trong đoạn trích 'Trao duyên' (Truyện Kiều)?",
+        options: ["Chiếc vành với bức tờ mây, phím đàn và mảnh hương nguyền", "Cây trâm cài đầu và chiếc gương đồng", "Đôi hài thêu và chiếc quạt lụa", "Bức tranh tùng cúc và cây sáo trúc"],
+        answer: 0,
+        explanation: "Kiều trao lại kỉ vật hẹn ước với Kim Trọng ('Chiếc vành với bức tờ mây / Duyên này thì giữ vật này của chung') cùng tiếng đàn và mảnh hương nguyền."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Trong đoạn trích 'Chí khí anh hùng' (Truyện Kiều – Nguyễn Du), hình ảnh 'Trông vời trời bể mênh mang / Thanh gươm yên ngựa lên đường thẳng rong' khắc họa vẻ đẹp nào của Từ Hải?",
+        options: ["Tầm vóc vũ trụ kì vĩ và chí khí tung hoành bốn phương của bậc trượng phu", "Nỗi cô đơn, lẻ loi của người lính nơi biên ải", "Sự do dự, quyến luyến không nỡ rời xa lầu xanh", "Vẻ đẹp nho nhã của một thư sinh đi thi"],
+        answer: 0,
+        explanation: "Không gian 'trời bể mênh mang' cùng tư thế 'thanh gươm yên ngựa lên đường thẳng rong' làm nổi bật chí khí phi thường, dứt khoát lên đường lập nghiệp lớn của Từ Hải."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Đặc điểm nổi bật của thể loại Truyện thơ Nôm bác học (như 'Truyện Kiều' của Nguyễn Du) là gì?",
+        options: ["Kết hợp tự sự và trữ tình, viết bằng chữ Nôm theo thể thơ lục bát dân tộc", "Viết hoàn toàn bằng chữ Hán theo thể thất ngôn bát cú Đường luật", "Chỉ lưu truyền bằng hình thức truyền miệng, không có tác giả xác định", "Chỉ sử dụng văn xuôi hiện đại không có vần nhịp"],
+        answer: 0,
+        explanation: "Truyện thơ Nôm bác học có cốt truyện tự sự hoàn chỉnh kết hợp nhuần nhuyễn với chất trữ tình sâu sắc, sử dụng chữ Nôm và thể thơ lục bát truyền thống."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Mục đích chính của văn bản thông tin (thuyết minh) là gì?",
+        options: ["Cung cấp tri thức, thông tin khách quan, xác thực về sự vật, hiện tượng hoặc quy trình", "Bộc lộ cảm xúc chủ quan mãnh liệt thông qua hệ thống vần nhịp", "Xây dựng xung đột kịch tính để biểu diễn trên sân khấu", "Hư cấu nên thế giới thần tiên kì ảo"],
+        answer: 0,
+        explanation: "Văn bản thông tin hướng tới truyền tải thông tin, tri thức khách quan, chính xác cho người đọc; có thể lồng ghép yếu tố miêu tả, tự sự, biểu cảm để tăng sức hấp dẫn."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Trong văn bản thông tin, các yếu tố như nhan đề, đề mục (sapo, tiêu đề phụ), chữ in đậm, biểu đồ, hình ảnh minh họa được gọi là gì?",
+        options: ["Phương tiện giao tiếp phi ngôn ngữ và yếu tố hình thức hỗ trợ biểu đạt thông tin", "Luận điểm nghệ thuật của tác phẩm trữ tình", "Lời thoại độc thoại nội tâm", "Biện pháp tu từ ẩn dụ chuyển đổi cảm giác"],
+        answer: 0,
+        explanation: "Hình ảnh, sơ đồ, biểu đồ, bảng biểu là các phương tiện phi ngôn ngữ kết hợp với hệ thống đề mục giúp văn bản thông tin trực quan, dễ tra cứu và nắm bắt ý chính."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Một đoạn văn mắc 'lỗi thiếu mạch lạc' khi nào?",
+        options: ["Các câu trong đoạn không cùng hướng về một chủ đề chung hoặc sắp xếp lộn xộn, thiếu logic", "Đoạn văn sử dụng nhiều phép nối và phép thế", "Đoạn văn có câu chủ đề đứng ở đầu đoạn", "Đoạn văn có sử dụng từ Hán Việt"],
+        answer: 0,
+        explanation: "Tính mạch lạc đòi hỏi các câu, các ý phải thống nhất xoay quanh chủ đề chung và nối tiếp nhau theo trình tự hợp lí; nếu lạc ý hoặc đứt gãy logic sẽ mắc lỗi thiếu mạch lạc."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Các phép liên kết hình thức thường dùng giữa các câu trong đoạn văn gồm những phép nào?",
+        options: ["Phép lặp, phép thế, phép nối, phép đồng nghĩa / trái nghĩa / liên tưởng", "Phép nhân hóa, phép hoán dụ, phép nói giảm nói tránh", "Phép đối thanh, phép hiệp vần, phép ngắt nhịp", "Phép phóng đại, phép châm biếm"],
+        answer: 0,
+        explanation: "Liên kết hình thức giữa các câu trong đoạn văn được thực hiện qua phép lặp từ ngữ, phép thế (đại từ/từ đồng nghĩa), phép nối (quan hệ từ) và phép liên tưởng."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Trong đoạn kết 'Trao duyên' ('Bây giờ trâm gãy bình tan... Ôi Kim Mã, hỡi Kim Lang! / Thôi thôi thiếp đã phụ chàng từ đây!'), lời nói của Thúy Kiều đã chuyển từ đối thoại với ai sang độc thoại với ai?",
+        options: ["Từ đối thoại với Thúy Vân chuyển sang độc thoại nội tâm và hướng về Kim Trọng", "Từ nói với Kim Trọng chuyển sang nói với cha mẹ", "Từ nói với Mã Giám Sinh chuyển sang nói với Thúy Vân", "Từ độc thoại chuyển sang trò chuyện với Vương Quan"],
+        answer: 0,
+        explanation: "Nửa đầu đoạn trích Kiều dặn dò Thúy Vân, nhưng càng về cuối Kiều càng chìm vào nỗi đau đớn tột cùng, quên cả sự hiện diện của em để gọi tên Kim Trọng trong tuyệt vọng."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Khi viết bài văn nghị luận về một vấn đề xã hội, phần Mở bài cần đảm bảo yêu cầu cốt lõi nào?",
+        options: ["Giới thiệu được vấn đề cần bàn luận và nêu rõ quan điểm/định hướng của người viết", "Liệt kê toàn bộ số liệu chi tiết của bài viết", "Trích dẫn nguyên văn tất cả các văn bản pháp luật", "Tóm tắt tiểu sử của các nhà văn nổi tiếng"],
+        answer: 0,
+        explanation: "Mở bài của văn nghị luận xã hội có nhiệm vụ dẫn dắt, nêu đúng vấn đề nghị luận (luận đề) và thể hiện thái độ, quan điểm tổng quát của người viết."
+    },
+    {
+        grade: "11", subject: "van", term: "CK1",
+        question: "Yếu tố miêu tả và biểu cảm khi được đưa vào văn bản thông tin có tác dụng gì?",
+        options: ["Giúp đối tượng thuyết minh hiện lên sinh động, giàu hình ảnh và gợi sự đồng cảm nơi người đọc", "Làm thay đổi hoàn toàn thể loại văn bản thành thơ trữ tình", "Thay thế hoàn toàn cho các dữ liệu khoa học chính xác", "Khiến thông tin trở nên mơ hồ, khó kiểm chứng"],
+        answer: 0,
+        explanation: "Trong văn bản thông tin tổng hợp, yếu tố miêu tả và biểu cảm hỗ trợ làm nổi bật đặc điểm sự vật và truyền cảm hứng, giúp thông tin không bị khô khan."
+    },
+
+    // ===================================================================
+    // 6. NGỮ VĂN 11 - GIỮA KÌ 2 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Đại thi hào Nguyễn Du (1765 – 1820) có tên chữ (tự) và tên hiệu là gì?",
+        options: ["Tên chữ Tố Như, hiệu Thanh Hiên", "Tên chữ Ức Trai, hiệu Bạch Vân Cư Sĩ", "Tên chữ Cao Bá Quát, hiệu Chu Thần", "Tên chữ Yên Đổ, hiệu Quế Sơn"],
+        answer: 0,
+        explanation: "Nguyễn Du tên chữ là Tố Như, hiệu là Thanh Hiên (ngoài ra còn có hiệu Nam Sơn Mộng Hồ), quê ở làng Tiên Điền, huyện Nghi Xuân, tỉnh Hà Tĩnh."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Kiệt tác 'Truyện Kiều' (Đoạn trường tân thanh) của Nguyễn Du được sáng tác dựa trên cốt truyện tiểu thuyết chương hồi nào của Trung Quốc?",
+        options: ["Kim Vân Kiều truyện của Thanh Tâm Tài Nhân", "Tam quốc diễn nghĩa của La Quán Trung", "Hồng lâu mộng của Tào Tuyết Cần", "Tây sương kí của Vương Thực Phủ"],
+        answer: 0,
+        explanation: "Nguyễn Du mượn cốt truyện 'Kim Vân Kiều truyện' của Thanh Tâm Tài Nhân nhưng đã sáng tạo lại toàn diện về cảm hứng nhân đạo, tâm lí nhân vật và ngôn ngữ thơ lục bát chữ Nôm."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Bài thơ chữ Hán 'Đọc Tiểu Thanh kí' (Độc Tiểu Thanh kí) của Nguyễn Du thể hiện sự đồng cảm sâu sắc với số phận của những ai?",
+        options: ["Những người phụ nữ tài hoa, nhan sắc và những bậc nghệ sĩ bạc mệnh trong xã hội phong kiến", "Những vị tướng lĩnh trận mạc nơi biên ải", "Những thương nhân buôn bán trên sông nước", "Những ẩn sĩ sống xa lánh bụi trần"],
+        answer: 0,
+        explanation: "Mượn câu chuyện nàng Tiểu Thanh tài sắc mà mệnh bạc, Nguyễn Du khóc thương cho kiếp người tài hoa bị vùi dập và tự thương cho chính mình ('Bất tri tam bách dư niên hậu / Thiên hạ hà nhân khấp Tố Như?')."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Hai câu kết bài 'Đọc Tiểu Thanh kí' ('Bất tri tam bách dư niên hậu / Thiên hạ hà nhân khấp Tố Như?') thể hiện tâm sự gì của Nguyễn Du?",
+        options: ["Nỗi cô đơn giữa thời cuộc và khát vọng tìm kiếm sự tri âm, đồng cảm từ hậu thế", "Niềm tự hào về gia thế quyền quý của dòng họ", "Mong muốn được lưu danh trên bia đá công thần", "Sự an nhàn tuổi xế chiều nơi quê nhà"],
+        answer: 0,
+        explanation: "Câu hỏi hướng tới ba trăm năm sau thể hiện nỗi cô đơn mênh mông của một tâm hồn lớn và khát khao có người đời sau thấu hiểu, tri âm với nỗi đau của Tố Như."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Tác phẩm 'Ai đã đặt tên cho dòng sông?' của nhà văn Hoàng Phủ Ngọc Tường thuộc thể loại văn học nào?",
+        options: ["Bút kí / Tùy bút", "Tiểu thuyết lịch sử", "Bi kịch cổ điển", "Truyện truyền kì"],
+        answer: 0,
+        explanation: "'Ai đã đặt tên cho dòng sông?' (1981) là bài bút kí – tùy bút xuất sắc của Hoàng Phủ Ngọc Tường viết về vẻ đẹp thiên nhiên, lịch sử và văn hóa của dòng sông Hương xứ Huế."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Trong bài kí 'Ai đã đặt tên cho dòng sông?' (Hoàng Phủ Ngọc Tường), khi còn ở vùng thượng nguồn đại ngàn Trường Sơn, sông Hương được ví với hình ảnh nào?",
+        options: ["Một bản trường ca của rừng già và một cô gái Di-gan phóng khoáng, man dại", "Một người mẹ phù sa hiền hòa của vùng đồng bằng", "Một dải lụa đào êm ả giữa kinh thành", "Một ông lão trầm tư đọc sách bên hiên chùa"],
+        answer: 0,
+        explanation: "Ở thượng nguồn Trường Sơn, sông Hương mang vẻ đẹp mãnh liệt, hùng vĩ như 'một bản trường ca của rừng già' và như 'cô gái Di-gan phóng khoáng và man dại'."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Hành trình của sông Hương từ thượng nguồn tìm về với thành phố Huế trong tác phẩm của Hoàng Phủ Ngọc Tường được miêu tả như:",
+        options: ["Một cuộc tìm kiếm có ý thức để đến với người tình mong đợi trong một câu chuyện tình lãng mạn", "Một cuộc chạy trốn vội vã khỏi rừng già", "Một dòng chảy vô tình không vương vấn", "Một cuộc hành quân khốc liệt ra biển lớn"],
+        answer: 0,
+        explanation: "Bằng cái nhìn đắm say và liên tưởng tài hoa, Hoàng Phủ Ngọc Tường hình dung thủy trình của sông Hương về Huế như hành trình của người con gái tìm về điểm hẹn tình yêu với kinh thành."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Theo Hoàng Phủ Ngọc Tường trong 'Ai đã đặt tên cho dòng sông?', nét đặc sắc nào của âm nhạc xứ Huế đã được sinh thành trên mặt nước sông Hương?",
+        options: ["Toàn bộ nền âm nhạc cổ điển Huế (nhã nhạc, ca Huế trên sông lúc đêm khuya)", "Nghệ thuật hát chèo sân đình miền Bắc", "Đờn ca tài tử Nam Bộ", "Không gian văn hóa cồng chiêng Tây Nguyên"],
+        answer: 0,
+        explanation: "Tác giả khẳng định toàn bộ nền âm nhạc cổ điển Huế đã được sinh thành trên mặt nước của dòng sông này, giữa tiếng nước rơi bán âm của những mái chèo khuya."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Đặc trưng cơ bản nhất của cái 'tôi' tác giả trong thể loại tùy bút và tản văn là gì?",
+        options: ["Cái 'tôi' trữ tình bộc lộ trực tiếp cảm xúc, suy tư, liên tưởng tài hoa và vốn văn hóa uyên bác", "Tác giả hoàn toàn giấu kín cảm xúc cá nhân, chỉ ghi chép số liệu hành chính", "Nhân vật người kể chuyện hoàn toàn là nhân vật hư cấu không có thật", "Chỉ thuật lại sự kiện theo biên niên sử từng ngày"],
+        answer: 0,
+        explanation: "Trong tùy bút và tản văn, điểm tựa kết nối các sự việc là dòng cảm xúc, suy ngẫm chủ quan và liên tưởng phóng khoáng của cái 'tôi' trữ tình tác giả."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Tác phẩm 'Thương nhớ mười hai' của nhà văn Vũ Bằng được viết trong hoàn cảnh và tâm trạng nào?",
+        options: ["Viết tại Sài Gòn trong nỗi nhớ thương da diết quê hương miền Bắc và cảnh sắc Hà Nội mười hai tháng", "Viết khi tác giả đang đi du học ở châu Âu", "Viết ngay tại hồ Gươm trong ngày Tết Nguyên đán", "Viết về những chuyến thám hiểm vùng núi Tây Bắc"],
+        answer: 0,
+        explanation: "Trong những năm đất nước chia cắt, Vũ Bằng ở miền Nam viết 'Thương nhớ mười hai' để gửi gắm nỗi nhớ quê hương miền Bắc, thiên nhiên và con người Hà Nội qua bốn mùa."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Sự kết hợp giữa yếu tố 'tự sự' và yếu tố 'trữ tình' trong tùy bút, tản văn được hiểu như thế nào?",
+        options: ["Ghi chép con người, sự việc có thật (tự sự) làm điểm tựa để bộc lộ cảm xúc, suy tư thẩm mĩ (trữ tình)", "Chỉ kể cốt truyện li kì mà không có bất kì cảm xúc nào", "Chỉ làm thơ lục bát mà không nhắc tới sự vật thực tế", "Dùng hoàn toàn lời thoại kịch bản sân khấu"],
+        answer: 0,
+        explanation: "Trong tùy bút/tản văn, yếu tố tự sự (sự việc, trải nghiệm thực tế) và yếu tố trữ tình (tình cảm, suy tư của tác giả) đan xen, nâng đỡ lẫn nhau."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Trong câu văn: 'Tre giữ làng, giữ nước, giữ mái nhà tranh, giữ đồng lúa chín' (Thép Mới), biện pháp tu từ nào đã tạo nên nhịp điệu dồn dập, khỏe khoắn?",
+        options: ["Điệp từ và liệt kê (lặp cấu trúc cụm động từ)", "Nói giảm nói tránh", "Chơi chữ đồng âm", "Hoán dụ lấy bộ phận chỉ toàn thể"],
+        answer: 0,
+        explanation: "Việc lặp lại động từ 'giữ' kết hợp liệt kê hàng loạt hình ảnh quê hương tạo nhịp văn dồn dập, khẳng định công lao bền bỉ của cây tre Việt Nam."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Đóng góp to lớn của 'Truyện Kiều' (Nguyễn Du) đối với sự phát triển của ngôn ngữ văn học dân tộc là gì?",
+        options: ["Đưa ngôn ngữ văn học tiếng Việt (chữ Nôm) và thể thơ lục bát đạt tới đỉnh cao cổ điển, tinh tế và giàu sức biểu cảm", "Sáng tạo ra bảng chữ cái Quốc ngữ Latinh", "Thay thế hoàn toàn thơ lục bát bằng thơ tự do", "Chỉ sử dụng từ ngữ địa phương vùng Nghệ Tĩnh"],
+        answer: 0,
+        explanation: "Nguyễn Du đã kết hợp tinh hoa ngôn ngữ bác học và lời ăn tiếng nói dân gian, đưa tiếng Việt văn học và thể thơ lục bát lên đỉnh cao rực rỡ."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Vì sao khi rời khỏi kinh thành Huế, sông Hương lại đột ngột đổi dòng rẽ ngoặt sang hướng đông bắc để vòng qua thôn Vĩ Dạ?",
+        options: ["Theo cách lí giải đầy chất thơ của tác giả, vì sông Hương còn lưu luyến muốn nhìn lại thành phố Huế một lần nữa trước khi ra biển", "Vì có một con đập thủy điện lớn chặn ngang dòng chảy", "Vì địa hình núi cao chắn ở phía đông nam", "Vì con sông muốn chảy ngược lại về rừng Trường Sơn"],
+        answer: 0,
+        explanation: "Khúc quanh địa lí tự nhiên ở Cồn Hến được Hoàng Phủ Ngọc Tường lí giải bằng góc nhìn lãng mạn như 'nỗi vương vấn, cả một chút lẳng lơ kín đáo của tình yêu' để chào từ biệt Huế."
+    },
+    {
+        grade: "11", subject: "van", term: "GK2",
+        question: "Yếu tố 'phi hư cấu' trong thể loại kí (hồi kí, phóng sự, nhật kí, bút kí) có nghĩa là gì?",
+        options: ["Tôn trọng sự thật khách quan về con người, sự kiện, thời gian và không gian có thực trong đời sống", "Mọi chi tiết trong tác phẩm đều do trí tưởng tượng bịa đặt ra", "Không được phép sử dụng bất kì biện pháp tu từ nào", "Chỉ được viết về các nhân vật thần thoại cổ đại"],
+        answer: 0,
+        explanation: "Tính phi hư cấu của thể kí đòi hỏi tác giả phải trung thành với những con người, sự việc, chứng cứ xác thực đã từng tồn tại hoặc diễn ra trong thực tế."
+    },
+
+    // ===================================================================
+    // 7. NGỮ VĂN 11 - CUỐI KÌ 2 (ĐỦ 15 CÂU)
+    // ===================================================================
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Trong văn học kịch, 'xung đột bi kịch' thường là sự mâu thuẫn không thể dung hòa giữa những yếu tố nào?",
+        options: ["Giữa khát vọng cao đẹp, lí tưởng tiến bộ của nhân vật với thực tại nghiệt ngã hoặc giới hạn của chính họ", "Giữa những hiểu lầm vặt vãnh gây tiếng cười giải trí", "Giữa các nhân vật hài hước, lố bịch trong sinh hoạt đời thường", "Giữa con người với các loài động vật hoang dã"],
+        answer: 0,
+        explanation: "Bi kịch phản ánh xung đột gay gắt giữa khát vọng cao cả, chính nghĩa của nhân vật bi kịch với hoàn cảnh lịch sử chưa chín muồi hoặc định mệnh trớ trêu, dẫn tới kết cục bi tráng."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Trong đoạn trích 'Vĩnh biệt Cửu Trùng Đài' (trích kịch 'Vũ Như Tô' – Nguyễn Huy Tưởng), khát vọng lớn nhất của kiến trúc sư Vũ Như Tô là gì?",
+        options: ["Xây dựng một tòa Cửu Trùng Đài hùng vĩ, tuyệt mĩ để tô điểm cho non sông đất nước", "Trở thành tể tướng nắm quyền triều chính", "Tích lũy thật nhiều vàng bạc cho riêng gia đình mình", "Giúp Đan Thiềm lên ngôi hoàng hậu"],
+        answer: 0,
+        explanation: "Vũ Như Tô là người nghệ sĩ thiên tài mang hoài bão xây dựng một công trình kiến trúc vĩ đại, bền vững muôn đời cho đất nước ('tranh tinh xảo với hóa công')."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Bi kịch đau đớn nhất của nhân vật Vũ Như Tô trong vở kịch cùng tên của Nguyễn Huy Tưởng là gì?",
+        options: ["Mâu thuẫn giữa khát vọng nghệ thuật thuần túy siêu việt với lợi ích thiết thực, máu và nước mắt của nhân dân lao động", "Không đủ tài năng để thiết kế bản vẽ Cửu Trùng Đài", "Bị vua Lê Tương Dực tước bỏ chức vụ ngay từ đầu", "Bị người bạn thân ăn cắp bản thiết kế kiến trúc"],
+        answer: 0,
+        explanation: "Để thực hiện lí tưởng nghệ thuật cao siêu, Vũ Như Tô đã lợi dụng quyền thế của bạo chúa Lê Tương Dực, vô tình đẩy nhân dân vào cảnh sưu cao thuế nặng, dẫn đến Cửu Trùng Đài bị chính dân chúng đốt cháy."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Trong vở kịch 'Vũ Như Tô', nhân vật nào là người duy nhất thấu hiểu trọn vẹn tài năng, đam mê nghệ thuật của Vũ Như Tô và tỉnh táo nhận ra bi kịch sắp ập đến?",
+        options: ["Đan Thiềm", "Cung nữ Kim Phượng", "Hoàng hậu Nguyễn Thị Kim", "Trịnh Duy Sản"],
+        answer: 0,
+        explanation: "Đan Thiềm là người tri âm có 'biệt nhỡn liên tài', vừa khích lệ Vũ Như Tô xây đài, vừa sớm nhận ra nguy cơ khởi loạn và khuyên chàng trốn đi khi quân phản loạn kéo tới."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Câu thoại nổi tiếng 'Sống, hay không sống – đó là vấn đề' (To be, or not to be) là lời độc thoại nội tâm của nhân vật nào trong kịch của William Shakespeare?",
+        options: ["Hoàng tử Hăm-lét (Hamlet)", "Chàng Rô-mê-ô (Romeo)", "Vua Lia (King Lear)", "Tướng Ô-ten-lô (Othello)"],
+        answer: 0,
+        explanation: "Đây là lời độc thoại bất hủ của hoàng tử Hamlet (Hồi III, Cảnh 1) khi trăn trở giữa việc nhẫn nhục chịu đựng thực tại đen tối hay đứng lên đấu tranh chống lại biển khổ."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Bài thơ 'Đàn ghi ta của Lor-ca' của nhà thơ Thanh Thảo được viết để tưởng niệm người nghệ sĩ vĩ đại của đất nước nào?",
+        options: ["Tây Ban Nha (Federico García Lorca)", "Ý (Italy)", "Pháp (France)", "Nga (Russia)"],
+        answer: 0,
+        explanation: "Federico García Lorca (1898 – 1936) là nhà thơ, nhà viết kịch thiên tài người Tây Ban Nha, chiến sĩ đấu tranh cho tự do và cách tân nghệ thuật, bị chế độ phát xít Franco sát hại."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Trong bài thơ 'Đàn ghi ta của Lor-ca' (Thanh Thảo), chuỗi âm thanh 'li-la li-la li-la' mang ý nghĩa nghệ thuật gì?",
+        options: ["Vừa mô phỏng tiếng đàn ghi ta ngân vang, vừa gợi sắc hoa tử đinh hương (lilac) viếng hương hồn người nghệ sĩ bất tử", "Là tên một thành phố cảng ở miền Nam Tây Ban Nha", "Là khẩu lệnh hành quân của đội kị binh", "Là tên bản thảo kịch cuối cùng của Lor-ca"],
+        answer: 0,
+        explanation: "Chuỗi âm thanh 'li-la li-la li-la' giàu tính nhạc (láy âm tiếng đàn Tây Ban Nha) đồng thời gợi hình ảnh hoa tử đinh hương tím ngát tượng trưng cho sự bất diệt của nghệ thuật."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Hình ảnh 'tiếng ghi ta nâu / tiếng ghi ta lá xanh biết mấy / tiếng ghi ta tròn bọt nước vỡ tan / tiếng ghi ta ròng ròng máu chảy' trong bài thơ của Thanh Thảo sử dụng biện pháp tu từ đặc trưng nào của thơ tượng trưng?",
+        options: ["Ẩn dụ chuyển đổi cảm giác kết hợp điệp ngữ", "Nói giảm nói tránh", "Chơi chữ nói lái", "Liệt kê số liệu thống kê"],
+        answer: 0,
+        explanation: "Tiếng đàn (thính giác) được cảm nhận bằng màu sắc, hình khối, trạng thái ('nâu', 'lá xanh', 'tròn bọt nước vỡ tan', 'ròng ròng máu chảy') là phép ẩn dụ chuyển đổi cảm giác đậm chất tượng trưng – siêu thực."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Trong bài thơ 'Thời gian' của Văn Cao ('Thời gian qua kẽ tay / Làm khô những chiếc lá... Riêng những câu thơ còn xanh / Riêng những bài hát còn xanh'), hình ảnh 'câu thơ còn xanh', 'bài hát còn xanh' biểu trưng cho điều gì?",
+        options: ["Sức sống vĩnh cửu của nghệ thuật chân chính và vẻ đẹp tâm hồn con người vượt qua sự hủy hoại của thời gian", "Những bài thơ viết về chủ đề trồng rừng và bảo vệ cây xanh", "Những sáng tác chưa hoàn thiện của các tác giả trẻ", "Sự phai nhạt nhanh chóng của kí ức"],
+        answer: 0,
+        explanation: "Đối lập với 'những chiếc lá khô' và 'kỉ niệm rơi', màu xanh của câu thơ, bài hát và đôi mắt em biểu trưng cho sức sống bất diệt của nghệ thuật và tình yêu."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Đặc điểm nổi bật của yếu tố tượng trưng trong thơ trữ tình hiện đại là gì?",
+        options: ["Sử dụng những hình ảnh giàu tính biểu tượng, đa nghĩa, kết hợp nhạc tính và sự tương giao giữa các giác quan", "Chỉ miêu tả tỉ mỉ, chi tiết sự vật theo đúng quy luật tự nhiên", "Luôn tuân thủ nghiêm ngặt luật bằng trắc của thơ Đường luật", "Không sử dụng bất kì biện pháp tu từ nào"],
+        answer: 0,
+        explanation: "Thơ có yếu tố tượng trưng đề cao tính nhạc, sự tương giao giác quan và những biểu tượng hàm súc, gợi nhiều tầng liên tưởng triết lí sâu xa."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Trong văn bản kịch, những dòng chữ thường được in nghiêng và đặt trong dấu ngoặc đơn (nêu cử chỉ, điệu bộ nhân vật, bối cảnh ánh sáng, âm thanh...) được gọi là gì?",
+        options: ["Lời chỉ dẫn sân khấu", "Lời độc thoại nội tâm", "Lời bàng thoại", "Lời đề từ"],
+        answer: 0,
+        explanation: "Lời chỉ dẫn sân khấu của tác giả kịch bản giúp người đọc và đạo cụ/diễn viên hình dung không gian, hành động, thái độ của nhân vật khi trình diễn."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Cách giải thích nghĩa của từ bằng việc đưa ra các từ đồng nghĩa hoặc trái nghĩa với từ cần giải thích được gọi là:",
+        options: ["Giải thích bằng cách đối chiếu từ đồng nghĩa / trái nghĩa", "Giải thích bằng cách phân tích nội dung nghĩa (nêu đặc điểm sự vật)", "Giải thích bằng cách vẽ sơ đồ cây", "Giải thích bằng cách phiên âm quốc tế"],
+        answer: 0,
+        explanation: "Trong từ điển và văn bản giải thích từ ngữ, hai cách phổ biến nhất là: phân tích nội dung nghĩa và dùng từ đồng nghĩa/trái nghĩa quen thuộc hơn để đối chiếu."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Khi dẫn lại nguyên văn lời nói hoặc câu viết của một tác giả khác trong bài viết nghị luận, người viết bắt buộc phải làm gì để tôn trọng quyền sở hữu trí tuệ?",
+        options: ["Đặt phần trích dẫn trực tiếp trong dấu ngoặc kép và ghi rõ nguồn / tên tác giả", "Tự ý sửa đổi từ ngữ trong câu trích rồi nhận là của mình", "Không cần nêu tên tác giả nếu câu đó đã nổi tiếng", "In chữ nhỏ hơn và bỏ hết dấu câu"],
+        answer: 0,
+        explanation: "Trích dẫn trực tiếp bắt buộc phải chính xác từng từ, đặt trong dấu ngoặc kép và chú thích rõ tên tác giả, xuất xứ tác phẩm để tránh lỗi đạo văn."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Trong thuật ngữ lí luận bi kịch (theo Aristotle), sự thanh lọc tâm hồn người xem thông qua niềm xót thương và nỗi sợ hãi trước số phận nhân vật bi kịch được gọi là gì?",
+        options: ["Hiệu ứng thanh lọc (Catharsis)", "Hiệu ứng giãn cách hài kịch", "Phép nghịch ngữ châm biếm", "Cấu trúc vòng tròn"],
+        answer: 0,
+        explanation: "Khi chứng kiến cái chết hoặc thất bại bi tráng của nhân vật cao cả, khán giả trải qua sự chấn động cảm xúc để gột rửa những thấp hèn, hướng tới giá trị nhân văn cao đẹp (thanh lọc – Catharsis)."
+    },
+    {
+        grade: "11", subject: "van", term: "CK2",
+        question: "Vì sao đến giây phút cuối cùng khi Cửu Trùng Đài bị đốt cháy thành tro bụi, Vũ Như Tô mới bừng tỉnh và thốt lên: 'Ôi mộng lớn! Ôi Đan Thiềm! Ôi Cửu Trùng Đài! Thôi thế là hết! Dẫn ta ra pháp trường!'?",
+        options: ["Vì tận mắt thấy công trình tâm huyết sụp đổ trong ngọn lửa căm phẫn của dân chúng, ông mới nhận ra ảo mộng của mình đã tan vỡ", "Vì ông muốn được nhà vua ban thưởng thêm tiền bạc", "Vì ông đã hoàn thành xong toàn bộ bản vẽ mới", "Vì quân khởi nghĩa hứa sẽ xây lại đài lớn hơn"],
+        answer: 0,
+        explanation: "Trước đó Vũ Như Tô vẫn đinh ninh mình vô tội, chỉ đến khi ánh lửa thiêu rụi Cửu Trùng Đài, ông mới đau đớn tuyệt vọng nhận ra bi kịch tan vỡ của mộng lớn nghệ thuật."
     }
 ];
