@@ -7010,5 +7010,6109 @@ var QUESTION_BANK = [
         options: ["Nỗ lực học tập rèn luyện tốt, trung thực, sống có lí tưởng hoài bão, sẵn sàng thực hiện nghĩa vụ quân sự và cống hiến tài năng trí tuệ dựng xây quê hương giàu mạnh", "Chỉ mong muốn kiếm tiền nhanh chóng bằng mọi giá", "Sống ích kỉ, thờ ơ trước vận mệnh của đất nước", "Ỷ lại hoàn toàn vào sự bảo bọc của cha mẹ"],
         answer: 0,
         explanation: "'Đâu cần thanh niên có, đâu khó có thanh niên': thế hệ trẻ hôm nay tiếp bước cha anh, rèn đức luyện tài, nuôi dưỡng khát vọng cống hiến vì một Việt Nam hùng cường, phồn vinh và hạnh phúc."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - TOÁN HỌC - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Trong các câu sau, câu nào là một mệnh đề toán học?",
+        options: ["Số 17 là một số nguyên tố", "Hôm nay trời đẹp quá!", "Bạn đã làm bài tập về nhà chưa?", "Hãy đứng lên!"],
+        answer: 0,
+        explanation: "Mệnh đề toán học là một khẳng định có tính đúng hoặc sai rõ ràng. Câu cảm thán, câu hỏi, câu cầu khiến không phải là mệnh đề."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Mệnh đề phủ định của mệnh đề P: '∀x ∈ ℝ, x² + 1 > 0' là:",
+        options: ["∃x ∈ ℝ, x² + 1 ≤ 0", "∀x ∈ ℝ, x² + 1 ≤ 0", "∃x ∈ ℝ, x² + 1 < 0", "∀x ∈ ℝ, x² + 1 = 0"],
+        answer: 0,
+        explanation: "Phủ định của lượng từ '∀' (với mọi) là '∃' (tồn tại), và phủ định của quan hệ '>' là '≤'."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Cho tập hợp A = {1; 2; 3; 4} và B = {3; 4; 5; 6}. Tập hợp giao A ∩ B là:",
+        options: ["{3; 4}", "{1; 2; 3; 4; 5; 6}", "{1; 2}", "{5; 6}"],
+        answer: 0,
+        explanation: "Giao của hai tập hợp A và B gồm các phần tử vừa thuộc A vừa thuộc B, do đó A ∩ B = {3; 4}."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Cho hai tập hợp A = {0; 1; 2; 3} và B = {2; 3; 4}. Tập hợp hiệu A \\ B là:",
+        options: ["{0; 1}", "{2; 3}", "{4}", "{0; 1; 4}"],
+        answer: 0,
+        explanation: "Hiệu A \\ B gồm các phần tử thuộc A nhưng không thuộc B, suy ra A \\ B = {0; 1}."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Tập hợp A có 3 phần tử thì số tập hợp con của tập hợp A là bao nhiêu?",
+        options: ["8", "6", "3", "9"],
+        answer: 0,
+        explanation: "Một tập hợp có n phần tử thì có tất cả 2ⁿ tập con. Với n = 3, số tập con là 2³ = 8."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Bất phương trình nào sau đây là bất phương trình bậc nhất hai ẩn x, y?",
+        options: ["2x - 3y + 5 > 0", "x² + y ≤ 4", "2x + 3y² - 1 > 0", "xy + x < 2"],
+        answer: 0,
+        explanation: "Bất phương trình bậc nhất hai ẩn có dạng ax + by + c > 0 (hoặc <, ≥, ≤) trong đó a, b không đồng thời bằng 0 và bậc cao nhất của x, y là bậc 1."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Cặp số (x; y) nào sau đây là một nghiệm của bất phương trình 2x + y - 3 > 0?",
+        options: ["(2; 1)", "(0; 0)", "(1; 0)", "(-1; 2)"],
+        answer: 0,
+        explanation: "Thay x = 2, y = 1 vào vế trái: 2(2) + 1 - 3 = 2 > 0 (luôn đúng), nên (2; 1) là nghiệm."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Với góc α thỏa mãn 0° ≤ α ≤ 180°, khẳng định nào sau đây về hai góc bù nhau là ĐÚNG?",
+        options: ["sin(180° - α) = sin(α)", "cos(180° - α) = cos(α)", "tan(180° - α) = tan(α)", "sin(180° - α) = -sin(α)"],
+        answer: 0,
+        explanation: "Hai góc bù nhau (α và 180° - α) có sin bằng nhau, còn cos, tan, cot đối dấu nhau."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Giá trị của biểu thức P = sin(30°) + cos(60°) bằng:",
+        options: ["1", "√3", "1/2", "0"],
+        answer: 0,
+        explanation: "Ta có sin(30°) = 1/2 và cos(60°) = 1/2, do đó P = 1/2 + 1/2 = 1."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Trong tam giác ABC có BC = a, AC = b, AB = c. Định lí Côsin được viết đúng là:",
+        options: ["a² = b² + c² - 2bc·cos(A)", "a² = b² + c² + 2bc·cos(A)", "a² = b² + c² - bc·cos(A)", "a = b + c - 2bc·cos(A)"],
+        answer: 0,
+        explanation: "Theo định lí Côsin trong tam giác ABC: bình phương một cạnh bằng tổng bình phương hai cạnh kia trừ đi hai lần tích hai cạnh đó nhân với côsin góc xen giữa."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Cho tam giác ABC có b = 6, c = 8 và góc A = 60°. Độ dài cạnh a bằng:",
+        options: ["2√13", "10", "√52", "2√37"],
+        answer: 0,
+        explanation: "Áp dụng định lí Côsin: a² = 6² + 8² - 2·6·8·cos(60°) = 36 + 64 - 48 = 52 ⇒ a = √52 = 2√13."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Trong tam giác ABC với bán kính đường tròn ngoại tiếp R, hệ thức nào sau đây là Định lí Sin?",
+        options: ["a/sin(A) = b/sin(B) = c/sin(C) = 2R", "a/sin(A) = b/sin(B) = c/sin(C) = R", "a·sin(A) = b·sin(B) = 2R", "a/cos(A) = b/cos(B) = 2R"],
+        answer: 0,
+        explanation: "Định lí Sin trong tam giác: tỉ số giữa một cạnh và sin của góc đối diện luôn bằng đường kính 2R của đường tròn ngoại tiếp."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Cho tam giác ABC có cạnh a = 10 và góc A = 30°. Bán kính đường tròn ngoại tiếp R của tam giác là:",
+        options: ["10", "5", "20", "5√3"],
+        answer: 0,
+        explanation: "Theo định lí Sin: 2R = a / sin(A) = 10 / sin(30°) = 10 / (1/2) = 20 ⇒ R = 10."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Công thức tính diện tích S của tam giác ABC khi biết hai cạnh b, c và góc xen giữa A là:",
+        options: ["S = (1/2)·b·c·sin(A)", "S = b·c·sin(A)", "S = (1/2)·b·c·cos(A)", "S = (1/2)·a·b·sin(A)"],
+        answer: 0,
+        explanation: "Diện tích tam giác bằng nửa tích hai cạnh nhân với sin của góc xen giữa hai cạnh đó: S = (1/2)·b·c·sin(A)."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK1",
+        question: "Cho tam giác ABC có ba cạnh a = 3, b = 4, c = 5. Diện tích S của tam giác ABC theo công thức Heron là:",
+        options: ["6", "12", "10", "7,5"],
+        answer: 0,
+        explanation: "Nửa chu vi p = (3+4+5)/2 = 6. Theo công thức Heron: S = √[6(6-3)(6-4)(6-5)] = √36 = 6."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - TOÁN HỌC - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Tập xác định của hàm số y = √(x - 2) là:",
+        options: ["[2; +∞)", "(2; +∞)", "(-∞; 2]", "ℝ \\ {2}"],
+        answer: 0,
+        explanation: "Biểu thức dưới dấu căn bậc hai có nghĩa khi x - 2 ≥ 0 ⇔ x ≥ 2, tức là D = [2; +∞)."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Tọa độ đỉnh I của parabol (P): y = x² - 4x + 3 là:",
+        options: ["I(2; -1)", "I(-2; 15)", "I(2; 1)", "I(4; 3)"],
+        answer: 0,
+        explanation: "Hoành độ đỉnh x_I = -b/(2a) = 4/(2·1) = 2. Tung độ đỉnh y_I = 2² - 4·2 + 3 = -1. Vậy I(2; -1)."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Trục đối xứng của đồ thị hàm số bậc hai y = 2x² + 4x - 1 là đường thẳng:",
+        options: ["x = -1", "x = 1", "x = -2", "y = -1"],
+        answer: 0,
+        explanation: "Trục đối xứng của parabol y = ax² + bx + c là đường thẳng x = -b/(2a) = -4/(2·2) = -1."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Hàm số bậc hai y = -x² + 2x + 3 đồng biến trên khoảng nào sau đây?",
+        options: ["(-∞; 1)", "(1; +∞)", "(-∞; 2)", "(2; +∞)"],
+        answer: 0,
+        explanation: "Vì hệ số a = -1 < 0 và hoành độ đỉnh x_I = -b/(2a) = 1 nên hàm số đồng biến trên khoảng (-∞; 1) và nghịch biến trên (1; +∞)."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Với ba điểm A, B, C bất kì, quy tắc cộng vectơ (quy tắc ba điểm) nào sau đây là ĐÚNG?",
+        options: ["AB⃗ + BC⃗ = AC⃗", "AB⃗ + AC⃗ = BC⃗", "AB⃗ - BC⃗ = AC⃗", "BA⃗ + BC⃗ = AC⃗"],
+        answer: 0,
+        explanation: "Theo quy tắc ba điểm nối tiếp đối với phép cộng vectơ: AB⃗ + BC⃗ = AC⃗."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Cho hình bình hành ABCD. Theo quy tắc hình bình hành, tổng hai vectơ AB⃗ + AD⃗ bằng:",
+        options: ["AC⃗", "BD⃗", "DB⃗", "CA⃗"],
+        answer: 0,
+        explanation: "Theo quy tắc hình bình hành, tổng hai vectơ cạnh xuất phát từ cùng đỉnh A là vectơ đường chéo AC⃗."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Nếu I là trung điểm của đoạn thẳng AB thì đẳng thức vectơ nào sau đây ĐÚNG?",
+        options: ["IA⃗ + IB⃗ = 0⃗", "IA⃗ - IB⃗ = 0⃗", "AI⃗ + BI⃗ = AB⃗", "IA⃗ = IB⃗"],
+        answer: 0,
+        explanation: "Vì I là trung điểm AB nên hai vectơ IA⃗ và IB⃗ cùng độ dài nhưng ngược hướng, do đó IA⃗ + IB⃗ = 0⃗."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Cho hai vectơ a⃗ và b⃗ khác 0⃗ có góc giữa chúng là (a⃗, b⃗). Công thức tính tích vô hướng a⃗·b⃗ là:",
+        options: ["|a⃗|·|b⃗|·cos(a⃗, b⃗)", "|a⃗|·|b⃗|·sin(a⃗, b⃗)", "|a⃗| + |b⃗|·cos(a⃗, b⃗)", "-|a⃗|·|b⃗|·cos(a⃗, b⃗)"],
+        answer: 0,
+        explanation: "Tích vô hướng của hai vectơ bằng tích độ dài của chúng nhân với côsin của góc giữa hai vectơ đó."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Hai vectơ a⃗ và b⃗ (đều khác 0⃗) vuông góc với nhau khi và chỉ khi:",
+        options: ["a⃗·b⃗ = 0", "a⃗·b⃗ = 1", "a⃗ + b⃗ = 0⃗", "|a⃗| = |b⃗|"],
+        answer: 0,
+        explanation: "Khi a⃗ ⊥ b⃗ thì góc giữa chúng bằng 90°, mà cos(90°) = 0 nên tích vô hướng a⃗·b⃗ = 0."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Quy tròn số gần đúng a = 3,14159 đến hàng phần trăm ta được số:",
+        options: ["3,14", "3,15", "3,1", "3,142"],
+        answer: 0,
+        explanation: "Chữ số hàng phần trăm là 4, chữ số ngay sau nó là 1 (< 5) nên quy tròn đến hàng phần trăm ta được 3,14."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Cho mẫu số liệu điểm kiểm tra Toán của 5 học sinh: 6; 7; 8; 9; 10. Số trung bình cộng của mẫu số liệu là:",
+        options: ["8", "7,5", "8,5", "7"],
+        answer: 0,
+        explanation: "Số trung bình cộng x̄ = (6 + 7 + 8 + 9 + 10) / 5 = 40 / 5 = 8."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Trung vị (M_e) của mẫu số liệu đã sắp xếp không giảm: 2; 4; 7; 9; 12 là:",
+        options: ["7", "6,8", "4", "9"],
+        answer: 0,
+        explanation: "Mẫu có n = 5 (số lẻ) giá trị đã sắp xếp tăng dần nên trung vị chính là giá trị đứng chính giữa (vị trí thứ 3), bằng 7."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Mốt (M_o) của mẫu số liệu: 3; 5; 5; 6; 7; 5; 8; 7 là:",
+        options: ["5", "7", "6", "8"],
+        answer: 0,
+        explanation: "Mốt là giá trị xuất hiện với tần số lớn nhất trong mẫu số liệu. Giá trị 5 xuất hiện 3 lần (nhiều nhất) nên M_o = 5."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Khoảng biến thiên R của mẫu số liệu: 12; 15; 10; 22; 18 là:",
+        options: ["12", "10", "22", "6"],
+        answer: 0,
+        explanation: "Khoảng biến thiên R = x_max - x_min = 22 - 10 = 12."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK1",
+        question: "Nếu một mẫu số liệu có phương sai bằng s² = 9 thì độ lệch chuẩn s của mẫu số liệu đó bằng:",
+        options: ["3", "81", "4,5", "9"],
+        answer: 0,
+        explanation: "Độ lệch chuẩn là căn bậc hai số học của phương sai: s = √(s²) = √9 = 3."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - TOÁN HỌC - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Cho tam thức bậc hai f(x) = ax² + bx + c (a ≠ 0). Nếu biệt thức Δ = b² - 4ac < 0 thì dấu của f(x) trên ℝ như thế nào?",
+        options: ["f(x) luôn cùng dấu với hệ số a với mọi x ∈ ℝ", "f(x) luôn trái dấu với hệ số a với mọi x ∈ ℝ", "f(x) luôn dương với mọi x ∈ ℝ", "f(x) đổi dấu hai lần trên ℝ"],
+        answer: 0,
+        explanation: "Theo định lí về dấu của tam thức bậc hai, khi Δ < 0 thì f(x) cùng dấu với hệ số a với mọi x ∈ ℝ."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Tập nghiệm của bất phương trình bậc hai x² - 5x + 6 < 0 là:",
+        options: ["(2; 3)", "(-∞; 2) ∪ (3; +∞)", "[2; 3]", "(-3; -2)"],
+        answer: 0,
+        explanation: "Tam thức x² - 5x + 6 có hai nghiệm x = 2 và x = 3, hệ số a = 1 > 0. Theo quy tắc 'trong trái ngoài cùng', f(x) < 0 khi x ∈ (2; 3)."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Tam thức bậc hai nào sau đây nhận giá trị dương với mọi x ∈ ℝ?",
+        options: ["f(x) = x² - 2x + 5", "f(x) = x² - 4x + 3", "f(x) = -x² + 2x - 3", "f(x) = x² - 9"],
+        answer: 0,
+        explanation: "Ta có x² - 2x + 5 = (x - 1)² + 4 ≥ 4 > 0 với mọi x ∈ ℝ (hoặc a = 1 > 0 và Δ' = 1 - 5 = -4 < 0)."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Nghiệm của phương trình chứa căn √(2x - 1) = 3 là:",
+        options: ["x = 5", "x = 2", "x = 4", "x = 10"],
+        answer: 0,
+        explanation: "Điều kiện x ≥ 1/2. Bình phương hai vế: 2x - 1 = 9 ⇔ 2x = 10 ⇔ x = 5 (thỏa mãn)."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Trong mặt phẳng tọa độ Oxy, cho điểm A(1; 2) và B(5; -2). Tọa độ của vectơ AB⃗ là:",
+        options: ["(4; -4)", "(-4; 4)", "(6; 0)", "(3; 0)"],
+        answer: 0,
+        explanation: "Tọa độ vectơ AB⃗ = (x_B - x_A; y_B - y_A) = (5 - 1; -2 - 2) = (4; -4)."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Trong mặt phẳng Oxy, tọa độ trung điểm M của đoạn thẳng nối hai điểm A(2; 4) và B(6; -2) là:",
+        options: ["M(4; 1)", "M(8; 2)", "M(2; -3)", "M(4; 3)"],
+        answer: 0,
+        explanation: "Công thức trung điểm: x_M = (2 + 6)/2 = 4; y_M = (4 + (-2))/2 = 1. Vậy M(4; 1)."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Cho vectơ u⃗ = (3; 4) trong mặt phẳng Oxy. Độ dài |u⃗| của vectơ u⃗ bằng:",
+        options: ["5", "7", "25", "√7"],
+        answer: 0,
+        explanation: "Áp dụng công thức độ dài vectơ: |u⃗| = √(3² + 4²) = √25 = 5."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Trong mặt phẳng Oxy, cho đường thẳng d có phương trình tổng quát 2x - 3y + 7 = 0. Một vectơ pháp tuyến của đường thẳng d là:",
+        options: ["n⃗ = (2; -3)", "n⃗ = (3; 2)", "n⃗ = (-2; -3)", "n⃗ = (2; 7)"],
+        answer: 0,
+        explanation: "Đường thẳng ax + by + c = 0 có một vectơ pháp tuyến là n⃗ = (a; b) = (2; -3)."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Đường thẳng có vectơ pháp tuyến n⃗ = (1; -2) thì có một vectơ chỉ phương là:",
+        options: ["u⃗ = (2; 1)", "u⃗ = (1; -2)", "u⃗ = (-2; 1)", "u⃗ = (2; -1)"],
+        answer: 0,
+        explanation: "Vectơ pháp tuyến n⃗ = (a; b) vuông góc với vectơ chỉ phương u⃗ = (-b; a) = (2; 1)."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Phương trình tổng quát của đường thẳng đi qua điểm M(1; 2) và có vectơ pháp tuyến n⃗ = (3; 4) là:",
+        options: ["3x + 4y - 11 = 0", "3x + 4y + 11 = 0", "4x - 3y + 2 = 0", "x + 2y - 11 = 0"],
+        answer: 0,
+        explanation: "Phương trình đường thẳng: 3(x - 1) + 4(y - 2) = 0 ⇔ 3x + 4y - 11 = 0."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Khoảng cách từ điểm M(1; -2) đến đường thẳng Δ: 3x - 4y - 1 = 0 bằng:",
+        options: ["2", "10", "1", "12/5"],
+        answer: 0,
+        explanation: "Áp dụng công thức khoảng cách: d(M, Δ) = |3(1) - 4(-2) - 1| / √(3² + (-4)²) = |3 + 8 - 1| / 5 = 10 / 5 = 2."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Hai đường thẳng d₁: 2x + y - 3 = 0 và d₂: 4x + 2y + 5 = 0 có vị trí tương đối nào sau đây?",
+        options: ["Song song với nhau", "Cắt nhau và vuông góc", "Trùng nhau", "Cắt nhau nhưng không vuông góc"],
+        answer: 0,
+        explanation: "Ta có tỉ số 2/4 = 1/2 ≠ (-3)/5 nên hai đường thẳng d₁ và d₂ song song với nhau."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Góc giữa hai đường thẳng d₁: x - y + 2 = 0 và d₂: x + y - 5 = 0 bằng:",
+        options: ["90°", "45°", "60°", "0°"],
+        answer: 0,
+        explanation: "Hai vectơ pháp tuyến là n₁⃗ = (1; -1) và n₂⃗ = (1; 1). Tích vô hướng n₁⃗·n₂⃗ = 1·1 + (-1)·1 = 0 nên hai đường thẳng vuông góc (90°)."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Cho tam giác ABC có A(1; 2), B(2; 0), C(3; 4). Tọa độ trọng tâm G của tam giác ABC là:",
+        options: ["G(2; 2)", "G(6; 6)", "G(3; 3)", "G(2; 3)"],
+        answer: 0,
+        explanation: "Trọng tâm G có x_G = (1+2+3)/3 = 2 và y_G = (2+0+4)/3 = 2. Vậy G(2; 2)."
+    },
+    {
+        grade: "10", subject: "toan", term: "GK2",
+        question: "Cho hai vectơ u⃗ = (2; -1) và v⃗ = (3; 4) trong mặt phẳng Oxy. Tích vô hướng u⃗·v⃗ bằng:",
+        options: ["2", "10", "-2", "5"],
+        answer: 0,
+        explanation: "Biểu thức tọa độ của tích vô hướng: u⃗·v⃗ = 2·3 + (-1)·4 = 6 - 4 = 2."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - TOÁN HỌC - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Trong mặt phẳng Oxy, phương trình đường tròn có tâm I(1; -2) và bán kính R = 3 là:",
+        options: ["(x - 1)² + (y + 2)² = 9", "(x + 1)² + (y - 2)² = 9", "(x - 1)² + (y + 2)² = 3", "(x - 1)² + (y - 2)² = 9"],
+        answer: 0,
+        explanation: "Phương trình đường tròn tâm I(a; b) bán kính R là (x - a)² + (y - b)² = R² ⇔ (x - 1)² + (y + 2)² = 3² = 9."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Đường tròn (C): x² + y² - 4x + 6y - 3 = 0 có tọa độ tâm I và bán kính R là:",
+        options: ["I(2; -3), R = 4", "I(-2; 3), R = 4", "I(2; -3), R = 16", "I(4; -6), R = 3"],
+        answer: 0,
+        explanation: "Ta có a = 2, b = -3, c = -3 ⇒ Tâm I(2; -3) và bán kính R = √(a² + b² - c) = √(4 + 9 + 3) = √16 = 4."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Cho đường Elip (E) có phương trình chính tắc x²/25 + y²/9 = 1. Độ dài trục lớn 2a của Elip bằng:",
+        options: ["10", "5", "6", "8"],
+        answer: 0,
+        explanation: "Ta có a² = 25 ⇒ a = 5. Độ dài trục lớn của Elip là 2a = 2·5 = 10."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Một hộp bút có 5 cây bút xanh và 4 cây bút đỏ khác nhau. Số cách chọn ra 1 cây bút bất kì từ hộp là:",
+        options: ["9", "20", "5", "4"],
+        answer: 0,
+        explanation: "Áp dụng quy tắc cộng: có 5 + 4 = 9 cách chọn 1 cây bút."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Một bạn có 3 chiếc áo sơ mi khác nhau và 4 chiếc quần âu khác nhau. Số cách chọn một bộ trang phục gồm 1 áo và 1 quần là:",
+        options: ["12", "7", "24", "81"],
+        answer: 0,
+        explanation: "Áp dụng quy tắc nhân: có 3 × 4 = 12 cách phối một bộ gồm 1 áo và 1 quần."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Số cách xếp 5 học sinh ngồi vào một bàn dài có 5 ghế (mỗi bạn một ghế) là:",
+        options: ["120", "25", "5", "60"],
+        answer: 0,
+        explanation: "Số cách xếp 5 học sinh vào 5 vị trí là số hoán vị P₅ = 5! = 5·4·3·2·1 = 120."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Một lớp có 30 học sinh. Số cách chọn ra 3 bạn để phân công làm Lớp trưởng, Lớp phó và Bí thư (mỗi người một chức vụ) là:",
+        options: ["A³₃₀ = 24360", "C³₃₀ = 4060", "30³", "3!"],
+        answer: 0,
+        explanation: "Chọn 3 người từ 30 người và sắp xếp vào 3 chức vụ khác nhau (có thứ tự) là chỉnh hợp chập 3 của 30: A³₃₀ = 30·29·28 = 24360."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Số cách chọn ngẫu nhiên một nhóm gồm 3 học sinh từ một tổ có 10 học sinh để đi trực nhật (không phân biệt chức vụ) là:",
+        options: ["C³₁₀ = 120", "A³₁₀ = 720", "30", "1000"],
+        answer: 0,
+        explanation: "Chọn 3 học sinh từ 10 học sinh không phân biệt thứ tự là tổ hợp chập 3 của 10: C³₁₀ = (10·9·8)/(3·2·1) = 120."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Trong khai triển nhị thức Newton của (x + y)⁴, có tất cả bao nhiêu số hạng?",
+        options: ["5", "4", "6", "8"],
+        answer: 0,
+        explanation: "Khai triển nhị thức Newton (a + b)ⁿ có n + 1 số hạng. Với n = 4 thì có 4 + 1 = 5 số hạng."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Hệ số của x³ trong khai triển nhị thức (x + 2)⁴ là:",
+        options: ["8", "4", "24", "16"],
+        answer: 0,
+        explanation: "Số hạng chứa x³ là C¹₄·x³·2¹ = 4·2·x³ = 8x³. Vậy hệ số của x³ bằng 8."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Gieo một con xúc xắc cân đối và đồng chất 1 lần. Số phần tử của không gian mẫu n(Ω) là:",
+        options: ["6", "12", "36", "1"],
+        answer: 0,
+        explanation: "Không gian mẫu Ω = {1; 2; 3; 4; 5; 6} gồm 6 kết quả có thể xảy ra."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Gieo một đồng xu cân đối và đồng chất 3 lần liên tiếp. Số phần tử của không gian mẫu là:",
+        options: ["8", "6", "9", "4"],
+        answer: 0,
+        explanation: "Mỗi lần gieo có 2 khả năng (S hoặc N), gieo 3 lần có 2³ = 8 phần tử."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Gieo một con xúc xắc cân đối 1 lần. Xác suất để xuất hiện mặt có số chấm chẵn là:",
+        options: ["1/2", "1/3", "1/6", "2/3"],
+        answer: 0,
+        explanation: "Biến cố A = {2; 4; 6} có 3 phần tử. Xác suất P(A) = n(A)/n(Ω) = 3/6 = 1/2."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Một hộp có 4 quả cầu trắng và 6 quả cầu đen. Lấy ngẫu nhiên 1 quả cầu từ hộp. Xác suất để lấy được quả cầu trắng là:",
+        options: ["2/5", "3/5", "1/4", "2/3"],
+        answer: 0,
+        explanation: "Tổng số quả cầu là 4 + 6 = 10. Xác suất lấy được quả trắng là 4/10 = 2/5."
+    },
+    {
+        grade: "10", subject: "toan", term: "CK2",
+        question: "Cho biến cố A có xác suất P(A) = 0,35. Xác suất của biến cố đối Ā là:",
+        options: ["0,65", "0,35", "0,75", "1,35"],
+        answer: 0,
+        explanation: "Theo tính chất biến cố đối: P(Ā) = 1 - P(A) = 1 - 0,35 = 0,65."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - VẬT LÍ - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Trong Hệ đơn vị đo lường quốc tế (SI), đơn vị cơ bản dùng để đo chiều dài và thời gian lần lượt là:",
+        options: ["Mét (m) và Giây (s)", "Kilômét (km) và Giờ (h)", "Xentimét (cm) và Phút (min)", "Milimét (mm) và Giây (s)"],
+        answer: 0,
+        explanation: "Trong hệ SI có 7 đơn vị cơ bản, trong đó chiều dài đo bằng mét (m) và thời gian đo bằng giây (s)."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Sai số ngẫu nhiên trong phép đo vật lí có thể được giảm thiểu bằng cách nào sau đây?",
+        options: ["Thực hiện phép đo nhiều lần rồi lấy giá trị trung bình", "Đổi sang đơn vị đo lớn hơn", "Chỉ đo duy nhất 1 lần thật nhanh", "Không ghi chép phần thập phân"],
+        answer: 0,
+        explanation: "Sai số ngẫu nhiên do các tác nhân không kiểm soát được gây ra; để giảm sai số ngẫu nhiên ta đo lặp lại nhiều lần và tính giá trị trung bình cộng."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Đại lượng vật lí nào sau đây là đại lượng vectơ (vừa có độ lớn vừa có hướng)?",
+        options: ["Độ dịch chuyển và Vận tốc", "Quãng đường đi được và Tốc độ", "Thời gian và Khối lượng", "Nhiệt độ và Điện tích"],
+        answer: 0,
+        explanation: "Độ dịch chuyển (d⃗) và vận tốc (v⃗) là các đại lượng vectơ vì phụ thuộc vào cả độ lớn và phương, chiều chuyển động."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Khi nào độ lớn của độ dịch chuyển (d) bằng đúng quãng đường đi được (s) của vật?",
+        options: ["Khi vật chuyển động thẳng và không đổi chiều chuyển động", "Khi vật chuyển động tròn khép kín 1 vòng", "Khi vật đi từ A đến B rồi quay ngược về A", "Trong mọi chuyển động cong bất kì"],
+        answer: 0,
+        explanation: "Khi vật chuyển động thẳng theo một chiều duy nhất thì độ lớn độ dịch chuyển bằng quãng đường đi được (d = s)."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Một vận động viên bơi dọc theo chiều dài bể bơi 50 m từ đầu bể đến cuối bể rồi bơi quay lại chỗ xuất phát. Độ dịch chuyển của vận động viên bằng:",
+        options: ["0 m", "100 m", "50 m", "25 m"],
+        answer: 0,
+        explanation: "Quãng đường đi được là s = 50 + 50 = 100 m, nhưng điểm cuối trùng với điểm đầu nên độ dịch chuyển d = 0 m."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Tốc kế đặt trước mặt người lái xe máy hoặc ô tô cho biết đại lượng nào của xe tại thời điểm quan sát?",
+        options: ["Tốc độ tức thời của xe", "Tốc độ trung bình trên cả hành trình", "Gia tốc trung bình của xe", "Độ dịch chuyển tổng hợp"],
+        answer: 0,
+        explanation: "Tốc kế trên xe hiển thị độ lớn vận tốc (tốc độ tức thời) của phương tiện ngay tại thời điểm nhìn vào đồng hồ."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Độ dốc (hệ số góc) của đồ thị độ dịch chuyển - thời gian (d - t) trong chuyển động thẳng đều biểu thị đại lượng nào?",
+        options: ["Vận tốc của vật", "Gia tốc của vật", "Khối lượng của vật", "Thời gian chuyển động"],
+        answer: 0,
+        explanation: "Trong đồ thị d - t, độ dốc v = Δd / Δt chính là giá trị vận tốc của vật chuyển động."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Đại lượng vật lí đặc trưng cho sự biến thiên nhanh hay chậm của vận tốc theo thời gian được gọi là:",
+        options: ["Gia tốc (a)", "Độ dịch chuyển (d)", "Quãng đường (s)", "Tốc độ trung bình"],
+        answer: 0,
+        explanation: "Gia tốc a = Δv / Δt đo tốc độ biến thiên của vận tốc theo thời gian, đơn vị trong hệ SI là m/s²."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Trong chuyển động thẳng nhanh dần đều, vectơ gia tốc a⃗ và vectơ vận tốc v⃗ luôn có mối quan hệ:",
+        options: ["Cùng phương, cùng chiều (a·v > 0)", "Cùng phương, ngược chiều (a·v < 0)", "Vuông góc với nhau", "Gia tốc luôn bằng 0"],
+        answer: 0,
+        explanation: "Chuyển động thẳng nhanh dần đều có vận tốc tăng dần theo thời gian nên vectơ gia tốc a⃗ luôn cùng chiều với vectơ vận tốc v⃗."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Một ô tô đang đứng yên (v₀ = 0) bắt đầu tăng tốc chuyển động thẳng nhanh dần đều với gia tốc a = 2 m/s². Sau 5 s, vận tốc của ô tô là:",
+        options: ["10 m/s", "25 m/s", "5 m/s", "2,5 m/s"],
+        answer: 0,
+        explanation: "Áp dụng công thức v = v₀ + a·t = 0 + 2·5 = 10 m/s."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Công thức liên hệ độc lập với thời gian giữa vận tốc, gia tốc và độ dịch chuyển trong chuyển động thẳng biến đổi đều là:",
+        options: ["v² - v₀² = 2a·d", "v - v₀ = 2a·d", "v² + v₀² = 2a·d", "v² - v₀² = a·d"],
+        answer: 0,
+        explanation: "Hệ thức độc lập thời gian trong chuyển động thẳng biến đổi đều là v² - v₀² = 2ad."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Sự rơi tự do là sự rơi của vật khi:",
+        options: ["Chỉ chịu tác dụng của trọng lực (bỏ qua sức cản của không khí)", "Chịu tác dụng của lực đẩy Archimedes", "Có gắn thêm dù hãm", "Rơi trong nước hoặc dầu nhớt"],
+        answer: 0,
+        explanation: "Sự rơi tự do là sự rơi chỉ dưới tác dụng của trọng lực trong chân không (hoặc khi sức cản không khí không đáng kể so với trọng lượng vật)."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Thả một hòn sỏi rơi tự do từ độ cao h xuống đất tại nơi có g = 10 m/s². Sau 2 s vật chạm đất. Vận tốc của vật ngay khi chạm đất là:",
+        options: ["20 m/s", "10 m/s", "40 m/s", "5 m/s"],
+        answer: 0,
+        explanation: "Vận tốc rơi tự do: v = g·t = 10 × 2 = 20 m/s."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Trong chuyển động ném ngang (bỏ qua sức cản không khí), chuyển động thành phần theo phương nằm ngang Ox là:",
+        options: ["Chuyển động thẳng đều với vận tốc v_x = v₀", "Chuyển động rơi tự do", "Chuyển động thẳng nhanh dần đều", "Chuyển động thẳng chậm dần đều"],
+        answer: 0,
+        explanation: "Theo phương ngang Ox không có lực nào tác dụng lên vật nên vật chuyển động thẳng đều với vận tốc ban đầu v₀; còn theo phương thẳng đứng Oy là rơi tự do."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK1",
+        question: "Một chiếc thuyền chạy xuôi dòng nước với vận tốc 15 km/h so với nước, nước chảy với vận tốc 3 km/h so với bờ. Vận tốc của thuyền so với bờ là:",
+        options: ["18 km/h", "12 km/h", "5 km/h", "15 km/h"],
+        answer: 0,
+        explanation: "Khi thuyền đi xuôi dòng, vận tốc đối với bờ bằng tổng vận tốc thuyền so với nước và vận tốc nước so với bờ: v₁₃ = 15 + 3 = 18 km/h."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - VẬT LÍ - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Theo Định luật I Newton, nếu một vật không chịu tác dụng của lực nào hoặc chịu tác dụng của các lực có hợp lực bằng 0⃗ thì:",
+        options: ["Vật đang đứng yên sẽ tiếp tục đứng yên, đang chuyển động sẽ tiếp tục chuyển động thẳng đều", "Vật sẽ lập tức dừng lại ngay", "Vật sẽ chuyển động nhanh dần đều", "Vật sẽ chuyển động tròn đều"],
+        answer: 0,
+        explanation: "Định luật I Newton (định luật quán tính) khẳng định lực không phải là nguyên nhân duy trì chuyển động mà là nguyên nhân làm biến đổi vận tốc."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Tính chất của mọi vật có xu hướng bảo toàn vận tốc cả về hướng và độ lớn được gọi là gì?",
+        options: ["Quán tính", "Đàn hồi", "Ma sát", "Trọng trường"],
+        answer: 0,
+        explanation: "Quán tính là tính chất của mọi vật có xu hướng giữ nguyên trạng thái đứng yên hoặc chuyển động thẳng đều ban đầu."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Đại lượng vật lí nào là số đo mức quán tính của một vật?",
+        options: ["Khối lượng (m)", "Vận tốc (v)", "Gia tốc (a)", "Thể tích (V)"],
+        answer: 0,
+        explanation: "Khối lượng là đại lượng đặc trưng cho mức quán tính của vật: vật có khối lượng càng lớn thì mức quán tính càng lớn (càng khó thay đổi vận tốc)."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Biểu thức đúng của Định luật II Newton là:",
+        options: ["a⃗ = F⃗ / m (hay F⃗ = m·a⃗)", "a⃗ = m / F⃗", "F⃗ = m / a⃗", "F⃗ = m·v⃗"],
+        answer: 0,
+        explanation: "Theo Định luật II Newton: Gia tốc của một vật cùng hướng với lực tác dụng lên vật, độ lớn tỉ lệ thuận với độ lớn của lực và tỉ lệ nghịch với khối lượng của vật."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Tác dụng một hợp lực F = 12 N lên một vật có khối lượng m = 4 kg. Độ lớn gia tốc mà vật thu được là:",
+        options: ["3 m/s²", "48 m/s²", "0,33 m/s²", "8 m/s²"],
+        answer: 0,
+        explanation: "Áp dụng Định luật II Newton: a = F / m = 12 / 4 = 3 m/s²."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Theo Định luật III Newton, khi vật A tác dụng lên vật B một lực F⃗_AB thì vật B cũng tác dụng lại vật A một phản lực F⃗_BA. Cặp lực này có đặc điểm:",
+        options: ["Cùng giá, cùng độ lớn, ngược chiều và đặt vào hai vật khác nhau (không cân bằng nhau)", "Cùng chiều và triệt tiêu lẫn nhau", "Đặt vào cùng một vật", "Lực tác dụng luôn lớn hơn phản lực"],
+        answer: 0,
+        explanation: "Lực và phản lực luôn xuất hiện từng cặp trực đối (cùng phương, ngược chiều, cùng độ lớn) nhưng đặt lên hai vật khác nhau nên không triệt tiêu nhau."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Trọng lượng P của một vật có khối lượng m đặt tại nơi có gia tốc trọng trường g được tính bằng công thức:",
+        options: ["P = m·g", "P = m / g", "P = g / m", "P = m·g²"],
+        answer: 0,
+        explanation: "Trọng lượng là độ lớn của trọng lực tác dụng lên vật: P = m·g (đơn vị là Newton - N)."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Một vật có khối lượng 5 kg đặt tại nơi có gia tốc rơi tự do g = 9,8 m/s² thì có trọng lượng bằng:",
+        options: ["49 N", "5 N", "9,8 N", "500 N"],
+        answer: 0,
+        explanation: "Trọng lượng của vật là P = m·g = 5 × 9,8 = 49 N."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Lực ma sát trượt xuất hiện ở mặt tiếp xúc khi vật trượt trên một bề mặt, có chiều:",
+        options: ["Ngược với chiều chuyển động tương đối của vật đối với bề mặt", "Cùng chiều với vận tốc của vật", "Vuông góc với bề mặt tiếp xúc", "Hướng thẳng đứng xuống tâm Trái Đất"],
+        answer: 0,
+        explanation: "Lực ma sát trượt luôn tiếp tuyến với mặt tiếp xúc và ngược chiều với chiều chuyển động của vật nhằm cản trở chuyển động trượt."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Công thức tính độ lớn của lực ma sát trượt F_mst phụ thuộc vào hệ số ma sát trượt μ và áp lực N là:",
+        options: ["F_mst = μ·N", "F_mst = μ / N", "F_mst = N / μ", "F_mst = μ·N²"],
+        answer: 0,
+        explanation: "Độ lớn lực ma sát trượt tỉ lệ thuận với độ lớn của áp lực vuông góc lên bề mặt tiếp xúc: F_mst = μ·N."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Tác dụng của lực ma sát nghỉ khi ta bước đi bộ trên mặt đường là gì?",
+        options: ["Giữ cho bàn chân không bị trượt về phía sau và đóng vai trò là lực phát động đẩy cơ thể tiến về phía trước", "Làm mòn đế giày nhanh chóng", "Chỉ gây cản trở không cho con người đi lại", "Làm giảm trọng lượng của cơ thể"],
+        answer: 0,
+        explanation: "Khi bước đi, bàn chân đạp mặt đất về phía sau, mặt đất tác dụng lực ma sát nghỉ hướng về phía trước đẩy người tiến lên."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Lực căng dây (T⃗) xuất hiện khi một sợi dây bị kéo căng có điểm đặt và chiều như thế nào?",
+        options: ["Đặt tại điểm đầu dây tiếp xúc với vật, có phương dọc theo sợi dây và hướng vào phần giữa của sợi dây", "Hướng ra ngoài làm dây dài thêm", "Vuông góc với sợi dây", "Luôn hướng thẳng đứng xuống dưới"],
+        answer: 0,
+        explanation: "Lực căng dây là lực đàn hồi xuất hiện khi dây bị kéo căng, có phương trùng với sợi dây và chiều chống lại xu hướng kéo giãn dây."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Một chiếc đèn chùm có trọng lượng 40 N được treo đứng yên vào trần nhà bằng một sợi dây nhẹ không dãn. Độ lớn lực căng của sợi dây bằng:",
+        options: ["40 N", "20 N", "80 N", "0 N"],
+        answer: 0,
+        explanation: "Đèn đứng yên cân bằng dưới tác dụng của trọng lực P⃗ và lực căng dây T⃗ nên T = P = 40 N."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Độ lớn của lực cản chất lưu (không khí, nước) tác dụng lên một vật chuyển động phụ thuộc chủ yếu vào yếu tố nào?",
+        options: ["Hình dạng của vật và tốc độ chuyển động của vật (tốc độ càng lớn, lực cản càng lớn)", "Chỉ phụ thuộc vào màu sắc của vật", "Không phụ thuộc vào diện tích mặt cản", "Tốc độ càng lớn thì lực cản càng giảm về 0"],
+        answer: 0,
+        explanation: "Lực cản của chất lưu phụ thuộc vào hình dạng khí động học của vật và tăng lên khi tốc độ của vật tăng."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK1",
+        question: "Lực đẩy Archimedes tác dụng lên một vật nhúng chìm hoàn toàn trong chất lỏng có chiều và độ lớn là:",
+        options: ["Hướng thẳng đứng từ dưới lên trên; độ lớn bằng trọng lượng phần chất lỏng bị vật chiếm chỗ (F_A = ρ·g·V)", "Hướng thẳng đứng từ trên xuống dưới", "Cùng chiều với chuyển động ngang của tàu", "Chỉ phụ thuộc vào khối lượng riêng của vật"],
+        answer: 0,
+        explanation: "Lực đẩy Archimedes hướng thẳng đứng lên trên và có độ lớn F_A = ρ·g·V (với ρ là khối lượng riêng chất lỏng, V là thể tích phần chất lỏng bị chiếm chỗ)."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - VẬT LÍ - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Khi một lực không đổi F tác dụng lên vật làm vật dịch chuyển một đoạn s theo hướng hợp với hướng của lực một góc α, công A của lực được tính bằng công thức:",
+        options: ["A = F·s·cos(α)", "A = F·s·sin(α)", "A = F·s", "A = F·cos(α) / s"],
+        answer: 0,
+        explanation: "Công cơ học được định nghĩa bởi biểu thức tổng quát A = F·s·cos(α), đơn vị trong hệ SI là Joule (J)."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Trong trường hợp nào sau đây, lực tác dụng lên vật thực hiện công âm (công cản, A < 0)?",
+        options: ["Góc hợp bởi hướng của lực và hướng dịch chuyển là góc tù (90° < α ≤ 180°)", "Góc α là góc nhọn (0° ≤ α < 90°)", "Góc α = 90°", "Góc α = 0°"],
+        answer: 0,
+        explanation: "Khi 90° < α ≤ 180° thì cos(α) < 0 nên A = F·s·cos(α) < 0, lực đóng vai trò cản trở chuyển động (như lực ma sát trượt)."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Kéo một thùng hàng trên sàn ngang một đoạn s = 10 m bằng lực F = 50 N có phương hợp với phương ngang góc α = 60°. Công của lực kéo là:",
+        options: ["250 J", "500 J", "250√3 J", "100 J"],
+        answer: 0,
+        explanation: "Áp dụng công thức: A = F·s·cos(60°) = 50 × 10 × 0,5 = 250 J."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Công suất (P) là đại lượng vật lí đặc trưng cho điều gì và có đơn vị đo trong hệ SI là gì?",
+        options: ["Tốc độ thực hiện công nhanh hay chậm (P = A/t); đơn vị là Oát (Watt - W)", "Tổng năng lượng dự trữ của vật; đơn vị là Joule (J)", "Độ lớn của lực kéo; đơn vị là Newton (N)", "Quãng đường đi được trong 1 giây; đơn vị là m/s"],
+        answer: 0,
+        explanation: "Công suất P = A / t đo công thực hiện được trong một đơn vị thời gian, đơn vị là Watt (1 W = 1 J/s)."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Một cần cẩu thực hiện một công 12 000 J để nâng kiện hàng trong thời gian 4 giây. Công suất trung bình của cần cẩu là:",
+        options: ["3 000 W (3 kW)", "48 000 W", "300 W", "4 000 W"],
+        answer: 0,
+        explanation: "Công suất P = A / t = 12 000 / 4 = 3 000 W = 3 kW."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Động năng (W_đ) của một vật có khối lượng m đang chuyển động với tốc độ v được tính bằng công thức:",
+        options: ["W_đ = (1/2)·m·v²", "W_đ = m·v²", "W_đ = (1/2)·m·v", "W_đ = m·g·h"],
+        answer: 0,
+        explanation: "Động năng là dạng năng lượng vật có được do nó đang chuyển động: W_đ = (1/2)mv² (đơn vị Joule - J)."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Nếu tốc độ chuyển động của một vật tăng lên gấp 2 lần (khối lượng không đổi) thì động năng của vật sẽ:",
+        options: ["Tăng lên gấp 4 lần", "Tăng lên gấp 2 lần", "Không thay đổi", "Giảm đi 2 lần"],
+        answer: 0,
+        explanation: "Vì động năng W_đ = (1/2)mv² tỉ lệ thuận với bình phương tốc độ nên khi v tăng 2 lần thì W_đ tăng 2² = 4 lần."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Thế năng trọng trường (W_t) của một vật khối lượng m ở độ cao h so với mốc thế năng được xác định bởi:",
+        options: ["W_t = m·g·h", "W_t = (1/2)·m·g·h", "W_t = m·g / h", "W_t = (1/2)·m·v²"],
+        answer: 0,
+        explanation: "Thế năng trọng trường tại độ cao h so với mốc thế năng: W_t = m·g·h."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Cơ năng (W) của một vật chuyển động trong trọng trường chỉ chịu tác dụng của trọng lực được bảo toàn, có biểu thức:",
+        options: ["W = W_đ + W_t = (1/2)mv² + mgh = hằng số", "W = W_đ - W_t = hằng số", "W = W_đ × W_t = hằng số", "W = mv + mgh = hằng số"],
+        answer: 0,
+        explanation: "Khi vật chỉ chịu tác dụng của lực thế (trọng lực), tổng động năng và thế năng gọi là cơ năng luôn được bảo toàn."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Khi một vật rơi tự do từ trên cao xuống đất (bỏ qua sức cản không khí), sự chuyển hóa cơ năng diễn ra như thế nào?",
+        options: ["Thế năng giảm dần, động năng tăng dần nhưng cơ năng toàn phần không đổi", "Thế năng tăng dần, động năng giảm dần", "Cả thế năng và động năng đều tăng", "Cơ năng giảm dần về 0"],
+        answer: 0,
+        explanation: "Khi rơi xuống, độ cao h giảm nên thế năng giảm; vận tốc v tăng nên động năng tăng; độ giảm thế năng chuyển hóa hoàn toàn thành độ tăng động năng."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Hiệu suất (H) của một động cơ được xác định bằng tỉ số phần trăm giữa:",
+        options: ["Năng lượng có ích (công có ích A_ích) và năng lượng toàn phần (A_tp) cung cấp cho động cơ: H = (A_ích / A_tp)·100%", "Năng lượng hao phí và năng lượng có ích", "Năng lượng toàn phần và năng lượng có ích (luôn lớn hơn 100%)", "Tổng năng lượng có ích cộng năng lượng hao phí"],
+        answer: 0,
+        explanation: "Hiệu suất H = (W_ích / W_tp) × 100% luôn nhỏ hơn 100% do luôn tồn tại hao phí nhiệt bởi ma sát."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Moment lực (M) đối với một trục quay là đại lượng đặc trưng cho tác dụng làm quay của lực và được đo bằng:",
+        options: ["Tích của độ lớn lực F với cánh tay đòn d của lực: M = F·d (đơn vị N.m)", "Thương số của lực F và cánh tay đòn d: M = F/d", "Tổng của lực F và cánh tay đòn d", "Tích của khối lượng m và cánh tay đòn d"],
+        answer: 0,
+        explanation: "Moment lực M = F·d, trong đó d là cánh tay đòn (khoảng cách vuông góc từ trục quay đến giá của lực F)."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Dùng cờ-lê để vặn một đai ốc, tác dụng lực F = 40 N vuông góc với thân cờ-lê tại điểm cách trục ốc một khoảng d = 0,25 m. Moment của lực bằng:",
+        options: ["10 N.m", "160 N.m", "40,25 N.m", "100 N.m"],
+        answer: 0,
+        explanation: "Moment lực M = F·d = 40 × 0,25 = 10 N.m."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Hệ hai lực song song, ngược chiều, có độ lớn bằng nhau và cùng tác dụng vào một vật gọi là gì?",
+        options: ["Ngẫu lực", "Hai lực cân bằng", "Hợp lực cùng chiều", "Cặp lực và phản lực"],
+        answer: 0,
+        explanation: "Ngẫu lực là hệ hai lực song song, ngược chiều, cùng độ lớn tác dụng vào một vật, chỉ có tác dụng làm vật quay chứ không làm vật tịnh tiến."
+    },
+    {
+        grade: "10", subject: "ly", term: "GK2",
+        question: "Điều kiện tổng quát để một vật rắn cân bằng là gì?",
+        options: ["Tổng các lực tác dụng lên vật bằng 0⃗ và tổng các moment lực tác dụng lên vật đối với một trục quay bất kì bằng 0", "Chỉ cần tổng các lực bằng 0⃗", "Chỉ cần vật có khối lượng thật lớn", "Vật phải chuyển động nhanh dần đều"],
+        answer: 0,
+        explanation: "Vật rắn cân bằng khi đồng thời thỏa mãn 2 điều kiện: không chuyển động tịnh tiến (∑F⃗ = 0⃗) và không quay (∑M = 0)."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - VẬT LÍ - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Động lượng (p⃗) của một vật khối lượng m đang chuyển động với vận tốc v⃗ được xác định bởi công thức:",
+        options: ["p⃗ = m·v⃗ (đơn vị là kg.m/s)", "p = (1/2)m·v²", "p⃗ = m·a⃗", "p⃗ = F⃗ / t"],
+        answer: 0,
+        explanation: "Động lượng p⃗ = m·v⃗ là đại lượng vectơ cùng hướng với vận tốc của vật, đơn vị là kg.m/s hoặc N.s."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Một quả bóng khối lượng 0,5 kg đang bay với tốc độ 12 m/s. Độ lớn động lượng của quả bóng là:",
+        options: ["6 kg.m/s", "24 kg.m/s", "36 kg.m/s", "12,5 kg.m/s"],
+        answer: 0,
+        explanation: "Độ lớn động lượng: p = m·v = 0,5 × 12 = 6 kg.m/s."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Độ biến thiên động lượng Δp⃗ của một vật trong khoảng thời gian Δt bằng:",
+        options: ["Xung lượng của hợp lực tác dụng lên vật trong khoảng thời gian đó: Δp⃗ = F⃗·Δt", "Công của lực tác dụng lên vật", "Động năng ban đầu của vật", "Moment của lực"],
+        answer: 0,
+        explanation: "Hệ thức liên hệ giữa xung lượng của lực và độ biến thiên động lượng: F⃗·Δt = Δp⃗ = p⃗₂ - p⃗₁."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Vì sao túi khí an toàn trên ô tô giúp bảo vệ người lái xe khi xảy ra va chạm mạnh?",
+        options: ["Túi khí làm tăng thời gian va chạm Δt để giảm đáng kể lực tác dụng F lên đầu và ngực người lái (vì F = Δp/Δt)", "Túi khí làm tăng động lượng của ô tô", "Túi khí làm giảm thời gian va chạm về 0", "Túi khí làm tăng vận tốc của xe"],
+        answer: 0,
+        explanation: "Khi độ biến thiên động lượng Δp xác định, việc kéo dài thời gian dừng lại Δt nhờ túi khí phồng êm giúp giảm lực xung kích F = Δp / Δt xuống mức an toàn."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Định luật bảo toàn động lượng được phát biểu đúng cho một hệ kín (hệ cô lập) là:",
+        options: ["Tổng động lượng của một hệ kín luôn được bảo toàn (không đổi)", "Động lượng của từng vật riêng lẻ không bao giờ đổi", "Tổng tốc độ của các vật luôn bằng 0", "Động năng luôn chuyển hết thành nhiệt"],
+        answer: 0,
+        explanation: "Trong một hệ kín (không có ngoại lực hoặc ngoại lực triệt tiêu), tổng vectơ động lượng của hệ trước và sau tương tác luôn bằng nhau: p⃗₁ + p⃗₂ = p⃗₁' + p⃗₂'."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Hiện tượng súng giật lùi về phía sau khi bắn đạn về phía trước hay tên lửa bay lên nhờ phụt khí ra phía sau được giải thích dựa trên:",
+        options: ["Định luật bảo toàn động lượng (chuyển động bằng phản lực)", "Định luật bảo toàn khối lượng", "Định luật Hooke về lực đàn hồi", "Định luật Archimedes"],
+        answer: 0,
+        explanation: "Khi luồng khí phụt mạnh về phía sau với động lượng p⃗_khí thì vỏ tên lửa nhận được động lượng p⃗_tênlửa = -p⃗_khí đẩy tên lửa tiến về phía trước."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Trong va chạm mềm (hai vật dính vào nhau và chuyển động cùng vận tốc sau va chạm), đại lượng nào được bảo toàn?",
+        options: ["Động lượng được bảo toàn, còn động năng bị giảm (một phần chuyển thành nhiệt và biến dạng)", "Cả động năng và động lượng đều bảo toàn tuyệt đối", "Chỉ có động năng bảo toàn", "Không có đại lượng nào bảo toàn"],
+        answer: 0,
+        explanation: "Mọi va chạm (đàn hồi hay mềm) của hệ kín đều bảo toàn động lượng; nhưng trong va chạm mềm, một phần động năng bị tiêu hao thành nội năng (nhiệt và biến dạng)."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Trong chuyển động tròn đều, góc mà bán kính nối tâm quỹ đạo với vật quét được trong một đơn vị thời gian gọi là:",
+        options: ["Tốc độ góc ω (đơn vị rad/s)", "Tốc độ dài v (đơn vị m/s)", "Chu kì T (đơn vị s)", "Tần số f (đơn vị Hz)"],
+        answer: 0,
+        explanation: "Tốc độ góc ω = Δφ / Δt đo góc quét được trong 1 giây, đơn vị là radian trên giây (rad/s)."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Công thức liên hệ giữa tốc độ dài v, tốc độ góc ω và bán kính quỹ đạo r trong chuyển động tròn đều là:",
+        options: ["v = ω·r", "v = ω / r", "ω = v·r", "v = ω²·r"],
+        answer: 0,
+        explanation: "Tốc độ dài tỉ lệ thuận với bán kính quỹ đạo và tốc độ góc: v = ω·r."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Vectơ gia tốc hướng tâm (a⃗_ht) trong chuyển động tròn đều có phương, chiều và độ lớn như thế nào?",
+        options: ["Luôn hướng vào tâm quỹ đạo tròn; độ lớn a_ht = v²/r = ω²·r", "Luôn tiếp tuyến với quỹ đạo tròn", "Hướng ra xa tâm quỹ đạo", "Có độ lớn bằng 0"],
+        answer: 0,
+        explanation: "Gia tốc hướng tâm đặc trưng cho sự đổi hướng của vectơ vận tốc, luôn hướng vào tâm đường tròn với độ lớn a_ht = v²/r = ω²r."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Khi ô tô chạy qua một đoạn cầu vồng lên (cong lên) hoặc vào khúc cua tròn trên mặt đường ngang, hợp lực đóng vai trò giữ cho xe chuyển động trên cung tròn là:",
+        options: ["Lực hướng tâm (F_ht = m·v²/r)", "Lực ma sát trượt", "Lực đẩy Archimedes", "Lực đàn hồi của lốp xe"],
+        answer: 0,
+        explanation: "Hợp lực của các lực tác dụng lên vật hướng vào tâm quỹ đạo gây ra gia tốc hướng tâm được gọi là lực hướng tâm: F_ht = m·a_ht = m·v²/r."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Biến dạng của lò xo hoặc dây cao su khi ngừng tác dụng lực thì vật tự lấy lại hình dạng và kích thước ban đầu được gọi là:",
+        options: ["Biến dạng đàn hồi", "Biến dạng dẻo (biến dạng còn dư)", "Sự nóng chảy", "Sự đứt gãy"],
+        answer: 0,
+        explanation: "Biến dạng đàn hồi là biến dạng mà vật hoàn toàn khôi phục lại hình dạng, kích thước ban đầu khi ngoại lực thôi tác dụng."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Theo Định luật Hooke, trong giới hạn đàn hồi, độ lớn lực đàn hồi F_đh của lò xo tỉ lệ thuận với độ biến dạng |Δl| theo công thức:",
+        options: ["F_đh = k·|Δl| (với k là độ cứng của lò xo, đơn vị N/m)", "F_đh = k / |Δl|", "F_đh = |Δl| / k", "F_đh = k·Δl²"],
+        answer: 0,
+        explanation: "Định luật Hooke: Trong giới hạn đàn hồi, độ lớn lực đàn hồi của lò xo tỉ lệ thuận với độ biến dạng của lò xo: F_đh = k·|Δl|."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Một lò xo có độ cứng k = 100 N/m. Khi treo một vật vào lò xo thì lò xo dãn ra một đoạn Δl = 5 cm = 0,05 m trong giới hạn đàn hồi. Độ lớn lực đàn hồi của lò xo là:",
+        options: ["5 N", "500 N", "20 N", "0,5 N"],
+        answer: 0,
+        explanation: "Áp dụng Định luật Hooke: F_đh = k·|Δl| = 100 × 0,05 = 5 N."
+    },
+    {
+        grade: "10", subject: "ly", term: "CK2",
+        question: "Áp suất chất lỏng tại một điểm ở độ sâu h so với mặt thoáng (khi áp suất khí quyển trên mặt thoáng là p₀, khối lượng riêng chất lỏng là ρ) được tính bằng công thức:",
+        options: ["p = p₀ + ρ·g·h", "p = p₀ - ρ·g·h", "p = ρ·g / h", "p = p₀·ρ·g·h"],
+        answer: 0,
+        explanation: "Áp suất tuyệt đối tại độ sâu h trong lòng chất lỏng đứng yên bằng tổng áp suất khí quyển p₀ và áp suất thủy tĩnh ρ·g·h."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - HÓA HỌC - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Nguyên tử được cấu tạo từ 3 loại hạt cơ bản nào?",
+        options: ["Proton (p) và neutron (n) trong hạt nhân, electron (e) ở lớp vỏ nguyên tử", "Proton và electron trong hạt nhân, neutron ở vỏ", "Chỉ gồm proton và electron", "Neutron và electron trong hạt nhân, proton ở vỏ"],
+        answer: 0,
+        explanation: "Nguyên tử gồm hạt nhân mang điện tích dương ở tâm (chứa hạt proton mang điện +1 và hạt neutron không mang điện) và lớp vỏ gồm các hạt electron mang điện -1."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Trong một nguyên tử trung hòa về điện, mối quan hệ nào sau đây luôn ĐÚNG?",
+        options: ["Số hạt proton (Z) luôn bằng số hạt electron (E)", "Số hạt proton luôn bằng số hạt neutron (N)", "Số khối A luôn bằng hai lần số proton", "Số electron luôn lớn hơn số proton"],
+        answer: 0,
+        explanation: "Nguyên tử trung hòa về điện nên tổng điện tích dương của proton bằng tổng điện tích âm của electron, do đó số p = số e = Z."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Kí hiệu nguyên tử của nguyên tố nhôm là ²⁷₁₃Al. Số hạt proton, electron và neutron trong một nguyên tử nhôm lần lượt là:",
+        options: ["13 proton, 13 electron, 14 neutron", "13 proton, 14 electron, 13 neutron", "27 proton, 13 electron, 14 neutron", "14 proton, 14 electron, 13 neutron"],
+        answer: 0,
+        explanation: "Số hiệu nguyên tử Z = 13 ⇒ số p = số e = 13; số khối A = 27 ⇒ số neutron N = A - Z = 27 - 13 = 14."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Đồng vị của cùng một nguyên tố hóa học là những nguyên tử có:",
+        options: ["Cùng số hạt proton (cùng Z) nhưng khác nhau về số hạt neutron (do đó số khối A khác nhau)", "Cùng số hạt neutron nhưng khác số hạt proton", "Cùng số khối A nhưng khác số hiệu nguyên tử Z", "Cùng số neutron và cùng số khối"],
+        answer: 0,
+        explanation: "Đồng vị (cùng vị trí trong bảng tuần hoàn) là các nguyên tử có cùng số proton Z nhưng khác nhau số neutron N."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Trong tự nhiên, chlorine có hai đồng vị bền là ³⁵₁₇Cl (chiếm 75% số nguyên tử) và ³⁷₁₇Cl (chiếm 25% số nguyên tử). Nguyên tử khối trung bình của chlorine là:",
+        options: ["35,5", "36,0", "35,2", "36,5"],
+        answer: 0,
+        explanation: "Áp dụng công thức: Ā_Cl = (35 × 75 + 37 × 25) / 100 = 35,5."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Orbital nguyên tử (AO) kiểu s và kiểu p có hình dạng đặc trưng lần lượt là gì?",
+        options: ["AO s có dạng hình cầu; AO p có dạng hình số 8 nổi", "AO s có dạng hình số 8 nổi; AO p có dạng hình cầu", "Cả hai đều có dạng hình cầu", "AO s có dạng hình khối lập phương"],
+        answer: 0,
+        explanation: "Theo mô hình hiện đại, orbital s có dạng hình cầu đối xứng quanh hạt nhân, còn 3 orbital p (p_x, p_y, p_z) có dạng hình số 8 nổi định hướng theo 3 trục tọa độ."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Số electron tối đa có thể phân bố trên các phân lớp s, p, d, f lần lượt là:",
+        options: ["2, 6, 10, 14", "2, 8, 18, 32", "1, 3, 5, 7", "2, 4, 6, 8"],
+        answer: 0,
+        explanation: "Số AO trong các phân lớp s, p, d, f là 1, 3, 5, 7; mỗi AO chứa tối đa 2 electron nên số electron tối đa tương ứng là 2, 6, 10, 14."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Nguyên tử Sodium (Na) có số hiệu nguyên tử Z = 11. Cấu hình electron ở trạng thái cơ bản của nguyên tử Na là:",
+        options: ["1s² 2s² 2p⁶ 3s¹", "1s² 2s² 2p⁷", "1s² 2s² 2p⁶ 3p¹", "1s² 2s² 2p⁵ 3s²"],
+        answer: 0,
+        explanation: "Với Z = 11, các electron điền lần lượt theo mức năng lượng từ thấp đến cao: 1s² 2s² 2p⁶ 3s¹ (có 1 electron lớp ngoài cùng ⇒ kim loại kiềm)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Nguyên tắc sắp xếp các nguyên tố trong Bảng tuần hoàn các nguyên tố hóa học là:",
+        options: ["Theo chiều tăng dần của điện tích hạt nhân nguyên tử (Z)", "Theo chiều tăng dần của số hạt neutron", "Theo chiều giảm dần của bán kính nguyên tử", "Theo thứ tự bảng chữ cái tên gọi quốc tế"],
+        answer: 0,
+        explanation: "Các nguyên tố hóa học được sắp xếp theo chiều tăng dần của điện tích hạt nhân Z; các nguyên tố có cùng số lớp electron xếp vào một hàng (chu kì), cùng số e hóa trị tương tự nhau xếp vào một cột (nhóm)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Nguyên tố Magnesium (Mg) có cấu hình electron là 1s² 2s² 2p⁶ 3s². Vị trí của Mg trong bảng tuần hoàn là:",
+        options: ["Ô số 12, chu kì 3, nhóm IIA", "Ô số 12, chu kì 2, nhóm IIIA", "Ô số 10, chu kì 3, nhóm IIA", "Ô số 12, chu kì 3, nhóm IIB"],
+        answer: 0,
+        explanation: "Tổng số e = 12 ⇒ Ô số 12; có 3 lớp electron ⇒ Chu kì 3; nguyên tố s có 2 electron lớp ngoài cùng ⇒ Nhóm IIA."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Trong một chu kì của bảng tuần hoàn, khi đi từ trái sang phải theo chiều tăng dần của điện tích hạt nhân Z thì bán kính nguyên tử và độ âm điện biến đổi như thế nào?",
+        options: ["Bán kính nguyên tử giảm dần, độ âm điện tăng dần", "Bán kính nguyên tử tăng dần, độ âm điện giảm dần", "Cả bán kính nguyên tử và độ âm điện đều tăng dần", "Cả bán kính nguyên tử và độ âm điện đều giảm dần"],
+        answer: 0,
+        explanation: "Trong cùng một chu kì, số lớp e không đổi nhưng điện tích hạt nhân tăng làm lực hút hạt nhân với lớp vỏ mạnh hơn, khiến bán kính nguyên tử co lại (giảm) và khả năng hút electron (độ âm điện) tăng lên."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Trong một nhóm A (từ trên xuống dưới theo chiều tăng của Z), tính kim loại và tính phi kim của các nguyên tố biến đổi như thế nào?",
+        options: ["Tính kim loại tăng dần, tính phi kim giảm dần", "Tính kim loại giảm dần, tính phi kim tăng dần", "Cả tính kim loại và tính phi kim đều tăng", "Không thay đổi trong suốt cả nhóm"],
+        answer: 0,
+        explanation: "Trong một nhóm A từ trên xuống dưới, số lớp electron tăng làm bán kính nguyên tử tăng nhanh, khả năng nhường electron dễ hơn nên tính kim loại tăng dần và tính phi kim giảm dần."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Nguyên tố có độ âm điện lớn nhất (χ = 3,98 theo thang Pauling) và tính phi kim mạnh nhất trong bảng tuần hoàn là:",
+        options: ["Fluorine (F, ở chu kì 2, nhóm VIIA)", "Chlorine (Cl)", "Oxygen (O)", "Caesium (Cs)"],
+        answer: 0,
+        explanation: "Fluorine (Z = 9) nằm ở góc trên bên phải bảng tuần hoàn (không tính khí hiếm), có bán kính nhỏ và độ âm điện lớn nhất (3,98), là phi kim mạnh nhất."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Nguyên tố R thuộc nhóm VIA trong bảng tuần hoàn. Công thức oxide cao nhất và công thức hợp chất khí với hydrogen của R lần lượt là:",
+        options: ["RO₃ và RH₂", "RO₂ và RH₄", "R₂O₅ và RH₃", "R₂O₇ và RH"],
+        answer: 0,
+        explanation: "Nguyên tố nhóm VIA có hóa trị cao nhất với oxygen là 6 ⇒ oxide cao nhất là RO₃; hóa trị với hydrogen là 8 - 6 = 2 ⇒ hợp chất khí với hydrogen là RH₂ (ví dụ SO₃ và H₂S)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK1",
+        question: "Trong chu kì 3, tính base của dãy các hydroxide: NaOH, Mg(OH)₂, Al(OH)₃ biến đổi theo chiều nào?",
+        options: ["Giảm dần từ NaOH > Mg(OH)₂ > Al(OH)₃", "Tăng dần từ NaOH < Mg(OH)₂ < Al(OH)₃", "Cả ba chất đều có tính base mạnh bằng nhau", "Tất cả đều là các acid mạnh"],
+        answer: 0,
+        explanation: "Trong chu kì 3 từ Na → Mg → Al, tính kim loại giảm dần nên tính base của các hydroxide tương ứng giảm dần: NaOH (kiềm mạnh) > Mg(OH)₂ (base yếu) > Al(OH)₃ (hydroxide lưỡng tính)."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - HÓA HỌC - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Theo quy tắc Octet (quy tắc bát tử), khi hình thành liên kết hóa học, nguyên tử của các nguyên tố có xu hướng nhường, nhận hoặc góp chung electron để đạt tới cấu hình bền vững của:",
+        options: ["Nguyên tử khí hiếm với 8 electron ở lớp ngoài cùng (hoặc 2 electron như Helium)", "Nguyên tử kim loại chuyển tiếp với 10 electron", "Nguyên tử có 4 electron lớp ngoài cùng", "Nguyên tử không còn electron nào"],
+        answer: 0,
+        explanation: "Quy tắc Octet phát biểu: các nguyên tử có xu hướng đạt cấu hình electron bền vững giống khí hiếm gần kề với 8 electron ở lớp ngoài cùng (riêng He là 2e)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Khi nguyên tử Sodium (Na, có 1e lớp ngoài cùng) nhường đi 1 electron thì tạo thành hạt gì?",
+        options: ["Cation Na⁺ (mang điện tích dương)", "Anion Na⁻ (mang điện tích âm)", "Nguyên tử Neon trung hòa", "Phân tử Na₂"],
+        answer: 0,
+        explanation: "Nguyên tử trung hòa nhường bớt electron sẽ trở thành ion dương (cation): Na → Na⁺ + 1e."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Khi nguyên tử Oxygen (O, có 6e lớp ngoài cùng) nhận thêm 2 electron để đạt quy tắc octet thì sẽ tạo thành ion nào?",
+        options: ["Anion O²⁻", "Cation O²⁺", "Anion O⁻", "Cation O⁺"],
+        answer: 0,
+        explanation: "Nguyên tử nhận thêm electron sẽ tạo thành ion âm (anion): O + 2e → O²⁻."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Liên kết ion là liên kết hóa học được hình thành bởi:",
+        options: ["Lực hút tĩnh điện giữa các ion mang điện tích trái dấu (thường giữa kim loại điển hình và phi kim điển hình)", "Sự dùng chung các cặp electron giữa hai phi kim", "Lực tương tác yếu giữa các phân tử khí hiếm", "Lực hút giữa các electron tự do trong kim loại"],
+        answer: 0,
+        explanation: "Liên kết ion hình thành do lực hút tĩnh điện giữa cation (kim loại nhường e) và anion (phi kim nhận e), điển hình như NaCl, MgO, CaF₂."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Hợp chất nào sau đây chứa liên kết ion điển hình?",
+        options: ["NaCl (Sodium chloride)", "HCl (Hydrogen chloride)", "H₂O (Nước)", "CH₄ (Methane)"],
+        answer: 0,
+        explanation: "NaCl tạo bởi kim loại kiềm mạnh (Na) và phi kim mạnh (Cl), hiệu độ âm điện Δχ = 3,16 - 0,93 = 2,23 ≥ 1,7 nên là liên kết ion điển hình."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Các hợp chất ion (như muối ăn NaCl) ở điều kiện thường có đặc điểm vật lí chung nào sau đây?",
+        options: ["Là chất rắn kết tinh, có nhiệt độ nóng chảy và nhiệt độ sôi cao, khi tan trong nước hoặc nóng chảy thì dẫn được điện", "Là chất khí ở điều kiện thường và không tan trong nước", "Dẫn điện rất tốt ở trạng thái rắn khan", "Có nhiệt độ nóng chảy rất thấp (dưới 0 °C)"],
+        answer: 0,
+        explanation: "Do lực hút tĩnh điện mạnh trong mạng tinh thể ion, hợp chất ion là chất rắn khó nóng chảy, khó bay hơi; ở trạng thái rắn các ion cố định nên không dẫn điện, nhưng khi nóng chảy hoặc hòa tan tạo ion tự do nên dẫn điện tốt."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Liên kết cộng hóa trị là liên kết được hình thành giữa hai nguyên tử bằng:",
+        options: ["Một hay nhiều cặp electron dùng chung", "Sự nhường và nhận hẳn electron tạo ion", "Lực hút tĩnh điện giữa các hạt proton", "Sự trao đổi hạt neutron trong hạt nhân"],
+        answer: 0,
+        explanation: "Liên kết cộng hóa trị hình thành nhờ sự góp chung một hoặc nhiều cặp electron hóa trị giữa hai nguyên tử (thường là các nguyên tử phi kim)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Trong phân tử khí Nitrogen (N₂), giữa hai nguyên tử N liên kết với nhau bằng liên kết gì?",
+        options: ["Liên kết ba cộng hóa trị không phân cực (N≡N, gồm 1 liên kết σ và 2 liên kết π)", "Liên kết đơn cộng hóa trị (N-N)", "Liên kết đôi cộng hóa trị (N=N)", "Liên kết ion"],
+        answer: 0,
+        explanation: "Mỗi nguyên tử N (nhóm VA) có 5e lớp ngoài cùng, cần góp chung 3 electron để đạt 8e, tạo thành liên kết ba bền vững N≡N (gồm 1 liên kết sigma σ và 2 liên kết pi π)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Liên kết cộng hóa trị trong phân tử nào sau đây là liên kết cộng hóa trị phân cực?",
+        options: ["HCl (cặp electron dùng chung lệch về phía nguyên tử Cl có độ âm điện lớn hơn)", "Cl₂", "H₂", "O₂"],
+        answer: 0,
+        explanation: "Trong HCl, độ âm điện của Cl (3,16) lớn hơn của H (2,20) nên cặp electron chung bị hút lệch về phía Cl; còn Cl₂, H₂, O₂ gồm hai nguyên tử giống hệt nhau nên là liên kết cộng hóa trị không phân cực."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Liên kết cho - nhận (liên kết phối trí) là trường hợp đặc biệt của liên kết cộng hóa trị, trong đó:",
+        options: ["Cặp electron dùng chung chỉ do một nguyên tử đóng góp (nguyên tử cho) vào orbital trống của nguyên tử kia (nguyên tử nhận)", "Hai nguyên tử góp số electron bằng nhau", "Electron chuyển hẳn từ kim loại sang phi kim", "Không có electron nào tham gia liên kết"],
+        answer: 0,
+        explanation: "Trong liên kết cho - nhận (ví dụ trong ion NH₄⁺, CO, HNO₃), cặp electron chung chỉ do một nguyên tử có cặp e hóa trị chưa liên kết đưa ra dùng chung với nguyên tử có orbital trống."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Liên kết nào sau đây bền vững hơn khi so sánh giữa liên kết sigma (σ) và liên kết pi (π)?",
+        options: ["Liên kết sigma (σ) bền hơn liên kết pi (π) do xen phủ trục có vùng xen phủ lớn hơn xen phủ bên", "Liên kết pi (π) bền gấp đôi liên kết sigma (σ)", "Hai liên kết có độ bền hoàn toàn bằng nhau", "Liên kết sigma không tồn tại trong phân tử đơn chất"],
+        answer: 0,
+        explanation: "Liên kết σ hình thành do sự xen phủ trục của các orbital nên vùng xen phủ cực đại và rất bền; liên kết π hình thành do xen phủ bên nên kém bền hơn."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Năng lượng liên kết (E_b) đặc trưng cho điều gì?",
+        options: ["Độ bền của liên kết hóa học (năng lượng liên kết càng lớn thì liên kết càng bền)", "Khối lượng phân tử của chất", "Số lượng nguyên tử trong phân tử", "Độ dẫn điện của dung dịch"],
+        answer: 0,
+        explanation: "Năng lượng liên kết E_b (kJ/mol) là năng lượng cần thiết để phá vỡ 1 mol liên kết đó ở thể khí; E_b càng lớn thì liên kết càng bền vững."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Vì sao nước (H₂O) có nhiệt độ sôi (100 °C) cao bất thường so với các hợp chất cùng phân nhóm như H₂S (-60,7 °C)?",
+        options: ["Do giữa các phân tử H₂O tạo được liên kết hydrogen liên phân tử bền vững", "Do phân tử khối của H₂O lớn hơn H₂S", "Do trong H₂O có liên kết ion", "Do H₂O không có tương tác van der Waals"],
+        answer: 0,
+        explanation: "Nguyên tử O có độ âm điện rất lớn (3,44) liên kết với H làm xuất hiện liên kết hydrogen giữa các phân tử H₂O, cần nhiều nhiệt năng để phá vỡ nên H₂O có nhiệt độ sôi cao."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Hợp chất hữu cơ nào sau đây tan vô hạn trong nước nhờ tạo được liên kết hydrogen với các phân tử nước?",
+        options: ["Ethanol (C₂H₅OH - cồn rượu)", "Methane (CH₄)", "Benzene (C₆H₆)", "Hexane (C₆H₁₄)"],
+        answer: 0,
+        explanation: "Phân tử ethanol C₂H₅OH có nhóm -OH phân cực mạnh tạo được liên kết hydrogen với nước nên tan vô hạn trong nước; các hydrocarbon (CH₄, C₆H₆) không tạo được liên kết hydrogen nên hầu như không tan."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK1",
+        question: "Trong dãy đơn chất halogen (F₂, Cl₂, Br₂, I₂), nhiệt độ nóng chảy và nhiệt độ sôi tăng dần từ F₂ (khí) đến I₂ (rắn) là do sự tăng dần của:",
+        options: ["Tương tác van der Waals (do kích thước và số lượng electron trong phân tử tăng dần)", "Liên kết hydrogen giữa các phân tử", "Liên kết ion trong mạng tinh thể", "Năng lượng liên kết cộng hóa trị"],
+        answer: 0,
+        explanation: "Từ F₂ → Cl₂ → Br₂ → I₂, khối lượng phân tử và số electron tăng lên làm tăng độ phân cực tạm thời, khiến tương tác van der Waals mạnh dần, dẫn đến nhiệt độ sôi tăng dần."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - HÓA HỌC - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Số oxi hóa của nguyên tử một nguyên tố trong mọi đơn chất (như O₂, Cu, Fe, Cl₂) luôn bằng bao nhiêu?",
+        options: ["0", "+1", "-2", "+2"],
+        answer: 0,
+        explanation: "Theo quy tắc xác định số oxi hóa: số oxi hóa của nguyên tử trong bất kì đơn chất nào cũng bằng 0."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Số oxi hóa của nguyên tố Nitrogen (N) trong phân tử nitric acid (HNO₃) là:",
+        options: ["+5", "+3", "-3", "+4"],
+        answer: 0,
+        explanation: "Trong HNO₃: H có số oxi hóa +1, O có số oxi hóa -2. Gọi số oxi hóa của N là x: (+1) + x + 3(-2) = 0 ⇒ x = +5."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Số oxi hóa của nguyên tố Manganese (Mn) trong hợp chất KMnO₄ (potassium permanganate) là:",
+        options: ["+7", "+6", "+4", "+2"],
+        answer: 0,
+        explanation: "Trong KMnO₄: K là +1, O là -2 ⇒ (+1) + x + 4(-2) = 0 ⇒ x = +7."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Trong phản ứng oxi hóa - khử, 'Chất khử' (chất bị oxi hóa) là chất có đặc điểm nào?",
+        options: ["Chất nhường electron, làm số oxi hóa của nguyên tố tăng lên sau phản ứng", "Chất nhận electron, có số oxi hóa giảm xuống", "Chất không thay đổi số oxi hóa", "Chất chỉ đóng vai trò làm môi trường"],
+        answer: 0,
+        explanation: "Theo quy tắc 'Khử cho - O nhận': Chất khử là chất nhường electron, dẫn tới số oxi hóa tăng lên sau phản ứng."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Cho phản ứng: Zn + CuSO₄ → ZnSO₄ + Cu. Trong phản ứng này, vai trò của kim loại Zn là:",
+        options: ["Chất khử (vì số oxi hóa của Zn tăng từ 0 lên +2)", "Chất oxi hóa", "Chất xúc tác", "Chất tạo môi trường acid"],
+        answer: 0,
+        explanation: "Zn⁰ → Zn⁺² + 2e (nhường electron, số oxi hóa tăng từ 0 lên +2) nên Zn là chất khử; Cu²⁺ nhận 2e thành Cu⁰ là chất oxi hóa."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Phản ứng hóa học nào sau đây là phản ứng oxi hóa - khử?",
+        options: ["2Mg + O₂ → 2MgO", "CaCO₃ → CaO + CO₂", "NaOH + HCl → NaCl + H₂O", "BaCl₂ + Na₂SO₄ → BaSO₄↓ + 2NaCl"],
+        answer: 0,
+        explanation: "Trong phản ứng 2Mg + O₂ → 2MgO, số oxi hóa của Mg tăng từ 0 lên +2 và của O giảm từ 0 xuống -2. Các phản ứng còn lại không có sự thay đổi số oxi hóa."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Cân bằng phản ứng oxi hóa - khử: aAl + bHNO₃(loãng) → cAl(NO₃)₃ + dNO + eH₂O (với a, b, c, d, e là các số nguyên tối giản). Hệ số b của HNO₃ là:",
+        options: ["4", "8", "1", "2"],
+        answer: 0,
+        explanation: "Al⁰ → Al⁺³ + 3e; N⁺⁵ + 3e → N⁺². Tỉ lệ Al : NO là 1 : 1. Phương trình cân bằng: Al + 4HNO₃ → Al(NO₃)₃ + NO + 2H₂O. Vậy hệ số b của HNO₃ bằng 4."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Phản ứng tỏa nhiệt (Exothermic reaction) là phản ứng hóa học trong đó:",
+        options: ["Hệ giải phóng nhiệt năng ra môi trường xung quanh, làm nhiệt độ môi trường tăng lên (Δ_rH < 0)", "Hệ hấp thụ nhiệt năng từ môi trường xung quanh (Δ_rH > 0)", "Không có sự trao đổi năng lượng với môi trường", "Cần phải đun nóng liên tục nếu ngừng đun phản ứng dừng lại ngay"],
+        answer: 0,
+        explanation: "Phản ứng tỏa nhiệt giải phóng năng lượng dưới dạng nhiệt ra môi trường, có biến thiên enthalpy mang dấu âm (Δ_rH°₂₉₈ < 0)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Quá trình nào sau đây trong đời sống là một phản ứng tỏa nhiệt?",
+        options: ["Đốt cháy khí gas (LPG) hoặc than củi để đun nấu", "Nung đá vôi (CaCO₃) để sản xuất vôi sống", "Hòa tan viên C sủi vào cốc nước thấy cốc nước mát lạnh", "Sự quang hợp của cây xanh dưới ánh nắng"],
+        answer: 0,
+        explanation: "Mọi phản ứng đốt cháy nhiên liệu (than, xăng dầu, khí gas, cồn) đều tỏa ra lượng nhiệt lớn phục vụ đun nấu và động cơ."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Điều kiện chuẩn trong nhiệt hóa học (để xác định biến thiên enthalpy chuẩn Δ_rH°₂₉₈) đối với chất khí và chất tan trong dung dịch được quy định là:",
+        options: ["Áp suất 1 bar (đối với chất khí), nồng độ 1 mol/L (đối với chất tan) và nhiệt độ thường chọn là 298 K (25 °C)", "Áp suất 1 atm và nhiệt độ 0 °C (273 K)", "Áp suất 10 bar và nhiệt độ 100 °C", "Nồng độ 10 mol/L và nhiệt độ 0 K"],
+        answer: 0,
+        explanation: "Theo chuẩn IUPAC mới trong chương trình GDPT 2018, điều kiện chuẩn nhiệt hóa học là áp suất 1 bar, nồng độ 1 M và nhiệt độ 298 K (25 °C)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Nhiệt tạo thành chuẩn (Δ_fH°₂₉₈) của mọi đơn chất ở dạng bền vững nhất ở điều kiện chuẩn (như O₂(g), H₂(g), C(graphite)) có giá trị bằng:",
+        options: ["0 kJ/mol", "100 kJ/mol", "-285,8 kJ/mol", "1 kJ/mol"],
+        answer: 0,
+        explanation: "Theo quy ước nhiệt hóa học, enthalpy tạo thành chuẩn (Δ_fH°₂₉₈) của các đơn chất ở dạng tồn tại bền nhất ở điều kiện chuẩn bằng 0."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Cho phương trình nhiệt hóa học: H₂(g) + 1/2 O₂(g) → H₂O(l) có Δ_rH°₂₉₈ = -285,84 kJ. Khẳng định nào sau đây là ĐÚNG?",
+        options: ["Phản ứng là phản ứng tỏa nhiệt; khi tạo thành 1 mol nước lỏng thì tỏa ra 285,84 kJ nhiệt lượng", "Phản ứng là phản ứng thu nhiệt", "Phản ứng không xảy ra ở điều kiện thường", "Khi phân hủy 1 mol nước thì tỏa ra 285,84 kJ"],
+        answer: 0,
+        explanation: "Vì Δ_rH°₂₉₈ = -285,84 kJ < 0 nên đây là phản ứng tỏa nhiệt mạnh, giải phóng 285,84 kJ nhiệt khi tạo thành 1 mol H₂O(l)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Công thức tính biến thiên enthalpy chuẩn của phản ứng (Δ_rH°₂₉₈) dựa vào nhiệt tạo thành chuẩn (Δ_fH°₂₉₈) của các chất là:",
+        options: ["Δ_rH°₂₉₈ = ∑Δ_fH°₂₉₈(sản phẩm) - ∑Δ_fH°₂₉₈(chất đầu)", "Δ_rH°₂₉₈ = ∑Δ_fH°₂₉₈(chất đầu) - ∑Δ_fH°₂₉₈(sản phẩm)", "Δ_rH°₂₉₈ = ∑Δ_fH°₂₉₈(sản phẩm) + ∑Δ_fH°₂₉₈(chất đầu)", "Δ_rH°₂₉₈ = ∑E_b(sản phẩm) - ∑E_b(chất đầu)"],
+        answer: 0,
+        explanation: "Khi tính theo nhiệt tạo thành chuẩn (Δ_fH°): lấy tổng nhiệt tạo thành của Sản phẩm trừ đi tổng nhiệt tạo thành của Chất đầu."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Công thức tính biến thiên enthalpy của phản ứng ở thể khí dựa vào năng lượng liên kết (E_b) là:",
+        options: ["Δ_rH°₂₉₈ = ∑E_b(chất đầu) - ∑E_b(sản phẩm)", "Δ_rH°₂₉₈ = ∑E_b(sản phẩm) - ∑E_b(chất đầu)", "Δ_rH°₂₉₈ = ∑E_b(chất đầu) + ∑E_b(sản phẩm)", "Δ_rH°₂₉₈ = 0"],
+        answer: 0,
+        explanation: "Khi tính theo năng lượng liên kết (E_b): lấy tổng năng lượng liên kết của Chất đầu (phá vỡ liên kết) trừ đi tổng năng lượng liên kết của Sản phẩm (hình thành liên kết)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "GK2",
+        question: "Phản ứng nhiệt phân đá vôi: CaCO₃(s) → CaO(s) + CO₂(g) có Δ_rH°₂₉₈ = +178,49 kJ. Để phản ứng xảy ra thuận lợi cần phải làm gì?",
+        options: ["Cung cấp nhiệt liên tục bằng cách nung ở nhiệt độ cao (khoảng 900 - 1000 °C) vì đây là phản ứng thu nhiệt", "Làm lạnh bình phản ứng bằng nước đá", "Không cần đun nóng phản ứng vẫn tự cháy", "Ngâm đá vôi vào nước lạnh"],
+        answer: 0,
+        explanation: "Vì Δ_rH°₂₉₈ = +178,49 kJ > 0 nên phản ứng thu nhiệt mạnh, cần nung nóng liên tục trong lò vôi mới phân hủy được CaCO₃."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - HÓA HỌC - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Tốc độ phản ứng hóa học là đại lượng đặc trưng cho:",
+        options: ["Sự biến thiên nồng độ của một trong các chất phản ứng hoặc sản phẩm trong một đơn vị thời gian", "Hiệu suất tối đa của phản ứng hóa học", "Lượng nhiệt tỏa ra hay thu vào của phản ứng", "Khối lượng của chất xúc tác dùng trong phản ứng"],
+        answer: 0,
+        explanation: "Tốc độ phản ứng đo mức độ diễn ra nhanh hay chậm của phản ứng thông qua độ biến thiên nồng độ (mol/L) trên một đơn vị thời gian (s, min, h)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Khi tăng nồng độ của các chất tham gia phản ứng thì tốc độ phản ứng thay đổi như thế nào?",
+        options: ["Tốc độ phản ứng tăng lên (do số va chạm hiệu quả giữa các hạt tăng lên)", "Tốc độ phản ứng giảm xuống", "Tốc độ phản ứng không thay đổi", "Phản ứng ngừng lại ngay lập tức"],
+        answer: 0,
+        explanation: "Khi tăng nồng độ chất phản ứng, mật độ hạt trong một đơn vị thể tích tăng làm tần số va chạm hiệu quả tăng, dẫn tới tốc độ phản ứng tăng."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Yếu tố 'Áp suất' chỉ làm ảnh hưởng đến tốc độ của các phản ứng hóa học có sự tham gia của chất ở trạng thái nào?",
+        options: ["Chất khí (g)", "Chất rắn kết tinh (s)", "Chất lỏng nguyên chất (l)", "Các dung dịch muối trong nước"],
+        answer: 0,
+        explanation: "Việc nén tăng áp suất làm giảm thể tích, tức là làm tăng nồng độ mol của chất khí nên làm tăng tốc độ phản ứng có chất khí; áp suất hầu như không ảnh hưởng tới chất rắn và chất lỏng."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Vì sao khi đốt than tổ ong người ta tạo nhiều lỗ thông khí hoặc khi hầm xương người ta chặt nhỏ xương ra?",
+        options: ["Để tăng diện tích bề mặt tiếp xúc giữa các chất phản ứng, giúp tốc độ phản ứng nhanh hơn", "Để làm giảm nhiệt độ của bếp than", "Để tiết kiệm chất xúc tác", "Để làm tăng áp suất khí quyển"],
+        answer: 0,
+        explanation: "Đập nhỏ chất rắn hoặc tạo các lỗ rỗng trên viên than giúp tăng diện tích bề mặt tiếp xúc với khí oxygen/nước, làm tăng tốc độ phản ứng."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Theo quy tắc Van't Hoff, khi nhiệt độ tăng thêm 10 °C thì tốc độ phản ứng tăng từ γ = 2 đến 4 lần. Nếu một phản ứng có hệ số nhiệt độ γ = 3, khi tăng nhiệt độ từ 20 °C lên 50 °C thì tốc độ phản ứng tăng bao nhiêu lần?",
+        options: ["27 lần", "9 lần", "6 lần", "81 lần"],
+        answer: 0,
+        explanation: "Độ tăng nhiệt độ Δt = 50 - 20 = 30 °C. Số lần tốc độ tăng: v₂ / v₁ = γ^(Δt/10) = 3^(30/10) = 3³ = 27 lần."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Chất xúc tác (Catalyst) có đặc điểm nào sau đây trong phản ứng hóa học?",
+        options: ["Làm tăng tốc độ phản ứng nhưng giữ nguyên khối lượng và bản chất hóa học sau khi phản ứng kết thúc", "Làm giảm tốc độ phản ứng và bị tiêu hao hoàn toàn", "Chỉ làm thay đổi màu sắc của sản phẩm", "Làm tăng nhiệt độ sôi của dung môi"],
+        answer: 0,
+        explanation: "Chất xúc tác làm giảm năng lượng hoạt hóa của phản ứng giúp phản ứng xảy ra nhanh hơn nhiều lần, và được bảo toàn về lượng và chất sau khi phản ứng kết thúc."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Các nguyên tố nhóm VIIA (nhóm Halogen) gồm Fluorine (F), Chlorine (Cl), Bromine (Br), Iodine (I) có cấu hình electron lớp ngoài cùng dạng chung là:",
+        options: ["ns² np⁵ (có 7 electron lớp ngoài cùng)", "ns² np⁶", "ns² np⁴", "ns¹"],
+        answer: 0,
+        explanation: "Các nguyên tử halogen đều có 7 electron ở lớp ngoài cùng (ns² np⁵), dễ nhận thêm 1 electron để đạt cấu hình bền của khí hiếm nên có tính oxi hóa đặc trưng."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Ở điều kiện thường (25 °C, 1 bar), trạng thái tập hợp của các đơn chất F₂, Cl₂, Br₂, I₂ lần lượt là:",
+        options: ["F₂ (khí), Cl₂ (khí), Br₂ (lỏng), I₂ (rắn)", "Tất cả đều là chất khí", "F₂ (lỏng), Cl₂ (khí), Br₂ (rắn), I₂ (rắn)", "F₂ (khí), Cl₂ (lỏng), Br₂ (lỏng), I₂ (khí)"],
+        answer: 0,
+        explanation: "Ở điều kiện thường: F₂ là khí màu lục nhạt, Cl₂ là khí màu vàng lục, Br₂ là chất lỏng màu nâu đỏ dễ bay hơi, I₂ là chất rắn màu đen tím có tính thăng hoa."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Tính chất hóa học đặc trưng nhất của các đơn chất Halogen (F₂, Cl₂, Br₂, I₂) là:",
+        options: ["Tính oxi hóa mạnh, và độ mạnh tính oxi hóa giảm dần từ F₂ > Cl₂ > Br₂ > I₂", "Tính khử mạnh và tăng dần từ F₂ đến I₂", "Tính oxi hóa tăng dần từ F₂ < Cl₂ < Br₂ < I₂", "Hoàn toàn trơ về mặt hóa học"],
+        answer: 0,
+        explanation: "Đi từ F₂ đến I₂, bán kính nguyên tử tăng và độ âm điện giảm nên khả năng nhận electron (tính oxi hóa) giảm dần: F₂ > Cl₂ > Br₂ > I₂."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Nước Javel (Gia-ven) dùng để tẩy trắng vải sợi và sát trùng được điều chế bằng cách cho khí Chlorine (Cl₂) tác dụng với dung dịch nào ở nhiệt độ thường?",
+        options: ["Dung dịch NaOH loãng, nguội (tạo hỗn hợp NaCl, NaClO và H₂O)", "Dung dịch KOH đặc nóng ở 100 °C", "Dung dịch HCl đặc", "Nước cất tinh khiết"],
+        answer: 0,
+        explanation: "Phương trình điều chế nước Javel: Cl₂ + 2NaOH (nguội) → NaCl + NaClO + H₂O. Hỗn hợp NaCl và NaClO có tính tẩy màu và sát khuẩn mạnh nhờ NaClO."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Trong dãy các dung dịch hydrohalic acid: HF, HCl, HBr, HI, độ mạnh tính acid biến đổi như thế nào?",
+        options: ["Tăng dần từ HF (acid yếu) < HCl < HBr < HI (acid mạnh nhất)", "Giảm dần từ HF > HCl > HBr > HI", "Cả bốn chất đều là acid yếu", "HF là acid mạnh nhất"],
+        answer: 0,
+        explanation: "Từ HF đến HI, độ dài liên kết H-X tăng và năng lượng liên kết giảm làm khả năng phân li ra ion H⁺ trong nước dễ hơn, nên tính acid tăng dần từ HF (yếu) đến HI (rất mạnh)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Dung dịch acid nào sau đây có tính chất đặc biệt ăn mòn được thủy tinh (SiO₂) nên được dùng để khắc chữ lên thủy tinh và tuyệt đối không đựng trong lọ thủy tinh?",
+        options: ["Dung dịch Hydrofluoric acid (HF)", "Dung dịch Hydrochloric acid (HCl)", "Dung dịch Sulfuric acid (H₂SO₄)", "Dung dịch Nitric acid (HNO₃)"],
+        answer: 0,
+        explanation: "HF hòa tan được silica trong thủy tinh theo phương trình: SiO₂ + 4HF → SiF₄↑ + 2H₂O, nên phải bảo quản HF trong bình nhựa chất dẻo."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Thuốc thử đặc trưng dùng để nhận biết các ion halide (Cl⁻, Br⁻, I⁻) trong dung dịch là dung dịch nào?",
+        options: ["Dung dịch Silver nitrate (AgNO₃)", "Dung dịch Barium chloride (BaCl₂)", "Dung dịch Sodium hydroxide (NaOH)", "Quỳ tím"],
+        answer: 0,
+        explanation: "Nhỏ dung dịch AgNO₃ vào dung dịch muối halide: F⁻ không tạo kết tủa; Cl⁻ tạo kết tủa trắng AgCl; Br⁻ tạo kết tủa vàng nhạt AgBr; I⁻ tạo kết tủa vàng đậm AgI."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Thuốc thử dùng để nhận biết đơn chất Iodine (I₂) với hiện tượng xuất hiện màu xanh tím đặc trưng là:",
+        options: ["Dung dịch Hồ tinh bột", "Giấy quỳ tím ẩm", "Dung dịch Phenolphthalein", "Nước vôi trong"],
+        answer: 0,
+        explanation: "Các phân tử I₂ len lỏi vào cấu trúc xoắn của amylose trong hồ tinh bột tạo ra hợp chất bọc có màu xanh tím đặc trưng (khi đun nóng mất màu, để nguội hiện màu lại)."
+    },
+    {
+        grade: "10", subject: "hoa", term: "CK2",
+        question: "Muối Iốt (muối ăn có trộn thêm một lượng nhỏ KI hoặc KIO₃) được khuyến cáo sử dụng hàng ngày nhằm phòng ngừa bệnh lí nào ở người?",
+        options: ["Bệnh bướu cổ và thiểu năng tuyến giáp do thiếu hụt nguyên tố vi lượng iodine", "Bệnh sâu răng", "Bệnh tiểu đường", "Bệnh loãng xương"],
+        answer: 0,
+        explanation: "Nguyên tố iodine là thành phần cấu tạo hormone tuyến giáp thyroxine; bổ sung muối iốt giúp phòng chống bệnh bướu cổ và rối loạn phát triển trí tuệ."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - SINH HỌC - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Cấp độ tổ chức cơ bản và nhỏ nhất có đầy đủ các đặc điểm của sự sống (trao đổi chất, sinh trưởng, sinh sản, cảm ứng) là:",
+        options: ["Tế bào (Cell)", "Nguyên tử", "Phân tử sinh học", "Bào quan"],
+        answer: 0,
+        explanation: "Theo Học thuyết tế bào, tế bào là đơn vị cấu trúc và chức năng cơ bản nhất của mọi cơ thể sống; mọi hoạt động sống đều diễn ra trên cơ sở tế bào."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Bốn nguyên tố hóa học chính chiếm khoảng 96% khối lượng cơ thể sống là:",
+        options: ["Carbon (C), Hydrogen (H), Oxygen (O), Nitrogen (N)", "Sắt (Fe), Đồng (Cu), Kẽm (Zn), Iodine (I)", "Calcium (Ca), Sodium (Na), Potassium (K), Chlorine (Cl)", "Vàng (Au), Bạc (Ag), Nhôm (Al), Chì (Pb)"],
+        answer: 0,
+        explanation: "Bốn nguyên tố đa lượng C, H, O, N chiếm tới 96,3% khối lượng chất sống, trong đó nguyên tố Carbon (C) tạo nên bộ khung xương cho mọi đại phân tử hữu cơ."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Phân tử Nước (H₂O) có tính phân cực là do nguyên nhân nào?",
+        options: ["Nguyên tử Oxygen có độ âm điện lớn hơn Hydrogen nên hút cặp electron dùng chung lệch về phía Oxygen (tạo đầu O tích điện âm nhẹ và đầu H tích điện dương nhẹ)", "Do phân tử nước có chứa liên kết ion", "Do hai nguyên tử H đẩy nhau hoàn toàn", "Do nước chỉ tồn tại ở thể rắn"],
+        answer: 0,
+        explanation: "Tính phân cực của phân tử nước giúp các phân tử nước liên kết hydrogen với nhau và hòa tan tốt các chất phân cực, làm môi trường cho các phản ứng sinh hóa trong tế bào."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Đường đơn 6 carbon (Hexose) nào sau đây là nguồn nhiên liệu cung cấp năng lượng trực tiếp chủ yếu nhất cho tế bào người và động vật?",
+        options: ["Glucose", "Cellulose", "Chitin", "Glycogen"],
+        answer: 0,
+        explanation: "Glucose (C₆H₁₂O₆) là đường đơn phổ biến nhất, nguyên liệu chính trực tiếp tham gia quá trình hô hấp tế bào để tạo ra năng lượng ATP."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Loại đường đa (Polysaccharide) nào cấu tạo nên thành tế bào thực vật và không bị tiêu hóa bởi enzyme tiêu hóa của con người nhưng giúp kích thích nhu động ruột?",
+        options: ["Cellulose (chất xơ)", "Tinh bột (Starch)", "Glycogen", "Saccharose"],
+        answer: 0,
+        explanation: "Cellulose cấu tạo từ các đơn phân β-glucose liên kết bền vững tạo thành tế bào thực vật, đóng vai trò là chất xơ hỗ trợ tiêu hóa rất tốt ở người."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Loại Lipid nào sau đây là thành phần cấu trúc chính tạo nên lớp kép của màng sinh chất ở mọi tế bào?",
+        options: ["Phospholipid (có đầu ưa nước và hai đuôi kị nước)", "Mỡ động vật (Triglyceride)", "Sáp thực vật", "Carotenoid"],
+        answer: 0,
+        explanation: "Phospholipid là phân tử lưỡng cực gồm 1 đầu phosphate ưa nước và 2 đuôi acid béo kị nước, xếp thành lớp kép tạo nên khung màng sinh chất của tế bào."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Đại phân tử Protein được cấu tạo theo nguyên tắc đa phân mà đơn phân là:",
+        options: ["Các amino acid (có khoảng 20 loại amino acid chính liên kết với nhau bằng liên kết peptide)", "Các nucleotide (A, T, G, C)", "Các phân tử đường glucose", "Các phân tử glycerol và acid béo"],
+        answer: 0,
+        explanation: "Protein là đại phân tử đa phân, đơn phân là 20 loại amino acid nối với nhau bằng liên kết peptide tạo nên chuỗi polypeptide."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Bậc cấu trúc nào của phân tử Protein được hình thành do chuỗi polypeptide xoắn lò xo (xoắn α) hoặc gấp nếp (gấp β) nhờ các liên kết hydrogen?",
+        options: ["Cấu trúc bậc 2", "Cấu trúc bậc 1", "Cấu trúc bậc 3", "Cấu trúc bậc 4"],
+        answer: 0,
+        explanation: "Cấu trúc bậc 1 là trình tự sắp xếp các amino acid; Cấu trúc bậc 2 là dạng xoắn α hoặc gấp nếp β; Cấu trúc bậc 3 là dạng cuộn xoắn không gian 3 chiều đặc trưng quyết định chức năng sinh học."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Hiện tượng lòng trắng trứng gà đông tụ lại khi luộc chín hoặc thịt cua kết tủa khi đun nóng là ví dụ về hiện tượng gì của protein?",
+        options: ["Sự biến tính của protein (cấu trúc không gian 3 chiều bị phá vỡ do nhiệt độ cao làm protein mất chức năng sinh học)", "Sự tổng hợp thêm amino acid mới", "Sự biến đổi protein thành DNA", "Sự thủy phân hoàn toàn thành khí CO₂"],
+        answer: 0,
+        explanation: "Khi gặp nhiệt độ cao, pH cực đoan hoặc ion kim loại nặng, các liên kết yếu giữ cấu trúc không gian của protein bị đứt gãy làm protein bị biến tính và đông tụ."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Đơn phân cấu tạo nên phân tử DNA (Deoxyribonucleic acid) là 4 loại nucleotide nào?",
+        options: ["Adenine (A), Thymine (T), Guanine (G), Cytosine (C)", "Adenine (A), Uracil (U), Guanine (G), Cytosine (C)", "Glucose, Fructose, Galactose, Ribose", "Glycine, Alanine, Valine, Leucine"],
+        answer: 0,
+        explanation: "Đơn phân của DNA gồm 4 loại nucleotide mang 4 base tương ứng là A, T, G, C (trong khi đơn phân của RNA có U thay cho T)."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Theo nguyên tắc bổ sung (NTBS) của Watson và Crick trong phân tử DNA mạch kép, các nucleotide giữa hai mạch liên kết với nhau bằng liên kết hydrogen như thế nào?",
+        options: ["A liên kết với T bằng 2 liên kết hydrogen; G liên kết với C bằng 3 liên kết hydrogen", "A liên kết với G bằng 2 liên kết hydrogen; T liên kết với C bằng 3 liên kết hydrogen", "A liên kết với T bằng 3 liên kết hydrogen; G liên kết với C bằng 2 liên kết hydrogen", "A liên kết với U bằng 1 liên kết hydrogen"],
+        answer: 0,
+        explanation: "Trong DNA mạch kép: A (lớn) luôn bắt cặp bổ sung với T (nhỏ) bằng 2 liên kết hydrogen; G (lớn) bắt cặp bổ sung với C (nhỏ) bằng 3 liên kết hydrogen."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Một phân tử DNA mạch kép có số nucleotide loại A = 600 và loại G = 900. Tổng số liên kết hydrogen (H = 2A + 3G) của phân tử DNA này là:",
+        options: ["3900 liên kết", "3000 liên kết", "1500 liên kết", "4200 liên kết"],
+        answer: 0,
+        explanation: "Áp dụng công thức tổng số liên kết hydrogen: H = 2A + 3G = 2×600 + 3×900 = 1200 + 2700 = 3900."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Chức năng sinh học cơ bản nhất của phân tử DNA trong tế bào là gì?",
+        options: ["Lưu giữ, bảo quản và truyền đạt thông tin di truyền qua các thế hệ tế bào và cơ thể", "Trực tiếp vận chuyển các chất qua màng sinh chất", "Dự trữ mỡ chống lạnh dưới da", "Xúc tác các phản ứng tiêu hóa thức ăn"],
+        answer: 0,
+        explanation: "DNA mang các gene quy định trình tự amino acid của protein, có chức năng lưu giữ, bảo quản và truyền đạt thông tin di truyền nhờ khả năng tự nhân đôi chính xác."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Loại phân tử RNA nào đóng vai trò là 'người phiên dịch' trực tiếp vận chuyển các amino acid tới ribosome để tổng hợp chuỗi polypeptide?",
+        options: ["tRNA (RNA vận chuyển)", "mRNA (RNA thông tin)", "rRNA (RNA ribosome)", "DNA mạch kép"],
+        answer: 0,
+        explanation: "mRNA làm khuôn mẫu mang thông tin; rRNA cấu tạo nên ribosome; còn tRNA có bộ ba đối mã (anticodon) vận chuyển chính xác từng amino acid tới ribosome trong quá trình dịch mã."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK1",
+        question: "Điểm khác biệt về cấu trúc giữa phân tử RNA thông thường và phân tử DNA là:",
+        options: ["RNA thường chỉ gồm 1 mạch đơn, chứa đường ribose (C₅H₁₀O₅) và có base Uracil (U) thay vì Thymine (T)", "RNA có kích thước lớn gấp hàng triệu lần DNA", "RNA luôn có cấu trúc xoắn kép 2 mạch song song", "RNA không chứa nguyên tố phosphorus"],
+        answer: 0,
+        explanation: "RNA có cấu trúc 1 mạch полиnucleotide, đường cấu tạo là ribose và chứa 4 loại đơn phân A, U, G, C."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - SINH HỌC - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Đặc điểm quan trọng nhất dùng để phân biệt Tế bào nhân sơ (Prokaryote - như vi khuẩn) với Tế bào nhân thực (Eukaryote) là:",
+        options: ["Tế bào nhân sơ chưa có màng nhân bao bọc vật chất di truyền (chỉ có vùng nhân) và chưa có các bào quan có màng bao bọc", "Tế bào nhân sơ có kích thước lớn gấp 100 lần tế bào nhân thực", "Tế bào nhân sơ không có màng sinh chất và không có ribosome", "Tế bào nhân sơ có nhiều ti thể và lục lạp"],
+        answer: 0,
+        explanation: "Tế bào nhân sơ (vi khuẩn) có kích thước rất nhỏ (1-5 μm), chưa có nhân hoàn chỉnh (chưa có màng nhân), tế bào chất chỉ có ribosome 70S và không có hệ thống nội màng."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Thành tế bào của vi khuẩn được cấu tạo chủ yếu từ hợp chất hóa học đặc trưng nào?",
+        options: ["Peptidoglycan", "Cellulose", "Chitin", "Cholesterol"],
+        answer: 0,
+        explanation: "Thành tế bào vi khuẩn cấu tạo bằng peptidoglycan giúp quy định hình dạng tế bào; dựa vào độ dày lớp peptidoglycan người ta chia vi khuẩn thành hai nhóm Gram dương (Gr+) và Gram âm (Gr-)."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Trong tế bào nhân thực, bào quan nào được ví như 'Trung tâm điều khiển' mọi hoạt động sống của tế bào vì chứa nhiễm sắc thể (DNA)?",
+        options: ["Nhân tế bào (Nucleus)", "Ti thể (Mitochondria)", "Bộ máy Golgi", "Không bào"],
+        answer: 0,
+        explanation: "Nhân tế bào được bao bọc bởi màng kép có lỗ nhân, bên trong chứa chất nhiễm sắc (DNA + protein histone) lưu giữ thông tin di truyền điều khiển mọi hoạt động sống của tế bào."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Bào quan không có màng bao bọc, có mặt ở cả tế bào nhân sơ và nhân thực, làm nhiệm vụ chuyên tổng hợp Protein cho tế bào là:",
+        options: ["Ribosome", "Lysosome", "Lưới nội chất trơn", "Peroxisome"],
+        answer: 0,
+        explanation: "Ribosome cấu tạo từ rRNA và protein (không có màng phospholipid), là 'nhà máy' dịch mã tổng hợp các chuỗi polypeptide (protein) của mọi tế bào."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Bào quan nào được mệnh danh là 'Nhà máy phát điện' của tế bào nhân thực vì là nơi diễn ra quá trình hô hấp tế bào tạo ra phần lớn năng lượng ATP?",
+        options: ["Ti thể (Mitochondria)", "Lục lạp (Chloroplast)", "Bộ máy Golgi", "Trung thể"],
+        answer: 0,
+        explanation: "Ti thể có màng kép (màng ngoài trơn, màng trong gấp nếp tạo các mào chứa enzyme hô hấp) chuyên phân giải chất hữu cơ tạo ra nguồn năng lượng ATP cung cấp cho tế bào."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Trong cơ thể người, loại tế bào nào sau đây có số lượng Ti thể nhiều nhất do nhu cầu tiêu thụ năng lượng liên tục và cao nhất?",
+        options: ["Tế bào cơ tim", "Tế bào biểu bì da", "Tế bào xương", "Tế bào hồng cầu trưởng thành"],
+        answer: 0,
+        explanation: "Tế bào cơ tim co bóp liên tục suốt đời không nghỉ nên chứa hàng nghìn ti thể trong mỗi tế bào để cung cấp kịp thời năng lượng ATP."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Bào quan chỉ có ở tế bào thực vật và tảo, chứa sắc tố diệp lục (chlorophyll) thực hiện chức năng quang hợp chuyển năng lượng ánh sáng thành năng lượng hóa học là:",
+        options: ["Lục lạp (Chloroplast)", "Ti thể", "Lysosome", "Trung thể"],
+        answer: 0,
+        explanation: "Lục lạp có màng kép, bên trong có hệ thống túi dẹt thylakoid xếp chồng lên nhau tạo thành hạt grana chứa diệp lục và chất nền stroma chứa enzyme cố định CO₂."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Lưới nội chất trơn (không đính ribosome) phát triển mạnh ở tế bào gan người có chức năng quan trọng nào?",
+        options: ["Tổng hợp lipid, chuyển hóa đường và khử độc các chất độc hại (như rượu bia, thuốc tây) cho cơ thể", "Trực tiếp dịch mã tổng hợp kháng thể", "Thực hiện quá trình quang hợp", "Phân chia nhiễm sắc thể"],
+        answer: 0,
+        explanation: "Lưới nội chất trơn chứa nhiều hệ enzyme tổng hợp lipid, steroid và khử độc bằng cách gắn nhóm hydroxyl (-OH) giúp chất độc dễ tan trong nước để đào thải ra ngoài."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Bộ máy Golgi đóng vai trò như một 'Phân xưởng lắp ráp, đóng gói và phân phối' sản phẩm của tế bào vì nó có chức năng:",
+        options: ["Tiếp nhận protein, lipid từ lưới nội chất, biến đổi, gắn thêm gốc đường rồi đóng gói vào túi tiết gửi đến các nơi trong hoặc ngoài tế bào", "Phân giải glucose tạo ra ATP", "Tự nhân đôi phân tử DNA", "Tổng hợp rRNA cho nhân con"],
+        answer: 0,
+        explanation: "Bộ máy Golgi gồm chồng túi màng dẹt xếp cạnh nhau, chuyên hoàn thiện, đóng gói và gắn 'địa chỉ' phân phối các sản phẩm tiết của tế bào."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Theo mô hình 'Khảm động' của Singer và Nicolson (1972), Màng sinh chất của tế bào có cấu tạo gồm:",
+        options: ["Lớp kép phospholipid làm khung liên tục và các phân tử protein (xuyên màng, bám màng) khảm trên đó có khả năng di chuyển linh hoạt", "Chỉ gồm một lớp cellulose cứng chắc cố định", "Hai lớp protein bao lấy một lớp tinh bột ở giữa", "Toàn bộ là các phân tử DNA xếp song song"],
+        answer: 0,
+        explanation: "Tính 'khảm' là do các phân tử protein, glycoprotein khảm vào lớp kép phospholipid; tính 'động' là do các phân tử phospholipid và protein có thể chuyển động đổi chỗ làm màng mềm dẻo linh hoạt."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Quá trình vận chuyển các chất qua màng sinh chất theo chiều từ nơi có nồng độ cao đến nơi có nồng độ thấp (cùng chiều gradient nồng độ) và KHÔNG tiêu tốn năng lượng ATP gọi là:",
+        options: ["Vận chuyển thụ động (khuếch tán đơn giản hoặc khuếch tán tăng cường)", "Vận chuyển chủ động (tích cực)", "Thực bào", "Xuất bào"],
+        answer: 0,
+        explanation: "Vận chuyển thụ động tuân theo nguyên lí khuếch tán từ nơi nồng độ cao sang nơi nồng độ thấp mà không cần tiêu hao năng lượng ATP."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Sự khuếch tán của các phân tử nước qua màng bán thấm từ môi trường có thế nước cao (nồng độ chất tan thấp) sang nơi có thế nước thấp (nồng độ chất tan cao) được gọi là:",
+        options: ["Sự thẩm thấu (Osmosis)", "Vận chuyển chủ động", "Ẩm bào", "Sự bay hơi"],
+        answer: 0,
+        explanation: "Sự di chuyển của các phân tử dung môi nước qua màng sinh chất (nhờ kênh aquaporin hoặc qua lớp lipid) được gọi riêng là hiện tượng thẩm thấu."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Khi ngâm một tế bào thực vật vào trong 'Môi trường ưu trương' (nồng độ muối/đường bên ngoài cao hơn nhiều so với dịch bào), hiện tượng gì sẽ xảy ra?",
+        options: ["Nước từ trong tế bào rút ra ngoài làm chất nguyên sinh co lại tách khỏi thành tế bào (Hiện tượng co nguyên sinh)", "Tế bào hút nước trương phồng và vỡ tung", "Tế bào không có bất kì sự thay đổi nào", "Thành cellulose của tế bào tan chảy"],
+        answer: 0,
+        explanation: "Trong môi trường ưu trương (như khi ướp muối rau sống hoặc bón quá nhiều phân hóa học), nước thẩm thấu từ trong tế bào ra ngoài gây hiện tượng co nguyên sinh làm cây bị héo."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Vận chuyển chủ động (Active transport) qua màng sinh chất cần phải có hai điều kiện bắt buộc nào?",
+        options: ["Cần có protein vận chuyển đặc hiệu (bơm màng) và tiêu tốn năng lượng ATP (vì vận chuyển ngược chiều gradient nồng độ từ thấp lên cao)", "Chỉ xảy ra với các phân tử khí O₂ và CO₂", "Không cần năng lượng ATP và không cần kênh protein", "Chỉ diễn ra khi tế bào đã chết"],
+        answer: 0,
+        explanation: "Vận chuyển chủ động đưa chất từ nơi nồng độ thấp sang nơi nồng độ cao theo nhu cầu tế bào (như bơm Na⁺ - K⁺), bắt buộc phải có kênh bơm protein và tiêu dùng ATP."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK1",
+        question: "Tế bào bạch cầu trong máu người bắt và nuốt trọn một con vi khuẩn xâm nhập bằng cách biến dạng màng sinh chất bao lấy vi khuẩn rồi đưa vào trong tế bào là hình thức:",
+        options: ["Thực bào (Phagocytosis - một dạng nhập bào)", "Khuếch tán đơn giản", "Thẩm thấu", "Xuất bào"],
+        answer: 0,
+        explanation: "Đối với các hạt rắn kích thước lớn như vi khuẩn hay mảnh vỡ tế bào, màng sinh chất lõm vào bao bọc lấy đối tượng tạo thành túi thực bào và tiêu hủy nhờ enzyme của lysosome."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - SINH HỌC - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Hợp chất cao năng nào được coi là 'Đồng tiền năng lượng' của tế bào, trực tiếp cung cấp năng lượng cho hầu hết mọi hoạt động sống?",
+        options: ["ATP (Adenosine triphosphate)", "Glucose", "DNA", "Cholesterol"],
+        answer: 0,
+        explanation: "Phân tử ATP cấu tạo gồm base Adenine, đường Ribose và 3 nhóm phosphate; hai liên kết phosphate ngoài cùng là liên kết cao năng dễ bị phá vỡ giải phóng năng lượng tức thời."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Enzyme (chất xúc tác sinh học) trong tế bào sống có bản chất hóa học chủ yếu là gì và có vai trò gì?",
+        options: ["Bản chất chủ yếu là Protein; giúp làm giảm năng lượng hoạt hóa của phản ứng nên làm tăng tốc độ phản ứng sinh hóa lên hàng triệu lần", "Bản chất là Lipid; làm tăng nhiệt độ của cơ thể lên 100 °C", "Bản chất là đường đa; bị tiêu hao hoàn toàn sau phản ứng", "Bản chất là muối khoáng; làm ngừng mọi phản ứng"],
+        answer: 0,
+        explanation: "Hầu hết enzyme có bản chất là protein, có vùng 'Trung tâm hoạt động' tương thích đặc hiệu với cơ chất theo cơ chế 'chìa khóa - ổ khóa', làm tăng tốc độ phản ứng mà không làm tăng nhiệt độ tế bào."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Phương trình tổng quát của quá trình Hô hấp tế bào hiếu khí phân giải 1 phân tử glucose là:",
+        options: ["C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + Năng lượng (ATP + Nhiệt)", "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂", "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂", "N₂ + 3H₂ → 2NH₃"],
+        answer: 0,
+        explanation: "Hô hấp tế bào là quá trình oxi hóa chất hữu cơ (glucose) tạo thành CO₂, H₂O đồng thời chuyển hóa năng lượng tích lũy trong glucose thành năng lượng dễ sử dụng trong các phân tử ATP."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Ba giai đoạn chính của quá trình hô hấp tế bào hiếu khí diễn ra theo trình tự lần lượt là:",
+        options: ["Đường phân (ở tế bào chất) → Chu trình Krebs (ở chất nền ti thể) → Chuỗi truyền electron hô hấp (ở màng trong ti thể)", "Chu trình Krebs → Đường phân → Chuỗi truyền electron", "Pha sáng → Pha tối → Đường phân", "Đường phân → Lên men → Quang phân li nước"],
+        answer: 0,
+        explanation: "Hô hấp hiếu khí gồm 3 giai đoạn nối tiếp: 1. Đường phân (tại bào tương); 2. Oxi hóa pyruvate và Chu trình Krebs (chất nền ti thể); 3. Chuỗi truyền electron (màng trong ti thể, tạo ra nhiều ATP nhất)."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Trong quá trình Quang hợp ở cây xanh, khí Oxygen (O₂) giải phóng ra môi trường có nguồn gốc từ quá trình nào ở Pha sáng?",
+        options: ["Quá trình quang phân li phân tử nước (2H₂O → 4H⁺ + 4e⁻ + O₂) diễn ra tại màng thylakoid", "Quá trình phân giải khí CO₂ ở pha tối", "Quá trình hô hấp ở ti thể", "Quá trình hút khoáng ở rễ cây"],
+        answer: 0,
+        explanation: "Nhờ năng lượng ánh sáng được diệp lục hấp thụ ở pha sáng, phân tử H₂O bị quang phân li giải phóng khí O₂ ra khí quyển, đồng thời cung cấp điện tử và H⁺ để tạo ATP, NADPH."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Pha tối (pha đồng hóa CO₂ / chu trình Calvin) của quá trình quang hợp diễn ra ở đâu trong lục lạp và sử dụng nguyên liệu nào từ pha sáng?",
+        options: ["Diễn ra ở chất nền (Stroma) của lục lạp; sử dụng ATP và NADPH từ pha sáng để khử CO₂ thành chất hữu cơ (C₆H₁₂O₆)", "Diễn ra ở màng ngoài lục lạp; chỉ xảy ra vào ban đêm", "Diễn ra ở ti thể; sử dụng O₂ để đốt cháy đường", "Diễn ra ở nhân tế bào"],
+        answer: 0,
+        explanation: "Pha tối diễn ra trong chất nền stroma của lục lạp, dùng năng lượng ATP và chất khử NADPH do pha sáng cung cấp để cố định CO₂ tạo ra glucose thông qua chu trình Calvin."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Một Chu kì tế bào (Cell cycle) của tế bào nhân thực bao gồm hai giai đoạn chính là:",
+        options: ["Kì trung gian (gồm pha G₁, pha S, pha G₂) và Quá trình nguyên phân (pha M: phân chia nhân và phân chia tế bào chất)", "Chỉ gồm kì đầu và kì cuối", "Kì giảm phân 1 và giảm phân 2", "Pha sáng và pha tối"],
+        answer: 0,
+        explanation: "Chu kì tế bào gồm Kì trung gian (chiếm phần lớn thời gian để sinh trưởng và nhân đôi DNA ở pha S) và Pha M (nguyên phân tạo 2 tế bào con)."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Trong kì trung gian của chu kì tế bào, sự nhân đôi của phân tử DNA và nhiễm sắc thể (từ NST đơn thành NST kép) diễn ra ở pha nào?",
+        options: ["Pha S (Synthesis)", "Pha G₁", "Pha G₂", "Kì sau của nguyên phân"],
+        answer: 0,
+        explanation: "Tại pha S của kì trung gian, DNA tự nhân đôi dẫn đến mỗi nhiễm sắc thể đơn nhân đôi thành nhiễm sắc thể kép gồm 2 chromatid chị em dính nhau ở tâm động."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Trong quá trình Nguyên phân (Mitosis), các nhiễm sắc thể kép đóng xoắn cực đại và tập trung thành 1 hàng trên mặt phẳng xích đạo của thoi phân bào ở kì nào?",
+        options: ["Kì giữa (Metaphase)", "Kì đầu (Prophase)", "Kì sau (Anaphase)", "Kì cuối (Telophase)"],
+        answer: 0,
+        explanation: "Ở kì giữa nguyên phân, các NST kép co xoắn cực đại (có hình thái rõ nhất để quan sát dưới kính hiển vi) và xếp thành 1 hàng trên mặt phẳng xích đạo."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Từ 1 tế bào mẹ có bộ nhiễm sắc thể lưỡng bội 2n = 46 (ở người) qua 1 lần Nguyên phân bình thường sẽ tạo ra:",
+        options: ["2 tế bào con có bộ nhiễm sắc thể giống hệt nhau và giống tế bào mẹ (2n = 46)", "4 tế bào con có bộ NST đơn bội n = 23", "2 tế bào con có bộ NST n = 23", "1 tế bào con có bộ NST 4n = 92"],
+        answer: 0,
+        explanation: "Nguyên phân là hình thức phân bào nguyên nhiễm: từ 1 tế bào mẹ (2n) tạo ra 2 tế bào con có bộ NST giữ nguyên (2n) giống hệt nhau và giống mẹ, giúp cơ thể lớn lên và tái tạo mô."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Bệnh Ung thư (Cancer) ở người xuất hiện có nguyên nhân tế bào học là do:",
+        options: ["Chu kì tế bào bị mất kiểm soát làm tế bào phân chia (nguyên phân) liên tục vô tổ chức tạo thành khối u ác tính có khả năng di căn", "Tế bào ngừng hoàn toàn quá trình nguyên phân", "Tế bào hồng cầu thực hiện quá trình quang hợp", "Tế bào cơ thể biến thành tế bào vi khuẩn"],
+        answer: 0,
+        explanation: "Khi các gene kiểm soát điểm chốt của chu kì tế bào bị đột biến (gene tiền ung thư và gene ức chế khối u), tế bào vượt qua các điểm kiểm soát, phân chia mất kiểm soát tạo khối u ác tính."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Quá trình Giảm phân (Meiosis) chỉ xảy ra ở loại tế bào nào và kết quả từ 1 tế bào mẹ (2n) tạo ra các tế bào con như thế nào?",
+        options: ["Xảy ra ở tế bào sinh dục chín; tạo ra 4 tế bào con có số lượng NST giảm đi một nửa (đơn bội n)", "Xảy ra ở tế bào da; tạo ra 2 tế bào con (2n)", "Xảy ra ở tế bào thần kinh; tạo ra 8 tế bào con", "Xảy ra ở vi khuẩn; tạo ra bào tử"],
+        answer: 0,
+        explanation: "Giảm phân diễn ra ở tế bào sinh dục chín, gồm 1 lần nhân đôi DNA nhưng có 2 lần phân bào liên tiếp, tạo ra 4 tế bào con có bộ NST đơn bội (n) để hình thành giao tử (tinh trùng, trứng)."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Hiện tượng tiếp hợp và trao đổi chéo giữa các chromatid không chị em trong cặp nhiễm sắc thể tương đồng dẫn đến biến dị tổ hợp phong phú xảy ra ở kì nào của Giảm phân?",
+        options: ["Kì đầu I (Prophase I)", "Kì giữa I", "Kì sau II", "Kì cuối II"],
+        answer: 0,
+        explanation: "Ở kì đầu I của giảm phân, các cặp NST kép tương đồng bắt đôi tiếp hợp và có thể trao đổi chéo các đoạn tương ứng, tạo ra vô số tổ hợp gene mới ở các giao tử."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Ở kì giữa I của quá trình Giảm phân, các nhiễm sắc thể kép xếp trên mặt phẳng xích đạo của thoi phân bào thành mấy hàng?",
+        options: ["Xếp thành 2 hàng (từng cặp NST kép tương đồng xếp song song)", "Xếp thành 1 hàng đơn duy nhất", "Xếp thành 4 hàng", "Không xếp thành hàng mà phân tán tự do"],
+        answer: 0,
+        explanation: "Điểm khác biệt cốt lõi với nguyên phân: ở kì giữa I giảm phân, các cặp NST kép tương đồng tập trung thành 2 hàng trên mặt phẳng xích đạo; đến kì giữa II mới xếp thành 1 hàng."
+    },
+    {
+        grade: "10", subject: "sinh", term: "GK2",
+        question: "Sự kết hợp của 3 quá trình: Nguyên phân, Giảm phân và Thụ tinh ở các loài sinh sản hữu tính có ý nghĩa sinh học vĩ đại gì?",
+        options: ["Duy trì ổn định bộ nhiễm sắc thể đặc trưng (2n) của loài qua các thế hệ cơ thể, đồng thời tạo ra nguồn biến dị tổ hợp phong phú cho tiến hóa và chọn giống", "Làm cho số lượng NST tăng gấp đôi sau mỗi thế hệ", "Giúp mọi cá thể con sinh ra đều giống hệt bố mẹ như đúc", "Xóa bỏ hoàn toàn sự khác biệt di truyền"],
+        answer: 0,
+        explanation: "Giảm phân tạo giao tử đơn bội (n), thụ tinh kết hợp 2 giao tử (n + n) khôi phục bộ NST lưỡng bội (2n), nguyên phân giúp hợp tử (2n) phát triển thành cơ thể hoàn chỉnh."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - SINH HỌC - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Cơ sở khoa học của Công nghệ tế bào thực vật (như nuôi cấy mô tế bào tạo hàng vạn cây giống từ một mảnh lá/thân) dựa trên tính chất nào của tế bào?",
+        options: ["Tính toàn năng của tế bào (mỗi tế bào đều chứa hệ gene quy định toàn bộ cơ thể nên khi nuôi trong môi trường thích hợp có thể phát triển thành một cây hoàn chỉnh)", "Tính bán thấm của màng sinh chất", "Quá trình giảm phân tạo hạt phấn", "Sự đột biến nhiễm sắc thể"],
+        answer: 0,
+        explanation: "Tính toàn năng của tế bào là khả năng một tế bào phân chia và biệt hóa thành các mô, cơ quan khác nhau để phát triển thành một cơ thể hoàn chỉnh trong môi trường dinh dưỡng và hormone thích hợp."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Ưu điểm nổi bật của phương pháp 'Vi nhân giống (Nuôi cấy mô tế bào thực vật)' trong nông nghiệp hiện đại là gì?",
+        options: ["Nhân nhanh với hệ số cực cao các giống cây quý hiếm, cây con đồng nhất về kiểu gene (giữ nguyên đặc tính tốt) và sạch bệnh virus", "Tạo ra cây con có kiểu gene biến đổi hoàn toàn khác cây mẹ", "Không cần dùng bất kì chất dinh dưỡng nào", "Chỉ áp dụng được cho động vật có vú"],
+        answer: 0,
+        explanation: "Nuôi cấy mô từ mô phân sinh đỉnh sinh trưởng giúp nhân nhanh hàng triệu cây giống (hoa phong lan, chuối, khoai tây, keo lai...) đồng đều và hoàn toàn sạch virus."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Thành tựu tạo ra Cừu Dolly (năm 1996) của nhà khoa học Ian Wilmut là minh chứng kinh điển cho công nghệ nào ở động vật?",
+        options: ["Nhân bản vô tính động vật bằng kĩ thuật chuyển nhân tế bào soma (tế bào tuyến vú) vào tế bào trứng đã lấy mất nhân", "Thụ tinh trong ống nghiệm giữa tinh trùng và trứng", "Cấy truyền phôi bò thông thường", "Lai xa giữa cừu và dê"],
+        answer: 0,
+        explanation: "Cừu Dolly là động vật có vú đầu tiên ra đời bằng nhân bản vô tính mà không qua thụ tinh, có kiểu gene nhân giống hệt con cừu mặt trắng đã cho nhân tế bào tuyến vú."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Vi sinh vật (Microorganisms) là những cơ thể sống có đặc điểm chung nổi bật nào sau đây?",
+        options: ["Có kích thước hiển vi cực nhỏ, cấu tạo thường đơn bào, hấp thụ và chuyển hóa chất dinh dưỡng rất nhanh, sinh trưởng và sinh sản cực nhanh", "Có kích thước lớn có thể nhìn rõ bằng mắt thường", "Chỉ sống được trong phòng thí nghiệm", "Có tốc độ sinh sản chậm hơn cây cổ thụ"],
+        answer: 0,
+        explanation: "Do tỉ lệ diện tích bề mặt trên thể tích (S/V) rất lớn nên vi sinh vật trao đổi chất và sinh sản cực nhanh (vi khuẩn E. coli cứ 20 phút lại phân đôi 1 lần)."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Căn cứ vào nguồn năng lượng và nguồn carbon, các vi khuẩn lam và tảo đơn bào có khả năng quang hợp sử dụng ánh sáng và khí CO₂ thuộc kiểu dinh dưỡng nào?",
+        options: ["Quang tự dưỡng", "Quang dị dưỡng", "Hóa tự dưỡng", "Hóa dị dưỡng"],
+        answer: 0,
+        explanation: "Nguồn năng lượng là ánh sáng → Quang dưỡng; nguồn carbon chủ yếu là CO₂ vô cơ → Tự dưỡng. Kết hợp lại là kiểu dinh dưỡng Quang tự dưỡng."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Đa số nấm, động vật nguyên sinh và phần lớn vi khuẩn gây bệnh sử dụng chất hữu cơ làm nguồn năng lượng và nguồn carbon thuộc kiểu dinh dưỡng nào?",
+        options: ["Hóa dị dưỡng", "Quang tự dưỡng", "Hóa tự dưỡng", "Quang dị dưỡng"],
+        answer: 0,
+        explanation: "Sử dụng năng lượng từ phản ứng hóa học phân giải chất hữu cơ (Hóa dưỡng) và lấy nguồn carbon từ chất hữu cơ (Dị dưỡng) nên thuộc nhóm Hóa dị dưỡng."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Trong nuôi cấy không liên tục (không bổ sung thêm chất dinh dưỡng mới và không lấy bớt chất thải), đường cong sinh trưởng của quần thể vi khuẩn gồm 4 pha theo trình tự là:",
+        options: ["Pha tiềm phát (Lag) → Pha lũy thừa (Log) → Pha cân bằng → Pha suy vong", "Pha lũy thừa → Pha tiềm phát → Pha suy vong → Pha cân bằng", "Pha cân bằng → Pha tiềm phát → Pha lũy thừa → Pha suy vong", "Pha suy vong → Pha cân bằng → Pha lũy thừa → Pha tiềm phát"],
+        answer: 0,
+        explanation: "Trong nuôi cấy không liên tục: 1. Pha tiềm phát (vi khuẩn thích nghi, tổng hợp enzyme); 2. Pha lũy thừa (phân chia cực đại); 3. Pha cân bằng (số sinh = số chết); 4. Pha suy vong (dinh dưỡng cạn, chất độc tích tụ làm số lượng giảm)."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Quá trình làm sữa chua, muối dưa cà, ủ chua thức ăn chăn nuôi là ứng dụng hoạt động lên men của nhóm vi sinh vật nào?",
+        options: ["Vi khuẩn lên men lactic (chuyển hóa đường thành lactic acid tạo vị chua dịu và ức chế vi khuẩn gây thối)", "Nấm men rượu (chuyển đường thành ethanol)", "Vi khuẩn phản nitrate hóa", "Nấm mốc gây thối hỏng"],
+        answer: 0,
+        explanation: "Vi khuẩn lactic (Lactobacillus...) phân giải đường lactose/glucose trong điều kiện kị khí tạo thành lactic acid làm giảm pH, giúp casein trong sữa đông tụ thành sữa chua thơm ngon và bảo quản dưa muối."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Chất kháng sinh Penicillin đầu tiên của nhân loại do nhà bác học Alexander Fleming phát hiện có nguồn gốc từ vi sinh vật nào?",
+        options: ["Nấm mốc Penicillium (có khả năng ức chế sự tổng hợp thành tế bào peptidoglycan của vi khuẩn)", "Vi khuẩn E. coli", "Virus thực khuẩn thể (Phage)", "Trùng giày"],
+        answer: 0,
+        explanation: "Kháng sinh Penicillin chiết xuất từ nấm mốc Penicillium có tác dụng ức chế tổng hợp thành tế bào vi khuẩn nên tiêu diệt hiệu quả các bệnh nhiễm trùng do vi khuẩn (không diệt được virus)."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Vì sao Virus được coi là 'Dạng sống chưa có cấu tạo tế bào' và bắt buộc phải sống kí sinh nội bào bắt buộc?",
+        options: ["Vì virus chỉ gồm lõi nucleic acid (DNA hoặc RNA) và vỏ protein (capsid), hoàn toàn không có tế bào chất, không có ribosome và hệ enzyme trao đổi chất riêng", "Vì virus có kích thước lớn hơn tế bào động vật", "Vì virus có cả thành cellulose và lục lạp", "Vì virus có thể tự quang hợp ngoài không khí"],
+        answer: 0,
+        explanation: "Ngoài tế bào vật chủ, hạt virus (virion) tồn tại như một đại phân tử hóa học không sống; chỉ khi xâm nhập vào tế bào chủ, nó mới dùng nguyên liệu và bộ máy ribosome của tế bào chủ để nhân lên."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Lõi vật chất di truyền của một hạt Virus có đặc điểm nào sau đây khác biệt với tế bào sinh vật?",
+        options: ["Chỉ chứa một trong hai loại nucleic acid: hoặc là DNA, hoặc là RNA (không bao giờ có đồng thời cả DNA và RNA)", "Luôn chứa đồng thời cả DNA và RNA trong nhân", "Chỉ cấu tạo từ các phân tử lipid", "Không có bất kì vật chất di truyền nào"],
+        answer: 0,
+        explanation: "Hệ gene của virus chỉ là DNA (mạch đơn hoặc kép) hoặc RNA (mạch đơn hoặc kép); ví dụ virus cúm, HIV, SARS-CoV-2 là virus có vật chất di truyền là RNA."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Chu trình nhân lên của virus trong tế bào vật chủ bao gồm 5 giai đoạn diễn ra theo trình tự đúng là:",
+        options: ["Hấp phụ (bám dính) → Xâm nhập → Tổng hợp (sinh tổng hợp) → Lắp ráp → Giải phóng", "Xâm nhập → Hấp phụ → Lắp ráp → Tổng hợp → Giải phóng", "Tổng hợp → Hấp phụ → Xâm nhập → Giải phóng → Lắp ráp", "Giải phóng → Lắp ráp → Tổng hợp → Xâm nhập → Hấp phụ"],
+        answer: 0,
+        explanation: "Năm bước nhân lên của virus: 1. Hấp phụ đặc hiệu lên thụ thể bề mặt tế bào chủ; 2. Xâm nhập đưa hệ gene vào; 3. Tổng hợp hệ gene và vỏ capsid; 4. Lắp ráp tạo hạt virus mới; 5. Giải phóng ra khỏi tế bào chủ."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Vì sao mỗi loại virus thường chỉ xâm nhập và gây bệnh cho một số loài vật chủ và một số loại mô tế bào nhất định (ví dụ virus viêm gan B chỉ tấn công tế bào gan)?",
+        options: ["Do gai glycoprotein trên bề mặt virus phải khớp đặc hiệu với thụ thể (receptor) trên bề mặt màng tế bào chủ theo cơ chế 'chìa khóa - ổ khóa'", "Do virus có mắt nhìn để chọn lựa tế bào", "Do các tế bào khác không có nước", "Do virus chỉ sống được ở nhiệt độ 0 °C"],
+        answer: 0,
+        explanation: "Tính đặc hiệu của giai đoạn Hấp phụ phụ thuộc vào sự ăn khớp cấu hình không gian giữa phân tử bề mặt virus với thụ thể đặc hiệu trên màng sinh chất của tế bào vật chủ."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Virus HIV gây hội chứng suy giảm miễn dịch mắc phải (AIDS) ở người tấn công và phá hủy trực tiếp loại tế bào nào của hệ miễn dịch?",
+        options: ["Tế bào bạch cầu Lympho T hỗ trợ (T-CD4)", "Tế bào hồng cầu vận chuyển máu", "Tế bào cơ xương", "Tế bào biểu bì tóc"],
+        answer: 0,
+        explanation: "HIV bám đặc hiệu vào thụ thể CD4 trên bề mặt tế bào bạch cầu Lympho T4, làm suy sụp hệ thống miễn dịch khiến cơ thể mất khả năng chống đỡ và tử vong vì các bệnh nhiễm trùng cơ hội."
+    },
+    {
+        grade: "10", subject: "sinh", term: "CK2",
+        question: "Vì sao khi bị mắc các bệnh do Virus gây ra (như cảm cúm, sốt xuất huyết, thủy đậu), người bệnh KHÔNG nên tự ý uống thuốc kháng sinh (nếu không có bội nhiễm vi khuẩn)?",
+        options: ["Vì thuốc kháng sinh chỉ tiêu diệt hoặc ức chế vi khuẩn (như phá thành peptidoglycan), hoàn toàn không có tác dụng diệt virus và còn gây kháng kháng sinh", "Vì thuốc kháng sinh làm cho virus biến thành vi khuẩn", "Vì thuốc kháng sinh là nguồn thức ăn giúp virus lớn nhanh", "Vì kháng sinh chỉ dùng cho thực vật"],
+        answer: 0,
+        explanation: "Virus không có thành tế bào peptidoglycan hay ribosome riêng nên kháng sinh không tác động được lên virus; biện pháp hiệu quả nhất để phòng bệnh do virus là tiêm phòng Vaccine chủ động."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - NGỮ VĂN - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Thể loại văn học dân gian ra đời sớm nhất, kể về nguồn gốc vũ trụ, muôn loài và các vị thần sáng tạo thế giới thông qua trí tưởng tượng kì ảo của người nguyên thủy là:",
+        options: ["Thần thoại (Mythology)", "Truyền thuyết", "Cổ tích", "Truyện cười"],
+        answer: 0,
+        explanation: "Thần thoại là thể loại tự sự dân gian cổ xưa nhất, phản ánh nhận thức và khát vọng giải thích nguồn gốc vũ trụ, các hiện tượng tự nhiên và nguồn gốc loài người thông qua hình tượng các vị thần."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Trong truyện thần thoại Việt Nam 'Thần Trụ Trời', vị thần khổng lồ đã làm công việc vĩ đại gì để phân chia trời và đất?",
+        options: ["Đội trời lên cao rồi đào đất, đập đá đắp thành một cái cột vừa cao vừa to để chống trời", "Dùng cung thần bắn rụng 9 mặt trời", "Đào sông khơi biển tạo ra đồng bằng", "Luyện đá ngũ sắc vá lại bầu trời"],
+        answer: 0,
+        explanation: "Thần Trụ Trời một mình đứng dậy dùng đầu đội trời lên rồi đào đất, khuân đá đắp thành cột khổng lồ chống trời; khi trời đất phân đôi, thần phá cột ném đất đá đi khắp nơi tạo thành núi đồi, biển rộng."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Không gian và thời gian nghệ thuật trong truyện Thần thoại có đặc điểm nổi bật nào?",
+        options: ["Không gian vũ trụ nguyên sơ bao la, nhiều cõi; thời gian cổ sơ phiếm chỉ, mang tính vĩnh hằng", "Không gian sinh hoạt đời thường; thời gian xác định ngày tháng cụ thể", "Không gian chiến trường hiện đại; thời gian lịch sử biên niên", "Không gian tâm tưởng khép kín trong phòng"],
+        answer: 0,
+        explanation: "Thần thoại gắn với thuở hỗn mang khi vũ trụ đang hình thành (không gian vũ trụ nguyên sơ) và thời gian phiếm chỉ ('thuở ấy chưa có thế gian...')."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Sử thi (Anh hùng ca - Epic) là tác phẩm tự sự dân gian quy mô lớn có đặc trưng cốt lõi nào?",
+        options: ["Sử dụng ngôn ngữ có vần, nhịp trang trọng, hào hùng để xây dựng hình tượng người anh hùng đại diện cho sức mạnh, ý chí và lí tưởng của cả cộng đồng", "Chỉ kể về những chuyện tình cảm buồn thương cá nhân", "Viết bằng văn xuôi ngắn gọn dùng để gây cười", "Phê phán thói hư tật xấu của quan lại phong kiến"],
+        answer: 0,
+        explanation: "Sử thi là thể loại tự sự dân gian dung lượng đồ sộ, lời văn có vần nhịp giàu hình ảnh sánh ví, tôn vinh người anh hùng cộng đồng trong các biến cố lớn (chiến tranh bảo vệ buôn làng, chinh phục tự nhiên)."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Tác phẩm sử thi 'Đăm Săn' nổi tiếng là kiệt tác văn học dân gian của dân tộc anh em nào ở vùng Tây Nguyên?",
+        options: ["Dân tộc Ê-đê", "Dân tộc Mường", "Dân tộc Thái", "Dân tộc Ba-na"],
+        answer: 0,
+        explanation: "Sử thi (khan) 'Đăm Săn' là áng sử thi anh hùng tiêu biểu nhất của đồng bào dân tộc Ê-đê ở Tây Nguyên."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Trong đoạn trích 'Đăm Săn chiến thắng Mtao Mxây', nguyên nhân trực tiếp khiến tù trưởng Đăm Săn kéo quân đi đánh Mtao Mxây là gì?",
+        options: ["Để đòi lại người vợ yêu quý Hơ Nhị bị Mtao Mxây cướp đi và bảo vệ danh dự, sự bình yên thịnh vượng của buôn làng", "Để đi tìm kiếm mỏ vàng trên núi cao", "Để thách đấu giành chức thần Sấm", "Để mở rộng biên giới ra biển Đông"],
+        answer: 0,
+        explanation: "Lợi dụng lúc Đăm Săn cùng dân làng đi làm rẫy bắt cá, Mtao Mxây đã đánh úp buôn làng cướp Hơ Nhị về làm vợ; Đăm Săn đánh Mtao Mxây để đòi vợ và giữ vững uy danh cộng đồng."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Chi tiết thần kì nào đã giúp Đăm Săn đâm thủng lớp giáp sắt và chiến thắng Mtao Mxây trong cuộc giao tranh?",
+        options: ["Ông Trời (Giàng) mách bảo trong mộng dùng một cái chày mòn ném trúng vào vành tai của Mtao Mxây làm giáp sắt rơi ra", "Đăm Săn uống nước suối thần tăng sức mạnh gấp trăm lần", "Hơ Nhị ném cho Đăm Săn thanh gươm lửa", "Chim thần bay xuống mổ mắt Mtao Mxây"],
+        answer: 0,
+        explanation: "Khi đâm mãi không thủng vạt áo sắt của Mtao Mxây, Đăm Săn vừa chạy vừa ngủ mơ thấy Ông Trời chỉ cách lấy cái chày mòn ném vào vành tai kẻ địch, lập tức giáp của Mtao Mxây rơi loảng xoảng."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Hành động Đăm Săn đi cầu hôn Nữ Thần Mặt Trời trong đoạn trích 'Đăm Săn đi bắt Nữ Thần Mặt Trời' biểu trưng cho khát vọng gì của người Tây Nguyên cổ đại?",
+        options: ["Khát vọng vươn tới những đỉnh cao chói lọi, chinh phục tự nhiên và khẳng định ý chí tự do, kiêu hùng bất khuất của con người", "Sự ngông cuồng ích kỉ chỉ biết nghĩ cho bản thân", "Mong muốn trốn chạy khỏi buôn làng", "Sự sợ hãi trước sức mạnh của thần linh"],
+        answer: 0,
+        explanation: "Dù biết đường đi đầy rẫy hiểm nguy và bị chết lún trong Rừng Sáp Đen, hành trình đi bắt Nữ Thần Mặt Trời vẫn ngời sáng vẻ đẹp bi tráng của khát vọng chinh phục giới hạn tự nhiên."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Đoạn trích 'Héc-to từ biệt Ăng-đrô-mắc' được trích từ bộ sử thi vĩ đại nào của nhà thơ mù Hô-me-rơ (Homer) thời Hy Lạp cổ đại?",
+        options: ["Sử thi I-li-át (Iliad)", "Sử thi Ô-đi-xê (Odyssey)", "Sử thi Ra-ma-ya-na (Ramayana)", "Sử thi Ma-ha-bha-ra-ta"],
+        answer: 0,
+        explanation: "'Héc-to từ biệt Ăng-đrô-mắc' trích từ khúc ca VI của sử thi Iliad (Homer), khắc họa vẻ đẹp lưỡng toàn của người anh hùng thành Tơ-roa giữa tình thương vợ con và bổn phận bảo vệ thành bang."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Khái niệm 'Chủ thể trữ tình' trong một bài thơ trữ tình được hiểu là:",
+        options: ["Con người cảm xúc, suy tư trong bài thơ (có thể xuất hiện trực tiếp qua đại từ 'tôi', 'ta', 'chúng ta' hoặc ẩn mình đằng sau bức tranh thiên nhiên, cuộc sống)", "Tên của nhà xuất bản cuốn thơ", "Nhân vật phản diện trong cốt truyện", "Người biên tập chính tả cho bài thơ"],
+        answer: 0,
+        explanation: "Chủ thể trữ tình là chủ thể phát ngôn, bộc lộ cảm xúc, tâm trạng và suy ngẫm trong tác phẩm thơ (thường là sự hóa thân của tác giả)."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Thể thơ 'Thất ngôn bát cú Đường luật' có quy định nghiêm ngặt về số câu và số chữ trong bài như thế nào?",
+        options: ["Gồm 8 câu trong bài, mỗi câu có đúng 7 chữ (tổng cộng 56 chữ), gieo một vần (độc vận) ở cuối các câu 1, 2, 4, 6, 8", "Gồm 4 câu, mỗi câu 7 chữ", "Gồm 8 câu, mỗi câu 5 chữ", "Số câu và số chữ hoàn toàn tự do"],
+        answer: 0,
+        explanation: "Thất ngôn bát cú Đường luật có 8 câu × 7 chữ = 56 chữ, bố cục 4 phần (Đề - Thực - Luận - Kết), niêm luật bằng trắc chặt chẽ và đối xứng ở hai cặp câu Thực (3-4), Luận (5-6)."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Trong bài thơ 'Thu điếu' (Câu cá mùa thu) của Nguyễn Khuyến, cảnh sắc mùa thu đồng bằng Bắc Bộ được tái hiện qua những nét chấm phá đặc trưng nào?",
+        options: ["Ao thu lạnh lẽo nước trong veo, thuyền câu bé tẻo teo, sóng biếc gợn tí, lá vàng khẽ đưa vèo, tầng mây lơ lửng, trời xanh ngắt", "Rừng phong lá đỏ rực bên thác nước hùng vĩ", "Tuyệt rơi trắng xóa phủ kín mái chòi câu", "Biển rộng sóng vỗ dữ dội lúc hoàng hôn"],
+        answer: 0,
+        explanation: "'Thu điếu' là bức tranh thu quê hương bình dị, thanh sơ với các gam màu xanh (nước trong veo, sóng biếc, trời xanh ngắt) và những chuyển động rất khẽ làm nổi bật cái tĩnh lặng của tâm hồn thi nhân."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Vần 'eo' trong bài thơ 'Thu điếu' (veo - teo - bèo - vèo - đèo) của Nguyễn Khuyến được giới phê bình văn học đánh giá là:",
+        options: ["'Tử vận' (vần hiểm hóc khó gieo) nhưng được Nguyễn Khuyến sử dụng thần tình để gợi không gian thu nhỏ dần, tĩnh lặng và tâm trạng uẩn khúc", "Vần dễ gieo nhất trong tiếng Việt", "Vần tạo âm hưởng hào sảng, sôi động như tiếng trống trận", "Lỗi gieo vần ngoài ý muốn"],
+        answer: 0,
+        explanation: "Vần 'eo' là tử vận gợi sự co hẹp dần của cảnh vật và không gian, phản chiếu nỗi cô đơn, trầm tư thời cuộc của vị quan thanh liêm cáo quan về ở ẩn."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Bài thơ Haiku (Hài cú) truyền thống của Nhật Bản (như thơ của Matsuo Basho) có đặc điểm hình thức độc đáo nào?",
+        options: ["Thể thơ ngắn nhất thế giới, chỉ gồm 3 dòng (thường theo nhịp 5 - 7 - 5 âm tiết trong tiếng Nhật) và có từ ngữ chỉ mùa (Quý ngữ)", "Bài thơ trường thiên dài hàng nghìn câu", "Gồm 14 câu chia làm hai khổ", "Bắt buộc phải có đối xứng từng chữ"],
+        answer: 0,
+        explanation: "Thơ Haiku Nhật Bản cực kì hàm súc (3 dòng, 17 âm tiết 5-7-5), ghi lại một khoảnh khắc thực tại của thiên nhiên gắn với Quý ngữ (từ chỉ mùa: hoa anh đào, tiếng ve, sương thu, tuyết đông)."
+    },
+    {
+        grade: "10", subject: "van", term: "GK1",
+        question: "Trong bài thơ 'Mùa xuân chín' của Hàn Mặc Tử, hình ảnh 'Sột soạt gió trêu tà áo biếc / Trên giàn thiên lí. Bóng xuân sang' sử dụng biện pháp tu từ nổi bật nào?",
+        options: ["Nhân hóa ('gió trêu') kết hợp từ tượng thanh ('sột soạt') làm cảnh vật mùa xuân trở nên sống động, có hồn và tràn đầy tình tứ", "Nói quá (phóng đại)", "Nói giảm nói tránh", "Liệt kê số liệu thống kê"],
+        answer: 0,
+        explanation: "Nghệ thuật nhân hóa 'gió trêu tà áo biếc' cùng đảo ngữ đưa từ tượng thanh 'sột soạt' lên đầu câu tạo nên bức tranh mùa xuân tươi trẻ, giao hòa giữa thiên nhiên và con người."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - NGỮ VĂN - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Nghệ thuật Chèo cổ truyền thống của Việt Nam phát triển mạnh mẽ nhất ở vùng văn hóa nào?",
+        options: ["Vùng châu thổ sông Hồng (Đồng bằng Bắc Bộ)", "Vùng cao nguyên Tây Nguyên", "Vùng duyên hải cực Nam Trung Bộ", "Vùng sông nước Nam Bộ"],
+        answer: 0,
+        explanation: "Chèo là loại hình kịch hát dân gian truyền thống gắn liền với sân đình làng quê vùng Đồng bằng Bắc Bộ ('Chiếu chèo sân đình')."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Đặc trưng nghệ thuật nổi bật của sân khấu Chèo và Tuồng truyền thống là:",
+        options: ["Tính tổng hợp (kết hợp ngôn từ, hát, múa, âm nhạc), tính ước lệ - cách điệu cao và tính vô danh truyền miệng", "Sử dụng hoàn toàn kĩ xảo điện ảnh 3D", "Diễn viên chỉ đứng yên đọc văn bản không cử động", "Không sử dụng bất kì nhạc cụ dân tộc nào"],
+        answer: 0,
+        explanation: "Sân khấu truyền thống Chèo, Tuồng mang tính tổng hợp cao độ (nói, hát làn điệu, múa hình thể) và tính ước lệ tượng trưng (chỉ một mái chèo gợi cả dòng sông, một ngọn roi gợi con ngựa chiến)."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Đoạn trích 'Xúy Vân giả dại' (trích vở chèo cổ 'Kim Nham') thể hiện bi kịch và khát vọng gì của nhân vật Xúy Vân?",
+        options: ["Bi kịch của người phụ nữ lỡ làng, cô đơn trong hôn nhân sắp đặt; vừa đáng trách nhưng cũng rất đáng thương với khát vọng hạnh phúc gia đình giản dị ('chờ cho bông lúa chín vàng, để anh đi gặt để nàng mang cơm')", "Sự độc ác tàn nhẫn muốn hãm hại tất cả mọi người", "Niềm vui sướng khi được làm quan lớn trong triều", "Khát vọng đi thi đỗ trạng nguyên"],
+        answer: 0,
+        explanation: "Qua các làn điệu hát ngược, hát gà rừng trong cơn điên dại, Xúy Vân bộc lộ nỗi đau đớn bế tắc, sự hối hận day dứt và ước mơ giản dị về một mái ấm gia đình sum vầy hạnh phúc."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Nghệ thuật Tuồng (Hát bội) của Việt Nam thường được chia thành hai bộ phận chính là:",
+        options: ["Tuồng pho (Tuồng thầy/Tuồng cung đình mang âm hưởng bi hùng) và Tuồng đồ (Tuồng hài dân gian châm biếm thói hư tật xấu)", "Tuồng cổ tích và Tuồng thần thoại", "Tuồng thơ và Tuồng văn xuôi", "Tuồng ca trù và Tuồng quan họ"],
+        answer: 0,
+        explanation: "Tuồng gồm Tuồng pho (đề tài trung quân ái quốc, bi tráng như 'Sơn Hậu', 'Tam nữ đồ vương') và Tuồng đồ (đề tài sinh hoạt dân gian châm biếm hài hước như 'Nghêu, Sò, Ốc, Hến')."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Đoạn trích 'Mắc mưu Thị Hến' (trích tuồng đồ 'Nghêu, Sò, Ốc, Hến') sử dụng tiếng cười dân gian sắc sảo để phê phán đối tượng nào?",
+        options: ["Phê phán thói đạo đức giả, tham sắc, háo danh của tầng lớp cường hào, quan lại và thầy tu phá giới (Thầy Nghêu, Đề Hầu, Huyện Trìa)", "Ca ngợi phẩm chất thanh liêm của quan huyện", "Kể về cuộc chiến đấu chống giặc ngoại xâm", "Miêu tả cảnh đẹp bốn mùa ở kinh thành"],
+        answer: 0,
+        explanation: "Bằng mưu trí thông minh, Thị Hến đã hẹn cả ba kẻ quyền thế (Thầy Nghêu, Đề Hầu, Huyện Trìa) đến nhà cùng một tối khiến chúng phải chui gầm phản, chui thúng trốn nhau, lột trần bộ mặt đạo đức giả."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Trong ngôn ngữ kịch (Chèo, Tuồng), lời nhân vật tự nói với chính mình để bộc lộ trực tiếp tâm tư, toan tính thầm kín bên trong cho khán giả hiểu được gọi là:",
+        options: ["Độc thoại (và Bàng thoại)", "Đối thoại giữa hai người", "Chỉ dẫn sân khấu của tác giả", "Lời dẫn chuyện của người ngoài cuộc"],
+        answer: 0,
+        explanation: "Đối thoại là lời nhân vật nói với nhau; Độc thoại là lời nhân vật tự nói với mình; Bàng thoại là lời nhân vật quay sang nói riêng với khán giả."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Văn bản thông tin (Informational text) được viết ra nhằm mục đích chính yếu nhất là gì?",
+        options: ["Cung cấp thông tin khách quan, chính xác về các sự vật, hiện tượng, sự kiện hoặc hướng dẫn quy trình thực hiện", "Hư cấu nên các nhân vật thần tiên", "Bộc lộ cảm xúc trữ tình lãng mạn bằng thơ", "Gây cười giải trí cho người đọc"],
+        answer: 0,
+        explanation: "Văn bản thông tin có chức năng cốt lõi là truyền tải tri thức, dữ liệu khách quan, thường kết hợp phương tiện ngôn ngữ với phương tiện phi ngôn ngữ (hình ảnh, sơ đồ, bảng biểu)."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Các yếu tố như hình ảnh minh họa, biểu đồ, sơ đồ, bản đồ, số liệu thống kê trong một văn bản thông tin đa phương thức được gọi là:",
+        options: ["Phương tiện giao tiếp phi ngôn ngữ", "Biện pháp tu từ ẩn dụ", "Ngôn ngữ độc thoại nội tâm", "Vần và nhịp của thơ ca"],
+        answer: 0,
+        explanation: "Phương tiện phi ngôn ngữ (hình ảnh, đồ thị, sơ đồ) giúp trực quan hóa thông tin, giúp người đọc nắm bắt dữ liệu nhanh chóng và sinh động hơn."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Trong bài văn nghị luận về một vấn đề xã hội, 'Luận điểm' đóng vai trò là gì?",
+        options: ["Là các ý kiến, quan điểm chính thể hiện tư tưởng của người viết nhằm làm sáng tỏ vấn đề nghị luận", "Là các câu chuyện kể dân gian", "Là phần chú thích cuối trang", "Là tên của các tác giả được trích dẫn"],
+        answer: 0,
+        explanation: "Hệ thống nghị luận gồm: Luận đề (vấn đề trung tâm), Luận điểm (các ý kiến lớn triển khai luận đề), Lí lẽ và Bằng chứng (dẫn chứng thực tế chứng minh cho luận điểm)."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Để dẫn chứng (bằng chứng) trong bài văn nghị luận có sức thuyết phục cao, người viết cần lựa chọn dẫn chứng như thế nào?",
+        options: ["Dẫn chứng phải tiêu biểu, xác thực, toàn diện và gắn kết chặt chẽ với lí lẽ đang phân tích", "Dẫn chứng tự bịa đặt không có thật ngoài đời", "Kể lể lan man càng dài càng tốt mà không cần phân tích", "Chỉ lấy dẫn chứng không liên quan đến luận điểm"],
+        answer: 0,
+        explanation: "Bằng chứng nghị luận phải có thật, được nhiều người biết đến, tiêu biểu và được phân tích ngắn gọn để làm sáng tỏ trực tiếp cho luận điểm."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Lỗi 'Mơ hồ về nghĩa' trong câu tiếng Việt thường xảy ra khi nào?",
+        options: ["Câu có cấu trúc ngữ pháp hoặc cách dùng từ khiến người đọc hiểu theo hai hoặc nhiều nghĩa khác nhau không rõ ý người viết", "Câu viết đúng chính tả và rõ ràng một nghĩa", "Câu sử dụng từ Hán Việt trang trọng", "Câu có đầy đủ chủ ngữ và vị ngữ"],
+        answer: 0,
+        explanation: "Câu mơ hồ (đa nghĩa cấu trúc) làm cản trở giao tiếp vì người nghe không xác định được đâu là ý định thông báo chính xác của người nói."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Khi trích dẫn nguyên văn câu nói hoặc đoạn văn của tác giả khác vào bài viết của mình (Trích dẫn trực tiếp), quy tắc bắt buộc là gì?",
+        options: ["Phải đặt phần trích dẫn nguyên văn trong dấu ngoặc kép (\"...\") và ghi rõ nguồn / tên tác giả", "Không cần đặt trong ngoặc kép và tự nhận là câu của mình", "Được phép tự ý sửa đổi từ ngữ bên trong ngoặc kép", "Xóa bỏ tên tác giả gốc"],
+        answer: 0,
+        explanation: "Tôn trọng quyền sở hữu trí tuệ đòi hỏi khi trích dẫn trực tiếp phải chính xác từng chữ, đặt trong dấu ngoặc kép và dẫn nguồn đầy đủ."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Múa rối nước truyền thống của Việt Nam sử dụng không gian sân khấu biểu diễn đặc biệt là gì?",
+        options: ["Thủy đình (nhà rối dựng trên mặt nước ao hồ, mặt nước chính là buồng trò sân khấu)", "Rạp hát trong nhà đóng kín bằng kính", "Trên lưng ngựa đang phi", "Trên đỉnh núi đá cao"],
+        answer: 0,
+        explanation: "Múa rối nước là nghệ thuật dân gian độc nhất vô nhị của cư dân lúa nước Việt Nam: nghệ nhân đứng trong buồng trò sau bức mành tre điều khiển quân rối gỗ (Chú Tễu...) biểu diễn trên mặt nước."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Nhân vật dẫn trò quen thuộc nhất trong nghệ thuật Múa rối nước Việt Nam với thân hình bụ bẫm, nụ cười hóm hỉnh tươi vui là ai?",
+        options: ["Chú Tễu", "Thằng Bờm", "Chú Cuội", "Trạng Quỳnh"],
+        answer: 0,
+        explanation: "Chú Tễu là linh hồn của phường rối nước, đóng vai người dẫn chuyện hài hước, giới thiệu các tích trò và gửi gắm ước vọng mưa thuận gió hòa của nhà nông."
+    },
+    {
+        grade: "10", subject: "van", term: "CK1",
+        question: "Bản tin (News report) trong báo chí và truyền thông đòi hỏi tính chất quan trọng hàng đầu nào về mặt thông tin?",
+        options: ["Tính thời sự (mới mẻ, kịp thời), tính xác thực (chính xác) và tính ngắn gọn, hàm súc (theo nguyên tắc 5W1H)", "Tính hư cấu kì ảo", "Tính trữ tình đa sầu đa cảm", "Tính cổ xưa truyền thuyết"],
+        answer: 0,
+        explanation: "Bản tin báo chí phải trả lời nhanh và chính xác các câu hỏi 5W1H: Ai (Who), Cái gì (What), Ở đâu (Where), Khi nào (When), Tại sao (Why) và Như thế nào (How)."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - NGỮ VĂN - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Nguyễn Trãi (1380 - 1442) có hiệu là gì và đã được Tổ chức UNESCO vinh danh là Danh nhân văn hóa thế giới vào năm nào?",
+        options: ["Hiệu là Ức Trai; được UNESCO vinh danh năm 1980 nhân kỉ niệm 600 năm ngày sinh của ông", "Hiệu là Tố Như; vinh danh năm 1965", "Hiệu là Bạch Vân cư sĩ; vinh danh năm 1990", "Hiệu là Thảo Đường; vinh danh năm 2000"],
+        answer: 0,
+        explanation: "Nguyễn Trãi hiệu là Ức Trai, nhà chính trị, quân sự lỗi lạc, nhà văn hóa kiệt xuất của dân tộc, được UNESCO vinh danh Danh nhân văn hóa thế giới năm 1980."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Tư tưởng cốt lõi xuyên suốt toàn bộ cuộc đời và sự nghiệp văn chương, chính trị của Nguyễn Trãi là gì?",
+        options: ["Tư tưởng Nhân nghĩa ('Việc nhân nghĩa cốt ở yên dân / Quân điếu phạt trước lo trừ bạo')", "Tư tưởng xuất thế lánh đời tuyệt đối", "Tư tưởng bành trướng xâm lược nước ngoài", "Tư tưởng duy lợi cá nhân"],
+        answer: 0,
+        explanation: "Nguyễn Trãi kế thừa Nho giáo nhưng nâng tầm thành tư tưởng Nhân nghĩa gắn liền với yêu nước thương dân: yên dân (đem lại cuộc sống ấm no thái bình cho dân) và trừ bạo (đánh đuổi giặc ngoại xâm bạo ngược)."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Tác phẩm 'Bình Ngô đại cáo' của Nguyễn Trãi được viết bằng thể văn gì và ra đời trong hoàn cảnh lịch sử nào?",
+        options: ["Viết bằng thể Cáo (văn chính luận cổ có câu văn biền ngẫu); ra đời đầu năm 1428 sau khi cuộc kháng chiến chống quân Minh toàn thắng", "Viết bằng thể Hịch trước khi xuất quân đánh Tống", "Viết bằng thơ lục bát thời Nguyễn", "Viết bằng thể Chiếu khi dời đô"],
+        answer: 0,
+        explanation: "Tháng Chạp năm Đinh Mùi (đầu năm 1428), thừa lệnh Lê Thái Tổ, Nguyễn Trãi viết 'Bình Ngô đại cáo' bằng thể văn biền ngẫu hùng tráng để tuyên bố trước toàn dân việc dẹp yên giặc Minh, khôi phục nền độc lập."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Trong phần mở đầu 'Bình Ngô đại cáo', Nguyễn Trãi đã khẳng định chủ quyền độc lập của nước Đại Việt dựa trên những yếu tố căn cốt nào?",
+        options: ["Tên nước riêng (Đại Việt), nền văn hiến lâu đời, cương vực lãnh thổ riêng, phong tục tập quán Bắc - Nam khác biệt và lịch sử các triều đại độc lập (Triệu, Đinh, Lý, Trần) sánh ngang phương Bắc", "Chỉ dựa vào diện tích rừng núi hiểm trở", "Chỉ dựa vào sắc phong của hoàng đế phương Bắc", "Chỉ dựa vào lực lượng thủy quân"],
+        answer: 0,
+        explanation: "So với 'Nam quốc sơn hà' (chỉ nêu lãnh thổ và ngôi vua), Nguyễn Trãi đã bổ sung thêm 3 yếu tố văn hóa - lịch sử cực kì tiến bộ: Văn hiến lâu đời, Phong tục riêng và Lịch sử các triều đại tự chủ."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Hai câu văn: 'Nướng dân đen trên ngọn lửa hung tàn / Vùi con đỏ xuống dưới hầm tai vạ' trong 'Bình Ngô đại cáo' sử dụng nghệ thuật gì để tố cáo tội ác giặc Minh?",
+        options: ["Hình ảnh ẩn dụ, phóng đại mang tính khái quát cao kết hợp phép đối xứng biền ngẫu đanh thép", "Nghệ thuật nói giảm nói tránh nhẹ nhàng", "Nghệ thuật tả cảnh ngụ tình êm đềm", "Nghệ thuật chơi chữ đồng âm"],
+        answer: 0,
+        explanation: "Cặp câu biền ngẫu đối xứng ('Nướng dân đen...' / 'Vùi con đỏ...') khắc họa tội ác diệt chủng tàn bạo của giặc Minh đồng thời thể hiện nỗi xót thương sâu sắc của tác giả với nhân dân."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Tập thơ chữ Nôm gồm 254 bài thơ của Nguyễn Trãi được coi là tập thơ Nôm cổ nhất còn lưu giữ được và đặt nền móng cho thơ tiếng Việt là:",
+        options: ["Quốc âm thi tập", "Ức Trai thi tập (chữ Hán)", "Bạch Vân quốc ngữ thi", "Hồng Đức quốc âm thi tập"],
+        answer: 0,
+        explanation: "'Quốc âm thi tập' của Nguyễn Trãi gồm 254 bài thơ viết bằng chữ Nôm, sáng tạo ra thể thơ Thất ngôn xen lục ngôn độc đáo và đưa ngôn ngữ đời thường, tục ngữ dân gian vào thơ ca."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Trong bài thơ 'Bảo kính cảnh giới' (Gương báu răn mình) bài 43, bức tranh thiên nhiên ngày hè được Nguyễn Trãi miêu tả như thế nào?",
+        options: ["Sống động, tràn đầy sức sống từ trong trào ra ngoài với màu xanh của hòe lục, màu đỏ của hoa lựu phun thức đỏ, hương sen hồng, tiếng chợ cá lao xao và tiếng ve như tiếng đàn", "U ám, héo úa và tĩnh lặng tuyệt đối", "Lạnh lẽo cô quạnh giữa đêm đông", "Chỉ toàn sương mù che phủ"],
+        answer: 0,
+        explanation: "Với các động từ mạnh ('đùn đùn', 'giương', 'phun', 'tiễn') cùng sự kết hợp màu sắc và âm thanh đời thường ('lao xao chợ cá làng ngư phủ'), bức tranh ngày hè hiện lên rực rỡ, căng tràn nhựa sống."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Hai câu kết của bài 'Bảo kính cảnh giới' (bài 43): 'Lẽ có Ngu cầm đàn một tiếng / Dân giàu đủ khắp đòi phương' thể hiện vẻ đẹp tâm hồn nào của Nguyễn Trãi?",
+        options: ["Tấm lòng ưu dân ái quốc thiết tha: dù đang ngày nhàn thưởng ngoạn cảnh hè nhưng tâm hồn vẫn luôn hướng về cuộc sống ấm no, hạnh phúc của nhân dân", "Mong muốn được làm nhạc công gảy đàn trong cung cấm", "Nỗi chán ghét cuộc sống trần thế", "Ước mơ trở thành người giàu có nhất vùng"],
+        answer: 0,
+        explanation: "Mượn điển tích đàn Ngu cầm của vua Thuấn, câu thơ lục ngôn ngắn gọn khép lại bài thơ kết tinh lí tưởng suốt đời của Nguyễn Trãi: luôn đau đáu ước mong 'Dân giàu đủ khắp đòi phương'."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Bài thơ chữ Hán 'Dục Thúy sơn' (Núi Dục Thúy) của Nguyễn Trãi miêu tả vẻ đẹp của ngọn núi danh thắng nào ở tỉnh Ninh Bình ngày nay?",
+        options: ["Núi Non Nước (nằm bên ngã ba sông Vân và sông Đáy ở Ninh Bình)", "Núi Côn Sơn ở Hải Dương", "Núi Yên Tử ở Quảng Ninh", "Núi Ngự Bình ở Huế"],
+        answer: 0,
+        explanation: "Núi Dục Thúy (núi Non Nước ở Ninh Bình) được Nguyễn Trãi ví như đóa hoa sen nổi trên mặt nước ('Liên hoa phù thủy thượng') và bóng tháp trên núi như chiếc trâm ngọc xanh cài lên mái tóc sông."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Tập văn chính luận kiệt xuất gồm các bức thư Nguyễn Trãi viết dụ hàng các tướng giặc Minh, được người đương thời ca ngợi có sức mạnh 'hơn cả mười vạn quân' là:",
+        options: ["Quân trung từ mệnh tập", "Băng Hồ di sự lục", "Lam Sơn thực lục", "Dư địa chí"],
+        answer: 0,
+        explanation: "'Quân trung từ mệnh tập' là đỉnh cao của nghệ thuật ngoại giao tâm công (đánh vào lòng người), phân tích thế thời sắc bén làm tan rã tinh thần chiến đấu của tướng sĩ nhà Minh."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Tác phẩm địa lí học lịch sử đầu tiên của Việt Nam do Nguyễn Trãi biên soạn năm 1435 nhằm xác định cương vực, sản vật các vùng miền đất nước là:",
+        options: ["Dư địa chí", "An Nam chí lược", "Hoàng Việt nhất thống dư địa chí", "Đại Nam nhất thống chí"],
+        answer: 0,
+        explanation: "'Dư địa chí' của Nguyễn Trãi là bộ sách địa lí lịch sử cổ nhất của Việt Nam, ghi chép tỉ mỉ núi sông, thổ nhưỡng, sản vật và phong tục của 13 đạo thừa tuyên."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Câu thơ lục ngôn (6 chữ) được Nguyễn Trãi sáng tạo đưa xen vào bài thơ thất ngôn Đường luật trong 'Quốc âm thi tập' thể hiện điều gì?",
+        options: ["Tinh thần dân tộc hóa, phá cách sáng tạo thể thơ ngoại nhập để phù hợp với nhịp điệu câu nói tự nhiên, cô đọng của tiếng Việt", "Sự thiếu hụt từ vựng khi làm thơ", "Sự sao chép nguyên bản thơ Đường Trung Quốc", "Lỗi thất niêm trong thi cử"],
+        answer: 0,
+        explanation: "Thể thơ Thất ngôn xen lục ngôn là sáng tạo độc đáo của Nguyễn Trãi, tạo điểm nhấn nhịp điệu dồn nén tư tưởng ở những câu 6 chữ (như 'Dân giàu đủ khắp đòi phương')."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Vụ án oan khốc liệt năm Nhâm Tuất (1442) gắn liền với bi kịch cuộc đời của Nguyễn Trãi có tên trong lịch sử là:",
+        options: ["Vụ án Lệ Chi Viên (Vườn Vải)", "Vụ án Hồ Dâm Đàm", "Vụ án Đông Kinh Nghĩa Thục", "Vụ án Nôm học"],
+        answer: 0,
+        explanation: "Năm 1442, vua Lê Thái Tông đột ngột băng hà tại Lệ Chi Viên (Bắc Ninh), gian thần vu oan cho Nguyễn Trãi và vợ là Nguyễn Thị Lộ; đến năm 1464 vua Lê Thánh Tông mới minh oan và ca ngợi: 'Ức Trai tâm thượng quang khuê tảo' (Lòng Ức Trai sáng tựa sao Khuê)."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Trong câu thơ 'Cây rợp chồi quyên vặc / Ao quang bóng sếu in', biện pháp nghệ thuật truyền thống nào của thơ cổ điển được vận dụng điêu luyện?",
+        options: ["Nghệ thuật đối chỉnh (đối thanh, đối từ loại và đối ý giữa hai câu thơ)", "Nghệ thuật chơi chữ nói lái", "Nghệ thuật liệt kê trùng điệp", "Nghệ thuật châm biếm trào phúng"],
+        answer: 0,
+        explanation: "Hai câu thơ đối xứng hoàn chỉnh từng từ ('Cây rợp' đối với 'Ao quang', 'chồi quyên vặc' đối với 'bóng sếu in'), tạo sự cân xứng hài hòa cho bức tranh thiên nhiên."
+    },
+    {
+        grade: "10", subject: "van", term: "GK2",
+        question: "Từ Hán Việt 'Văn hiến' trong câu 'Như nước Đại Việt ta từ trước / Vốn xưng nền văn hiến đã lâu' có nghĩa chuẩn xác là gì?",
+        options: ["Truyền thống văn hóa tốt đẹp lâu đời và những nhân tài hiền đức của một dân tộc", "Chỉ riêng các bộ luật hình sự khắc nghiệt", "Các công trình thành lũy bằng đá", "Các loại vũ khí quân sự hiện đại"],
+        answer: 0,
+        explanation: "'Văn' là sách vở, lễ nhạc, văn hóa tốt đẹp; 'Hiến' là người hiền tài. 'Văn hiến' là truyền thống văn hóa tinh thần cao đẹp được bồi đắp qua hàng nghìn năm lịch sử."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - NGỮ VĂN - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Trong tác phẩm tự sự (truyện ngắn, tiểu thuyết), khái niệm 'Người kể chuyện ngôi thứ nhất' có đặc điểm nhận diện là:",
+        options: ["Người kể chuyện xưng 'tôi' (hoặc 'chúng tôi'), trực tiếp tham gia hoặc chứng kiến câu chuyện và kể lại theo góc nhìn của mình", "Người kể chuyện giấu mình hoàn toàn, gọi tên các nhân vật khách quan", "Người kể chuyện biết hết mọi suy nghĩ của tất cả nhân vật ở mọi nơi cùng lúc", "Không có người kể chuyện trong văn bản"],
+        answer: 0,
+        explanation: "Người kể chuyện ngôi thứ nhất thường là một nhân vật trong truyện xưng 'tôi', giúp câu chuyện có tính chân thực, giàu cảm xúc nội tâm chủ quan."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Truyện ngắn 'Dưới bóng hoàng lan' của nhà văn Thạch Lam thuộc dòng truyện ngắn đặc sắc nào của văn học Việt Nam giai đoạn 1930 - 1945?",
+        options: ["Truyện ngắn trữ tình (không có cốt truyện kịch tính gay cấn, chủ yếu đi sâu khám phá những rung động tinh vi, êm dịu của tâm hồn con người và vẻ đẹp thiên nhiên)", "Truyện ngắn trào phúng đả kích", "Truyện kiếm hiệp phiêu lưu hành động", "Truyện trinh thám hình sự"],
+        answer: 0,
+        explanation: "Thạch Lam là bậc thầy truyện ngắn trữ tình: 'Dưới bóng hoàng lan' như một bài thơ văn xuôi dịu dàng viết về tình bà cháu ấm áp và mối tình đầu trong trẻo của Thanh và Nga dưới bóng cây hoàng lan thơm ngát."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Trong truyện ngắn 'Người ở bến sông Châu' của Sương Nguyệt Minh, nhân vật chính dì Mây tiêu biểu cho phẩm chất cao đẹp nào của người phụ nữ Việt Nam sau chiến tranh?",
+        options: ["Sự hi sinh thầm lặng, lòng nhân hậu, vị tha và nghị lực kiên cường vượt lên nỗi đau riêng để chở che, mang lại sự sống và hạnh phúc cho người khác", "Sự yếu đuối buông xuôi trước số phận", "Sự oán trách hận thù những người xung quanh", "Chỉ mải mê chạy theo danh vọng giàu sang"],
+        answer: 0,
+        explanation: "Trở về từ chiến trường đúng ngày người yêu lấy vợ, dì Mây nuốt nước mắt vào trong, ra ở lều cỏ bến sông Châu, đỡ đẻ cứu sống vợ con của người yêu cũ và nhận nuôi bé Cúc khi mẹ bé qua đời vì bom mìn."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Truyện ngắn 'Một chuyện đùa nho nhỏ' của văn hào Nga A.P. Sê-khốp (Anton Chekhov) xoay quanh kỉ niệm trượt tuyết của nhân vật 'tôi' và cô gái Na-đi-a với câu nói thì thầm nào trong gió?",
+        options: ["'Na-đi-a, anh yêu em!'", "'Na-đi-a, trời sắp bão tuyết rồi!'", "'Hãy dũng cảm lên!'", "'Chúng ta đừng gặp nhau nữa!'"],
+        answer: 0,
+        explanation: "Câu nói 'Na-đi-a, anh yêu em!' ban đầu chỉ là một trò đùa nho nhỏ của nhân vật 'tôi', nhưng với Na-đi-a, nó lại trở thành điểm tựa tinh thần kì diệu giúp cô vượt qua nỗi sợ hãi để trượt xuống dốc núi tuyết."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Khái niệm 'Điểm nhìn trần thuật' (Point of view) trong tác phẩm truyện được hiểu là:",
+        options: ["Vị trí, góc độ mà từ đó người kể chuyện hoặc nhân vật quan sát, cảm nhận và trần thuật lại các sự việc, con người trong thế giới nghệ thuật", "Số trang in của cuốn tiểu thuyết", "Năm sinh của nhà văn", "Màu sắc bìa của cuốn sách"],
+        answer: 0,
+        explanation: "Điểm nhìn trần thuật có thể là điểm nhìn của người kể chuyện (bên ngoài) hoặc điểm nhìn bên trong (nhập vào tâm lí nhân vật), và có thể dịch chuyển linh hoạt để soi chiếu sự việc đa chiều."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Trong đoạn trích 'Người cầm quyền khôi phục uy quyền' (trích tiểu thuyết 'Những người khốn khổ' của Vích-to Huy-gô), sự đối lập gay gắt giữa hai nhân vật Giăng Van-giăng và Gia-ve thể hiện xung đột gì?",
+        options: ["Sự đối lập giữa Tình thương nhân đạo cao cả, vị tha (Giăng Van-giăng) với Cường quyền pháp luật lạnh lùng, tàn nhẫn vô cảm (Gia-ve)", "Cuộc tranh giành tài sản thừa kế", "Mâu thuẫn giữa hai thương nhân buôn bán", "Sự ganh đua trong thi cử"],
+        answer: 0,
+        explanation: "Trước cái chết đau đớn của Phăng-tin, thanh tra Gia-ve hiện nguyên hình là con thú dữ của pháp luật hà khắc, còn Giăng Van-giăng tỏa sáng uy quyền đạo đức của tình yêu thương con người."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Thể thơ Tự do trong văn học hiện đại khác với các thể thơ cách luật cổ điển ở đặc điểm nổi bật nào?",
+        options: ["Không bị ràng buộc cứng nhắc về số câu, số chữ trong dòng, cách gieo vần hay niêm luật bằng trắc, mà nhịp điệu linh hoạt theo mạch cảm xúc", "Bắt buộc mỗi câu phải có đúng 7 chữ", "Không bao giờ có vần điệu hay nhịp điệu", "Chỉ dùng để viết văn bản hành chính"],
+        answer: 0,
+        explanation: "Thơ tự do giải phóng hình thức câu thơ, dòng thơ có thể dài ngắn linh hoạt nhằm diễn tả chân thực nhất những cung bậc cảm xúc đa dạng của con người hiện đại."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Trong bài thơ 'Lính đảo hát tình ca trên đảo' của Trần Đăng Khoa, hình ảnh những người lính Trường Sa với cái đầu trọc lốc ngồi hát tình ca trên sân khấu ghép bằng san hô thể hiện vẻ đẹp gì?",
+        options: ["Tinh thần lạc quan yêu đời, chất lính trẻ trung hóm hỉnh vượt lên mọi gian khổ thiếu thốn nơi đầu sóng ngọn gió và tình yêu Tổ quốc sâu nặng", "Sự bi quan buồn chán nơi đảo xa", "Cuộc sống hưởng thụ xa hoa đầy đủ", "Sự thờ ơ trước sóng gió biển khơi"],
+        answer: 0,
+        explanation: "Thiếu nước ngọt khiến đầu trọc lốc, sân khấu không phông màn, nhưng tiếng hát tình ca vẫn vang lên lãng mạn và kiêu hùng giữa biển trời Trường Sa thiêng liêng."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Biện pháp tu từ 'Chêm xen' (Phụ chú) trong câu văn có dấu hiệu hình thức và tác dụng như thế nào?",
+        options: ["Thường tách biệt bằng dấu gạch ngang, dấu phẩy hoặc dấu ngoặc đơn; dùng để bổ sung thông tin giải thích hoặc bộc lộ thái độ, cảm xúc trực tiếp của người viết", "Luôn đứng ở đầu đoạn văn và in hoa toàn bộ", "Dùng để thay thế hoàn toàn vị ngữ của câu", "Chỉ dùng trong các công thức toán học"],
+        answer: 0,
+        explanation: "Thành phần chêm xen (phụ chú) được xen vào câu để ghi chú, giải thích thêm một chi tiết hoặc thể hiện cảm xúc bình luận bất chợt của tác giả."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Biện pháp tu từ 'Liệt kê' được sử dụng trong văn bản nhằm mục đích nghệ thuật gì?",
+        options: ["Sắp xếp nối tiếp hàng loạt từ hay cụm từ cùng loại để diễn tả đầy đủ hơn, sâu sắc hơn những khía cạnh khác nhau của thực tế hay tư tưởng, tình cảm", "Làm cho câu văn trở nên mơ hồ khó hiểu", "Rút ngắn câu văn còn một chữ duy nhất", "Thay đổi ngôi kể của tác phẩm"],
+        answer: 0,
+        explanation: "Phép liệt kê (theo từng cặp hoặc tăng tiến) tạo nhịp điệu dồn dập và làm nổi bật sự phong phú, toàn diện của đối tượng được miêu tả, biểu đạt."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Khi viết một bài văn nghị luận phân tích, đánh giá một tác phẩm truyện, người viết cần tập trung phân tích hai phương diện cốt lõi nào?",
+        options: ["Giá trị nội dung (chủ đề, tư tưởng, thông điệp nhân sinh) và Giá trị nghệ thuật (tình huống truyện, cốt truyện, nhân vật, ngôi kể, điểm nhìn, ngôn ngữ)", "Chỉ tóm tắt lại cốt truyện từ đầu đến cuối", "Chỉ kể tiểu sử gia đình của nhà văn", "Chỉ đếm số lượng từ ngữ trong tác phẩm"],
+        answer: 0,
+        explanation: "Phân tích tác phẩm tự sự phải gắn kết hữu cơ giữa Nội dung tư tưởng và Nghệ thuật tự sự (cách xây dựng tình huống, khắc họa tâm lí nhân vật, giọng điệu và điểm nhìn trần thuật)."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Trong bài thơ 'Đi san mặt đất' (trích sử thi 'Đẻ đất đẻ nước' của dân tộc Mường), công việc đi san mặt đất, đi chặt cây Chu đồng, bắn chimหัส... phản ánh điều gì?",
+        options: ["Quá trình lao động tập thể gian nan của tổ tiên người Mường nhằm cải tạo thiên nhiên hoang sơ, thiết lập cuộc sống ổn định cho cộng đồng", "Một trò chơi giải trí ngày xuân", "Sự hủy hoại môi trường sinh thái", "Cuộc di cư ra các hòn đảo ngoài khơi"],
+        answer: 0,
+        explanation: "Đoạn trích ca ngợi tinh thần đoàn kết chung sức chung lòng ('Việc người một ngày / Việc ta một buổi') của cộng đồng người Mường cổ trong buổi đầu kiến tạo không gian sinh tồn."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Câu văn: 'Vì trời mưa rất to nên các bạn học sinh vẫn đi học đầy đủ đúng giờ' mắc lỗi logic nào về mặt sử dụng quan hệ từ?",
+        options: ["Dùng sai cặp quan hệ từ nguyên nhân - kết quả ('Vì... nên...') cho hai vế câu mang quan hệ tương phản nhượng bộ (phải sửa thành 'Tuy... nhưng...' hoặc 'Mặc dù... nhưng...')", "Câu văn thiếu chủ ngữ", "Câu văn sai chính tả", "Câu văn thừa dấu chấm câu"],
+        answer: 0,
+        explanation: "'Trời mưa rất to' và 'vẫn đi học đầy đủ đúng giờ' là hai sự việc đối lập/tương phản nhau, do đó phải dùng cặp quan hệ từ nhượng bộ 'Mặc dù... nhưng...'."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Hình tượng 'Con tàu' trong bài thơ 'Tiếng hát con tàu' của Chế Lan Viên mang ý nghĩa biểu tượng cho điều gì?",
+        options: ["Biểu tượng cho khát vọng lên đường, vượt khỏi cái tôi chật hẹp để hòa nhập vào cuộc sống lao động rộng lớn của nhân dân và đất nước miền Tây Bắc", "Chỉ đơn thuần là một phương tiện giao thông sắt", "Biểu tượng cho sự chia li buồn bã", "Biểu tượng cho cuộc du ngoạn nước ngoài"],
+        answer: 0,
+        explanation: "'Tàu gọi ta đi, sao chửa ra đi?' — Con tàu là biểu tượng của lí tưởng nghệ thuật và khát vọng đi về với Nhân dân, về với mảnh đất Tây Bắc từng cưu mang kháng chiến."
+    },
+    {
+        grade: "10", subject: "van", term: "CK2",
+        question: "Khi thuyết trình và thảo luận về một vấn đề xã hội trước tập thể lớp, thái độ giao tiếp đúng đắn và văn minh nhất là:",
+        options: ["Trình bày luận điểm rõ ràng, kết hợp ngôn ngữ cơ thể tự tin, lắng nghe tôn trọng ý kiến phản biện và trao đổi trên tinh thần xây dựng", "Nói thật to để át tiếng người khác và bác bỏ mọi ý kiến trái chiều", "Đọc nhìn chằm chằm vào giấy từ đầu đến cuối không nhìn khán giả", "Công kích cá nhân người đặt câu hỏi"],
+        answer: 0,
+        explanation: "Kĩ năng nói và nghe hiệu quả đòi hỏi sự chuẩn bị chu đáo, làm chủ giọng điệu, ánh mắt giao tiếp và thái độ cầu thị, tôn trọng sự khác biệt trong tranh luận học thuật."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - TIẾNG ANH - GIỮA KÌ 1 (GK1 - 15 CÂU) - GLOBAL SUCCESS (GDPT 2018)
+    // ===================================================================
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Choose the best answer: Splitting the household chores equally helps strengthen family _______.",
+        options: ["bonds", "burdens", "groceries", "laundry"],
+        answer: 0,
+        explanation: "Cụm từ vựng Unit 1 (Family Life): 'family bonds' mang nghĩa là sợi dây gắn kết tình cảm gia đình."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Choose the correct word: My father is the _______ of our family, working hard to earn money, while my mother is the homemaker.",
+        options: ["breadwinner", "housewife", "teenager", "cleaner"],
+        answer: 0,
+        explanation: "'Breadwinner' là người trụ cột đi làm kiếm tiền nuôi sống gia đình; còn 'homemaker' là người nội trợ chăm sóc tổ ấm."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Grammar (Present Simple vs Present Continuous): Listen! My sister _______ the piano in the living room right now.",
+        options: ["is playing", "plays", "played", "has played"],
+        answer: 0,
+        explanation: "Dấu hiệu 'Listen!' và 'right now' chỉ hành động đang diễn ra ngay tại thời điểm nói → chia thì Hiện tại tiếp diễn (is playing)."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Grammar: Mrs. Lan usually _______ the cooking, but today she is busy, so her husband is preparing dinner.",
+        options: ["does", "is doing", "makes", "did"],
+        answer: 0,
+        explanation: "Trạng từ tần suất 'usually' chỉ thói quen hàng ngày → chia thì Hiện tại đơn; cụm từ cố định 'do the cooking' (nấu ăn) → 'does'."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Vocabulary (Unit 2 - Humans and the Environment): Using reusable bags instead of plastic ones helps reduce our carbon _______.",
+        options: ["footprint", "energy", "appliance", "litter"],
+        answer: 0,
+        explanation: "'Carbon footprint' (dấu chân carbon) là tổng lượng khí nhà kính phát thải do hoạt động của con người gây ra."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Grammar (Will vs Be going to): Look at those dark clouds in the sky! It _______ soon.",
+        options: ["is going to rain", "will rain", "rains", "rained"],
+        answer: 0,
+        explanation: "Dự đoán tương lai có căn cứ/dấu hiệu rõ ràng ở hiện tại ('Look at those dark clouds!') → dùng cấu trúc 'be going to + V' (is going to rain)."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Grammar (Passive Voice): More trees _______ in our schoolyard by the Youth Union every spring.",
+        options: ["are planted", "plant", "will plant", "were planting"],
+        answer: 0,
+        explanation: "Chủ ngữ 'More trees' chịu tác động của hành động trồng cây và có 'every spring' (hiện tại đơn) → Câu bị động thì Hiện tại đơn: are + V3/ed (are planted)."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Grammar (Passive Voice): The broken street lights _______ by the local workers yesterday afternoon.",
+        options: ["were repaired", "repaired", "are repaired", "will be repaired"],
+        answer: 0,
+        explanation: "Có trạng từ quá khứ 'yesterday afternoon' và chủ ngữ số nhiều 'lights' → Bị động thì Quá khứ đơn: were + V3/ed (were repaired)."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Vocabulary (Unit 3 - Music): The talented young singer received thunderous applause from the _______ after her performance.",
+        options: ["audience", "judges", "single", "instrument"],
+        answer: 0,
+        explanation: "'Audience' là khán giả thưởng thức buổi biểu diễn âm nhạc."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Grammar (Compound Sentences): He wanted to join the school music club, _______ he had to practise playing the guitar every day.",
+        options: ["so", "but", "or", "yet"],
+        answer: 0,
+        explanation: "Liên từ 'so' (vì vậy) nối hai mệnh đề trong câu ghép chỉ quan hệ nguyên nhân - kết quả hợp lí."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Grammar (To-infinitive vs Bare infinitive): My parents never let me _______ out late on weekday nights.",
+        options: ["stay", "to stay", "staying", "stayed"],
+        answer: 0,
+        explanation: "Cấu trúc 'let + O + V (nguyên thể không to)': cho phép ai làm gì → dùng 'stay'."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Grammar: They decided _______ a charity concert to raise money for disadvantaged children.",
+        options: ["to organise", "organise", "organising", "organised"],
+        answer: 0,
+        explanation: "Động từ 'decide' đi kèm với động từ nguyên thể có 'to' (decide + to V: quyết định làm gì)."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Choose the word whose underlined part is pronounced differently: A. tr<u>a</u>sh  B. f<u>a</u>mily  C. pl<u>a</u>net  D. f<u>a</u>ther",
+        options: ["father", "trash", "family", "planet"],
+        answer: 0,
+        explanation: "'father' phát âm là /ɑː/, trong khi 'trash', 'family', 'planet' đều phát âm là /æ/."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Choose the word closest in meaning to 'eco-friendly': We should use eco-friendly products to protect our planet.",
+        options: ["environmentally friendly", "harmful to nature", "expensive and rare", "difficult to recycle"],
+        answer: 0,
+        explanation: "'Eco-friendly' = 'environmentally friendly': thân thiện với môi trường sinh thái."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK1",
+        question: "Communication: Nam: 'Shall we join the Green Sunday clean-up campaign this weekend?' — Mai: '_______'",
+        options: ["That's a great idea! Count me in.", "No, I don't like music.", "Yes, I went there yesterday.", "You're welcome."],
+        answer: 0,
+        explanation: "Để đáp lại lời rủ/đề xuất 'Shall we...?', câu trả lời đồng tình tự nhiên nhất là 'That's a great idea! Count me in.' (Ý kiến tuyệt đấy! Cho mình tham gia với)."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - TIẾNG ANH - CUỐI KÌ 1 (CK1 - 15 CÂU) - GLOBAL SUCCESS (GDPT 2018)
+    // ===================================================================
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Vocabulary (Unit 4 - For a Better Community): Many students do _______ work during summer vacation to help orphans and the elderly.",
+        options: ["volunteer", "profit", "salary", "commercial"],
+        answer: 0,
+        explanation: "'Volunteer work' là công việc tình nguyện vì cộng đồng."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Vocabulary: Generous people have _______ a lot of clothes, books, and money to the flood victims in Central Viet Nam.",
+        options: ["donated", "borrowed", "wasted", "polluted"],
+        answer: 0,
+        explanation: "'Donate something to someone' mang nghĩa quyên góp, ủng hộ tiền bạc/hiện vật cho người gặp khó khăn."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Grammar (Past Simple vs Past Continuous): While we _______ food for homeless people, it suddenly started to rain heavily.",
+        options: ["were preparing", "prepared", "are preparing", "have prepared"],
+        answer: 0,
+        explanation: "Hành động đang diễn ra trong quá khứ ('While we were preparing...') thì một hành động khác cắt ngang ('it started to rain') → dùng Quá khứ tiếp diễn (were preparing)."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Grammar (Adjectives ending in -ed vs -ing): I was really _______ when I heard that our volunteer project won the first prize.",
+        options: ["excited", "exciting", "excite", "excitement"],
+        answer: 0,
+        explanation: "Tính từ đuôi '-ed' (excited) dùng để miêu tả cảm xúc của con người; tính từ đuôi '-ing' (exciting) miêu tả bản chất của sự vật, sự việc."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Grammar (Adjectives ending in -ful vs -less): Be _______ when you cross the busy street, or you may have an accident.",
+        options: ["careful", "careless", "caring", "care"],
+        answer: 0,
+        explanation: "Hậu tố '-ful' mang nghĩa đầy/có (careful: cẩn thận); hậu tố '-less' mang nghĩa không có (careless: bất cẩn). Ngữ cảnh qua đường đông đúc cần 'careful'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Vocabulary (Unit 5 - Inventions): Smartphones and laptops are useful _______ that allow students to study online anywhere.",
+        options: ["devices", "diseases", "Ingredients", "traditions"],
+        answer: 0,
+        explanation: "'Devices' (thiết bị điện tử) phù hợp với ngữ cảnh điện thoại thông minh và máy tính xách tay."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Vocabulary: Artificial Intelligence (AI) is one of the most important technological _______ of the 21st century.",
+        options: ["inventions", "invitations", "intentions", "infections"],
+        answer: 0,
+        explanation: "'Inventions' (những phát minh khoa học công nghệ) là từ vựng trọng tâm của Unit 5."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Grammar (Present Perfect): Scientists _______ many effective vaccines to protect humans from dangerous diseases since the 20th century.",
+        options: ["have developed", "developed", "are developing", "develop"],
+        answer: 0,
+        explanation: "Dấu hiệu 'since + mốc thời gian trong quá khứ' → chia thì Hiện tại hoàn thành: have/has + V3/ed (have developed)."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Grammar (Present Perfect): This is the first time I _______ a 3D printer in our school laboratory.",
+        options: ["have used", "used", "use", "am using"],
+        answer: 0,
+        explanation: "Sau cấu trúc 'This is the first/second time + S + have/has + V3/ed' luôn chia thì Hiện tại hoàn thành."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Grammar (Gerunds vs To-infinitives for purpose): E-readers are widely used for _______ thousands of digital books conveniently.",
+        options: ["storing", "store", "to store", "stored"],
+        answer: 0,
+        explanation: "Để diễn tả công dụng/chức năng của thiết bị: 'be used for + V-ing' (hoặc 'be used to + V nguyên thể'). Vì trước chỗ trống có giới từ 'for' nên chọn 'storing'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Grammar (Gerunds): Do you mind _______ me how to install this English learning app on my tablet?",
+        options: ["showing", "to show", "show", "showed"],
+        answer: 0,
+        explanation: "Cấu trúc 'Do/Would you mind + V-ing?' (Bạn có phiền làm gì đó không?) → dùng Danh động từ 'showing'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Grammar: _______ regular exercise every morning is a great way to stay healthy and energetic.",
+        options: ["Doing", "Do", "Did", "Done"],
+        answer: 0,
+        explanation: "Danh động từ (Gerund: V-ing) đứng đầu câu làm chủ ngữ của câu: 'Doing regular exercise...'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Vocabulary: Driverless cars are equipped with smart sensors to _______ obstacles and avoid traffic accidents.",
+        options: ["detect", "Communicate", "display", "charge"],
+        answer: 0,
+        explanation: "'Detect obstacles' có nghĩa là phát hiện, nhận diện các chướng ngại vật trên đường."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Choose the word that has a different stress pattern from the others: A. computer  B. invention  C. internet  D. advantage",
+        options: ["internet", "computer", "invention", "advantage"],
+        answer: 0,
+        explanation: "'internet' (/ˈɪn.tə.net/) có trọng âm rơi vào âm tiết thứ 1; còn 'computer', 'invention', 'advantage' đều có trọng âm rơi vào âm tiết thứ 2."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK1",
+        question: "Find the mistake: She <u>has bought</u> a new laptop <u>for</u> her online classes <u>two days ago</u>.",
+        options: ["has bought (should be 'bought')", "for", "online classes", "two days ago"],
+        answer: 0,
+        explanation: "Trong câu có trạng từ chỉ thời điểm xác định trong quá khứ 'two days ago' nên động từ phải chia ở thì Quá khứ đơn ('bought') chứ không dùng Hiện tại hoàn thành."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - TIẾNG ANH - GIỮA KÌ 2 (GK2 - 15 CÂU) - GLOBAL SUCCESS (GDPT 2018)
+    // ===================================================================
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Vocabulary (Unit 6 - Gender Equality): Both men and women should be given equal _______ in education and career development.",
+        options: ["opportunities", "salaries", "surgeon", "kindergartens"],
+        answer: 0,
+        explanation: "'Equal opportunities' (cơ hội bình đẳng) là cụm từ trọng tâm chủ đề bình đẳng giới (Unit 6)."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Grammar (Passive Voice with Modals): Child marriage and domestic violence must _______ completely in modern society.",
+        options: ["be eliminated", "eliminate", "eliminated", "be eliminating"],
+        answer: 0,
+        explanation: "Cấu trúc câu bị động với động từ khuyết thiếu (Modal verbs: can, must, should, may...): Modal + be + V3/ed → 'must be eliminated'."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Grammar (Passive Voice with Modals): Women should _______ the same wages as men for doing the same job.",
+        options: ["be paid", "pay", "be paying", "paid"],
+        answer: 0,
+        explanation: "Chủ ngữ 'Women' nhận hành động trả lương → Bị động với 'should': should + be + V3/ed (be paid)."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Vocabulary (Unit 7 - Viet Nam and International Organisations): UNICEF aims to create better conditions for _______ children all over the world.",
+        options: ["disadvantaged", "wealthy", "competitive", "essential"],
+        answer: 0,
+        explanation: "'Disadvantaged children' là trẻ em có hoàn cảnh khó khăn, thiệt thòi."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Vocabulary: Since joining the WTO in 2007, Viet Nam has become a more active and reliable _______ in international trade.",
+        options: ["participant", "participation", "participate", "participating"],
+        answer: 0,
+        explanation: "Sau mạo từ 'a' và các tính từ 'active and reliable' cần một danh từ chỉ chủ thể tham gia: 'participant' (thành viên/người tham gia)."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Grammar (Comparative Adjectives): Travelling by plane is much _______ than travelling by train.",
+        options: ["faster", "fastest", "more fast", "as fast"],
+        answer: 0,
+        explanation: "So sánh hơn với tính từ ngắn 'fast' có từ 'than' phía sau: fast + -er → 'faster'."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Grammar (Superlative Adjectives): The United Nations (UN) is the _______ international organisation in the world.",
+        options: ["most influential", "more influential", "influentialest", "as influential"],
+        answer: 0,
+        explanation: "So sánh nhất với tính từ dài 'influential' đứng sau mạo từ 'the': the + most + adj → 'the most influential'."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Vocabulary (Unit 8 - New Ways to Learn): _______ learning combines traditional face-to-face classroom lessons with online learning activities.",
+        options: ["Blended", "Individual", "Outdated", "Passive"],
+        answer: 0,
+        explanation: "'Blended learning' (học tập kết hợp) là phương pháp kết hợp giữa học trực tiếp trên lớp và học trực tuyến."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Grammar (Relative Clauses): The teacher _______ taught us English last year has just won an award for innovative teaching.",
+        options: ["who", "which", "whose", "whom"],
+        answer: 0,
+        explanation: "Đại từ quan hệ 'who' (hoặc 'that') thay thế cho danh từ chỉ người 'The teacher' và đóng vai trò làm chủ ngữ cho động từ 'taught'."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Grammar (Relative Clauses): The online course _______ I registered for yesterday focuses on academic writing skills.",
+        options: ["which", "who", "whose", "whom"],
+        answer: 0,
+        explanation: "Đại từ quan hệ 'which' thay thế cho danh từ chỉ sự vật 'The online course'."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Grammar (Relative Clauses): That is the student _______ science project received the highest score in the competition.",
+        options: ["whose", "who", "which", "whom"],
+        answer: 0,
+        explanation: "Trước danh từ 'science project' cần đại từ quan hệ chỉ sở hữu 'whose' (dự án khoa học của người học sinh đó)."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Grammar (Non-defining Relative Clauses): Mr. Nam, _______ has 20 years of experience in IT, helped our school set up the smart library.",
+        options: ["who", "that", "which", "whose"],
+        answer: 0,
+        explanation: "Đây là mệnh đề quan hệ không xác định (có dấu phẩy ngăn cách sau tên riêng 'Mr. Nam'), bắt buộc dùng 'who' cho người và KHÔNG được dùng 'that'."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Vocabulary: Watching educational videos helps visual learners _______ new information more effectively.",
+        options: ["absorb", "ignore", "destroy", "prevent"],
+        answer: 0,
+        explanation: "'Absorb information/knowledge' mang nghĩa tiếp thu, lĩnh hội kiến thức."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Choose the word OPPOSITE in meaning to 'gender equality': Many organisations are working hard to end gender _______ in the workplace.",
+        options: ["inequality", "balance", "fairness", "harmony"],
+        answer: 0,
+        explanation: "Trái nghĩa với 'equality' (sự bình đẳng) là 'inequality' (sự bất bình đẳng)."
+    },
+    {
+        grade: "10", subject: "anh", term: "GK2",
+        question: "Communication: Lan: 'Would you like to join our online study group tonight?' — Minh: '_______'",
+        options: ["Yes, I'd love to. What time does it start?", "No, I don't have a brother.", "You're very welcome.", "It's very kind of you to help me."],
+        answer: 0,
+        explanation: "Đáp lại lời mời lịch sự 'Would you like to...?', câu trả lời chuẩn mực là 'Yes, I'd love to.' kèm câu hỏi chi tiết thời gian."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - TIẾNG ANH - CUỐI KÌ 2 (CK2 - 15 CÂU) - GLOBAL SUCCESS (GDPT 2018)
+    // ===================================================================
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Vocabulary (Unit 9 - Protecting the Environment): Cutting down forests on a large scale known as _______ destroys the natural habitat of many wild animals.",
+        options: ["deforestation", "afforestation", "preservation", "ecotourism"],
+        answer: 0,
+        explanation: "'Deforestation' (nạn phá rừng) làm mất môi trường sống tự nhiên của động vật hoang dã."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Vocabulary: Sea turtles and Javan rhinos are _______ species that need urgent protection from poaching.",
+        options: ["endangered", "dangerous", "common", "polluted"],
+        answer: 0,
+        explanation: "'Endangered species' là các loài sinh vật đang có nguy cơ tuyệt chủng cần được bảo tồn."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Grammar (Reported Speech - Statements): 'I am doing a project on climate change now,' said Nam. → Nam said that he _______ a project on climate change then.",
+        options: ["was doing", "is doing", "has done", "will do"],
+        answer: 0,
+        explanation: "Trong câu tường thuật (Reported speech), khi động từ tường thuật ở quá khứ ('said'), ta lùi thì: Hiện tại tiếp diễn ('am doing') → Quá khứ tiếp diễn ('was doing') và 'now' → 'then'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Grammar (Reported Speech): 'We will plant more mangrove trees tomorrow,' the volunteers said. → The volunteers said that they _______ more mangrove trees the following day.",
+        options: ["would plant", "will plant", "planted", "have planted"],
+        answer: 0,
+        explanation: "Khi chuyển sang câu gián tiếp: 'will' lùi thành 'would', và 'tomorrow' đổi thành 'the following day / the next day'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Grammar (Reported Speech - Yes/No Questions): 'Are you interested in joining the wildlife club?' Lan asked me. → Lan asked me _______ in joining the wildlife club.",
+        options: ["if I was interested", "if was I interested", "that I am interested", "whether am I interested"],
+        answer: 0,
+        explanation: "Câu hỏi Yes/No trong lời nói gián tiếp dùng 'if/whether + S + V (lùi thì, không đảo ngữ)' → 'if I was interested'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Grammar (Reported Speech - Wh-Questions): 'Where did you take these photos of the national park?' the teacher asked Hoa.",
+        options: ["The teacher asked Hoa where she had taken those photos of the national park.", "The teacher asked Hoa where did she take those photos.", "The teacher asked Hoa where she takes these photos.", "The teacher asked Hoa if she had taken those photos."],
+        answer: 0,
+        explanation: "Câu hỏi Wh- chuyển sang gián tiếp: giữ từ để hỏi 'where', đưa về trật tự S + V và lùi từ Quá khứ đơn ('did... take') sang Quá khứ hoàn thành ('had taken'), đổi 'these' thành 'those'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Vocabulary (Unit 10 - Ecotourism): _______ is a form of sustainable travel to natural areas that conserves the environment and improves the well-being of local people.",
+        options: ["Ecotourism", "Mass tourism", "Industrialisation", "Urbanisation"],
+        answer: 0,
+        explanation: "'Ecotourism' (du lịch sinh thái) là hình thức du lịch có trách nhiệm với thiên nhiên và hỗ trợ cộng đồng bản địa."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Vocabulary: Tourists are advised not to drop _______ or pick wild flowers when trekking in the national park.",
+        options: ["litter", "souvenirs", "crafts", "brochures"],
+        answer: 0,
+        explanation: "'Drop litter' (xả rác bừa bãi) là hành vi cần tránh khi tham gia du lịch sinh thái."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Grammar (Conditional Sentence Type 1): If we _______ reducing plastic waste, our oceans will become heavily polluted.",
+        options: ["don't start", "didn't start", "won't start", "hadn't started"],
+        answer: 0,
+        explanation: "Câu điều kiện loại 1 diễn tả sự việc có thật/có thể xảy ra ở hiện tại hoặc tương lai: If + S + V(hiện tại đơn), S + will + V → chọn 'don't start'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Grammar (Conditional Sentence Type 2): If I _______ you, I would buy local handicrafts to support the ethnic minority villagers.",
+        options: ["were", "am", "will be", "have been"],
+        answer: 0,
+        explanation: "Câu điều kiện loại 2 diễn tả giả định không có thật ở hiện tại (lời khuyên 'If I were you, I would + V'): mệnh đề If chia quá khứ giả định 'were' cho mọi ngôi."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Grammar (Conditional Sentence Type 2): If there _______ no air pollution in this city, people would live much healthier lives.",
+        options: ["were", "is", "will be", "has been"],
+        answer: 0,
+        explanation: "Mệnh đề chính có 'would live' → Câu điều kiện loại 2 trái với thực tế hiện tại, mệnh đề If dùng 'were' (hoặc V2/ed)."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Choose the correct preposition: Global warming results _______ the massive emission of greenhouse gases into the atmosphere.",
+        options: ["from", "in", "to", "with"],
+        answer: 0,
+        explanation: "Phân biệt: 'result from + nguyên nhân' (bắt nguồn từ nguyên nhân nào) và 'result in + kết quả' (dẫn tới hậu quả gì). Sự nóng lên toàn cầu bắt nguồn từ việc phát thải khí nhà kính → 'from'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Choose the word CLOSEST in meaning to 'conserve': Local authorities are making great efforts to conserve the coral reefs.",
+        options: ["protect", "destroy", "pollute", "abandon"],
+        answer: 0,
+        explanation: "'Conserve' = 'protect / preserve': bảo tồn, bảo vệ tài nguyên thiên nhiên."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Find the mistake: If tourists <u>will respect</u> the local culture, ecotourism <u>will develop</u> sustainably.",
+        options: ["will respect (should be 'respect')", "the local", "ecotourism", "will develop"],
+        answer: 0,
+        explanation: "Trong mệnh đề điều kiện bắt đầu bằng 'If' của câu điều kiện loại 1, ta dùng thì Hiện tại đơn ('respect') chứ không dùng 'will'."
+    },
+    {
+        grade: "10", subject: "anh", term: "CK2",
+        question: "Choose the sentence that best combines the pair: We don't have enough time now. We can't visit Phong Nha Cave.",
+        options: ["If we had enough time now, we could visit Phong Nha Cave.", "If we have enough time now, we will visit Phong Nha Cave.", "Unless we had enough time, we could visit Phong Nha Cave.", "If we didn't have enough time, we couldn't visit Phong Nha Cave."],
+        answer: 0,
+        explanation: "Tình huống ở hiện tại ('don't have... can't visit') → Dùng câu điều kiện loại 2 giả định trái với hiện tại: 'If we had enough time now, we could visit Phong Nha Cave.'"
+    },
+
+    // ===================================================================
+    // KHỐI 10 - CÔNG NGHỆ - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Trong mối quan hệ giữa Khoa học, Kĩ thuật và Công nghệ, lĩnh vực nào có mục tiêu khám phá các quy luật tự nhiên để trả lời câu hỏi 'Tại sao?' và 'Như thế nào?'?",
+        options: ["Khoa học (Science)", "Kĩ thuật (Engineering)", "Công nghệ (Technology)", "Thương mại"],
+        answer: 0,
+        explanation: "Khoa học nghiên cứu khám phá thế giới tự nhiên để xây dựng hệ thống tri thức, định luật; Kĩ thuật vận dụng tri thức khoa học để giải quyết vấn đề thiết kế; Công nghệ tạo ra sản phẩm, quy trình phục vụ con người."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Một Hệ thống kĩ thuật (Technical system) hoàn chỉnh luôn bao gồm 3 phần cơ bản theo cấu trúc dòng thông tin và năng lượng là:",
+        options: ["Đầu vào (Input) → Quá trình xử lí, điều khiển (Process) → Đầu ra (Output) kèm theo liên hệ ngược (Feedback)", "Chỉ gồm vỏ máy và dây cắm điện", "Nguyên liệu thô và phế thải", "Người bán và người mua"],
+        answer: 0,
+        explanation: "Cấu trúc tổng quát của mọi hệ thống kĩ thuật gồm 3 khối chức năng: Đầu vào (tiếp nhận thông tin/vật liệu/năng lượng) → Xử lí/Điều khiển → Đầu ra (thực hiện nhiệm vụ công tác)."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Trong hệ thống bàn là điện tự động ngắt khi đủ nhiệt độ, bộ phận 'Rơ-le nhiệt (băng kép)' đóng vai trò thuộc khối chức năng nào của hệ thống kĩ thuật?",
+        options: ["Bộ phận cảm biến và điều khiển (đóng cắt mạch điện dựa trên nhiệt độ)", "Bộ phận nguồn cung cấp điện lưới", "Vỏ nhựa cách nhiệt bên ngoài", "Đèn báo hiệu trang trí"],
+        answer: 0,
+        explanation: "Rơ-le nhiệt cảm nhận nhiệt độ đế bàn là và tự động đóng/ngắt dòng điện qua dây đốt nóng nên thuộc bộ phận xử lí - điều khiển."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Công nghệ Luyện kim và Gia công cơ khí cắt gọt có vai trò cơ bản gì trong nền sản xuất công nghiệp?",
+        options: ["Chế tạo ra phôi kim loại và gia công tạo hình các chi tiết máy có độ chính xác cao để lắp ráp máy móc thiết bị", "Trực tiếp sản xuất ra phần mềm điện thoại", "Chuyên trồng rừng lấy gỗ", "Chỉ dùng để trang trí nội thất"],
+        answer: 0,
+        explanation: "Luyện kim tạo ra vật liệu kim loại, hợp kim; đúc, gia công áp lực và cắt gọt cơ khí biến phôi thành các chi tiết máy chính xác."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Công nghệ In 3D (Sản xuất bồi đắp - Additive Manufacturing) khác biệt căn bản với phương pháp tiện, phay cắt gọt truyền thống ở nguyên lí nào?",
+        options: ["Tạo ra vật thể không gian 3 chiều bằng cách đắp chồng liên tiếp từng lớp vật liệu mỏng lên nhau theo thiết kế số hóa trên máy tính", "Dùng dao cắt gọt bỏ đi phần vật liệu thừa từ một khối thép đặc", "Nung chảy kim loại rồi đổ vào khuôn cát", "Dùng búa rèn đập biến dạng phôi"],
+        answer: 0,
+        explanation: "Công nghệ in 3D bồi đắp từng lớp vật liệu (nhựa, kim loại, bê tông, vật liệu sinh học) giúp tạo được các chi tiết có hình dáng phức tạp mà không tốn phế liệu cắt gọt."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Công nghệ vật liệu Nano (Nanotechnology) nghiên cứu, chế tạo và ứng dụng các vật liệu có cấu trúc ở kích thước siêu nhỏ trong khoảng nào?",
+        options: ["Từ 1 nm đến 100 nm (1 nanômét = 10⁻⁹ m)", "Từ 1 mm đến 100 mm", "Từ 1 cm đến 1 m", "Trên 100 micromét"],
+        answer: 0,
+        explanation: "Ở thang kích thước từ 1 đến 100 nanômét (nm), vật liệu xuất hiện những tính chất vật lí, hóa học, quang học và kháng khuẩn đặc biệt vượt trội so với vật liệu khối thông thường."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Công nghệ CAD/CAM/CNC trong nhà máy cơ khí thông minh là sự kết hợp của:",
+        options: ["Thiết kế có sự trợ giúp của máy tính (CAD), Sản xuất có sự trợ giúp của máy tính (CAM) và Điều khiển số bằng máy tính (CNC)", "Chỉ gồm các bản vẽ tay trên giấy can", "Các máy tiện vận hành hoàn toàn bằng tay quay cơ học", "Hệ thống tưới nước tự động"],
+        answer: 0,
+        explanation: "CAD giúp thiết kế mô hình 3D trên máy tính, CAM lập trình đường chạy dao và truyền mã lệnh xuống máy công cụ CNC để tự động gia công chính xác chi tiết."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Nguồn năng lượng nào sau đây thuộc nhóm 'Công nghệ năng lượng tái tạo' thân thiện với môi trường?",
+        options: ["Năng lượng mặt trời, năng lượng gió, năng lượng địa nhiệt và năng lượng sinh khối", "Nhiệt điện đốt than đá antraxit", "Động cơ đốt dầu diesel", "Khí đốt hóa thạch tự nhiên"],
+        answer: 0,
+        explanation: "Năng lượng tái tạo được khai thác từ các nguồn tự nhiên liên tục bổ sung (bức xạ mặt trời, sức gió, thủy triều, địa nhiệt, sinh khối), giảm thiểu phát thải khí nhà kính."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Khi đánh giá một công nghệ mới hoặc một sản phẩm công nghệ, người ta cần dựa trên các tiêu chí cốt lõi nào?",
+        options: ["Tiêu chí Hiệu quả (năng suất, chất lượng), Độ tin cậy (bền, an toàn), Kinh tế (giá thành, chi phí vận hành) và Môi trường", "Chỉ nhìn vào màu sơn bên ngoài của máy", "Chỉ chọn máy nặng nhất và tốn điện nhất", "Không cần quan tâm đến mức độ gây ô nhiễm"],
+        answer: 0,
+        explanation: "Bộ 4 tiêu chí vàng đánh giá công nghệ gồm: Hiệu quả - Độ tin cậy - Kinh tế - Môi trường nhằm lựa chọn giải pháp công nghệ tối ưu và bền vững."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Trên nhãn năng lượng dán trên tủ lạnh hoặc máy điều hòa nhiệt độ tại Việt Nam, số lượng ngôi sao (từ 1 sao đến 5 sao) cho người tiêu dùng biết thông tin gì?",
+        options: ["Mức độ tiết kiệm điện năng của thiết bị (nhãn 5 sao là mức hiệu suất năng lượng cao nhất, tiết kiệm điện nhất)", "Thời gian bảo hành của thiết bị là 5 năm", "Trọng lượng của thiết bị là 50 kg", "Thiết bị chỉ dùng được cho 5 người"],
+        answer: 0,
+        explanation: "Nhãn năng lượng xác nhận của Bộ Công Thương có từ 1 đến 5 sao; càng nhiều sao thì thiết bị tiêu thụ càng ít điện năng cho cùng một công suất làm việc."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Trong nông nghiệp trồng trọt, 'Đất trồng' bao gồm 3 phần trạng thái cơ bản nào?",
+        options: ["Phần rắn (chất vô cơ và chất hữu cơ mùn), phần lỏng (nước trong đất) và phần khí (không khí trong các khe hở đất)", "Chỉ gồm cát và sỏi đá", "Chỉ gồm nước và phân hóa học", "Chỉ gồm rễ cây và giun đất"],
+        answer: 0,
+        explanation: "Đất trồng là lớp bề mặt tơi xốp của vỏ Trái Đất gồm phần rắn (khoáng + hữu cơ), phần lỏng (cung cấp nước và muối khoáng hòa tan) và phần khí (cung cấp O₂ cho rễ hô hấp)."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Đất chua (có pH < 6,5, đặc biệt là đất phèn, đất feralit đồi núi bị rửa trôi) thường được cải tạo bằng biện pháp hóa học phổ biến nào?",
+        options: ["Bón vôi (CaO hoặc CaCO₃) kết hợp bón phân hữu cơ để trung hòa độ chua và khử độc nhôm, sắt tự do", "Bón thêm thật nhiều phân đạm chua ammonium sulfate", "Tưới nước muối mặn vào ruộng", "Đốt cháy toàn bộ lớp đất mặt"],
+        answer: 0,
+        explanation: "Bón vôi cung cấp ion Ca²⁺ đẩy các ion H⁺, Al³⁺, Fe³⁺ gây chua ra khỏi keo đất và trung hòa acid trong dung dịch đất."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Giá thể trồng cây không dùng đất (như xơ dừa, trấu hun, đá perlite, sỏi nhẹ keramzit) có ưu điểm nổi bật nào?",
+        options: ["Tơi xốp, thoáng khí, giữ ẩm tốt, nhẹ, sạch mầm bệnh và dễ dàng kiểm soát dinh dưỡng trong trồng trọt công nghệ cao", "Nặng gấp mười lần đất sét tự nhiên", "Chứa sẵn nhiều mầm bệnh nấm hại rễ", "Không cho phép nước và không khí đi qua"],
+        answer: 0,
+        explanation: "Giá thể trơ và giá thể hữu cơ đã qua xử lí giúp bộ rễ cây phát triển mạnh, sạch sâu bệnh và là nền tảng của công nghệ trồng cây trong nhà màng, thủy canh."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Nhóm phân bón nào sau đây có khả năng cải tạo làm đất tơi xốp, tăng hàm lượng mùn và thúc đẩy hệ vi sinh vật có ích trong đất phát triển bền vững?",
+        options: ["Phân bón hữu cơ và Phân bón vi sinh", "Phân đạm hóa học nguyên chất", "Phân kali hóa học", "Thuốc trừ cỏ hóa học"],
+        answer: 0,
+        explanation: "Phân hữu cơ và phân vi sinh vừa cung cấp đầy đủ dưỡng chất đa - trung - vi lượng, vừa bổ sung chất mùn giúp đất tơi xốp, chống thoái hóa bạc màu đất."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK1",
+        question: "Công nghệ tưới nhỏ giọt tự động (kết hợp châm phân dinh dưỡng tự động) trong trồng trọt công nghệ cao mang lại lợi ích gì?",
+        options: ["Tiết kiệm tới 50 - 70% lượng nước tưới, cung cấp nước và phân bón chính xác tận gốc rễ, hạn chế cỏ dại và chống rửa trôi", "Làm ngập úng toàn bộ mặt ruộng", "Tiêu tốn lượng nước gấp 5 lần tưới tràn", "Chỉ áp dụng được vào những ngày mưa bão"],
+        answer: 0,
+        explanation: "Tưới nhỏ giọt đưa từng giọt nước và dinh dưỡng hòa tan trực tiếp vào vùng rễ cây theo cảm biến độ ẩm đất, giúp tiết kiệm nước tối đa và tăng năng suất cây trồng."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - CÔNG NGHỆ - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Trong tiêu chuẩn trình bày Bản vẽ kĩ thuật (TCVN), khổ giấy lớn nhất là khổ A0 (diện tích 1 m²). Từ khổ A0 chia đôi liên tiếp sẽ được các khổ giấy chuẩn nào?",
+        options: ["A1, A2, A3, A4 (trong đó khổ A4 có kích thước 297 × 210 mm)", "B1, B2, B3, B4", "A5, A6, A7, A8 lớn hơn A0", "Khổ giấy tròn và tam giác"],
+        answer: 0,
+        explanation: "Theo tiêu chuẩn TCVN 7285:2003, có 5 khổ giấy chính: A0 (1189×841), A1 (841×594), A2 (594×420), A3 (420×297) và A4 (297×210 mm)."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Tỉ lệ ghi trên khung tên bản vẽ kĩ thuật là '2 : 1' thuộc loại tỉ lệ nào và có ý nghĩa gì?",
+        options: ["Tỉ lệ phóng to (kích thước hình biểu diễn trên bản vẽ lớn gấp 2 lần kích thước thực của vật thể)", "Tỉ lệ thu nhỏ một nửa", "Tỉ lệ nguyên hình", "Vật thể có khối lượng 2 kg"],
+        answer: 0,
+        explanation: "Tỉ lệ là tỉ số giữa kích thước đo trên hình biểu diễn và kích thước thực tương ứng của vật thể: 2:1 là tỉ lệ phóng to; 1:2 là tỉ lệ thu nhỏ; 1:1 là tỉ lệ nguyên hình."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Lưu ý quan trọng nhất khi ghi con số kích thước trên bản vẽ kĩ thuật là gì?",
+        options: ["Con số kích thước ghi trên bản vẽ luôn là kích thước THỰC của vật thể, không phụ thuộc vào tỉ lệ bản vẽ", "Con số kích thước phải nhân đôi nếu vẽ tỉ lệ 2:1", "Phải ghi kèm đơn vị mm sau mọi con số", "Chỉ ghi kích thước ước lượng bằng mắt"],
+        answer: 0,
+        explanation: "Dù bản vẽ phóng to hay thu nhỏ ở bất kì tỉ lệ nào, con số kích thước ghi trên đường kích thước luôn chỉ kích thước thật của chi tiết ngoài thực tế (đơn vị chuẩn là mm và không ghi chữ mm)."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Trên bản vẽ kĩ thuật, loại nét vẽ 'Nét liền đậm' được sử dụng để biểu diễn các đường nào của vật thể?",
+        options: ["Đường bao thấy, cạnh thấy của vật thể", "Đường bao khuất, cạnh khuất", "Đường tâm và đường trục đối xứng", "Đường kích thước và đường gióng"],
+        answer: 0,
+        explanation: "Nét liền đậm vẽ đường bao thấy, cạnh thấy; Nét đứt mảnh vẽ đường bao khuất, cạnh khuất; Nét gạch chấm mảnh vẽ đường tâm, trục đối xứng; Nét liền mảnh vẽ đường kích thước, đường gióng."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Trong phương pháp Hình chiếu vuông góc (góc chiếu thứ nhất), ba hình chiếu cơ bản: Hình chiếu đứng, Hình chiếu bằng và Hình chiếu cạnh được nhận từ các hướng chiếu nào?",
+        options: ["Hình chiếu đứng chiếu từ trước tới; Hình chiếu bằng chiếu từ trên xuống; Hình chiếu cạnh chiếu từ trái sang", "Đứng từ trên xuống; Bằng từ trước tới; Cạnh từ phải sang", "Cả ba hình chiếu đều nhìn từ một hướng", "Nhìn từ dưới đáy vật thể lên"],
+        answer: 0,
+        explanation: "Theo phương pháp góc chiếu thứ nhất (TCVN): hướng chiếu từ trước tới cho Hình chiếu đứng; từ trên xuống cho Hình chiếu bằng (đặt dưới HC đứng); từ trái sang cho Hình chiếu cạnh (đặt bên phải HC đứng)."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Khi chiếu vuông góc một khối hình cầu (đặc) lên cả 3 mặt phẳng hình chiếu (đứng, bằng, cạnh), cả 3 hình chiếu thu được đều là hình gì?",
+        options: ["Đều là hình tròn có đường kính bằng đường kính hình cầu", "Hình chữ nhật và hình tam giác", "Hình elip dẹt", "Hình vuông"],
+        answer: 0,
+        explanation: "Hình cầu nhìn từ mọi hướng vuông góc đều có hình chiếu là hình tròn bằng nhau có đường kính d."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Mục đích của việc sử dụng 'Hình cắt và Mặt cắt' trên bản vẽ kĩ thuật là gì?",
+        options: ["Để biểu diễn rõ ràng các bộ phận rỗng, lỗ, rãnh bị che khuất bên trong vật thể mà không phải dùng quá nhiều nét đứt", "Để làm giảm kích thước thật của chi tiết máy", "Chỉ dùng cho các vật thể đặc hoàn toàn không có lỗ", "Để trang trí bản vẽ cho đẹp mắt"],
+        answer: 0,
+        explanation: "Giả sử dùng mặt phẳng cắt tưởng tượng cắt qua vật thể rồi lấy đi phần che khuất phía trước giúp các lỗ rỗng bên trong trở thành đường bao thấy rõ ràng."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Loại hình cắt sử dụng một mặt phẳng cắt kết hợp (nửa hình chiếu ghép với nửa hình cắt qua trục đối xứng) gọi là hình cắt gì và dùng cho vật thể nào?",
+        options: ["Hình cắt một nửa (Hình cắt bán phần); dùng để biểu diễn các vật thể có tính chất đối xứng", "Hình cắt toàn bộ", "Hình cắt cục bộ", "Mặt cắt rời"],
+        answer: 0,
+        explanation: "Với vật thể đối xứng, người ta vẽ một nửa là hình chiếu (thể hiện hình dáng bên ngoài) và một nửa bên kia trục đối xứng là hình cắt (thể hiện cấu tạo rỗng bên trong)."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Hình biểu diễn thể hiện đồng thời cả 3 chiều (dài, rộng, cao) của vật thể trong không gian bằng phép chiếu song song lên một mặt phẳng gọi là:",
+        options: ["Hình chiếu trục đo (gồm hình chiếu trục đo vuông góc đều và hình chiếu trục đo xiên góc cân)", "Hình chiếu bằng", "Mặt cắt chập", "Sơ đồ mạch điện"],
+        answer: 0,
+        explanation: "Hình chiếu trục đo giúp người đọc bản vẽ hình dung trực quan hình dáng không gian 3 chiều của vật thể."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Trong Hình chiếu trục đo vuông góc đều, góc trục đo giữa các trục O'x', O'y', O'z' và hệ số biến dạng theo 3 trục p, q, r có giá trị là:",
+        options: ["Các góc trục đo đều bằng 120°; hệ số biến dạng p = q = r = 1", "Góc bằng 90° và 135°; p = r = 1, q = 0,5", "Tất cả các góc đều bằng 60°", "Hệ số biến dạng bằng 2"],
+        answer: 0,
+        explanation: "Hình chiếu trục đo vuông góc đều có X'O'Y' = Y'O'Z' = X'O'Z' = 120° và hệ số biến dạng quy ước p = q = r = 1; còn hình chiếu trục đo xiên góc cân có X'O'Z' = 90°, X'O'Y' = Y'O'Z' = 135° và q = 0,5."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Hình chiếu phối cảnh được xây dựng bằng phép chiếu xuyên tâm (các tia chiếu xuất phát từ một điểm nhìn/mắt người quan sát) thường được ứng dụng nhiều nhất trong lĩnh vực nào?",
+        options: ["Bản vẽ Kiến trúc và Xây dựng (tạo cảm giác xa gần giống như mắt người nhìn thực tế công trình nhà cửa, cầu đường)", "Gia công tiện ren ốc vít nhỏ", "Lắp ráp vi mạch điện tử", "Pha chế hóa chất"],
+        answer: 0,
+        explanation: "Hình chiếu phối cảnh (1 điểm tụ hoặc 2 điểm tụ) tạo hiệu ứng thị giác vật ở gần thấy to, càng ở xa càng nhỏ dần và hội tụ tại điểm tụ trên đường chân trời, rất sinh động cho kiến trúc."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Điểm khác biệt cốt lõi giữa 'Bản vẽ chi tiết' và 'Bản vẽ lắp' trong cơ khí là gì?",
+        options: ["Bản vẽ chi tiết dùng để chế tạo và kiểm tra 1 chi tiết máy duy nhất; còn Bản vẽ lắp diễn tả hình dạng, vị trí tương quan của một nhóm nhiều chi tiết lắp ghép với nhau và có Bảng kê", "Bản vẽ lắp dùng để đúc từng con ốc riêng lẻ", "Bản vẽ chi tiết luôn có bảng kê tên 100 chi tiết", "Hai bản vẽ hoàn toàn giống hệt nhau"],
+        answer: 0,
+        explanation: "Bản vẽ chi tiết phục vụ người thợ gia công từng chi tiết đơn lẻ; Bản vẽ lắp có thêm 'Bảng kê' các chi tiết và kích thước lắp ghép để phục vụ lắp ráp và vận hành bộ phận máy."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Trong các hình biểu diễn của một Bản vẽ nhà (Mặt bằng, Mặt đứng, Mặt cắt), hình biểu diễn nào quan trọng nhất giúp biết cách bố trí các phòng, cửa đi, cửa sổ và đồ đạc trên từng tầng?",
+        options: ["Mặt bằng (là hình cắt bằng của ngôi nhà cắt ngang qua cửa sổ)", "Mặt đứng", "Mặt cắt dọc mái", "Khung tên"],
+        answer: 0,
+        explanation: "Mặt bằng ngôi nhà là hình biểu diễn quan trọng nhất, cho biết diện tích, kích thước và sự sắp xếp các phòng chức năng (phòng khách, phòng ngủ, bếp, WC), vị trí cầu thang và cửa."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Phần mềm chuyên dụng phổ biến nhất trên máy tính hiện nay giúp các kĩ sư thực hiện lập bản vẽ kĩ thuật 2D và 3D nhanh chóng, chính xác là:",
+        options: ["Phần mềm AutoCAD (Computer-Aided Design)", "Phần mềm nghe nhạc MP3", "Phần mềm gõ văn bản Notepad", "Trình duyệt web"],
+        answer: 0,
+        explanation: "AutoCAD là phần mềm hỗ trợ vẽ kĩ thuật trên máy tính phổ biến hàng đầu, giúp tạo lập, chỉnh sửa, ghi kích thước và in ấn bản vẽ chuẩn xác."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK1",
+        question: "Trên bản vẽ chi tiết cơ khí, kí hiệu chữ 'Ø' (phi, ví dụ Ø30) và chữ 'R' (ví dụ R15) đứng trước con số kích thước lần lượt chỉ điều gì?",
+        options: ["Ø chỉ đường kính của đường tròn/khối trụ; R chỉ bán kính của cung tròn", "Ø chỉ chiều dài; R chỉ chiều cao", "Ø chỉ độ nhám bề mặt; R chỉ khối lượng", "Ø chỉ góc nghiêng; R chỉ số lượng lỗ"],
+        answer: 0,
+        explanation: "Theo tiêu chuẩn ghi kích thước: kí hiệu Ø đặt trước con số chỉ đường kính đường tròn, kí hiệu R đặt trước con số chỉ bán kính cung tròn."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - CÔNG NGHỆ - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Hoạt động 'Thiết kế kĩ thuật' (Engineering Design) được khởi nguồn từ đâu?",
+        options: ["Từ nhu cầu thực tiễn của con người và việc phát hiện ra các vấn đề cần giải quyết để nâng cao chất lượng cuộc sống", "Từ việc sao chép nguyên xi một sản phẩm cũ không sửa đổi", "Chỉ làm theo sở thích ngẫu hứng không cần mục đích", "Từ việc hủy bỏ các tiêu chuẩn an toàn"],
+        answer: 0,
+        explanation: "Thiết kế kĩ thuật bắt đầu từ việc xác định vấn đề thực tiễn và nhu cầu của người dùng, từ đó tìm kiếm giải pháp tối ưu để tạo ra sản phẩm, dịch vụ đáp ứng nhu cầu đó."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Bước đầu tiên trong Quy trình thiết kế kĩ thuật là bước nào?",
+        options: ["Xác định vấn đề và các tiêu chí, giới hạn của giải pháp thiết kế", "Đem sản phẩm đi bán ngay ngoài chợ", "Sơn màu hoàn thiện sản phẩm", "Viết báo cáo tổng kết"],
+        answer: 0,
+        explanation: "Quy trình thiết kế kĩ thuật mở đầu bằng việc Xác định vấn đề → Tìm hiểu tổng quan → Đề xuất giải pháp → Xây dựng nguyên mẫu (Prototype) → Thử nghiệm, đánh giá và điều chỉnh → Hoàn thiện hồ sơ."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Trong quy trình thiết kế kĩ thuật, vì sao sau bước 'Thử nghiệm và đánh giá nguyên mẫu (Prototype)' lại thường có mũi tên quay ngược lại các bước trước?",
+        options: ["Vì thiết kế là một quá trình lặp đi lặp lại để phát hiện nhược điểm, cải tiến và hoàn thiện giải pháp cho đến khi đạt mọi yêu cầu đề ra", "Vì người thiết kế quên mất cách vẽ bản vẽ", "Để làm tốn thêm thời gian của nhà máy", "Vì mọi nguyên mẫu thử nghiệm đều phải vứt bỏ"],
+        answer: 0,
+        explanation: "Tính lặp (Iteration) là đặc điểm cốt lõi của thiết kế kĩ thuật: qua thử nghiệm thực tế, kĩ sư phát hiện lỗi hoặc điểm chưa tối ưu để quay lại điều chỉnh thiết kế hoàn hảo hơn."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Yếu tố 'Nhân trắc học' (Ergonomics / Anthropometry) trong thiết kế sản phẩm (như thiết kế bàn ghế học sinh, tay cầm chuột máy tính) đòi hỏi điều gì?",
+        options: ["Sản phẩm phải có kích thước, kiểu dáng phù hợp với tầm vóc, tư thế giải phẫu và sinh lí của người sử dụng để tạo sự thoải mái, an toàn, chống gù lưng mỏi mắt", "Sản phẩm phải làm bằng kim loại đắt tiền nhất", "Bàn ghế của học sinh lớp 1 và người lớn phải cao bằng nhau", "Chỉ chú trọng trang trí hoa văn rườm rà"],
+        answer: 0,
+        explanation: "Nhân trắc học nghiên cứu kích thước và khả năng vận động của cơ thể người để thiết kế sản phẩm vừa vặn, thuận tiện, bảo vệ sức khỏe và tăng năng suất lao động."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Nguyên tắc 'Đơn giản hóa và Chuẩn hóa' trong thiết kế kĩ thuật mang lại lợi ích kinh tế - kĩ thuật gì?",
+        options: ["Giảm số lượng chi tiết không cần thiết, sử dụng các chi tiết tiêu chuẩn (ốc vít, ổ bi chuẩn) giúp dễ chế tạo hàng loạt, hạ giá thành và dễ sửa chữa thay thế", "Làm cho máy móc không ai có thể sửa chữa được", "Tăng giá bán sản phẩm lên gấp 10 lần", "Mỗi chiếc máy dùng một cỡ ốc vít hoàn toàn khác nhau"],
+        answer: 0,
+        explanation: "Sử dụng các chi tiết tiêu chuẩn hóa và tối giản cấu tạo giúp dây chuyền sản xuất nhanh, chi phí thấp và người dùng dễ dàng tìm mua linh kiện thay thế khi hỏng hóc."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Nguyên tắc 'Thiết kế hướng tới phát triển bền vững (Thiết kế xanh)' yêu cầu người thiết kế phải chú trọng điều gì?",
+        options: ["Sử dụng vật liệu thân thiện môi trường hoặc dễ tái chế, tiết kiệm năng lượng trong suốt vòng đời sản phẩm và giảm thiểu chất thải ô nhiễm", "Dùng các loại nhựa dùng một lần khó phân hủy", "Thiết kế sản phẩm nhanh hỏng để người mua phải mua mới liên tục", "Sử dụng hóa chất độc hại để giảm giá sơn"],
+        answer: 0,
+        explanation: "Thiết kế bền vững tính toán toàn bộ vòng đời sản phẩm (từ khai thác vật liệu → sản xuất → sử dụng tiết kiệm điện → tái chế khi hết hạn sử dụng) nhằm bảo vệ môi trường."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Phương pháp 'Động não (Brainstorming)' khi làm việc nhóm để tìm kiếm ý tưởng thiết kế có nguyên tắc vàng là gì?",
+        options: ["Khuyến khích mọi thành viên tự do đưa ra càng nhiều ý tưởng càng tốt, không phê phán hay chê bai ngay lập tức, sau đó mới phân tích sàng lọc", "Chỉ một người trưởng nhóm được phép nói", "Bác bỏ ngay mọi ý tưởng mới lạ", "Ngồi im lặng không trao đổi với nhau"],
+        answer: 0,
+        explanation: "Kĩ thuật Brainstorming tôn trọng mọi ý tưởng sáng tạo táo bạo, kết hợp các ý tưởng của tập thể để tìm ra giải pháp đột phá nhất."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Trong nông nghiệp trồng trọt, 'Giống cây trồng' có vai trò quyết định đến yếu tố nào của nông sản?",
+        options: ["Quyết định năng suất tối đa, phẩm chất nông sản và khả năng chống chịu sâu bệnh, điều kiện bất lợi của cây trồng", "Thay thế hoàn toàn cho nước tưới và ánh sáng mặt trời", "Làm cho cây không cần đất vẫn sống trên đá khô", "Không ảnh hưởng gì đến sản lượng thu hoạch"],
+        answer: 0,
+        explanation: "Ông cha ta đã đúc kết: 'Nhất nước, nhì phân, tam cần, tứ giống'. Trong nông nghiệp hiện đại, giống tốt quyết định giới hạn năng suất và chất lượng nông sản."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Phương pháp nhân giống cây trồng bằng hạt (như gieo hạt lúa, hạt ngô, hạt đậu) thuộc hình thức nhân giống nào?",
+        options: ["Nhân giống hữu tính (hạt được hình thành qua quá trình thụ phấn, thụ tinh giữa giao tử đực và giao tử cái)", "Nhân giống vô tính (sinh dưỡng)", "Chiết cành", "Ghép mắt"],
+        answer: 0,
+        explanation: "Nhân giống bằng hạt là nhân giống hữu tính, có ưu điểm hệ số nhân giống cao, đơn giản, rẻ tiền, bộ rễ cọc khỏe nhưng ở cây giao phấn dễ bị phân tính."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Các phương pháp: Giâm cành, Chiết cành, Ghép cây và Nuôi cấy mô tế bào thuộc hình thức nhân giống nào và có ưu điểm chung là gì?",
+        options: ["Nhân giống vô tính; cây con giữ nguyên 100% đặc tính di truyền quý của cây mẹ và sớm ra hoa kết quả", "Nhân giống hữu tính bằng hạt", "Tạo ra cây con hoàn toàn khác cây mẹ", "Kéo dài thời gian ra quả thêm 10 năm"],
+        answer: 0,
+        explanation: "Nhân giống vô tính dựa trên cơ chế nguyên phân từ bộ phận sinh dưỡng (rễ, thân, lá), giúp duy trì nguyên vẹn phẩm chất thơm ngon của cây ăn quả mẹ và rút ngắn thời gian kiến thiết cơ bản."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Phương pháp nhân giống nào thường được áp dụng cho các cây ăn quả lâu năm khó ra rễ bằng giâm cành (như nhãn, vải thiều, bưởi) bằng cách khoanh vỏ, bó bầu đất ẩm ngay trên cành của cây mẹ?",
+        options: ["Chiết cành", "Gieo hạt", "Tách chồi", "Nuôi cấy hạt phấn"],
+        answer: 0,
+        explanation: "Chiết cành là kĩ thuật khoanh vỏ cành bánh tẻ, bôi chất kích thích ra rễ (α-NAA, IBA) rồi bó bầu giá thể ẩm cho cành ra rễ ngay trên cây mẹ trước khi cắt đem trồng."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Kĩ thuật 'Ghép cây' (ghép mắt, ghép cành) nối một bộ phận của cây này (cành/mắt ghép) lên một cây khác (gốc ghép) nhằm mục đích gì?",
+        options: ["Kết hợp được bộ rễ khỏe mạnh, chống chịu tốt với sâu bệnh/đất xấu của cây Gốc ghép với năng suất, chất lượng quả thơm ngon của cây Cành ghép", "Làm cho cây ngừng ra hoa kết trái", "Biến cây thân thảo thành cây gỗ cổ thụ", "Không cần tưới nước cho cây nữa"],
+        answer: 0,
+        explanation: "Cây ghép tận dụng ưu thế kép: Gốc ghép (thường gieo từ hạt của giống địa phương) có bộ rễ ăn sâu chịu hạn, kháng bệnh tốt; Cành/mắt ghép lấy từ giống cao sản cho quả ngon."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Phương pháp chọn tạo giống cây trồng bằng cách cho lai giữa hai dòng thuần chủng khác nhau để tạo ra con lai F1 có sức sống, năng suất vượt trội bố mẹ gọi là:",
+        options: ["Phương pháp tạo giống ưu thế lai (Lai hữu tính tạo giống F1)", "Phương pháp gây đột biến nhân tạo", "Phương pháp chọn lọc cá thể", "Phương pháp giâm cành"],
+        answer: 0,
+        explanation: "Giống lai F1 (như ngô lai, lúa lai, cà chua lai) có ưu thế lai cao nhất ở thế hệ F1 (cho năng suất vượt trội 20-30%), lưu ý chỉ dùng hạt F1 làm thương phẩm chứ không để giống cho vụ sau."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Nghề nghiệp nào sau đây thuộc lĩnh vực Thiết kế kĩ thuật và Công nghệ?",
+        options: ["Kĩ sư cơ khí, Kĩ sư điện - điện tử, Kiến trúc sư, Nhà thiết kế kiểu dáng công nghiệp", "Bác sĩ phẫu thuật ngoại khoa", "Thẩm phán tòa án", "Hướng dẫn viên du lịch lịch sử"],
+        answer: 0,
+        explanation: "Các kĩ sư cơ khí, điện tử, xây dựng, kiến trúc sư và nhà thiết kế công nghiệp là những người trực tiếp thực hiện hoạt động thiết kế kĩ thuật."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "GK2",
+        question: "Trong thiết kế sản phẩm, yếu tố 'An toàn' được đặt ở vị trí ưu tiên như thế nào?",
+        options: ["Là yêu cầu bắt buộc hàng đầu trong mọi thiết kế (an toàn điện, an toàn cơ học, an toàn hóa chất, cháy nổ cho người sử dụng)", "Là yếu tố phụ có thể bỏ qua nếu muốn giảm giá thành", "Chỉ cần thiết đối với đồ chơi trẻ em", "Không quan trọng bằng màu sắc bắt mắt"],
+        answer: 0,
+        explanation: "An toàn cho tính mạng và sức khỏe con người luôn là tiêu chuẩn bắt buộc tối cao trước khi bất kì sản phẩm kĩ thuật nào được phép đưa ra sử dụng."
+    },
+
+    // ===================================================================
+    // KHỐI 10 - CÔNG NGHỆ - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Nguyên tắc của chương trình 'Phòng trừ tổng hợp dịch hại cây trồng (IPM - Integrated Pest Management)' là gì?",
+        options: ["Kết hợp hài hòa các biện pháp canh tác, sinh học, giống kháng bệnh và chỉ dùng thuốc hóa học khi thật cần thiết theo nguyên tắc 4 đúng để bảo vệ thiên địch và môi trường", "Phun thuốc trừ sâu hóa học định kì hàng tuần bất kể có sâu hay không", "Tiêu diệt sạch tất cả các loài côn trùng có ích trên đồng ruộng", "Không chăm sóc cây trồng để tự nhiên chọn lọc"],
+        answer: 0,
+        explanation: "IPM ưu tiên biện pháp canh tác (vệ sinh đồng ruộng, luân canh), dùng giống kháng và bảo vệ thiên địch (ong mắt đỏ, bọ rùa), hạn chế tối đa thuốc hóa học độc hại."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Chế phẩm sinh học trừ sâu 'Vi khuẩn Bt (Bacillus thuringiensis)' tiêu diệt sâu ăn lá theo cơ chế sinh học an toàn nào?",
+        options: ["Tinh thể protein độc tố của vi khuẩn Bt làm tê liệt và thủng ruột sâu non khi sâu ăn phải lá cây, nhưng hoàn toàn vô hại với người và động vật máu nóng", "Làm cháy khô toàn bộ lá cây trồng", "Đầu độc nguồn nước ngầm", "Làm tăng nhiệt độ không khí"],
+        answer: 0,
+        explanation: "Protein δ-endotoxin của vi khuẩn Bt chỉ hoạt hóa trong môi trường kiềm của ruột sâu bộ Cánh vảy (sâu tơ, sâu cuốn lá) gây vỡ tế bào ruột sâu, rất an toàn cho con người và môi trường."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Chế phẩm nấm đối kháng 'Trichoderma' được sử dụng rộng rãi trong trồng trọt nhằm mục đích gì?",
+        options: ["Phòng trừ các loại nấm bệnh gây thối rễ, héo rũ trong đất và thúc đẩy phân giải nhanh xác thực vật (rơm rạ, vỏ cà phê) thành phân hữu cơ", "Làm thuốc diệt cỏ cháy nhanh", "Làm chất kích thích chín ép trái cây", "Tiêu diệt ong mật thụ phấn"],
+        answer: 0,
+        explanation: "Nấm Trichoderma tiết enzyme phân giải cellulose giúp ủ phân hữu cơ nhanh hoai mục, đồng thời kí sinh tiêu diệt các nấm gây bệnh hại rễ (Fusarium, Phytophthora...)."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Khi bắt buộc phải sử dụng thuốc bảo vệ thực vật, người nông dân cần tuân thủ nghiêm ngặt nguyên tắc '4 ĐÚNG' là gì?",
+        options: ["Đúng thuốc, đúng lúc, đúng liều lượng - nồng độ và đúng cách (đồng thời đảm bảo thời gian cách li trước khi thu hoạch)", "Đúng giá, đúng chợ, đúng màu và đúng mùi", "Pha càng đặc càng tốt và phun ngay trước khi hái bán", "Trộn tất cả các loại thuốc lại với nhau"],
+        answer: 0,
+        explanation: "Nguyên tắc 4 đúng giúp diệt trừ dịch hại hiệu quả, tiết kiệm chi phí và đảm bảo nông sản không bị tồn dư hóa chất độc hại khi đến tay người tiêu dùng."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Quy trình trồng trọt cơ bản bao gồm 4 bước chính diễn ra theo trình tự đúng là:",
+        options: ["Làm đất, bón phân lót → Gieo hạt, trồng cây → Chăm sóc và phòng trừ sâu bệnh → Thu hoạch", "Thu hoạch → Làm đất → Gieo trồng → Chăm sóc", "Gieo trồng → Làm đất → Thu hoạch → Chăm sóc", "Chăm sóc → Làm đất → Gieo trồng → Thu hoạch"],
+        answer: 0,
+        explanation: "Quy trình kĩ thuật trồng trọt chuẩn: 1. Làm đất, bón lót (tạo tầng đất tơi xốp sạch bệnh); 2. Gieo trồng đúng thời vụ mật độ; 3. Chăm sóc (tưới tiêu, bón thúc, tỉa cành, trừ sâu); 4. Thu hoạch đúng độ chín."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Phương pháp bảo quản nông sản (rau, hoa, quả tươi) trong kho lạnh có điều chỉnh thành phần khí quyển (Công nghệ CA - Controlled Atmosphere) hoạt động theo nguyên lí nào?",
+        options: ["Hạ thấp nhiệt độ kết hợp giảm nồng độ khí O₂ và tăng nồng độ khí CO₂ thích hợp để ức chế tối đa cường độ hô hấp của rau quả, giữ độ tươi ngon lâu dài", "Tăng nồng độ khí O₂ lên 100% để quả chín nhanh", "Đun nóng kho bảo quản lên 60 °C", "Ngâm rau quả trong hóa chất bảo quản độc hại"],
+        answer: 0,
+        explanation: "Hô hấp làm tiêu hao chất dinh dưỡng và làm rau quả nhanh hỏng; công nghệ CA kiểm soát nhiệt độ lạnh, hạ O₂ và tăng CO₂ giúp đưa rau quả vào trạng thái 'ngủ nghỉ' giữ tươi nhiều tháng."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Đối với các loại hạt lương thực khô (thóc, ngô, các loại đậu), điều kiện tiên quyết quan trọng nhất trước khi đưa vào kho bảo quản kín là gì?",
+        options: ["Phơi hoặc sấy khô đến độ ẩm an toàn (thường từ 12% - 13%) và làm sạch tạp chất để ngăn chặn hạt nảy mầm, nấm mốc và mọt phá hoại", "Tưới thêm thật nhiều nước cho hạt ẩm ướt", "Để lẫn lộn với cỏ tươi và đất ướt", "Phơi dưới mưa qua đêm"],
+        answer: 0,
+        explanation: "Khi độ ẩm hạt hạ xuống dưới 13%, cường độ hô hấp của hạt giảm đến mức tối thiểu và vi sinh vật nấm mốc không thể phát triển sinh độc tố aflatoxin."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Công nghệ chế biến rau quả bằng phương pháp 'Sấy thăng hoa (Sấy đông khô - Freeze drying)' có ưu điểm vượt trội nào so với sấy nhiệt thông thường?",
+        options: ["Cấp đông sâu sản phẩm rồi rút nước bằng sự thăng hoa của đá trong môi trường chân không, giúp giữ nguyên hình dạng, màu sắc tự nhiên, hương vị và vitamin", "Làm rau quả bị cháy sém đen và mất hết vitamin", "Làm tăng khối lượng nước trong quả lên gấp đôi", "Giá thành thiết bị rẻ nhất trong mọi phương pháp"],
+        answer: 0,
+        explanation: "Sấy thăng hoa chuyển nước đá rắn trực tiếp thành hơi ở nhiệt độ thấp trong chân không, giúp sản phẩm (dâu tây sấy, sầu riêng sấy, đông trùng hạ thảo) giòn xốp và bảo toàn gần như 100% dưỡng chất."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Hệ thống 'Nhà màng, nhà kính công nghệ cao' trong trồng trọt có vai trò chính là gì?",
+        options: ["Che chắn mưa gió, ngăn chặn côn trùng xâm nhập và cho phép chủ động điều khiển các yếu tố vi khí hậu (nhiệt độ, độ ẩm, ánh sáng, CO₂) tối ưu cho cây trồng", "Làm cho cây trồng không nhận được bất kì tia sáng nào", "Chỉ dùng để làm kho chứa máy cày", "Tăng lượng thuốc trừ sâu phải phun lên gấp 5 lần"],
+        answer: 0,
+        explanation: "Nhà màng tích hợp lưới chắn côn trùng, quạt thông gió, tấm làm mát (cooling pad), lưới cắt nắng và cảm biến IoT giúp trồng được rau, hoa, dưa lưới chất lượng cao trái vụ quanh năm."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Công nghệ trồng cây 'Thủy canh (Hydroponics)' là kĩ thuật trồng cây như thế nào?",
+        options: ["Trồng cây trực tiếp trong môi trường dung dịch dinh dưỡng (nước có hòa tan đầy đủ các nguyên tố khoáng thiết yếu theo tỉ lệ chuẩn) mà không cần dùng đất", "Trồng cây trong nước cất tinh khiết hoàn toàn không có chất khoáng", "Trồng cây dưới đáy biển mặn", "Trồng cây trên cát khô không tưới nước"],
+        answer: 0,
+        explanation: "Thủy canh (tĩnh hoặc hồi lưu NFT) cung cấp trực tiếp các ion khoáng thiết yếu qua dung dịch dinh dưỡng kiểm soát pH và nồng độ EC chuẩn xác, giúp rau sạch bệnh và tăng trưởng nhanh."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Công nghệ 'Khí canh (Aeroponics)' thường được ứng dụng hiệu quả nhất để sản xuất giống cây trồng nào ở Việt Nam?",
+        options: ["Nhân giống khoai tây sạch bệnh (bộ rễ lơ lửng trong buồng tối được phun sương dung dịch dinh dưỡng định kì tự động, cho năng suất củ giống gấp nhiều lần)", "Trồng cây lúa nước đại trà", "Trồng cây gỗ lim lấy gỗ", "Trồng cây dừa ven biển"],
+        answer: 0,
+        explanation: "Trong hệ thống khí canh, rễ cây treo lơ lửng trong không khí tối và được đầu béc phun sương mù dinh dưỡng giàu oxy định kì vài phút một lần, tiết kiệm 95% nước và 90% phân bón."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Ứng dụng công nghệ 'Internet vạn vật (IoT)' trong nông nghiệp thông minh (Smart Farming) hoạt động như thế nào?",
+        options: ["Sử dụng mạng lưới các cảm biến (đo nhiệt độ, độ ẩm đất, pH, ánh sáng) truyền dữ liệu về điện thoại/máy tính để tự động bật/tắt hệ thống tưới, quạt gió, đèn chiếu sáng", "Người nông dân phải ra đồng đo nhiệt độ bằng tay mỗi 5 phút", "Không sử dụng bất kì thiết bị điện tử nào", "Thay thế hoàn toàn hạt giống cây trồng"],
+        answer: 0,
+        explanation: "Hệ thống IoT nông nghiệp kết nối cảm biến với bộ điều khiển trung tâm và smartphone, giúp người nông dân giám sát và điều khiển trang trại tự động từ xa ở bất kì đâu."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Tận dụng phụ phẩm trồng trọt (rơm rạ sau thu hoạch lúa, thân cây ngô, vỏ cà phê) theo hướng nông nghiệp tuần hoàn bền vững nhất là biện pháp nào?",
+        options: ["Thu gom để trồng nấm rơm, làm thức ăn ủ chua cho gia súc hoặc ủ với chế phẩm vi sinh làm phân bón hữu cơ trả lại cho đất", "Đốt bỏ toàn bộ rơm rạ ngay trên đồng ruộng gây khói bụi ô nhiễm không khí", "Vứt xuống sông ngòi kênh rạch gây tắc nghẽn dòng chảy", "Đem chôn lấp cùng với rác thải nhựa"],
+        answer: 0,
+        explanation: "Không đốt rơm rạ mà dùng chế phẩm vi sinh ủ thành phân hữu cơ hoặc trồng nấm vừa tạo thêm thu nhập kinh tế, vừa bảo vệ môi trường không khí và cải tạo độ phì nhiêu của đất."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Tiêu chuẩn 'VietGAP' trong sản xuất trồng trọt ở Việt Nam là viết tắt của quy trình gì?",
+        options: ["Thực hành sản xuất nông nghiệp tốt ở Việt Nam (đảm bảo an toàn thực phẩm, bảo vệ môi trường, sức khỏe người lao động và truy xuất được nguồn gốc)", "Kĩ thuật trồng cây biến đổi gene hoàn toàn", "Phương pháp canh tác du canh du cư", "Tiêu chuẩn xuất khẩu máy móc cơ khí"],
+        answer: 0,
+        explanation: "VietGAP (Vietnamese Good Agricultural Practices) là bộ tiêu chuẩn quốc gia hướng dẫn người sản xuất tạo ra nông sản sạch, an toàn, có nhật kí đồng ruộng để truy xuất nguồn gốc."
+    },
+    {
+        grade: "10", subject: "congnghe", term: "CK2",
+        question: "Máy bay không người lái (Drone nông nghiệp) hiện nay được ứng dụng rộng rãi trên các cánh đồng lớn ở Việt Nam để làm công việc gì?",
+        options: ["Phun thuốc bảo vệ thực vật chính xác, gieo sạ hạt giống, rải phân bón và chụp ảnh viễn thám theo dõi sức khỏe cây trồng", "Dùng để chở hành khách đi du lịch", "Dùng để cày lật đất sâu 50 cm", "Dùng để sấy khô lúa gạo"],
+        answer: 0,
+        explanation: "Drone nông nghiệp giúp phun thuốc dạng sương mù mịn đều, tiết kiệm 90% nước, 30% thuốc, năng suất gấp hàng chục lần lao động thủ công và bảo vệ người nông dân không phải tiếp xúc trực tiếp với hóa chất."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - TOÁN HỌC - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Cho hàm số y = f(x) có đạo hàm trên khoảng (a; b). Nếu f'(x) > 0 với mọi x ∈ (a; b) thì hàm số y = f(x) có tính chất gì trên khoảng (a; b)?",
+        options: ["Đồng biến (tăng) trên khoảng (a; b)", "Nghịch biến (giảm) trên khoảng (a; b)", "Không đổi trên khoảng (a; b)", "Đạt cực đại tại mọi điểm"],
+        answer: 0,
+        explanation: "Theo định lí về tính đơn điệu của hàm số: nếu f'(x) > 0 ∀x ∈ (a; b) thì hàm số đồng biến trên khoảng (a; b)."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Hàm số bậc ba y = x³ - 3x + 2 nghịch biến trên khoảng nào sau đây?",
+        options: ["(-1; 1)", "(-∞; -1)", "(1; +∞)", "(-1; +∞)"],
+        answer: 0,
+        explanation: "Ta có y' = 3x² - 3 = 3(x² - 1). Cho y' < 0 ⇔ x² - 1 < 0 ⇔ -1 < x < 1. Vậy hàm số nghịch biến trên khoảng (-1; 1)."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Hàm số phân thức y = (2x - 1) / (x + 1) có đạo hàm y' bằng:",
+        options: ["3 / (x + 1)² (hàm số đồng biến trên từng khoảng xác định)", "-3 / (x + 1)²", "1 / (x + 1)²", "-1 / (x + 1)²"],
+        answer: 0,
+        explanation: "Áp dụng công thức đạo hàm hàm nhất biến y = (ax+b)/(cx+d) ⇒ y' = (ad - bc)/(cx+d)² = [2·1 - (-1)·1]/(x+1)² = 3/(x+1)² > 0 ∀x ≠ -1."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Điểm cực đại x_CĐ của hàm số y = x³ - 3x² + 4 là:",
+        options: ["x = 0", "x = 2", "x = 4", "x = 1"],
+        answer: 0,
+        explanation: "Ta có y' = 3x² - 6x = 3x(x - 2) = 0 ⇔ x = 0 hoặc x = 2. Qua x = 0 đạo hàm y' đổi dấu từ (+) sang (-) nên x = 0 là điểm cực đại."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Hàm số trùng phương y = x⁴ - 2x² - 3 có bao nhiêu điểm cực trị?",
+        options: ["3 điểm cực trị (1 cực đại và 2 cực tiểu)", "1 điểm cực trị", "2 điểm cực trị", "Không có điểm cực trị nào"],
+        answer: 0,
+        explanation: "Ta có y' = 4x³ - 4x = 4x(x² - 1) = 0 có 3 nghiệm phân biệt x = 0, x = ±1 nên hàm số có 3 điểm cực trị."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Giá trị lớn nhất (Max) của hàm số f(x) = x³ - 3x + 1 trên đoạn [0; 2] bằng:",
+        options: ["3", "-1", "1", "2"],
+        answer: 0,
+        explanation: "Trên [0; 2], f'(x) = 3x² - 3 = 0 ⇔ x = 1 ∈ [0; 2]. Tính f(0) = 1; f(1) = -1; f(2) = 3. Vậy max f(x) trên [0; 2] bằng 3 (tại x = 2)."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Giá trị nhỏ nhất (Min) của hàm số y = x + 4/x trên khoảng (0; +∞) bằng:",
+        options: ["4 (đạt được khi x = 2)", "2", "5", "8"],
+        answer: 0,
+        explanation: "Với x > 0, theo bất đẳng thức Cauchy (hoặc đạo hàm y' = 1 - 4/x² = 0 ⇔ x = 2): y = x + 4/x ≥ 2√(x·4/x) = 4. Vậy min y = 4 tại x = 2."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Đường tiệm cận ngang của đồ thị hàm số y = (3x - 2) / (x + 1) là đường thẳng:",
+        options: ["y = 3", "x = -1", "y = -2", "x = 3"],
+        answer: 0,
+        explanation: "Ta có lim(x→±∞) (3x - 2)/(x + 1) = 3/1 = 3, nên đường thẳng y = 3 là tiệm cận ngang của đồ thị hàm số."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Đường tiệm cận đứng của đồ thị hàm số y = (2x + 1) / (x - 2) là đường thẳng:",
+        options: ["x = 2", "y = 2", "x = -1/2", "y = -1/2"],
+        answer: 0,
+        explanation: "Mẫu số bằng 0 tại x = 2 và lim(x→2⁺) y = +∞, lim(x→2⁻) y = -∞ nên đường thẳng x = 2 là tiệm cận đứng."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Đường tiệm cận xiên của đồ thị hàm số phân thức bậc hai trên bậc nhất y = x - 1 + 3/(x + 2) là đường thẳng:",
+        options: ["y = x - 1", "x = -2", "y = x + 2", "y = 3"],
+        answer: 0,
+        explanation: "Vì lim(x→±∞) [y - (x - 1)] = lim(x→±∞) 3/(x + 2) = 0 nên đường thẳng y = x - 1 là tiệm cận xiên của đồ thị hàm số."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Tâm đối xứng của đồ thị hàm số phân thức bậc nhất trên bậc nhất y = (2x - 1) / (x - 3) là giao điểm của hai đường tiệm cận có tọa độ:",
+        options: ["I(3; 2)", "I(2; 3)", "I(-3; 2)", "I(3; -1)"],
+        answer: 0,
+        explanation: "Tiệm cận đứng là x = 3, tiệm cận ngang là y = 2. Giao điểm hai đường tiệm cận là tâm đối xứng I(3; 2) của đồ thị."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Nếu đồ thị hàm số bậc ba y = ax³ + bx² + cx + d có nhánh ngoài cùng bên phải đi lên khi x → +∞ thì dấu của hệ số a như thế nào?",
+        options: ["a > 0", "a < 0", "a = 0", "a ≤ 0"],
+        answer: 0,
+        explanation: "Khi x → +∞ mà y → +∞ (nhánh cuối đi lên) thì hệ số bậc cao nhất a phải dương (a > 0)."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Số giao điểm của đồ thị hàm số y = x³ - 3x + 1 và đường thẳng y = 1 là:",
+        options: ["3 giao điểm", "1 giao điểm", "2 giao điểm", "0 giao điểm"],
+        answer: 0,
+        explanation: "Phương trình hoành độ giao điểm: x³ - 3x + 1 = 1 ⇔ x³ - 3x = 0 ⇔ x(x² - 3) = 0 có 3 nghiệm phân biệt (x = 0; x = ±√3)."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Một vật chuyển động theo quy luật quãng đường s(t) = -t³ + 6t² + 9t (với t tính bằng giây, s tính bằng mét). Vận tốc lớn nhất v_max của vật đạt được tại thời điểm t bằng:",
+        options: ["t = 2 giây (với v_max = 21 m/s)", "t = 3 giây", "t = 1 giây", "t = 6 giây"],
+        answer: 0,
+        explanation: "Vận tốc v(t) = s'(t) = -3t² + 12t + 9 = -3(t - 2)² + 21 ≤ 21. Vận tốc đạt giá trị lớn nhất bằng 21 m/s tại thời điểm t = 2 giây."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK1",
+        question: "Cho hàm số y = f(x) có đạo hàm f'(x) = (x - 1)²(x + 2). Số điểm cực trị của hàm số đã cho là:",
+        options: ["1 điểm cực trị (tại x = -2)", "2 điểm cực trị", "3 điểm cực trị", "0 điểm cực trị"],
+        answer: 0,
+        explanation: "Nghiệm x = 1 là nghiệm bội chẵn nên f'(x) không đổi dấu khi đi qua x = 1; chỉ có nghiệm bội lẻ x = -2 làm f'(x) đổi dấu nên hàm số chỉ có 1 điểm cực trị."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - TOÁN HỌC - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Trong không gian, cho hình hộp ABCD.A'B'C'D'. Theo quy tắc hình hộp, tổng ba vectơ xuất phát từ đỉnh A là AB⃗ + AD⃗ + AA'⃗ bằng:",
+        options: ["AC'⃗ (vectơ đường chéo của hình hộp)", "AC⃗", "A'C⃗", "BD'⃗"],
+        answer: 0,
+        explanation: "Theo quy tắc hình hộp trong không gian, tổng 3 vectơ cạnh xuất phát từ cùng một đỉnh A bằng vectơ đường chéo lớn AC'⃗."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Trong không gian với hệ trục tọa độ Oxyz, cho vectơ u⃗ = 2i⃗ - 3j⃗ + 4k⃗. Tọa độ của vectơ u⃗ là:",
+        options: ["(2; -3; 4)", "(-2; 3; -4)", "(2; 3; 4)", "(4; -3; 2)"],
+        answer: 0,
+        explanation: "Theo định nghĩa tọa độ vectơ trong không gian Oxyz: u⃗ = xi⃗ + yj⃗ + zk⃗ ⇔ u⃗ = (x; y; z) = (2; -3; 4)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Trong không gian Oxyz, cho hai điểm A(1; 2; -1) và B(3; 0; 3). Tọa độ của vectơ AB⃗ là:",
+        options: ["(2; -2; 4)", "(-2; 2; -4)", "(4; 2; 2)", "(2; 1; 1)"],
+        answer: 0,
+        explanation: "Tọa độ vectơ AB⃗ = (x_B - x_A; y_B - y_A; z_B - z_A) = (3 - 1; 0 - 2; 3 - (-1)) = (2; -2; 4)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Trong không gian Oxyz, tọa độ trung điểm I của đoạn thẳng nối hai điểm M(2; -4; 6) và N(4; 2; 0) là:",
+        options: ["I(3; -1; 3)", "I(6; -2; 6)", "I(1; 3; -3)", "I(3; 1; 3)"],
+        answer: 0,
+        explanation: "Trung điểm I có tọa độ bằng trung bình cộng tọa độ hai đầu mút: I((2+4)/2; (-4+2)/2; (6+0)/2) = I(3; -1; 3)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Trong không gian Oxyz, cho tam giác ABC có A(1; 0; 2), B(2; 3; 1), C(0; 3; 3). Tọa độ trọng tâm G của tam giác ABC là:",
+        options: ["G(1; 2; 2)", "G(3; 6; 6)", "G(1; 3; 2)", "G(2; 2; 1)"],
+        answer: 0,
+        explanation: "Trọng tâm G((1+2+0)/3; (0+3+3)/3; (2+1+3)/3) = G(1; 2; 2)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Trong không gian Oxyz, hình chiếu vuông góc của điểm M(3; -2; 5) lên mặt phẳng tọa độ (Oxy) là điểm:",
+        options: ["M'(3; -2; 0)", "M'(0; -2; 5)", "M'(3; 0; 5)", "M'(0; 0; 5)"],
+        answer: 0,
+        explanation: "Chiếu vuông góc điểm M(x; y; z) lên mặt phẳng (Oxy) thì giữ nguyên x, y và cao độ z = 0, ta được M'(3; -2; 0)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Trong không gian Oxyz, cho vectơ a⃗ = (1; 2; 2). Độ dài |a⃗| của vectơ a⃗ bằng:",
+        options: ["3", "9", "5", "√5"],
+        answer: 0,
+        explanation: "Độ dài vectơ trong không gian: |a⃗| = √(1² + 2² + 2²) = √9 = 3."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Cho hai vectơ u⃗ = (1; -2; 3) và v⃗ = (2; 1; 0) trong không gian Oxyz. Tích vô hướng u⃗·v⃗ bằng:",
+        options: ["0 (hai vectơ vuông góc với nhau)", "4", "3", "-4"],
+        answer: 0,
+        explanation: "Ta có u⃗·v⃗ = 1·2 + (-2)·1 + 3·0 = 2 - 2 + 0 = 0."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Trong không gian Oxyz, khoảng cách giữa hai điểm A(1; 0; 1) và B(3; 2; 2) bằng:",
+        options: ["3", "9", "√5", "5"],
+        answer: 0,
+        explanation: "AB = √[(3-1)² + (2-0)² + (2-1)²] = √(4 + 4 + 1) = √9 = 3."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Trong mẫu số liệu ghép nhóm có k nhóm [a₁; a₂), [a₂; a₃), ..., [a_k; a_{k+1}), Khoảng biến thiên R của mẫu số liệu ghép nhóm được tính bằng:",
+        options: ["R = a_{k+1} - a₁ (hiệu giữa đầu mút phải của nhóm cuối cùng và đầu mút trái của nhóm đầu tiên)", "Hiệu giữa tần số lớn nhất và tần số nhỏ nhất", "Tổng độ dài của tất cả các nhóm", "Giá trị đại diện của nhóm chính giữa"],
+        answer: 0,
+        explanation: "Khoảng biến thiên của mẫu số liệu ghép nhóm là hiệu số giữa đầu mút phải của nhóm cuối cùng và đầu mút trái của nhóm đầu tiên."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Cho mẫu số liệu ghép nhóm về chiều cao (cm) của học sinh gồm các nhóm: [150; 155), [155; 160), [160; 165), [165; 170), [170; 175). Khoảng biến thiên R của mẫu số liệu ghép nhóm này là:",
+        options: ["25 cm", "5 cm", "150 cm", "175 cm"],
+        answer: 0,
+        explanation: "Ta có đầu mút phải nhóm cuối là 175 và đầu mút trái nhóm đầu là 150 ⇒ R = 175 - 150 = 25 (cm)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Khoảng tứ phân vị Δ_Q của mẫu số liệu ghép nhóm được xác định bởi công thức nào (với Q₁, Q₂, Q₃ là các tứ phân vị)?",
+        options: ["Δ_Q = Q₃ - Q₁", "Δ_Q = Q₃ + Q₁", "Δ_Q = Q₂ - Q₁", "Δ_Q = (Q₃ - Q₁) / 2"],
+        answer: 0,
+        explanation: "Khoảng tứ phân vị Δ_Q = Q₃ - Q₁ đo mức độ phân tán của 50% số liệu nằm ở chính giữa mẫu, không bị ảnh hưởng bởi các giá trị ngoại lai."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Trong mẫu số liệu ghép nhóm, giá trị đại diện x_i của nhóm [a_i; a_{i+1}) được tính bằng:",
+        options: ["x_i = (a_i + a_{i+1}) / 2 (trung bình cộng hai đầu mút của nhóm)", "x_i = a_{i+1} - a_i", "x_i = a_i", "x_i = a_{i+1}"],
+        answer: 0,
+        explanation: "Giá trị đại diện của nhóm [a_i; a_{i+1}) là trung điểm của đoạn [a_i; a_{i+1}], tức là x_i = (a_i + a_{i+1})/2."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Ý nghĩa thực tiễn của Phương sai (s²) và Độ lệch chuẩn (s) của mẫu số liệu ghép nhóm là gì?",
+        options: ["Đo mức độ phân tán (độ chênh lệch) của các số liệu quanh số trung bình; độ lệch chuẩn s càng nhỏ thì số liệu càng đồng đều, ổn định", "Cho biết giá trị lớn nhất của mẫu số liệu", "Cho biết tổng số phần tử của mẫu", "Luôn nhận giá trị âm"],
+        answer: 0,
+        explanation: "Phương sai và độ lệch chuẩn đặc trưng cho độ phân tán dữ liệu quanh số trung bình; độ lệch chuẩn càng nhỏ thì mức độ đồng đều càng cao."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK1",
+        question: "Khi so sánh điểm thi thử của hai lớp 12A và 12B có cùng điểm trung bình là 7,8 nhưng độ lệch chuẩn của lớp 12A là s_A = 0,6 và của lớp 12B là s_B = 1,5. Kết luận nào sau đây là ĐÚNG?",
+        options: ["Điểm thi của học sinh lớp 12A đồng đều hơn so với lớp 12B", "Điểm thi của học sinh lớp 12B đồng đều hơn lớp 12A", "Hai lớp có mức độ phân tán điểm như nhau", "Lớp 12B có tổng điểm cao hơn"],
+        answer: 0,
+        explanation: "Vì s_A = 0,6 < s_B = 1,5 nên dữ liệu điểm của lớp 12A ít phân tán hơn, tức là học lực lớp 12A đồng đều hơn."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - TOÁN HỌC - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Hàm số F(x) được gọi là một nguyên hàm của hàm số f(x) trên khoảng K nếu:",
+        options: ["F'(x) = f(x) với mọi x ∈ K", "f'(x) = F(x) với mọi x ∈ K", "F(x) = f'(x) + C", "F'(x) = -f(x)"],
+        answer: 0,
+        explanation: "Theo định nghĩa nguyên hàm: F(x) là một nguyên hàm của f(x) trên K nếu đạo hàm F'(x) = f(x) với mọi x thuộc K."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Họ tất cả các nguyên hàm của hàm số f(x) = 3x² + 2x là:",
+        options: ["x³ + x² + C", "6x + 2 + C", "3x³ + 2x² + C", "x³ + 2x² + C"],
+        answer: 0,
+        explanation: "Áp dụng công thức ∫xⁿdx = x^(n+1)/(n+1) + C: ∫(3x² + 2x)dx = 3·(x³/3) + 2·(x²/2) + C = x³ + x² + C."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Trên khoảng (0; +∞), họ nguyên hàm của hàm số f(x) = 1/x là:",
+        options: ["ln|x| + C (hay ln(x) + C)", "-1/x² + C", "eˣ + C", "x·ln(x) + C"],
+        answer: 0,
+        explanation: "Công thức nguyên hàm cơ bản: ∫(1/x)dx = ln|x| + C."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Họ tất cả các nguyên hàm của hàm số lượng giác f(x) = cos(x) là:",
+        options: ["sin(x) + C", "-sin(x) + C", "cos(x) + C", "-cos(x) + C"],
+        answer: 0,
+        explanation: "Vì (sin x)' = cos x nên ∫cos(x)dx = sin(x) + C."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Họ nguyên hàm của hàm số mũ f(x) = eˣ là:",
+        options: ["eˣ + C", "x·eˣ⁻¹ + C", "eˣ⁺¹ / (x + 1) + C", "ln(x) + C"],
+        answer: 0,
+        explanation: "Vì (eˣ)' = eˣ nên họ nguyên hàm của eˣ chính là eˣ + C."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Cho hàm số f(x) liên tục trên đoạn [a; b] và F(x) là một nguyên hàm của f(x) trên [a; b]. Công thức Newton - Leibniz tính tích phân từ a đến b của f(x)dx là:",
+        options: ["∫_a^b f(x)dx = F(b) - F(a)", "∫_a^b f(x)dx = F(a) - F(b)", "∫_a^b f(x)dx = F'(b) - F'(a)", "∫_a^b f(x)dx = F(b) + F(a)"],
+        answer: 0,
+        explanation: "Công thức Newton - Leibniz: hiệu số F(b) - F(a) chính là tích phân xác định của f(x) từ cận a đến cận b."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Giá trị của tích phân I = ∫₀² (2x + 1)dx bằng:",
+        options: ["6", "4", "5", "2"],
+        answer: 0,
+        explanation: "Nguyên hàm của (2x + 1) là F(x) = x² + x. Thế cận từ 0 đến 2: I = F(2) - F(0) = (2² + 2) - 0 = 6."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Biết ∫₁³ f(x)dx = 5 và ∫₁³ g(x)dx = -2. Giá trị của tích phân ∫₁³ [f(x) + 2g(x)]dx bằng:",
+        options: ["1", "3", "9", "7"],
+        answer: 0,
+        explanation: "Theo tính chất tuyến tính của tích phân: ∫₁³ f(x)dx + 2∫₁³ g(x)dx = 5 + 2·(-2) = 5 - 4 = 1."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Nếu ∫₁² f(x)dx = 3 và ∫₂⁵ f(x)dx = 4 thì tích phân ∫₁⁵ f(x)dx bằng:",
+        options: ["7", "1", "12", "-1"],
+        answer: 0,
+        explanation: "Theo tính chất chèn cận tích phân: ∫₁⁵ f(x)dx = ∫₁² f(x)dx + ∫₂⁵ f(x)dx = 3 + 4 = 7."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Một vật chuyển động thẳng với vận tốc v(t) = 2t + 3 (m/s). Quãng đường vật đi được trong khoảng thời gian từ t = 0 đến t = 3 (giây) là:",
+        options: ["18 m", "9 m", "15 m", "12 m"],
+        answer: 0,
+        explanation: "Quãng đường s = ∫₀³ v(t)dt = ∫₀³ (2t + 3)dt = (t² + 3t)|₀³ = 9 + 9 = 18 (m)."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Công thức tính diện tích S của hình phẳng giới hạn bởi đồ thị hàm số y = f(x) liên tục trên đoạn [a; b], trục hoành Ox (y = 0) và hai đường thẳng x = a, x = b là:",
+        options: ["S = ∫_a^b |f(x)|dx", "S = ∫_a^b f(x)dx", "S = π·∫_a^b [f(x)]²dx", "S = ∫_a^b [f(x)]²dx"],
+        answer: 0,
+        explanation: "Diện tích hình phẳng giới hạn bởi y = f(x), trục hoành và x = a, x = b luôn có dấu giá trị tuyệt đối: S = ∫_a^b |f(x)|dx (không có hệ số π)."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Diện tích hình phẳng giới hạn bởi đồ thị hàm số y = x², trục hoành Ox và hai đường thẳng x = 0, x = 3 bằng:",
+        options: ["9", "27", "3", "9π"],
+        answer: 0,
+        explanation: "Ta có S = ∫₀³ x²dx = (x³/3)|₀³ = 27/3 = 9."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Công thức tính thể tích V của khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi đồ thị hàm số y = f(x), trục hoành Ox và x = a, x = b quanh trục Ox là:",
+        options: ["V = π·∫_a^b [f(x)]²dx", "V = ∫_a^b [f(x)]²dx", "V = π·∫_a^b |f(x)|dx", "V = π²·∫_a^b [f(x)]²dx"],
+        answer: 0,
+        explanation: "Thể tích khối tròn xoay khi quay quanh trục Ox có hệ số π và bình phương hàm số: V = π∫_a^b [f(x)]²dx."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Cho một vật thể nằm giữa hai mặt phẳng x = a và x = b. Biết thiết diện của vật thể cắt bởi mặt phẳng vuông góc với trục Ox tại điểm có hoành độ x (a ≤ x ≤ b) có diện tích là S(x). Thể tích V của vật thể là:",
+        options: ["V = ∫_a^b S(x)dx", "V = π·∫_a^b S(x)dx", "V = π·∫_a^b [S(x)]²dx", "V = (1/2)∫_a^b S(x)dx"],
+        answer: 0,
+        explanation: "Theo công thức tính thể tích vật thể theo diện tích thiết diện S(x): V = ∫_a^b S(x)dx (lưu ý không nhân thêm π)."
+    },
+    {
+        grade: "12", subject: "toan", term: "GK2",
+        question: "Cho hàm số f(x) có đạo hàm liên tục trên [1; 4], biết f(1) = 2 và ∫₁⁴ f'(x)dx = 7. Giá trị của f(4) bằng:",
+        options: ["9", "5", "14", "-5"],
+        answer: 0,
+        explanation: "Ta có ∫₁⁴ f'(x)dx = f(4) - f(1) = 7 ⇒ f(4) = 7 + f(1) = 7 + 2 = 9."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - TOÁN HỌC - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Trong không gian Oxyz, cho mặt phẳng (P) có phương trình tổng quát 2x - y + 3z - 5 = 0. Một vectơ pháp tuyến của mặt phẳng (P) là:",
+        options: ["n⃗ = (2; -1; 3)", "n⃗ = (2; 1; 3)", "n⃗ = (-1; 3; -5)", "n⃗ = (2; -1; -5)"],
+        answer: 0,
+        explanation: "Mặt phẳng Ax + By + Cz + D = 0 có một vectơ pháp tuyến là n⃗ = (A; B; C) = (2; -1; 3)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Phương trình mặt phẳng đi qua điểm M(1; 0; -2) và có vectơ pháp tuyến n⃗ = (1; 2; 3) là:",
+        options: ["x + 2y + 3z + 5 = 0", "x + 2y + 3z - 5 = 0", "x - 2z + 3 = 0", "x + 2y - 3z + 5 = 0"],
+        answer: 0,
+        explanation: "Phương trình mặt phẳng: 1(x - 1) + 2(y - 0) + 3(z + 2) = 0 ⇔ x + 2y + 3z + 5 = 0."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Trong không gian Oxyz, khoảng cách từ điểm M(1; 2; 1) đến mặt phẳng (P): 2x - 2y + z + 4 = 0 bằng:",
+        options: ["1", "3", "2", "1/3"],
+        answer: 0,
+        explanation: "Áp dụng công thức khoảng cách: d(M, (P)) = |2(1) - 2(2) + 1 + 4| / √(2² + (-2)² + 1²) = |2 - 4 + 5| / 3 = 3 / 3 = 1."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Trong không gian Oxyz, cho đường thẳng d có phương trình chính tắc (x - 1)/2 = (y + 3)/(-1) = z/4. Một vectơ chỉ phương của đường thẳng d là:",
+        options: ["u⃗ = (2; -1; 4)", "u⃗ = (1; -3; 0)", "u⃗ = (-1; 3; 0)", "u⃗ = (2; 1; 4)"],
+        answer: 0,
+        explanation: "Từ phương trình chính tắc (x - x₀)/a = (y - y₀)/b = (z - z₀)/c, một vectơ chỉ phương của đường thẳng là u⃗ = (a; b; c) = (2; -1; 4)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Đường thẳng d đi qua điểm A(2; 1; -3) và có vectơ chỉ phương u⃗ = (1; 3; 2) có phương trình tham số là:",
+        options: ["x = 2 + t; y = 1 + 3t; z = -3 + 2t (t ∈ ℝ)", "x = 1 + 2t; y = 3 + t; z = 2 - 3t", "x = 2 - t; y = 1 + 3t; z = 3 + 2t", "x = 2 + t; y = 3t; z = 2t"],
+        answer: 0,
+        explanation: "Phương trình tham số đi qua M(x₀; y₀; z₀) có VTCP u⃗ = (a; b; c) là: x = x₀ + at, y = y₀ + bt, z = z₀ + ct."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Trong không gian Oxyz, phương trình mặt cầu (S) có tâm I(1; -2; 3) và bán kính R = 5 là:",
+        options: ["(x - 1)² + (y + 2)² + (z - 3)² = 25", "(x + 1)² + (y - 2)² + (z + 3)² = 25", "(x - 1)² + (y + 2)² + (z - 3)² = 5", "(x - 1)² + (y - 2)² + (z - 3)² = 25"],
+        answer: 0,
+        explanation: "Phương trình mặt cầu tâm I(a; b; c) bán kính R là (x - a)² + (y - b)² + (z - c)² = R² = 5² = 25."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Mặt cầu (S): x² + y² + z² - 2x + 4y - 6z - 2 = 0 có tọa độ tâm I và bán kính R là:",
+        options: ["I(1; -2; 3), R = 4", "I(-1; 2; -3), R = 4", "I(1; -2; 3), R = 16", "I(2; -4; 6), R = 2"],
+        answer: 0,
+        explanation: "Chia hệ số bậc nhất cho (-2) ta được tâm I(1; -2; 3). Bán kính R = √(1² + (-2)² + 3² - (-2)) = √(1 + 4 + 9 + 2) = √16 = 4."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Trong không gian Oxyz, mặt phẳng đi qua 3 điểm trên 3 trục tọa độ A(2; 0; 0), B(0; 3; 0), C(0; 0; 4) có phương trình theo đoạn chắn là:",
+        options: ["x/2 + y/3 + z/4 = 1", "x/2 + y/3 + z/4 = 0", "2x + 3y + 4z = 1", "x/4 + y/3 + z/2 = 1"],
+        answer: 0,
+        explanation: "Phương trình mặt phẳng theo đoạn chắn đi qua A(a; 0; 0), B(0; b; 0), C(0; 0; c) là x/a + y/b + z/c = 1."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Cho hai biến cố A và B với P(B) > 0. Công thức tính xác suất có điều kiện P(A | B) (xác suất của A với điều kiện B đã xảy ra) là:",
+        options: ["P(A | B) = P(A ∩ B) / P(B)", "P(A | B) = P(A ∩ B) / P(A)", "P(A | B) = P(A) · P(B)", "P(A | B) = P(A) + P(B)"],
+        answer: 0,
+        explanation: "Theo định nghĩa xác suất có điều kiện: P(A | B) = P(AB) / P(B) với P(B) > 0."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Cho P(B) = 0,5 và P(A ∩ B) = 0,2. Giá trị của xác suất có điều kiện P(A | B) bằng:",
+        options: ["0,4", "0,1", "0,7", "0,25"],
+        answer: 0,
+        explanation: "Áp dụng công thức: P(A | B) = P(A ∩ B) / P(B) = 0,2 / 0,5 = 0,4."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Nếu hai biến cố A và B độc lập với nhau (với P(A) > 0, P(B) > 0) thì khẳng định nào sau đây là ĐÚNG?",
+        options: ["P(A | B) = P(A) và P(A ∩ B) = P(A)·P(B)", "P(A | B) = 0", "P(A | B) = P(B)", "P(A ∩ B) = 0"],
+        answer: 0,
+        explanation: "Khi A và B độc lập, việc B xảy ra hay không không ảnh hưởng tới xác suất của A, nên P(A | B) = P(A) và P(AB) = P(A)P(B)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Cho hai biến cố A và B. Công thức xác suất toàn phần tính P(A) theo biến cố B và biến cố đối B̄ là:",
+        options: ["P(A) = P(B)·P(A | B) + P(B̄)·P(A | B̄)", "P(A) = P(A | B) + P(A | B̄)", "P(A) = P(B) + P(B̄)", "P(A) = P(B)·P(A | B) - P(B̄)·P(A | B̄)"],
+        answer: 0,
+        explanation: "Công thức xác suất toàn phần: P(A) = P(B)·P(A|B) + P(B̄)·P(A|B̄)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Công thức Bayes dùng để tính xác suất P(B | A) khi biết biến cố A đã xảy ra là:",
+        options: ["P(B | A) = [P(B)·P(A | B)] / [P(B)·P(A | B) + P(B̄)·P(A | B̄)]", "P(B | A) = P(A | B) / P(B)", "P(B | A) = P(A)·P(B)", "P(B | A) = P(A | B)"],
+        answer: 0,
+        explanation: "Công thức Bayes: P(B | A) = P(B)·P(A | B) / P(A), trong đó mẫu số P(A) được tính bằng công thức xác suất toàn phần."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Một nhà máy có 2 phân xưởng I và II lần lượt sản xuất 60% và 40% tổng sản phẩm. Tỉ lệ phế phẩm của phân xưởng I là 2% và của phân xưởng II là 3%. Lấy ngẫu nhiên 1 sản phẩm của nhà máy, xác suất để lấy được phế phẩm là:",
+        options: ["0,024 (tức 2,4%)", "0,05 (tức 5%)", "0,025 (tức 2,5%)", "0,012 (tức 1,2%)"],
+        answer: 0,
+        explanation: "Áp dụng công thức xác suất toàn phần: P(Phế phẩm) = 0,6 × 0,02 + 0,4 × 0,03 = 0,012 + 0,012 = 0,024 (2,4%)."
+    },
+    {
+        grade: "12", subject: "toan", term: "CK2",
+        question: "Trong bài toán phân xưởng ở câu trên (phân xưởng I sản xuất 60% với 2% phế phẩm; phân xưởng II sản xuất 40% với 3% phế phẩm), giả sử sản phẩm lấy ra là phế phẩm, theo công thức Bayes xác suất để phế phẩm đó do phân xưởng I sản xuất là:",
+        options: ["0,5 (tức 50%)", "0,6 (tức 60%)", "0,4 (tức 40%)", "0,24 (tức 24%)"],
+        answer: 0,
+        explanation: "Theo công thức Bayes: P(I | Phế phẩm) = (0,6 × 0,02) / 0,024 = 0,012 / 0,024 = 0,5."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - VẬT LÍ - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Theo mô hình động học phân tử, ở thể nào các phân tử dao động quanh vị trí cân bằng cố định và có lực tương tác phân tử rất mạnh giữ cho vật có hình dạng và thể tích xác định?",
+        options: ["Thể rắn", "Thể lỏng", "Thể khí", "Thể plasma"],
+        answer: 0,
+        explanation: "Ở thể rắn, các hạt liên kết rất chặt chẽ và chỉ dao động quanh vị trí cân bằng cố định nên chất rắn có cả thể tích và hình dạng riêng xác định."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Quá trình chuyển trực tiếp từ thể rắn sang thể khí (hơi) mà không qua thể lỏng (như băng phiến, đá khô CO₂ rắn, iodine) được gọi là:",
+        options: ["Sự thăng hoa", "Sự ngưng kết", "Sự nóng chảy", "Sự bay hơi"],
+        answer: 0,
+        explanation: "Sự chuyển trực tiếp từ thể rắn sang thể khí gọi là sự thăng hoa; quá trình ngược lại từ khí sang rắn gọi là sự ngưng kết."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Trong suốt quá trình một chất rắn kết tinh đang nóng chảy (ví dụ cục nước đá đang tan ở 0 °C dưới áp suất chuẩn), mặc dù vẫn tiếp tục cung cấp nhiệt nhưng nhiệt độ của vật như thế nào?",
+        options: ["Nhiệt độ giữ không đổi cho đến khi toàn bộ khối chất rắn chuyển hoàn toàn sang thể lỏng", "Nhiệt độ tăng vọt lên liên tục", "Nhiệt độ giảm xuống dưới -10 °C", "Nhiệt độ lúc tăng lúc giảm"],
+        answer: 0,
+        explanation: "Chất rắn kết tinh có nhiệt độ nóng chảy xác định; trong suốt thời gian nóng chảy, nhiệt lượng cung cấp chỉ dùng để phá vỡ mạng tinh thể nên nhiệt độ không đổi."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Nội năng (U) của một vật phụ thuộc vào những yếu tố nào sau đây?",
+        options: ["Tổng động năng và thế năng của các phân tử cấu tạo nên vật; phụ thuộc vào Nhiệt độ (T) và Thể tích (V) của vật", "Chỉ phụ thuộc vào độ cao của vật so với mặt đất", "Chỉ phụ thuộc vào tốc độ chuyển động cơ học của cả vật", "Không phụ thuộc vào nhiệt độ"],
+        answer: 0,
+        explanation: "Nội năng U = ∑W_đ + ∑W_t của các phân tử bên trong vật; động năng phân tử phụ thuộc nhiệt độ T, thế năng tương tác phụ thuộc khoảng cách phân tử (thể tích V)."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Biểu thức của Định luật I Nhiệt động lực học là ΔU = A + Q. Quy ước dấu nào sau đây là ĐÚNG?",
+        options: ["Q > 0: hệ nhận nhiệt lượng; Q < 0: hệ truyền nhiệt lượng; A > 0: hệ nhận công; A < 0: hệ thực hiện công", "Q > 0: hệ tỏa nhiệt; A > 0: hệ thực hiện công", "ΔU luôn luôn bằng 0 trong mọi quá trình", "Q và A luôn mang dấu dương"],
+        answer: 0,
+        explanation: "Theo quy ước: Hệ nhận thêm năng lượng từ bên ngoài (nhận nhiệt Q > 0, nhận công A > 0) thì làm tăng nội năng; hệ mất năng lượng ra ngoài (tỏa nhiệt Q < 0, sinh công A < 0) mang dấu âm."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Người ta truyền cho một khối khí trong xilanh nhiệt lượng Q = 150 J. Khối khí nở ra và thực hiện công A' = 90 J đẩy pít-tông lên. Độ biến thiên nội năng ΔU của khối khí là:",
+        options: ["ΔU = 60 J", "ΔU = 240 J", "ΔU = -60 J", "ΔU = 150 J"],
+        answer: 0,
+        explanation: "Khí nhận nhiệt nên Q = +150 J; khí thực hiện công nên A = -90 J. Theo Định luật I NĐLH: ΔU = A + Q = -90 + 150 = 60 J."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Công thức chuyển đổi từ thang nhiệt độ Celsius (t °C) sang thang nhiệt độ tuyệt đối Kelvin (T K) là:",
+        options: ["T (K) = t (°C) + 273 (chính xác là 273,15)", "T (K) = t (°C) - 273", "T (K) = 1,8·t (°C) + 32", "T (K) = t (°C) × 273"],
+        answer: 0,
+        explanation: "Mỗi độ chia trên thang Kelvin bằng 1 độ chia trên thang Celsius, và 0 °C ứng với 273 K ⇒ T(K) = t(°C) + 273."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Nhiệt độ cơ thể người bình thường là 37 °C thì tương ứng với bao nhiêu Kelvin (K)?",
+        options: ["310 K", "236 K", "300 K", "370 K"],
+        answer: 0,
+        explanation: "Ta có T = t + 273 = 37 + 273 = 310 K."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Khi hai vật có nhiệt độ khác nhau tiếp xúc nhiệt với nhau thì quá trình truyền nhiệt tự phát xảy ra theo chiều nào?",
+        options: ["Nhiệt năng tự truyền từ vật có nhiệt độ cao hơn sang vật có nhiệt độ thấp hơn cho đến khi hai vật đạt cân bằng nhiệt (cùng nhiệt độ)", "Truyền từ vật có nhiệt độ thấp sang vật có nhiệt độ cao", "Truyền từ vật có khối lượng lớn sang vật có khối lượng nhỏ", "Không có sự trao đổi nhiệt nào"],
+        answer: 0,
+        explanation: "Nhiệt luôn tự truyền từ vật nóng hơn sang vật lạnh hơn; khi nhiệt độ hai vật bằng nhau thì đạt trạng thái cân bằng nhiệt."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Nhiệt dung riêng (c) của một chất cho biết điều gì và có đơn vị đo chuẩn là gì?",
+        options: ["Nhiệt lượng cần truyền cho 1 kg chất đó để nhiệt độ của nó tăng thêm 1 K (hay 1 °C); đơn vị là J/(kg.K)", "Nhiệt lượng làm nóng chảy 1 kg chất rắn", "Nhiệt lượng làm bay hơi 1 kg chất lỏng", "Khối lượng của 1 m³ chất đó"],
+        answer: 0,
+        explanation: "Từ công thức Q = m·c·ΔT ⇒ c = Q / (m·ΔT), đơn vị là J/(kg.K)."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Biết nhiệt dung riêng của nước là c = 4200 J/(kg.K). Nhiệt lượng cần thiết để đun nóng 2 kg nước từ 20 °C lên 100 °C là:",
+        options: ["672 000 J (672 kJ)", "336 000 J", "84 000 J", "840 000 J"],
+        answer: 0,
+        explanation: "Áp dụng công thức: Q = m·c·(t₂ - t₁) = 2 × 4200 × (100 - 20) = 8400 × 80 = 672 000 J = 672 kJ."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Công thức tính nhiệt lượng Q cần cung cấp để làm nóng chảy hoàn toàn một khối chất rắn kết tinh khối lượng m ở nhiệt độ nóng chảy (với λ là nhiệt nóng chảy riêng) là:",
+        options: ["Q = λ·m", "Q = m·c·Δt", "Q = L·m", "Q = λ / m"],
+        answer: 0,
+        explanation: "Nhiệt lượng nóng chảy: Q = λ·m, trong đó λ (J/kg) là nhiệt nóng chảy riêng của chất rắn."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Nhiệt hóa hơi riêng (L) của một chất lỏng là nhiệt lượng cần thiết để:",
+        options: ["Một kilôgam (1 kg) chất lỏng đó chuyển hoàn toàn thành hơi ở nhiệt độ xác định (đơn vị J/kg)", "Đun nóng 1 kg chất lỏng thêm 1 °C", "Làm đông đặc 1 kg chất lỏng thành đá", "Đốt cháy 1 kg nhiên liệu"],
+        answer: 0,
+        explanation: "Nhiệt lượng hóa hơi ở nhiệt độ sôi không đổi được tính bởi Q = L·m ⇒ L = Q / m (J/kg)."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Vì sao vết bỏng do hơi nước đang sôi ở 100 °C thường nguy hiểm và nặng hơn nhiều so với vết bỏng do nước sôi ở cùng nhiệt độ 100 °C?",
+        options: ["Vì khi hơi nước ở 100 °C ngưng tụ thành nước ở 100 °C trên da, nó tỏa thêm một nhiệt lượng hóa hơi rất lớn (L ≈ 2,26.10⁶ J/kg)", "Vì hơi nước có nhiệt độ là 500 °C", "Vì nước sôi có nhiệt độ thấp hơn 50 °C", "Vì hơi nước có khối lượng riêng lớn hơn nước lỏng"],
+        answer: 0,
+        explanation: "1 kg hơi nước ở 100 °C khi ngưng tụ thành nước ở 100 °C giải phóng thêm tới 2,26 triệu Joule nhiệt lượng trực tiếp vào mô da trước khi hạ nhiệt."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK1",
+        question: "Nhiệt độ 'Không tuyệt đối' (0 K, tương ứng với -273,15 °C) là mức nhiệt độ giới hạn mà tại đó:",
+        options: ["Động năng chuyển động nhiệt hỗn loạn của các phân tử chất đạt giá trị tối thiểu (gần như ngừng chuyển động nhiệt)", "Nước bắt đầu đóng băng thành nước đá", "Thủy ngân bắt đầu sôi", "Không khí hóa lỏng ở áp suất thường"],
+        answer: 0,
+        explanation: "0 K (-273,15 °C) là độ không tuyệt đối trong thang nhiệt độ nhiệt động lực học Kelvin."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - VẬT LÍ - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Chuyển động Brown (chuyển động hỗn loạn không ngừng của các hạt phấn hoa trong nước hoặc hạt khói trong không khí) là bằng chứng thực nghiệm trực tiếp chứng tỏ:",
+        options: ["Các phân tử chất lỏng, chất khí luôn chuyển động nhiệt hỗn loạn, không ngừng va đập vào các hạt lơ lửng", "Các hạt phấn hoa là sinh vật sống tự bơi", "Giữa các phân tử không có khoảng cách", "Các phân tử chất khí đứng yên cố định"],
+        answer: 0,
+        explanation: "Chuyển động Brown do nhà bác học Robert Brown phát hiện năm 1827 chứng minh thuyết động học phân tử: nhiệt độ càng cao thì chuyển động Brown càng nhanh."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Trong mô hình Khí lí tưởng, các phân tử khí được coi như thế nào?",
+        options: ["Là các chất điểm (bỏ qua thể tích riêng của phân tử) và chỉ tương tác với nhau khi va chạm đàn hồi trực tiếp", "Là các quả cầu đặc khổng lồ nằm sát khít nhau", "Luôn hút nhau bằng lực cực mạnh ở mọi khoảng cách", "Đứng yên tại các nút mạng tinh thể"],
+        answer: 0,
+        explanation: "Khí lí tưởng là mô hình trong đó các phân tử khí được coi là chất điểm chuyển động hỗn loạn và chỉ tương tác với nhau hoặc với thành bình khi va chạm."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Theo Định luật Boyle, trong quá trình đẳng nhiệt (nhiệt độ tuyệt đối T không đổi) của một lượng khí xác định, áp suất p và thể tích V có mối quan hệ:",
+        options: ["Áp suất p tỉ lệ nghịch với thể tích V (p·V = hằng số hay p₁V₁ = p₂V₂)", "Áp suất p tỉ lệ thuận với thể tích V", "p / V = hằng số", "Thể tích V luôn không đổi"],
+        answer: 0,
+        explanation: "Định luật Boyle cho quá trình đẳng nhiệt (T = const): p₁V₁ = p₂V₂."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Một lượng khí lí tưởng ở nhiệt độ không đổi có thể tích V₁ = 6 lít ở áp suất p₁ = 1 atm. Nếu nén đẳng nhiệt để thể tích giảm còn V₂ = 2 lít thì áp suất p₂ của khí là:",
+        options: ["3 atm", "0,33 atm", "12 atm", "4 atm"],
+        answer: 0,
+        explanation: "Áp dụng Định luật Boyle: p₁V₁ = p₂V₂ ⇒ p₂ = (1 × 6) / 2 = 3 atm."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Đường đẳng nhiệt của một lượng khí xác định trong hệ trục tọa độ (p, V) có dạng là đường gì?",
+        options: ["Đường cong Hypebol", "Đường thẳng đi qua gốc tọa độ", "Đường thẳng vuông góc với trục V", "Đường tròn"],
+        answer: 0,
+        explanation: "Vì p = const / V (hàm phân thức bậc nhất) nên trong hệ tọa độ (p, V), đường đẳng nhiệt là một nhánh đường hypebol."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Theo Định luật Charles, trong quá trình đẳng áp (áp suất p không đổi) của một lượng khí xác định, thể tích V của khí biến đổi như thế nào theo nhiệt độ tuyệt đối T?",
+        options: ["Thể tích V tỉ lệ thuận với nhiệt độ tuyệt đối T (V / T = hằng số hay V₁/T₁ = V₂/T₂)", "Thể tích V tỉ lệ nghịch với nhiệt độ T (V·T = hằng số)", "Thể tích V không phụ thuộc vào nhiệt độ", "Thể tích V tỉ lệ thuận với nhiệt độ Celsius t"],
+        answer: 0,
+        explanation: "Định luật Charles cho quá trình đẳng áp (p = const): V / T = hằng số ⇔ V₁ / T₁ = V₂ / T₂."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Một khối khí có thể tích V₁ = 3 lít ở nhiệt độ t₁ = 27 °C (T₁ = 300 K). Khi đun nóng đẳng áp đến nhiệt độ t₂ = 127 °C (T₂ = 400 K) thì thể tích V₂ của khối khí là:",
+        options: ["4 lít", "2,25 lít", "5 lít", "6 lít"],
+        answer: 0,
+        explanation: "Áp dụng định luật Charles: V₁/T₁ = V₂/T₂ ⇒ V₂ = V₁·(T₂/T₁) = 3 × (400 / 300) = 4 lít."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Phương trình trạng thái của một lượng khí lí tưởng xác định liên hệ cả 3 thông số trạng thái (p, V, T) là:",
+        options: ["(p·V) / T = hằng số (hay p₁V₁ / T₁ = p₂V₂ / T₂)", "p·V·T = hằng số", "(p·T) / V = hằng số", "p + V + T = hằng số"],
+        answer: 0,
+        explanation: "Phương trình trạng thái khí lí tưởng tổng quát: (p₁V₁)/T₁ = (p₂V₂)/T₂."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Trong quá trình đẳng tích (thể tích V không đổi, ví dụ đun nóng khí trong một bình thép kín), áp suất p của khí liên hệ với nhiệt độ tuyệt đối T theo hệ thức:",
+        options: ["p / T = hằng số (hay p₁/T₁ = p₂/T₂)", "p·T = hằng số", "p không thay đổi khi tăng nhiệt độ", "p tỉ lệ nghịch với T"],
+        answer: 0,
+        explanation: "Khi V₁ = V₂ thì từ phương trình trạng thái suy ra p₁/T₁ = p₂/T₂: áp suất tỉ lệ thuận với nhiệt độ tuyệt đối."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Vì sao trên vỏ các bình xịt aerosol (bình xịt côn trùng, bình xịt tóc, bình gas mini) luôn có dòng cảnh báo: 'Không ném bình vào lửa hoặc để ngoài nắng gắt trên 50 °C'?",
+        options: ["Vì bình kín có thể tích V không đổi; khi nhiệt độ T tăng cao thì áp suất khí p bên trong tăng vọt gây nổ bình nguy hiểm", "Vì nhiệt độ cao làm bình bị đóng băng", "Vì ánh nắng làm vỏ thép tan chảy ở 50 °C", "Vì làm giảm áp suất bên trong bình về 0"],
+        answer: 0,
+        explanation: "Theo quá trình đẳng tích (p ~ T), khi nung nóng bình kín trong lửa, nhiệt độ T tăng mạnh làm áp suất p vượt quá giới hạn bền của vỏ bình gây nổ."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Phương trình Clapeyron (Mendeleev - Clapeyron) cho n mol khí lí tưởng (với hằng số khí lí tưởng R ≈ 8,31 J/(mol.K)) được viết là:",
+        options: ["p·V = n·R·T", "p·T = n·R·V", "p / V = n·R·T", "p·V = R / (n·T)"],
+        answer: 0,
+        explanation: "Phương trình Clapeyron: pV = nRT (trong hệ SI: p đo bằng Pa, V đo bằng m³, n là số mol, R = 8,31 J/(mol.K), T đo bằng K)."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Nguyên nhân vi mô gây ra Áp suất của chất khí lên thành bình chứa là gì?",
+        options: ["Do hàng tỉ phân tử khí chuyển động nhiệt hỗn loạn va chạm liên tục vào thành bình tạo nên áp lực lên thành bình", "Do trọng lượng của vỏ bình đè xuống", "Do các phân tử khí đứng yên đẩy nhau", "Do lực từ trường của Trái Đất"],
+        answer: 0,
+        explanation: "Mỗi phân tử khí khi va chạm vào thành bình truyền động lượng cho thành bình; tổng hợp vô số va chạm tạo nên áp suất khí p lên thành bình."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Công thức tính áp suất chất khí theo mô hình động học phân tử (với μ là mật độ phân tử N/V, m là khối lượng 1 phân tử, E_đ là động năng tịnh tiến trung bình của phân tử) là:",
+        options: ["p = (2/3)·μ·E_đ = (1/3)·μ·m·v̄²", "p = μ·E_đ", "p = 3·μ·E_đ", "p = μ / E_đ"],
+        answer: 0,
+        explanation: "Biểu thức cơ bản của thuyết động học phân tử chất khí: p = (1/3)μmv̄² = (2/3)μE_đ."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Động năng tịnh tiến trung bình (E_đ) của phân tử khí lí tưởng tỉ lệ thuận trực tiếp với đại lượng nào theo công thức E_đ = (3/2)·k·T (với k là hằng số Boltzmann)?",
+        options: ["Nhiệt độ tuyệt đối T (nhiệt độ tuyệt đối càng cao thì các phân tử chuyển động nhiệt càng nhanh)", "Thể tích V của bình chứa", "Hình dạng của bình chứa", "Áp suất khí quyển bên ngoài"],
+        answer: 0,
+        explanation: "Động năng trung bình của phân tử E_đ = (3/2)kT chỉ phụ thuộc vào nhiệt độ tuyệt đối T; do đó nhiệt độ tuyệt đối là thước đo động năng chuyển động nhiệt trung bình của phân tử."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK1",
+        question: "Nếu nhiệt độ tuyệt đối T của một khối khí lí tưởng tăng lên gấp 2 lần thì động năng tịnh tiến trung bình của các phân tử khí sẽ:",
+        options: ["Tăng lên gấp 2 lần", "Tăng lên gấp 4 lần", "Giảm đi 2 lần", "Không thay đổi"],
+        answer: 0,
+        explanation: "Vì E_đ = (3/2)kT tỉ lệ bậc nhất với T nên khi T tăng gấp 2 lần thì E_đ cũng tăng gấp 2 lần."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - VẬT LÍ - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Từ trường (Magnetic field) là dạng vật chất tồn tại xung quanh đối tượng nào sau đây?",
+        options: ["Xung quanh nam châm và xung quanh dòng điện (các điện tích chuyển động)", "Chỉ tồn tại xung quanh các điện tích đứng yên", "Xung quanh một thanh gỗ khô", "Chỉ có ở bên trong chân không"],
+        answer: 0,
+        explanation: "Từ trường tồn tại xung quanh nam châm hoặc dòng điện (hạt mang điện chuyển động); biểu hiện cụ thể là tác dụng lực từ lên nam châm thử hay dòng điện khác đặt trong nó."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Chiều của đường sức từ tại một điểm được quy ước là chiều mà:",
+        options: ["Đầu cực Bắc (N) của kim nam châm thử nhỏ nằm cân bằng tại điểm đó chỉ hướng (theo quy tắc: đi ra từ cực Bắc N và đi vào cực Nam S của nam châm)", "Đi ra từ cực Nam S và đi vào cực Bắc N", "Luôn hướng thẳng đứng từ trên xuống", "Các đường sức từ luôn cắt nhau tại một điểm"],
+        answer: 0,
+        explanation: "Các đường sức từ là những đường cong khép kín (không bao giờ cắt nhau), ở bên ngoài nam châm có chiều đi ra từ cực Bắc (N) và đi vào cực Nam (S)."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Đơn vị đo của Cảm ứng từ (B) trong Hệ đơn vị quốc tế SI là gì?",
+        options: ["Tesla (kí hiệu là T)", "Weber (Wb)", "Henry (H)", "Volt (V)"],
+        answer: 0,
+        explanation: "Trong hệ SI, cảm ứng từ B được đo bằng đơn vị Tesla (T), trong khi từ thông Φ đo bằng Weber (Wb)."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Độ lớn của lực từ F tác dụng lên một đoạn dây dẫn thẳng chiều dài l mang dòng điện cường độ I đặt trong từ trường đều cảm ứng từ B (hợp với dây dẫn góc α) được tính bởi công thức:",
+        options: ["F = B·I·l·sin(α)", "F = B·I·l·cos(α)", "F = B·I·l·tan(α)", "F = B·I / l"],
+        answer: 0,
+        explanation: "Độ lớn lực từ (lực Ampere) tác dụng lên đoạn dòng điện: F = B·I·l·sin(α). Khi dây dẫn song song với B⃗ (α = 0° hoặc 180°) thì F = 0; khi vuông góc (α = 90°) thì F_max = B·I·l."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Quy tắc bàn tay trái dùng để xác định chiều của lực từ F⃗ tác dụng lên đoạn dây dẫn mang dòng điện được phát biểu như thế nào?",
+        options: ["Đặt bàn tay trái duỗi thẳng sao cho các đường sức từ B⃗ hướng vào lòng bàn tay, chiều từ cổ tay đến ngón tay giữa chỉ chiều dòng điện I, khi đó ngón tay cái choãi ra 90° chỉ chiều của lực từ F⃗", "Dùng bàn tay phải nắm lấy dây dẫn", "Ngón tay cái chỉ chiều cảm ứng từ B⃗", "Lòng bàn tay hướng theo chiều dòng điện"],
+        answer: 0,
+        explanation: "Quy tắc bàn tay trái: B⃗ xuyên vào lòng bàn tay, chiều cổ tay → ngón tay là chiều dòng điện I, ngón cái choãi 90° chỉ chiều lực từ F⃗."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Một đoạn dây dẫn dài l = 0,5 m mang dòng điện I = 4 A đặt vuông góc (α = 90°) với các đường sức của một từ trường đều có B = 0,2 T. Độ lớn lực từ tác dụng lên đoạn dây là:",
+        options: ["0,4 N", "4 N", "0,1 N", "2 N"],
+        answer: 0,
+        explanation: "Áp dụng công thức: F = B·I·l·sin(90°) = 0,2 × 4 × 0,5 × 1 = 0,4 N."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Từ thông (Φ) gửi qua một khung dây phẳng gồm N vòng dây có diện tích S đặt trong từ trường đều B⃗ (với α là góc hợp bởi B⃗ và vectơ pháp tuyến n⃗ của mặt phẳng khung dây) được tính bằng công thức:",
+        options: ["Φ = N·B·S·cos(α) (đơn vị Weber - Wb)", "Φ = N·B·S·sin(α)", "Φ = B·S / cos(α)", "Φ = N·B / S"],
+        answer: 0,
+        explanation: "Từ thông diễn tả lượng đường sức từ xuyên qua diện tích khung dây: Φ = N·B·S·cos(α), đơn vị là Weber (1 Wb = 1 T.m²)."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Hiện tượng Cảm ứng điện từ (xuất hiện dòng điện cảm ứng trong khung dây dẫn kín) chỉ xảy ra khi nào?",
+        options: ["Khi từ thông Φ gửi qua mạch kín biến thiên (thay đổi) theo thời gian", "Khi khung dây đặt đứng yên trong một từ trường đều không đổi", "Khi khung dây dịch chuyển tịnh tiến trong từ trường đều mà góc không đổi", "Khi không có từ trường"],
+        answer: 0,
+        explanation: "Theo Faraday, dòng điện cảm ứng chỉ xuất hiện trong mạch kín trong khoảng thời gian từ thông gửi qua mạch kín đó đang biến thiên (ΔΦ ≠ 0)."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Định luật Lenz về chiều của dòng điện cảm ứng phát biểu rằng:",
+        options: ["Dòng điện cảm ứng xuất hiện trong mạch kín có chiều sao cho từ trường do nó sinh ra có tác dụng CHỐNG LẠI nguyên nhân (sự biến thiên từ thông) đã sinh ra nó", "Dòng điện cảm ứng luôn làm tăng từ thông ban đầu", "Dòng điện cảm ứng luôn cùng chiều kim đồng hồ", "Dòng điện cảm ứng không tạo ra từ trường"],
+        answer: 0,
+        explanation: "Định luật Lenz là hệ quả của định luật bảo toàn năng lượng: nếu Φ tăng thì B⃗_c ngược chiều B⃗ để chống sự tăng; nếu Φ giảm thì B⃗_c cùng chiều B⃗ để chống sự giảm."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Theo Định luật Faraday về cảm ứng điện từ, độ lớn của suất điện động cảm ứng |e_c| trong mạch kín tỉ lệ thuận với:",
+        options: ["Tốc độ biến thiên của từ thông qua mạch kín đó: |e_c| = |ΔΦ / Δt|", "Độ lớn của từ thông cực đại", "Điện trở R của khung dây", "Thời gian Δt nhân với từ thông"],
+        answer: 0,
+        explanation: "Biểu thức Định luật Faraday: e_c = -ΔΦ / Δt ⇒ độ lớn |e_c| = |ΔΦ / Δt|."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Nguyên tắc tạo ra Dòng điện xoay chiều trong các máy phát điện xoay chiều dựa trên hiện tượng vật lí nào?",
+        options: ["Hiện tượng cảm ứng điện từ (khi khung dây quay đều trong từ trường hoặc nam châm quay quanh cuộn dây làm từ thông biến thiên điều hòa)", "Hiện tượng nhiệt điện", "Hiện tượng quang điện trong", "Hiện tượng điện phân dung dịch"],
+        answer: 0,
+        explanation: "Khi khung dây quay với tốc độ góc ω trong từ trường đều, từ thông Φ = NBS·cos(ωt) biến thiên điều hòa tạo ra suất điện động xoay chiều hình sin."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Cho dòng điện xoay chiều có biểu thức cường độ tức thời i = 2√2·cos(100πt) (A). Giá trị cường độ dòng điện hiệu dụng (I) và tần số (f) của dòng điện này lần lượt là:",
+        options: ["I = 2 A; f = 50 Hz", "I = 2√2 A; f = 100 Hz", "I = 4 A; f = 50 Hz", "I = 2 A; f = 100π Hz"],
+        answer: 0,
+        explanation: "Cường độ cực đại I₀ = 2√2 A ⇒ Giá trị hiệu dụng I = I₀ / √2 = 2 A. Tần số f = ω / (2π) = 100π / (2π) = 50 Hz."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Bếp từ đun nấu thức ăn làm nóng trực tiếp đáy nồi kim loại nhiễm từ dựa trên tác dụng nhiệt của dòng điện nào?",
+        options: ["Dòng điện Foucault (dòng điện cảm ứng xoáy sinh ra trong khối kim loại đáy nồi khi đặt trong từ trường biến thiên tần số cao)", "Dòng điện một chiều từ pin", "Tia hồng ngoại từ dây mayso", "Ngọn lửa đốt cháy khí gas"],
+        answer: 0,
+        explanation: "Cuộn dây dưới mặt bếp từ tạo ra từ trường biến thiên tần số cao xuyên qua đáy nồi bằng sắt từ, sinh ra dòng điện xoáy Foucault tỏa nhiệt mạnh làm chín thức ăn."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Sóng điện từ (Electromagnetic wave) có những đặc điểm bản chất nào sau đây?",
+        options: ["Là sóng ngang, lan truyền được trong cả chân không với tốc độ c ≈ 3.10⁸ m/s; tại mỗi điểm, vectơ cường độ điện trường E⃗ và vectơ cảm ứng từ B⃗ luôn vuông góc với nhau và vuông góc với phương truyền sóng, nhưng dao động CÙNG PHA", "Là sóng dọc và không truyền được trong chân không", "Vectơ E⃗ và B⃗ luôn ngược pha với nhau", "Chỉ truyền được trong môi trường kim loại"],
+        answer: 0,
+        explanation: "Sóng điện từ là điện từ trường lan truyền trong không gian, là sóng ngang (E⃗ ⊥ B⃗ ⊥ v⃗), truyền trong chân không với vận tốc ánh sáng c = 3.10⁸ m/s và E⃗, B⃗ biến thiên cùng pha."
+    },
+    {
+        grade: "12", subject: "ly", term: "GK2",
+        question: "Máy biến áp là thiết bị điện từ tĩnh hoạt động dựa trên hiện tượng cảm ứng điện từ dùng để làm gì?",
+        options: ["Biến đổi điện áp của dòng điện xoay chiều mà không làm thay đổi tần số của nó (U₁/U₂ = N₁/N₂)", "Biến đổi điện áp của dòng điện một chiều không đổi (DC)", "Làm tăng công suất điện năng lên gấp 10 lần", "Làm thay đổi tần số dòng điện từ 50 Hz lên 500 Hz"],
+        answer: 0,
+        explanation: "Máy biến áp chỉ hoạt động với dòng điện xoay chiều (vì tạo từ thông biến thiên qua lõi thép), giúp tăng áp để truyền tải đi xa giảm hao phí hoặc hạ áp để sử dụng."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - VẬT LÍ - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Thí nghiệm tán xạ hạt alpha (α) lên lá vàng mỏng của Ernest Rutherford (năm 1911) đã khám phá ra điều vĩ đại gì về cấu tạo nguyên tử?",
+        options: ["Nguyên tử có cấu trúc rỗng, ở tâm có một hạt nhân mang điện tích dương có kích thước rất nhỏ nhưng tập trung hầu hết khối lượng của nguyên tử", "Nguyên tử là một quả cầu đặc đồng nhất", "Hạt nhân nguyên tử mang điện tích âm", "Các electron nằm cố định bên trong hạt nhân"],
+        answer: 0,
+        explanation: "Hầu hết hạt α xuyên thẳng qua lá vàng chứng tỏ nguyên tử rỗng; một số rất ít hạt α bị bật ngược trở lại chứng tỏ ở tâm có hạt nhân cực nhỏ, mang điện dương và rất nặng."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Hạt nhân nguyên tử ²³⁵₉₂U (Uranium-235) có cấu tạo gồm bao nhiêu hạt proton (Z) và bao nhiêu hạt neutron (N)?",
+        options: ["92 hạt proton và 143 hạt neutron (tổng cộng 235 nucleon)", "92 proton và 235 neutron", "143 proton và 92 neutron", "235 proton và 92 neutron"],
+        answer: 0,
+        explanation: "Số proton Z = 92; tổng số nucleon A = 235 ⇒ số hạt neutron N = A - Z = 235 - 92 = 143."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Lực tương tác nào giữ cho các nucleon (proton và neutron) liên kết cực kì chặt chẽ với nhau bên trong hạt nhân bất chấp lực đẩy tĩnh điện Coulomb giữa các proton dương?",
+        options: ["Lực hạt nhân (tương tác mạnh - chỉ phát huy tác dụng trong phạm vi kích thước hạt nhân khoảng 10⁻¹⁵ m)", "Lực hấp dẫn vạn vật", "Lực tĩnh điện Coulomb", "Lực từ trường"],
+        answer: 0,
+        explanation: "Lực hạt nhân là lực tương tác mạnh nhất trong tự nhiên, không phụ thuộc điện tích nhưng có bán kính tác dụng cực ngắn (cỡ femtômét 10⁻¹⁵ m)."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Hệ thức Einstein liên hệ giữa khối lượng (m) và năng lượng (E) của một vật (với c ≈ 3.10⁸ m/s là tốc độ ánh sáng trong chân không) là:",
+        options: ["E = m·c²", "E = (1/2)m·c²", "E = m·c", "E = m / c²"],
+        answer: 0,
+        explanation: "Hệ thức nổi tiếng của Albert Einstein: E = m·c². Với 1 amu ≈ 931,5 MeV/c²."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Độ hụt khối (Δm) của hạt nhân ᴬ_Z X (có khối lượng hạt nhân là m_X, khối lượng proton là m_p, khối lượng neutron là m_n) được tính bằng công thức:",
+        options: ["Δm = [Z·m_p + (A - Z)·m_n] - m_X", "Δm = m_X - [Z·m_p + (A - Z)·m_n]", "Δm = Z·m_p + A·m_n", "Δm = 0"],
+        answer: 0,
+        explanation: "Tổng khối lượng của các nucleon riêng rẽ luôn lớn hơn khối lượng của hạt nhân tạo thành một lượng là độ hụt khối Δm = [Zm_p + (A-Z)m_n] - m_X > 0."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Đại lượng vật lí nào đặc trưng cho 'Mức độ bền vững' của một hạt nhân nguyên tử?",
+        options: ["Năng lượng liên kết riêng E_lkr = W_lk / A (năng lượng liên kết tính trung bình cho 1 nucleon; E_lkr càng lớn thì hạt nhân càng bền vững)", "Số khối A càng lớn thì càng bền", "Năng lượng liên kết tổng cộng W_lk", "Số hạt neutron N"],
+        answer: 0,
+        explanation: "Năng lượng liên kết riêng W_lk / A (MeV/nucleon) là thước đo độ bền vững của hạt nhân. Các hạt nhân có số khối trung bình (50 < A < 80, như Sắt ⁵⁶Fe) có E_lkr lớn nhất (khoảng 8,8 MeV/nucleon) nên bền vững nhất."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Phản ứng Phân hạch (Nuclear Fission) là phản ứng hạt nhân trong đó:",
+        options: ["Một hạt nhân rất nặng (như ²³⁵U hoặc ²³⁹Pu) hấp thụ một neutron chậm rồi vỡ thành hai hạt nhân trung bình kèm theo vài neutron mới và tỏa năng lượng lớn", "Hai hạt nhân rất nhẹ tổng hợp lại thành một hạt nhân nặng hơn", "Một nguyên tử mất đi lớp vỏ electron", "Quá trình đốt cháy than đá trong lò nhiệt điện"],
+        answer: 0,
+        explanation: "Phản ứng phân hạch dây chuyền có điều khiển của nhiên liệu ²³⁵U là nguyên lí hoạt động của các lò phản ứng nhà máy điện hạt nhân hiện nay."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Phản ứng Nhiệt hạch (Nuclear Fusion - sự tổng hợp hạt nhân) là nguồn năng lượng của Mặt Trời và các ngôi sao, có bản chất là:",
+        options: ["Sự kết hợp hai hạt nhân rất nhẹ (như các đồng vị của Hydrogen: Deuterium ²₁H và Tritium ³₁H) thành hạt nhân nặng hơn (Helium ⁴₂He) ở nhiệt độ hàng chục triệu độ", "Sự phân rã tự nhiên của nguyên tố Radium", "Sự bắn phá hạt nhân Uranium bằng neutron", "Phản ứng hóa học giữa H₂ và O₂"],
+        answer: 0,
+        explanation: "Phản ứng nhiệt hạch (ví dụ ²₁H + ³₁H → ⁴₂He + ¹₀n + 17,6 MeV) cần nhiệt độ cực cao (hàng chục đến hàng trăm triệu độ) để thắng lực đẩy Coulomb, tỏa năng lượng sạch khổng lồ."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Trong hiện tượng phóng xạ tự nhiên, tia phóng xạ Alpha (α) thực chất là dòng hạt gì?",
+        options: ["Hạt nhân nguyên tử Helium (⁴₂He) mang điện tích +2e", "Dòng hạt electron (⁰₋₁e)", "Dòng hạt positron (⁰₊₁e)", "Sóng điện từ có bước sóng cực ngắn"],
+        answer: 0,
+        explanation: "Tia α là dòng các hạt nhân ⁴₂He phóng ra từ hạt nhân mẹ với tốc độ khoảng 2.10⁷ m/s, có khả năng ion hóa mạnh nhưng khả năng đâm xuyên yếu."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Tia phóng xạ nào sau đây có bản chất là sóng điện từ bước sóng cực ngắn (dưới 10⁻¹¹ m), không mang điện, không bị lệch trong điện trường và từ trường và có khả năng đâm xuyên mạnh nhất?",
+        options: ["Tia Gamma (γ)", "Tia Alpha (α)", "Tia Beta trừ (β⁻)", "Tia Beta cộng (β⁺)"],
+        answer: 0,
+        explanation: "Tia γ là dòng photon năng lượng cực cao, truyền với tốc độ ánh sáng c, có khả năng đâm xuyên qua vài cm chì hoặc hàng mét bê tông."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Khi hạt nhân mẹ ᴬ_Z X phóng xạ ra 1 hạt Alpha (⁴₂He) để biến đổi thành hạt nhân con Y thì số khối và số hiệu nguyên tử của hạt nhân con Y là:",
+        options: ["Số khối giảm 4 (A - 4) và số hiệu nguyên tử giảm 2 (Z - 2): ᴬ⁻⁴_{Z-2} Y", "Số khối giữ nguyên A và số hiệu tăng 1 (Z + 1)", "Số khối giảm 2 và số hiệu giảm 4", "Cả A và Z đều không thay đổi"],
+        answer: 0,
+        explanation: "Theo định luật bảo toàn số nucleon và bảo toàn điện tích: ᴬ_Z X → ⁴₂He + ᴬ⁻⁴_{Z-2} Y (hạt nhân con lùi 2 ô trong bảng tuần hoàn)."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Chu kì bán rã (T) của một chất phóng xạ là khoảng thời gian để:",
+        options: ["Một nửa (50%) số hạt nhân (hoặc khối lượng) của mẫu chất phóng xạ đó bị phân rã biến đổi thành hạt nhân khác", "Toàn bộ 100% mẫu chất phóng xạ phân rã hết", "Khối lượng chất phóng xạ tăng lên gấp đôi", "Nhiệt độ của chất phóng xạ giảm đi một nửa"],
+        answer: 0,
+        explanation: "Sau mỗi chu kì bán rã T, số hạt nhân phóng xạ còn lại giảm đi một nửa theo quy luật hàm mũ: N(t) = N₀ · 2^(-t/T) = N₀ · e^(-λt)."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Chất phóng xạ Iodine-131 (¹³¹₅₃I) dùng trong y học điều trị bệnh tuyến giáp có chu kì bán rã T = 8 ngày. Nếu ban đầu có m₀ = 160 g chất này thì sau t = 24 ngày, khối lượng ¹³¹I còn lại chưa phân rã là:",
+        options: ["20 g", "40 g", "80 g", "10 g"],
+        answer: 0,
+        explanation: "Số chu kì bán rã đã trôi qua: t / T = 24 / 8 = 3 chu kì. Khối lượng còn lại: m = m₀ / 2³ = 160 / 8 = 20 g."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Đồng vị phóng xạ nào thường được các nhà khảo cổ học sử dụng để xác định niên đại của các cổ vật có nguồn gốc sinh vật (gỗ cổ, xương hóa thạch)?",
+        options: ["Đồng vị Carbon-14 (¹⁴₆C, có chu kì bán rã T ≈ 5730 năm)", "Đồng vị Uranium-235", "Đồng vị Cobalt-60", "Đồng vị Polonium-210"],
+        answer: 0,
+        explanation: "Phương pháp định tuổi bằng đồng vị phóng xạ ¹⁴C giúp xác định chính xác tuổi của các di vật hữu cổ từ vài trăm đến khoảng 50 000 năm."
+    },
+    {
+        grade: "12", subject: "ly", term: "CK2",
+        question: "Ba nguyên tắc vàng cơ bản để đảm bảo 'An toàn phóng xạ' khi làm việc với các nguồn phóng xạ là gì?",
+        options: ["Giảm tối đa thời gian tiếp xúc; Giữ khoảng cách xa nguồn phóng xạ nhất có thể; và Sử dụng các tấm chắn bảo hộ (chì, bê tông) thích hợp", "Đứng càng gần nguồn phóng xạ càng tốt", "Cầm trực tiếp nguồn phóng xạ bằng tay không", "Đun nóng nguồn phóng xạ để khử tia"],
+        answer: 0,
+        explanation: "Ba nguyên tắc bảo vệ an toàn bức xạ quốc tế (ALARA): Thời gian (Time - càng ngắn càng tốt), Khoảng cách (Distance - càng xa càng tốt) và Che chắn (Shielding - áo chì, tường chì, bê tông)."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - HÓA HỌC - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Công thức chung của Ester no, đơn chức, mạch hở là:",
+        options: ["CₙH₂ₙO₂ (n ≥ 2)", "CₙH₂ₙO₂ (n ≥ 1)", "CₙH₂ₙ₊₂O₂ (n ≥ 2)", "CₙH₂ₙ₋₂O₂ (n ≥ 3)"],
+        answer: 0,
+        explanation: "Ester no, đơn chức, mạch hở có 1 liên kết đôi C=O trong nhóm chức -COO- nên có công thức phân tử chung là CₙH₂ₙO₂ với n ≥ 2 (nhỏ nhất là HCOOCH₃: C₂H₄O₂)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Hợp chất ester CH₃COOC₂H₅ có mùi thơm dễ chịu, theo danh pháp IUPAC có tên gọi là:",
+        options: ["Ethyl acetate (hoặc Ethyl ethanoate)", "Methyl propionate", "Methyl acetate", "Propyl formate"],
+        answer: 0,
+        explanation: "Tên gọi của ester RCOOR' gồm: Tên gốc R' (C₂H₅-: ethyl) + Tên gốc carboxylic acid RCOO- (CH₃COO-: acetate/ethanoate) → Ethyl acetate."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Phản ứng đun nóng ester Ethyl acetate (CH₃COOC₂H₅) với dung dịch kiềm NaOH vừa đủ thu được sản phẩm là:",
+        options: ["CH₃COONa (sodium acetate) và C₂H₅OH (ethanol)", "CH₃COOH và C₂H₅ONa", "HCOONa và CH₃OH", "C₂H₅COONa và CH₃OH"],
+        answer: 0,
+        explanation: "Phản ứng thủy phân ester trong môi trường kiềm (phản ứng xà phòng hóa) là phản ứng một chiều: CH₃COOC₂H₅ + NaOH →(t°) CH₃COONa + C₂H₅OH."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Vì sao các Ester có nhiệt độ sôi thấp hơn nhiều và độ tan trong nước kém hơn so với các carboxylic acid và alcohol có cùng phân tử khối?",
+        options: ["Vì giữa các phân tử ester không có nguyên tử H linh động nên không tạo được liên kết hydrogen liên phân tử", "Vì phân tử ester có khối lượng quá nhỏ", "Vì ester là hợp chất ion", "Vì ester bị phân hủy ngay ở nhiệt độ phòng"],
+        answer: 0,
+        explanation: "Trong nhóm -COOR' không còn nhóm -OH nên các phân tử ester không tạo được liên kết hydrogen với nhau, dẫn tới nhiệt độ sôi thấp và dễ bay hơi."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Chất béo (Triglyceride) về mặt cấu tạo hóa học là triester của alcohol nào với các acid béo?",
+        options: ["Glycerol C₃H₅(OH)₃ (hay propane-1,2,3-triol)", "Ethylene glycol C₂H₄(OH)₂", "Ethanol C₂H₅OH", "Methanol CH₃OH"],
+        answer: 0,
+        explanation: "Chất béo là triester của glycerol C₃H₅(OH)₃ với các acid béo (acid đơn chức, mạch carbon dài không phân nhánh, có số nguyên tử C chẵn như stearic, palmitic, oleic acid)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Để chuyển hóa chất béo lỏng (dầu thực vật chứa các gốc acid béo không no như triolein) thành chất béo rắn (bơ nhân tạo tristearin), người ta thực hiện phản ứng nào?",
+        options: ["Phản ứng cộng hydrogen (hydrogen hóa) có xúc tác Ni, đun nóng", "Phản ứng thủy phân trong môi trường acid", "Phản ứng đốt cháy với oxygen", "Phản ứng lên men"],
+        answer: 0,
+        explanation: "Phương trình: (C₁₇H₃₃COO)₃C₃H₅ (lỏng) + 3H₂ →(Ni, t°) (C₁₇H₃₅COO)₃C₃H₅ (rắn)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Thành phần chính của 'Xà phòng' là gì?",
+        options: ["Hỗn hợp muối sodium (Na) hoặc potassium (K) của các acid béo (như sodium palmitate, sodium stearate)", "Muối calcium của các acid béo", "Các ester mạch ngắn", "Glycerol nguyên chất"],
+        answer: 0,
+        explanation: "Khi đun chất béo với dung dịch NaOH hoặc KOH (phản ứng xà phòng hóa), ta thu được glycerol và muối sodium/potassium của acid béo dùng làm xà phòng."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Vì sao không nên dùng xà phòng để giặt quần áo trong nước cứng (nước chứa nhiều ion Ca²⁺ và Mg²⁺)?",
+        options: ["Vì gốc acid béo của xà phòng tác dụng với ion Ca²⁺, Mg²⁺ tạo ra muối kết tủa không tan bám vào sợi vải làm vải cứng, mục và giảm bọt giặt rửa", "Vì nước cứng làm xà phòng bốc cháy", "Vì nước cứng hòa tan mất sợi vải bông", "Vì chất giặt rửa tổng hợp cũng bị kết tủa giống xà phòng"],
+        answer: 0,
+        explanation: "Ion stearate/palmitate của xà phòng tạo kết tủa trắng với Ca²⁺, Mg²⁺; trong khi chất giặt rửa tổng hợp (bột giặt) có muối Ca²⁺, Mg²⁺ tan được nên vẫn dùng tốt trong nước cứng."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Carbohydrate nào sau đây thuộc nhóm Monosaccharide (đường đơn, không bị thủy phân)?",
+        options: ["Glucose và Fructose (đều có công thức phân tử C₆H₁₂O₆)", "Saccharose và Maltose (C₁₂H₂₂O₁₁)", "Tinh bột và Cellulose ((C₆H₁₀O₅)ₙ)", "Glycerol và Sorbitol"],
+        answer: 0,
+        explanation: "Carbohydrate chia làm 3 nhóm: Monosaccharide (Glucose, Fructose), Disaccharide (Saccharose, Maltose) và Polysaccharide (Tinh bột, Cellulose)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Ở nhiệt độ thường, dung dịch Glucose hòa tan được kết tủa Cu(OH)₂ trong môi trường kiềm tạo thành dung dịch phức đồng có màu xanh lam đặc trưng là chứng minh phân tử glucose có:",
+        options: ["Nhiều nhóm hydroxyl (-OH) liền kề nhau (tính chất của polyalcohol)", "Nhóm chức aldehyde (-CHO)", "Vòng benzene thơm", "Liên kết ba C≡C"],
+        answer: 0,
+        explanation: "Phản ứng hòa tan Cu(OH)₂ ở nhiệt độ thường tạo dung dịch xanh lam chứng minh hợp chất có các nhóm -OH kề nhau; còn đun nóng tạo kết tủa đỏ gạch Cu₂O hoặc tráng bạc Ag chứng minh nhóm -CHO."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Phản ứng cho dung dịch Glucose (hoặc Fructose) tác dụng với thuốc thử Tollens [Ag(NH₃)₂]OH đun nóng nhẹ tạo ra lớp bạc sáng bóng bám trên thành ống nghiệm được gọi là:",
+        options: ["Phản ứng tráng bạc (ứng dụng để tráng ruột phích và tráng gương soi an toàn)", "Phản ứng xà phòng hóa", "Phản ứng trùng hợp", "Phản ứng ester hóa"],
+        answer: 0,
+        explanation: "1 mol Glucose (hoặc Fructose trong môi trường kiềm chuyển hóa thành Glucose) tác dụng với thuốc thử Tollens tạo ra 2 mol Ag kết tủa sáng bóng."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Loại đường đôi (Disaccharide) có nhiều trong cây mía, củ cải đường và hoa thốt nốt, được cấu tạo từ 1 gốc α-glucose và 1 gốc β-fructose là:",
+        options: ["Saccharose (C₁₂H₂₂O₁₁)", "Maltose (đường mạch nha)", "Glucose (đường nho)", "Fructose (đường mật ong)"],
+        answer: 0,
+        explanation: "Saccharose là đường kính ăn hàng ngày, cấu tạo từ 1 gốc α-glucose và 1 gốc β-fructose liên kết qua nguyên tử O ở C₁-O-C₂ nên không còn nhóm -OH hemiacetal tự do (không có phản ứng tráng bạc)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Thủy phân hoàn toàn 1 phân tử đường Saccharose trong môi trường acid đun nóng sẽ thu được sản phẩm gồm:",
+        options: ["1 phân tử Glucose và 1 phân tử Fructose", "2 phân tử Glucose", "2 phân tử Fructose", "Tinh bột và nước"],
+        answer: 0,
+        explanation: "Phương trình: C₁₂H₂₂O₁₁ (saccharose) + H₂O →(H⁺, t°) C₆H₁₂O₆ (glucose) + C₆H₁₂O₆ (fructose); trong khi thủy phân Maltose tạo ra 2 phân tử Glucose."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Tinh bột được cấu tạo từ hai thành phần polysaccharide là Amylose và Amylopectin, trong đó thành phần nào có cấu trúc mạch phân nhánh?",
+        options: ["Amylopectin có mạch phân nhánh (chiếm khoảng 70-80%); còn Amylose có mạch không phân nhánh xoắn lò xo", "Amylose có mạch phân nhánh", "Cả hai đều có mạch thẳng không nhánh", "Cellulose có mạch phân nhánh"],
+        answer: 0,
+        explanation: "Amylose chỉ có liên kết α-1,4-glycoside tạo mạch không nhánh; Amylopectin có thêm liên kết α-1,6-glycoside tạo các điểm phân nhánh."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK1",
+        question: "Khi cho Cellulose tác dụng với dung dịch HNO₃ đặc có H₂SO₄ đặc làm xúc tác và đun nóng, sản phẩm thu được dùng để chế tạo thuốc súng không khói là:",
+        options: ["Cellulose trinitrate: [C₆H₇O₂(ONO₂)₃]ₙ", "Cellulose triacetate", "Glucose", "Sorbitol"],
+        answer: 0,
+        explanation: "Mỗi mắt xích C₆H₁₀O₅ của cellulose có 3 nhóm -OH tự do, phản ứng với 3HNO₃ tạo ra cellulose trinitrate dễ cháy nổ mạnh mà không sinh ra khói đen."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - HÓA HỌC - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Amine là dẫn xuất được tạo thành khi thay thế một hay nhiều nguyên tử hydrogen trong phân tử nào bằng một hay nhiều gốc hydrocarbon?",
+        options: ["Phân tử Ammonia (NH₃)", "Phân tử Nước (H₂O)", "Phân tử Methane (CH₄)", "Phân tử Nitric acid (HNO₃)"],
+        answer: 0,
+        explanation: "Khi thay thế một, hai hoặc ba nguyên tử H trong NH₃ bằng các gốc hydrocarbon, ta lần lượt thu được amine bậc một (RNH₂), bậc hai (R₁NHR₂) và bậc ba (R₁NR₂R₃)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Vì nguyên tử Nitrogen trong nhóm chức amine còn cặp electron chưa liên kết có khả năng nhận proton (H⁺) nên các amine thể hiện tính chất hóa học đặc trưng là:",
+        options: ["Tính base yếu", "Tính acid mạnh", "Tính lưỡng tính", "Tính trung tính hoàn toàn"],
+        answer: 0,
+        explanation: "Theo thuyết Brønsted - Lowry, các amine nhận H⁺ từ nước hoặc acid nên có tính base yếu (các alkylamine như CH₃NH₂ làm quỳ tím ẩm hóa xanh, riêng aniline C₆H₅NH₂ có tính base rất yếu không làm đổi màu quỳ tím)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Nhỏ vài giọt nước Bromine (Br₂) vào ống nghiệm đựng dung dịch Aniline (C₆H₅NH₂), hiện tượng quan sát được là:",
+        options: ["Nước bromine mất màu và xuất hiện ngay kết tủa màu trắng của 2,4,6-tribromoaniline", "Xuất hiện kết tủa màu xanh lam", "Có khí không màu thoát ra", "Không có hiện tượng gì xảy ra"],
+        answer: 0,
+        explanation: "Nhóm -NH₂ hoạt hóa mạnh nhân benzene làm aniline thế dễ dàng với Br₂ tạo kết tủa trắng 2,4,6-tribromoaniline (dùng để nhận biết aniline)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Amino acid là hợp chất hữu cơ tạp chức mà trong phân tử chứa đồng thời hai nhóm chức nào?",
+        options: ["Nhóm amino (-NH₂) có tính base và nhóm carboxyl (-COOH) có tính acid", "Nhóm hydroxyl (-OH) và nhóm aldehyde (-CHO)", "Nhóm ester (-COO-) và nhóm ketone (-CO-)", "Hai nhóm carboxyl (-COOH)"],
+        answer: 0,
+        explanation: "Vì chứa đồng thời nhóm -NH₂ (nhận H⁺, tính base) và nhóm -COOH (nhường H⁺, tính acid) nên các amino acid đều là những hợp chất có tính chất lưỡng tính."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Ở điều kiện thường, các amino acid tồn tại ở trạng thái rắn kết tinh, có nhiệt độ nóng chảy cao và dễ tan trong nước vì:",
+        options: ["Chúng tồn tại chủ yếu ở dạng Ion lưỡng cực (H₃N⁺-R-COO⁻)", "Chúng có phân tử khối rất nhỏ", "Chúng là các chất khí hóa lỏng", "Chúng chỉ chứa liên kết cộng hóa trị không phân cực"],
+        answer: 0,
+        explanation: "Do nhóm -COOH chuyển proton H⁺ sang nhóm -NH₂ tạo thành ion lưỡng cực H₃N⁺-R-COO⁻ có tương tác tĩnh điện mạnh như hợp chất ion."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Dung dịch của α-amino acid nào sau đây làm quỳ tím chuyển sang màu xanh do trong phân tử có 2 nhóm -NH₂ nhưng chỉ có 1 nhóm -COOH?",
+        options: ["Lysine: H₂N-[CH₂]₄-CH(NH₂)-COOH", "Glycine: H₂N-CH₂-COOH (không làm đổi màu quỳ tím)", "Alanine: CH₃-CH(NH₂)-COOH (không đổi màu)", "Glutamic acid: HOOC-CH₂-CH₂-CH(NH₂)-COOH (làm quỳ tím hóa hồng/đỏ)"],
+        answer: 0,
+        explanation: "Lysine có 2 nhóm -NH₂ và 1 nhóm -COOH nên dung dịch có môi trường base (quỳ tím hóa xanh); Glutamic acid có 1 nhóm -NH₂ và 2 nhóm -COOH nên có môi trường acid (quỳ tím hóa đỏ); Glycine, Alanine, Valine có số nhóm bằng nhau nên trung tính."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Muối Monosodium glutamate (bột ngọt / mì chính dùng làm gia vị thực phẩm) là muối monosodium của amino acid nào?",
+        options: ["Glutamic acid", "Glycine", "Alanine", "Valine"],
+        answer: 0,
+        explanation: "Monosodium glutamate (MSG) được sản xuất từ glutamic acid, dùng làm gia vị điều vị tạo vị ngọt đạm (umami) cho món ăn."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Liên kết của nhóm -CO- với nhóm -NH- giữa hai đơn vị α-amino acid được gọi là:",
+        options: ["Liên kết peptide (-CO-NH-)", "Liên kết glycoside", "Liên kết hydrogen", "Liên kết ion"],
+        answer: 0,
+        explanation: "Liên kết -CO-NH- nối hai gốc α-amino acid được gọi là liên kết peptide. Một phân tử peptide tạo bởi k gốc α-amino acid mạch hở sẽ có (k - 1) liên kết peptide."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Phản ứng màu Biuret (cho peptide hoặc protein tác dụng với Cu(OH)₂ trong môi trường kiềm tạo phức chất màu tím đặc trưng) xảy ra đối với những hợp chất nào?",
+        options: ["Các peptide có từ 2 liên kết peptide trở lên (Tripeptide trở lên) và Protein (Dipeptide không có phản ứng màu biuret)", "Chỉ riêng các amino acid tự do", "Dipeptide như Gly-Ala", "Glucose và Saccharose"],
+        answer: 0,
+        explanation: "Phản ứng màu biuret dùng để nhận biết protein và các peptide từ tripeptide trở lên (cần có tối thiểu 2 liên kết -CO-NH- trong phân tử để tạo phức màu tím với Cu²⁺)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Polymer là những hợp chất có phân tử khối rất lớn do nhiều đơn vị cơ sở nhỏ gọi là gì liên kết với nhau tạo nên?",
+        options: ["Các mắt xích (được tạo ra từ các phân tử nhỏ gọi là Monomer)", "Các hạt nguyên tử kim loại", "Các phân tử nước", "Các ion vô cơ"],
+        answer: 0,
+        explanation: "Polymer được tổng hợp từ các monomer bằng hai phương pháp chính: Phản ứng trùng hợp (cộng hợp liên tiếp không giải phóng phân tử nhỏ) hoặc Phản ứng trùng ngưng (kèm giải phóng phân tử nhỏ như H₂O)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Chất dẻo Polyethylene (PE) được điều chế trực tiếp bằng phản ứng trùng hợp monomer nào sau đây?",
+        options: ["Ethylene (CH₂=CH₂)", "Propylene (CH₂=CH-CH₃)", "Vinyl chloride (CH₂=CHCl)", "Styrene (C₆H₅-CH=CH₂)"],
+        answer: 0,
+        explanation: "Trùng hợp ethylene: nCH₂=CH₂ →(t°, p, xt) (-CH₂-CH₂-)ₙ (Polyethylene - PE)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Vật liệu 'Composite' (vật liệu tổ hợp) được cấu tạo từ hai thành phần chính là gì?",
+        options: ["Vật liệu nền (thường là nhựa polymer) và Vật liệu cốt (sợi thủy tinh, sợi carbon hoặc bột khoáng) giúp tăng độ bền cơ học và giảm khối lượng", "Chỉ gồm một kim loại nguyên chất duy nhất", "Hỗn hợp nước và muối ăn", "Cao su thiên nhiên nguyên chất"],
+        answer: 0,
+        explanation: "Vật liệu composite kết hợp vật liệu nền (giữ liên kết) và vật liệu cốt (chịu lực như sợi carbon, sợi thủy tinh), có độ bền vượt trội, nhẹ, chịu ăn mòn, dùng chế tạo vỏ máy bay, tàu thuyền."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Loại tơ nào sau đây thuộc nhóm 'Tơ thiên nhiên' có sẵn trong tự nhiên?",
+        options: ["Tơ tằm (bản chất protein) và Sợi bông (bản chất cellulose)", "Tơ nylon-6,6 và Tơ capron (tơ tổng hợp)", "Tơ nitron (tơ olon)", "Tơ visco và Tơ cellulose acetate (tơ bán tổng hợp/nhân tạo)"],
+        answer: 0,
+        explanation: "Tơ thiên nhiên gồm bông, đay, gai, tơ tằm, lông cừu; Tơ bán tổng hợp gồm visco, acetate; Tơ tổng hợp gồm nylon-6, nylon-6,6, capron, nitron."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Thành phần chính của mủ Cao su thiên nhiên lấy từ cây cao su là polymer của monomer nào?",
+        options: ["Isoprene (cis-1,4-polyisoprene: (-CH₂-C(CH₃)=CH-CH₂-)ₙ)", "Buta-1,3-diene", "Chloroprene", "Ethylene"],
+        answer: 0,
+        explanation: "Cao su thiên nhiên là polymer của isoprene có cấu hình cis-1,4 đều đặn nên có tính đàn hồi rất cao."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK1",
+        question: "Quá trình 'Lưu hóa cao su' (đun nóng cao su với lưu huỳnh S) giúp làm tăng tính đàn hồi, độ bền nhiệt và lâu mòn của cao su là do:",
+        options: ["Tạo ra các cầu nối disulfide (-S-S-) nối giữa các mạch phân tử cao su tạo thành mạng không gian bền vững", "Cắt đứt mạch cao su thành các phân tử khí", "Làm cao su tan hoàn toàn trong nước", "Biến cao su thành tơ sợi"],
+        answer: 0,
+        explanation: "Lưu hóa cao su biến cấu trúc mạch không phân nhánh của cao su thô thành cấu trúc mạng không gian nhờ các cầu nối -S-S-, giúp lốp xe chịu mài mòn và đàn hồi vượt trội."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - HÓA HỌC - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Trong một cặp oxi hóa - khử của kim loại Mⁿ⁺/M, dạng oxi hóa và dạng khử lần lượt là:",
+        options: ["Dạng oxi hóa là ion kim loại Mⁿ⁺; dạng khử là nguyên tử kim loại M", "Dạng oxi hóa là M; dạng khử là Mⁿ⁺", "Cả hai đều là chất khử", "Không có sự trao đổi electron"],
+        answer: 0,
+        explanation: "Theo phương trình Mⁿ⁺ + ne ⇌ M: ion Mⁿ⁺ nhận electron là dạng oxi hóa, còn nguyên tử kim loại M nhường electron là dạng khử."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Trong dãy điện hóa của kim loại, khi giá trị thế điện cực chuẩn E°(Mⁿ⁺/M) càng nhỏ (càng âm) thì:",
+        options: ["Tính khử của kim loại M càng mạnh và tính oxi hóa của ion Mⁿ⁺ càng yếu", "Tính khử của kim loại M càng yếu và tính oxi hóa của ion Mⁿ⁺ càng mạnh", "Kim loại M hoàn toàn không tác dụng với acid", "Ion Mⁿ⁺ dễ bị khử nhất"],
+        answer: 0,
+        explanation: "Thế điện cực chuẩn E° càng nhỏ thì dạng khử M càng dễ nhường electron (tính khử mạnh) và dạng oxi hóa Mⁿ⁺ càng khó nhận electron (tính oxi hóa yếu)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Trong Pin điện hóa Galvani (ví dụ pin Zn - Cu), các quá trình xảy ra tại hai điện cực Anode (cực âm) và Cathode (cực dương) là:",
+        options: ["Tại Anode (cực âm Zn) xảy ra quá trình oxi hóa (Zn → Zn²⁺ + 2e); tại Cathode (cực dương Cu) xảy ra quá trình khử (Cu²⁺ + 2e → Cu)", "Tại Anode xảy ra quá trình khử; tại Cathode xảy ra quá trình oxi hóa", "Cả hai cực đều bị tan ra", "Dòng electron chạy từ cực Cu sang cực Zn"],
+        answer: 0,
+        explanation: "Quy tắc chung cho mọi pin và bình điện phân: Anode luôn là nơi xảy ra sự oxi hóa (nhường e), Cathode luôn là nơi xảy ra sự khử (nhận e). Trong pin điện hóa, Anode là cực âm, Cathode là cực dương."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Cho biết thế điện cực chuẩn E°(Zn²⁺/Zn) = -0,76 V và E°(Cu²⁺/Cu) = +0,34 V. Sức điện động chuẩn E°_pin của pin Galvani Zn - Cu bằng:",
+        options: ["1,10 V", "0,42 V", "-1,10 V", "0,76 V"],
+        answer: 0,
+        explanation: "Công thức tính sức điện động chuẩn của pin: E°_pin = E°_cathode(+) - E°_anode(-) = (+0,34) - (-0,76) = 1,10 V."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Quá trình Điện phân (Electrolysis) khác với Pin điện hóa ở bản chất năng lượng nào?",
+        options: ["Điện phân dùng năng lượng dòng điện một chiều để thực hiện phản ứng oxi hóa - khử không tự diễn biến (chuyển điện năng thành hóa năng); còn pin điện hóa chuyển hóa năng thành điện năng", "Điện phân tự sinh ra dòng điện xoay chiều", "Điện phân không có sự tham gia của electron", "Trong bình điện phân không có ion di chuyển"],
+        answer: 0,
+        explanation: "Pin điện hóa biến đổi hóa năng thành điện năng nhờ phản ứng tự diễn biến; Điện phân dùng dòng điện một chiều ngoài cưỡng bức phản ứng oxi hóa - khử xảy ra."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Để điều chế các kim loại có tính khử rất mạnh (như K, Na, Ca, Mg, Al) trong công nghiệp, người ta bắt buộc phải sử dụng phương pháp nào?",
+        options: ["Phương pháp điện phân nóng chảy (muối halide đối với kim loại kiềm, kiềm thổ hoặc điện phân nóng chảy Al₂O₃ để điều chế nhôm)", "Phương pháp thủy luyện (dùng kim loại đẩy muối trong dung dịch)", "Phương pháp nhiệt luyện (dùng CO khử oxide)", "Nung nóng muối carbonate"],
+        answer: 0,
+        explanation: "Các kim loại từ K đến Al có tính khử rất mạnh, ion của chúng không bị khử bởi CO hay trong dung dịch nước, nên duy nhất chỉ điều chế được bằng điện phân nóng chảy."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Những tính chất vật lí chung của mọi kim loại (tính dẻo, tính dẫn điện, tính dẫn nhiệt và ánh kim) đều do nguyên nhân cấu tạo nào gây ra?",
+        options: ["Sự có mặt của các electron tự do trong mạng tinh thể kim loại", "Do khối lượng riêng của kim loại lớn", "Do lực hút van der Waals giữa các phân tử", "Do các hạt neutron chuyển động tự do"],
+        answer: 0,
+        explanation: "Trong mạng tinh thể kim loại, các electron hóa trị tách khỏi nguyên tử chuyển động tự do tạo thành 'biển electron tự do', gây nên cả 4 tính chất vật lí chung: dẻo, dẫn điện, dẫn nhiệt, ánh kim."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Kim loại dẫn điện và dẫn nhiệt tốt nhất trong tất cả các kim loại là:",
+        options: ["Bạc (Ag, đứng tiếp theo là Cu > Au > Al > Fe)", "Đổng (Cu)", "Nhôm (Al)", "Sắt (Fe)"],
+        answer: 0,
+        explanation: "Thứ tự độ dẫn điện và dẫn nhiệt của kim loại giảm dần theo dãy: Ag > Cu > Au > Al > Fe."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Kim loại có độ cứng lớn nhất (dùng chế tạo mũi khoan) và kim loại có nhiệt độ nóng chảy cao nhất (dùng làm dây tóc bóng đèn sợi đốt) lần lượt là:",
+        options: ["Chromium (Cr - cứng nhất) và Tungsten/Vonfram (W - nóng chảy ở 3410 °C)", "Sắt (Fe) và Đồng (Cu)", "Vàng (Au) và Bạc (Ag)", "Thủy ngân (Hg) và Caesium (Cs)"],
+        answer: 0,
+        explanation: "Cr là kim loại cứng nhất (cắt được thủy tinh); W có nhiệt độ nóng chảy cao nhất (3410 °C); Hg có nhiệt độ nóng chảy thấp nhất (-39 °C, thể lỏng ở điều kiện thường)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Các kim loại nào sau đây bị thụ động hóa (không phản ứng) trong dung dịch HNO₃ đặc, nguội và H₂SO₄ đặc, nguội?",
+        options: ["Nhôm (Al), Sắt (Fe) và Chromium (Cr)", "Đồng (Cu), Bạc (Ag) và Kẽm (Zn)", "Sodium (Na), Potassium (K) và Calcium (Ca)", "Magnesium (Mg) và Chì (Pb)"],
+        answer: 0,
+        explanation: "Al, Fe, Cr bị thụ động hóa trong HNO₃ đặc nguội và H₂SO₄ đặc nguội (nhờ tạo lớp màng oxide bền bảo vệ), do đó có thể dùng bình nhôm hoặc sắt để chuyên chở các acid đặc nguội này."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Hợp kim 'Thép không gỉ (Inox)' được sử dụng rộng rãi làm dụng cụ y tế và đồ gia dụng là hợp kim của Sắt (Fe) với nguyên tố chính nào giúp chống ăn mòn vượt trội?",
+        options: ["Chromium (Cr) và Nickel (Ni)", "Chì (Pb) và Thủy ngân (Hg)", "Sodium (Na)", "Lưu huỳnh (S)"],
+        answer: 0,
+        explanation: "Thép không gỉ (Inox) là hợp kim của Fe chứa khoảng 10,5% - 18% Cr và 8% - 10% Ni, có độ bền cơ học và khả năng chống gỉ tuyệt vời."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Ba điều kiện cần và đủ để xảy ra hiện tượng 'Ăn mòn điện hóa học' (như vỏ tàu biển bằng thép bị gỉ trong nước biển) là gì?",
+        options: ["Hai điện cực khác nhau về bản chất (2 kim loại hoặc kim loại - phi kim); hai điện cực tiếp xúc trực tiếp/gián tiếp với nhau; và cùng tiếp xúc với một dung dịch chất điện li", "Chỉ cần 1 kim loại nguyên chất để trong không khí khô", "Hai kim loại đặt cách xa nhau trong chân không", "Nhiệt độ phải trên 1000 °C"],
+        answer: 0,
+        explanation: "Ăn mòn điện hóa là quá trình oxi hóa - khử tạo dòng điện chạy từ kim loại mạnh hơn (anode, bị ăn mòn trước) sang kim loại yếu hơn (cathode) khi thỏa mãn đủ 3 điều kiện trên."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Để bảo vệ vỏ tàu biển làm bằng thép (chứa Fe) không bị nước biển ăn mòn theo phương pháp điện hóa (bảo vệ bằng điện cực hi sinh), người ta gắn vào phần vỏ tàu chìm dưới nước những tấm kim loại nào?",
+        options: ["Những tấm Kẽm (Zn - vì Zn có tính khử mạnh hơn Fe nên Zn đóng vai trò anode chịu ăn mòn thay cho vỏ thép)", "Những tấm Đồng (Cu)", "Những tấm Bạc (Ag)", "Những tấm Chì (Pb)"],
+        answer: 0,
+        explanation: "Phương pháp bảo vệ điện hóa dùng kim loại hoạt động mạnh hơn sắt (thường là Zn) gắn vào vỏ tàu; Zn trở thành cực âm (anode) bị oxi hóa tan dần, còn vỏ tàu thép là cực dương được bảo vệ nguyên vẹn."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Trong công nghiệp luyện kim, phương pháp 'Nhiệt luyện' (dùng C, CO, H₂ hoặc Al ở nhiệt độ cao để khử oxide kim loại) dùng để điều chế các kim loại có mức độ hoạt động nào?",
+        options: ["Các kim loại hoạt động trung bình và yếu đứng sau Al trong dãy hoạt động hóa học (như Zn, Fe, Sn, Pb, Cu)", "Các kim loại kiềm như Na, K", "Kim loại Nhôm (Al) và Magnesium (Mg)", "Chỉ điều chế được Vàng (Au)"],
+        answer: 0,
+        explanation: "C, CO, H₂ ở nhiệt độ cao chỉ khử được các oxide của kim loại đứng sau Al (ví dụ Fe₂O₃ + 3CO →(t°) 2Fe + 3CO₂ trong lò cao luyện gang)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "GK2",
+        question: "Việc thu gom và Tái chế kim loại phế liệu (như vỏ lon nhôm, sắt thép vụn, đồng phế liệu) mang lại ý nghĩa kinh tế và môi trường to lớn nào?",
+        options: ["Tiết kiệm tới 90 - 95% năng lượng điện so với sản xuất mới từ quặng, bảo tồn nguồn tài nguyên khoáng sản và giảm thiểu ô nhiễm môi trường, khí thải nhà kính", "Làm tốn điện hơn gấp đôi so với điện phân quặng mới", "Làm kim loại mất đi tính dẫn điện", "Chỉ tạo ra phế phẩm không sử dụng được"],
+        answer: 0,
+        explanation: "Tái chế nhôm từ vỏ lon chỉ tiêu tốn khoảng 5% năng lượng so với việc điện phân nóng chảy quặng bauxite (Al₂O₃), đồng thời giảm lượng bùn đỏ và khí thải độc hại."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - HÓA HỌC - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Các nguyên tố kim loại kiềm (nhóm IA: Li, Na, K, Rb, Cs) có cấu hình electron lớp ngoài cùng và số oxi hóa duy nhất trong hợp chất là:",
+        options: ["Cấu hình ns¹; số oxi hóa duy nhất là +1", "Cấu hình ns²; số oxi hóa là +2", "Cấu hình ns²np¹; số oxi hóa là +3", "Số oxi hóa thay đổi từ +1 đến +7"],
+        answer: 0,
+        explanation: "Kim loại kiềm có 1 electron ở phân lớp ngoài cùng ns¹, rất dễ nhường 1 electron này nên là những kim loại có tính khử mạnh nhất và luôn có số oxi hóa +1 trong hợp chất."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Để bảo quản kim loại Sodium (Na) và Potassium (K) trong phòng thí nghiệm không bị oxi hóa bởi không khí và hơi ẩm, người ta ngâm chìm chúng trong chất lỏng nào?",
+        options: ["Dầu hỏa khan", "Nước cất (H₂O)", "Cồn 96° (C₂H₅OH)", "Dung dịch acid HCl"],
+        answer: 0,
+        explanation: "Na và K phản ứng mãnh liệt với nước và alcohol giải phóng khí H₂ dễ gây nổ, nên phải ngâm chìm trong dầu hỏa khan (hydrocarbon trơ không tác dụng với kim loại kiềm)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Khi đốt nóng các hợp chất của Sodium (Na⁺) và Potassium (K⁺) trên ngọn lửa đèn khí không màu, ngọn lửa sẽ chuyển sang màu sắc đặc trưng lần lượt là:",
+        options: ["Ion Na⁺ cho ngọn lửa màu vàng tươi; ion K⁺ cho ngọn lửa màu tím hoa cà", "Na⁺ màu đỏ son; K⁺ màu xanh lục", "Cả hai đều cho ngọn lửa màu trắng", "Na⁺ màu tím; K⁺ màu vàng"],
+        answer: 0,
+        explanation: "Thử màu ngọn lửa là phương pháp vật lí đặc trưng để nhận biết cation kim loại kiềm: Li⁺ (đỏ tía), Na⁺ (vàng tươi), K⁺ (tím)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Hợp chất Sodium hydrogencarbonate (NaHCO₃ - còn gọi là thuốc muối hay bột nở baking soda) được dùng làm thuốc giảm đau dạ dày do thừa acid vì có phản ứng nào?",
+        options: ["NaHCO₃ + HCl → NaCl + CO₂↑ + H₂O (trung hòa bớt lượng acid HCl dư trong dịch vị dạ dày)", "NaHCO₃ làm tăng nồng độ HCl trong dạ dày", "NaHCO₃ là một base cực mạnh gây bỏng", "NaHCO₃ không phản ứng với acid"],
+        answer: 0,
+        explanation: "Ion HCO₃⁻ có tính lưỡng tính, dễ dàng phản ứng nhẹ nhàng với H⁺ dư trong dịch vị dạ dày (HCl) giúp giảm nhanh triệu chứng ợ chua, đau dạ dày."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Trong công nghiệp sản xuất Soda (Na₂CO₃) bằng phương pháp Solvay, nguyên liệu chính ban đầu rẻ tiền và sẵn có được sử dụng là:",
+        options: ["Muối ăn (NaCl), đá vôi (CaCO₃) và khí ammonia (NH₃)", "Kim loại Na nguyên chất và kim cương", "Dung dịch KOH và khí Cl₂", "Quặng bauxite"],
+        answer: 0,
+        explanation: "Phương pháp tuần hoàn Solvay sản xuất NaHCO₃ và Na₂CO₃ đi từ NaCl bão hòa, CO₂ (từ nung đá vôi CaCO₃) và NH₃ được tái sinh tuần hoàn."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Trong nhóm IIA (kim loại kiềm thổ: Be, Mg, Ca, Sr, Ba), kim loại nào KHÔNG phản ứng với nước ở bất kì nhiệt độ nào?",
+        options: ["Beryllium (Be)", "Calcium (Ca)", "Barium (Ba)", "Strontium (Sr)"],
+        answer: 0,
+        explanation: "Be không tác dụng với nước dù ở nhiệt độ cao; Mg khử chậm nước ở nhiệt độ thường và nhanh với hơi nước nóng; Ca, Sr, Ba tác dụng mạnh với nước ngay ở nhiệt độ thường."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Thạch cao nung (CaSO₄·0,5H₂O hoặc CaSO₄·H₂O) có khả năng kết đông cứng lại khi nhào trộn với nước nên được ứng dụng rộng rãi để:",
+        options: ["Đúc tượng, bó bột cố định xương gãy trong y tế và làm trần thạch cao trang trí nội thất", "Làm phân đạm bón lúa", "Làm nhiên liệu đốt lò", "Làm chất tẩy rửa quần áo"],
+        answer: 0,
+        explanation: "Nung thạch cao sống (CaSO₄·2H₂O) ở khoảng 150 °C thu được thạch cao nung (CaSO₄·0,5H₂O); khi trộn với nước nó kết hợp lại thành CaSO₄·2H₂O rắn chắc và nở thể tích nhẹ nên điền đầy khuôn đúc rất sắc nét."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Nước cứng (Hard water) là nước tự nhiên có chứa nhiều các cation nào sau đây?",
+        options: ["Cation Ca²⁺ và Mg²⁺", "Cation Na⁺ và K⁺", "Cation H⁺ và NH₄⁺", "Anion Cl⁻ và NO₃⁻"],
+        answer: 0,
+        explanation: "Nước chứa nhiều ion Ca²⁺ và Mg²⁺ được gọi là nước cứng; nước chứa ít hoặc không chứa hai ion này gọi là nước mềm."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Nước cứng tạm thời là nước cứng chứa muối Ca(HCO₃)₂ và Mg(HCO₃)₂. Cách đơn giản nhất trong gia đình để làm mất tính cứng tạm thời của nước là:",
+        options: ["Đun sôi nước (khi đun sôi, muối hydrogencarbonate phân hủy tạo kết tủa CaCO₃↓ và MgCO₃↓ lắng xuống đáy ấm)", "Cho thêm muối ăn NaCl vào nước", "Cho dung dịch HCl vào nước", "Để nước trong tủ lạnh"],
+        answer: 0,
+        explanation: "Khi đun sôi: Ca(HCO₃)₂ →(t°) CaCO₃↓ + CO₂↑ + H₂O. Các ion Ca²⁺, Mg²⁺ tách ra dưới dạng cặn trắng đáy ấm, nước phía trên trở thành nước mềm."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Hóa chất nào sau đây có thể dùng để làm mềm được CẢ nước cứng tạm thời, nước cứng vĩnh cửu và nước cứng toàn phần?",
+        options: ["Dung dịch Sodium carbonate (Na₂CO₃) hoặc Sodium phosphate (Na₃PO₄)", "Dung dịch nước vôi trong Ca(OH)₂", "Dung dịch HCl", "Chỉ dùng phương pháp đun sôi"],
+        answer: 0,
+        explanation: "Ion CO₃²⁻ (trong Na₂CO₃) và PO₄³⁻ (trong Na₃PO₄) kết hợp với toàn bộ ion Ca²⁺ và Mg²⁺ tạo kết tủa không tan CaCO₃, MgCO₃ (hoặc phosphate), làm mềm mọi loại nước cứng."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Đặc điểm cấu hình electron chung của các nguyên tố Kim loại chuyển tiếp dãy thứ nhất (từ Scandium Z = 21 đến Copper Z = 29) là:",
+        options: ["Đang xây dựng dở phân lớp 3d có dạng [Ar] 3d¹⁻¹⁰ 4s¹⁻²", "Chỉ có các electron ở phân lớp s", "Phân lớp 3d luôn trống hoàn toàn", "Không có electron ở lớp thứ 4"],
+        answer: 0,
+        explanation: "Các kim loại chuyển tiếp dãy thứ nhất có cấu hình [Ar]3d¹⁻¹⁰4s¹⁻² (lưu ý hai trường hợp bán bão hòa và bão hòa sớm: Cr (Z=24): [Ar]3d⁵4s¹ và Cu (Z=29): [Ar]3d¹⁰4s¹)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Điểm khác biệt nổi bật về tính chất hóa học của các nguyên tố kim loại chuyển tiếp (như Fe, Cu, Cr, Mn) so với kim loại nhóm IA, IIA là:",
+        options: ["Có nhiều trạng thái số oxi hóa khác nhau trong hợp chất và các cation của chúng thường có màu sắc đặc trưng, dễ tạo phức chất", "Chỉ có duy nhất một số oxi hóa +1", "Tất cả muối của chúng đều không có màu", "Có nhiệt độ nóng chảy rất thấp và rất mềm"],
+        answer: 0,
+        explanation: "Do cả electron phân lớp 4s và 3d đều có thể tham gia liên kết nên kim loại chuyển tiếp có nhiều số oxi hóa (ví dụ Fe có +2, +3; Mn có +2, +4, +6, +7) và ion có màu (Cu²⁺ xanh lam, Fe³⁺ vàng nâu)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Trong Phức chất [Cu(NH₃)₄](OH)₂ có màu xanh lam thẫm, cấu tạo của cầu nội [Cu(NH₃)₄]²⁺ gồm:",
+        options: ["Nguyên tử trung tâm là cation Cu²⁺; các phối tử (ligand) là 4 phân tử NH₃ với số phối trí bằng 4", "Nguyên tử trung tâm là N; phối tử là Cu", "Nguyên tử trung tâm là OH⁻", "Số phối trí của phức chất bằng 2"],
+        answer: 0,
+        explanation: "Trong phức chất [Cu(NH₃)₄]²⁺, ion kim loại chuyển tiếp Cu²⁺ có orbital trống đóng vai trò nguyên tử trung tâm; 4 phân tử NH₃ có cặp electron hóa trị riêng là các phối tử liên kết cho - nhận với Cu²⁺."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Liên kết hóa học hình thành giữa Nguyên tử trung tâm (Mⁿ⁺) và các Phối tử (L) trong phức chất có bản chất là:",
+        options: ["Liên kết cho - nhận (phối tử cho cặp electron chưa liên kết vào orbital trống của nguyên tử trung tâm)", "Liên kết metallic thuần túy", "Tương tác van der Waals", "Liên kết cộng hóa trị giữa hai nguyên tử H"],
+        answer: 0,
+        explanation: "Bản chất liên kết giữa nguyên tử trung tâm và phối tử trong cầu nội phức chất là liên kết cộng hóa trị kiểu cho - nhận (phối trí)."
+    },
+    {
+        grade: "12", subject: "hoa", term: "CK2",
+        question: "Các phức chất sinh học tự nhiên đóng vai trò sống còn đối với sự sống trên Trái Đất gồm:",
+        options: ["Heme B trong Hemoglobin (nguyên tử trung tâm Fe²⁺ giúp vận chuyển O₂ trong máu) và Chlorophyll/Diệp lục (nguyên tử trung tâm Mg²⁺ giúp cây quang hợp)", "Muối ăn NaCl và đường kính", "Khí CO₂ và nước", "Tinh bột và chất béo"],
+        answer: 0,
+        explanation: "Nhân Heme (phức chất của Fe²⁺) trong hồng cầu vận chuyển dưỡng khí, Chlorophyll (phức chất của Mg²⁺) quang hợp, Vitamin B12 (phức chất của Co) và thuốc Cisplatin (phức chất của Pt điều trị ung thư) là những ứng dụng quan trọng bậc nhất của phức chất."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - SINH HỌC - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Trong quá trình tái bản (nhân đôi) DNA ở sinh vật, enzyme DNA polymerase tổng hợp mạch mới theo chiều nào?",
+        options: ["Luôn tổng hợp mạch mới theo chiều 5' → 3' (dựa trên mạch khuôn có chiều 3' → 5')", "Tổng hợp theo cả hai chiều 3' → 5' và 5' → 3'", "Chỉ tổng hợp theo chiều 3' → 5'", "Tổng hợp không cần mạch khuôn"],
+        answer: 0,
+        explanation: "Enzyme DNA polymerase chỉ có thể gắn thêm nucleotide mới vào đầu 3'-OH tự do nên mạch mới luôn được kéo dài theo chiều 5' → 3' (trên mạch khuôn 3'→5' tổng hợp liên tục, trên mạch khuôn 5'→3' tổng hợp gián đoạn thành các đoạn Okazaki)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Quá trình Phiên mã (Transcription) là quá trình truyền thông tin di truyền từ:",
+        options: ["Mạch khuôn của gene (DNA) sang phân tử RNA theo nguyên tắc bổ sung (A_gốc - U, T_gốc - A, G_gốc - C, C_gốc - G)", "Phân tử mRNA sang chuỗi polypeptide", "Phân tử DNA mẹ sang hai phân tử DNA con", "Protein sang phân tử DNA"],
+        answer: 0,
+        explanation: "Enzyme RNA polymerase trượt dọc mạch khuôn (mạch 3' → 5') của gene để tổng hợp mạch RNA theo chiều 5' → 3'."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Mã di truyền trên phân tử mRNA là mã bộ ba (codon), trong đó bộ ba mở đầu quy định amino acid mở đầu và các bộ ba kết thúc lần lượt là:",
+        options: ["Bộ ba mở đầu là 5'AUG3'; ba bộ ba kết thúc là 5'UAA3', 5'UAG3', 5'UGA3'", "Bộ ba mở đầu là UAA; kết thúc là AUG", "Bộ ba mở đầu là UUU; kết thúc là GGG", "Tất cả 64 bộ ba đều mã hóa amino acid"],
+        answer: 0,
+        explanation: "Trên mRNA có 64 bộ ba: 1 bộ ba mở đầu 5'AUG3' (mã hóa Methionine ở nhân thực hoặc formyl-Methionine ở nhân sơ) và 3 bộ ba kết thúc (5'UAA3', 5'UAG3', 5'UGA3' không mã hóa amino acid nào)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Theo mô hình điều hòa biểu hiện gene Operon Lac của Jacob và Monod ở vi khuẩn E. coli, khi trong môi trường có đường Lactose thì chuyện gì xảy ra?",
+        options: ["Allolactose (đồng phân của lactose) đóng vai trò chất cảm ứng bám vào protein ức chế làm nó biến đổi cấu hình không bám được vào vùng vận hành O, giúp các gene cấu trúc Z, Y, A được phiên mã", "Protein ức chế bám chặt vào vùng vận hành O ngăn cản phiên mã", "Gene điều hòa R ngừng tổng hợp protein ức chế", "Vi khuẩn tự hủy diệt hệ gene"],
+        answer: 0,
+        explanation: "Khi có lactose, chất cảm ứng bất hoạt protein ức chế, giải phóng vùng O cho enzyme RNA polymerase phiên mã nhóm gene cấu trúc (lacZ, lacY, lacA) để tạo enzyme phân giải lactose."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Đột biến điểm (Point mutation) là loại đột biến gene liên quan đến sự biến đổi của:",
+        options: ["Một cặp nucleotide trên gene (gồm các dạng: mất 1 cặp, thêm 1 cặp hoặc thay thế 1 cặp nucleotide)", "Một đoạn lớn gồm hàng nghìn cặp nucleotide", "Số lượng toàn bộ bộ nhiễm sắc thể trong tế bào", "Cấu trúc của màng nhân"],
+        answer: 0,
+        explanation: "Đột biến điểm chỉ liên quan đến 1 cặp nucleotide. Dạng thay thế 1 cặp nucleotide ít gây hậu quả nhất, còn mất hoặc thêm 1 cặp gây 'đột biến dịch khung' làm thay đổi toàn bộ các bộ ba từ vị trí đột biến trở về sau."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Đơn vị cấu trúc cơ bản của Nhiễm sắc thể ở sinh vật nhân thực được tạo bởi một đoạn DNA (khoảng 146 cặp nucleotide) quấn 1¾ vòng quanh khối cầu gồm 8 phân tử protein histone gọi là:",
+        options: ["Nucleosome", "Operon", "Plasmid", "Ribosome"],
+        answer: 0,
+        explanation: "Chuỗi nucleosome tạo nên sợi cơ bản (đường kính 10 nm) → sợi nhiễm sắc (30 nm) → vùng xếp cuộn (300 nm) → chromatid (700 nm)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Trong các dạng đột biến cấu trúc nhiễm sắc thể, dạng đột biến nào làm tăng số lượng bản sao của một gene trên NST, tạo điều kiện hình thành gene mới trong tiến hóa?",
+        options: ["Đột biến lặp đoạn NST", "Đột biến mất đoạn NST", "Đột biến đảo đoạn NST", "Đột biến chuyển đoạn NST"],
+        answer: 0,
+        explanation: "Đột biến lặp đoạn làm một đoạn NST được lặp lại một hay nhiều lần, làm tăng hoặc giảm cường độ biểu hiện tính trạng (như lặp đoạn làm tăng hoạt tính enzyme amylase ở đại mạch sản xuất bia)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Hội chứng Down ở người (cơ thể có 47 NST, chậm phát triển trí tuệ, cổ ngắn, mắt một mí) là do dạng đột biến số lượng nhiễm sắc thể nào?",
+        options: ["Thể ba ở cặp nhiễm sắc thể thường số 21 (có 3 NST số 21 trong tế bào: 2n + 1 = 47)", "Thể một ở cặp NST giới tính (XO)", "Thể tam bội (3n)", "Đột biến đảo đoạn NST số 5"],
+        answer: 0,
+        explanation: "Hội chứng Down là thể lệch bội dạng thể ba (2n + 1) có 3 NST ở cặp số 21, thường do sự không phân li của cặp NST 21 trong giảm phân tạo trứng ở người mẹ lớn tuổi."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Theo Quy luật phân li của Gregor Mendel, phép lai giữa hai cơ thể dị hợp tử một cặp gene: Aa × Aa (trội hoàn toàn) sẽ cho đời con có tỉ lệ kiểu gene và tỉ lệ kiểu hình lần lượt là:",
+        options: ["Tỉ lệ kiểu gene 1 AA : 2 Aa : 1 aa; tỉ lệ kiểu hình 3 trội : 1 lặn", "Tỉ lệ kiểu gene 1 : 1; tỉ lệ kiểu hình 1 : 1", "Tỉ lệ kiểu hình 9 : 3 : 3 : 1", "100% kiểu hình trội"],
+        answer: 0,
+        explanation: "Mỗi bên bố mẹ Aa giảm phân cho 2 loại giao tử (1/2 A : 1/2 a), kết hợp tự do tạo hợp tử theo tỉ lệ 1/4 AA : 2/4 Aa : 1/4 aa (3 trội : 1 lặn)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Để kiểm tra kiểu gene của một cá thể mang kiểu hình trội (chưa biết là đồng hợp AA hay dị hợp Aa), Mendel đã sử dụng phép lai nào?",
+        options: ["Phép lai phân tích (lai cá thể mang tính trạng trội đó với cá thể mang tính trạng lặn đồng hợp aa)", "Lai giữa hai cơ thể trội với nhau", "Cho cá thể đó giao phối với bất kì cá thể nào", "Nuôi cấy mô tế bào"],
+        answer: 0,
+        explanation: "Lai phân tích là lai cá thể mang kiểu hình trội với cá thể lặn (aa): nếu đời con đồng tính 100% trội thì cá thể đem lai thuần chủng (AA); nếu phân tính 1 trội : 1 lặn thì cá thể đó dị hợp (Aa)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Cơ sở tế bào học của quy luật 'Phân li độc lập' các cặp tính trạng của Mendel là gì?",
+        options: ["Các cặp gene quy định các tính trạng nằm trên các cặp nhiễm sắc thể tương đồng KHÁC NHAU nên phân li độc lập và tổ hợp tự do trong giảm phân và thụ tinh", "Các gene nằm sát nhau trên cùng một nhiễm sắc thể", "Các gene nằm trong ti thể", "Sự trao đổi chéo giữa hai chromatid"],
+        answer: 0,
+        explanation: "Khi các cặp allele nằm trên các cặp NST tương đồng khác nhau, sự phân li độc lập của các cặp NST trong giảm phân dẫn tới sự phân li độc lập của các cặp gene."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Hiện tượng Liên kết gene hoàn toàn (do Thomas Hunt Morgan phát hiện trên ruồi giấm) có ý nghĩa sinh học quan trọng là:",
+        options: ["Hạn chế sự xuất hiện biến dị tổ hợp, đảm bảo sự di truyền bền vững của từng nhóm tính trạng tốt luôn đi kèm với nhau", "Tạo ra vô số biến dị tổ hợp mới", "Làm thay đổi cấu trúc của phân tử DNA", "Xóa bỏ hoàn toàn tính trạng lặn"],
+        answer: 0,
+        explanation: "Các gene nằm trên cùng một NST tạo thành một nhóm gene liên kết (số nhóm gene liên kết bằng bộ NST đơn bội n của loài), giúp các tính trạng quý di truyền cùng nhau ổn định."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Tần số hoán vị gene (f) giữa hai gene trên cùng một nhiễm sắc thể được tính bằng tổng tỉ lệ các loại giao tử hoán vị và có giá trị tối đa không vượt quá:",
+        options: ["50% (hay 0,5)", "100%", "25%", "75%"],
+        answer: 0,
+        explanation: "Ngay cả khi 100% tế bào sinh giao tử đều xảy ra trao đổi chéo giữa 2 trong 4 chromatid ở kì đầu I giảm phân thì tỉ lệ giao tử mang NST hoán vị tối đa cũng chỉ là 2/4 = 50%. Khoảng cách giữa 2 gene tính bằng đơn vị centiMorgan (1% = 1 cM)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Ở người và động vật có vú, cặp nhiễm sắc thể giới tính ở giới cái và giới đực lần lượt là (ngược lại với chim, bướm, bò sát):",
+        options: ["Giới cái là XX (đồng giao tử), giới đực là XY (dị giao tử)", "Giới cái là XY, giới đực là XX", "Giới cái là XO, giới đực là XX", "Không có nhiễm sắc thể giới tính"],
+        answer: 0,
+        explanation: "Ở người, thú, ruồi giấm: con cái là XX, con đực là XY; còn ở chim, gà, bướm, tằm, bò sát: con đực là ZZ (XX), con cái là ZW (XY)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK1",
+        question: "Quy luật di truyền của các gene lặn nằm trên vùng không tương đồng của NST giới tính X (như bệnh mù màu đỏ - lục, bệnh máu khó đông ở người) có đặc điểm nổi bật là:",
+        options: ["Thường biểu hiện ở nam giới (XᵃY) nhiều hơn nữ giới (XᵃXᵃ) và có hiện tượng di truyền chéo (ông ngoại XᵃY truyền gene cho mẹ XᴬXᵃ rồi truyền cho cháu trai XᵃY)", "Chỉ biểu hiện ở nữ giới và truyền thẳng từ bố sang con trai", "Biểu hiện đồng đều như nhau ở cả hai giới", "Luôn gây chết ngay ở giai đoạn hợp tử"],
+        answer: 0,
+        explanation: "Vì nam giới (XY) chỉ cần 1 allele lặn trên X (XᵃY) đã biểu hiện bệnh, còn nữ giới (XX) phải có đồng hợp 2 allele lặn (XᵃXᵃ) mới bị bệnh."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - SINH HỌC - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Sự di truyền của các gene nằm ngoài nhân (trong Ti thể và Lục lạp, do Correns phát hiện ở cây hoa phấn) tuân theo quy luật đặc trưng nào?",
+        options: ["Di truyền theo dòng mẹ (con lai luôn có kiểu hình giống với cơ thể mẹ trong phép lai thuận nghịch vì tế bào chất của hợp tử chủ yếu nhận từ giao tử cái/trứng)", "Di truyền theo dòng bố 100%", "Phân li theo tỉ lệ 3 : 1 của Mendel", "Di truyền liên kết với giới tính Y"],
+        answer: 0,
+        explanation: "Khi thụ tinh, giao tử đực (tinh trùng/hạt phấn) hầu như chỉ truyền nhân mà không truyền tế bào chất, nên hợp tử nhận ti thể và lục lạp từ tế bào trứng của mẹ (di truyền theo dòng mẹ)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Mối quan hệ giữa Kiểu gene, Môi trường và Kiểu hình của sinh vật được đúc kết chuẩn xác là:",
+        options: ["Kiểu hình là kết quả sự tương tác giữa kiểu gene và môi trường; bố mẹ không truyền đạt cho con tính trạng (kiểu hình) có sẵn mà truyền đạt một kiểu gene quy định 'Mức phản ứng'", "Môi trường quyết định hoàn toàn kiểu hình mà không cần kiểu gene", "Kiểu hình biến đổi do môi trường (thường biến) luôn di truyền được cho đời con", "Mọi tính trạng đều có mức phản ứng bằng không"],
+        answer: 0,
+        explanation: "'Mức phản ứng' là tập hợp các kiểu hình của cùng một kiểu gene tương ứng với các môi trường khác nhau; mức phản ứng do kiểu gene quy định nên di truyền được."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Loại tính trạng nào ở vật nuôi, cây trồng thường có 'Mức phản ứng RỘNG' (chịu ảnh hưởng nhiều của điều kiện chăm sóc, dinh dưỡng, thời tiết)?",
+        options: ["Các tính trạng số lượng (như sản lượng sữa bò, khối lượng lợn thịt, năng suất lúa)", "Các tính trạng chất lượng (như nhóm máu, tỉ lệ bơ trong sữa, màu lông)", "Số lượng nhiễm sắc thể trong tế bào", "Giới tính của thú"],
+        answer: 0,
+        explanation: "Tính trạng số lượng (do nhiều gene quy định) có mức phản ứng rộng, phụ thuộc lớn vào kĩ thuật chăm sóc; còn tính trạng chất lượng có mức phản ứng hẹp, phụ thuộc chủ yếu vào giống (kiểu gene)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Hiện tượng hoa Cẩm tú cầu có cùng một kiểu gene nhưng khi trồng ở đất có độ pH khác nhau lại cho màu hoa khác nhau (từ xanh tím đến hồng đỏ) được gọi là:",
+        options: ["Thường biến (Sự mềm dẻo kiểu hình - biến đổi kiểu hình của cùng một kiểu gene theo môi trường, không biến đổi DNA nên không di truyền)", "Đột biến gene", "Đột biến nhiễm sắc thể", "Biến dị tổ hợp"],
+        answer: 0,
+        explanation: "Thường biến là những biến đổi đồng loạt về kiểu hình của cùng một kiểu gene trước sự thay đổi của môi trường, giúp sinh vật thích nghi mềm dẻo và không di truyền."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Trong Di truyền học quần thể, khi cho một quần thể thực vật 'Tự thụ phấn' (hoặc động vật giao phối gần/cận huyết) qua nhiều thế hệ liên tiếp thì cấu trúc di truyền của quần thể biến đổi như thế nào?",
+        options: ["Tỉ lệ thể dị hợp (Aa) giảm dần (mỗi thế hệ giảm đi một nửa), tỉ lệ thể đồng hợp (AA và aa) tăng dần, làm các gene lặn có hại biểu hiện gây thoái hóa giống", "Tỉ lệ thể dị hợp tăng dần lên 100%", "Cấu trúc di truyền giữ nguyên không đổi qua các thế hệ", "Tạo ra ưu thế lai cao nhất"],
+        answer: 0,
+        explanation: "Qua n thế hệ tự thụ phấn, tỉ lệ dị hợp giảm theo công thức (1/2)ⁿ, dẫn đến phân hóa thành các dòng thuần đồng hợp và làm lộ các gene lặn xấu."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Một quần thể ngẫu phối đạt trạng thái cân bằng di truyền theo Định luật Hardy - Weinberg với 2 allele A (tần số p) và a (tần số q, với p + q = 1) thì có cấu trúc kiểu gene là:",
+        options: ["p² AA + 2pq Aa + q² aa = 1", "p AA + pq Aa + q aa = 1", "p² AA + pq Aa + q² aa = 1", "2p AA + pq Aa + 2q aa = 1"],
+        answer: 0,
+        explanation: "Công thức cân bằng di truyền Hardy - Weinberg: (p + q)² = p²(AA) + 2pq(Aa) + q²(aa) = 1. Tần số allele và thành phần kiểu gene duy trì không đổi qua các thế hệ."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Một quần thể giao phối đang ở trạng thái cân bằng di truyền có tần số allele trội A là p = 0,6 và tần số allele lặn a là q = 0,4. Tỉ lệ kiểu gene dị hợp tử Aa trong quần thể này là:",
+        options: ["0,48 (tức 48%)", "0,36 (tức 36%)", "0,16 (tức 16%)", "0,24 (tức 24%)"],
+        answer: 0,
+        explanation: "Theo định luật Hardy - Weinberg, tần số kiểu gene dị hợp Aa là 2pq = 2 × 0,6 × 0,4 = 0,48 (48%)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Trong công nghệ DNA tái tổ hợp (Công nghệ gene), hai loại enzyme thiết yếu dùng để 'cắt' và 'nối' đoạn gene cần chuyển với thể truyền (vector plasmid) lần lượt là:",
+        options: ["Enzyme giới hạn (Restrictase - kéo cắt phân tử) và Enzyme nối (DNA ligase - hồ dán phân tử)", "Enzyme amylase và pepsin", "Enzyme helicase và catalase", "Enzyme lipase và protease"],
+        answer: 0,
+        explanation: "Restrictase cắt DNA tại trình tự đặc hiệu tạo đầu dính, sau đó enzyme DNA ligase nối đoạn gene cần chuyển vào plasmid tạo thành phân tử DNA tái tổ hợp."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Thành tựu sản xuất Hormone Insulin người với số lượng lớn, giá rẻ để điều trị cho bệnh nhân tiểu đường hiện nay là ứng dụng của công nghệ nào?",
+        options: ["Công nghệ gene (chuyển gene quy định insulin của người vào vi khuẩn E. coli để vi khuẩn sinh sản nhanh tổng hợp insulin)", "Lai hữu tính giữa các chủng vi khuẩn", "Gây đột biến bằng tia phóng xạ", "Chiết xuất từ máu người hiến tặng"],
+        answer: 0,
+        explanation: "Nhờ công nghệ DNA tái tổ hợp, gene tổng hợp insulin của người được đưa vào plasmid của vi khuẩn E. coli, giúp sản xuất insulin tinh khiết quy mô công nghiệp."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Giống 'Lúa vàng (Golden Rice)' được tạo ra bằng công nghệ chuyển gene có khả năng tổng hợp hợp chất quý nào trong hạt gạo giúp phòng chống bệnh mù lòa ở trẻ em?",
+        options: ["Beta-carotene (tiền chất của Vitamin A)", "Vitamin C", "Kháng sinh Penicillin", "Hormone tăng trưởng"],
+        answer: 0,
+        explanation: "Giống lúa vàng mang gene tổng hợp β-carotene chuyển từ cây thủy tiên và vi khuẩn, giúp hạt gạo có màu vàng giàu tiền chất vitamin A."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Trong nghiên cứu Di truyền học người, phương pháp vẽ và phân tích 'Sơ đồ phả hệ (Pedigree)' qua nhiều thế hệ trong một gia đình giúp xác định điều gì?",
+        options: ["Xác định tính trạng/bệnh di truyền là do gene trội hay gene lặn, nằm trên nhiễm sắc thể thường hay nhiễm sắc thể giới tính", "Xác định cấu trúc hiển vi của nhiễm sắc thể", "Chữa khỏi hoàn toàn các bệnh nhiễm trùng", "Tạo ra giống cây trồng mới"],
+        answer: 0,
+        explanation: "Vì ở người không thể áp dụng phép lai thí nghiệm và đẻ ít con, nên phương pháp nghiên cứu phả hệ theo dõi sự di truyền tính trạng qua 3-4 đời giúp tìm ra quy luật di truyền của gene."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Phương pháp 'Nghiên cứu trẻ đồng sinh' (so sánh trẻ đồng sinh cùng trứng có cùng kiểu gene và trẻ đồng sinh khác trứng) giúp các nhà khoa học làm sáng tỏ điều gì?",
+        options: ["Xác định vai trò của kiểu gene (di truyền) và vai trò của môi trường đối với sự hình thành các tính trạng ở người", "Chẩn đoán sớm dị tật thai nhi trong bụng mẹ", "Làm thay đổi nhóm máu của trẻ", "Tăng tuổi thọ của con người lên gấp đôi"],
+        answer: 0,
+        explanation: "Trẻ đồng sinh cùng trứng có kiểu gene giống hệt nhau; sự khác biệt kiểu hình giữa chúng khi sống ở hai môi trường khác nhau phản ánh mức độ tác động của môi trường."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Bệnh Phenylketonuria (PKU - gây rối loạn chuyển hóa amino acid phenylalanine dẫn tới thiểu năng trí tuệ ở trẻ) có thể được phòng tránh biểu hiện bệnh nếu phát hiện sớm sơ sinh bằng cách nào?",
+        options: ["Áp dụng chế độ ăn kiêng hạn chế thức ăn chứa phenylalanine ngay từ khi mới sinh", "Truyền máu định kì hàng tuần", "Phẫu thuật cắt bỏ tuyến giáp", "Tiêm kháng sinh liều cao"],
+        answer: 0,
+        explanation: "Bệnh PKU do đột biến gene lặn thiếu enzyme chuyển hóa phenylalanine thành tyrosine làm chất này ứ đọng đầu độc não; sàng lọc sơ sinh máu gót chân và ăn kiêng kịp thời giúp trẻ phát triển bình thường."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Kĩ thuật 'Chọc dò dịch ối' hoặc 'Sinh thiết tua nhau thai' ở phụ nữ mang thai thuộc lĩnh vực Di truyền y học tư vấn nhằm mục đích gì?",
+        options: ["Chẩn đoán trước sinh để phát hiện sớm các hội chứng đột biến nhiễm sắc thể hoặc bệnh di truyền phân tử ở thai nhi", "Giúp thai nhi tăng cân nhanh gấp đôi", "Xác định nghề nghiệp tương lai của đứa trẻ", "Thay thế cho việc tiêm phòng vaccine"],
+        answer: 0,
+        explanation: "Phân tích tế bào thai nhi bong ra trong dịch ối (làm tiêu bản NST đồ hoặc xét nghiệm DNA) giúp phát hiện sớm hội chứng Down, Edwards, Patau, Thalassemia..."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK1",
+        question: "Liệu pháp gene (Gene therapy) trong y học hiện đại là phương pháp điều trị các bệnh di truyền bằng cách:",
+        options: ["Phục hồi chức năng của các gene bị đột biến gây bệnh bằng cách đưa gene lành vào thay thế hoặc chỉnh sửa gene hỏng trong tế bào bệnh nhân", "Dùng tia X đốt cháy toàn bộ mô bệnh", "Chỉ dùng thuốc giảm đau thông thường", "Thay thế toàn bộ các cơ quan bằng nhựa"],
+        answer: 0,
+        explanation: "Liệu pháp gene can thiệp tận gốc nguyên nhân bệnh di truyền ở mức độ phân tử DNA."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - SINH HỌC - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Trong các bằng chứng tiến hóa, loại bằng chứng nào là 'Bằng chứng tiến hóa trực tiếp' xác thực nhất cho biết lịch sử phát sinh, phát triển của sinh giới qua các đại địa chất?",
+        options: ["Hóa thạch (Fossils - di tích của các sinh vật từng sống trong các thời đại trước còn lưu lại trong các lớp đất đá, hổ phách, băng tuyết)", "Cơ quan tương đồng", "Cơ quan tương tự", "Bằng chứng sinh học phân tử"],
+        answer: 0,
+        explanation: "Hóa thạch là bằng chứng trực tiếp duy nhất; còn các bằng chứng giải phẫu so sánh, phôi sinh học, địa lí sinh vật học và tế bào - phân tử đều là bằng chứng gián tiếp."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Chi trước của mèo, vây ngực của cá voi, cánh của dơi và tay của người có cấu tạo khung xương giống nhau (nhưng thực hiện chức năng khác nhau) là ví dụ điển hình về:",
+        options: ["Cơ quan tương đồng (phản ánh chiều hướng tiến hóa phân li từ một tổ tiên chung)", "Cơ quan tương tự (phản ánh tiến hóa đồng quy)", "Cơ quan thoái hóa", "Hiện tượng lại tổ"],
+        answer: 0,
+        explanation: "Cơ quan tương đồng có cùng nguồn gốc phôi thai do thừa hưởng từ tổ tiên chung, nhưng biến đổi hình thái do thích nghi với các môi trường sống khác nhau (tiến hóa phân li)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Cánh của chim và cánh của côn trùng (bướm, chuồn chuồn) có nguồn gốc cấu tạo hoàn toàn khác nhau nhưng có hình dạng tương tự nhau để bay lượn là ví dụ về:",
+        options: ["Cơ quan tương tự (phản ánh sự tiến hóa đồng quy do sống trong điều kiện môi trường giống nhau)", "Cơ quan tương đồng", "Cơ quan thoái hóa", "Bằng chứng hóa thạch"],
+        answer: 0,
+        explanation: "Cơ quan tương tự có nguồn gốc khác nhau nhưng đảm nhận chức năng giống nhau nên có hình thái tương tự nhau (tiến hóa đồng quy)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Bằng chứng sinh học phân tử chứng minh 'Mọi loài sinh vật trên Trái Đất đều có chung một nguồn gốc tổ tiên' dựa trên cơ sở nào?",
+        options: ["Tất cả các loài đều sử dụng chung một bộ Mã di truyền (tính phổ biến của mã di truyền), vật chất di truyền đều là DNA và protein đều cấu tạo từ 20 loại amino acid", "Mọi loài đều có số lượng nhiễm sắc thể bằng nhau", "Mọi loài đều có kích thước cơ thể giống nhau", "Mọi loài đều sống được dưới nước"],
+        answer: 0,
+        explanation: "Tính thống nhất của phân tử DNA, RNA, 20 loại amino acid và bộ mã di truyền chung từ vi khuẩn đến con người là bằng chứng đanh thép về nguồn gốc thống nhất của sinh giới."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Theo học thuyết tiến hóa của Charles Darwin, nhân tố chính quy định chiều hướng và nhịp điệu biến đổi các loài sinh vật thích nghi với môi trường là:",
+        options: ["Chọn lọc tự nhiên (giữ lại các cá thể mang biến dị có lợi thích nghi hơn và đào thải các cá thể mang biến dị bất lợi)", "Ngoại cảnh thay đổi làm sinh vật tự biến đổi đồng loạt có định hướng", "Ý muốn chủ quan của con người trong tự nhiên", "Sự di nhập của các thiên thạch"],
+        answer: 0,
+        explanation: "Darwin là người đầu tiên dùng khái niệm Chọn lọc tự nhiên (thông qua đấu tranh sinh tồn, phân hóa khả năng sống sót và sinh sản) để giải thích một cách duy vật sự hình thành đặc điểm thích nghi và loài mới."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Theo thuyết tiến hóa tổng hợp hiện đại, đơn vị tiến hóa cơ sở nhỏ nhất trong tự nhiên là cấp độ nào?",
+        options: ["Quần thể (Population)", "Cá thể riêng lẻ", "Phân tử DNA", "Hệ sinh thái"],
+        answer: 0,
+        explanation: "Cá thể chỉ sống một thời gian rồi chết đi mà không biến đổi kiểu gene; chỉ có Quần thể tồn tại liên tục qua các thế hệ, có vốn gene biến đổi mới là đơn vị tiến hóa cơ sở."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Nhân tố tiến hóa nào cung cấp 'Nguồn nguyên liệu sơ cấp' cho quá trình tiến hóa?",
+        options: ["Đột biến (đặc biệt là đột biến gene tạo ra các allele mới)", "Giao phối không ngẫu nhiên", "Chọn lọc tự nhiên", "Phiêu bạt di truyền"],
+        answer: 0,
+        explanation: "Đột biến tạo ra các allele mới là nguồn nguyên liệu sơ cấp; còn giao phối tạo ra biến dị tổ hợp là nguồn nguyên liệu thứ cấp."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Trong các nhân tố tiến hóa: Đột biến, Dòng gene (di - nhập gene), Phiêu bạt di truyền (yếu tố ngẫu nhiên), Giao phối không ngẫu nhiên và Chọn lọc tự nhiên, nhân tố duy nhất nào là 'Nhân tố tiến hóa CÓ HƯỚNG'?",
+        options: ["Chọn lọc tự nhiên (luôn sàng lọc theo hướng giữ lại các kiểu hình thích nghi với môi trường xác định)", "Đột biến gene", "Phiêu bạt di truyền", "Giao phối cận huyết"],
+        answer: 0,
+        explanation: "Chỉ có Chọn lọc tự nhiên tác động theo một hướng xác định, quy định nhịp điệu và chiều hướng tiến hóa hình thành quần thể thích nghi."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Nhân tố 'Phiêu bạt di truyền (Các yếu tố ngẫu nhiên)' như cháy rừng, lũ lụt, dịch bệnh làm giảm đột ngột kích thước quần thể (hiệu ứng thắt cổ chai) có đặc điểm tác động là:",
+        options: ["Làm thay đổi tần số allele một cách đột ngột, vô hướng và có thể đào thải hoàn toàn cả allele có lợi ra khỏi quần thể (đặc biệt ở quần thể kích thước nhỏ)", "Luôn làm tăng sự đa dạng di truyền của quần thể", "Chỉ đào thải các allele lặn có hại", "Không làm thay đổi tần số allele"],
+        answer: 0,
+        explanation: "Phiêu bạt di truyền làm biến đổi tần số allele ngẫu nhiên không theo hướng nào, một allele dù đang có lợi cũng có thể bị biến mất hoàn toàn do tai biến thiên nhiên."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Tiêu chuẩn quan trọng và chính xác nhất để phân biệt hai 'Loài sinh học (Biological species)' thân thuộc có sinh sản hữu tính là tiêu chuẩn nào?",
+        options: ["Cách li sinh sản (các cá thể của hai loài khác nhau không giao phối với nhau hoặc giao phối không sinh ra được con lai hữu thụ trong điều kiện tự nhiên)", "Chỉ dựa vào màu sắc bên ngoài", "Chỉ dựa vào kích thước cơ thể", "Chỉ dựa vào nơi ở hiện tại"],
+        answer: 0,
+        explanation: "Theo Ernst Mayr, loài sinh học là một hoặc một nhóm quần thể có khả năng giao phối với nhau trong tự nhiên sinh ra đời con hữu thụ và cách li sinh sản với các nhóm quần thể khác."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Trường hợp ngựa cái giao phối với lừa đực sinh ra con La, nhưng con La lại bị bất thụ (không có khả năng sinh con) là biểu hiện của hình thức cách li sinh sản nào?",
+        options: ["Cách li sau hợp tử (thụ tinh tạo được hợp tử và con lai nhưng con lai bất thụ)", "Cách li trước hợp tử về tập tính", "Cách li nơi ở", "Cách li cơ học"],
+        answer: 0,
+        explanation: "Cách li trước hợp tử ngăn cản sự thụ tinh; còn cách li sau hợp tử xảy ra sau khi đã thụ tinh (hợp tử chết sớm hoặc con lai sinh ra không có khả năng sinh sản như con La)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Con đường hình thành loài mới bằng 'Cách li địa lí' (khác khu vực địa lí) có vai trò của chướng ngại địa lí (sông núi, eo biển) là gì?",
+        options: ["Cách li địa lí không trực tiếp gây ra biến đổi trên cơ thể sinh vật mà có tác dụng ngăn cản sự giao phối tự do, tạo điều kiện cho các quần thể phân hóa vốn gene dẫn tới cách li sinh sản", "Chướng ngại địa lí trực tiếp làm đột biến đồng loạt các gene", "Diễn ra cực nhanh chỉ trong một thế hệ", "Chỉ xảy ra ở vi khuẩn"],
+        answer: 0,
+        explanation: "Cách li địa lí kéo dài qua hàng vạn năm làm gián đoạn dòng gene giữa các quần thể; dưới tác động của chọn lọc tự nhiên ở mỗi vùng khác nhau, sự khác biệt vốn gene tích lũy dẫn tới cách li sinh sản và hình thành loài mới."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Con đường hình thành loài mới diễn ra NHANH NHẤT (chỉ qua vài thế hệ ở cùng khu vực địa lí) và rất phổ biến ở các loài Thực vật có hoa là con đường nào?",
+        options: ["Hình thành loài bằng con đường Lai xa và Đa bội hóa (tạo thể song nhị bội hữu thụ)", "Hình thành loài bằng cách li địa lí", "Hình thành loài bằng cách li tập tính", "Hình thành loài bằng cách li mùa vụ"],
+        answer: 0,
+        explanation: "Lai xa giữa hai loài thực vật kết hợp đa bội hóa tạo ra thể song nhị bội (mang bộ NST 2n của cả hai loài bố mẹ) có khả năng giảm phân bình thường và cách li sinh sản ngay với hai loài gốc."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Trong lịch sử phát sinh sự sống trên Trái Đất gồm 3 giai đoạn lớn theo trình tự thời gian là:",
+        options: ["Tiến hóa hóa học (chất vô cơ → chất hữu cơ → đại phân tử) → Tiến hóa tiền sinh học (hình thành tế bào sơ khai protobiont) → Tiến hóa sinh học", "Tiến hóa sinh học → Tiến hóa hóa học → Tiến hóa tiền sinh học", "Tiến hóa tiền sinh học → Tiến hóa hóa học → Tiến hóa văn hóa", "Con người xuất hiện trước vi khuẩn"],
+        answer: 0,
+        explanation: "Thí nghiệm của Miller và Urey (1953) đã chứng minh giai đoạn Tiến hóa hóa học: từ khí quyển nguyên thủy (CH₄, NH₃, H₂, H₂O) dưới tác dụng của tia lửa điện đã tổng hợp nên các chất hữu cơ đơn giản."
+    },
+    {
+        grade: "12", subject: "sinh", term: "GK2",
+        question: "Trong lịch sử phát triển của sinh giới qua các đại địa chất, Đại Trung sinh (Mesozoic) được mệnh danh là thời đại phồn thịnh nhất của nhóm sinh vật nào?",
+        options: ["Thời đại của Bò sát khổng lồ (Khủng long) và Cây hạt trần", "Thời đại của Thú, Chim, Cây hạt kín và sự xuất hiện loài Người (Đại Tân sinh)", "Thời đại của Cá giáp và Quyết thực vật (Đại Cổ sinh)", "Thời đại chỉ có vi khuẩn cổ"],
+        answer: 0,
+        explanation: "Đại Trung sinh (gồm kỉ Trias, Jura, Creta) là kỉ nguyên thống trị của bò sát khủng long và thực vật hạt trần; đến Đại Tân sinh mới là thời đại phồn thịnh của Thú, Chim, Hạt kín và sự xuất hiện loài Người."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - SINH HỌC - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Các nhân tố sinh thái của môi trường được chia thành hai nhóm chính là:",
+        options: ["Nhân tố vô sinh (ánh sáng, nhiệt độ, độ ẩm, đất, nước...) và Nhân tố hữu sinh (các sinh vật khác và con người)", "Nhân tố trên cạn và nhân tố dưới nước", "Nhân tố ngày và nhân tố đêm", "Nhân tố nhiệt đới và ôn đới"],
+        answer: 0,
+        explanation: "Nhân tố vô sinh là các yếu tố vật lí, hóa học không sống (tác động không phụ thuộc mật độ); Nhân tố hữu sinh là thế giới hữu cơ (tác động phụ thuộc mật độ quần thể)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Khoảng giá trị xác định của một nhân tố sinh thái mà trong khoảng đó sinh vật có thể tồn tại, phát triển và sinh sản theo thời gian được gọi là:",
+        options: ["Giới hạn sinh thái (Ecological tolerance)", "Ổ sinh thái", "Nơi ở của loài", "Kích thước tối thiểu của quần thể"],
+        answer: 0,
+        explanation: "Ví dụ cá rô phi Việt Nam có giới hạn sinh thái về nhiệt độ từ 5,6 °C (điểm gây chết dưới) đến 42 °C (điểm gây chết trên), khoảng thuận lợi là 20 - 35 °C."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Khái niệm 'Ổ sinh thái (Ecological niche)' của một loài khác với 'Nơi ở (Habitat)' ở điểm nào?",
+        options: ["Nơi ở chỉ là địa điểm cư trú; còn Ổ sinh thái là không gian sinh thái tổng hợp biểu hiện cách sống, nguồn thức ăn, thời gian kiếm ăn và mọi giới hạn sinh thái của loài đó", "Ổ sinh thái chính là cái tổ chim trên cành cây", "Hai khái niệm hoàn toàn đồng nhất với nhau", "Mỗi cái cây chỉ có duy nhất một ổ sinh thái"],
+        answer: 0,
+        explanation: "Trên cùng một tán cây (cùng một nơi ở) có thể có nhiều loài chim chung sống mà không cạnh tranh gay gắt vì chúng có Ổ sinh thái dinh dưỡng khác nhau (loài ăn sâu trên ngọn, loài ăn hạt, loài bắt côn trùng ở gốc)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Tập hợp các cá thể CÙNG LOÀI, cùng sinh sống trong một khoảng không gian xác định, vào một thời điểm nhất định và có khả năng sinh sản tạo ra thế hệ mới hữu thụ được gọi là:",
+        options: ["Quần thể sinh vật (Population)", "Quần xã sinh vật (Community)", "Hệ sinh thái (Ecosystem)", "Sinh quyển"],
+        answer: 0,
+        explanation: "Quần thể sinh vật là tập hợp các cá thể cùng loài (ví dụ đàn voi rừng ở Vườn quốc gia Yok Đôn, rừng tràm ở U Minh Thượng)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Đặc trưng cơ bản nhất của một quần thể sinh vật cho biết số lượng cá thể trên một đơn vị diện tích hay thể tích của quần thể được gọi là:",
+        options: ["Mật độ cá thể của quần thể", "Tỉ lệ giới tính", "Nhóm tuổi của quần thể", "Kiểu phân bố cá thể"],
+        answer: 0,
+        explanation: "Mật độ cá thể (ví dụ 2 cây thông/m², 50 con cá mè/m³ nước) ảnh hưởng trực tiếp tới mức độ sử dụng nguồn sống, tỉ lệ sinh sản và tử vong của quần thể."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Nếu kích thước của một quần thể sinh vật bị suy giảm xuống thấp hơn 'Kích thước tối thiểu' thì quần thể đó sẽ đối mặt với nguy cơ gì?",
+        options: ["Quần thể rơi vào trạng thái suy giảm dẫn tới diệt vong (tuyệt chủng) do giảm hiệu quả hỗ trợ chống kẻ thù, khó tìm bạn tình và tăng giao phối cận huyết", "Quần thể sẽ tăng trưởng bùng nổ ngay lập tức", "Nguồn thức ăn cạn kiệt hoàn toàn", "Mật độ cá thể tăng lên cực đại"],
+        answer: 0,
+        explanation: "Dưới mức kích thước tối thiểu, cơ hội gặp nhau giữa cá thể đực và cái giảm mạnh, sự hỗ trợ nhóm yếu ớt và giao phối gần làm suy thoái di truyền đẩy loài tới bờ vực tuyệt chủng."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Trong một Quần xã sinh vật, loài có số lượng cá thể rất lớn, sinh khối cao và hoạt động mạnh, quyết định chiều hướng phát triển của cả quần xã được gọi là:",
+        options: ["Loài ưu thế", "Loài ngẫu nhiên", "Loài ngoại lai xâm hại", "Loài kí sinh"],
+        answer: 0,
+        explanation: "Loài ưu thế là loài đóng vai trò quan trọng nhất trong quần xã do số lượng nhiều và sinh khối lớn (ví dụ cây thông trong rừng thông Đà Lạt, cây đước trong rừng ngập mặn)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Mối quan hệ giữa Vi khuẩn Rhizobium (cố định đạm) sống trong nốt sần rễ cây họ Đậu thuộc mối quan hệ sinh thái nào?",
+        options: ["Quan hệ Cộng sinh (hai loài sống gắn bó chặt chẽ và cả hai đều có lợi: +/+)", "Quan hệ Hội sinh (+/0)", "Quan hệ Kí sinh (+/-)", "Quan hệ Cạnh tranh (-/-)"],
+        answer: 0,
+        explanation: "Vi khuẩn Rhizobium chuyển khí N₂ thành đạm cung cấp cho cây đậu, ngược lại cây đậu cung cấp chất hữu cơ và nơi ở cho vi khuẩn: cả hai bên đều có lợi và gắn bó chặt chẽ (Cộng sinh)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Hiện tượng 'Khống chế sinh học' trong quần xã là hiện tượng số lượng cá thể của một loài bị kìm hãm ở mức nhất định bởi loài khác, được ứng dụng trong nông nghiệp để:",
+        options: ["Sử dụng thiên địch để tiêu diệt sinh vật gây hại (như nuôi ong mắt đỏ diệt sâu đục thân lúa, nuôi mèo bắt chuột, thả cá bảy màu diệt bọ gậy)", "Tăng lượng thuốc trừ sâu hóa học", "Du nhập các loài ngoại lai xâm hại như ốc bươu vàng", "Chặt phá rừng đầu nguồn"],
+        answer: 0,
+        explanation: "Ứng dụng khống chế sinh học bằng thiên địch giúp bảo vệ mùa màng bền vững, duy trì cân bằng sinh thái và không gây ô nhiễm hóa chất."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Quá trình biến đổi tuần tự của quần xã qua các giai đoạn tương ứng với sự biến đổi của môi trường, bắt đầu từ một môi trường trống trơn chưa có sinh vật từng sống (như đảo núi lửa mới hình thành, đồi cát mới bồi) gọi là:",
+        options: ["Diễn thế nguyên sinh", "Diễn thế thứ sinh", "Biến động số lượng theo mùa", "Sự di cư của quần thể"],
+        answer: 0,
+        explanation: "Diễn thế nguyên sinh khởi đầu từ môi trường chưa có sinh vật và chưa có mùn đất; còn Diễn thế thứ sinh xuất hiện ở môi trường đã từng có một quần xã sinh sống nhưng bị hủy diệt (sau cháy rừng, nương rẫy bỏ hoang)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Một Hệ sinh thái (Ecosystem) hoàn chỉnh luôn bao gồm hai thành phần cấu trúc cơ bản gắn bó chặt chẽ là:",
+        options: ["Thành phần vô sinh (Sinh cảnh: khí hậu, đất, nước, xác hữu cơ) và Thành phần hữu sinh (Quần xã sinh vật: sinh vật sản xuất, sinh vật tiêu thụ và sinh vật phân giải)", "Chỉ gồm thực vật và động vật ăn cỏ", "Chỉ gồm ánh sáng mặt trời và không khí", "Chỉ gồm các loài động vật ăn thịt"],
+        answer: 0,
+        explanation: "Hệ sinh thái = Sinh cảnh (môi trường vô sinh) + Quần xã sinh vật (gồm 3 nhóm chức năng: SV sản xuất tạo chất hữu cơ, SV tiêu thụ các bậc và SV phân giải trả lại chất vô cơ)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Cho chuỗi thức ăn: Cỏ → Châu chấu → Ếch đồng → Rắn hổ mang → Đại bàng. Trong chuỗi thức ăn này, sinh vật thuộc 'Bậc dinh dưỡng cấp 3' (tương ứng Sinh vật tiêu thụ bậc 2) là:",
+        options: ["Ếch đồng", "Châu chấu", "Rắn hổ mang", "Cỏ"],
+        answer: 0,
+        explanation: "Cỏ là bậc dinh dưỡng cấp 1 (SV sản xuất); Châu chấu là bậc dinh dưỡng cấp 2 (SV tiêu thụ bậc 1); Ếch đồng là bậc dinh dưỡng cấp 3 (SV tiêu thụ bậc 2)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Trong một hệ sinh thái, dòng truyền năng lượng qua các bậc dinh dưỡng có đặc điểm quy luật nào khác biệt với sự trao đổi vật chất?",
+        options: ["Năng lượng truyền theo một chiều (từ Mặt Trời qua SV sản xuất đến các bậc tiếp theo) và thất thoát khoảng 90% qua mỗi bậc (chỉ khoảng 10% truyền lên bậc trên), KHÔNG tuần hoàn; còn vật chất thì tuần hoàn khép kín", "Năng lượng được tái sử dụng tuần hoàn 100%", "Càng lên bậc dinh dưỡng cao thì tổng năng lượng tích lũy càng lớn", "Năng lượng không bị mất đi dưới dạng nhiệt hô hấp"],
+        answer: 0,
+        explanation: "Qua mỗi bậc dinh dưỡng, khoảng 90% năng lượng bị tiêu hao do hô hấp tỏa nhiệt và chất thải, chỉ khoảng 10% tích lũy thành chất sống truyền lên bậc tiếp theo (nên chuỗi thức ăn thường chỉ dài 4-6 mắt xích)."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Nguyên nhân chủ yếu nhất làm gia tăng 'Hiệu ứng nhà kính' dẫn đến sự nóng lên toàn cầu và biến đổi khí hậu hiện nay là:",
+        options: ["Hoạt động đốt nhiên liệu hóa thạch (than đá, dầu mỏ, khí đốt) trong công nghiệp, giao thông và nạn chặt phá rừng làm nồng độ khí CO₂, CH₄ trong khí quyển tăng vọt", "Do cây xanh quang hợp quá mạnh", "Do sự giảm số lượng các nhà máy nhiệt điện", "Do trồng thêm nhiều rừng ngập mặn"],
+        answer: 0,
+        explanation: "Lượng khí CO₂ và CH₄ tăng cao tạo thành lớp màn giữ bức xạ nhiệt hồng ngoại không cho thoát ra vũ trụ, làm nhiệt độ bề mặt Trái Đất tăng lên, băng tan và nước biển dâng."
+    },
+    {
+        grade: "12", subject: "sinh", term: "CK2",
+        question: "Mục tiêu cốt lõi của ngành 'Sinh thái học phục hồi và Bảo tồn' là gì?",
+        options: ["Phục hồi các hệ sinh thái đã bị suy thoái (bằng trồng rừng, làm sạch môi trường, loại bỏ loài xâm hại) và bảo tồn đa dạng sinh học ở cả 3 cấp độ: di truyền, loài và hệ sinh thái", "Khai thác triệt để mọi nguồn lợi sinh vật rừng và biển", "Biến tất cả các khu bảo tồn thiên nhiên thành khu công nghiệp", "Chỉ bảo vệ một loài cây duy nhất"],
+        answer: 0,
+        explanation: "Sinh thái học phục hồi và bảo tồn giúp chữa lành các hệ sinh thái bị tổn thương, duy trì dịch vụ hệ sinh thái và hướng tới sự phát triển bền vững giữa con người với thiên nhiên."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - NGỮ VĂN - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Đoạn trích 'Xuân Tóc Đỏ cứu quốc' được trích từ tiểu thuyết trào phúng nổi tiếng nào của nhà văn Vũ Trọng Phụng?",
+        options: ["Tiểu thuyết 'Số đỏ' (xuất bản năm 1936)", "Tiểu thuyết 'Giông tố'", "Tiểu thuyết 'Vỡ đê'", "Phóng sự 'Kĩ nghệ lấy Tây'"],
+        answer: 0,
+        explanation: "'Xuân Tóc Đỏ cứu quốc' trích chương XX (chương cuối) của tiểu thuyết trào phúng bất hủ 'Số đỏ' của Vũ Trọng Phụng - 'ông vua phóng sự đất Bắc'."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Tình huống trào phúng nghịch dị đỉnh cao trong đoạn trích 'Xuân Tóc Đỏ cứu quốc' là gì?",
+        options: ["Xuân Tóc Đỏ cố tình để thua quán quân quần vợt Xiêm để giữ 'hòa hiếu ngoại giao' và hùng hồn diễn thuyết trước đám đông trở thành 'vĩ nhân cứu quốc' được tung hô", "Xuân Tóc Đỏ chiến thắng giải vô địch thế giới bằng thực tài", "Xuân Tóc Đỏ đi tù vì tội lừa đảo", "Xuân Tóc Đỏ từ bỏ xã hội thượng lưu về quê làm ruộng"],
+        answer: 0,
+        explanation: "Vũ Trọng Phụng dựng lên màn kịch lố bịch: một kẻ lưu manh vô học như Xuân Tóc Đỏ lại vâng lệnh quan chức đầu hàng trên sân quần vợt rồi biến sự nhục nhã thành 'công trạng cứu quốc' vĩ đại."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Đoạn trích 'Nỗi buồn chiến tranh' của nhà văn Bảo Ninh được trần thuật theo bút pháp tiểu thuyết hiện đại đặc trưng nào?",
+        options: ["Kĩ thuật dòng ý thức và đồng hiện (đồng hiện thời gian quá khứ chiến trường khốc liệt đan xen với thực tại hậu chiến đầy ám ảnh của nhân vật Kiên)", "Trần thuật theo trật tự thời gian tuyến tính một chiều đơn giản", "Bút pháp trào phúng châm biếm", "Bút pháp thần thoại cổ sơ"],
+        answer: 0,
+        explanation: "Bảo Ninh sử dụng bút pháp dòng ý thức (Stream of consciousness), để kí ức người lính Kiên trôi dạt giữa hiện tại viết văn và quá khứ chiến tranh bi tráng, thể hiện chiều sâu nhân bản và khát vọng hòa bình."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Thể loại 'Truyện truyền kì' (như tập 'Truyền kì mạn lục' của Nguyễn Dữ thế kỉ XVI) có đặc điểm nghệ thuật nổi bật nào?",
+        options: ["Văn xuôi tự sự trung đại sử dụng yếu tố kì ảo, hoang đường (thần thánh, ma quỷ, cõi âm) đan xen với hiện thực lịch sử để gửi gắm tư tưởng nhân văn và phê phán xã hội", "Chỉ ghi chép biên niên sử hoàn toàn có thật", "Viết bằng thơ lục bát truyền miệng", "Không có nhân vật con người"],
+        answer: 0,
+        explanation: "Truyện truyền kì mượn chuyện 'kì' để nói chuyện 'thực', kết hợp hài hòa giữa thế giới con người và cõi linh dị để khẳng định chính nghĩa thắng gian tà."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Trong tác phẩm 'Chuyện chức phán sự đền Tản Viên' (trích 'Truyền kì mạn lục' của Nguyễn Dữ), hành động chàng nho sĩ Ngô Tử Văn đốt đền của tên tướng giặc bại trận họ Thôi thể hiện phẩm chất gì?",
+        options: ["Khí phách cương trực, khảng khái, dũng cảm trừ hại cho dân và tinh thần tự tôn dân tộc mạnh mẽ trước tà thần ngoại bang", "Sự bồng bột thiếu suy nghĩ của tuổi trẻ", "Mong muốn được làm quan ở trần gian", "Sự mê tín sợ hãi thần linh"],
+        answer: 0,
+        explanation: "Ngô Tử Văn tắm gội sạch sẽ, khấn trời rồi châm lửa đốt đền tà để trừ họa cho dân và bảo vệ ngôi đền thiêng của Thổ công Việt Nam."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Lời bình ở cuối truyện 'Chuyện chức phán sự đền Tản Viên': 'Kẻ sĩ chỉ lo không cứng cỏi được, còn gãy hay không là việc của trời' khẳng định bài học nhân sinh gì?",
+        options: ["Đề cao bản lĩnh cứng cỏi, chính trực, dám đấu tranh chống lại cái ác và sự bất công tới cùng của người trí thức chân chính", "Khuyên con người nên nhẫn nhịn cam chịu trước cường quyền", "Khuyên người ta tìm nơi ẩn dật không màng thế sự", "Cho rằng mọi việc đều do may rủi"],
+        answer: 0,
+        explanation: "Chiến thắng của Ngô Tử Văn ở Minh ti và việc chàng được tiến cử nhận chức Phán sự đền Tản Viên là phần thưởng xứng đáng cho khí tiết cứng cỏi, bất khuất của kẻ sĩ."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Bài thơ 'Tây Tiến' (1948) của Quang Dũng được sáng tác tại Phù Lưu Chanh khi tác giả đã chuyển sang đơn vị khác, mạch cảm xúc chủ đạo bao trùm toàn bài thơ là gì?",
+        options: ["Nỗi nhớ chơi vơi, da diết, sâu nặng về thiên nhiên miền Tây Bắc hùng vĩ, thơ mộng và hình tượng người lính Tây Tiến hào hoa, bi tráng", "Niềm vui ngày toàn thắng trở về Thủ đô", "Nỗi buồn chia tay người yêu ở bến sông", "Sự phê phán chiến tranh phi nghĩa"],
+        answer: 0,
+        explanation: "'Sông Mã xa rồi Tây Tiến ơi! / Nhớ về rừng núi nhớ chơi vơi...' — Nỗi nhớ là sợi chỉ đỏ xuyên suốt, tái hiện bức tranh thiên nhiên Tây Bắc dữ dội mà mĩ lệ cùng bức tượng đài người lính Tây Tiến bất tử."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Hai câu thơ: 'Dốc lên khúc khuỷu dốc thăm thẳm / Heo hút cồn mây súng ngửi trời' trong bài thơ 'Tây Tiến' sử dụng nhiều thanh trắc liên tiếp kết hợp biện pháp nhân hóa 'súng ngửi trời' nhằm diễn tả điều gì?",
+        options: ["Sự hiểm trở, trùng điệp, cao vút đến tận mây xanh của núi rừng Tây Bắc và tư thế hiên ngang, hóm hỉnh tinh nghịch của người lính trẻ", "Sự mệt mỏi tuyệt vọng của đoàn quân", "Cảnh đồng bằng phẳng lặng êm ả", "Tiếng súng nổ vang dội trên chiến trường"],
+        answer: 0,
+        explanation: "Từ láy giàu hình tạo hình ('khúc khuỷu', 'thăm thẳm', 'heo hút'), điệp từ 'dốc' và hình ảnh 'súng ngửi trời' vừa khắc họa độ cao choáng ngợp của núi đèo, vừa thể hiện tâm hồn trẻ trung lãng mạn của lính Tây Tiến."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Đoạn thơ khắc họa bức chân dung người lính Tây Tiến: 'Tây Tiến đoàn binh không mọc tóc / Quân xanh màu lá dữ oai hùm / Mắt trừng gửi mộng qua biên giới / Đêm mơ Hà Nội dáng kiều thơm' thể hiện bút pháp nghệ thuật gì?",
+        options: ["Cảm hứng lãng mạn kết hợp với tinh thần bi tráng (không né tránh hiện thực sốt rét gian khổ nhưng vẫn làm ngời sáng vẻ đẹp oai phong lẫm liệt và tâm hồn hào hoa lãng mạn)", "Bút pháp tả thực trần trụi bi lụy", "Bút pháp ước lệ cổ điển thuần túy", "Bút pháp châm biếm hài hước"],
+        answer: 0,
+        explanation: "Dáng vẻ 'không mọc tóc', 'xanh màu lá' do sốt rét rừng không làm giảm khí phách 'dữ oai hùm', kết hợp với 'mắt trừng' quyết chiến và giấc mơ 'dáng kiều thơm' hào hoa của những chàng trai Hà Nội."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Bài thơ 'Đàn ghi ta của Lor-ca' của nhà thơ Thanh Thảo được viết theo phong cách thơ hiện đại nào để tưởng niệm nghệ sĩ thiên tài Tây Ban Nha Phê-đê-ri-cô Gác-xi-a Lor-ca?",
+        options: ["Thơ tự do mang đậm yếu tố Tượng trưng - Siêu thực (hình ảnh thơ cô đọng, chuỗi liên tưởng bất ngờ kết hợp cấu trúc âm nhạc giao hưởng và flamenco)", "Thơ thất ngôn bát cú Đường luật", "Thơ lục bát dân gian truyền thống", "Thơ văn xuôi kể chuyện cổ tích"],
+        answer: 0,
+        explanation: "Thanh Thảo vận dụng thi pháp Tượng trưng - Siêu thực (như 'tiếng ghi ta nâu, tiếng ghi ta lá xanh, tiếng ghi ta tròn bọt nước vỡ tan...') và chuỗi âm thanh 'li-la li-la li-la' tạo dư âm bất tử cho nghệ thuật và tâm hồn Lor-ca."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Chuỗi âm thanh 'li-la li-la li-la' xuất hiện ở đầu và kết thúc bài thơ 'Đàn ghi ta của Lor-ca' mang những tầng ý nghĩa nghệ thuật nào?",
+        options: ["Vừa mô phỏng tiếng đàn ghi ta dạo khúc mở đầu và ngân nga lắng đọng khi kết thúc, vừa gợi hình ảnh những tràng hoa tử đinh hương (lilac) tím biếc viếng người nghệ sĩ bất tử", "Chỉ là những âm tiết vô nghĩa ngẫu nhiên", "Mô phỏng tiếng súng nổ của bọn phát xít", "Mô phỏng tiếng vó ngựa chạy trên thảo nguyên"],
+        answer: 0,
+        explanation: "'Li-la' vừa là âm thanh tiếng đàn ghi ta flamenco ngân vang bất tận, vừa gợi loài hoa tử đinh hương (lilac) biểu trưng cho sự phục sinh vĩnh cửu của cái Đẹp."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Trong bài thơ 'Đàn ghi ta của Lor-ca', hình ảnh 'Lor-ca bơi sang ngang / trên chiếc ghi ta màu bạc' ở cuối bài thơ biểu trưng cho điều gì?",
+        options: ["Sự bất tử của người nghệ sĩ và nghệ thuật chân chính: thể xác Lor-ca có thể bị sát hại nhưng tâm hồn và tiếng đàn của ông vượt qua cái chết, hóa thân vào cõi vĩnh hằng", "Việc Lor-ca dùng đàn làm thuyền đi du lịch", "Sự đầu hàng trước cái chết", "Việc từ bỏ âm nhạc truyền thống"],
+        answer: 0,
+        explanation: "Hình ảnh siêu thực kì ảo khẳng định cái Đẹp và khát vọng tự do dân chủ của Lor-ca không bao giờ bị hủy diệt bởi bạo lực phát xít."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Khái niệm 'Biện pháp tu từ Nghịch ngữ' (Oxymoron) trong văn học được hiểu là:",
+        options: ["Sự kết hợp cố ý hai từ ngữ hoặc hai ý niệm trái ngược, mâu thuẫn nhau trong cùng một cụm từ để tạo ấn tượng bất ngờ và làm nổi bật bản chất đa chiều của sự vật (như 'cái chết bất tử', 'niềm vui đau đớn')", "Việc dùng các từ đồng nghĩa liên tiếp nhau", "Việc lặp lại nguyên văn câu thơ đầu ở cuối bài", "Việc thay thế tên sự vật bằng dấu chấm lửng"],
+        answer: 0,
+        explanation: "Nghịch ngữ ghép các từ đối chọi nhau ('nắng trong mưa', 'im lặng vang dội', 'hạnh phúc của một tang gia') tạo hiệu ứng thẩm mĩ sâu sắc và châm biếm hoặc triết lí mạnh mẽ."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Phong cách văn học 'Chủ nghĩa hiện thực (Realism)' có nguyên tắc sáng tác cơ bản là gì?",
+        options: ["Tập trung phản ánh trung thực, khách quan đời sống xã hội lịch sử thông qua việc xây dựng những 'tính cách điển hình trong hoàn cảnh điển hình'", "Hoàn toàn thoát li thực tại để bay bổng vào thế giới mộng tưởng", "Chỉ tuân theo các quy phạm ước lệ cung đình", "Chỉ ghi lại các giấc mơ vô thức"],
+        answer: 0,
+        explanation: "Chủ nghĩa hiện thực (tiêu biểu như Balzac, Tolstoy, Vũ Trọng Phụng, Nam Cao, Ngô Tất Tố) tôn trọng quy luật khách quan của đời sống, phanh phui bản chất xã hội qua các nhân vật điển hình."
+    },
+    {
+        grade: "12", subject: "van", term: "GK1",
+        question: "Khi viết bài văn nghị luận 'So sánh, đánh giá hai tác phẩm truyện hoặc hai tác phẩm thơ', thao tác trọng tâm nhất người viết cần thực hiện là gì?",
+        options: ["Chỉ ra và lí giải sâu sắc cả những điểm tương đồng (giống nhau) và những điểm khác biệt độc đáo về nội dung tư tưởng cũng như hình thức nghệ thuật giữa hai tác phẩm", "Chỉ phân tích tác phẩm thứ nhất rồi bỏ qua tác phẩm thứ hai", "Chép nguyên văn cả hai tác phẩm vào bài thi", "Chỉ khen một tác phẩm và chê bai hoàn toàn tác phẩm kia"],
+        answer: 0,
+        explanation: "Bài văn nghị luận so sánh văn học đòi hỏi làm rõ nét chung (cùng đề tài, cảm hứng thời đại) và nét riêng (cá tính sáng tạo, phong cách nghệ thuật riêng của mỗi nhà văn/nhà thơ)."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - NGỮ VĂN - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Thể loại 'Hài kịch' (Comedy) khác với 'Bi kịch' (Tragedy) ở phương diện xung đột và tiếng cười thẩm mĩ như thế nào?",
+        options: ["Hài kịch dùng tiếng cười châm biếm, đả kích để lột trần sự mâu thuẫn giữa cái xấu xa, kệch cỡm, lỗi thời bên trong với cái vỏ bọc hào nhoáng, cao quý giả tạo bên ngoài, hướng con người tới cái đẹp tiến bộ", "Hài kịch luôn kết thúc bằng cái chết bi thảm của các nhân vật anh hùng", "Hài kịch không có cốt truyện và không có nhân vật", "Hài kịch chỉ dùng để ca ngợi các vị thần cổ đại"],
+        answer: 0,
+        explanation: "Xung đột hài kịch nảy sinh từ sự vênh lệch giữa thực chất tầm thường, xấu xa với danh nghĩa cao sang giả dối (như trong kịch của Molière, Gogol, Vũ Đình Long, Lưu Quang Vũ)."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Đoạn trích hài kịch 'Quan thanh tra' của đại văn hào Nga N.V. Gô-gôn (Nikolai Gogol) xoay quanh sự nhầm lẫn tai hại nào của đám quan lại thị trấn?",
+        options: ["Đám quan lại tham nhũng địa phương vì có tật giật mình đã nhận nhầm Khlét-xta-cốp (một viên công chức nhỏ ăn chơi rỗng túi) là 'Quan thanh tra' cao cấp từ thủ đô phái về nên ra sức đút lót, nịnh bợ", "Quan thanh tra thật cải trang làm người ăn xin", "Thị trưởng là một người vô cùng thanh liêm chính trực", "Khlét-xta-cốp là một vị tướng lĩnh quân đội"],
+        answer: 0,
+        explanation: "Sự nhầm lẫn hài hước bắt nguồn từ nỗi sợ bị phanh phui tội tham nhũng của Thị trưởng và đám quan chức địa phương; ở màn kết khi bức thư của Khlét-xta-cốp bị bóc ra và tin Quan thanh tra thật vừa tới đã khiến cả bọn 'hóa đá'."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Trong vở hài kịch 'Ông Giuốc-đanh mặc lễ phục' (trích 'Trưởng giả học làm sang' của Mô-li-e / Molière), nhân vật ông Giuốc-đanh hiện lên với tính cách hài kịch điển hình nào?",
+        options: ["Một gã nhà giàu mới nổi dốt nát, cả tin, mang thói háo danh mù quáng muốn học đòi phong cách quý tộc nên bị gã phó may và đám thợ lừa phỉnh, móc túi trắng trợn", "Một nhà triết học uyên bác thông thái", "Một vị quý tộc dòng dõi hoàng gia", "Một người hà tiện không dám may quần áo mới"],
+        answer: 0,
+        explanation: "Mặc chiếc áo may ngược hoa hướng xuống dưới mà vẫn hí hửng chịu mất tiền thưởng mỗi khi được đám thợ tâng bốc là 'Ông lớn', 'Đức ông', ông Giuốc-đanh là bức biếm họa bất hủ về thói 'trưởng giả học làm sang'."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Thể loại 'Phóng sự' (Reportage) trong văn học Kí hiện đại có đặc trưng cốt lõi là gì?",
+        options: ["Bám sát người thật, việc thật mang tính thời sự nóng hổi của xã hội, kết hợp điều tra xác thực với bút pháp miêu tả, trần thuật sắc sảo và thái độ bình luận của tác giả", "Hoàn toàn hư cấu các nhân vật siêu nhiên", "Chỉ viết về những sự kiện cách đây hàng nghìn năm", "Không được phép có cái tôi của người viết"],
+        answer: 0,
+        explanation: "Phóng sự (như của Tam Lang, Vũ Trọng Phụng, Ngô Tất Tố) thuộc loại hình Kí báo chí - văn học, vừa đảm bảo tính chân thực xác thực của sự việc điều tra, vừa giàu hình tượng nghệ thuật."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Đoạn trích 'Nghệ thuật băm thịt gà' (trích phóng sự 'Việc làng' của nhà văn Ngô Tất Tố) phê phán hủ tục nặng nề nào ở nông thôn Việt Nam trước Cách mạng tháng Tám?",
+        options: ["Hủ tục chia phần cỗ bàn đình đám khắt khe, biến việc băm một con gà luộc thành gánh nặng nợ nần, tủi nhục đè lên đầu người nông dân nghèo (như anh mõ làng Lão Miệng)", "Ca ngợi tài nấu ăn của đầu bếp cung đình", "Hướng dẫn công thức chế biến món ăn hiện đại", "Miêu tả lễ hội mùa xuân vui tươi"],
+        answer: 0,
+        explanation: "Một con gà cỗ làng phải băm chia thành 23 phần đều tăm tắp không thiếu một miếng da; đằng sau 'nghệ thuật' kì quặc ấy là sự bóc lột, hách dịch của bọn chức sắc hương ẩm đối với dân nghèo."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Thể loại 'Nhật kí' và 'Hồi kí' khác nhau ở điểm cơ bản nào về thời điểm ghi chép?",
+        options: ["Nhật kí ghi chép những sự việc, cảm nghĩ diễn ra hàng ngày ngay trong hiện tại (theo ngày tháng); còn Hồi kí là sự nhớ lại, ghi lại những kỉ niệm, biến cố đã qua trong quá khứ từ điểm nhìn hiện tại", "Nhật kí do người khác viết hộ; Hồi kí do tác giả tự viết", "Nhật kí luôn là tác phẩm hư cấu", "Hồi kí chỉ ghi chép dự định tương lai"],
+        answer: 0,
+        explanation: "Nhật kí mang tính chất tức thời, riêng tư, ghi theo từng ngày ('Ngày... tháng... năm...'); Hồi kí có độ lùi thời gian để chiêm nghiệm, tổng kết lại những chặng đường đã qua."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Tác phẩm 'Nhật kí Đặng Thùy Trâm' của nữ bác sĩ - liệt sĩ Đặng Thùy Trâm được viết tại chiến trường ác liệt nào và tỏa sáng vẻ đẹp gì?",
+        options: ["Viết tại bệnh xá Đức Phổ (Quảng Ngãi, 1968 - 1970); tỏa sáng lí tưởng sống cao đẹp, trái tim nhân ái yêu thương thương binh và ý chí kiên cường của thế hệ thanh niên thời kháng chiến chống Mỹ", "Viết tại chiến dịch Điện Biên Phủ năm 1954", "Viết tại Thủ đô Hà Nội thời kì hòa bình", "Viết trong nhà tù Côn Đảo"],
+        answer: 0,
+        explanation: "Cuốn nhật kí 'có lửa' của liệt sĩ Đặng Thùy Trâm làm xúc động hàng triệu độc giả trong và ngoài nước bởi tâm hồn trong sáng, giàu tình yêu thương và sự hi sinh trọn vẹn cho Tổ quốc."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Tính 'Phi hư cấu (Non-fiction)' trong các thể loại Kí (phóng sự, nhật kí, hồi kí, tùy bút, tản văn) được thể hiện qua nguyên tắc nào?",
+        options: ["Tôn trọng sự thật khách quan của đời sống: con người, sự kiện, thời gian, địa điểm đều có thật và có thể kiểm chứng, không được bịa đặt sai lệch sự thật lịch sử", "Được phép tự do bịa ra các nhân vật thần thánh", "Không được phép bộc lộ cảm xúc của người viết", "Không sử dụng bất kì biện pháp tu từ nào"],
+        answer: 0,
+        explanation: "Phi hư cấu là ranh giới cốt lõi phân biệt Kí với Truyện/Tiểu thuyết hư cấu: người viết Kí cam kết tính xác thực của sự kiện, con người được ghi chép."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Biện pháp tu từ 'Nói mỉa (Giễu nhại / Irony)' trong văn học tạo ra tiếng cười sâu cay bằng cách nào?",
+        options: ["Dùng những từ ngữ mang vẻ khen ngợi, trang trọng, tôn kính để nói về một đối tượng tầm thường, xấu xa nhằm tạo hàm ý chê bai, phủ định ngược lại", "Dùng từ ngữ thô tục để mắng mỏ trực tiếp", "Kể lại sự việc một cách trung lập hoàn toàn", "Sử dụng các con số thống kê chính xác"],
+        answer: 0,
+        explanation: "Nói mỉa tạo ra sự đối lập giữa nghĩa bề mặt (khen) và hàm ý sâu xa bên trong (chê bai, chế giễu), như cách Vũ Trọng Phụng gọi Xuân Tóc Đỏ là 'vĩ nhân', 'bậc anh hùng cứu quốc'."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Khi viết một 'Bức thư trao đổi về công việc hoặc một vấn đề đáng quan tâm', cấu trúc chuẩn mực của bức thư cần đảm bảo các phần nào?",
+        options: ["Địa điểm và thời gian viết thư; Lời chào/thưa gửi; Nội dung chính (nêu rõ mục đích, luận điểm trao đổi lịch sự, thuyết phục); Lời chúc/cảm ơn và Chữ kí, họ tên người viết", "Chỉ viết một câu ngắn không có người nhận và không kí tên", "Viết bằng ngôn ngữ tiếng lóng mạng xã hội", "Không cần nêu lí do viết thư"],
+        answer: 0,
+        explanation: "Thư trao đổi công việc đòi hỏi văn phong lịch sự, chuẩn mực, cấu trúc rõ ràng mạch lạc và tôn trọng người nhận."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Trong ngôn ngữ trang trọng (Formal language) dùng khi viết văn bản nghị luận, báo cáo khoa học hoặc phát biểu hội nghị, người viết cần tuân thủ yêu cầu nào?",
+        options: ["Sử dụng từ ngữ chuẩn mực, phổ thông, câu văn có cấu trúc hoàn chỉnh, rõ ràng; tránh dùng từ khẩu ngữ suồng sã, tiếng lóng hoặc từ địa phương hẹp", "Dùng thật nhiều từ viết tắt và kí hiệu biểu cảm mạng xã hội", "Dùng các câu tỉnh lược cụt ngủn", "Xen lẫn tiếng nước ngoài tùy tiện"],
+        answer: 0,
+        explanation: "Ngôn ngữ trang trọng thể hiện thái độ nghiêm túc, lịch sự và tính chuyên nghiệp trong giao tiếp học thuật, hành chính và công sở."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Trong vở kịch 'Hồn Trương Ba, da hàng thịt' của nhà viết kịch Lưu Quang Vũ, bi kịch đau đớn nhất của nhân vật Hồn Trương Ba khi phải sống nhờ trong xác anh hàng thịt là gì?",
+        options: ["Bi kịch bị tha hóa: tâm hồn thanh cao, trong sạch dần bị thể xác thô lỗ, phàm tục của anh hàng thịt chi phối, khiến ông đau khổ nhận ra 'Không thể bên trong một đằng, bên ngoài một nẻo được'", "Bi kịch bị mất đi nghề đánh cờ giỏi", "Bi kịch không có tiền mua thức ăn", "Bi kịch bị Đế Thích đuổi khỏi thiên đình"],
+        answer: 0,
+        explanation: "Qua lời thoại triết lí sâu sắc: 'Tôi muốn được là tôi toàn vẹn!', Lưu Quang Vũ khẳng định con người chỉ thực sự hạnh phúc khi có sự hài hòa thống nhất giữa tâm hồn cao khiết và thể xác khỏe mạnh."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Quyết định cuối cùng của Hồn Trương Ba ở cuối vở kịch (trả lại xác cho anh hàng thịt, từ chối nhập vào xác cu Tị và chấp nhận cái chết để cu Tị được sống) mang ý nghĩa nhân văn gì?",
+        options: ["Chiến thắng của phần Người chân chính và lòng nhân hậu, vị tha: thà chết hẳn chứ không chấp nhận sống giả tạo, chắp vá làm khổ những người thân yêu", "Sự yếu đuối sợ hãi trước Đế Thích", "Sự ích kỉ trốn tránh trách nhiệm gia đình", "Mong muốn được lên tiên giới hưởng lạc"],
+        answer: 0,
+        explanation: "Sự lựa chọn của Trương Ba giúp hình ảnh ông trở lại trong sáng nguyên vẹn trong tâm tưởng người vợ, con cháu và hóa thân bất tử vào cây cỏ vườn nhà."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Trong bài văn nghị luận về một vấn đề liên quan đến tuổi trẻ (như lí tưởng sống, bản lĩnh trước thất bại, trách nhiệm công dân số), phần Mở bài cần đạt yêu cầu gì?",
+        options: ["Giới thiệu trực tiếp hoặc gián tiếp vấn đề nghị luận một cách hấp dẫn, nêu rõ tầm quan trọng/tính cấp thiết của vấn đề đối với thế hệ trẻ hiện nay", "Kể lại toàn bộ tiểu sử cá nhân từ nhỏ đến lớn", "Chép lại nguyên xi đề bài không thêm bớt chữ nào", "Đưa ra lời cảm ơn giám khảo chấm thi"],
+        answer: 0,
+        explanation: "Mở bài nghị luận xã hội cần dẫn dắt tự nhiên, xác lập rõ luận đề trung tâm và khơi gợi suy nghĩ cho người đọc."
+    },
+    {
+        grade: "12", subject: "van", term: "CK1",
+        question: "Việc đưa đoạn 'Phản đề (Bàn luận mở rộng / Đối thoại với ý kiến trái chiều)' vào bài văn nghị luận xã hội có tác dụng gì?",
+        options: ["Giúp cái nhìn về vấn đề trở nên toàn diện, khách quan, đa chiều, tránh sự áp đặt một chiều cực đoan và tăng sức thuyết phục cho lập luận", "Làm cho bài văn bị mâu thuẫn tự phủ định chính mình", "Làm lạc đề sang một chủ đề khác", "Chỉ để kéo dài dung lượng bài viết"],
+        answer: 0,
+        explanation: "Tư duy phản biện (nhìn nhận ngoại lệ, phê phán biểu hiện lệch lạc trái ngược) là tiêu chí đánh giá độ sâu sắc và trưởng thành trong tư duy nghị luận của học sinh lớp 12."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - NGỮ VĂN - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Quan điểm sáng tác văn học nghệ thuật của Chủ tịch Hồ Chí Minh được thể hiện nhất quán ở nguyên tắc cơ bản nào?",
+        options: ["Coi văn học nghệ thuật là một mặt trận, nhà văn là chiến sĩ; luôn xuất phát từ mục đích cách mạng và đối tượng tiếp nhận để quyết định nội dung và hình thức ('Viết cho ai? Viết để làm gì? Viết cái gì? Viết như thế nào?')", "Viết văn chỉ để giải trí tiêu khiển cá nhân lúc nhàn rỗi", "Dùng càng nhiều chữ Hán cổ cầu kì khó hiểu càng tốt", "Tách rời văn chương khỏi nhiệm vụ chính trị của dân tộc"],
+        answer: 0,
+        explanation: "Hồ Chí Minh khẳng định: 'Văn hóa nghệ thuật cũng là một mặt trận. Anh chị em là chiến sĩ trên mặt trận ấy'. Mọi tác phẩm của Người đều đặt hiệu quả phục vụ cách mạng và nhân dân lên trên hết."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Nét đặc sắc nổi bật nhất tạo nên 'Phong cách nghệ thuật Hồ Chí Minh' trong di sản văn chương của Người là gì?",
+        options: ["Sự đa dạng, phong phú mà thống nhất: kết hợp hài hòa giữa truyền thống và hiện đại, giữa tính chiến đấu sắc bén và chất trữ tình sâu lắng, giữa sự giản dị trong sáng và hàm súc uyên thâm", "Chỉ chuyên viết một thể loại thơ duy nhất", "Phong cách cầu kì, bí hiểm khó tiếp cận", "Giọng điệu bi quan u sầu"],
+        answer: 0,
+        explanation: "Ở văn chính luận, Bác viết chặt chẽ, đanh thép; ở truyện kí viết châm biếm sắc sảo hiện đại; ở thơ ca lại chia làm hai mảng: thơ tuyên truyền giản dị mộc mạc và thơ nghệ thuật cổ điển mà hiện đại."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Trong phần mở đầu bản 'Tuyên ngôn Độc lập' (02/09/1945), việc Chủ tịch Hồ Chí Minh trích dẫn nguyên văn Tuyên ngôn Độc lập năm 1776 của Mỹ và Tuyên ngôn Nhân quyền và Dân quyền năm 1789 của Pháp có ý nghĩa chiến thuật và tư tưởng sắc bén gì?",
+        options: ["Nghệ thuật 'Gậy ông đập lưng ông': dùng chính những chân lí bất hủ của tổ tiên người Pháp, người Mỹ để khóa chặt âm mưu tái xâm lược của thực dân và đặt cách mạng Việt Nam ngang hàng với các cuộc cách mạng lớn trên thế giới", "Để ca ngợi công lao khai hóa của thực dân Pháp", "Vì lúc đó nước ta chưa có lịch sử độc lập", "Chỉ để kéo dài dung lượng bản tuyên ngôn"],
+        answer: 0,
+        explanation: "Bác vừa thể hiện sự trân trọng các giá trị nhân quyền tiến bộ của nhân loại, vừa dùng lập luận sắc bén 'suy rộng ra' từ quyền con người sang quyền tự quyết thiêng liêng của mọi dân tộc trên thế giới."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Câu văn mở rộng đầy sáng tạo của Hồ Chí Minh trong 'Tuyên ngôn Độc lập': 'Suy rộng ra, câu ấy có ý nghĩa là: tất cả các dân tộc trên thế giới đều sinh ra bình đẳng, dân tộc nào cũng có quyền sống, quyền sung sướng và quyền tự do' có tầm vóc như thế nào?",
+        options: ["Là đóng góp lí luận vĩ đại của Hồ Chí Minh đối với phong trào giải phóng dân tộc thế giới thế kỉ XX: nâng quyền tự nhiên của cá nhân con người lên thành Quyền độc lập, bình đẳng của các dân tộc", "Chỉ lặp lại nguyên xi lời của người Mỹ", "Chỉ áp dụng riêng cho các nước châu Âu", "Là một câu văn miêu tả cảnh vật"],
+        answer: 0,
+        explanation: "Từ nhân quyền (Human rights) trong tuyên ngôn Mỹ, Hồ Chí Minh đã phát triển thành dân tộc quyền (National rights) cho các dân tộc thuộc địa bị áp bức trên toàn thế giới."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Trong bản 'Tuyên ngôn Độc lập', để bác bỏ luận điệu xảo trá của thực dân Pháp về công lao 'bảo hộ' Đông Dương, Hồ Chí Minh đã đưa ra bằng chứng lịch sử đanh thép nào?",
+        options: ["Trong 5 năm (1940 - 1945), thực dân Pháp đã 2 lần quỳ gối đầu hàng và bán nước ta cho phát xít Nhật, đồng thời thẳng tay khủng bố Việt Minh trước khi chạy trốn", "Thực dân Pháp đã xây dựng nhiều trường đại học cho dân ta", "Pháp đã tự nguyện trao trả độc lập cho Việt Nam", "Pháp chưa từng thu thuế của người dân"],
+        answer: 0,
+        explanation: "Sự thật lịch sử tháng 9/1940 và ngày 9/3/1945 chứng minh Pháp hoàn toàn bất lực và phản bội trách nhiệm 'bảo hộ', nhân dân ta đã giành lại nước Việt Nam từ tay Nhật chứ không phải từ tay Pháp."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Truyện ngắn viết bằng tiếng Pháp 'Những trò lố hay là Va-ren và Phan Bội Châu' (1925) của Nguyễn Ái Quốc sử dụng thủ pháp nghệ thuật chủ đạo nào để khắc họa hai nhân vật?",
+        options: ["Thủ pháp tương phản - đối lập gay gắt kết hợp giọng điệu châm biếm, mỉa mai sâu cay (giữa một tên Toàn quyền Pháp Va-ren bất lương, lố bịch với bậc anh hùng dân tộc Phan Bội Châu kiên trung, bất khuất)", "Bút pháp trữ tình lãng mạn êm đềm", "Bút pháp thần thoại cổ tích", "Miêu tả thiên nhiên thuần túy"],
+        answer: 0,
+        explanation: "Bằng trí tưởng tượng hư cấu độc đáo và thủ pháp đối lập, Nguyễn Ái Quốc vạch trần bản chất phản bội, lừa bịp của Va-ren trước thái độ im lặng dửng dưng và nụ cười khinh bỉ của cụ Phan Bội Châu trong ngục."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Tập thơ chữ Hán 'Nhật kí trong tù' (Ngục trung nhật kí, gồm 134 bài thơ) được Hồ Chí Minh sáng tác trong hoàn cảnh nào?",
+        options: ["Trong thời gian Người bị chính quyền Tưởng Giới Thạch bắt giam vô cớ và giải đi qua gần 30 nhà lao thuộc 13 huyện của tỉnh Quảng Tây (Trung Quốc) từ tháng 8/1942 đến tháng 9/1943", "Trong thời gian hoạt động tại Paris (Pháp) năm 1920", "Tại hang Pác Bó (Cao Bằng) năm 1941", "Tại chiến khu Việt Bắc năm 1948"],
+        answer: 0,
+        explanation: "Suốt 14 tháng bị giam cầm cực khổ nơi đất khách, Bác đã viết 134 bài thơ chữ Hán trong cuốn sổ nhỏ với phương châm 'Thân thể ở trong lao / Tinh thần ở ngoài lao'."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Trong bài thơ 'Mộ (Chiều tối)' (trích 'Nhật kí trong tù'), hai câu thơ đầu: 'Quyện điểu quy lâm tầm túc thụ / Cô vân mạn mạn độ thiên không' (Chim mỏi về rừng tìm chốn ngủ / Chòm mây trôi nhẹ giữa tầng không) gợi lên bức tranh thiên nhiên và tâm trạng gì?",
+        options: ["Bức tranh chiều muộn nơi núi rừng tĩnh lặng, thanh bình theo bút pháp cổ điển, ẩn chứa nỗi niềm của người tù cách mạng nơi đất khách nhưng vẫn ung dung, tự tại hòa hợp với thiên nhiên", "Cảnh bình minh rực rỡ sôi động", "Sự tuyệt vọng gục ngã của người tù", "Cảnh bão tố mưa lũ dữ dội"],
+        answer: 0,
+        explanation: "Hình ảnh 'cánh chim mỏi tìm chốn ngủ' và 'chòm mây cô đơn trôi chầm chậm' vừa là nét chấm phá cổ điển Đường thi, vừa là sự đồng cảm tinh tế của tâm hồn người nghệ sĩ - chiến sĩ."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Trong hai câu cuối bài thơ 'Mộ (Chiều tối)': 'Sơn thôn thiếu nữ ma bao túc / Bao túc ma hoàn lô dĩ hồng' (Cô em xóm núi xay ngô tối / Xay hết lò than đã rực hồng), chữ nào được coi là 'Nhãn tự (con mắt thơ)' làm bừng sáng toàn bài thơ?",
+        options: ["Chữ 'Hồng' ở cuối bài thơ (tỏa ra ánh sáng, hơi ấm và niềm lạc quan vận động từ bóng tối sang ánh sáng, từ lạnh lẽo sang ấm áp)", "Chữ 'Sơn' ở đầu câu", "Chữ 'Thiếu' ở giữa câu", "Chữ 'Hoàn'"],
+        answer: 0,
+        explanation: "Điệp vòng 'ma bao túc / bao túc ma hoàn' diễn tả vòng quay cối xay ngô cần mẫn của cô gái lao động, dẫn tới chữ 'Hồng' cuối bài làm bừng sáng cả không gian đêm tối và sưởi ấm lòng người đi đường."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Bài thơ 'Nguyên tiêu (Rằm tháng Giêng)' (1948) của Hồ Chí Minh miêu tả cảnh đêm trăng rằm đầu xuân ở đâu và kết hợp hai phẩm chất nào của tác giả?",
+        options: ["Trên dòng sông ở chiến khu Việt Bắc; kết hợp hài hòa giữa cốt cách Thi sĩ yêu cái đẹp thiên nhiên ('Xuân giang xuân thủy tiếp xuân thiên') và phong thái Chiến sĩ bàn việc quân ('Yên ba thâm xứ đàm quân sự')", "Tại bến cảng Nhà Rồng năm 1911", "Tại kinh thành Huế", "Tại nhà lao Quảng Tây"],
+        answer: 0,
+        explanation: "Giữa khói sóng mênh mông ban đêm ở Việt Bắc, Bác cùng các đồng chí bàn việc quân kháng chiến xong thì trăng xuân đã tràn ngập cả con thuyền ('Dạ bán quy lai nguyệt mãn thuyền')."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Cảm hứng vận động nhất quán trong thơ Hồ Chí Minh (như trong bài 'Chiều tối', 'Giải đi sớm', 'Ngắm trăng') luôn hướng theo chiều hướng nào?",
+        options: ["Vận động từ bóng tối hướng tới ánh sáng, từ gian khổ tù đày hướng tới tự do, từ nỗi buồn tĩnh lặng hướng tới sự sống khỏe khoắn và niềm lạc quan cách mạng", "Vận động từ ánh sáng chìm vào bóng tối tuyệt vọng", "Đứng yên bất động không thay đổi", "Quay lưng lại với cuộc sống lao động của con người"],
+        answer: 0,
+        explanation: "Nhà phê bình Hoài Thanh từng nhận xét: Thơ của Bác luôn có sự vận động khỏe khoắn hướng về sự sống, ánh sáng và tương lai tất thắng của cách mạng."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Khi viết 'Lời kêu gọi toàn quốc kháng chiến' (19/12/1946) hướng tới đồng bào cả nước, Hồ Chí Minh đã lựa chọn giọng văn và cách diễn đạt như thế nào?",
+        options: ["Ngắn gọn, giản dị, cô đọng như lời hịch non sông, dễ hiểu với mọi tầng lớp nhân dân nhưng sục sôi ý chí quyết tâm sắt đá bảo vệ độc lập", "Viết dài hàng trăm trang với nhiều thuật ngữ triết học", "Viết hoàn toàn bằng tiếng nước ngoài", "Dùng câu văn cầu kì khó hiểu"],
+        answer: 0,
+        explanation: "Xuất phát từ đối tượng tiếp nhận là toàn thể đồng bào (công nhân, nông dân, trí thức, phụ lão), Bác viết câu văn ngắn, điệp cấu trúc mạnh mẽ khơi dậy lòng yêu nước quật cường."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Trong bài thơ 'Cảnh khuya' (1947) tại chiến khu Việt Bắc, hai câu thơ cuối: 'Cảnh khuya như vẽ người chưa ngủ / Chưa ngủ vì lo nỗi nước nhà' thể hiện vẻ đẹp nào trong tâm hồn Bác?",
+        options: ["Sự thống nhất giữa tình yêu thiên nhiên tha thiết của một tâm hồn nghệ sĩ với nỗi lo lắng thường trực cho vận mệnh dân tộc của người lãnh tụ cách mạng", "Sự mất ngủ do thời tiết rừng núi lạnh giá", "Mong muốn đi dạo ngắm trăng suốt đêm", "Sự tách biệt giữa thiên nhiên và việc nước"],
+        answer: 0,
+        explanation: "Điệp ngữ vòng (bắt cầu) 'người chưa ngủ / Chưa ngủ vì lo nỗi nước nhà' giải thích lí do thao thức của Bác: yêu trăng rừng đẹp như tranh vẽ nhưng trên hết vẫn là tấm lòng 'lo trước thiên hạ'."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Biện pháp nghệ thuật trong câu thơ 'Tiếng suối trong như tiếng hát xa' (bài 'Cảnh khuya' của Hồ Chí Minh) có nét độc đáo gì?",
+        options: ["So sánh lấy cái động (tiếng suối, tiếng hát) để gợi cái tĩnh của đêm khuya, đồng thời lấy âm thanh con người ('tiếng hát') để làm ấm áp thiên nhiên rừng núi", "Sử dụng biện pháp nói quá", "Sử dụng biện pháp liệt kê", "Sử dụng biện pháp nói giảm nói tránh"],
+        answer: 0,
+        explanation: "So với câu thơ cổ của Nguyễn Trãi ('Côn Sơn suối chảy rì rầm / Ta nghe như tiếng đàn cầm bên tai'), Bác so sánh tiếng suối với 'tiếng hát xa' làm cảnh rừng khuya trở nên gần gũi, ấm áp hơi thở con người."
+    },
+    {
+        grade: "12", subject: "van", term: "GK2",
+        question: "Ý nghĩa lịch sử và giá trị văn học của bản 'Tuyên ngôn Độc lập' (1945) của Hồ Chí Minh được đánh giá là:",
+        options: ["Vừa là văn kiện lịch sử - pháp lí vô giá khai sinh nước Việt Nam mới, vừa là áng văn chính luận mẫu mực kết tinh trí tuệ, bản lĩnh và tâm huyết của dân tộc", "Chỉ là một bức thư ngoại giao thông thường", "Chỉ có giá trị trong năm 1945", "Là một tác phẩm truyện ngắn hư cấu"],
+        answer: 0,
+        explanation: "'Tuyên ngôn Độc lập' của Hồ Chí Minh tiếp nối mạch nguồn 'Nam quốc sơn hà' (Lý Thường Kiệt) và 'Bình Ngô đại cáo' (Nguyễn Trãi), là bản anh hùng ca mở ra kỉ nguyên Độc lập - Tự do."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - NGỮ VĂN - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Trong đoạn trích 'Đất Nước' (trích trường ca 'Mặt đường khát vọng' của Nguyễn Khoa Điềm), tư tưởng cốt lõi bao trùm toàn bộ đoạn trích là tư tưởng gì?",
+        options: ["Tư tưởng 'Đất Nước của Nhân dân' (chính Nhân dân vô danh, bình dị đã làm ra Đất Nước về cả địa lí, lịch sử và văn hóa truyền thống)", "Đất Nước là của các bậc đế vương phong kiến", "Đất Nước chỉ gắn với những thần thoại siêu nhiên", "Đất Nước chỉ là những khái niệm trừu tượng xa xôi"],
+        answer: 0,
+        explanation: "'Để Đất Nước này là Đất Nước Nhân dân / Đất Nước của Nhân dân, Đất Nước của ca dao thần thoại' là cảm hứng chủ đạo xuyên suốt chương V trường ca 'Mặt đường khát vọng'."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Nguyễn Khoa Điềm đã lí giải cội nguồn hình thành Đất Nước ('Đất Nước có từ ngày đó...') bắt đầu từ những hình ảnh gần gũi, thân thương nào của đời sống văn hóa dân gian?",
+        options: ["Từ câu chuyện cổ tích mẹ kể ('ngày xửa ngày xưa'), miếng trầu bà ăn, truyền thuyết Thánh Gióng trồng tre đánh giặc, tục búi tóc sau đầu, tình nghĩa vợ chồng ('gừng cay muối mặn') và hạt gạo một nắng hai sương", "Từ những mốc niên đại lịch sử khô khan trong sách giáo khoa", "Từ những cuộc chinh phạt mở mang bờ cõi của các hoàng đế", "Từ sự hình thành các mảng kiến tạo địa chất"],
+        answer: 0,
+        explanation: "Nhà thơ cảm nhận Đất Nước từ chiều sâu văn hóa phong tục bình dị trong đời sống hàng ngày của mỗi gia đình người Việt."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Trong bài thơ 'Sóng' (1967) của nữ sĩ Xuân Quỳnh, hai hình tượng 'Sóng' và 'Em' có mối quan hệ nghệ thuật như thế nào?",
+        options: ["Song hành, soi chiếu và hóa thân vào nhau để diễn tả vẻ đẹp tâm hồn người phụ nữ trong tình yêu: vừa dịu dàng sâu lắng, vừa mãnh liệt chủ động, thủy chung và khát khao vĩnh cửu", "Hoàn toàn tách rời và đối lập nhau", "Sóng chỉ dùng để tả cảnh biển Diêm Điền thuần túy", "Em sợ hãi trước sức mạnh của sóng biển"],
+        answer: 0,
+        explanation: "Hình tượng 'Sóng' là ẩn dụ nghệ thuật đặc sắc cho trái tim người phụ nữ đang yêu ('Dữ dội và dịu êm / Ồn ào và lặng lẽ / Sông không hiểu nổi mình / Sóng tìm ra tận bể')."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Khổ thơ cuối bài thơ 'Sóng' của Xuân Quỳnh: 'Làm sao được tan ra / Thành trăm con sóng nhỏ / Giữa biển lớn tình yêu / Để ngàn năm còn vỗ' thể hiện khát vọng cao đẹp gì?",
+        options: ["Khát vọng hóa thân, dâng hiến trọn vẹn tình yêu cá nhân hòa vào biển lớn cuộc đời để tình yêu trở nên bất tử, vĩnh hằng trước sự hữu hạn của đời người", "Nỗi tuyệt vọng muốn gieo mình xuống biển", "Mong muốn từ bỏ tình yêu lứa đôi", "Sự ích kỉ muốn chiếm hữu riêng biển cả"],
+        answer: 0,
+        explanation: "Trước sự hữu hạn của kiếp người so với thời gian vũ trụ, Xuân Quỳnh tìm thấy sự bất tử bằng cách hòa tình yêu nhỏ bé của mình vào 'biển lớn tình yêu' của nhân loại."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Đoạn trích 'Việt Bắc' của nhà thơ Tố Hữu được kết cấu theo hình thức đối đáp truyền thống nào của ca dao dân ca?",
+        options: ["Kết cấu đối đáp 'Mình - Ta' giữa kẻ ở (nhân dân Việt Bắc) và người về (cán bộ kháng chiến về xuôi) bằng thể thơ lục bát dân tộc ngọt ngào, ân tình", "Kết cấu độc thoại bằng thơ tự do", "Kết cấu kịch bản sân khấu 5 hồi", "Kết cấu văn xuôi nghị luận"],
+        answer: 0,
+        explanation: "Cặp đại từ 'Mình - Ta' biến cuộc chia tay lịch sử tháng 10/1954 thành cuộc giãi bày tâm tình đằm thắm như đôi lứa yêu nhau, thấm đẫm đạo lí 'Uống nước nhớ nguồn'."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Trong đoạn trích 'Việt Bắc', bộ tứ bình: 'Mơ nở trắng rừng, Rừng phách đổ vàng, Rừng thu trăng rọi hòa bình, Hoa chuối đỏ tươi' có điểm gì đặc sắc?",
+        options: ["Mỗi bức tranh mùa thiên nhiên Việt Bắc đều gắn liền hài hòa với hình ảnh con người lao động bình dị, nghĩa tình (người đan nón, người đi hái măng, tiếng hát ân tình)", "Chỉ miêu tả cảnh rừng hoang vu không có bóng người", "Miêu tả cảnh bốn mùa ở kinh thành Huế", "Mang màu sắc u buồn chia li"],
+        answer: 0,
+        explanation: "Đoạn thơ 10 câu lục bát (1 câu mở + 4 cặp lục bát tả 4 mùa đông, xuân, hạ, thu + 1 câu kết) là tuyệt bút tả cảnh ngụ tình: cảnh và người Việt Bắc hòa quyện làm một."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Trong tùy bút 'Người lái đò Sông Đà' (trích tập 'Sông Đà' năm 1960), nhà văn Nguyễn Tuân đã khắc họa hình tượng con Sông Đà với hai nét tính cách đối lập mà thống nhất nào?",
+        options: ["'Hung bạo' (như kẻ thù số một của con người nơi ghềnh thác thượng nguồn) và 'Trữ tình' (thơ mộng, dịu dàng như một cố nhân, một mái tóc thiếu nữ tuôn dài ở hạ lưu)", "Chỉ toàn sự hiền hòa êm ả từ đầu đến cuối", "Khô cạn hoàn toàn vào mùa hè", "Nhỏ bé như một con suối nhỏ"],
+        answer: 0,
+        explanation: "Lời đề từ 'Đẹp vậy thay, tiếng hát trên dòng sông' và hai nét tính cách 'Hung bạo - Trữ tình' thể hiện phong cách tài hoa, uyên bác của Nguyễn Tuân khi khám phá thiên nhiên Tây Bắc như một công trình mĩ thuật kì vĩ."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Hình tượng 'Ông lái đò Lai Châu' trong tùy bút 'Người lái đò Sông Đà' của Nguyễn Tuân tiêu biểu cho vẻ đẹp của kiểu con người nào trong thời kì xây dựng đất nước?",
+        options: ["Người lao động bình dị mà tài hoa, trí dũng tuyệt vời ('thứ vàng mười đã qua thử lửa'), nắm chắc binh pháp của thần sông thần đá để vượt qua trùng vi thạch trận như một nghệ sĩ", "Một vị tướng quân đội cổ đại", "Một nhà nho ẩn dật uống trà ngắm hoa", "Một người khách du lịch tình cờ đi qua"],
+        answer: 0,
+        explanation: "Sau Cách mạng, Nguyễn Tuân tìm thấy chất 'tài hoa nghệ sĩ' ngay ở những người lao động bình thường đang ngày đêm chinh phục thiên nhiên, xây dựng chủ nghĩa xã hội ở miền Bắc."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Trong bút kí 'Ai đã đặt tên cho dòng sông?' (1981) của Hoàng Phủ Ngọc Tường, thủy trình của dòng sông Hương từ thượng nguồn Trường Sơn về đến thành phố Huế được tác giả liên tưởng độc đáo như thế nào?",
+        options: ["Như một 'bản tình ca' và 'hành trình của người gái đẹp dịu dàng, chung tình' băng qua rừng già đi tìm người tình mong đợi là kinh thành Huế", "Như một con ngựa bất kham chạy loạn", "Như một dòng kênh nhân tạo thẳng tắp", "Như một dòng thác dữ dội cuốn trôi tất cả"],
+        answer: 0,
+        explanation: "Ở thượng nguồn sông Hương là 'bản trường ca của rừng già' mang vẻ đẹp cô gái Di-gan phóng khoáng; về đến Huế sông Hương 'vui tươi hẳn lên' nhưng rồi chảy chậm, thật chậm như điệu slow tình cảm dành riêng cho Huế."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Hoàng Phủ Ngọc Tường đã khám phá vẻ đẹp của sông Hương dưới những góc nhìn văn hóa đa dạng nào?",
+        options: ["Góc nhìn địa lí tự nhiên (thủy trình), góc nhìn lịch sử hào hùng (dòng sông biên thùy, chiến trường), góc nhìn thi ca (từ Tản Đà, Cao Bá Quát đến Tố Hữu) và góc nhìn âm nhạc cổ điển Huế", "Chỉ đo đạc độ sâu và lưu lượng nước sông", "Chỉ bàn về việc đánh bắt cá trên sông", "Chỉ miêu tả cây cầu Trường Tiền"],
+        answer: 0,
+        explanation: "Lối hành văn hướng nội, súc tích, mê đắm và tài hoa của Hoàng Phủ Ngọc Tường đã biến sông Hương thành biểu tượng của tâm hồn và văn hóa cố đô Huế."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Trong vở kịch 'Rô-mê-ô và Giu-li-ét' của đại văn hào Anh Uy-li-am Sếch-xpia (William Shakespeare), mối tình trong sáng, say đắm của đôi trẻ đã vượt lên trên rào cản khắc nghiệt nào?",
+        options: ["Mối thù truyền kiếp vô lí giữa hai dòng họ quý tộc Môn-ta-ghiu và Ca-piu-lét tại thành Vê-rô-na", "Khoảng cách giàu nghèo giữa chủ và tớ", "Chiến tranh giữa hai quốc gia", "Sự ngăn cản của nhà thờ tôn giáo"],
+        answer: 0,
+        explanation: "Trong lớp kịch 'Tình yêu và thù hận' dưới ban công đêm trăng, Rô-mê-ô và Giu-li-ét đã sẵn sàng từ bỏ tên họ dòng tộc thù địch để khẳng định quyền tự do yêu đương và chủ nghĩa nhân văn thời Phục hưng."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Trong truyện ngắn 'Vợ nhặt' của nhà văn Kim Lân (lấy bối cảnh nạn đói khủng khiếp năm Ất Dậu 1945), tình huống 'Nhặt vợ' của anh cu Tràng có ý nghĩa nhân đạo sâu sắc gì?",
+        options: ["Khẳng định sức mạnh kì diệu của tình người và khát vọng sống, khát vọng hạnh phúc gia đình bất diệt: ngay bên bờ vực của cái chết, con người vẫn thương yêu, cưu mang nhau và hướng về sự sống, ánh sáng cách mạng", "Chế giễu sự liều lĩnh khờ khạo của người nông dân", "Miêu tả một đám cưới sang trọng ở làng quê", "Cho thấy con người hoàn toàn đầu hàng cái chết"],
+        answer: 0,
+        explanation: "Chỉ bằng bốn bát bánh đúc và câu nói đùa mà Tràng có vợ; sự xuất hiện của người vợ nhặt đã thổi luồng sinh khí ấm áp biến đổi căn nhà rúm ró của mẹ con cụ Tứ, kết thúc bằng hình ảnh 'lá cờ đỏ bay phấp phới' trong óc Tràng."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Trong truyện ngắn 'Chiếc thuyền ngoài xa' (1983) của Nguyễn Minh Châu, qua câu chuyện của người đàn bà hàng chài tại tòa án huyện, nghệ sĩ nhiếp ảnh Phùng đã vỡ lẽ ra bài học nhận thức sâu sắc nào về cuộc sống và nghệ thuật?",
+        options: ["Không thể nhìn nhận cuộc đời và con người một cách đơn giản, sơ lược từ bên ngoài; nghệ thuật chân chính (cái Đẹp) không thể tách rời cái Thiện và thân phận nhọc nhằn của con người ('nghệ thuật vị nhân sinh')", "Nghệ thuật chỉ cần chụp những bức ảnh phong cảnh đẹp mờ sương", "Cần bắt buộc mọi gia đình ngư dân phải li hôn ngay lập tức", "Không nên quan tâm đến đời sống của người lao động"],
+        answer: 0,
+        explanation: "Đằng sau bức ảnh chiếc thuyền ngoài xa tuyệt mĩ như tranh mực tàu là bi kịch bạo lực gia đình và nỗi cơ cực mưu sinh; nhưng ẩn sâu trong vẻ thô kệch của người đàn bà hàng chài lại là tình mẫu tử thiêng liêng cao thượng."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Khi sử dụng dữ liệu và thông tin trên mạng Internet để phục vụ việc học tập và viết bài nghiên cứu, nguyên tắc quan trọng nhất học sinh cần tuân thủ là:",
+        options: ["Kiểm chứng độ tin cậy, tính chính thống của nguồn thông tin, chọn lọc thông tin có giá trị và trích dẫn nguồn trung thực (không đạo văn)", "Sao chép nguyên văn bài viết đầu tiên tìm thấy trên mạng", "Tin tưởng tuyệt đối vào mọi bài đăng ẩn danh trên mạng xã hội", "Xóa tên tác giả gốc để biến thành bài của mình"],
+        answer: 0,
+        explanation: "Kĩ năng tiếp nhận văn bản thông tin trong thời đại số đòi hỏi năng lực thẩm định nguồn tin chính thống, đối chiếu đa chiều và tuân thủ đạo đức học thuật."
+    },
+    {
+        grade: "12", subject: "van", term: "CK2",
+        question: "Giữ gìn sự trong sáng của tiếng Việt và phát triển ngôn ngữ trong thời kì hội nhập quốc tế đòi hỏi thế hệ trẻ cần có thái độ ứng xử như thế nào?",
+        options: ["Yêu quý, trân trọng và sử dụng tiếng Việt chuẩn mực, giàu đẹp; tiếp thu có chọn lọc thuật ngữ khoa học quốc tế nhưng không lạm dụng tiếng nước ngoài hay làm vẩn đục tiếng mẹ đẻ", "Pha trộn tiếng Anh vào mọi câu nói tiếng Việt hàng ngày để tỏ ra sành điệu", "Từ chối học tất cả các ngoại ngữ trên thế giới", "Viết sai chính tả và dùng ngôn ngữ tục tĩu trên mạng"],
+        answer: 0,
+        explanation: "'Tiếng nước ta giàu và đẹp' — Giữ gìn sự trong sáng của tiếng Việt là giữ gìn hồn cốt văn hóa dân tộc trong quá trình hội nhập toàn cầu."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - TIẾNG ANH - GIỮA KÌ 1 (GK1 - 15 CÂU) - GLOBAL SUCCESS (GDPT 2018)
+    // ===================================================================
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Vocabulary (Unit 1 - Life Stories We Admire): Doctor Dang Thuy Tram _______ her youth and life to saving wounded soldiers during the resistance war.",
+        options: ["devoted", "admired", "adopted", "diagnosed"],
+        answer: 0,
+        explanation: "Cấu trúc 'devote something to doing something / noun' (cống hiến, hi sinh tuổi trẻ/cuộc đời cho sự nghiệp gì) là từ vựng trọng tâm của Unit 1."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Vocabulary: Steve Jobs is widely regarded as a _______ leader whose innovations in personal computers and smartphones changed the world.",
+        options: ["visionary", "biological", "ordinary", "accessible"],
+        answer: 0,
+        explanation: "'Visionary' (có tầm nhìn xa trông rộng) dùng để ca ngợi những vĩ nhân, nhà sáng lập tài ba."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Grammar (Past Simple vs Past Continuous): While Walt Disney _______ for a train, he came up with the idea of creating the famous character Mickey Mouse.",
+        options: ["was waiting", "waited", "is waiting", "has waited"],
+        answer: 0,
+        explanation: "Hành động đang diễn ra trong quá khứ ('While Walt Disney was waiting...') thì hành động khác xen vào ('he came up with...') → dùng Quá khứ tiếp diễn (was waiting)."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Vocabulary (Unit 2 - A Multicultural World): Experiencing _______ shock is quite common when you move to live or study in a foreign country with very different customs.",
+        options: ["culture", "cultural", "culturally", "cultured"],
+        answer: 0,
+        explanation: "Cụm danh từ cố định 'culture shock' (cú sốc văn hóa)."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Vocabulary: Traditional festivals play a vital role in preserving our national _______ and passing cultural values on to younger generations.",
+        options: ["identity", "bamboo dancing", "popular", "origin"],
+        answer: 0,
+        explanation: "'National/Cultural identity' mang nghĩa là bản sắc dân tộc / bản sắc văn hóa."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Grammar (Articles): _______ Sun rises in the east and sets in the west.",
+        options: ["The", "A", "An", "Ø (no article)"],
+        answer: 0,
+        explanation: "Trước các danh từ chỉ sự vật độc nhất trong vũ trụ (the Sun, the Moon, the Earth, the world) ta luôn dùng mạo từ xác định 'The'."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Grammar (Articles): She is _______ honest and hard-working student who is admired by all her classmates.",
+        options: ["an", "a", "the", "Ø"],
+        answer: 0,
+        explanation: "Từ 'honest' (/ˈɒn.ɪst/) có chữ 'h' câm, bắt đầu bằng nguyên âm /ɒ/ nên phải dùng mạo từ bất định 'an'."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Vocabulary (Unit 3 - Green Living): Instead of throwing away food scraps and dry leaves, we can turn them into nutrient-rich _______ for our garden.",
+        options: ["compost", "landfill", "packaging", "plastic"],
+        answer: 0,
+        explanation: "'Compost' (phân hữu cơ ủ từ rác thải thực vật/thức ăn thừa) là từ vựng trọng tâm của Unit 3 (Green Living)."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Vocabulary: Single-use plastic containers take hundreds of years to _______ in landfills, causing severe soil pollution.",
+        options: ["decompose", "reuse", "refill", "wrap"],
+        answer: 0,
+        explanation: "'Decompose' có nghĩa là phân hủy sinh học."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Grammar (Verbs with Prepositions): Many young people nowadays really care _______ protecting the environment and reducing carbon emissions.",
+        options: ["about", "with", "on", "at"],
+        answer: 0,
+        explanation: "Cụm động từ đi kèm giới từ: 'care about something' (quan tâm, chú trọng đến điều gì)."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Grammar (Verbs with Prepositions): After graduating from university, she decided to apply _______ a position at an international environmental organisation.",
+        options: ["for", "to", "with", "about"],
+        answer: 0,
+        explanation: "Cấu trúc 'apply for a job / a position / a scholarship' (nộp đơn ứng tuyển vào vị trí/công việc gì); còn 'apply to + tên công ty/trường'."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Grammar (Relative Clauses referring to a whole sentence): More supermarkets are replacing plastic bags with biodegradable ones, _______ helps reduce plastic waste significantly.",
+        options: ["which", "that", "who", "whose"],
+        answer: 0,
+        explanation: "Sau dấu phẩy, đại từ quan hệ 'which' được dùng để thay thế cho toàn bộ mệnh đề đứng trước nó (tuyệt đối không dùng 'that')."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Choose the word CLOSEST in meaning to 'rinse out': Please rinse out the glass bottles before putting them into the recycling bin.",
+        options: ["wash quickly with clean water", "break into small pieces", "fill with hot oil", "throw into the river"],
+        answer: 0,
+        explanation: "Phrasal verb 'rinse out' có nghĩa là tráng sạch, súc rửa bằng nước sạch."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Choose the word whose underlined part is pronounced differently: A. <u>ch</u>aracter  B. <u>ch</u>emistry  C. <u>ch</u>ildhood  D. <u>ch</u>olera",
+        options: ["childhood", "character", "chemistry", "cholera"],
+        answer: 0,
+        explanation: "'childhood' có 'ch' phát âm là /tʃ/, trong khi 'character', 'chemistry', 'cholera' đều phát âm là /k/."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK1",
+        question: "Communication: Minh: 'How about bringing our own refillable water bottles to school?' — Lan: '_______'",
+        options: ["I couldn't agree more. It will cut down on plastic bottles.", "I'm afraid I lost my textbook.", "Congratulations on your achievement!", "Never mind."],
+        answer: 0,
+        explanation: "'I couldn't agree more' (Mình hoàn toàn đồng ý) là cách diễn đạt sự tán thành tuyệt đối trước lời đề xuất sống xanh."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - TIẾNG ANH - CUỐI KÌ 1 (CK1 - 15 CÂU) - GLOBAL SUCCESS (GDPT 2018)
+    // ===================================================================
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Vocabulary (Unit 4 - Urbanisation): Rapid _______ has led to a shortage of affordable housing and frequent traffic congestion in big cities.",
+        options: ["urbanisation", "rural", "agriculture", "colonial"],
+        answer: 0,
+        explanation: "'Rapid urbanisation' (quá trình đô thị hóa nhanh chóng) dẫn đến áp lực về nhà ở và ùn tắc giao thông."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Vocabulary: Many people move from rural areas to big cities in search of better job prospects and higher _______ standards.",
+        options: ["living", "alive", "lively", "life"],
+        answer: 0,
+        explanation: "Cụm danh từ cố định 'living standards / standard of living' (mức sống, điều kiện sống)."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Grammar (Double Comparatives): _______ people move into the city centre, _______ the traffic congestion becomes during rush hours.",
+        options: ["The more / the worse", "More / worse", "The most / the worst", "The more / the bad"],
+        answer: 0,
+        explanation: "Cấu trúc So sánh kép (Càng... càng...): The + so sánh hơn + S + V, the + so sánh hơn + S + V → 'The more..., the worse...'."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Grammar (Repeated Comparatives): Due to technological advances, online shopping is becoming _______ popular among both young and old people.",
+        options: ["more and more", "much and more", "most and most", "the more"],
+        answer: 0,
+        explanation: "So sánh lũy tiến (ngày càng...) với tính từ dài 'popular': more and more + adj."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Grammar (Present Perfect): The city infrastructure _______ dramatically over the past ten years thanks to government investment.",
+        options: ["has improved", "improved", "is improving", "was improving"],
+        answer: 0,
+        explanation: "Cụm trạng từ 'over the past ten years' (trong suốt 10 năm qua tính đến hiện tại) là dấu hiệu kinh điển của thì Hiện tại hoàn thành ('has improved')."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Vocabulary (Unit 5 - The World of Work): Working as a flight attendant is a _______ job, as you have to deal with jet lag and tight schedules.",
+        options: ["demanding", "nine-to-five", "effortless", "repetitive"],
+        answer: 0,
+        explanation: "'Demanding job' là công việc đòi hỏi khắt khe, áp lực cao về sức khỏe và kĩ năng."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Vocabulary: If you meet all the requirements for this position, please send your CV and _______ letter to the Human Resources department.",
+        options: ["application", "applicant", "applicable", "apply"],
+        answer: 0,
+        explanation: "'Application letter / cover letter' là thư xin việc gửi kèm sơ yếu lí lịch (CV)."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Vocabulary: Employees who perform excellently will receive a generous _______ at the end of the year in addition to their monthly wage.",
+        options: ["bonus", "vacancy", "shift", "apprentice"],
+        answer: 0,
+        explanation: "'Bonus' là khoản tiền thưởng thêm cuối năm dành cho nhân viên đạt thành tích tốt."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Grammar (Complex Sentences - Concession): _______ the job offered a high salary, he turned it down because he wanted to spend more time with his family.",
+        options: ["Although", "Despite", "Because", "Moreover"],
+        answer: 0,
+        explanation: "Sau chỗ trống là một mệnh đề đầy đủ (S + V: 'the job offered...') mang nghĩa tương phản nhượng bộ → dùng liên từ 'Although / Even though' (không dùng 'Despite' vì sau Despite là cụm danh từ/V-ing)."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Grammar (Compound Sentences): You should prepare carefully for the job interview; _______, you may fail to impress the employer.",
+        options: ["otherwise", "therefore", "furthermore", "however"],
+        answer: 0,
+        explanation: "Trạng từ liên kết 'otherwise' (nếu không thì...) diễn tả hệ quả trái ngược nếu không làm điều nêu ở vế trước."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Grammar (Complex Sentences - Reason): Many university students work part-time _______ they want to gain practical experience and communication skills.",
+        options: ["because", "because of", "although", "so that"],
+        answer: 0,
+        explanation: "Mệnh đề chỉ nguyên nhân ('they want to gain...') đi sau liên từ 'because / since / as'."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Vocabulary: Doing an _______ at a reputable company allows final-year students to learn on-the-job skills from experienced mentors.",
+        options: ["internship", "unemployment", "retirement", "allowance"],
+        answer: 0,
+        explanation: "'Do an internship' là đi thực tập nghề nghiệp tại doanh nghiệp."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Choose the word OPPOSITE in meaning to 'casual': He decided to give up his <u>casual</u> part-time job to look for a permanent full-time position.",
+        options: ["permanent", "temporary", "flexible", "short-term"],
+        answer: 0,
+        explanation: "'Casual / temporary' (công việc thời vụ, tạm thời) trái nghĩa với 'permanent' (lâu dài, biên chế cố định)."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Find the mistake: The <u>harder</u> you practise speaking English, <u>the most</u> confident you will feel in international interviews.",
+        options: ["the most (should be 'the more')", "harder", "practise", "will feel"],
+        answer: 0,
+        explanation: "Trong cấu trúc so sánh kép, cả hai vế đều phải dùng cấp So sánh hơn ('The harder..., the more confident...'), không dùng so sánh nhất 'the most'."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK1",
+        question: "Choose the correct stress pattern: A. accountant  B. applicant  C. attendant  D.important",
+        options: ["applicant", "accountant", "attendant", "important"],
+        answer: 0,
+        explanation: "'applicant' (/ˈæp.lɪ.kənt/) nhấn âm 1; còn 'accountant', 'attendant', 'important' đều nhấn âm 2."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - TIẾNG ANH - GIỮA KÌ 2 (GK2 - 15 CÂU) - GLOBAL SUCCESS (GDPT 2018)
+    // ===================================================================
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Vocabulary (Unit 6 - Artificial Intelligence): Modern smartphones use facial _______ technology to unlock the screen quickly and securely.",
+        options: ["recognition", "navigation", "portfolio", "evolution"],
+        answer: 0,
+        explanation: "'Facial recognition' (nhận diện khuôn mặt) và 'voice recognition' (nhận diện giọng nói) là các ứng dụng tiêu biểu của AI."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Vocabulary: Virtual _______ such as Siri, Alexa, and ChatGPT can answer questions and help users perform daily tasks.",
+        options: ["assistants", "mechanics", "passengers", "spectators"],
+        answer: 0,
+        explanation: "'Virtual assistants' (trợ lí ảo thông minh) là từ vựng trọng tâm của Unit 6."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Grammar (Active Causative): The school principal had the IT technician _______ the new educational software on all computers.",
+        options: ["install", "to install", "installed", "installing"],
+        answer: 0,
+        explanation: "Cấu trúc truyền khiến chủ động với 'have': have + somebody (người) + V(nguyên thể không to) → 'install' (lưu ý nếu dùng 'get' thì là get + sb + to V)."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Grammar (Passive Causative): We are going to have our home security system _______ by an AI specialist tomorrow.",
+        options: ["upgraded", "upgrade", "to upgrade", "upgrading"],
+        answer: 0,
+        explanation: "Cấu trúc truyền khiến bị động: have/get + something (vật: 'our home security system') + V3/ed (Past Participle) → 'upgraded'."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Vocabulary (Unit 7 - The World of Mass Media): You should always fact-check information on social media to avoid spreading _______ news.",
+        options: ["fake", "credible", "reliable", "official"],
+        answer: 0,
+        explanation: "'Fake news' (tin giả, tin sai sự thật) trên mạng xã hội cần được kiểm chứng (fact-check)."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Vocabulary: Digital billboards and pop-up _______ are widely used by companies to promote their new products to consumers.",
+        options: ["adverts", "viewers", "loudspeakers", "anchors"],
+        answer: 0,
+        explanation: "'Adverts / Advertisements' là các mẩu quảng cáo trên phương tiện truyền thông đại chúng."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Grammar (Adverbial Clause of Result - so...that): The documentary about wildlife was _______ fascinating that millions of viewers watched it until the end.",
+        options: ["so", "such", "too", "enough"],
+        answer: 0,
+        explanation: "Cấu trúc mệnh đề chỉ kết quả với tính từ 'fascinating': S + be + so + adj + that + S + V → chọn 'so'."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Grammar (Adverbial Clause of Result - such...that): ChatGPT is _______ a powerful AI tool that it has transformed how people search for information.",
+        options: ["such", "so", "as", "like"],
+        answer: 0,
+        explanation: "Trước cụm danh từ có mạo từ 'a powerful AI tool' ta dùng cấu trúc: such + a/an + adj + N + that + S + V → chọn 'such'."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Grammar (Adverbial Clause of Manner): The humanoid robot Sophia can express facial emotions _______ she were a real human being.",
+        options: ["as if", "so that", "even though", "because"],
+        answer: 0,
+        explanation: "Cấu trúc mệnh đề trạng ngữ chỉ cách thức 'as if / as though' (như thể là...) đi với quá khứ giả định ('she were')."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Vocabulary (Unit 8 - Wildlife Conservation): Many primates like gibbons and langurs are threatened with _______ due to habitat loss and illegal hunting.",
+        options: ["extinction", "conservation", "reproduction", "biodiversity"],
+        answer: 0,
+        explanation: "'Be threatened with extinction' (bị đe dọa tuyệt chủng) là cụm từ cố định trong chủ đề bảo tồn động vật hoang dã."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Vocabulary: Injured sea turtles are rescued and treated at the conservation centre before being _______ back into the ocean.",
+        options: ["released", "captured", "poached", "degraded"],
+        answer: 0,
+        explanation: "'Release back into the wild / ocean' có nghĩa là thả động vật trở lại môi trường tự nhiên sau khi cứu hộ."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Grammar (Adverbial Clause of Condition): Many rare animal species will disappear forever _______ stricter laws against poaching are enforced immediately.",
+        options: ["unless", "if", "as long as", "provided that"],
+        answer: 0,
+        explanation: "'Unless' = 'If... not' (Trừ khi / Nếu không...): Nhiều loài thú quý hiếm sẽ biến mất vĩnh viễn trừ khi luật chống săn trộm nghiêm khắc hơn được thực thi."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Grammar: You can borrow this camera to take photos of the birds _______ you promise to handle it carefully.",
+        options: ["as long as", "unless", "so that", "in case of"],
+        answer: 0,
+        explanation: "'As long as / Provided that' (miễn là, với điều kiện là) dẫn đầu mệnh đề điều kiện."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Choose the word CLOSEST in meaning to 'captivity': Wild animals often struggle to survive when bred in <u>captivity</u> rather than in their natural habitat.",
+        options: ["the state of being kept in a confined space (like a cage or enclosure)", "complete freedom in the forest", "a large national park", "natural migration"],
+        answer: 0,
+        explanation: "'In captivity' mang nghĩa là trong tình trạng nuôi nhốt (trái ngược với 'in the wild')."
+    },
+    {
+        grade: "12", subject: "anh", term: "GK2",
+        question: "Find the mistake: My father got a professional mechanic <u>check</u> the brakes of his car <u>before</u> our trip.",
+        options: ["check (should be 'to check')", "got", "the brakes", "before"],
+        answer: 0,
+        explanation: "Cấu trúc truyền khiến chủ động với 'get': get + somebody + TO V ('to check'); chỉ khi dùng 'have' mới là have + sb + V nguyên thể."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - TIẾNG ANH - CUỐI KÌ 2 (CK2 - 15 CÂU) - GLOBAL SUCCESS (GDPT 2018)
+    // ===================================================================
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Vocabulary (Unit 9 - Career Paths): High school seniors should seek professional career _______ to choose a suitable university major.",
+        options: ["advice", "adviser", "advise", "advisable"],
+        answer: 0,
+        explanation: "'Career advice / career guidance' là lời khuyên, tư vấn định hướng nghề nghiệp."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Grammar (Three-word Phrasal Verbs): In the digital age, employees must constantly learn new skills to _______ rapid technological changes.",
+        options: ["keep up with", "look down on", "drop out of", "run out of"],
+        answer: 0,
+        explanation: "Phrasal verb 3 từ 'keep up with' có nghĩa là bắt kịp, theo kịp tốc độ thay đổi của công nghệ."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Grammar (Three-word Phrasal Verbs): After graduation, she really _______ starting her new job as a software engineer at a tech company.",
+        options: ["looks forward to", "cuts down on", "comes up with", "gets on with"],
+        answer: 0,
+        explanation: "'Look forward to + V-ing / Noun' có nghĩa là mong đợi, háo hức chờ đón điều gì."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Grammar (Three-word Phrasal Verbs): Many traditional manual jobs are being automated, so workers have to _______ new ways to adapt.",
+        options: ["come up with", "go in for", "put up with", "make up for"],
+        answer: 0,
+        explanation: "'Come up with an idea / a solution / a way' có nghĩa là nảy ra, tìm ra ý tưởng hoặc giải pháp mới."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Grammar (Three-word Phrasal Verbs): It is important to _______ your coworkers to create a friendly and productive working environment.",
+        options: ["get on with", "cut down on", "live up to", "drop out of"],
+        answer: 0,
+        explanation: "'Get on (well) with somebody' có nghĩa là hòa thuận, có mối quan hệ tốt đẹp với đồng nghiệp."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Vocabulary (Unit 10 - Lifelong Learning): _______ learning is the voluntary and self-motivated pursuit of knowledge throughout a person's life.",
+        options: ["Lifelong", "Short-term", "Compulsory", "Reluctant"],
+        answer: 0,
+        explanation: "'Lifelong learning' (học tập suốt đời) là chủ đề cốt lõi của Unit 10 Tiếng Anh 12."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Vocabulary: Reading books và attending evening classes help older adults keep their minds sharp and _______ their horizons.",
+        options: ["broaden", "narrow", "weaken", "decline"],
+        answer: 0,
+        explanation: "Cụm từ cố định 'broaden/widen one's horizons' có nghĩa là mở mang tầm nhìn, mở rộng hiểu biết."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Grammar (Reported Speech with Orders/Requests): 'Please submit your career plan before Friday,' the teacher told us. → The teacher _______ our career plan before Friday.",
+        options: ["asked us to submit", "asked us submitting", "said us to submit", "told us submit"],
+        answer: 0,
+        explanation: "Tường thuật câu yêu cầu/mệnh lệnh lịch sự dùng cấu trúc: 'ask/tell + somebody + to V' → 'asked us to submit'."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Grammar (Reported Speech with Advice): 'You should take an online course to improve your coding skills,' Mr. Nam said to Minh.",
+        options: ["Mr. Nam advised Minh to take an online course to improve his coding skills.", "Mr. Nam advised Minh taking an online course.", "Mr. Namordered Minh to take an online course.", "Mr. Nam offered to take an online course for Minh."],
+        answer: 0,
+        explanation: "Lời khuyên 'You should + V' được tường thuật bằng động từ 'advise + O + to V' (khuyên ai nên làm gì)."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Grammar (Reported Speech with Warnings / Negative Orders): 'Don't share your personal password with anyone,' the cybersecurity expert warned us.",
+        options: ["The cybersecurity expert warned us not to share our personal password with anyone.", "The cybersecurity expert warned us to not sharing our password.", "The cybersecurity expert said us not to share our password.", "The cybersecurity expert suggested not share our password."],
+        answer: 0,
+        explanation: "Câu mệnh lệnh phủ định 'Don't + V' chuyển sang gián tiếp với 'warn / tell / ask + O + NOT TO V'."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Grammar (Reported Speech with Offers): 'I can help you prepare for the university entrance exam,' my brother said to me.",
+        options: ["My brother offered to help me prepare for the university entrance exam.", "My brother offered helping me prepare for the exam.", "My brother advised me to help him.", "My brother reminded me to help him."],
+        answer: 0,
+        explanation: "Câu tự nguyện giúp đỡ ('I can help you...') được tường thuật bằng cấu trúc 'offer + to V' (ngỏ ý/tình nguyện làm gì)."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Vocabulary: Soft skills such as critical thinking, teamwork, and problem-solving are highly _______ by modern employers.",
+        options: ["valued", "ignored", "replaced", "outdated"],
+        answer: 0,
+        explanation: "'Highly valued' (được đánh giá rất cao, coi trọng) bởi các nhà tuyển dụng hiện đại."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Choose the word CLOSEST in meaning to 'cut down on': Doctors advise office workers to <u>cut down on</u> sugary drinks and fast food.",
+        options: ["reduce", "increase", "produce", "consume"],
+        answer: 0,
+        explanation: "Phrasal verb 'cut down on' = 'reduce': cắt giảm lượng tiêu thụ thứ gì đó."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Find the mistake: My mother <u>reminded</u> me <u>turning off</u> all electrical appliances <u>before</u> leaving the house.",
+        options: ["turning off (should be 'to turn off')", "reminded", "electrical", "leaving"],
+        answer: 0,
+        explanation: "Cấu trúc 'remind somebody + TO V' (nhắc nhở ai làm việc gì trong tương lai) → phải sửa 'turning off' thành 'to turn off'."
+    },
+    {
+        grade: "12", subject: "anh", term: "CK2",
+        question: "Communication: Hoa: 'Thank you so much for helping me revise for the final English exam!' — Nam: '_______'",
+        options: ["My pleasure! I'm glad I could help.", "Yes, I agree with you.", "Good luck next time.", "Sorry to hear that."],
+        answer: 0,
+        explanation: "Đáp lại lời cảm ơn chân thành, câu trả lời lịch sự và tự nhiên nhất là 'My pleasure! I'm glad I could help.'"
+    },
+
+    // ===================================================================
+    // KHỐI 12 - CÔNG NGHỆ - GIỮA KÌ 1 (GK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Hệ thống điện quốc gia bao gồm 3 thành phần cơ bản kết nối chặt chẽ với nhau là:",
+        options: ["Nguồn điện (các nhà máy điện), Lưới điện (truyền tải và phân phối) và Các hộ tiêu thụ điện (phụ tải điện)", "Chỉ gồm các trạm biến áp và cột điện", "Chỉ gồm pin mặt trời và ắc quy", "Chỉ gồm dây dẫn trong gia đình"],
+        answer: 0,
+        explanation: "Hệ thống điện quốc gia là một chỉnh thể thống nhất gồm: Nguồn điện (sản xuất điện) → Lưới điện (truyền tải cao áp và phân phối hạ áp) → Tải tiêu thụ."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Tại Việt Nam, tần số tiêu chuẩn của dòng điện xoay chiều trong lưới điện quốc gia là bao nhiêu?",
+        options: ["f = 50 Hz", "f = 60 Hz", "f = 100 Hz", "f = 220 Hz"],
+        answer: 0,
+        explanation: "Lưới điện quốc gia Việt Nam sử dụng dòng điện xoay chiều có tần số tiêu chuẩn công nghiệp là f = 50 Hz."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Vì sao khi truyền tải điện năng đi xa trên đường dây Bắc - Nam, người ta phải dùng máy biến áp tăng điện áp lên mức siêu cao áp 500 kV?",
+        options: ["Để giảm cường độ dòng điện I trên đường dây, từ đó giảm tổn hao công suất do tỏa nhiệt ΔP = I²·R = (P² / U²)·R hàng chục nghìn lần", "Để làm tăng điện trở của dây dẫn", "Để dòng điện truyền đi với tốc độ chậm hơn", "Để người dân cắm trực tiếp quạt điện vào đường dây 500 kV"],
+        answer: 0,
+        explanation: "Tổn hao công suất trên đường dây tỉ lệ nghịch với bình phương điện áp (ΔP ~ 1/U²); khi tăng điện áp U lên n lần thì công suất hao phí do tỏa nhiệt giảm đi n² lần."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Máy phát điện xoay chiều ba pha tạo ra ba suất điện động xoay chiều hình sin có đặc điểm gì?",
+        options: ["Cùng tần số, cùng biên độ và lệch pha nhau một góc 2π/3 (tức 120°)", "Cùng tần số, cùng biên độ và cùng pha với nhau", "Lệch pha nhau một góc 90°", "Có ba tần số hoàn toàn khác nhau"],
+        answer: 0,
+        explanation: "Ba cuộn dây AX, BY, CZ của phần ứng đặt lệch nhau góc 120° trong không gian nên sinh ra 3 suất điện động xoay chiều cùng biên độ, cùng tần số f và lệch pha nhau 120° (2π/3 rad)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Trong mạch điện xoay chiều ba pha đối xứng, khi nối hình Sao (Y) thì mối quan hệ giữa điện áp dây (U_d), điện áp pha (U_p) và dòng điện dây (I_d), dòng điện pha (I_p) là:",
+        options: ["I_d = I_p và U_d = √3 · U_p", "U_d = U_p và I_d = √3 · I_p", "U_d = 3 · U_p", "I_d = 3 · I_p"],
+        answer: 0,
+        explanation: "Khi nối hình sao (Y): dòng điện chạy trên dây pha chính là dòng điện pha (I_d = I_p), còn điện áp giữa hai dây pha lớn gấp √3 lần điện áp pha (U_d = √3·U_p)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Trong mạch điện ba pha đối xứng nối hình Tam giác (Δ), mối quan hệ giữa các đại lượng dây và đại lượng pha là:",
+        options: ["U_d = U_p và I_d = √3 · I_p", "I_d = I_p và U_d = √3 · U_p", "U_d = √3 · U_p và I_d = √3 · I_p", "U_d = 2 · U_p"],
+        answer: 0,
+        explanation: "Khi nối hình tam giác (Δ): hai đầu mỗi pha nối trực tiếp vào hai dây pha nên U_d = U_p, còn dòng điện dây I_d = √3 · I_p."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Lưới điện hạ áp sinh hoạt 3 pha 4 dây ở Việt Nam có thông số điện áp ghi là '380 / 220 V'. Hai con số này có ý nghĩa là gì?",
+        options: ["Điện áp dây (giữa hai dây pha) là U_d = 380 V; điện áp pha (giữa một dây pha và dây trung tính) là U_p = 220 V", "Điện áp pha là 380 V và điện áp dây là 220 V", "Tần số là 380 Hz", "Công suất tối đa là 220 W"],
+        answer: 0,
+        explanation: "Lưới hạ áp chuẩn Việt Nam nối hình sao có dây trung tính (Y₀): U_p = 220 V (cấp cho thiết bị gia đình 1 pha) và U_d = √3 × 220 ≈ 380 V (cấp cho động cơ 3 pha)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Vai trò quan trọng nhất của 'Dây trung tính (dây O)' trong mạch điện ba pha bốn dây khi các tải tiêu thụ ở 3 pha không đối xứng (như các hộ gia đình bật/tắt thiết bị khác nhau) là gì?",
+        options: ["Giữ cho điện áp pha trên các tải tiêu thụ luôn ổn định (luôn bằng U_p = 220 V), không bị vượt quá mức định mức gây cháy hỏng thiết bị", "Làm tăng điện áp lên gấp đôi", "Thay thế cho cầu chì bảo vệ", "Chỉ dùng để treo bóng đèn"],
+        answer: 0,
+        explanation: "Nhờ dây trung tính có tổng trở rất nhỏ, dù tải ở 3 pha khác nhau nhưng điện áp đặt lên mỗi hộ tiêu thụ vẫn luôn bằng điện áp pha của nguồn (220 V)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Một máy biến áp lí tưởng có số vòng dây cuộn sơ cấp N₁ = 1000 vòng, cuộn thứ cấp N₂ = 200 vòng. Nếu đặt vào cuộn sơ cấp điện áp xoay chiều U₁ = 220 V thì điện áp đầu ra U₂ ở cuộn thứ cấp là:",
+        options: ["44 V (máy biến áp hạ áp)", "1100 V", "220 V", "110 V"],
+        answer: 0,
+        explanation: "Áp dụng công thức máy biến áp: U₁/U₂ = N₁/N₂ ⇒ U₂ = U₁ · (N₂/N₁) = 220 × (200 / 1000) = 44 V."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Lõi thép (mạch từ) của máy biến áp không đúc nguyên một khối thép đặc mà được ghép từ nhiều lá thép kĩ thuật điện mỏng (0,35 - 0,5 mm) có sơn cách điện hai mặt nhằm mục đích gì?",
+        options: ["Để giảm thiểu hao phí năng lượng nhiệt do dòng điện xoáy Foucault chạy trong lõi thép gây ra", "Để làm giảm khối lượng của máy biến áp", "Để dễ tháo rời khi vận chuyển", "Để tăng dòng điện xoáy trong lõi thép"],
+        answer: 0,
+        explanation: "Các lá thép kĩ thuật điện (thép silic) mỏng ghép cách điện với nhau giúp cắt nhỏ đường đi của dòng điện Foucault, giảm tối đa tổn hao nhiệt trong lõi từ."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Động cơ không đồng bộ ba pha được gọi là 'Không đồng bộ' vì trong chế độ làm việc bình thường:",
+        options: ["Tốc độ quay của Rôto (n) luôn nhỏ hơn tốc độ quay của từ trường quay (n₁) do Stato tạo ra (n < n₁)", "Tốc độ quay của rôto luôn lớn hơn tốc độ từ trường quay", "Rôto quay ngược chiều với từ trường quay", "Động cơ chạy bằng dòng điện một chiều"],
+        answer: 0,
+        explanation: "Nếu n = n₁ thì từ thông qua dây quấn rôto không biến thiên, mất dòng điện cảm ứng và lực từ; do đó rôto luôn quay chậm hơn từ trường quay một chút (hệ số trượt s = (n₁ - n)/n₁)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Muốn đảo chiều quay của Động cơ không đồng bộ ba pha, người ta thực hiện thao tác kĩ thuật đơn giản nào?",
+        options: ["Đổi chỗ hai trong ba dây pha cấp điện vào phần tĩnh (Stato) của động cơ", "Đổi chỗ cả ba dây pha theo vòng tròn", "Tăng điện áp nguồn lên gấp đôi", "Tháo bỏ quạt làm mát của động cơ"],
+        answer: 0,
+        explanation: "Khi hoán đổi vị trí 2 trong 3 dây pha nối vào Stato, chiều quay của từ trường quay sẽ đảo ngược lại, kéo theo Rôto quay theo chiều ngược lại."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Trên nhãn của một động cơ điện ba pha có kí hiệu 'Δ / Y - 220 / 380 V'. Nếu mạng điện có điện áp dây U_d = 380 V thì phải đấu dây quấn Stato của động cơ theo kiểu nào để động cơ chạy đúng định mức?",
+        options: ["Đấu hình Sao (Y - để mỗi pha của động cơ chịu đúng điện áp định mức U_p = 380/√3 = 220 V)", "Đấu hình Tam giác (Δ)", "Nối tiếp cả 3 pha thành 1 dây", "Không cần quan tâm cách đấu dây"],
+        answer: 0,
+        explanation: "Kí hiệu Δ/Y - 220/380 V nghĩa là mỗi cuộn dây pha của động cơ có điện áp định mức là 220 V. Với lưới U_d = 380 V, bắt buộc phải đấu hình Sao (Y) để U_p = 380/√3 = 220 V."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Nhà máy Thủy điện biến đổi dạng năng lượng nào thành điện năng?",
+        options: ["Thế năng và động năng của dòng nước (thủy năng) làm quay tuabin nước kéo máy phát điện", "Năng lượng hóa học của than đá", "Năng lượng phân hạch hạt nhân", "Năng lượng bức xạ mặt trời trực tiếp"],
+        answer: 0,
+        explanation: "Thủy điện tích nước trong hồ chứa trên cao, dòng nước chảy qua ống dẫn áp lực làm quay tuabin nước và rôto máy phát điện, là nguồn năng lượng tái tạo không phát thải khói bụi."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK1",
+        question: "Hệ thống Điện mặt trời mái nhà sử dụng thiết bị biến đổi 'Inverter (Bộ nghịch lưu hòa lưới)' để thực hiện chức năng gì?",
+        options: ["Biến đổi dòng điện một chiều (DC) do các tấm pin quang điện tạo ra thành dòng điện xoay chiều (AC 220V - 50Hz) cung cấp cho các thiết bị điện gia đình", "Biến đổi dòng điện xoay chiều thành ánh sáng", "Làm mát các tấm pin trên mái nhà", "Đo lượng mưa hàng ngày"],
+        answer: 0,
+        explanation: "Tấm pin mặt trời (Solar panel) phát ra điện một chiều (DC); bộ Inverter chuyển đổi điện DC thành điện xoay chiều chuẩn hình sin 220V - 50Hz dùng cho tải sinh hoạt."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - CÔNG NGHỆ - CUỐI KÌ 1 (CK1 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Thiết bị đo lường đặt ở đầu nguồn mạng điện của mỗi hộ gia đình dùng để đo lượng điện năng tiêu thụ hàng tháng (tính bằng kWh) gọi là:",
+        options: ["Công tơ điện (Điện năng kế)", "Aptomat (CB)", "Cầu dao đảo chiều", "Ổ cắm điện"],
+        answer: 0,
+        explanation: "Công tơ điện (1 pha hoặc 3 pha) đo điện năng tiêu thụ theo đơn vị kilôoát giờ (1 kWh = 1 'số điện' = 3 600 000 J)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Thiết bị đóng cắt và bảo vệ 'Aptomat (Circuit Breaker - CB)' trong mạng điện gia đình có chức năng tự động ngắt mạch điện khi xảy ra sự cố nào?",
+        options: ["Khi mạch điện bị Quá tải (dòng điện vượt định mức kéo dài) hoặc bị Ngắn mạch (chập mạch làm dòng điện tăng vọt cực lớn)", "Khi người dùng tắt bóng đèn", "Khi nhiệt độ ngoài trời giảm xuống", "Khi không có thiết bị nào cắm vào ổ điện"],
+        answer: 0,
+        explanation: "Aptomat (MCB) kết hợp cả chức năng đóng cắt thủ công và tự động cắt mạch bảo vệ khi quá tải (nhờ thanh lưỡng kim nhiệt) hoặc ngắn mạch (nhờ cuộn điện từ)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Loại aptomat chống giật (RCCB / RCBO / ELCB) có ưu điểm bảo vệ an toàn vượt trội nào so với aptomat thường (MCB)?",
+        options: ["Phát hiện dòng điện rò (dòng rò xuống đất hoặc qua cơ thể người khi chạm điện, thường từ 30 mA) và tự động cắt điện tức thời trong khoảng 0,03 giây để cứu mạng người", "Giúp bóng đèn sáng gấp đôi", "Làm giảm một nửa tiền điện hàng tháng", "Không bao giờ ngắt điện khi bị chập cháy"],
+        answer: 0,
+        explanation: "Aptomat chống rò (RCBO/ELCB) so sánh dòng điện đi trên dây pha và dòng về trên dây trung tính; khi có dòng rò ≥ 30 mA (như bình nóng lạnh rò điện hoặc người chạm dây), nó ngắt điện ngay lập tức."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Nguyên tắc bắt buộc để đảm bảo an toàn tuyệt đối khi lắp đặt Công tắc điều khiển bóng đèn trong mạng điện sinh hoạt 1 pha là gì?",
+        options: ["Công tắc bắt buộc phải lắp trên DÂY PHA (dây nóng L) và nối tiếp trước bóng đèn (để khi tắt công tắc, tại đui đèn không còn điện áp nguy hiểm)", "Lắp công tắc trên dây trung tính (dây nguội N)", "Mắc công tắc song song với bóng đèn", "Nối công tắc xuống đất"],
+        answer: 0,
+        explanation: "Nếu lắp công tắc trên dây trung tính, dù đã tắt công tắc (đèn tắt) nhưng dây pha vẫn nối trực tiếp vào đui đèn, người sửa chữa chạm vào đui đèn vẫn bị điện giật nguy hiểm."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Một gia đình sử dụng đồng thời các thiết bị điện ở điện áp U = 220 V có tổng công suất tiêu thụ là P = 3300 W (cosφ ≈ 1). Cường độ dòng điện chạy trong dây dẫn chính của gia đình là:",
+        options: ["I = 15 A (nên chọn Aptomat có dòng định mức khoảng 20 A)", "I = 5 A", "I = 50 A", "I = 1,5 A"],
+        answer: 0,
+        explanation: "Áp dụng công thức P = U·I·cosφ ⇒ I = P / U = 3300 / 220 = 15 A. Để bảo vệ an toàn và không nhảy aptomat khi khởi động, ta chọn I_đm = (1,2 ÷ 1,5)·I ≈ 20 A."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Khi lựa chọn tiết diện dây dẫn điện bằng đồng (mm²) cho mạng điện trong nhà, đại lượng tính toán cơ bản nhất cần căn cứ vào là:",
+        options: ["Cường độ dòng điện tính toán chạy qua dây dẫn và mật độ dòng điện cho phép J (S = I / J, công suất tải càng lớn thì phải chọn dây có tiết diện lõi đồng càng lớn)", "Màu sắc của lớp vỏ nhựa cách điện", "Độ cao của trần nhà", "Hãng sản xuất bóng đèn"],
+        answer: 0,
+        explanation: "Nếu chọn dây dẫn có tiết diện quá nhỏ so với dòng điện tải (ví dụ dùng dây 0,5 mm² cho bếp từ và bình nóng lạnh), dây sẽ bị phát nóng quá mức làm chảy vỏ nhựa gây chập cháy hỏa hoạn."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Trong sơ đồ mạch điện chiếu sáng cầu thang (điều khiển 1 bóng đèn bật/tắt từ 2 vị trí ở tầng 1 và tầng 2), người ta phải sử dụng loại công tắc nào?",
+        options: ["2 công tắc ba cực (công tắc hai chiều)", "2 công tắc hai cực thông thường", "1 cầu chì và 1 ổ cắm", "2 phích cắm điện"],
+        answer: 0,
+        explanation: "Mạch đèn cầu thang (hoặc đèn phòng ngủ bật ở cửa, tắt ở đầu giường) sử dụng 2 công tắc 3 cực (1 cực động nối với 2 cực tĩnh) nối liên động với nhau."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Biện pháp 'Nối đất bảo vệ (Tiếp địa)' cho vỏ kim loại của máy giặt, tủ lạnh, bình nước nóng nhằm mục đích an toàn gì?",
+        options: ["Khi thiết bị bị hỏng cách điện làm rò điện ra vỏ kim loại, dòng điện sẽ truyền thẳng xuống đất qua dây tiếp địa (có điện trở rất nhỏ) và làm nhảy aptomat chống giật, bảo vệ người chạm vào vỏ máy", "Để máy giặt chạy nhanh hơn", "Để tiết kiệm nước giặt", "Để thay thế cho dây nguồn"],
+        answer: 0,
+        explanation: "Dây nối đất bảo vệ (PE, thường có vỏ màu vàng sọc xanh lá) dẫn dòng điện rò xuống cọc tiếp địa chôn sâu trong đất, ngăn không cho điện áp nguy hiểm tồn tại trên vỏ máy."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Khi phát hiện một người đang bị điện giật ở mạng điện hạ áp gia đình và vẫn còn dính vào dây điện, hành động ĐẦU TIÊN người cứu hộ phải làm ngay lập tức là gì?",
+        options: ["Nhanh chóng tách nạn nhân ra khỏi nguồn điện bằng cách ngắt cầu dao/aptomat hoặc dùng vật khô cách điện (gậy gỗ khô, sào tre khô, đứng trên dép cao su/ván khô) gạt dây điện ra; TUYỆT ĐỐI không chạm tay trần vào nạn nhân khi chưa cắt điện", "Dùng tay không kéo mạnh người bị nạn ra ngay", "Đổ nước lạnh lên người nạn nhân", "Gọi điện thoại xong rồi đứng nhìn"],
+        answer: 0,
+        explanation: "Cơ thể người dẫn điện, nếu chạm tay trần vào nạn nhân đang mang điện thì người cứu hộ cũng sẽ bị điện giật theo. Do đó bước số 1 sống còn là cắt nguồn điện an toàn rồi mới sơ cứu hô hấp nhân tạo."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Dụng cụ kiểm tra nhanh và phổ biến nhất giúp người thợ điện xác định dây nào là Dây pha (dây nóng) và kiểm tra xem vỏ kim loại thiết bị có bị rò điện hay không là:",
+        options: ["Bút thử điện (đèn báo sáng khi chạm vào dây pha hoặc chỗ rò điện)", "Thước cuộn bằng thép", "Tua-vít sắt không bọc nhựa", "Kìm cắt dây"],
+        answer: 0,
+        explanation: "Khi chạm đầu bút thử điện vào dây pha (L) và tay chạm vào nắp kim loại đuôi bút, dòng điện cực nhỏ (an toàn nhờ điện trở hàng MΩ bên trong bút) làm đèn neon phát sáng; chạm vào dây trung tính (N) đèn không sáng."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Vì sao việc thay thế hoàn toàn bóng đèn sợi đốt và đèn huỳnh quang cũ bằng 'Đèn LED chiếu sáng' lại là giải pháp tiết kiệm điện năng hiệu quả hàng đầu?",
+        options: ["Đèn LED có hiệu suất phát quang rất cao, tiết kiệm tới 75 - 85% điện năng so với đèn sợi đốt, tỏa nhiệt rất ít và tuổi thọ bền gấp hàng chục lần", "Đèn LED tiêu thụ điện nhiều gấp đôi đèn sợi đốt", "Đèn LED phát ra nhiều nhiệt năng làm nóng phòng", "Đèn LED chỉ sáng được 100 giờ"],
+        answer: 0,
+        explanation: "Đèn sợi đốt biến 95% điện năng thành nhiệt vô ích; trong khi đèn LED biến phần lớn điện năng trực tiếp thành ánh sáng nhìn thấy với tuổi thọ từ 30 000 - 50 000 giờ."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Công nghệ 'Biến tần (Inverter)' được tích hợp trong máy điều hòa nhiệt độ, tủ lạnh và máy giặt hiện đại giúp tiết kiệm điện từ 30 - 50% nhờ nguyên lí nào?",
+        options: ["Điều chỉnh linh hoạt tần số dòng điện để thay đổi tốc độ quay của máy nén phù hợp với nhu cầu tải, duy trì nhiệt độ ổn định mà không phải bật/tắt khởi động lại liên tục gây tốn điện", "Ngắt nguồn điện hoàn toàn sau 5 phút chạy", "Tăng công suất tiêu thụ lên tối đa mọi lúc", "Không sử dụng động cơ điện"],
+        answer: 0,
+        explanation: "Dòng khởi động của động cơ lớn gấp 4-7 lần dòng định mức; công nghệ Inverter điều chỉnh tần số giúp máy nén giảm tốc độ chạy êm ái khi phòng đã đạt nhiệt độ cài đặt."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Cách sử dụng máy điều hòa nhiệt độ trong mùa hè như thế nào là vừa bảo vệ sức khỏe vừa tiết kiệm điện năng hiệu quả nhất?",
+        options: ["Đặt nhiệt độ ở mức hợp lí khoảng 26 - 27 °C kết hợp bật thêm một chiếc quạt gió nhỏ để lưu thông không khí mát đều khắp phòng, đóng kín cửa và vệ sinh lưới lọc bụi định kì", "Luôn bật ở mức 16 °C và mở toang cửa sổ", "Bật tắt điều hòa liên tục cứ 10 phút một lần", "Không bao giờ vệ sinh lưới lọc bụi"],
+        answer: 0,
+        explanation: "Cứ tăng nhiệt độ cài đặt điều hòa lên 1 °C sẽ tiết kiệm được khoảng 7 - 10% điện năng; mức 26 - 27 °C kết hợp quạt thoáng gió là tối ưu nhất."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Thói quen an toàn nào cần thực hiện tuyệt đối khi sử dụng Bình nước nóng gián tiếp (bình tắm nóng lạnh dùng điện) trong phòng tắm ẩm ướt?",
+        options: ["Bật bình đun trước khi tắm 15 - 20 phút và NGẮT APTOMAT nguồn điện của bình trước khi vào xả nước tắm; đồng thời kiểm tra bộ chống giật ELCB và dây tiếp địa định kì", "Vừa bật điện đun vừa tắm trực tiếp dưới vòi hoa sen", "Tháo bỏ bộ chống giật ELCB cho đỡ vướng", "Dùng dây điện trần nối vào bình"],
+        answer: 0,
+        explanation: "Phòng tắm ẩm ướt làm điện trở cơ thể người giảm mạnh; ngắt aptomat bình nóng lạnh trước khi tắm loại bỏ 100% nguy cơ tai nạn điện giật nếu thanh đốt bị rò điện."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK1",
+        question: "Vì sao các chuyên gia điện lực khuyến cáo người dân hạn chế sử dụng cùng lúc nhiều thiết bị điện công suất lớn (bàn là, lò nướng, máy sấy, bình nóng lạnh) vào 'Giờ cao điểm' (khoảng 9h30-11h30 và 17h00-20h00)?",
+        options: ["Để tránh gây quá tải cục bộ cho lưới điện quốc gia và trạm biến áp khu vực, chống sụt áp và giảm chi phí phát điện từ các nguồn chạy dầu đắt đỏ", "Vì vào giờ cao điểm các thiết bị không hoạt động được", "Vì dòng điện đổi tần số vào ban đêm", "Vì công tơ điện ngừng quay vào giờ cao điểm"],
+        answer: 0,
+        explanation: "San tải, dịch chuyển việc sử dụng thiết bị công suất lớn ra ngoài giờ cao điểm giúp hệ thống điện vận hành an toàn, ổn định và tiết kiệm chi phí xã hội."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - CÔNG NGHỆ - GIỮA KÌ 2 (GK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Ba linh kiện điện tử thụ động cơ bản nhất trong các mạch điện tử là:",
+        options: ["Điện trở (R), Tụ điện (C) và Cuộn cảm (L)", "Diode, Transistor và IC", "Vi điều khiển, Cảm biến và Màn hình", "Máy biến áp, Động cơ và Cầu dao"],
+        answer: 0,
+        explanation: "Linh kiện thụ động gồm Điện trở (hạn chế/phân chia dòng điện, đơn vị Ω), Tụ điện (tích phóng điện năng, chặn dòng DC cho dòng AC đi qua, đơn vị Farad - F) và Cuộn cảm (dẫn dòng DC, cản trở dòng AC tần số cao, đơn vị Henry - H)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Linh kiện 'Tụ điện (Capacitor)' có tính chất đặc trưng nào đối với dòng điện một chiều không đổi (DC) và dòng điện xoay chiều (AC)?",
+        options: ["Ngăn cản dòng điện một chiều không đổi (DC) đi qua (Z_C = ∞ khi f = 0), nhưng cho dòng điện xoay chiều (AC) đi qua với dung kháng X_C = 1 / (2πfC)", "Cho dòng điện một chiều đi qua dễ dàng và chặn đứng dòng xoay chiều", "Tạo ra từ trường mạnh như nam châm điện", "Biến đổi dòng xoay chiều thành dòng một chiều"],
+        answer: 0,
+        explanation: "Do giữa hai bản cực của tụ điện là lớp chất điện môi cách điện nên dòng một chiều không đi qua được; còn dòng xoay chiều làm tụ nạp - xả liên tục tạo dòng điện trong mạch."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Linh kiện bán dẫn 'Diode chỉnh lưu' (có 2 cực Anode A và Cathode K) có tính chất dẫn điện một chiều như thế nào?",
+        options: ["Chỉ cho dòng điện đi qua theo một chiều từ Anode (A) sang Cathode (K) khi được phân cực thuận (U_AK > 0) và ngăn dòng điện theo chiều ngược lại", "Cho dòng điện đi qua tự do theo cả hai chiều", "Có 3 cực Base, Collector, Emitter", "Dùng để khuếch đại công suất âm thanh"],
+        answer: 0,
+        explanation: "Nhờ tính dẫn điện một chiều (chỉ dẫn khi phân cực thuận), Diode bán dẫn được ứng dụng chủ yếu trong các mạch chỉnh lưu biến đổi dòng điện xoay chiều (AC) thành dòng điện một chiều (DC)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Linh kiện bán dẫn 'Transistor lưỡng cực (BJT)' gồm hai loại cấu trúc P-N-P và N-P-N có 3 cực với tên gọi là gì và dùng để làm gì?",
+        options: ["Ba cực là cực gốc Base (B), cực góp Collector (C) và cực phát Emitter (E); dùng để khuếch đại tín hiệu điện hoặc làm khóa điện tử đóng cắt tốc độ cao", "Chỉ có 2 cực Anode và Cathode", "Dùng để tích trữ điện tích thay ắc quy", "Chỉ dùng để phát sáng chiếu đường"],
+        answer: 0,
+        explanation: "Transistor là linh kiện tích cực nền tảng của điện tử học: dòng điện nhỏ ở cực B điều khiển dòng điện lớn hơn hàng trăm lần chạy giữa cực C và cực E."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Vi mạch tích hợp 'IC (Integrated Circuit)' là linh kiện điện tử được chế tạo bằng công nghệ bán dẫn tích hợp:",
+        options: ["Hàng nghìn đến hàng tỉ linh kiện (transistor, diode, điện trở, tụ điện) siêu nhỏ trên cùng một đế bán dẫn Silicon duy nhất (chip)", "Chỉ gồm một sợi dây đồng quấn quanh lõi sắt", "Một bóng đèn chân không thủy tinh lớn", "Hai tấm lá nhôm cuộn giấy cách điện"],
+        answer: 0,
+        explanation: "IC giúp thu nhỏ kích thước thiết bị điện tử xuống hàng triệu lần, giảm tiêu thụ điện năng, tăng tốc độ xử lí và độ tin cậy tuyệt đối."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Mạch Khuếch đại thuật toán 'Op-Amp (Operational Amplifier)' là một vi mạch tương tự (Analog IC) có hai đầu vào và một đầu ra, tên gọi hai đầu vào của Op-Amp là:",
+        options: ["Đầu vào đảo (kí hiệu dấu trừ '-') và Đầu vào không đảo (kí hiệu dấu cộng '+')", "Đầu vào Anode và Cathode", "Đầu vào Base và Emitter", "Đầu vào cao áp và hạ áp"],
+        answer: 0,
+        explanation: "Tín hiệu đưa vào đầu vào không đảo (+) sẽ cho tín hiệu ra cùng pha; tín hiệu đưa vào đầu vào đảo (-) sẽ cho tín hiệu ra ngược pha (đảo dấu)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Trong Điện tử số (Digital Electronics), tín hiệu số hoạt động dựa trên hệ đếm nhị phân chỉ sử dụng hai mức trạng thái logic cơ bản là:",
+        options: ["Mức logic '0' (mức điện áp thấp, tương ứng Sai/Tắt) và Mức logic '1' (mức điện áp cao, tương ứng Đúng/Bật)", "Các giá trị liên tục từ 0 đến 100", "Ba mức âm, không và dương", "Mười chữ số từ 0 đến 9"],
+        answer: 0,
+        explanation: "Tín hiệu số (nhị phân) chỉ có 2 mức rời rạc '0' (thường 0 V) và '1' (thường 3,3 V hoặc 5 V), giúp chống nhiễu cực tốt, dễ lưu trữ và xử lí bằng máy tính."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Cổng logic cơ bản nào có hàm logic là phép nhân Y = A · B (đầu ra Y chỉ bằng '1' khi TẤT CẢ các đầu vào A và B đều bằng '1')?",
+        options: ["Cổng AND", "Cổng OR (Y = A + B)", "Cổng NOT (Y = Ā)", "Cổng NOR"],
+        answer: 0,
+        explanation: "Cổng AND thực hiện phép hội logic (phép nhân logic Y = A·B): chỉ khi cả A = 1 và B = 1 thì đầu ra Y mới bằng 1; nếu có bất kì đầu vào nào bằng 0 thì Y = 0."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Cổng logic nào thực hiện phép đảo (phủ định) trạng thái tín hiệu đầu vào: khi đầu vào A = 0 thì đầu ra Y = 1, và khi A = 1 thì Y = 0?",
+        options: ["Cổng NOT (Cổng đảo)", "Cổng AND", "Cổng OR", "Cổng XOR"],
+        answer: 0,
+        explanation: "Cổng NOT có 1 đầu vào và 1 đầu ra (Y = Ā), luôn đảo ngược mức logic của tín hiệu đầu vào."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Cổng logic OR (thực hiện phép cộng logic Y = A + B) với hai đầu vào A = 1 và B = 0 sẽ cho kết quả ở đầu ra Y bằng bao nhiêu?",
+        options: ["Y = 1 (vì cổng OR cho đầu ra bằng 1 khi có ít nhất một đầu vào bằng 1)", "Y = 0", "Y = 2", "Không xác định"],
+        answer: 0,
+        explanation: "Với cổng OR: chỉ cần ít nhất 1 đầu vào bằng 1 thì đầu ra Y = 1; đầu ra Y chỉ bằng 0 khi tất cả các đầu vào đều bằng 0."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Phần tử nhớ cơ bản nhất trong điện tử số có khả năng lưu giữ 1 bit thông tin nhị phân (0 hoặc 1) và làm đơn vị cấu tạo nên thanh ghi, bộ đếm số, bộ nhớ RAM là:",
+        options: ["Trigơ (Flip-Flop, như D Flip-Flop, JK Flip-Flop)", "Điện trở nhiệt", "Biến áp nguồn", "Cầu chì"],
+        answer: 0,
+        explanation: "Flip-Flop (Trigơ) là mạch dãy có hai trạng thái cân bằng bền ('0' và '1'), có khả năng nhớ 1 bit dữ liệu số theo xung nhịp đồng hồ (Clock)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Vi điều khiển (Microcontroller - MCU, như chip trên bo mạch Arduino, ESP32) được ví như một 'Máy tính thu nhỏ trên một vi mạch đơn' vì bên trong nó tích hợp sẵn những khối chức năng nào?",
+        options: ["Bộ xử lí trung tâm (CPU), Bộ nhớ (RAM, ROM/Flash) và Các cổng vào/ra ngoại vi (I/O ports, bộ định thời Timer, bộ chuyển đổi ADC)", "Chỉ có duy nhất một con điện trở", "Tích hợp sẵn màn hình tivi 50 inch", "Tích hợp sẵn bình ắc quy chì"],
+        answer: 0,
+        explanation: "Vi điều khiển tích hợp trọn vẹn CPU + RAM + Flash ROM + GPIO/ADC/PWM trên 1 con chip duy nhất, có thể nạp chương trình để điều khiển tự động máy giặt, điều hòa, robot, hệ thống IoT."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Trong một hệ thống điều khiển tự động dùng Vi điều khiển (ví dụ hệ thống bật đèn tự động khi trời tối), linh kiện 'Quang trở (LDR - cảm biến ánh sáng)' đóng vai trò thuộc khối chức năng nào?",
+        options: ["Khối đầu vào / Cảm biến (chuyển đổi đại lượng vật lí không điện là cường độ ánh sáng thành tín hiệu điện đưa vào vi điều khiển)", "Khối xử lí trung tâm", "Khối chấp hành đầu ra", "Khối nguồn nuôi"],
+        answer: 0,
+        explanation: "Cảm biến (nhiệt độ, ánh sáng, độ ẩm, siêu âm) luôn nằm ở khối Đầu vào (Input) để thu thập thông tin môi trường gửi về Vi điều khiển xử lí."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Bộ chuyển đổi 'ADC (Analog-to-Digital Converter)' tích hợp trong vi điều khiển có nhiệm vụ quan trọng gì?",
+        options: ["Chuyển đổi tín hiệu tương tự liên tục (Analog, từ các cảm biến nhiệt độ, ánh sáng) thành tín hiệu số rời rạc (Digital) để CPU của vi điều khiển có thể hiểu và tính toán được", "Chuyển đổi dòng điện xoay chiều 220V thành 5V", "Khuếch đại âm thanh ra loa", "Phát sóng truyền hình"],
+        answer: 0,
+        explanation: "Vì CPU của vi điều khiển chỉ xử lí được các con số nhị phân (Digital), nên mọi tín hiệu điện áp liên tục (Analog) từ cảm biến phải qua bộ ADC để lượng tử hóa thành số."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "GK2",
+        question: "Bo mạch lập trình giáo dục phổ biến nhất thế giới hiện nay giúp học sinh dễ dàng thực hành thiết kế các dự án STEM, robot và tự động hóa là:",
+        options: ["Bo mạch Arduino (như Arduino Uno R3 sử dụng vi điều khiển ATmega328P) hoặc Micro:bit", "Bo mạch máy hàn hồ quang", "Bảng điện cầu chì sứ", "Bàn là nhiệt cơ học"],
+        answer: 0,
+        explanation: "Bo mạch Arduino là nền tảng phần cứng và phần mềm mã nguồn mở rất trực quan, giúp học sinh dễ dàng kết nối cảm biến, viết code C/C++ hoặc kéo thả khối lệnh để điều khiển thiết bị thông minh."
+    },
+
+    // ===================================================================
+    // KHỐI 12 - CÔNG NGHỆ - CUỐI KÌ 2 (CK2 - 15 CÂU) - CHƯƠNG TRÌNH GDPT 2018
+    // ===================================================================
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Trong Công nghệ Lâm nghiệp, hệ thống rừng ở Việt Nam theo mục đích sử dụng chủ yếu được phân thành 3 loại rừng chính là:",
+        options: ["Rừng phòng hộ, Rừng đặc dụng và Rừng sản xuất", "Rừng già, rừng non và rừng cỏ", "Rừng gỗ, rừng tre và rừng hoa", "Rừng tự nhiên và rừng công viên"],
+        answer: 0,
+        explanation: "Theo Luật Lâm nghiệp: 1. Rừng phòng hộ (đầu nguồn, chắn gió cát, chắn sóng ngập mặn); 2. Rừng đặc dụng (vườn quốc gia, khu bảo tồn đa dạng sinh học); 3. Rừng sản xuất (cung cấp gỗ, lâm sản)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Loại rừng nào được trồng dọc bờ biển và cửa sông có tác dụng chắn sóng biển, chống sạt lở bờ biển và là nơi sinh sản của nhiều loài thủy sản?",
+        options: ["Rừng phòng hộ chắn sóng, lấn biển (rừng ngập mặn: đước, bần, mắm, vẹt)", "Rừng đặc dụng nghiên cứu khoa học", "Rừng sản xuất lấy gỗ giấy trên núi cao", "Rừng thông cảnh quan"],
+        answer: 0,
+        explanation: "Hệ thống rừng ngập mặn ven biển là 'bức tường xanh' bảo vệ đê biển trước bão và sóng thần, đồng thời lưu trữ lượng lớn carbon xanh (Blue Carbon)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Trong kĩ thuật trồng và chăm sóc rừng sau khi trồng (từ 1 đến 3 năm đầu), công việc 'Làm cỏ, vun xới và phát quang dây leo, cây hoang dại' nhằm mục đích chính là gì?",
+        options: ["Loại bỏ sự cạnh tranh ánh sáng, nước và chất dinh dưỡng của cỏ dại/dây leo, giúp đất tơi xốp giữ ẩm để cây rừng non sinh trưởng nhanh, đạt tỉ lệ sống cao", "Để khai thác gỗ củi ngay lập tức", "Để làm đất bị xói mòn nhanh hơn", "Để thu hút côn trùng hại lá"],
+        answer: 0,
+        explanation: "Trong 3 năm đầu khi cây rừng chưa khép tán, dây leo và cỏ dại phát triển rất nhanh dễ chèn ép làm chết cây rừng non, nên chăm sóc làm cỏ, phát quang và trồng dặm là khâu quyết định thành rừng."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Phương thức khai thác rừng sản xuất nào chỉ chặt chọn những cây đã thành숙 (đủ tuổi khai thác) hoặc cây phẩm chất xấu, giữ lại các cây non và cây giống để rừng tự phục hồi liên tục, phù hợp với nơi đất dốc cần bảo vệ đất?",
+        options: ["Khai thác chọn (Chặt chọn)", "Khai thác trắng (chặt toàn bộ cây rừng trong một lần)", "Khai thác dần", "Đốt nương làm rẫy"],
+        answer: 0,
+        explanation: "Khai thác chọn giúp duy trì độ che phủ của tán rừng thường xuyên, chống xói mòn rửa trôi đất ở những vùng đồi núi có độ dốc lớn."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Chứng chỉ quản lí rừng bền vững quốc tế 'FSC (Forest Stewardship Council)' được cấp cho các khu rừng trồng đáp ứng các yêu cầu cốt lõi nào?",
+        options: ["Quản lí rừng tuân thủ nghiêm ngặt tiêu chuẩn bảo vệ môi trường sinh thái, có trách nhiệm xã hội với người lao động/cộng đồng bản địa và hiệu quả kinh tế bền vững", "Chặt phá toàn bộ rừng nguyên sinh để bán gỗ", "Sử dụng hóa chất diệt cỏ diện rộng trong rừng", "Không cần trồng lại rừng sau khi khai thác"],
+        answer: 0,
+        explanation: "Gỗ và sản phẩm nội thất có chứng chỉ FSC được phép xuất khẩu vào các thị trường khó tính (EU, Mỹ, Nhật Bản) với giá trị kinh tế cao hơn 20 - 30%."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Trong Công nghệ Thủy sản, căn cứ vào độ mặn của môi trường nước, thủy sản được phân chia thành 3 nhóm chính là:",
+        options: ["Thủy sản nước ngọt (cá chép, cá trắm, cá tra), Thủy sản nước lợ (tôm sú, tôm thẻ, cá vược) và Thủy sản nước mặn/hải sản (cá ngừ, cá song, tôm hùm)", "Thủy sản nước nóng và thủy sản nước lạnh", "Thủy sản ăn cỏ và thủy sản ăn thịt", "Thủy sản đáy và thủy sản tầng mặt"],
+        answer: 0,
+        explanation: "Phân loại theo độ mặn: Nước ngọt (< 0,5‰), Nước lợ (0,5‰ - 30‰, vùng cửa sông ven biển) và Nước mặn (> 30‰, biển và hải đảo)."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Trong ao nuôi thủy sản thâm canh (tôm, cá), chỉ tiêu hóa học quan trọng bậc nhất là hàm lượng 'Oxygen hòa tan (DO - Dissolved Oxygen)'. Để tăng lượng DO trong nước ao vào ban đêm và sáng sớm, người nuôi sử dụng thiết bị gì?",
+        options: ["Hệ thống quạt nước (guồng cánh quạt tạo dòng chảy và tung bọt nước) kết hợp máy sục khí đáy ao", "Đổ thêm dầu nhớt lên mặt ao", "Đậy kín mặt ao bằng bạt nhựa", "Tắt toàn bộ máy móc vào ban đêm"],
+        answer: 0,
+        explanation: "Ban đêm tảo không quang hợp mà cùng với tôm cá hô hấp tiêu thụ mạnh O₂ khiến DO giảm thấp nhất lúc rạng sáng; bật quạt nước và sục khí giúp hòa tan O₂ từ không khí vào nước và phân tầng đều nhiệt độ."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Khoảng giá trị độ pH của nước ao thích hợp nhất cho đa số các loài tôm, cá nước ngọt và nước lợ sinh trưởng phát triển tốt là:",
+        options: ["pH từ 7,0 đến 8,5 (môi trường trung tính hoặc hơi kiềm nhẹ)", "pH từ 2,0 đến 4,0 (rất chua)", "pH từ 11,0 đến 13,0 (rất kiềm)", "pH bằng 0"],
+        answer: 0,
+        explanation: "Độ pH trong khoảng 7,5 - 8,5 là tối ưu cho tôm cá lột xác, cứng vỏ và trao đổi chất; nếu pH quá thấp (< 6) hoặc quá cao (> 9) sẽ làm tôm cá bị sốc, bỏ ăn và dễ nhiễm bệnh."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Trong công nghệ sản xuất giống cá nhân tạo hiện nay, để kích thích cá bố mẹ thành thục đồng loạt đẻ trứng và tiết tinh dịch đúng thời điểm mong muốn, người ta sử dụng kĩ thuật gì?",
+        options: ["Tiêm chế phẩm hormone kích thích sinh sản (như não thùy cá chép, HCG hoặc LRH-a + Domperidone) kết hợp điều chỉnh môi trường nước", "Đánh đập cá bố mẹ cho đẻ trứng", "Bỏ đói cá bố mẹ trong 3 tháng", "Đun nóng nước bể đẻ lên 50 °C"],
+        answer: 0,
+        explanation: "Tiêm hormone sinh sản nhân tạo giúp chủ động hoàn toàn mùa vụ cho cá đẻ, tăng tỉ lệ rụng trứng, thụ tinh và ấp nở hàng loạt cá bột cung cấp cho nghề nuôi."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Trong công nghệ sản xuất giống tôm biển (như tôm sú, tôm thẻ chân trắng) và một số loài cá biển (cá song/cá mú), đặc điểm sinh học độc đáo nào ở cá song cần lưu ý khi quản lí đàn cá bố mẹ?",
+        options: ["Cá song có hiện tượng 'Chuyển đổi giới tính' theo độ tuổi (khi còn nhỏ từ 1-3 tuổi là cá cái, khi lớn lên từ 4 tuổi trở đi chuyển thành cá đực)", "Cá song đẻ ra con ngay không qua giai đoạn trứng", "Cá song sống trên cạn không cần nước", "Cá song không cần ăn thức ăn"],
+        answer: 0,
+        explanation: "Cá song (cá mú) là loài lưỡng tính tiền nữ (Protogynous hermaphrodite): giai đoạn đầu thành thục là cá cái, sau đó chuyển giới tính thành cá đực; người ta có thể dùng hormone 17α-methyltestosterone để chủ động tạo cá đực sớm."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Thức ăn hỗn hợp công nghiệp dạng viên nổi (ép đùn) dùng trong nuôi cá thâm canh có ưu điểm vượt trội nào so với thức ăn tươi sống tự chế?",
+        options: ["Cân đối đầy đủ chất dinh dưỡng (đạm, béo, khoáng, vitamin), viên thức ăn nổi trên mặt nước giúp người nuôi dễ quan sát sức ăn của cá để điều chỉnh lượng cho ăn, giảm ô nhiễm đáy ao và dễ bảo quản", "Làm đục ngầu và thối nước ao ngay lập tức", "Không chứa bất kì chất đạm nào", "Chìm sâu xuống bùn làm cá không tìm thấy"],
+        answer: 0,
+        explanation: "Thức ăn viên nổi ép đùn có độ bền trong nước cao, chín tinh bột dễ tiêu hóa, giúp giảm hệ số chuyển đổi thức ăn (FCR) và giữ môi trường nước ao sạch sẽ."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Việc sử dụng 'Chế phẩm vi sinh (Probiotics)' định kì xuống nước ao nuôi hoặc trộn vào thức ăn cho tôm cá có tác dụng chính là gì?",
+        options: ["Bổ sung vi khuẩn có lợi (Bacillus, Nitrosomonas, Nitrobacter) giúp phân hủy mùn bã hữu cơ đáy ao, chuyển hóa khí độc NH₃, NO₂⁻ thành chất không độc và ức chế vi khuẩn gây bệnh đường ruột", "Tiêu diệt hết toàn bộ lượng oxy trong nước", "Làm tăng lượng khí độc H₂S trong ao", "Thay thế hoàn toàn cho thức ăn"],
+        answer: 0,
+        explanation: "Vi sinh vật có lợi cạnh tranh thức ăn và chỗ bám với vi khuẩn gây bệnh (Vibrio), đồng thời làm sạch đáy ao và chuyển hóa khí độc NH₃/NO₂⁻, giúp nuôi thủy sản an toàn sinh học không cần kháng sinh."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Công nghệ nuôi tôm siêu thâm canh 'Biofloc (BFT)' hiện đại hoạt động dựa trên nguyên lí cốt lõi nào?",
+        options: ["Bổ sung nguồn carbon (như mật rỉ đường) theo tỉ lệ C : N thích hợp và sục khí liên tục để các vi khuẩn dị dưỡng kết tụ chất thải hữu cơ thành các hạt bông sinh học (Biofloc) vừa làm sạch nước vừa làm thức ăn giàu đạm tại chỗ cho tôm", "Thay nước ao 10 lần mỗi ngày", "Nuôi tôm trong bùn đất tự nhiên không cho ăn", "Sử dụng thuốc kháng sinh liều cao để diệt sạch vi sinh vật"],
+        answer: 0,
+        explanation: "Công nghệ Biofloc biến chất thải chứa nitơ độc hại của tôm thành sinh khối hạt floc giàu protein (tôm ăn lại hạt floc giúp tiết kiệm 20-30% thức ăn), hầu như không cần thay nước và hạn chế tối đa dịch bệnh."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Hệ thống 'Nuôi thủy sản tuần hoàn khép kín (RAS - Recirculating Aquaculture System)' có đặc điểm công nghệ nổi bật là:",
+        options: ["Nước từ bể nuôi được thu gom qua hệ thống lọc cơ học (tách phân), lọc sinh học (khử độc NH₃), khử trùng bằng tia UV/Ozone và bổ sung oxy rồi cấp tuần hoàn trở lại bể nuôi, tiết kiệm trên 90% nước và kiểm soát hoàn toàn dịch bệnh", "Xả thẳng toàn bộ nước thải chưa xử lí ra sông biển", "Phụ thuộc hoàn toàn vào thời tiết mưa nắng ngoài trời", "Chỉ nuôi được 1 con cá trong 100 m³ nước"],
+        answer: 0,
+        explanation: "Công nghệ RAS là đỉnh cao của nuôi thủy sản công nghệ cao: kiểm soát tự động 100% môi trường nước, mật độ nuôi cực cao, tiết kiệm diện tích và nước, không xả thải gây ô nhiễm môi trường."
+    },
+    {
+        grade: "12", subject: "congnghe", term: "CK2",
+        question: "Để gỡ bỏ 'Thẻ vàng IUU' của Ủy ban châu Âu (EC) và phát triển nghề khai thác hải sản bền vững, ngư dân và tàu cá Việt Nam khi vươn khơi đánh bắt xa bờ bắt buộc phải tuân thủ quy định nào?",
+        options: ["Chống khai thác hải sản bất hợp pháp, không báo cáo và không theo quy định (IUU): bật thiết bị giám sát hành trình (VMS) 24/24h, ghi nhật kí khai thác minh bạch, không xâm phạm vùng biển nước ngoài và không dùng ngư cụ tận diệt", "Tắt thiết bị giám sát hành trình để sang vùng biển nước ngoài đánh bắt", "Dùng thuốc nổ, xung điện và chất độc để đánh bắt cá", "Bắt giữ cả rùa biển và cá heo quý hiếm"],
+        answer: 0,
+        explanation: "Tuân thủ nghiêm ngặt quy định chống khai thác IUU giúp bảo vệ nguồn lợi thủy sản lâu dài, nâng cao uy tín quốc gia và giúp hải sản Việt Nam xuất khẩu thuận lợi ra toàn cầu."
     }
 ];
