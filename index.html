@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cổng Ôn Tập & Tài Liệu Trực Tuyến - K71</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- ================= KHỞI TẠO MÀU TOÀN CỤC NGAY LẬP TỨC (TRÁNH CHỚP MÀU) ================= -->
     <script>
@@ -1491,6 +1494,352 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ================= GIAO DIỆN ĐĂNG NHẬP & ĐĂNG KÝ TỐI GIẢN (ĐỒNG BỘ 100% THEME & CSS VARIABLES) ================= */
+        .auth-spa-wrapper {
+            flex: 1;
+            width: 100%;
+            min-height: calc(100vh - 61px);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            animation: fadeIn 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .auth-spa-wrapper.active {
+            display: flex;
+        }
+
+        .auth-view-box {
+            width: 100%;
+            margin: 0 auto;
+            padding: 48px 20px;
+            background: transparent;
+        }
+
+        .auth-view-box.login-box {
+            max-width: 460px;
+        }
+
+        .auth-view-box.register-box {
+            max-width: 480px;
+        }
+
+        .auth-back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 13.5px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 4px 0;
+            margin-bottom: 20px;
+            transition: color 0.18s ease, transform 0.18s ease;
+        }
+
+        .auth-back-home-btn:hover {
+            color: var(--primary-color);
+            transform: translateX(-2px);
+        }
+
+        .auth-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text-main);
+            text-align: center;
+            line-height: 1.3;
+            margin: 0;
+            letter-spacing: -0.01em;
+            transition: color 0.25s ease;
+        }
+
+        .auth-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-align: center;
+            margin: 10px auto 0 auto;
+            max-width: 390px;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.25s ease;
+        }
+
+        .auth-clean-form {
+            margin-top: 28px;
+            width: 100%;
+        }
+
+        .auth-field-group {
+            margin-bottom: 18px;
+            width: 100%;
+        }
+
+        .auth-grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 480px) {
+            .auth-grid-2col {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+        }
+
+        .auth-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            text-align: left;
+            transition: color 0.25s ease;
+        }
+
+        .auth-input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .auth-input-icon-left {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            transition: color 0.18s ease;
+        }
+
+        .auth-input-icon-left svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .auth-clean-input {
+            width: 100%;
+            height: 46px;
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 0 14px 0 42px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .auth-clean-input.has-eye {
+            padding-right: 42px;
+        }
+
+        .auth-clean-input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.75;
+        }
+
+        .auth-clean-input:focus {
+            border-color: var(--primary-color);
+            background-color: var(--bg-card-hover);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .auth-input-wrap:focus-within .auth-input-icon-left {
+            color: var(--primary-color);
+        }
+
+        .auth-eye-btn {
+            position: absolute;
+            right: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.18s ease;
+        }
+
+        .auth-eye-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .auth-eye-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .auth-terms-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 4px;
+            margin-bottom: 22px;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.45;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .auth-circle-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 50%;
+            background-color: var(--bg-card);
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 1px;
+            display: inline-grid;
+            place-content: center;
+            transition: all 0.18s ease;
+        }
+
+        .auth-circle-checkbox::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 0.15s transform ease-in-out;
+            background-color: var(--bg-card);
+        }
+
+        .auth-circle-checkbox:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .auth-circle-checkbox:checked::before {
+            transform: scale(1);
+        }
+
+        .auth-circle-checkbox:focus-visible {
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .auth-submit-btn {
+            width: 100%;
+            height: 46px;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+            box-shadow: 0 2px 10px var(--primary-glow);
+            transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .auth-submit-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .auth-submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .auth-footer-note {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .auth-footer-note a,
+        .auth-switch-mode a,
+        .auth-terms-row a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.18s ease;
+        }
+
+        .auth-footer-note a:hover,
+        .auth-switch-mode a:hover,
+        .auth-terms-row a:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        .auth-required-mark {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .auth-switch-mode {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .auth-switch-mode a {
+            font-weight: 600;
+        }
+
+        .auth-alert-box {
+            display: none;
+            padding: 11px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 18px;
+            line-height: 1.45;
+            background-color: var(--primary-light);
+            border: 1px solid var(--border-highlight);
+            color: var(--text-main);
+        }
+
+        .auth-alert-box.error,
+        .auth-alert-box.success {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -1539,12 +1888,6 @@
                 </a>
             </li>
             <li>
-                <a class="nav-item" onclick="switchSection('history', this)">
-                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    <span>Tài Khoản & Lịch Sử</span>
-                </a>
-            </li>
-            <li>
                 <a class="nav-item" onclick="switchSection('pomodoro', this)">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     <span>Tự Học Pomodoro</span>
@@ -1585,17 +1928,168 @@
             </div>
             
             <div class="topbar-right" id="topbarAuthArea" style="display:flex; align-items:center; gap:10px;">
-                <button type="button" onclick="window.K71Auth && window.K71Auth.openLoginModal({ tab: 'login' })" class="btn-doc-secondary" style="padding: 8px 13px; font-size: 0.83rem; border-radius: 10px;">
-                    🔑 Đăng nhập
+                <button type="button" onclick="openAuthView('login')" class="btn-doc-secondary" style="padding: 8px 14px; font-size: 0.84rem; border-radius: var(--radius-sm);">
+                    Đăng nhập
                 </button>
-                <button type="button" onclick="window.K71Auth && window.K71Auth.openLoginModal({ tab: 'register' })" class="btn-doc-primary" style="padding: 8px 14px; font-size: 0.83rem; border-radius: 10px;">
-                    ✨ Tạo tài khoản
+                <button type="button" onclick="openAuthView('register')" class="btn-doc-primary" style="padding: 8px 15px; font-size: 0.84rem; border-radius: var(--radius-sm);">
+                    Đăng ký
                 </button>
             </div>
         </header>
 
+        <!-- ================= VIEW ĐĂNG NHẬP & ĐĂNG KÝ TỐI GIẢN (ĐỒNG BỘ THEME - SPA) ================= -->
+        <div id="authSpaWrapper" class="auth-spa-wrapper">
+            <!-- 1. VIEW ĐĂNG NHẬP (LOGIN VIEW) -->
+            <div id="authLoginView" class="auth-view-box login-box">
+                <button type="button" class="auth-back-home-btn" onclick="closeAuthView()">
+                    ← Quay lại trang chủ
+                </button>
+
+                <h1 class="auth-title">Đăng nhập vào tài khoản của bạn</h1>
+                <p class="auth-subtitle">Học tập và giao lưu với hàng triệu học viên trên mọi miền đất nước.</p>
+
+                <form class="auth-clean-form" onsubmit="handleCleanLoginSubmit(event)" novalidate>
+                    <div id="authLoginAlert" class="auth-alert-box"></div>
+
+                    <!-- Trường 1: Tên tài khoản/Email -->
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="cleanLoginIdentity">Tên tài khoản/Email</label>
+                        <div class="auth-input-wrap">
+                            <span class="auth-input-icon-left">
+                                <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </span>
+                            <input type="text" id="cleanLoginIdentity" class="auth-clean-input" placeholder="Tên tài khoản hoặc Email" autocomplete="username" required>
+                        </div>
+                    </div>
+
+                    <!-- Trường 2: Mật khẩu -->
+                    <div class="auth-field-group" style="margin-bottom: 0;">
+                        <label class="auth-label" for="cleanLoginPassword">Mật khẩu</label>
+                        <div class="auth-input-wrap">
+                            <span class="auth-input-icon-left">
+                                <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                            </span>
+                            <input type="password" id="cleanLoginPassword" class="auth-clean-input has-eye" placeholder="Mật khẩu" autocomplete="current-password" required>
+                            <button type="button" class="auth-eye-btn" onclick="toggleCleanPassword('cleanLoginPassword', this)" aria-label="Ẩn/hiện mật khẩu" title="Ẩn/hiện mật khẩu">
+                                <svg viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Nút hành động (Submit) -->
+                    <button type="submit" class="btn-doc-primary auth-submit-btn">
+                        ĐĂNG NHẬP →
+                    </button>
+
+                    <!-- Ghi chú chân form -->
+                    <p class="auth-footer-note">
+                        Trong trường hợp không nhớ hoặc chưa tạo mật khẩu đăng nhập, bạn sử dụng chức năng <a href="javascript:void(0)" onclick="handleForgotPasswordPrompt()">Quên mật khẩu?</a> để tạo mật khẩu mới.
+                    </p>
+
+                    <!-- Dòng chuyển đổi nhanh sang Đăng ký -->
+                    <div class="auth-switch-mode">
+                        Chưa có tài khoản? <a href="javascript:void(0)" onclick="openAuthView('register')">Đăng ký ngay</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 2. VIEW ĐĂNG KÝ (REGISTER VIEW) -->
+            <div id="authRegisterView" class="auth-view-box register-box" style="display: none;">
+                <button type="button" class="auth-back-home-btn" onclick="closeAuthView()">
+                    ← Quay lại trang chủ
+                </button>
+
+                <h1 class="auth-title">Tạo tài khoản của bạn</h1>
+                <p class="auth-subtitle">Học tập và giao lưu với hàng triệu học viên trên mọi miền đất nước.</p>
+
+                <form class="auth-clean-form" onsubmit="handleCleanRegisterSubmit(event)" novalidate>
+                    <div id="authRegisterAlert" class="auth-alert-box"></div>
+
+                    <!-- Họ và tên -->
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="cleanRegName">Họ và tên</label>
+                        <div class="auth-input-wrap">
+                            <span class="auth-input-icon-left">
+                                <svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </span>
+                            <input type="text" id="cleanRegName" class="auth-clean-input" placeholder="Họ và tên" autocomplete="name" required>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="cleanRegEmail">Email</label>
+                        <div class="auth-input-wrap">
+                            <span class="auth-input-icon-left">
+                                <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </span>
+                            <input type="email" id="cleanRegEmail" class="auth-clean-input" placeholder="Địa chỉ email" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <!-- Số điện thoại -->
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="cleanRegPhone">Số điện thoại</label>
+                        <div class="auth-input-wrap">
+                            <span class="auth-input-icon-left">
+                                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </span>
+                            <input type="tel" id="cleanRegPhone" class="auth-clean-input" placeholder="Số điện thoại" autocomplete="tel" required>
+                        </div>
+                    </div>
+
+                    <!-- Hàng 2 cột ngang nhau: Mật khẩu & Xác nhận mật khẩu -->
+                    <div class="auth-grid-2col">
+                        <div>
+                            <label class="auth-label" for="cleanRegPassword">Mật khẩu</label>
+                            <div class="auth-input-wrap">
+                                <span class="auth-input-icon-left">
+                                    <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                                </span>
+                                <input type="password" id="cleanRegPassword" class="auth-clean-input has-eye" placeholder="Mật khẩu" autocomplete="new-password" required>
+                                <button type="button" class="auth-eye-btn" onclick="toggleCleanPassword('cleanRegPassword', this)" aria-label="Ẩn/hiện mật khẩu" title="Ẩn/hiện mật khẩu">
+                                    <svg viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="auth-label" for="cleanRegConfirmPassword">Xác nhận mật khẩu</label>
+                            <div class="auth-input-wrap">
+                                <span class="auth-input-icon-left">
+                                    <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                                </span>
+                                <input type="password" id="cleanRegConfirmPassword" class="auth-clean-input has-eye" placeholder="Xác nhận mật khẩu" autocomplete="new-password" required>
+                                <button type="button" class="auth-eye-btn" onclick="toggleCleanPassword('cleanRegConfirmPassword', this)" aria-label="Ẩn/hiện mật khẩu" title="Ẩn/hiện mật khẩu">
+                                    <svg viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Điều khoản -->
+                    <label class="auth-terms-row" for="cleanRegTerms">
+                        <input type="checkbox" id="cleanRegTerms" class="auth-circle-checkbox">
+                        <span>
+                            Tôi đã đọc và đồng ý với <a href="javascript:void(0)" onclick="showPrivacyPolicyNotice(event)">Chính sách bảo vệ dữ liệu cá nhân</a> <span class="auth-required-mark">*</span>
+                        </span>
+                    </label>
+
+                    <!-- Nút hành động (Submit) -->
+                    <button type="submit" class="btn-doc-primary auth-submit-btn" style="margin-top: 0;">
+                        ĐĂNG KÝ NGAY →
+                    </button>
+
+                    <!-- Dòng chuyển đổi nhanh sang Đăng nhập -->
+                    <div class="auth-switch-mode">
+                        Đã có tài khoản? <a href="javascript:void(0)" onclick="openAuthView('login')">Đăng nhập</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <!-- Container chứa các phần nội dung (Chỉ hiện phần được bấm trên menu) -->
-        <main class="content-container">
+        <main class="content-container" id="mainContentContainer">
 
             <!-- ================= PHẦN 1: TỔNG QUAN (DASHBOARD) ================= -->
             <section id="section-overview" class="section-view active">
@@ -1634,15 +2128,6 @@
                         <div class="quick-card-btn">Luyện IELTS ngay ➔</div>
                     </div>
 
-                    <div class="quick-card" onclick="triggerNav('history')">
-                        <div>
-                            <div class="quick-card-icon">👤</div>
-                            <h3>Tài Khoản & Lịch Sử</h3>
-                            <p>Liên kết Google / Facebook cá nhân để lưu điểm số và xem lại toàn bộ đề đã làm.</p>
-                        </div>
-                        <div class="quick-card-btn">Xem lịch sử làm bài ➔</div>
-                    </div>
-
                     <div class="quick-card" onclick="triggerNav('pomodoro')">
                         <div>
                             <div class="quick-card-icon">⏰</div>
@@ -1667,7 +2152,7 @@
                     <h2>🎯 Hướng Dẫn Sử Dụng Nhanh</h2>
                     <ul style="padding-left: 20px; line-height: 1.85; color: var(--text-muted); font-size: 0.95rem;">
                         <li><strong>Thanh Menu bên trái (Navigation):</strong> Bấm vào từng mục để hiển thị độc lập từng phần chức năng, tránh bị rối mắt.</li>
-                        <li><strong>Đăng Nhập & Tạo Tài Khoản Học Sinh (Liên kết Gmail):</strong> Bấm nút <strong>✨ Tạo tài khoản</strong> hoặc <strong>🔑 Đăng nhập</strong> ở góc trên bên phải (hoặc vào mục <strong>Tài Khoản & Lịch Sử</strong>) để đăng ký tài khoản liên kết với địa chỉ <strong>Gmail</strong> của bạn. Sau khi đăng nhập, mọi kết quả làm bài sẽ được tự động lưu lại kèm thống kê điểm số và cho phép <strong>👁️ Xem lại chi tiết từng câu hỏi</strong> bất cứ lúc nào.</li>
+                        <li><strong>Đăng Nhập & Đăng Ký Tài Khoản:</strong> Bấm nút <strong>Đăng ký</strong> hoặc <strong>Đăng nhập</strong> ở góc trên bên phải để tạo tài khoản và lưu lại kết quả làm bài của bạn.</li>
                         <li><strong>Tài Liệu Môn Học:</strong> Bấm chọn 1 trong 10 môn học bạn muốn ôn tập để xem nhanh chuyên đề, đề cương và tài liệu tương ứng.</li>
                         <li><strong>Luyện Trắc Nghiệm (10 môn GDPT 2018):</strong> Chọn Khối lớp (10, 11, 12), Môn học, Kỳ thi (GK1, CK1, GK2, CK2) và Chế độ làm bài (Ôn tập hoặc Thi thử). Lưu ý: câu hỏi đã chọn phương án sai sẽ bị khóa để đảm bảo tính trung thực và tự động chuyển vào <em>Kho câu hay sai</em> để bạn luyện lại.</li>
                         <li><strong>Luyện IELTS 4 Kỹ Năng (Cambridge 17–19 & AI Examiner):</strong> Chọn bộ đề Cambridge Academic (17, 18, 19) và kỹ năng muốn luyện: <strong>Reading</strong> (giao diện chia đôi màn hình chuẩn thi máy, có tô sáng Highlight), <strong>Listening</strong> (nghe Audio đa giọng đọc kèm Transcript), <strong>Writing Task 1 & 2</strong> và <strong>Speaking Part 1, 2, 3</strong> (tích hợp thu âm giọng nói và AI chấm điểm chi tiết theo 4 tiêu chí Band Score).</li>
@@ -1749,63 +2234,6 @@
                         <a href="ielts.html?v=102" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Mở rộng toàn màn hình ↗</a>
                     </div>
                     <iframe src="ielts.html?v=102" class="iframe-box" id="ieltsIframe" allow="fullscreen; microphone" allowfullscreen style="height: 980px;"></iframe>
-                </div>
-            </section>
-
-            <!-- ================= PHẦN 3C: TÀI KHOẢN CÁ NHÂN (GOOGLE / FACEBOOK) & LỊCH SỬ LÀM BÀI ================= -->
-            <section id="section-history" class="section-view">
-                <!-- Khung Hồ sơ tài khoản & Liên kết Google / Facebook -->
-                <div class="card" id="accountProfileCard">
-                    <!-- Được render động bởi renderAccountAndHistorySection() -->
-                </div>
-
-                <!-- 4 Thẻ Thống Kê Học Tập Cá Nhân -->
-                <div class="quick-grid" id="historyStatsGrid" style="margin-bottom: 24px;">
-                    <!-- Được render động -->
-                </div>
-
-                <!-- Danh sách Lịch sử làm bài chi tiết & Bộ lọc -->
-                <div class="card">
-                    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; margin-bottom:18px;">
-                        <div>
-                            <h2 style="margin-bottom:4px;">📊 Bảng Lịch Sử Làm Bài Của Bạn</h2>
-                            <p class="card-desc" style="margin-bottom:0;">Toàn bộ các bài thi Trắc nghiệm THPT & IELTS được lưu trữ tự động theo tài khoản cá nhân:</p>
-                        </div>
-                        <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
-                            <select id="histFilterSubject" onchange="renderAccountAndHistorySection()" style="padding:9px 12px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-body); color:var(--text-main); font-size:0.88rem; font-weight:600;">
-                                <option value="all">📚 Tất cả môn học</option>
-                                <option value="toan">Toán học</option>
-                                <option value="ly">Vật lí</option>
-                                <option value="hoa">Hóa học</option>
-                                <option value="sinh">Sinh học</option>
-                                <option value="van">Ngữ văn</option>
-                                <option value="anh">Tiếng Anh</option>
-                                <option value="congnghe">Công nghệ</option>
-                                <option value="su">Lịch sử</option>
-                                <option value="dia">Địa lí</option>
-                                <option value="gdktpl">GD Kinh tế & PL</option>
-                                <option value="ielts">IELTS Academic</option>
-                            </select>
-
-                            <select id="histFilterGrade" onchange="renderAccountAndHistorySection()" style="padding:9px 12px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-body); color:var(--text-main); font-size:0.88rem; font-weight:600;">
-                                <option value="all">🎓 Tất cả khối</option>
-                                <option value="10">Khối 10</option>
-                                <option value="11">Khối 11</option>
-                                <option value="12">Khối 12</option>
-                                <option value="IELTS">IELTS</option>
-                            </select>
-
-                            <button type="button" onclick="window.K71Auth && window.K71Auth.exportAccountBackup()" class="btn-doc-secondary" style="padding:9px 13px; font-size:0.84rem;">
-                                📥 Xuất file sao lưu
-                            </button>
-                            <label class="btn-doc-secondary" style="padding:9px 13px; font-size:0.84rem; cursor:pointer; margin:0;">
-                                📤 Nhập file sao lưu
-                                <input type="file" accept=".json" style="display:none;" onchange="handleImportBackupFile(this)">
-                            </label>
-                        </div>
-                    </div>
-
-                    <div id="historyTableContainer"></div>
                 </div>
             </section>
 
@@ -2004,16 +2432,20 @@
             'documents': '📚 Thư Mục Tài Liệu Môn Học',
             'quiz': '📝 Khu Vực Luyện Tập Trắc Nghiệm',
             'ielts': '🎓 Luyện Thi IELTS 4 Kỹ Năng (Cambridge & AI)',
-            'history': '👤 Tài Khoản Cá Nhân & Lịch Sử Làm Bài',
             'pomodoro': '⏰ Khu Vực Tự Học Pomodoro',
             'team': '🚀 Ban Sáng Lập & Giới Thiệu K71',
             'settings': '⚙️ Cài Đặt Giao Diện & Tiện Ích'
         };
 
-        const navKeys = ['overview', 'documents', 'quiz', 'ielts', 'history', 'pomodoro', 'team', 'settings'];
+        const navKeys = ['overview', 'documents', 'quiz', 'ielts', 'pomodoro', 'team', 'settings'];
 
         // Chuyển tab khi bấm nút menu bên sidebar
         function switchSection(sectionId, el) {
+            if (!titles[sectionId]) sectionId = 'overview';
+
+            // Nếu đang mở View Đăng nhập / Đăng ký thì đóng lại để hiện nội dung chính
+            closeAuthView(false);
+
             document.querySelectorAll('.sidebar-menu .nav-item').forEach(item => {
                 item.classList.remove('active');
             });
@@ -2035,9 +2467,6 @@
             const targetSection = document.getElementById('section-' + sectionId);
             if (targetSection) {
                 targetSection.classList.add('active');
-            }
-            if (sectionId === 'history') {
-                renderAccountAndHistorySection();
             }
 
             // Cập nhật tiêu đề Topbar
@@ -2701,7 +3130,326 @@
             syncIframes(activeColor);
         }
 
-        /* ================= GIAO DIỆN ĐĂNG NHẬP, TẠO TÀI KHOẢN HỌC SINH (GMAIL) & LỊCH SỬ LÀM BÀI ================= */
+        /* ================= HỆ THỐNG CHUYỂN ĐỔI GIAO DIỆN ĐĂNG NHẬP & ĐĂNG KÝ (SPA VIEW) & AUTH GUARD ================= */
+        let pendingReturnSection = null;
+
+        function getActiveSectionKey() {
+            const activeSec = document.querySelector('.section-view.active');
+            return activeSec ? activeSec.id.replace('section-', '') : 'overview';
+        }
+
+        function requireAuth(callback, event) {
+            const user = window.K71Auth ? window.K71Auth.getCurrentUser() : null;
+            if (user) {
+                if (typeof callback === 'function') callback();
+                return true;
+            }
+            if (event) {
+                if (typeof event.preventDefault === 'function') event.preventDefault();
+                if (typeof event.stopPropagation === 'function') event.stopPropagation();
+                if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
+            }
+            pendingReturnSection = getActiveSectionKey();
+            if (window.K71Auth && typeof window.K71Auth.showToast === 'function') {
+                window.K71Auth.showToast('Vui lòng đăng nhập hoặc tạo tài khoản để sử dụng tính năng này!');
+            }
+            openAuthView('login');
+            return false;
+        }
+        window.requireAuth = requireAuth;
+
+        function setupMainPageAuthGuard() {
+            const mainContent = document.getElementById('mainContentContainer');
+            if (!mainContent) return;
+
+            const guardHandler = function (e) {
+                const user = window.K71Auth ? window.K71Auth.getCurrentUser() : null;
+                if (user) return;
+
+                const target = e.target;
+                if (!target || typeof target.closest !== 'function') return;
+
+                // Cho phép bấm các thẻ chuyển tab xem trước giao diện (Quick Cards & chọn môn học để xem danh sách đề)
+                if (target.closest('.quick-card') || target.closest('.subject-item')) {
+                    return;
+                }
+
+                // Chặn mọi nút hành động, tải tài liệu, mở bài thi, công cụ, cài đặt khi chưa đăng nhập
+                const actionEl = target.closest(
+                    'button, a, input, select, textarea, label.switch, .color-swatch-btn, .btn-doc-primary, .btn-doc-secondary, .btn-doc-accent, [onclick]'
+                );
+                if (!actionEl) return;
+
+                requireAuth(null, e);
+            };
+
+            mainContent.addEventListener('click', guardHandler, true);
+            mainContent.addEventListener('change', guardHandler, true);
+            mainContent.addEventListener('input', guardHandler, true);
+            mainContent.addEventListener('submit', guardHandler, true);
+        }
+
+        function attachIframeAuthGuard(iframe) {
+            if (!iframe) return;
+            try {
+                const doc = iframe.contentDocument || (iframe.contentWindow && iframe.contentWindow.document);
+                if (!doc || doc._k71GuardAttached) return;
+                doc._k71GuardAttached = true;
+
+                const iframeGuard = function (e) {
+                    const user = window.K71Auth ? window.K71Auth.getCurrentUser() : null;
+                    if (user) return;
+                    const target = e.target;
+                    if (!target || typeof target.closest !== 'function') return;
+                    const interactive = target.closest(
+                        'button, a, input, select, textarea, label, [onclick], [role="button"], .option-btn, .choice-btn'
+                    );
+                    if (!interactive) return;
+                    requireAuth(null, e);
+                };
+
+                doc.addEventListener('click', iframeGuard, true);
+                doc.addEventListener('submit', iframeGuard, true);
+                doc.addEventListener('change', iframeGuard, true);
+            } catch (e) {
+                // Nếu chạy qua giao thức file:// bị giới hạn cross-origin, auth-history.js trong iframe sẽ gửi postMessage K71_REQUIRE_AUTH
+            }
+        }
+
+        function getEyeOpenSvg() {
+            return `<svg viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>`;
+        }
+
+        function getEyeOffSvg() {
+            return `<svg viewBox="0 0 24 24"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>`;
+        }
+
+        function toggleCleanPassword(inputId, btnEl) {
+            const inp = document.getElementById(inputId);
+            if (!inp) return;
+            if (inp.type === 'password') {
+                inp.type = 'text';
+                if (btnEl) btnEl.innerHTML = getEyeOffSvg();
+            } else {
+                inp.type = 'password';
+                if (btnEl) btnEl.innerHTML = getEyeOpenSvg();
+            }
+        }
+
+        function showCleanAuthAlert(boxId, message, type = 'error') {
+            const box = document.getElementById(boxId);
+            if (!box) return;
+            if (!message) {
+                box.className = 'auth-alert-box';
+                box.style.display = 'none';
+                box.textContent = '';
+                return;
+            }
+            box.className = 'auth-alert-box ' + type;
+            box.style.display = 'block';
+            box.textContent = message;
+        }
+
+        function openAuthView(mode = 'login') {
+            const authWrapper = document.getElementById('authSpaWrapper');
+            const mainContent = document.getElementById('mainContentContainer');
+            const loginView = document.getElementById('authLoginView');
+            const registerView = document.getElementById('authRegisterView');
+            const titleEl = document.getElementById('currentSectionTitle');
+
+            if (!authWrapper || !mainContent || !loginView || !registerView) return;
+
+            if (!pendingReturnSection) {
+                pendingReturnSection = getActiveSectionKey();
+            }
+
+            // Ẩn toàn bộ nội dung trang chính
+            mainContent.style.display = 'none';
+            authWrapper.classList.add('active');
+
+            // Ẩn thông báo lỗi cũ
+            showCleanAuthAlert('authLoginAlert', '');
+            showCleanAuthAlert('authRegisterAlert', '');
+
+            if (mode === 'register') {
+                loginView.style.display = 'none';
+                registerView.style.display = 'block';
+                if (titleEl) titleEl.innerText = '✨ Đăng Ký Tài Khoản';
+                setTimeout(() => document.getElementById('cleanRegName')?.focus(), 50);
+            } else {
+                registerView.style.display = 'none';
+                loginView.style.display = 'block';
+                if (titleEl) titleEl.innerText = '🔑 Đăng Nhập Hệ Thống';
+                setTimeout(() => document.getElementById('cleanLoginIdentity')?.focus(), 50);
+            }
+
+            document.querySelector('.main-wrapper')?.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function closeAuthView(restoreHeaderTitle = true) {
+            const authWrapper = document.getElementById('authSpaWrapper');
+            const mainContent = document.getElementById('mainContentContainer');
+            if (authWrapper) authWrapper.classList.remove('active');
+            if (mainContent) mainContent.style.display = '';
+
+            if (restoreHeaderTitle) {
+                const activeSec = document.querySelector('.section-view.active');
+                const secKey = activeSec ? activeSec.id.replace('section-', '') : 'overview';
+                const titleEl = document.getElementById('currentSectionTitle');
+                if (titleEl && titles[secKey]) {
+                    titleEl.innerText = titles[secKey];
+                }
+                document.querySelector('.main-wrapper')?.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        window.openAuthView = openAuthView;
+        window.closeAuthView = closeAuthView;
+
+        function handleCleanLoginSubmit(event) {
+            if (event) event.preventDefault();
+            showCleanAuthAlert('authLoginAlert', '');
+
+            const identity = (document.getElementById('cleanLoginIdentity')?.value || '').trim();
+            const password = (document.getElementById('cleanLoginPassword')?.value || '').trim();
+
+            if (!identity) {
+                showCleanAuthAlert('authLoginAlert', 'Vui lòng nhập Tên tài khoản hoặc Email của bạn.');
+                document.getElementById('cleanLoginIdentity')?.focus();
+                return;
+            }
+            if (!password) {
+                showCleanAuthAlert('authLoginAlert', 'Vui lòng nhập mật khẩu đăng nhập.');
+                document.getElementById('cleanLoginPassword')?.focus();
+                return;
+            }
+
+            if (!window.K71Auth) return;
+            const res = window.K71Auth.loginWithCredentials(identity, password);
+            if (!res.ok) {
+                showCleanAuthAlert('authLoginAlert', res.message);
+                return;
+            }
+
+            // Reset form & quay lại đúng màn hình/tab chức năng vừa định sử dụng
+            document.getElementById('cleanLoginPassword').value = '';
+            const targetSection = pendingReturnSection || getActiveSectionKey() || 'overview';
+            pendingReturnSection = null;
+            closeAuthView(false);
+            switchSection(targetSection);
+            renderTopbarAuth();
+            window.K71Auth.showToast(`✅ Đăng nhập thành công! Xin chào ${res.user.name}.`);
+        }
+
+        function handleCleanRegisterSubmit(event) {
+            if (event) event.preventDefault();
+            showCleanAuthAlert('authRegisterAlert', '');
+
+            const name = (document.getElementById('cleanRegName')?.value || '').trim();
+            const email = (document.getElementById('cleanRegEmail')?.value || '').trim();
+            const phone = (document.getElementById('cleanRegPhone')?.value || '').trim();
+            const password = (document.getElementById('cleanRegPassword')?.value || '').trim();
+            const confirmPassword = (document.getElementById('cleanRegConfirmPassword')?.value || '').trim();
+            const termsChecked = document.getElementById('cleanRegTerms')?.checked;
+
+            if (!name) {
+                showCleanAuthAlert('authRegisterAlert', 'Vui lòng nhập họ và tên của bạn.');
+                document.getElementById('cleanRegName')?.focus();
+                return;
+            }
+            if (!email || !email.includes('@')) {
+                showCleanAuthAlert('authRegisterAlert', 'Vui lòng nhập địa chỉ email hợp lệ.');
+                document.getElementById('cleanRegEmail')?.focus();
+                return;
+            }
+            if (!phone) {
+                showCleanAuthAlert('authRegisterAlert', 'Vui lòng nhập số điện thoại của bạn.');
+                document.getElementById('cleanRegPhone')?.focus();
+                return;
+            }
+            if (!password || password.length < 4) {
+                showCleanAuthAlert('authRegisterAlert', 'Mật khẩu phải có ít nhất 4 ký tự.');
+                document.getElementById('cleanRegPassword')?.focus();
+                return;
+            }
+            if (password !== confirmPassword) {
+                showCleanAuthAlert('authRegisterAlert', 'Mật khẩu xác nhận không khớp! Vui lòng kiểm tra lại.');
+                document.getElementById('cleanRegConfirmPassword')?.focus();
+                return;
+            }
+            if (!termsChecked) {
+                showCleanAuthAlert('authRegisterAlert', 'Vui lòng tích chọn đồng ý với Chính sách bảo vệ dữ liệu cá nhân.');
+                return;
+            }
+
+            if (!window.K71Auth) return;
+            const res = window.K71Auth.registerStudentAccount({
+                name: name,
+                email: email,
+                gmail: email,
+                phone: phone,
+                password: password,
+                className: 'Khối 11 - K71'
+            });
+
+            if (!res.ok) {
+                showCleanAuthAlert('authRegisterAlert', res.message);
+                return;
+            }
+
+            // Clear form & quay lại đúng màn hình/tab chức năng vừa định sử dụng
+            document.getElementById('cleanRegName').value = '';
+            document.getElementById('cleanRegEmail').value = '';
+            document.getElementById('cleanRegPhone').value = '';
+            document.getElementById('cleanRegPassword').value = '';
+            document.getElementById('cleanRegConfirmPassword').value = '';
+            document.getElementById('cleanRegTerms').checked = false;
+
+            const targetSection = pendingReturnSection || getActiveSectionKey() || 'overview';
+            pendingReturnSection = null;
+            closeAuthView(false);
+            switchSection(targetSection);
+            renderTopbarAuth();
+            window.K71Auth.showToast(`🎉 Đăng ký tài khoản thành công! Xin chào ${res.user.name}.`);
+        }
+
+        function handleForgotPasswordPrompt() {
+            const currentId = (document.getElementById('cleanLoginIdentity')?.value || '').trim();
+            const identifier = prompt('Nhập Tên tài khoản hoặc Email đã đăng ký để đặt lại mật khẩu mới:', currentId);
+            if (identifier === null) return;
+            if (!identifier.trim()) {
+                showCleanAuthAlert('authLoginAlert', 'Vui lòng nhập Tên tài khoản hoặc Email để khôi phục mật khẩu.');
+                return;
+            }
+            const newPw = prompt('Nhập mật khẩu mới cho tài khoản "' + identifier.trim() + '" (tối thiểu 4 ký tự):');
+            if (newPw === null) return;
+            if (window.K71Auth && typeof window.K71Auth.resetPassword === 'function') {
+                const res = window.K71Auth.resetPassword(identifier, newPw);
+                if (!res.ok) {
+                    showCleanAuthAlert('authLoginAlert', res.message, 'error');
+                } else {
+                    document.getElementById('cleanLoginIdentity').value = identifier.trim();
+                    document.getElementById('cleanLoginPassword').value = newPw.trim();
+                    showCleanAuthAlert('authLoginAlert', 'Đã cập nhật mật khẩu mới thành công! Bạn có thể bấm ĐĂNG NHẬP ngay.', 'success');
+                }
+            }
+        }
+
+        function showPrivacyPolicyNotice(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            alert('🔒 Chính sách bảo vệ dữ liệu cá nhân:\n\nThông tin Họ tên, Email, Số điện thoại và Lịch sử làm bài của bạn được lưu trữ an toàn nhằm phục vụ việc cá nhân hóa học tập và thống kê điểm số trên hệ thống Cổng Ôn Tập K71.');
+        }
+
+        function handleHeaderLogout() {
+            if (!window.K71Auth) return;
+            window.K71Auth.logout();
+            renderTopbarAuth();
+        }
+
+        /* ================= GIAO DIỆN ĐĂNG NHẬP, ĐĂNG KÝ TRÊN THANH HEADER ================= */
         function renderTopbarAuth() {
             const area = document.getElementById('topbarAuthArea');
             if (!area || !window.K71Auth) return;
@@ -2710,313 +3458,31 @@
 
             if (!user) {
                 area.innerHTML = `
-                    <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'login' })" class="btn-doc-secondary" style="padding: 8px 13px; font-size: 0.83rem; border-radius: 10px;">
-                        🔑 Đăng nhập
+                    <button type="button" onclick="openAuthView('login')" class="btn-doc-secondary" style="padding: 8px 14px; font-size: 0.84rem; border-radius: var(--radius-sm);">
+                        Đăng nhập
                     </button>
-                    <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'register' })" class="btn-doc-primary" style="padding: 8px 14px; font-size: 0.83rem; border-radius: 10px;">
-                        ✨ Tạo tài khoản
+                    <button type="button" onclick="openAuthView('register')" class="btn-doc-primary" style="padding: 8px 15px; font-size: 0.84rem; border-radius: var(--radius-sm);">
+                        Đăng ký
                     </button>
                 `;
             } else {
-                const hasGG = (user.providers || []).includes('google') || (user.googleEmail && user.googleEmail.includes('@'));
-                const hasFB = (user.providers || []).includes('facebook');
                 area.innerHTML = `
                     <div style="display:flex; align-items:center; gap:8px;">
-                        <button type="button" onclick="switchSection('history')" style="display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-main); cursor:pointer; font-size:0.84rem; font-weight:700;">
+                        <button type="button" onclick="window.K71Auth && window.K71Auth.openHistoryModal()" title="Xem lịch sử làm bài" style="display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-main); cursor:pointer; font-size:0.84rem; font-weight:700;">
                             <span class="k71-user-avatar" style="width:28px; height:28px; font-size:0.75rem; background:${user.color || 'var(--primary-color)'};">
                                 ${window.K71Auth.getInitials(user.name)}
                             </span>
-                            <span style="max-width:130px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${user.name}</span>
-                            ${hasGG ? `<span class="k71-provider-pill k71-provider-google">Gmail</span>` : ''}
-                            ${hasFB ? `<span class="k71-provider-pill k71-provider-facebook">FB</span>` : ''}
+                            <span style="max-width:140px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${user.name}</span>
                             <span style="padding:2px 7px; border-radius:99px; background:rgba(var(--primary-rgb),0.18); color:var(--primary-color); font-size:0.74rem;">
                                 ${stats.totalTests} đề
                             </span>
                         </button>
-                        <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'login' })" title="Đổi tài khoản / Liên kết thêm Gmail" style="padding:7px 10px; border-radius:10px; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-main); cursor:pointer; font-size:0.82rem; font-weight:700;">
-                            🔄
+                        <button type="button" onclick="handleHeaderLogout()" class="btn-doc-secondary" style="padding:7px 12px; border-radius: var(--radius-sm); font-size:0.82rem; font-weight:600; cursor:pointer;">
+                            Đăng xuất
                         </button>
                     </div>
                 `;
             }
-        }
-
-        function handleInlineLogin(e) {
-            if (e) e.preventDefault();
-            const idVal = document.getElementById('inline-login-id')?.value || '';
-            const pwVal = document.getElementById('inline-login-pw')?.value || '';
-            const res = window.K71Auth.loginWithCredentials(idVal, pwVal);
-            if (!res.ok) {
-                alert('⚠️ ' + res.message);
-                return;
-            }
-            window.K71Auth.showToast(`✅ Đăng nhập thành công: Học sinh ${res.user.name}!`);
-            renderTopbarAuth();
-            renderAccountAndHistorySection();
-        }
-
-        function handleInlineRegister(e) {
-            if (e) e.preventDefault();
-            const name = document.getElementById('inline-reg-name')?.value || '';
-            const className = document.getElementById('inline-reg-class')?.value || 'Khối 11';
-            const gmail = document.getElementById('inline-reg-gmail')?.value || '';
-            const pw = document.getElementById('inline-reg-pw')?.value || '';
-            const res = window.K71Auth.registerStudentAccount({
-                name: name,
-                email: gmail,
-                gmail: gmail,
-                password: pw,
-                className: className
-            });
-            if (!res.ok) {
-                alert('⚠️ ' + res.message);
-                return;
-            }
-            window.K71Auth.showToast(`🎉 Đã tạo tài khoản & liên kết Gmail thành công cho ${res.user.name}!`);
-            renderTopbarAuth();
-            renderAccountAndHistorySection();
-        }
-
-        function renderAccountAndHistorySection() {
-            if (!window.K71Auth) return;
-            const user = window.K71Auth.getCurrentUser();
-            const stats = window.K71Auth.getUserStats();
-            const profileCard = document.getElementById('accountProfileCard');
-            const statsGrid = document.getElementById('historyStatsGrid');
-            const tableContainer = document.getElementById('historyTableContainer');
-            if (!profileCard || !statsGrid || !tableContainer) return;
-
-            // 1. Render Khu vực Đăng nhập & Tạo tài khoản Học sinh (Liên kết Gmail)
-            if (!user) {
-                profileCard.innerHTML = `
-                    <div style="margin-bottom:18px;">
-                        <h2>🎓 Đăng Nhập & Tạo Tài Khoản Học Sinh (Liên Kết Gmail)</h2>
-                        <p class="card-desc" style="margin-bottom:0;">
-                            Tạo tài khoản riêng hoặc liên kết trực tiếp với <strong>Gmail</strong> của bạn. Khi đăng nhập và làm bài xong, toàn bộ điểm số & đáp án sẽ tự động lưu vào lịch sử cá nhân!
-                        </p>
-                    </div>
-
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:22px;">
-                        <!-- Cột 1: Đăng nhập -->
-                        <div style="padding:20px; border-radius:14px; border:1px solid var(--border-color); background:rgba(var(--primary-rgb),0.04);">
-                            <h3 style="margin:0 0 12px 0; color:var(--primary-color); font-size:1.1rem;">🔑 Đã Có Tài Khoản? Đăng Nhập Ngay</h3>
-                            <form onsubmit="handleInlineLogin(event)">
-                                <label style="font-size:0.84rem; font-weight:700; display:block;">📧 Địa chỉ Gmail hoặc Tên đăng nhập:</label>
-                                <input type="text" id="inline-login-id" class="k71-input" required placeholder="VD: hocsinh.k71@gmail.com">
-
-                                <label style="font-size:0.84rem; font-weight:700; display:block;">🔒 Mật khẩu:</label>
-                                <input type="password" id="inline-login-pw" class="k71-input" required placeholder="Nhập mật khẩu">
-
-                                <button type="submit" class="btn-doc-primary" style="width:100%; justify-content:center; padding:12px; font-size:0.94rem; margin-bottom:10px;">
-                                    🔑 Đăng Nhập Học Sinh
-                                </button>
-                            </form>
-
-                            <button type="button" onclick="window.K71Auth.openLoginModal({ provider: 'google' })" style="width:100%; padding:11px 16px; border-radius:10px; border:1px solid #cbd5e1; background:#ffffff; color:#1e293b; font-weight:800; font-size:0.88rem; display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer; margin-bottom:8px;">
-                                ${window.K71Auth.getGoogleSvg()}
-                                <span>Đăng nhập / Liên kết nhanh với Gmail</span>
-                            </button>
-
-                            ${window.K71Auth.getAllAccounts().length > 0 ? `
-                                <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'login' })" class="btn-doc-secondary" style="width:100%; justify-content:center;">
-                                    🔄 Chọn từ ${window.K71Auth.getAllAccounts().length} tài khoản đã lưu trên máy
-                                </button>
-                            ` : ''}
-                        </div>
-
-                        <!-- Cột 2: Tạo tài khoản học sinh mới -->
-                        <div style="padding:20px; border-radius:14px; border:1px solid var(--border-color); background:rgba(16,185,129,0.04);">
-                            <h3 style="margin:0 0 12px 0; color:#10b981; font-size:1.1rem;">✨ Tạo Tài Khoản Học Sinh Mới</h3>
-                            <form onsubmit="handleInlineRegister(event)">
-                                <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:10px;">
-                                    <div>
-                                        <label style="font-size:0.84rem; font-weight:700; display:block;">👤 Họ và tên học sinh:</label>
-                                        <input type="text" id="inline-reg-name" class="k71-input" required placeholder="VD: Nguyễn Văn An">
-                                    </div>
-                                    <div>
-                                        <label style="font-size:0.84rem; font-weight:700; display:block;">🏫 Lớp / Khối:</label>
-                                        <input type="text" id="inline-reg-class" class="k71-input" required placeholder="VD: 11A1" value="Khối 11">
-                                    </div>
-                                </div>
-
-                                <label style="font-size:0.84rem; font-weight:700; display:block;">📧 Địa chỉ Gmail liên kết:</label>
-                                <input type="email" id="inline-reg-gmail" class="k71-input" required placeholder="VD: nguyenvanan@gmail.com">
-
-                                <label style="font-size:0.84rem; font-weight:700; display:block;">🔒 Đặt mật khẩu (tối thiểu 4 ký tự):</label>
-                                <input type="password" id="inline-reg-pw" class="k71-input" required placeholder="Nhập mật khẩu dễ nhớ">
-
-                                <button type="submit" class="btn-doc-accent" style="width:100%; justify-content:center; padding:12px; font-size:0.94rem;">
-                                    ✨ Tạo Tài Khoản & Liên Kết Gmail Ngay
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                `;
-            } else {
-                const hasGG = (user.providers || []).includes('google') || (user.googleEmail && user.googleEmail.includes('@'));
-                const hasFB = (user.providers || []).includes('facebook');
-                profileCard.innerHTML = `
-                    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
-                        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-                            <div class="k71-user-avatar" style="width:64px; height:64px; font-size:1.45rem; background:${user.color || 'var(--primary-color)'};">
-                                ${window.K71Auth.getInitials(user.name)}
-                            </div>
-                            <div>
-                                <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-                                    <h2 style="margin:0; font-size:1.35rem;">Học sinh: ${user.name}</h2>
-                                    <span class="badge-k71">${user.className || 'Khóa K71'}</span>
-                                </div>
-                                <p style="color:var(--text-muted); font-size:0.9rem; margin:4px 0 10px 0;">
-                                    📧 Tài khoản / Gmail: <strong>${user.googleEmail || user.email || user.username}</strong>
-                                </p>
-                                <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
-                                    ${hasGG
-                                        ? `<span class="k71-provider-pill k71-provider-google">✔ Đã liên kết Gmail (${user.googleEmail || user.email})</span>`
-                                        : `<button type="button" onclick="window.K71Auth.openLoginModal({ provider: 'google', isLinking: true })" style="padding:5px 11px; border-radius:99px; border:1px dashed #ef4444; background:transparent; color:#f87171; font-size:0.78rem; font-weight:700; cursor:pointer;">+ Liên kết địa chỉ Gmail</button>`
-                                    }
-                                    ${hasFB
-                                        ? `<span class="k71-provider-pill k71-provider-facebook">✔ Đã liên kết Facebook (${user.facebookName || user.name})</span>`
-                                        : `<button type="button" onclick="window.K71Auth.openLoginModal({ provider: 'facebook', isLinking: true })" style="padding:5px 11px; border-radius:99px; border:1px dashed #3b82f6; background:transparent; color:#60a5fa; font-size:0.78rem; font-weight:700; cursor:pointer;">+ Liên kết thêm Facebook</button>`
-                                    }
-                                </div>
-                            </div>
-                        </div>
-
-                        <div style="display:flex; flex-wrap:wrap; gap:10px;">
-                            <button type="button" onclick="window.K71Auth.openLoginModal({ tab: 'login' })" class="btn-doc-primary">
-                                🔄 Đổi / Thêm Tài Khoản Khác
-                            </button>
-                            <button type="button" onclick="window.K71Auth.logout()" class="btn-doc-secondary">
-                                🚪 Đăng xuất
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }
-
-            // 2. Render 4 Thẻ Thống Kê Học Tập
-            statsGrid.innerHTML = `
-                <div class="quick-card" style="cursor:default;">
-                    <div>
-                        <div class="quick-card-icon">📝</div>
-                        <h3 style="font-size:1.75rem; color:var(--primary-color); margin-bottom:2px;">${stats.totalTests} đề</h3>
-                        <p>Tổng số lượt đề thi trắc nghiệm & IELTS đã hoàn thành.</p>
-                    </div>
-                </div>
-                <div class="quick-card" style="cursor:default;">
-                    <div>
-                        <div class="quick-card-icon">⭐</div>
-                        <h3 style="font-size:1.75rem; color:#10b981; margin-bottom:2px;">${stats.avgScore} / 10</h3>
-                        <p>Điểm trung bình tích lũy của tất cả các lần làm bài.</p>
-                    </div>
-                </div>
-                <div class="quick-card" style="cursor:default;">
-                    <div>
-                        <div class="quick-card-icon">🏆</div>
-                        <h3 style="font-size:1.75rem; color:#f59e0b; margin-bottom:2px;">${stats.bestScore} / 10</h3>
-                        <p>Điểm số kỷ lục cao nhất bạn đã đạt được.</p>
-                    </div>
-                </div>
-                <div class="quick-card" style="cursor:default;">
-                    <div>
-                        <div class="quick-card-icon">🎯</div>
-                        <h3 style="font-size:1.75rem; color:#3b82f6; margin-bottom:2px;">${stats.accuracyPct}% (${stats.totalCorrect} câu)</h3>
-                        <p>Tỉ lệ trả lời chính xác • Tổng thời gian luyện: ${stats.totalDurationMin} phút.</p>
-                    </div>
-                </div>
-            `;
-
-            // 3. Render Bảng Lịch Sử Làm Bài (kèm bộ lọc)
-            const subjFilter = document.getElementById('histFilterSubject')?.value || 'all';
-            const gradeFilter = document.getElementById('histFilterGrade')?.value || 'all';
-            let history = window.K71Auth.getUserHistory();
-
-            if (subjFilter !== 'all') {
-                history = history.filter(item => {
-                    if (subjFilter === 'ielts') return item.type === 'ielts' || String(item.subject).startsWith('ielts');
-                    return item.subject === subjFilter;
-                });
-            }
-            if (gradeFilter !== 'all') {
-                history = history.filter(item => String(item.grade) === gradeFilter);
-            }
-
-            if (history.length === 0) {
-                tableContainer.innerHTML = `
-                    <div style="text-align:center; padding:42px 20px; border:1.5px dashed var(--border-color); border-radius:14px;">
-                        <div style="font-size:2.6rem; margin-bottom:10px;">📭</div>
-                        <h3 style="color:var(--text-main); margin-bottom:6px;">Chưa có bài làm nào trong danh mục này</h3>
-                        <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:18px;">
-                            Mỗi khi bạn bấm <strong>Nộp bài</strong> ở mục Luyện Trắc Nghiệm hoặc chấm điểm IELTS, kết quả và chi tiết từng câu hỏi sẽ tự động được lưu tại đây!
-                        </p>
-                        <button type="button" onclick="switchSection('quiz')" class="btn-doc-primary">
-                            🚀 Bắt Đầu Làm Đề Ngay
-                        </button>
-                    </div>
-                `;
-                return;
-            }
-
-            const itemsHtml = history.map(item => {
-                const score = Number(item.score10 || 0);
-                const badgeColor = score >= 8 ? '#10b981' : (score >= 5 ? '#3b82f6' : '#ef4444');
-                const isIelts = item.type === 'ielts';
-                return `
-                    <div class="doc-item-card" style="padding:18px 20px;">
-                        <div class="doc-left">
-                            <div class="doc-icon-box" style="background:rgba(var(--primary-rgb),0.12); font-size:1.35rem; font-weight:900; color:${badgeColor};">
-                                ${isIelts ? `B${score.toFixed(1)}` : score.toFixed(1)}
-                            </div>
-                            <div class="doc-info">
-                                <div class="doc-badges">
-                                    <span class="doc-badge doc-badge-new">KHỐI ${item.grade} • ${item.term}</span>
-                                    <span class="doc-badge doc-badge-docx">${item.mode === 'exam' ? '⏱ CHẾ ĐỘ THI THỬ' : '📖 CHẾ ĐỘ ÔN TẬP'}</span>
-                                    <span class="doc-badge" style="background:rgba(16,185,129,0.15); color:${badgeColor}; border:1px solid ${badgeColor};">
-                                        ✓ ĐÚNG ${item.correctCount}/${item.totalQuestions} CÂU (${item.percent}%)
-                                    </span>
-                                </div>
-                                <h4 class="doc-title" style="margin-bottom:4px;">
-                                    ${item.subjectName} — ${isIelts ? `Band ${score.toFixed(1)}` : `Điểm hệ 10: ${score.toFixed(2)} đ`}
-                                </h4>
-                                <p class="doc-desc" style="font-size:0.84rem;">
-                                    🕒 Nộp lúc: <strong>${window.K71Auth.formatDateTime(item.timestamp)}</strong> •
-                                    ⏱ Thời gian làm bài: <strong>${window.K71Auth.formatDuration(item.durationSec)}</strong> •
-                                    👤 Tài khoản: <strong>${item.userName || (user ? user.name : 'Khách')}</strong>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="doc-actions">
-                            <button type="button" onclick="window.K71Auth.openAttemptDetailModal('${item.id}')" class="btn-doc-primary" style="padding:9px 14px; font-size:0.84rem;">
-                                👁️ Xem lại bài làm
-                            </button>
-                            <button type="button" onclick="handleDeleteHistoryItem('${item.id}')" class="btn-doc-secondary" style="padding:9px 12px; font-size:0.84rem;">
-                                🗑️ Xóa
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-
-            tableContainer.innerHTML = `<div class="doc-list-grid">${itemsHtml}</div>`;
-        }
-
-        function handleDeleteHistoryItem(id) {
-            if (!window.K71Auth) return;
-            if (confirm('Bạn có chắc muốn xóa lượt làm bài này khỏi lịch sử?')) {
-                window.K71Auth.deleteHistoryItem(id);
-                renderAccountAndHistorySection();
-            }
-        }
-
-        function handleImportBackupFile(inputEl) {
-            const file = inputEl && inputEl.files && inputEl.files[0];
-            if (!file || !window.K71Auth) return;
-            window.K71Auth.importAccountBackupFile(file, (addedCount, importedUser) => {
-                renderTopbarAuth();
-                renderAccountAndHistorySection();
-                window.K71Auth.showToast(`✅ Đã khôi phục ${addedCount} bài làm${importedUser ? ' của tài khoản ' + importedUser.name : ''}!`);
-                inputEl.value = '';
-            });
         }
 
         // Khởi tạo trang khi tải xong DOM
@@ -3038,36 +3504,44 @@
                 if (switchEl) switchEl.checked = true;
             }
 
-            // Gắn sự kiện khi iframe tải xong để đồng bộ ngay lập tức
+            // Gắn sự kiện khi iframe tải xong để đồng bộ ngay lập tức và kích hoạt Auth Guard
             document.querySelectorAll('iframe').forEach(iframe => {
                 iframe.addEventListener('load', () => {
                     syncIframes(savedColor);
+                    attachIframeAuthGuard(iframe);
                 });
+                attachIframeAuthGuard(iframe);
             });
 
             // Khởi tạo sẵn danh sách tài liệu môn Tiếng Anh (có file Unit 4)
             selectSubject('anh');
 
-            // Khởi tạo giao diện Tài khoản & Lịch sử làm bài
+            // Kích hoạt bộ chặn hành động khi chưa đăng nhập (Action Interception)
+            setupMainPageAuthGuard();
+
+            // Khởi tạo giao diện Header Auth
             renderTopbarAuth();
-            renderAccountAndHistorySection();
             if (window.K71Auth) {
                 window.K71Auth.onChange(() => {
                     renderTopbarAuth();
-                    renderAccountAndHistorySection();
                 });
             }
 
-            // Đọc hash trên URL khi mở trang hoặc F5
+            // Mở khóa điều hướng: Hiển thị thẳng giao diện trang web chính bình thường kể cả khi chưa đăng nhập
+            closeAuthView(false);
             const hash = window.location.hash.replace('#', '');
             if (hash && titles[hash]) {
                 switchSection(hash);
             }
         });
 
-        // Lắng nghe sự kiện phóng toàn màn hình khi bắt đầu làm bài thi IELTS hoặc Trắc Nghiệm
+        // Lắng nghe sự kiện từ các iframe (phóng toàn màn hình hoặc yêu cầu đăng nhập khi bấm tính năng)
         window.addEventListener('message', (e) => {
             if (!e.data) return;
+            if (e.data.type === 'K71_REQUIRE_AUTH') {
+                requireAuth();
+                return;
+            }
             if (e.data.type === 'IELTS_FULLSCREEN' || e.data.type === 'QUIZ_FULLSCREEN') {
                 const targetId = e.data.type === 'IELTS_FULLSCREEN' ? 'ieltsIframe' : 'quizIframe';
                 const defaultHeight = e.data.type === 'IELTS_FULLSCREEN' ? '980px' : '840px';

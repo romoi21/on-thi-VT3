@@ -81,15 +81,16 @@
     function registerStudentAccount(payload) {
         const name = (payload.name || '').trim();
         const usernameOrEmail = (payload.username || payload.email || '').trim().toLowerCase();
-        const gmail = (payload.gmail || (usernameOrEmail.endsWith('@gmail.com') ? usernameOrEmail : '')).trim().toLowerCase();
+        const gmail = (payload.gmail || (usernameOrEmail.includes('@') ? usernameOrEmail : '')).trim().toLowerCase();
+        const phone = (payload.phone || '').trim();
         const password = (payload.password || '').trim();
         const className = (payload.className || 'Khối 11 - K71').trim();
 
         if (!name) {
-            return { ok: false, message: 'Vui lòng nhập họ và tên học sinh!' };
+            return { ok: false, message: 'Vui lòng nhập họ và tên của bạn!' };
         }
         if (!usernameOrEmail) {
-            return { ok: false, message: 'Vui lòng nhập Tên đăng nhập hoặc địa chỉ Gmail!' };
+            return { ok: false, message: 'Vui lòng nhập địa chỉ Email hoặc tên tài khoản!' };
         }
         if (!password || password.length < 4) {
             return { ok: false, message: 'Mật khẩu phải có ít nhất 4 ký tự!' };
@@ -99,11 +100,12 @@
         const existed = accounts.find(a =>
             (a.username && a.username.toLowerCase() === usernameOrEmail) ||
             (a.email && a.email.toLowerCase() === usernameOrEmail) ||
-            (gmail && a.googleEmail && a.googleEmail.toLowerCase() === gmail)
+            (gmail && a.googleEmail && a.googleEmail.toLowerCase() === gmail) ||
+            (phone && a.phone && a.phone === phone)
         );
 
         if (existed) {
-            return { ok: false, message: 'Tên đăng nhập hoặc địa chỉ Gmail này đã được đăng ký! Vui lòng chuyển sang tab Đăng nhập.' };
+            return { ok: false, message: 'Email hoặc tài khoản này đã được đăng ký! Vui lòng chuyển sang Đăng nhập.' };
         }
 
         const providers = ['student'];
@@ -114,6 +116,7 @@
             name: name,
             username: usernameOrEmail,
             email: gmail || usernameOrEmail,
+            phone: phone,
             password: password,
             className: className,
             color: pickColor(name + usernameOrEmail),
@@ -135,24 +138,26 @@
         return { ok: true, user: newAcc, mergedCount };
     }
 
-    // Đăng nhập bằng Tên đăng nhập / Gmail + Mật khẩu
+    // Đăng nhập bằng Tên đăng nhập / Gmail / SĐT + Mật khẩu
     function loginWithCredentials(identifierRaw, passwordRaw) {
         const identifier = (identifierRaw || '').trim().toLowerCase();
         const password = (passwordRaw || '').trim();
 
         if (!identifier || !password) {
-            return { ok: false, message: 'Vui lòng nhập đầy đủ Tên đăng nhập/Gmail và Mật khẩu!' };
+            return { ok: false, message: 'Vui lòng nhập đầy đủ Tên tài khoản/Email và Mật khẩu!' };
         }
 
         const accounts = getAllAccounts();
         const acc = accounts.find(a =>
             (a.username && a.username.toLowerCase() === identifier) ||
             (a.email && a.email.toLowerCase() === identifier) ||
-            (a.googleEmail && a.googleEmail.toLowerCase() === identifier)
+            (a.googleEmail && a.googleEmail.toLowerCase() === identifier) ||
+            (a.phone && a.phone.toLowerCase() === identifier) ||
+            (a.name && a.name.toLowerCase() === identifier)
         );
 
         if (!acc) {
-            return { ok: false, message: 'Không tìm thấy tài khoản học sinh này! Bạn có thể bấm sang tab "Tạo Tài Khoản" hoặc "Liên kết Gmail".' };
+            return { ok: false, message: 'Không tìm thấy tài khoản này! Vui lòng kiểm tra lại hoặc bấm "Đăng ký ngay".' };
         }
 
         if (acc.password && acc.password !== password) {
@@ -775,12 +780,38 @@
     let activeOAuthStep = null;   // null | { provider: 'google'|'facebook', isLinking: false }
 
     function openLoginModal(options) {
-        ensureModalsExist();
         const opts = options || {};
+        if (!opts.provider && !opts.forceModal && typeof window.openAuthView === 'function') {
+            window.openAuthView(opts.tab || 'login');
+            return;
+        }
+        ensureModalsExist();
         if (opts.tab) currentAuthTab = opts.tab;
         activeOAuthStep = opts.provider ? { provider: opts.provider, isLinking: !!opts.isLinking } : null;
         renderLoginModalContent();
         document.getElementById('k71-auth-modal').classList.add('show');
+    }
+
+    function resetPassword(identifierRaw, newPasswordRaw) {
+        const identifier = (identifierRaw || '').trim().toLowerCase();
+        const newPw = (newPasswordRaw || '').trim();
+        if (!identifier) return { ok: false, message: 'Vui lòng nhập Tên tài khoản hoặc Email!' };
+        if (!newPw || newPw.length < 4) return { ok: false, message: 'Mật khẩu mới phải có ít nhất 4 ký tự!' };
+
+        const accounts = getAllAccounts();
+        const idx = accounts.findIndex(a =>
+            (a.username && a.username.toLowerCase() === identifier) ||
+            (a.email && a.email.toLowerCase() === identifier) ||
+            (a.googleEmail && a.googleEmail.toLowerCase() === identifier) ||
+            (a.phone && a.phone.toLowerCase() === identifier)
+        );
+        if (idx === -1) {
+            return { ok: false, message: 'Không tìm thấy tài khoản với thông tin này!' };
+        }
+        accounts[idx].password = newPw;
+        accounts[idx].updatedAt = Date.now();
+        saveAllAccounts(accounts);
+        return { ok: true, user: accounts[idx] };
     }
 
     function closeLoginModal() {
@@ -1337,16 +1368,17 @@
                 bottom: 24px;
                 right: 24px;
                 z-index: 100005;
-                background: #0f172a;
-                color: #ffffff;
-                border: 1.5px solid #10b981;
+                background: var(--bg-card, #191614);
+                color: var(--text-main, #ede3da);
+                border: 1.5px solid var(--primary-color, #e58547);
                 padding: 13px 20px;
-                border-radius: 12px;
+                border-radius: var(--radius-md, 12px);
                 font-weight: 700;
                 font-size: 0.9rem;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+                box-shadow: 0 10px 30px var(--primary-glow, rgba(0,0,0,0.45));
                 transition: all 0.25s ease;
                 max-width: 420px;
+                pointer-events: none;
             `;
             document.body.appendChild(toast);
         }
@@ -1358,6 +1390,60 @@
             toast.style.opacity = '0';
             toast.style.transform = 'translateY(12px)';
         }, 4200);
+    }
+
+    function requireAuth(callback, event) {
+        const user = getCurrentUser();
+        if (user) {
+            if (typeof callback === 'function') callback();
+            return true;
+        }
+        if (event) {
+            if (typeof event.preventDefault === 'function') event.preventDefault();
+            if (typeof event.stopPropagation === 'function') event.stopPropagation();
+            if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
+        }
+        const msg = 'Vui lòng đăng nhập hoặc tạo tài khoản để sử dụng tính năng này!';
+        if (window.parent && window.parent !== window) {
+            try {
+                window.parent.postMessage({ type: 'K71_REQUIRE_AUTH', message: msg }, '*');
+                return false;
+            } catch (e) {}
+        }
+        showToast(msg);
+        openLoginModal({ tab: 'login' });
+        return false;
+    }
+
+    // Chặn các hành động tương tác bên trong các trang con / iframe (Quiz, IELTS, Pomodoro) khi chưa đăng nhập
+    function setupSubpageAuthGuard() {
+        const isMainSpa = !!document.getElementById('authSpaWrapper');
+        if (isMainSpa) return; // Trang chính index.html có bộ lọc riêng cho phép chuyển tab Navigation
+
+        const guardHandler = function (e) {
+            if (getCurrentUser()) return;
+            const target = e.target;
+            if (!target || typeof target.closest !== 'function') return;
+            // Không chặn thao tác trong modal đăng nhập của chính K71Auth
+            if (target.closest('#k71-auth-modal')) return;
+
+            const interactive = target.closest(
+                'button, a, input, select, textarea, label, [onclick], [role="button"], .option-btn, .choice-btn'
+            );
+            if (!interactive) return;
+
+            requireAuth(null, e);
+        };
+
+        document.addEventListener('click', guardHandler, true);
+        document.addEventListener('submit', guardHandler, true);
+        document.addEventListener('change', guardHandler, true);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupSubpageAuthGuard);
+    } else {
+        setupSubpageAuthGuard();
     }
 
     const listeners = [];
@@ -1396,6 +1482,7 @@
         clearUserHistory,
         registerStudentAccount,
         loginWithCredentials,
+        resetPassword,
         loginOrRegisterOAuth,
         switchAccount,
         logout,
@@ -1419,6 +1506,8 @@
         getGoogleSvg,
         getFacebookSvg,
         showToast,
+        requireAuth,
         onChange
     };
+    window.requireAuth = requireAuth;
 })();
