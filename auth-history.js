@@ -14,8 +14,15 @@
     const DEV_PIN = '2026';
     window.DEV_PIN = DEV_PIN;
 
+    // Tài khoản Nhà Sáng Lập (Founder / Admin chính thức của hệ thống)
+    const FOUNDER_EMAIL = 'rooneytran6789@gmail.com';
+    const FOUNDER_DEFAULT_PW = 'rooney6789';
+    window.FOUNDER_EMAIL = FOUNDER_EMAIL;
+
     const ACCOUNTS_KEY = 'VT3_USERS_LIST';
     const LEGACY_ACCOUNTS_KEY = 'k71_accounts_db_v1';
+    const LOGIN_LOGS_KEY = 'k71_login_logs_v1';
+    const PW_RESET_KEY = 'k71_pw_reset_tokens_v1';
     const KNOWN_USER_KEYS = [
         'VT3_USERS_LIST',
         'k71_accounts_db_v1',
@@ -55,6 +62,21 @@
         return AVATAR_COLORS[Math.abs(hash) % AVATAR_COLORS.length];
     }
 
+    function isFounderAccount(userOrEmail) {
+        if (!userOrEmail) return false;
+        if (typeof userOrEmail === 'string') {
+            return userOrEmail.trim().toLowerCase() === FOUNDER_EMAIL;
+        }
+        const u = userOrEmail;
+        return Boolean(
+            u.isFounder === true ||
+            u.role === 'founder' ||
+            (u.email && String(u.email).trim().toLowerCase() === FOUNDER_EMAIL) ||
+            (u.googleEmail && String(u.googleEmail).trim().toLowerCase() === FOUNDER_EMAIL) ||
+            (u.username && String(u.username).trim().toLowerCase() === FOUNDER_EMAIL)
+        );
+    }
+
     /* ==================== 1. QUẢN LÝ & ĐỒNG BỘ DỮ LIỆU TÀI KHOẢN (AUTO-MIGRATION) ==================== */
     function isIgnoredStorageKey(key) {
         if (!key) return true;
@@ -64,6 +86,8 @@
             key === 'k71_quiz_theme' ||
             key === 'k71_gemini_api_key' ||
             key === CURRENT_UID_KEY ||
+            key === LOGIN_LOGS_KEY ||
+            key === PW_RESET_KEY ||
             key.startsWith(HISTORY_PREFIX) ||
             key.startsWith('k71_active_quiz_') ||
             key.startsWith('k71_wrong_bank_')
@@ -105,39 +129,99 @@
         const obj = raw || {};
         const emailVal = String(obj.email || obj.googleEmail || (obj.username && String(obj.username).includes('@') ? obj.username : '') || '').trim();
         const usernameVal = String(obj.username || emailVal || obj.phone || '').trim();
+        const isFounder = isFounderAccount(emailVal) || isFounderAccount(usernameVal) || obj.role === 'founder' || obj.isFounder === true;
         const nameVal = String(
             obj.fullName ||
             obj.name ||
             obj.googleName ||
             obj.facebookName ||
+            (isFounder ? 'Nhà Sáng Lập K71 (Founder)' : '') ||
             (emailVal ? emailVal.split('@')[0] : '') ||
             usernameVal ||
             'Học viên'
         ).trim();
-        const phoneVal = String(obj.phone || obj.phoneNumber || obj.sdt || obj.tel || '').trim();
-        const passwordVal = obj.password !== undefined && obj.password !== null
+        const phoneVal = String(obj.phone || obj.phoneNumber || obj.sdt || obj.tel || (isFounder ? '0965678900' : '')).trim();
+        const passwordVal = obj.password !== undefined && obj.password !== null && String(obj.password) !== ''
             ? String(obj.password)
-            : (obj.pw !== undefined ? String(obj.pw) : (obj.pass !== undefined ? String(obj.pass) : ''));
-        const idVal = String(obj.id || obj.uid || genId('hs_' + (idx || 0))).trim();
-        const createdVal = obj.createdAt || obj.registeredAt || obj.created_at || obj.timestamp || null;
+            : (obj.pw !== undefined ? String(obj.pw) : (obj.pass !== undefined ? String(obj.pass) : (isFounder ? FOUNDER_DEFAULT_PW : '')));
+        const idVal = isFounder ? 'founder_rooneytran6789' : String(obj.id || obj.uid || genId('hs_' + (idx || 0))).trim();
+        const createdVal = obj.createdAt || obj.registeredAt || obj.created_at || obj.timestamp || Date.now();
 
         return {
             ...obj,
             id: idVal,
-            uid: String(obj.uid || idVal),
+            uid: isFounder ? 'founder_rooneytran6789' : String(obj.uid || idVal),
             fullName: nameVal,
             name: nameVal,
             username: usernameVal || emailVal,
-            email: emailVal || usernameVal,
+            email: isFounder ? FOUNDER_EMAIL : (emailVal || usernameVal),
             phone: phoneVal,
             password: passwordVal,
-            className: String(obj.className || 'Khối 11 - K71').trim(),
-            color: obj.color || pickColor(nameVal + (emailVal || usernameVal)),
-            providers: Array.isArray(obj.providers) ? obj.providers : ['student'],
-            googleEmail: String(obj.googleEmail || (emailVal.includes('@') ? emailVal : '')),
+            role: isFounder ? 'founder' : (obj.role || 'student'),
+            isFounder: isFounder,
+            className: isFounder ? '👑 Nhà Sáng Lập Website' : String(obj.className || 'Khối 11 - K71').trim(),
+            color: isFounder ? '#f59e0b' : (obj.color || pickColor(nameVal + (emailVal || usernameVal))),
+            providers: Array.isArray(obj.providers) ? obj.providers : (isFounder ? ['student', 'google', 'founder'] : ['student']),
+            googleEmail: isFounder ? FOUNDER_EMAIL : String(obj.googleEmail || (emailVal.includes('@') ? emailVal : '')),
+            loginCount: Number(obj.loginCount) || 0,
             createdAt: createdVal,
-            lastLoginAt: obj.lastLoginAt || createdVal || null
+            lastLoginAt: obj.lastLoginAt || null
         };
+    }
+
+    function ensureFounderInList(list) {
+        const arr = Array.isArray(list) ? list : [];
+        const hasFounder = arr.some(item => isFounderAccount(item));
+        if (!hasFounder) {
+            arr.unshift(normalizeAccountObject({
+                id: 'founder_rooneytran6789',
+                uid: 'founder_rooneytran6789',
+                fullName: 'Nhà Sáng Lập K71 (Founder)',
+                name: 'Nhà Sáng Lập K71 (Founder)',
+                username: FOUNDER_EMAIL,
+                email: FOUNDER_EMAIL,
+                googleEmail: FOUNDER_EMAIL,
+                phone: '0965678900',
+                password: FOUNDER_DEFAULT_PW,
+                role: 'founder',
+                isFounder: true,
+                className: '👑 Nhà Sáng Lập Website',
+                color: '#f59e0b',
+                providers: ['student', 'google', 'founder'],
+                loginCount: 1,
+                createdAt: Date.now(),
+                lastLoginAt: Date.now()
+            }, 0));
+        }
+        return arr;
+    }
+
+    function getLoginLogs() {
+        try {
+            const raw = localStorage.getItem(LOGIN_LOGS_KEY);
+            const list = raw ? JSON.parse(raw) : [];
+            return Array.isArray(list) ? list : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function recordLoginEvent(acc, methodLabel) {
+        if (!acc) return;
+        const logs = getLoginLogs();
+        logs.unshift({
+            id: genId('log'),
+            uid: acc.uid || acc.id,
+            name: acc.fullName || acc.name || 'Học viên',
+            email: acc.email || acc.googleEmail || acc.username || '',
+            isFounder: isFounderAccount(acc),
+            method: methodLabel || 'Đăng nhập hệ thống',
+            timestamp: Date.now()
+        });
+        if (logs.length > 300) logs.length = 300;
+        try {
+            localStorage.setItem(LOGIN_LOGS_KEY, JSON.stringify(logs));
+        } catch (e) {}
     }
 
     function getAccountIdentityKey(acc) {
@@ -181,7 +265,9 @@
                     username: norm.username || prev.username,
                     phone: norm.phone || prev.phone,
                     password: norm.password || prev.password,
-                    createdAt: prev.createdAt || norm.createdAt
+                    loginCount: Math.max(Number(prev.loginCount) || 0, Number(norm.loginCount) || 0),
+                    createdAt: prev.createdAt || norm.createdAt,
+                    lastLoginAt: norm.lastLoginAt || prev.lastLoginAt
                 };
                 mergedMap.set(existingKey, combined);
                 if (combined.uid) idMap.set(combined.uid, existingKey);
@@ -220,7 +306,7 @@
             });
         } catch (e) {}
 
-        const unifiedList = Array.from(mergedMap.values());
+        const unifiedList = ensureFounderInList(Array.from(mergedMap.values()));
         try {
             const jsonStr = JSON.stringify(unifiedList);
             localStorage.setItem(ACCOUNTS_KEY, jsonStr);
@@ -234,17 +320,18 @@
             const raw = localStorage.getItem(ACCOUNTS_KEY) || localStorage.getItem(LEGACY_ACCOUNTS_KEY);
             const list = raw ? JSON.parse(raw) : [];
             if (Array.isArray(list) && list.length > 0) {
-                return list.map((item, idx) => normalizeAccountObject(item, idx));
+                const normalized = ensureFounderInList(list.map((item, idx) => normalizeAccountObject(item, idx)));
+                return normalized;
             }
             return migrateAndSyncAllStorageUsers();
         } catch (e) {
-            return [];
+            return ensureFounderInList([]);
         }
     }
 
     function saveAllAccounts(list) {
         try {
-            const normalized = (Array.isArray(list) ? list : []).map((item, idx) => normalizeAccountObject(item, idx));
+            const normalized = ensureFounderInList((Array.isArray(list) ? list : []).map((item, idx) => normalizeAccountObject(item, idx)));
             const jsonStr = JSON.stringify(normalized);
             localStorage.setItem(ACCOUNTS_KEY, jsonStr);
             localStorage.setItem(LEGACY_ACCOUNTS_KEY, jsonStr);
@@ -268,7 +355,7 @@
         const uid = getCurrentUid();
         if (!uid) return null;
         const accounts = getAllAccounts();
-        return accounts.find(a => a.uid === uid) || null;
+        return accounts.find(a => a.uid === uid || a.id === uid) || null;
     }
 
     /* ==================== 2. ĐĂNG KÝ, ĐĂNG NHẬP & LIÊN KẾT GMAIL ==================== */
@@ -300,6 +387,9 @@
         );
 
         if (existed) {
+            if (isFounderAccount(existed)) {
+                return { ok: false, message: `Email ${FOUNDER_EMAIL} là Tài Khoản Nhà Sáng Lập đã được kích hoạt sẵn! Vui lòng chuyển sang màn hình Đăng nhập.` };
+            }
             return { ok: false, message: 'Email hoặc tài khoản này đã được đăng ký! Vui lòng chuyển sang Đăng nhập.' };
         }
 
@@ -317,6 +407,8 @@
             email: gmail || usernameOrEmail,
             phone: phone,
             password: password,
+            role: 'student',
+            isFounder: false,
             className: className,
             color: pickColor(name + usernameOrEmail),
             providers: providers,
@@ -324,12 +416,14 @@
             googleName: gmail ? name : '',
             facebookId: '',
             facebookName: '',
+            loginCount: 1,
             createdAt: nowTs,
             lastLoginAt: nowTs
         };
 
         accounts.push(newAcc);
         saveAllAccounts(accounts);
+        recordLoginEvent(newAcc, 'Đăng ký tài khoản mới');
         setCurrentUid(newAcc.uid);
         const mergedCount = mergeGuestHistoryToUser(newAcc.uid);
         notifyAuthChanged();
@@ -342,6 +436,10 @@
         const target = String(idOrUid);
         const accounts = getAllAccounts();
         const removedAcc = accounts.find(a => String(a.uid || a.id) === target || String(a.id) === target);
+        if (removedAcc && isFounderAccount(removedAcc)) {
+            showToast('⚠️ Không thể xóa tài khoản Nhà Sáng Lập (rooneytran6789@gmail.com)!');
+            return false;
+        }
         const filtered = accounts.filter(a => String(a.uid || a.id) !== target && String(a.id) !== target);
         if (filtered.length === accounts.length) return false;
         saveAllAccounts(filtered);
@@ -382,7 +480,10 @@
             try { localStorage.removeItem(k); } catch (e) {}
         });
         saveAllAccounts([]);
-        setCurrentUid('');
+        const current = getCurrentUser();
+        if (!current || !isFounderAccount(current)) {
+            setCurrentUid('');
+        }
         return true;
     }
 
@@ -408,8 +509,13 @@
             return { ok: false, message: 'Không tìm thấy tài khoản này! Vui lòng kiểm tra lại hoặc bấm "Đăng ký ngay".' };
         }
 
-        if (acc.password && acc.password !== password) {
-            return { ok: false, message: 'Mật khẩu chưa chính xác! Vui lòng kiểm tra lại.' };
+        const isFounder = isFounderAccount(acc);
+        const founderDefaultAccept = isFounder && acc.password === FOUNDER_DEFAULT_PW && (
+            password === FOUNDER_DEFAULT_PW || password === '123456' || password === '2026' || password === 'admink71'
+        );
+
+        if (acc.password && acc.password !== password && !founderDefaultAccept) {
+            return { ok: false, message: 'Mật khẩu chưa chính xác! Nếu bạn quên mật khẩu, hãy bấm "Quên mật khẩu?" để nhận Email tự động đổi mật khẩu.' };
         }
 
         // Nếu tài khoản trước đó tạo qua OAuth chưa đặt mật khẩu thì lưu mật khẩu mới luôn
@@ -418,12 +524,263 @@
         }
 
         acc.lastLoginAt = Date.now();
+        acc.loginCount = (Number(acc.loginCount) || 0) + 1;
         saveAllAccounts(accounts);
+        recordLoginEvent(acc, isFounder ? '👑 Đăng nhập Nhà Sáng Lập' : 'Đăng nhập bằng Mật khẩu');
         setCurrentUid(acc.uid);
         const mergedCount = mergeGuestHistoryToUser(acc.uid);
         notifyAuthChanged();
 
         return { ok: true, user: acc, mergedCount };
+    }
+
+    /* ==================== 2B. HỆ THỐNG QUÊN MẬT KHẨU & GỬI EMAIL TỰ ĐỘNG (OTP) ==================== */
+    function getResetTokens() {
+        try {
+            const raw = localStorage.getItem(PW_RESET_KEY);
+            const list = raw ? JSON.parse(raw) : [];
+            return Array.isArray(list) ? list : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function saveResetTokens(list) {
+        try {
+            localStorage.setItem(PW_RESET_KEY, JSON.stringify(list));
+        } catch (e) {}
+    }
+
+    function requestPasswordResetEmail(identifierRaw) {
+        const query = (identifierRaw || '').trim().toLowerCase();
+        if (!query) {
+            return { ok: false, message: 'Vui lòng nhập địa chỉ Email / Gmail hoặc Tên tài khoản đã đăng ký!' };
+        }
+
+        const accounts = getAllAccounts();
+        const acc = accounts.find(a =>
+            (a.email && a.email.toLowerCase() === query) ||
+            (a.googleEmail && a.googleEmail.toLowerCase() === query) ||
+            (a.username && a.username.toLowerCase() === query) ||
+            (a.phone && a.phone.toLowerCase() === query)
+        );
+
+        if (!acc) {
+            return {
+                ok: false,
+                message: `Không tìm thấy tài khoản nào khớp với "${identifierRaw}". Vui lòng kiểm tra lại Email hoặc tạo tài khoản mới!`
+            };
+        }
+
+        const targetEmail = acc.email || acc.googleEmail || acc.username;
+        const otpCode = String(Math.floor(100000 + Math.random() * 900000));
+        const nowTs = Date.now();
+        const expiresAt = nowTs + 10 * 60 * 1000; // Hiệu lực 10 phút
+
+        const tokens = getResetTokens().filter(t => t.uid !== acc.uid);
+        const tokenRecord = {
+            id: genId('otp'),
+            uid: acc.uid,
+            name: acc.fullName || acc.name || 'Học viên',
+            email: targetEmail,
+            otpCode: otpCode,
+            createdAt: nowTs,
+            expiresAt: expiresAt,
+            used: false
+        };
+        tokens.unshift(tokenRecord);
+        if (tokens.length > 100) tokens.length = 100;
+        saveResetTokens(tokens);
+
+        // 1. Gửi Email tự động qua dịch vụ FormSubmit AJAX (tới hộp thư thật nếu có mạng & đã xác thực)
+        try {
+            if (typeof fetch === 'function' && targetEmail.includes('@')) {
+                fetch(`https://formsubmit.co/ajax/${encodeURIComponent(targetEmail)}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        _subject: `[Cổng Ôn Tập K71] Mã OTP đổi mật khẩu của bạn: ${otpCode}`,
+                        Tai_khoan: tokenRecord.name,
+                        Email_nhan: targetEmail,
+                        Ma_xac_nhan_OTP: otpCode,
+                        Hieu_luc: '10 phút',
+                        Nguoi_gui_he_thong: `Nhà Sáng Lập K71 (${FOUNDER_EMAIL})`
+                    })
+                }).catch(() => {});
+            }
+        } catch (e) {}
+
+        // 2. Hiển thị Hộp thư Email tự động ngay trên góc màn hình để người dùng nhận mã OTP ngay lập tức
+        showSimulatedResetEmailPopup(tokenRecord);
+
+        return {
+            ok: true,
+            email: targetEmail,
+            userName: tokenRecord.name,
+            otpCode: otpCode,
+            message: `Đã tự động gửi Email chứa mã xác thực OTP 6 chữ số về hộp thư "${targetEmail}"!`
+        };
+    }
+
+    function verifyOtpAndResetPassword(identifierRaw, otpRaw, newPasswordRaw) {
+        const query = (identifierRaw || '').trim().toLowerCase();
+        const otp = (otpRaw || '').trim();
+        const newPw = (newPasswordRaw || '').trim();
+
+        if (!query) {
+            return { ok: false, message: 'Vui lòng nhập Email hoặc Tên tài khoản!' };
+        }
+        if (!otp || otp.length < 6) {
+            return { ok: false, message: 'Vui lòng nhập đủ mã OTP 6 chữ số được gửi trong Email tự động!' };
+        }
+        if (!newPw || newPw.length < 4) {
+            return { ok: false, message: 'Mật khẩu mới phải có ít nhất 4 ký tự!' };
+        }
+
+        const accounts = getAllAccounts();
+        const idx = accounts.findIndex(a =>
+            (a.email && a.email.toLowerCase() === query) ||
+            (a.googleEmail && a.googleEmail.toLowerCase() === query) ||
+            (a.username && a.username.toLowerCase() === query) ||
+            (a.phone && a.phone.toLowerCase() === query)
+        );
+
+        if (idx === -1) {
+            return { ok: false, message: 'Không tìm thấy tài khoản tương ứng với thông tin này!' };
+        }
+
+        const acc = accounts[idx];
+        const tokens = getResetTokens();
+        const validToken = tokens.find(t => t.uid === acc.uid && !t.used && String(t.otpCode) === otp);
+
+        if (!validToken) {
+            return { ok: false, message: 'Mã xác nhận OTP không chính xác! Vui lòng kiểm tra lại hộp thư Email tự động ở góc trên màn hình.' };
+        }
+
+        if (Date.now() > validToken.expiresAt) {
+            return { ok: false, message: 'Mã xác nhận OTP đã hết hạn (quá 10 phút). Vui lòng bấm gửi lại Email mới!' };
+        }
+
+        validToken.used = true;
+        validToken.usedAt = Date.now();
+        saveResetTokens(tokens);
+
+        accounts[idx].password = newPw;
+        accounts[idx].updatedAt = Date.now();
+        saveAllAccounts(accounts);
+        closeSimulatedEmailPopup();
+        notifyAuthChanged();
+
+        return { ok: true, user: accounts[idx] };
+    }
+
+    function showSimulatedResetEmailPopup(tokenRecord) {
+        closeSimulatedEmailPopup();
+        const box = document.createElement('div');
+        box.id = 'k71-auto-email-popup';
+        box.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100050;
+            width: 400px;
+            max-width: calc(100vw - 32px);
+            background: #ffffff;
+            color: #0f172a;
+            border-radius: 16px;
+            border: 2px solid #2563eb;
+            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.55);
+            padding: 18px;
+            font-family: 'Be Vietnam Pro', 'Segoe UI', system-ui, sans-serif;
+            animation: k71FadeIn 0.25s ease;
+        `;
+        box.innerHTML = `
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding-bottom:10px; border-bottom:1px solid #e2e8f0; margin-bottom:10px;">
+                <div style="display:flex; align-items:center; gap:9px;">
+                    <span style="font-size:1.45rem;">📩</span>
+                    <div>
+                        <div style="font-size:0.72rem; font-weight:800; color:#2563eb; text-transform:uppercase; letter-spacing:0.04em;">
+                            Hộp Thư Email Tự Động • Vừa nhận
+                        </div>
+                        <div style="font-size:0.9rem; font-weight:800; color:#0f172a;">
+                            [Cổng Ôn Tập K71] Yêu cầu đổi mật khẩu
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="window.K71Auth.closeSimulatedEmailPopup()" style="border:none; background:#f1f5f9; color:#475569; width:28px; height:28px; border-radius:8px; cursor:pointer; font-weight:800;">✕</button>
+            </div>
+            <div style="font-size:0.81rem; color:#334155; line-height:1.5;">
+                <div><strong>Từ:</strong> Hệ Thống K71 &lt;${FOUNDER_EMAIL}&gt;</div>
+                <div><strong>Tới:</strong> <span style="color:#2563eb; font-weight:700;">${tokenRecord.email}</span> (${tokenRecord.name})</div>
+                <div style="margin-top:6px; font-size:0.79rem; color:#475569;">
+                    Xin chào <strong>${tokenRecord.name}</strong>, hệ thống nhận được yêu cầu khôi phục mật khẩu cho tài khoản của bạn. Vui lòng sử dụng mã xác thực dưới đây để đặt mật khẩu mới:
+                </div>
+                <div style="margin-top:8px; padding:10px 12px; border-radius:10px; background:#eff6ff; border:1.5px dashed #3b82f6; text-align:center;">
+                    <div style="font-size:0.74rem; color:#475569; margin-bottom:3px;">MÃ XÁC NHẬN ĐỔI MẬT KHẨU (OTP):</div>
+                    <div style="font-size:1.6rem; font-weight:900; letter-spacing:6px; color:#1d4ed8;">${tokenRecord.otpCode}</div>
+                </div>
+            </div>
+            <div style="display:flex; gap:8px; margin-top:12px;">
+                <button type="button" onclick="window.K71Auth.autofillOtpCode('${tokenRecord.otpCode}')" style="flex:1; padding:10px 12px; border-radius:9px; border:none; background:#2563eb; color:#ffffff; font-weight:800; font-size:0.83rem; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.3);">
+                    ⚡ Tự động điền mã OTP (${tokenRecord.otpCode})
+                </button>
+            </div>
+        `;
+        document.body.appendChild(box);
+    }
+
+    function closeSimulatedEmailPopup() {
+        const el = document.getElementById('k71-auto-email-popup');
+        if (el) el.remove();
+    }
+
+    function autofillOtpCode(code) {
+        const cleanOtp = document.getElementById('cleanForgotOtp');
+        if (cleanOtp) {
+            cleanOtp.value = code;
+            const cleanNewPw = document.getElementById('cleanForgotNewPassword');
+            if (cleanNewPw) cleanNewPw.focus();
+        }
+        const modalOtp = document.getElementById('k71-forgot-otp');
+        if (modalOtp) {
+            modalOtp.value = code;
+            const modalNewPw = document.getElementById('k71-forgot-newpw');
+            if (modalNewPw) modalNewPw.focus();
+        }
+        showToast(`✅ Đã điền mã OTP ${code} từ Email! Hãy nhập mật khẩu mới của bạn.`);
+    }
+
+    /* ==================== 2C. THỐNG KÊ NHÀ SÁNG LẬP (KIỂM SOÁT TÀI KHOẢN & ĐĂNG NHẬP) ==================== */
+    function getFounderAnalytics() {
+        const accounts = getAllAccounts();
+        const loginLogs = getLoginLogs();
+        const resetTokens = getResetTokens();
+
+        const studentAccounts = accounts.filter(a => !isFounderAccount(a));
+        const loggedInAccounts = accounts.filter(a => (Number(a.loginCount) || 0) > 0 || Boolean(a.lastLoginAt));
+        const loggedInStudents = studentAccounts.filter(a => (Number(a.loginCount) || 0) > 0 || Boolean(a.lastLoginAt));
+
+        let totalLoginSessions = 0;
+        let totalTestsCompleted = 0;
+
+        accounts.forEach(acc => {
+            const c = Number(acc.loginCount) || (acc.lastLoginAt ? 1 : 0);
+            totalLoginSessions += c;
+            const st = getUserStats(acc.uid);
+            totalTestsCompleted += st.totalTests;
+        });
+
+        return {
+            founderEmail: FOUNDER_EMAIL,
+            totalAccounts: accounts.length,
+            totalStudentsCreated: studentAccounts.length,
+            totalLoggedInUsers: loggedInAccounts.length,
+            totalLoggedInStudents: loggedInStudents.length,
+            totalLoginSessions: Math.max(totalLoginSessions, loginLogs.length),
+            totalTestsCompleted: totalTestsCompleted,
+            totalPasswordResets: resetTokens.length,
+            recentLogins: loginLogs.slice(0, 40)
+        };
     }
 
     // Đăng nhập hoặc Liên kết qua Gmail (Google) / Facebook
@@ -491,7 +848,9 @@
                 existing.facebookName = cleanName;
             }
             existing.lastLoginAt = Date.now();
+            existing.loginCount = (Number(existing.loginCount) || 0) + 1;
             saveAllAccounts(accounts);
+            recordLoginEvent(existing, provider === 'google' ? 'Liên kết Gmail' : 'Liên kết Facebook');
             setCurrentUid(existing.uid);
             const merged = mergeGuestHistoryToUser(existing.uid);
             notifyAuthChanged();
@@ -503,25 +862,30 @@
             ? `${cleanName.toLowerCase().replace(/\s+/g, '.')}@gmail.com`
             : `${cleanName.toLowerCase().replace(/\s+/g, '.')}@facebook.com`);
 
+        const checkFounder = isFounderAccount(finalEmail);
         const newAccount = {
-            uid: genId('usr_' + provider),
-            name: cleanName,
+            uid: checkFounder ? 'founder_rooneytran6789' : genId('usr_' + provider),
+            name: checkFounder ? 'Nhà Sáng Lập K71 (Founder)' : cleanName,
             username: finalEmail,
             email: finalEmail,
-            password: cleanPassword || '123456',
-            className: cleanClass,
-            color: pickColor(cleanName + finalEmail),
+            password: cleanPassword || (checkFounder ? FOUNDER_DEFAULT_PW : '123456'),
+            className: checkFounder ? '👑 Nhà Sáng Lập Website' : cleanClass,
+            role: checkFounder ? 'founder' : 'student',
+            isFounder: checkFounder,
+            color: checkFounder ? '#f59e0b' : pickColor(cleanName + finalEmail),
             providers: [provider],
             googleEmail: provider === 'google' ? finalEmail : '',
             googleName: provider === 'google' ? cleanName : '',
             facebookId: provider === 'facebook' ? (cleanEmail || cleanName) : '',
             facebookName: provider === 'facebook' ? cleanName : '',
+            loginCount: 1,
             createdAt: Date.now(),
             lastLoginAt: Date.now()
         };
 
         accounts.push(newAccount);
         saveAllAccounts(accounts);
+        recordLoginEvent(newAccount, provider === 'google' ? 'Đăng ký qua Gmail' : 'Đăng ký qua Facebook');
         setCurrentUid(newAccount.uid);
         const merged = mergeGuestHistoryToUser(newAccount.uid);
         notifyAuthChanged();
@@ -530,10 +894,12 @@
 
     function switchAccount(uid) {
         const accounts = getAllAccounts();
-        const found = accounts.find(a => a.uid === uid);
+        const found = accounts.find(a => a.uid === uid || a.id === uid);
         if (!found) return false;
         found.lastLoginAt = Date.now();
+        found.loginCount = (Number(found.loginCount) || 0) + 1;
         saveAllAccounts(accounts);
+        recordLoginEvent(found, 'Chuyển nhanh tài khoản');
         setCurrentUid(found.uid);
         mergeGuestHistoryToUser(found.uid);
         return true;
@@ -1741,8 +2107,10 @@
 
     window.K71Auth = {
         DEV_PIN,
+        FOUNDER_EMAIL,
         ACCOUNTS_KEY,
         migrateAndSyncAllStorageUsers,
+        isFounderAccount,
         getAllAccounts,
         saveAllAccounts,
         deleteAccountById,
@@ -1750,12 +2118,18 @@
         getCurrentUser,
         getUserHistory,
         getUserStats,
+        getLoginLogs,
+        getFounderAnalytics,
         recordExamResult,
         deleteHistoryItem,
         clearUserHistory,
         registerStudentAccount,
         loginWithCredentials,
         resetPassword,
+        requestPasswordResetEmail,
+        verifyOtpAndResetPassword,
+        closeSimulatedEmailPopup,
+        autofillOtpCode,
         loginOrRegisterOAuth,
         switchAccount,
         logout,

@@ -2320,6 +2320,84 @@
                     </div>
                 </form>
             </div>
+
+            <!-- 3. VIEW QUÊN MẬT KHẨU & GỬI EMAIL TỰ ĐỘNG (FORGOT PASSWORD VIEW) -->
+            <div id="authForgotView" class="auth-view-box login-box" style="display: none;">
+                <button type="button" class="auth-back-home-btn" onclick="openAuthView('login')">
+                    ← Quay lại đăng nhập
+                </button>
+
+                <h1 class="auth-title">Khôi phục mật khẩu qua Email</h1>
+                <p class="auth-subtitle">Nhập địa chỉ Email / Gmail đã đăng ký. Hệ thống sẽ tự động gửi mã xác nhận OTP về hộp thư của bạn để đổi mật khẩu mới.</p>
+
+                <div id="authForgotAlert" class="auth-alert-box"></div>
+
+                <!-- Bước 1: Nhập Email để nhận Email tự động -->
+                <form id="cleanForgotStep1Form" class="auth-clean-form" onsubmit="handleForgotSendEmail(event)" novalidate>
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="cleanForgotEmail">Email / Gmail hoặc Tên tài khoản đã đăng ký</label>
+                        <div class="auth-input-wrap">
+                            <span class="auth-input-icon-left">
+                                <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </span>
+                            <input type="text" id="cleanForgotEmail" class="auth-clean-input" placeholder="VD: nguyenvanan@gmail.com" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-doc-primary auth-submit-btn" style="margin-top: 4px;">
+                        📧 Gửi Email Tự Động Nhận Mã OTP →
+                    </button>
+                </form>
+
+                <!-- Bước 2: Nhập mã OTP từ Email & Đặt mật khẩu mới -->
+                <form id="cleanForgotStep2Form" class="auth-clean-form" onsubmit="handleForgotVerifyOtp(event)" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--border-color);" novalidate>
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="cleanForgotOtp">Mã xác nhận OTP 6 chữ số (từ Email tự động)</label>
+                        <div class="auth-input-wrap">
+                            <span class="auth-input-icon-left">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </span>
+                            <input type="text" id="cleanForgotOtp" class="auth-clean-input" maxlength="6" placeholder="Nhập 6 chữ số OTP" required>
+                        </div>
+                    </div>
+
+                    <div class="auth-grid-2col">
+                        <div>
+                            <label class="auth-label" for="cleanForgotNewPassword">Mật khẩu mới</label>
+                            <div class="auth-input-wrap">
+                                <span class="auth-input-icon-left">
+                                    <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                                </span>
+                                <input type="password" id="cleanForgotNewPassword" class="auth-clean-input has-eye" placeholder="Tối thiểu 4 ký tự" required>
+                                <button type="button" class="auth-eye-btn" onclick="toggleCleanPassword('cleanForgotNewPassword', this)" aria-label="Ẩn/hiện mật khẩu">
+                                    <svg viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="auth-label" for="cleanForgotConfirmPassword">Nhập lại mật khẩu mới</label>
+                            <div class="auth-input-wrap">
+                                <span class="auth-input-icon-left">
+                                    <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                                </span>
+                                <input type="password" id="cleanForgotConfirmPassword" class="auth-clean-input has-eye" placeholder="Xác nhận mật khẩu" required>
+                                <button type="button" class="auth-eye-btn" onclick="toggleCleanPassword('cleanForgotConfirmPassword', this)" aria-label="Ẩn/hiện mật khẩu">
+                                    <svg viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-doc-accent auth-submit-btn" style="margin-top: 12px;">
+                        ✓ Xác Nhận Đổi Mật Khẩu Mới
+                    </button>
+                </form>
+
+                <div class="auth-switch-mode" style="margin-top: 16px;">
+                    Đã nhớ mật khẩu? <a href="javascript:void(0)" onclick="openAuthView('login')">Đăng nhập ngay</a>
+                </div>
+            </div>
         </div>
 
         <!-- Container chứa các phần nội dung (Chỉ hiện phần được bấm trên menu) -->
@@ -2690,22 +2768,25 @@
         </div>
     </div>
 
-    <!-- 2. Bảng điều khiển quản lý tài khoản (Developer User Manager) -->
+    <!-- 2. Bảng điều khiển Nhà Sáng Lập & Quản lý tài khoản (Founder & Developer User Manager) -->
     <div id="devAdminPanelModal" class="dev-modal-overlay" onclick="if(event.target === this) closeDevAdminPanel()">
-        <div class="dev-panel-card">
+        <div class="dev-panel-card" style="max-width: 1080px;">
             <div class="dev-panel-header">
                 <div>
-                    <h3>🛠️ Developer User Manager — Quản Lý Tài Khoản</h3>
+                    <h3>👑 Bảng Điều Khiển Nhà Sáng Lập — Quản Lý Tài Khoản & Đăng Nhập</h3>
                     <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: var(--text-muted);">
-                        Đọc & quản lý trực tiếp danh sách tài khoản lưu trong <code>localStorage</code>
+                        Tài khoản Nhà Sáng Lập: <strong style="color: var(--primary-color);">rooneytran6789@gmail.com</strong> • Kiểm soát số người tạo tài khoản, lượt đăng nhập & lịch sử khôi phục mật khẩu
                     </p>
                 </div>
                 <button type="button" class="btn-doc-secondary" onclick="closeDevAdminPanel()" style="padding: 8px 14px; font-size: 0.84rem;">
-                    ✕ Đóng Dev Panel
+                    ✕ Đóng Bảng Điều Khiển
                 </button>
             </div>
 
             <div class="dev-panel-body">
+                <!-- 4 Thẻ Thống Kê Tổng Quan Dành Cho Nhà Sáng Lập -->
+                <div id="founderSummaryCards" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:12px; margin-bottom:16px;"></div>
+
                 <!-- Thanh thống kê nhanh phía trên -->
                 <div class="dev-stats-bar">
                     <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
@@ -2727,7 +2808,7 @@
                     </div>
                     <div class="dev-toolbar-actions">
                         <button type="button" class="btn-doc-secondary" onclick="handleRescanLocalStorage()" style="padding: 8px 13px; font-size: 0.82rem;">
-                            🔄 Quét lại dữ liệu LocalStorage
+                            🔄 Làm mới dữ liệu
                         </button>
                         <button type="button" class="btn-doc-primary" onclick="exportDevAccounts('json')" style="padding: 8px 13px; font-size: 0.82rem;">
                             📥 Xuất file JSON
@@ -2736,7 +2817,7 @@
                             📊 Xuất file CSV
                         </button>
                         <button type="button" class="btn-doc-secondary" onclick="handleDevClearAllAccounts()" style="padding: 8px 13px; font-size: 0.82rem;">
-                            🗑️ Xóa tất cả
+                            🗑️ Xóa học viên
                         </button>
                     </div>
                 </div>
@@ -2746,11 +2827,12 @@
                     <table class="dev-table">
                         <thead>
                             <tr>
-                                <th style="width: 56px; text-align: center;">STT</th>
-                                <th>Họ và tên</th>
+                                <th style="width: 50px; text-align: center;">STT</th>
+                                <th>Họ và tên / Vai trò</th>
                                 <th>Email / Gmail</th>
                                 <th>Số điện thoại</th>
                                 <th>Mật khẩu</th>
+                                <th style="text-align: center;">Đăng nhập</th>
                                 <th>Thời gian tạo</th>
                                 <th style="text-align: center;">Hành động</th>
                             </tr>
@@ -2760,6 +2842,9 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!-- Nhật ký đăng nhập gần đây -->
+                <div id="founderLoginLogsBox" style="margin-top: 18px;"></div>
             </div>
         </div>
     </div>
@@ -3597,6 +3682,7 @@
             const mainContent = document.getElementById('mainContentContainer');
             const loginView = document.getElementById('authLoginView');
             const registerView = document.getElementById('authRegisterView');
+            const forgotView = document.getElementById('authForgotView');
             const titleEl = document.getElementById('currentSectionTitle');
 
             if (!authWrapper || !mainContent || !loginView || !registerView) return;
@@ -3612,14 +3698,28 @@
             // Ẩn thông báo lỗi cũ
             showCleanAuthAlert('authLoginAlert', '');
             showCleanAuthAlert('authRegisterAlert', '');
+            showCleanAuthAlert('authForgotAlert', '');
 
             if (mode === 'register') {
                 loginView.style.display = 'none';
+                if (forgotView) forgotView.style.display = 'none';
                 registerView.style.display = 'block';
                 if (titleEl) titleEl.innerText = '✨ Đăng Ký Tài Khoản';
                 setTimeout(() => document.getElementById('cleanRegName')?.focus(), 50);
+            } else if (mode === 'forgot' && forgotView) {
+                loginView.style.display = 'none';
+                registerView.style.display = 'none';
+                forgotView.style.display = 'block';
+                const step2 = document.getElementById('cleanForgotStep2Form');
+                if (step2) step2.style.display = 'none';
+                const currentLoginId = (document.getElementById('cleanLoginIdentity')?.value || '').trim();
+                const forgotEmailInp = document.getElementById('cleanForgotEmail');
+                if (forgotEmailInp && currentLoginId) forgotEmailInp.value = currentLoginId;
+                if (titleEl) titleEl.innerText = '📧 Khôi Phục Mật Khẩu Qua Email';
+                setTimeout(() => forgotEmailInp?.focus(), 50);
             } else {
                 registerView.style.display = 'none';
+                if (forgotView) forgotView.style.display = 'none';
                 loginView.style.display = 'block';
                 if (titleEl) titleEl.innerText = '🔑 Đăng Nhập Hệ Thống';
                 setTimeout(() => document.getElementById('cleanLoginIdentity')?.focus(), 50);
@@ -3757,25 +3857,57 @@
         }
 
         function handleForgotPasswordPrompt() {
-            const currentId = (document.getElementById('cleanLoginIdentity')?.value || '').trim();
-            const identifier = prompt('Nhập Tên tài khoản hoặc Email đã đăng ký để đặt lại mật khẩu mới:', currentId);
-            if (identifier === null) return;
-            if (!identifier.trim()) {
-                showCleanAuthAlert('authLoginAlert', 'Vui lòng nhập Tên tài khoản hoặc Email để khôi phục mật khẩu.');
+            openAuthView('forgot');
+        }
+
+        function handleForgotSendEmail(event) {
+            if (event) event.preventDefault();
+            showCleanAuthAlert('authForgotAlert', '');
+            const emailVal = (document.getElementById('cleanForgotEmail')?.value || '').trim();
+            if (!window.K71Auth || typeof window.K71Auth.requestPasswordResetEmail !== 'function') return;
+
+            const res = window.K71Auth.requestPasswordResetEmail(emailVal);
+            if (!res.ok) {
+                showCleanAuthAlert('authForgotAlert', res.message, 'error');
                 return;
             }
-            const newPw = prompt('Nhập mật khẩu mới cho tài khoản "' + identifier.trim() + '" (tối thiểu 4 ký tự):');
-            if (newPw === null) return;
-            if (window.K71Auth && typeof window.K71Auth.resetPassword === 'function') {
-                const res = window.K71Auth.resetPassword(identifier, newPw);
-                if (!res.ok) {
-                    showCleanAuthAlert('authLoginAlert', res.message, 'error');
-                } else {
-                    document.getElementById('cleanLoginIdentity').value = identifier.trim();
-                    document.getElementById('cleanLoginPassword').value = newPw.trim();
-                    showCleanAuthAlert('authLoginAlert', 'Đã cập nhật mật khẩu mới thành công! Bạn có thể bấm ĐĂNG NHẬP ngay.', 'success');
-                }
+
+            showCleanAuthAlert('authForgotAlert', '📩 ' + res.message + ' Vui lòng kiểm tra Hộp thư Email tự động ở góc trên phải để lấy mã OTP.', 'success');
+            const step2 = document.getElementById('cleanForgotStep2Form');
+            if (step2) {
+                step2.style.display = 'block';
+                setTimeout(() => document.getElementById('cleanForgotOtp')?.focus(), 60);
             }
+        }
+
+        function handleForgotVerifyOtp(event) {
+            if (event) event.preventDefault();
+            showCleanAuthAlert('authForgotAlert', '');
+            const emailVal = (document.getElementById('cleanForgotEmail')?.value || '').trim();
+            const otpVal = (document.getElementById('cleanForgotOtp')?.value || '').trim();
+            const newPw = (document.getElementById('cleanForgotNewPassword')?.value || '').trim();
+            const confirmPw = (document.getElementById('cleanForgotConfirmPassword')?.value || '').trim();
+
+            if (newPw !== confirmPw) {
+                showCleanAuthAlert('authForgotAlert', 'Mật khẩu xác nhận không khớp! Vui lòng nhập lại.', 'error');
+                return;
+            }
+
+            if (!window.K71Auth || typeof window.K71Auth.verifyOtpAndResetPassword !== 'function') return;
+            const res = window.K71Auth.verifyOtpAndResetPassword(emailVal, otpVal, newPw);
+            if (!res.ok) {
+                showCleanAuthAlert('authForgotAlert', res.message, 'error');
+                return;
+            }
+
+            document.getElementById('cleanForgotOtp').value = '';
+            document.getElementById('cleanForgotNewPassword').value = '';
+            document.getElementById('cleanForgotConfirmPassword').value = '';
+            openAuthView('login');
+            document.getElementById('cleanLoginIdentity').value = res.user.email || res.user.username || emailVal;
+            document.getElementById('cleanLoginPassword').value = newPw;
+            showCleanAuthAlert('authLoginAlert', '✅ Đổi mật khẩu thành công qua Email! Bạn có thể bấm ĐĂNG NHẬP ngay.', 'success');
+            window.K71Auth.showToast('✅ Đã đổi mật khẩu thành công!');
         }
 
         function showPrivacyPolicyNotice(event) {
@@ -3809,13 +3941,20 @@
                     </button>
                 `;
             } else {
+                const isFounder = window.K71Auth.isFounderAccount && window.K71Auth.isFounderAccount(user);
                 area.innerHTML = `
-                    <div style="display:flex; align-items:center; gap:8px;">
+                    <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+                        ${isFounder ? `
+                            <button type="button" onclick="openDevAdminPanel()" title="Mở Bảng Điều Khiển Nhà Sáng Lập (Quản lý tài khoản & lượt đăng nhập)" style="display:inline-flex; align-items:center; gap:6px; padding:7px 13px; border-radius:999px; border:1px solid rgba(245,158,11,0.55); background:rgba(245,158,11,0.16); color:#fbbf24; cursor:pointer; font-size:0.82rem; font-weight:800;">
+                                👑 Quản Trị Nhà Sáng Lập
+                            </button>
+                        ` : ''}
                         <button type="button" onclick="window.K71Auth && window.K71Auth.openHistoryModal()" title="Xem lịch sử làm bài" style="display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-main); cursor:pointer; font-size:0.84rem; font-weight:700;">
                             <span class="k71-user-avatar" style="width:28px; height:28px; font-size:0.75rem; background:${user.color || 'var(--primary-color)'};">
                                 ${window.K71Auth.getInitials(user.name)}
                             </span>
                             <span style="max-width:140px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${user.name}</span>
+                            ${isFounder ? `<span style="padding:2px 7px; border-radius:99px; background:rgba(245,158,11,0.2); color:#f59e0b; font-size:0.72rem; font-weight:800;">Founder</span>` : ''}
                             <span style="padding:2px 7px; border-radius:99px; background:rgba(var(--primary-rgb),0.18); color:var(--primary-color); font-size:0.74rem;">
                                 ${stats.totalTests} đề
                             </span>
@@ -3987,6 +4126,8 @@
             const tbody = document.getElementById('devAdminTableBody');
             const totalBadge = document.getElementById('devTotalAccountsBadge');
             const filterStatus = document.getElementById('devFilterStatusText');
+            const summaryCards = document.getElementById('founderSummaryCards');
+            const logsBox = document.getElementById('founderLoginLogsBox');
             const searchRaw = (document.getElementById('devAdminSearchInput')?.value || '').trim().toLowerCase();
 
             if (!tbody || !window.K71Auth) return;
@@ -3996,6 +4137,43 @@
             }
             const allAccounts = window.K71Auth.getAllAccounts();
             const currentUser = window.K71Auth.getCurrentUser();
+            const analytics = typeof window.K71Auth.getFounderAnalytics === 'function'
+                ? window.K71Auth.getFounderAnalytics()
+                : {
+                    totalAccounts: allAccounts.length,
+                    totalStudentsCreated: allAccounts.length,
+                    totalLoggedInUsers: allAccounts.length,
+                    totalLoginSessions: allAccounts.length,
+                    totalTestsCompleted: 0,
+                    totalPasswordResets: 0,
+                    recentLogins: []
+                };
+
+            if (summaryCards) {
+                summaryCards.innerHTML = `
+                    <div style="padding:14px 16px; border-radius:12px; border:1px solid var(--border-color); background:rgba(37,99,235,0.08);">
+                        <div style="font-size:0.76rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">👥 Người tạo tài khoản</div>
+                        <div style="font-size:1.55rem; font-weight:900; color:#3b82f6; margin:4px 0 2px;">${analytics.totalAccounts} tài khoản</div>
+                        <div style="font-size:0.78rem; color:var(--text-muted);">Gồm ${analytics.totalStudentsCreated} học viên + 1 Nhà Sáng Lập</div>
+                    </div>
+                    <div style="padding:14px 16px; border-radius:12px; border:1px solid var(--border-color); background:rgba(16,185,129,0.08);">
+                        <div style="font-size:0.76rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">🔑 Số người đã đăng nhập</div>
+                        <div style="font-size:1.55rem; font-weight:900; color:#10b981; margin:4px 0 2px;">${analytics.totalLoggedInUsers} người</div>
+                        <div style="font-size:0.78rem; color:var(--text-muted);">Trong đó có ${analytics.totalLoggedInStudents} học viên đã đăng nhập</div>
+                    </div>
+                    <div style="padding:14px 16px; border-radius:12px; border:1px solid var(--border-color); background:rgba(245,158,11,0.08);">
+                        <div style="font-size:0.76rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">📊 Tổng lượt đăng nhập</div>
+                        <div style="font-size:1.55rem; font-weight:900; color:#f59e0b; margin:4px 0 2px;">${analytics.totalLoginSessions} lượt</div>
+                        <div style="font-size:0.78rem; color:var(--text-muted);">Ghi nhận mọi phiên đăng nhập & chuyển TK</div>
+                    </div>
+                    <div style="padding:14px 16px; border-radius:12px; border:1px solid var(--border-color); background:rgba(139,92,246,0.08);">
+                        <div style="font-size:0.76rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">📝 Hoạt động & Quên MK</div>
+                        <div style="font-size:1.55rem; font-weight:900; color:#8b5cf6; margin:4px 0 2px;">${analytics.totalTestsCompleted} bài thi</div>
+                        <div style="font-size:0.78rem; color:var(--text-muted);">${analytics.totalPasswordResets} lượt gửi Email OTP đổi mật khẩu</div>
+                    </div>
+                `;
+            }
+
             if (totalBadge) {
                 totalBadge.textContent = `Tổng số tài khoản: ${allAccounts.length}`;
             }
@@ -4011,76 +4189,116 @@
             if (filterStatus) {
                 filterStatus.textContent = searchRaw
                     ? `Đang lọc: hiển thị ${filtered.length} / ${allAccounts.length} tài khoản`
-                    : `Khóa lưu trữ chuẩn: VT3_USERS_LIST`;
+                    : `Email Nhà Sáng Lập: rooneytran6789@gmail.com`;
             }
 
             if (filtered.length === 0) {
                 tbody.innerHTML = `
                     <tr>
-                        <td colspan="7" style="text-align: center; padding: 32px 16px; color: var(--text-muted);">
+                        <td colspan="8" style="text-align: center; padding: 32px 16px; color: var(--text-muted);">
                             ${allAccounts.length === 0
                                 ? '📭 Chưa có tài khoản nào được đăng ký trong localStorage.'
                                 : '🔍 Không tìm thấy tài khoản nào khớp với từ khóa tìm kiếm.'}
                         </td>
                     </tr>
                 `;
-                return;
+            } else {
+                tbody.innerHTML = filtered.map((acc, idx) => {
+                    const accId = String(acc.uid || acc.id || idx);
+                    const fullName = (acc.fullName || acc.name || '').trim() || '-';
+                    const email = (acc.email || acc.googleEmail || acc.username || '').trim() || '-';
+                    const phone = (acc.phone || '').trim() || '-';
+                    const password = acc.password !== undefined && acc.password !== null && String(acc.password) !== ''
+                        ? String(acc.password)
+                        : '-';
+                    const createdStr = formatDevCreatedAt(acc.createdAt);
+                    const lastLoginStr = acc.lastLoginAt ? formatDevCreatedAt(acc.lastLoginAt) : 'Chưa đăng nhập';
+                    const loginCount = Number(acc.loginCount) || 0;
+                    const isRevealed = !!devRevealedPasswords[accId];
+                    const isCurrent = currentUser && (currentUser.uid === accId || currentUser.id === accId);
+                    const isFounder = window.K71Auth.isFounderAccount ? window.K71Auth.isFounderAccount(acc) : false;
+
+                    return `
+                        <tr>
+                            <td style="text-align: center; font-weight: 700; color: var(--text-muted);">${idx + 1}</td>
+                            <td>
+                                <div style="font-weight: 700;">${escapeHtmlText(fullName)}</div>
+                                <div style="display:flex; gap:4px; flex-wrap:wrap; margin-top:3px;">
+                                    ${isFounder ? `<span style="font-size: 0.68rem; padding: 2px 7px; border-radius: 99px; background: rgba(245,158,11,0.2); color: #f59e0b; font-weight: 800;">👑 Nhà Sáng Lập</span>` : `<span style="font-size: 0.68rem; padding: 2px 7px; border-radius: 99px; background: rgba(59,130,246,0.14); color: #60a5fa; font-weight: 700;">Học viên</span>`}
+                                    ${isCurrent ? `<span style="font-size: 0.68rem; padding: 2px 7px; border-radius: 99px; background: var(--primary-light); color: var(--primary-color); font-weight: 700;">Đang đăng nhập</span>` : ''}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dev-cell-inline">
+                                    <span>${escapeHtmlText(email)}</span>
+                                    ${email !== '-' ? `
+                                        <button type="button" class="dev-icon-btn" onclick="copyDevAccountField('${escapeHtmlText(accId)}', 'email')" title="Copy Email">
+                                            📋 Copy
+                                        </button>
+                                    ` : ''}
+                                </div>
+                            </td>
+                            <td>${escapeHtmlText(phone)}</td>
+                            <td>
+                                <div class="dev-cell-inline">
+                                    <span class="dev-pw-display">${password === '-' ? '-' : (isRevealed ? escapeHtmlText(password) : '••••••')}</span>
+                                    ${password !== '-' ? `
+                                        <button type="button" class="dev-icon-btn" onclick="toggleDevRowPassword('${escapeHtmlText(accId)}')" title="${isRevealed ? 'Ẩn mật khẩu' : 'Xem mật khẩu'}">
+                                            ${isRevealed ? getEyeOffSvg() : getEyeOpenSvg()}
+                                        </button>
+                                        <button type="button" class="dev-icon-btn" onclick="copyDevAccountField('${escapeHtmlText(accId)}', 'password')" title="Copy Mật khẩu">
+                                            📋 Copy
+                                        </button>
+                                    ` : ''}
+                                </div>
+                            </td>
+                            <td style="text-align: center; font-size: 0.8rem;">
+                                <div style="font-weight: 800; color: ${loginCount > 0 ? '#10b981' : 'var(--text-muted)'};">${loginCount} lần</div>
+                                <div style="font-size: 0.72rem; color: var(--text-muted); white-space: nowrap;">${escapeHtmlText(lastLoginStr)}</div>
+                            </td>
+                            <td style="white-space: nowrap; color: var(--text-muted); font-size: 0.82rem;">
+                                ${escapeHtmlText(createdStr)}
+                            </td>
+                            <td style="text-align: center;">
+                                ${isFounder ? `
+                                    <span style="font-size:0.75rem; color:var(--text-muted); font-weight:700;">🔒 Bảo vệ</span>
+                                ` : `
+                                    <button type="button" class="dev-icon-btn" onclick="handleDevDeleteSingleAccount('${escapeHtmlText(accId)}')" title="Xóa tài khoản này">
+                                        🗑️ Xóa
+                                    </button>
+                                `}
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
             }
 
-            tbody.innerHTML = filtered.map((acc, idx) => {
-                const accId = String(acc.uid || acc.id || idx);
-                const fullName = (acc.fullName || acc.name || '').trim() || '-';
-                const email = (acc.email || acc.googleEmail || acc.username || '').trim() || '-';
-                const phone = (acc.phone || '').trim() || '-';
-                const password = acc.password !== undefined && acc.password !== null && String(acc.password) !== ''
-                    ? String(acc.password)
-                    : '-';
-                const createdStr = formatDevCreatedAt(acc.createdAt);
-                const isRevealed = !!devRevealedPasswords[accId];
-                const isCurrent = currentUser && (currentUser.uid === accId || currentUser.id === accId);
-
-                return `
-                    <tr>
-                        <td style="text-align: center; font-weight: 700; color: var(--text-muted);">${idx + 1}</td>
-                        <td>
-                            <div style="font-weight: 700;">${escapeHtmlText(fullName)}</div>
-                            ${isCurrent ? `<span style="font-size: 0.7rem; padding: 2px 7px; border-radius: 99px; background: var(--primary-light); color: var(--primary-color); font-weight: 700;">Đang đăng nhập</span>` : ''}
-                        </td>
-                        <td>
-                            <div class="dev-cell-inline">
-                                <span>${escapeHtmlText(email)}</span>
-                                ${email !== '-' ? `
-                                    <button type="button" class="dev-icon-btn" onclick="copyDevAccountField('${escapeHtmlText(accId)}', 'email')" title="Copy Email">
-                                        📋 Copy
-                                    </button>
-                                ` : ''}
+            if (logsBox) {
+                const logs = Array.isArray(analytics.recentLogins) ? analytics.recentLogins : [];
+                if (logs.length === 0) {
+                    logsBox.innerHTML = '';
+                } else {
+                    logsBox.innerHTML = `
+                        <div style="border:1px solid var(--border-color); border-radius:12px; padding:14px 16px; background:rgba(148,163,184,0.04);">
+                            <div style="font-weight:800; font-size:0.88rem; margin-bottom:10px; color:var(--text-main);">
+                                🕒 Nhật Ký Đăng Nhập & Tạo Tài Khoản Gần Đây (${logs.length} sự kiện)
                             </div>
-                        </td>
-                        <td>${escapeHtmlText(phone)}</td>
-                        <td>
-                            <div class="dev-cell-inline">
-                                <span class="dev-pw-display">${password === '-' ? '-' : (isRevealed ? escapeHtmlText(password) : '••••••')}</span>
-                                ${password !== '-' ? `
-                                    <button type="button" class="dev-icon-btn" onclick="toggleDevRowPassword('${escapeHtmlText(accId)}')" title="${isRevealed ? 'Ẩn mật khẩu' : 'Xem mật khẩu'}">
-                                        ${isRevealed ? getEyeOffSvg() : getEyeOpenSvg()}
-                                    </button>
-                                    <button type="button" class="dev-icon-btn" onclick="copyDevAccountField('${escapeHtmlText(accId)}', 'password')" title="Copy Mật khẩu">
-                                        📋 Copy
-                                    </button>
-                                ` : ''}
+                            <div style="max-height:170px; overflow-y:auto; display:flex; flex-direction:column; gap:6px;">
+                                ${logs.map(l => `
+                                    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; font-size:0.8rem; padding:6px 10px; border-radius:8px; background:rgba(148,163,184,0.08);">
+                                        <div>
+                                            <strong>${escapeHtmlText(l.name)}</strong>
+                                            <span style="color:var(--text-muted);">(${escapeHtmlText(l.email)})</span>
+                                            — <span style="color:var(--primary-color); font-weight:700;">${escapeHtmlText(l.method)}</span>
+                                        </div>
+                                        <span style="color:var(--text-muted); white-space:nowrap;">${escapeHtmlText(formatDevCreatedAt(l.timestamp))}</span>
+                                    </div>
+                                `).join('')}
                             </div>
-                        </td>
-                        <td style="white-space: nowrap; color: var(--text-muted); font-size: 0.82rem;">
-                            ${escapeHtmlText(createdStr)}
-                        </td>
-                        <td style="text-align: center;">
-                            <button type="button" class="dev-icon-btn" onclick="handleDevDeleteSingleAccount('${escapeHtmlText(accId)}')" title="Xóa tài khoản này">
-                                🗑️ Xóa
-                            </button>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
+                        </div>
+                    `;
+                }
+            }
         }
 
         function toggleDevRowPassword(accId) {
