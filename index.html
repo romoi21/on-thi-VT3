@@ -1840,6 +1840,240 @@
         .auth-alert-box.success {
             display: block;
         }
+
+        /* ================= DEVELOPER ADMIN MODAL / PANEL (ĐỒNG BỘ 100% CSS VARIABLES) ================= */
+        .dev-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: blur(5px);
+            z-index: 100020;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .dev-modal-overlay.show {
+            display: flex;
+        }
+
+        .dev-pin-card {
+            background: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            width: 100%;
+            max-width: 400px;
+            padding: 26px 24px;
+            position: relative;
+        }
+
+        .dev-panel-card {
+            background: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            width: 100%;
+            max-width: 1120px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .dev-panel-header {
+            background: var(--topbar-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .dev-panel-header h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
+        }
+
+        .dev-panel-body {
+            padding: 20px 22px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: var(--bg-body);
+            flex: 1;
+        }
+
+        .dev-stats-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            border-radius: var(--radius-sm);
+        }
+
+        .dev-stat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: var(--primary-light);
+            color: var(--primary-color);
+            border: 1px solid var(--border-highlight);
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .dev-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .dev-search-wrap {
+            position: relative;
+            flex: 1;
+            min-width: 240px;
+        }
+
+        .dev-search-wrap input {
+            width: 100%;
+            height: 40px;
+            padding: 0 14px 0 38px;
+            background: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .dev-search-wrap input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .dev-search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+            display: flex;
+        }
+
+        .dev-toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .dev-table-container {
+            width: 100%;
+            overflow-x: auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+        }
+
+        .dev-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.86rem;
+            text-align: left;
+        }
+
+        .dev-table th {
+            background: var(--topbar-bg);
+            color: var(--primary-color);
+            font-weight: 700;
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+
+        .dev-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+            vertical-align: middle;
+        }
+
+        .dev-table tbody tr:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .dev-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .dev-cell-inline {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dev-icon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-body);
+            color: var(--text-muted);
+            font-size: 0.76rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+
+        .dev-icon-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: var(--primary-light);
+        }
+
+        .dev-icon-btn svg {
+            width: 14px;
+            height: 14px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .dev-pw-display {
+            font-family: monospace;
+            font-size: 0.88rem;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+        }
     </style>
 </head>
 <body>
@@ -2423,7 +2657,115 @@
     </div>
 
     <!-- ================= SCRIPT TÀI KHOẢN GOOGLE/FB & LỊCH SỬ LÀM BÀI ================= -->
-    <script src="auth-history.js?v=102"></script>
+    <!-- ================= DEVELOPER ADMIN MODALS (ẨN VỚI NGƯỜI DÙNG THƯỜNG) ================= -->
+    <!-- 1. Hộp thoại nhập Mã PIN Developer -->
+    <div id="devPinModal" class="dev-modal-overlay" onclick="if(event.target === this) closeDevPinModal()">
+        <div class="dev-pin-card">
+            <h3 style="margin: 0 0 6px 0; font-size: 1.15rem; color: var(--primary-color); display: flex; align-items: center; gap: 8px;">
+                🛡️ Xác Thực Developer Admin
+            </h3>
+            <p style="margin: 0 0 16px 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
+                Vui lòng nhập <strong>Mã PIN Developer</strong> để mở Bảng điều khiển quản lý tài khoản:
+            </p>
+            <form onsubmit="handleDevPinSubmit(event)">
+                <div id="devPinAlert" class="auth-alert-box" style="margin-bottom: 12px;"></div>
+                <div class="auth-input-wrap" style="margin-bottom: 16px;">
+                    <span class="auth-input-icon-left">
+                        <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </span>
+                    <input type="password" id="devPinInput" class="auth-clean-input has-eye" placeholder="Nhập mã PIN Developer..." autocomplete="off" required>
+                    <button type="button" class="auth-eye-btn" onclick="toggleCleanPassword('devPinInput', this)" aria-label="Ẩn/hiện PIN">
+                        <svg viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" class="btn-doc-secondary" onclick="closeDevPinModal()" style="padding: 9px 16px;">
+                        Hủy
+                    </button>
+                    <button type="submit" class="btn-doc-primary" style="padding: 9px 18px;">
+                        Mở Dev Panel →
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. Bảng điều khiển quản lý tài khoản (Developer User Manager) -->
+    <div id="devAdminPanelModal" class="dev-modal-overlay" onclick="if(event.target === this) closeDevAdminPanel()">
+        <div class="dev-panel-card">
+            <div class="dev-panel-header">
+                <div>
+                    <h3>🛠️ Developer User Manager — Quản Lý Tài Khoản</h3>
+                    <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: var(--text-muted);">
+                        Đọc & quản lý trực tiếp danh sách tài khoản lưu trong <code>localStorage</code>
+                    </p>
+                </div>
+                <button type="button" class="btn-doc-secondary" onclick="closeDevAdminPanel()" style="padding: 8px 14px; font-size: 0.84rem;">
+                    ✕ Đóng Dev Panel
+                </button>
+            </div>
+
+            <div class="dev-panel-body">
+                <!-- Thanh thống kê nhanh phía trên -->
+                <div class="dev-stats-bar">
+                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <span class="dev-stat-badge" id="devTotalAccountsBadge">Tổng số tài khoản: 0</span>
+                        <span style="font-size: 0.83rem; color: var(--text-muted);" id="devFilterStatusText"></span>
+                    </div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">
+                        Phím tắt mở nhanh: <code>Ctrl + Shift + M</code> hoặc <code>Alt + Shift + A</code>
+                    </div>
+                </div>
+
+                <!-- Thanh công cụ: Tìm kiếm + Xuất JSON/CSV + Xóa tất cả -->
+                <div class="dev-toolbar">
+                    <div class="dev-search-wrap">
+                        <span class="dev-search-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        </span>
+                        <input type="text" id="devAdminSearchInput" oninput="renderDevAdminTable()" placeholder="Tìm kiếm nhanh theo Họ tên, Email (Gmail) hoặc Số điện thoại...">
+                    </div>
+                    <div class="dev-toolbar-actions">
+                        <button type="button" class="btn-doc-secondary" onclick="handleRescanLocalStorage()" style="padding: 8px 13px; font-size: 0.82rem;">
+                            🔄 Quét lại dữ liệu LocalStorage
+                        </button>
+                        <button type="button" class="btn-doc-primary" onclick="exportDevAccounts('json')" style="padding: 8px 13px; font-size: 0.82rem;">
+                            📥 Xuất file JSON
+                        </button>
+                        <button type="button" class="btn-doc-primary" onclick="exportDevAccounts('csv')" style="padding: 8px 13px; font-size: 0.82rem;">
+                            📊 Xuất file CSV
+                        </button>
+                        <button type="button" class="btn-doc-secondary" onclick="handleDevClearAllAccounts()" style="padding: 8px 13px; font-size: 0.82rem;">
+                            🗑️ Xóa tất cả
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bảng dữ liệu chi tiết -->
+                <div class="dev-table-container">
+                    <table class="dev-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 56px; text-align: center;">STT</th>
+                                <th>Họ và tên</th>
+                                <th>Email / Gmail</th>
+                                <th>Số điện thoại</th>
+                                <th>Mật khẩu</th>
+                                <th>Thời gian tạo</th>
+                                <th style="text-align: center;">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="devAdminTableBody">
+                            <!-- Được render động từ localStorage -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= SCRIPT TÀI KHOẢN GOOGLE/FB & LỊCH SỬ LÀM BÀI ================= -->
+    <script src="auth-history.js?v=106"></script>
 
     <!-- ================= SCRIPT ĐIỀU HƯỚNG VÀ HỆ THỐNG THEME TOÀN CẦU ================= -->
     <script>
@@ -3384,6 +3726,7 @@
 
             if (!window.K71Auth) return;
             const res = window.K71Auth.registerStudentAccount({
+                fullName: name,
                 name: name,
                 email: email,
                 gmail: email,
@@ -3533,11 +3876,336 @@
             if (hash && titles[hash]) {
                 switchSection(hash);
             }
+
+            // Kiểm tra tham số ?admin=true trên URL để kích hoạt hộp thoại mã PIN Developer
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('admin') === 'true') {
+                    triggerDevAdminAccess();
+                }
+            } catch (e) {}
         });
 
-        // Lắng nghe sự kiện từ các iframe (phóng toàn màn hình hoặc yêu cầu đăng nhập khi bấm tính năng)
+        /* ================= LOGIC BẢNG ĐIỀU KHIỂN DEVELOPER ADMIN (USER MANAGER) ================= */
+        // Mã PIN Developer mặc định (đồng bộ với DEV_PIN trong auth-history.js, có thể đổi tại đây)
+        const DEV_PIN = window.DEV_PIN || '2026';
+        const devRevealedPasswords = {};
+
+        function triggerDevAdminAccess() {
+            const panelModal = document.getElementById('devAdminPanelModal');
+            if (panelModal && panelModal.classList.contains('show')) {
+                renderDevAdminTable();
+                return;
+            }
+            const pinModal = document.getElementById('devPinModal');
+            const pinInput = document.getElementById('devPinInput');
+            showCleanAuthAlert('devPinAlert', '');
+            if (pinInput) {
+                pinInput.value = '';
+                pinInput.type = 'password';
+            }
+            if (pinModal) {
+                pinModal.classList.add('show');
+                setTimeout(() => pinInput?.focus(), 60);
+            }
+        }
+        window.triggerDevAdminAccess = triggerDevAdminAccess;
+
+        function closeDevPinModal() {
+            const pinModal = document.getElementById('devPinModal');
+            if (pinModal) pinModal.classList.remove('show');
+            showCleanAuthAlert('devPinAlert', '');
+        }
+
+        function handleDevPinSubmit(event) {
+            if (event) event.preventDefault();
+            const pinInput = document.getElementById('devPinInput');
+            const entered = (pinInput?.value || '').trim();
+            const expectedPin = String(window.DEV_PIN || DEV_PIN);
+
+            if (entered !== expectedPin) {
+                showCleanAuthAlert('devPinAlert', 'Mã PIN Developer không chính xác! Vui lòng thử lại.', 'error');
+                pinInput?.select();
+                return;
+            }
+
+            closeDevPinModal();
+            openDevAdminPanel();
+        }
+
+        function openDevAdminPanel() {
+            const panelModal = document.getElementById('devAdminPanelModal');
+            if (!panelModal) return;
+            if (window.K71Auth && typeof window.K71Auth.migrateAndSyncAllStorageUsers === 'function') {
+                window.K71Auth.migrateAndSyncAllStorageUsers();
+            }
+            renderDevAdminTable();
+            panelModal.classList.add('show');
+        }
+
+        function handleRescanLocalStorage() {
+            let count = 0;
+            if (window.K71Auth) {
+                if (typeof window.K71Auth.migrateAndSyncAllStorageUsers === 'function') {
+                    const list = window.K71Auth.migrateAndSyncAllStorageUsers();
+                    count = Array.isArray(list) ? list.length : 0;
+                } else {
+                    count = window.K71Auth.getAllAccounts().length;
+                }
+            }
+            renderDevAdminTable();
+            renderTopbarAuth();
+            if (window.K71Auth && typeof window.K71Auth.showToast === 'function') {
+                window.K71Auth.showToast(`🔄 Đã quét & đồng bộ dữ liệu LocalStorage! Tổng cộng: ${count} tài khoản.`);
+            }
+        }
+
+        function closeDevAdminPanel() {
+            const panelModal = document.getElementById('devAdminPanelModal');
+            if (panelModal) panelModal.classList.remove('show');
+        }
+
+        function escapeHtmlText(str) {
+            return String(str ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function formatDevCreatedAt(ts) {
+            if (!ts) return '-';
+            if (window.K71Auth && typeof window.K71Auth.formatDateTime === 'function') {
+                return window.K71Auth.formatDateTime(ts) || '-';
+            }
+            const d = new Date(ts);
+            return isNaN(d.getTime()) ? String(ts) : d.toLocaleString('vi-VN');
+        }
+
+        function renderDevAdminTable() {
+            const tbody = document.getElementById('devAdminTableBody');
+            const totalBadge = document.getElementById('devTotalAccountsBadge');
+            const filterStatus = document.getElementById('devFilterStatusText');
+            const searchRaw = (document.getElementById('devAdminSearchInput')?.value || '').trim().toLowerCase();
+
+            if (!tbody || !window.K71Auth) return;
+
+            if (typeof window.K71Auth.migrateAndSyncAllStorageUsers === 'function') {
+                window.K71Auth.migrateAndSyncAllStorageUsers();
+            }
+            const allAccounts = window.K71Auth.getAllAccounts();
+            const currentUser = window.K71Auth.getCurrentUser();
+            if (totalBadge) {
+                totalBadge.textContent = `Tổng số tài khoản: ${allAccounts.length}`;
+            }
+
+            const filtered = allAccounts.filter(acc => {
+                if (!searchRaw) return true;
+                const fullName = String(acc.fullName || acc.name || '').toLowerCase();
+                const email = String(acc.email || acc.googleEmail || acc.username || '').toLowerCase();
+                const phone = String(acc.phone || '').toLowerCase();
+                return fullName.includes(searchRaw) || email.includes(searchRaw) || phone.includes(searchRaw);
+            });
+
+            if (filterStatus) {
+                filterStatus.textContent = searchRaw
+                    ? `Đang lọc: hiển thị ${filtered.length} / ${allAccounts.length} tài khoản`
+                    : `Khóa lưu trữ chuẩn: VT3_USERS_LIST`;
+            }
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 32px 16px; color: var(--text-muted);">
+                            ${allAccounts.length === 0
+                                ? '📭 Chưa có tài khoản nào được đăng ký trong localStorage.'
+                                : '🔍 Không tìm thấy tài khoản nào khớp với từ khóa tìm kiếm.'}
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = filtered.map((acc, idx) => {
+                const accId = String(acc.uid || acc.id || idx);
+                const fullName = (acc.fullName || acc.name || '').trim() || '-';
+                const email = (acc.email || acc.googleEmail || acc.username || '').trim() || '-';
+                const phone = (acc.phone || '').trim() || '-';
+                const password = acc.password !== undefined && acc.password !== null && String(acc.password) !== ''
+                    ? String(acc.password)
+                    : '-';
+                const createdStr = formatDevCreatedAt(acc.createdAt);
+                const isRevealed = !!devRevealedPasswords[accId];
+                const isCurrent = currentUser && (currentUser.uid === accId || currentUser.id === accId);
+
+                return `
+                    <tr>
+                        <td style="text-align: center; font-weight: 700; color: var(--text-muted);">${idx + 1}</td>
+                        <td>
+                            <div style="font-weight: 700;">${escapeHtmlText(fullName)}</div>
+                            ${isCurrent ? `<span style="font-size: 0.7rem; padding: 2px 7px; border-radius: 99px; background: var(--primary-light); color: var(--primary-color); font-weight: 700;">Đang đăng nhập</span>` : ''}
+                        </td>
+                        <td>
+                            <div class="dev-cell-inline">
+                                <span>${escapeHtmlText(email)}</span>
+                                ${email !== '-' ? `
+                                    <button type="button" class="dev-icon-btn" onclick="copyDevAccountField('${escapeHtmlText(accId)}', 'email')" title="Copy Email">
+                                        📋 Copy
+                                    </button>
+                                ` : ''}
+                            </div>
+                        </td>
+                        <td>${escapeHtmlText(phone)}</td>
+                        <td>
+                            <div class="dev-cell-inline">
+                                <span class="dev-pw-display">${password === '-' ? '-' : (isRevealed ? escapeHtmlText(password) : '••••••')}</span>
+                                ${password !== '-' ? `
+                                    <button type="button" class="dev-icon-btn" onclick="toggleDevRowPassword('${escapeHtmlText(accId)}')" title="${isRevealed ? 'Ẩn mật khẩu' : 'Xem mật khẩu'}">
+                                        ${isRevealed ? getEyeOffSvg() : getEyeOpenSvg()}
+                                    </button>
+                                    <button type="button" class="dev-icon-btn" onclick="copyDevAccountField('${escapeHtmlText(accId)}', 'password')" title="Copy Mật khẩu">
+                                        📋 Copy
+                                    </button>
+                                ` : ''}
+                            </div>
+                        </td>
+                        <td style="white-space: nowrap; color: var(--text-muted); font-size: 0.82rem;">
+                            ${escapeHtmlText(createdStr)}
+                        </td>
+                        <td style="text-align: center;">
+                            <button type="button" class="dev-icon-btn" onclick="handleDevDeleteSingleAccount('${escapeHtmlText(accId)}')" title="Xóa tài khoản này">
+                                🗑️ Xóa
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function toggleDevRowPassword(accId) {
+            devRevealedPasswords[accId] = !devRevealedPasswords[accId];
+            renderDevAdminTable();
+        }
+
+        function copyDevAccountField(accId, field) {
+            if (!window.K71Auth) return;
+            const acc = window.K71Auth.getAllAccounts().find(a => String(a.uid || a.id) === String(accId));
+            if (!acc) return;
+            const value = field === 'password'
+                ? String(acc.password || '')
+                : String(acc.email || acc.googleEmail || acc.username || '');
+            const label = field === 'password' ? 'Mật khẩu' : 'Email';
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(value).then(() => {
+                    window.K71Auth.showToast(`📋 Đã sao chép ${label}: ${field === 'password' ? '••••••' : value}`);
+                }).catch(() => {
+                    prompt(`Sao chép ${label}:`, value);
+                });
+            } else {
+                prompt(`Sao chép ${label}:`, value);
+            }
+        }
+
+        function handleDevDeleteSingleAccount(accId) {
+            if (!window.K71Auth) return;
+            const acc = window.K71Auth.getAllAccounts().find(a => String(a.uid || a.id) === String(accId));
+            const displayName = acc ? (acc.fullName || acc.name || acc.email) : accId;
+            if (!confirm(`Bạn có chắc chắn muốn xóa tài khoản "${displayName}" khỏi localStorage?`)) {
+                return;
+            }
+            delete devRevealedPasswords[accId];
+            window.K71Auth.deleteAccountById(accId);
+            renderDevAdminTable();
+            renderTopbarAuth();
+            window.K71Auth.showToast(`🗑️ Đã xóa tài khoản "${displayName}".`);
+        }
+
+        function handleDevClearAllAccounts() {
+            if (!window.K71Auth) return;
+            const all = window.K71Auth.getAllAccounts();
+            if (all.length === 0) {
+                window.K71Auth.showToast('Danh sách tài khoản hiện đã trống!');
+                return;
+            }
+            if (!confirm(`⚠️ CẢNH BÁO: Bạn có chắc chắn muốn XÓA TẤT CẢ (${all.length}) tài khoản đã đăng ký trong localStorage không?`)) {
+                return;
+            }
+            window.K71Auth.clearAllAccounts();
+            Object.keys(devRevealedPasswords).forEach(k => delete devRevealedPasswords[k]);
+            renderDevAdminTable();
+            renderTopbarAuth();
+            window.K71Auth.showToast('🧹 Đã xóa toàn bộ danh sách tài khoản test trong localStorage.');
+        }
+
+        function exportDevAccounts(format = 'json') {
+            if (!window.K71Auth) return;
+            const accounts = window.K71Auth.getAllAccounts().map((acc, idx) => ({
+                stt: idx + 1,
+                id: acc.id || acc.uid || '',
+                fullName: acc.fullName || acc.name || '',
+                email: acc.email || acc.googleEmail || acc.username || '',
+                phone: acc.phone || '',
+                password: acc.password || '',
+                createdAt: acc.createdAt ? new Date(acc.createdAt).toISOString() : '',
+                createdAtFormatted: formatDevCreatedAt(acc.createdAt)
+            }));
+
+            const dateStamp = new Date().toISOString().slice(0, 10);
+            if (format === 'csv') {
+                const headers = ['STT', 'ID', 'Họ và tên', 'Email', 'Số điện thoại', 'Mật khẩu', 'Thời gian tạo'];
+                const escapeCsv = val => `"${String(val ?? '').replace(/"/g, '""')}"`;
+                const rows = accounts.map(a => [
+                    a.stt,
+                    escapeCsv(a.id),
+                    escapeCsv(a.fullName),
+                    escapeCsv(a.email),
+                    escapeCsv(a.phone),
+                    escapeCsv(a.password),
+                    escapeCsv(a.createdAtFormatted)
+                ].join(','));
+                const csvContent = '\uFEFF' + [headers.join(','), ...rows].join('\r\n');
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `K71-Accounts-${dateStamp}.csv`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+                window.K71Auth.showToast('📊 Đã xuất danh sách tài khoản ra file CSV!');
+            } else {
+                const jsonContent = JSON.stringify(accounts, null, 2);
+                const blob = new Blob([jsonContent], { type: 'application/json;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `K71-Accounts-${dateStamp}.json`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+                window.K71Auth.showToast('📥 Đã xuất danh sách tài khoản ra file JSON!');
+            }
+        }
+
+        // Hỗ trợ phím Escape để đóng nhanh Modal PIN hoặc Dev Panel
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeDevPinModal();
+                closeDevAdminPanel();
+            }
+        });
+
+        // Lắng nghe sự kiện từ các iframe (phóng toàn màn hình, yêu cầu đăng nhập, hoặc mở Dev Admin)
         window.addEventListener('message', (e) => {
             if (!e.data) return;
+            if (e.data.type === 'K71_OPEN_DEV_ADMIN') {
+                triggerDevAdminAccess();
+                return;
+            }
             if (e.data.type === 'K71_REQUIRE_AUTH') {
                 requireAuth();
                 return;

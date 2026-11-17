@@ -10,7 +10,23 @@
  * ============================================================================
  */
 (function () {
-    const ACCOUNTS_KEY = 'k71_accounts_db_v1';
+    // Mã PIN bảo vệ Bảng điều khiển Developer (Có thể đổi tùy ý tại đây)
+    const DEV_PIN = '2026';
+    window.DEV_PIN = DEV_PIN;
+
+    const ACCOUNTS_KEY = 'VT3_USERS_LIST';
+    const LEGACY_ACCOUNTS_KEY = 'k71_accounts_db_v1';
+    const KNOWN_USER_KEYS = [
+        'VT3_USERS_LIST',
+        'k71_accounts_db_v1',
+        'users',
+        'user',
+        'registeredUsers',
+        'accounts',
+        'account',
+        'userList',
+        'students'
+    ];
     const CURRENT_UID_KEY = 'k71_current_uid_v1';
     const HISTORY_PREFIX = 'k71_exam_history_v1_';
 
@@ -39,12 +55,188 @@
         return AVATAR_COLORS[Math.abs(hash) % AVATAR_COLORS.length];
     }
 
-    /* ==================== 1. QUẢN LÝ DỮ LIỆU TÀI KHOẢN HỌC SINH ==================== */
+    /* ==================== 1. QUẢN LÝ & ĐỒNG BỘ DỮ LIỆU TÀI KHOẢN (AUTO-MIGRATION) ==================== */
+    function isIgnoredStorageKey(key) {
+        if (!key) return true;
+        if (
+            key === 'k71_theme_color' ||
+            key === 'k71_theme' ||
+            key === 'k71_quiz_theme' ||
+            key === 'k71_gemini_api_key' ||
+            key === CURRENT_UID_KEY ||
+            key.startsWith(HISTORY_PREFIX) ||
+            key.startsWith('k71_active_quiz_') ||
+            key.startsWith('k71_wrong_bank_')
+        ) {
+            return true;
+        }
+        return false;
+    }
+
+    function isLikelyUserObject(obj) {
+        if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return false;
+        // Loại trừ bản ghi lịch sử làm bài thi hoặc đề đang làm dở
+        if (obj.totalQuestions !== undefined && obj.correctCount !== undefined) return false;
+        if (obj.questions && Array.isArray(obj.questions)) return false;
+        if (obj.history && Array.isArray(obj.history) && obj.version !== undefined) return false;
+
+        const hasIdentity = Boolean(
+            obj.email ||
+            obj.googleEmail ||
+            obj.username ||
+            obj.fullName ||
+            obj.name ||
+            obj.phone
+        );
+        const hasAuthField = Boolean(
+            obj.password !== undefined ||
+            obj.pw !== undefined ||
+            obj.pass !== undefined ||
+            obj.uid ||
+            obj.id ||
+            obj.email ||
+            obj.googleEmail ||
+            obj.username
+        );
+        return hasIdentity && hasAuthField;
+    }
+
+    function normalizeAccountObject(raw, idx) {
+        const obj = raw || {};
+        const emailVal = String(obj.email || obj.googleEmail || (obj.username && String(obj.username).includes('@') ? obj.username : '') || '').trim();
+        const usernameVal = String(obj.username || emailVal || obj.phone || '').trim();
+        const nameVal = String(
+            obj.fullName ||
+            obj.name ||
+            obj.googleName ||
+            obj.facebookName ||
+            (emailVal ? emailVal.split('@')[0] : '') ||
+            usernameVal ||
+            'Học viên'
+        ).trim();
+        const phoneVal = String(obj.phone || obj.phoneNumber || obj.sdt || obj.tel || '').trim();
+        const passwordVal = obj.password !== undefined && obj.password !== null
+            ? String(obj.password)
+            : (obj.pw !== undefined ? String(obj.pw) : (obj.pass !== undefined ? String(obj.pass) : ''));
+        const idVal = String(obj.id || obj.uid || genId('hs_' + (idx || 0))).trim();
+        const createdVal = obj.createdAt || obj.registeredAt || obj.created_at || obj.timestamp || null;
+
+        return {
+            ...obj,
+            id: idVal,
+            uid: String(obj.uid || idVal),
+            fullName: nameVal,
+            name: nameVal,
+            username: usernameVal || emailVal,
+            email: emailVal || usernameVal,
+            phone: phoneVal,
+            password: passwordVal,
+            className: String(obj.className || 'Khối 11 - K71').trim(),
+            color: obj.color || pickColor(nameVal + (emailVal || usernameVal)),
+            providers: Array.isArray(obj.providers) ? obj.providers : ['student'],
+            googleEmail: String(obj.googleEmail || (emailVal.includes('@') ? emailVal : '')),
+            createdAt: createdVal,
+            lastLoginAt: obj.lastLoginAt || createdVal || null
+        };
+    }
+
+    function getAccountIdentityKey(acc) {
+        if (!acc) return '';
+        const email = String(acc.email || acc.googleEmail || '').trim().toLowerCase();
+        if (email) return 'email:' + email;
+        const username = String(acc.username || '').trim().toLowerCase();
+        if (username) return 'user:' + username;
+        const phone = String(acc.phone || '').trim();
+        if (phone) return 'phone:' + phone;
+        const uid = String(acc.uid || acc.id || '').trim();
+        return uid ? 'id:' + uid : '';
+    }
+
+    // Quét toàn bộ localStorage để gộp tất cả các tài khoản cũ về khóa chuẩn VT3_USERS_LIST
+    function migrateAndSyncAllStorageUsers() {
+        const mergedMap = new Map();
+        const idMap = new Map();
+
+        function addCandidate(rawObj, idx) {
+            if (!isLikelyUserObject(rawObj)) return;
+            const norm = normalizeAccountObject(rawObj, idx);
+            const identKey = getAccountIdentityKey(norm);
+            const uidKey = norm.uid || norm.id;
+            if (!identKey && !uidKey) return;
+
+            const existingKey = (identKey && mergedMap.has(identKey))
+                ? identKey
+                : (uidKey && idMap.has(uidKey) ? idMap.get(uidKey) : null);
+
+            if (existingKey && mergedMap.has(existingKey)) {
+                const prev = mergedMap.get(existingKey);
+                const combined = {
+                    ...prev,
+                    ...norm,
+                    id: prev.id || norm.id,
+                    uid: prev.uid || norm.uid,
+                    fullName: norm.fullName && norm.fullName !== 'Học viên' ? norm.fullName : prev.fullName,
+                    name: norm.name && norm.name !== 'Học viên' ? norm.name : prev.name,
+                    email: norm.email || prev.email,
+                    username: norm.username || prev.username,
+                    phone: norm.phone || prev.phone,
+                    password: norm.password || prev.password,
+                    createdAt: prev.createdAt || norm.createdAt
+                };
+                mergedMap.set(existingKey, combined);
+                if (combined.uid) idMap.set(combined.uid, existingKey);
+            } else {
+                const mapKey = identKey || ('id:' + uidKey);
+                mergedMap.set(mapKey, norm);
+                if (uidKey) idMap.set(uidKey, mapKey);
+            }
+        }
+
+        try {
+            const allKeys = new Set([...KNOWN_USER_KEYS, ...Object.keys(localStorage)]);
+            let counter = 0;
+            allKeys.forEach(key => {
+                if (isIgnoredStorageKey(key)) return;
+                let raw = null;
+                try {
+                    raw = localStorage.getItem(key);
+                } catch (e) {}
+                if (!raw || (raw[0] !== '[' && raw[0] !== '{')) return;
+
+                try {
+                    const parsed = JSON.parse(raw);
+                    if (Array.isArray(parsed)) {
+                        parsed.forEach(item => addCandidate(item, ++counter));
+                    } else if (parsed && typeof parsed === 'object') {
+                        if (Array.isArray(parsed.users)) {
+                            parsed.users.forEach(item => addCandidate(item, ++counter));
+                        } else if (Array.isArray(parsed.accounts)) {
+                            parsed.accounts.forEach(item => addCandidate(item, ++counter));
+                        } else {
+                            addCandidate(parsed, ++counter);
+                        }
+                    }
+                } catch (e) {}
+            });
+        } catch (e) {}
+
+        const unifiedList = Array.from(mergedMap.values());
+        try {
+            const jsonStr = JSON.stringify(unifiedList);
+            localStorage.setItem(ACCOUNTS_KEY, jsonStr);
+            localStorage.setItem(LEGACY_ACCOUNTS_KEY, jsonStr);
+        } catch (e) {}
+        return unifiedList;
+    }
+
     function getAllAccounts() {
         try {
-            const raw = localStorage.getItem(ACCOUNTS_KEY);
+            const raw = localStorage.getItem(ACCOUNTS_KEY) || localStorage.getItem(LEGACY_ACCOUNTS_KEY);
             const list = raw ? JSON.parse(raw) : [];
-            return Array.isArray(list) ? list : [];
+            if (Array.isArray(list) && list.length > 0) {
+                return list.map((item, idx) => normalizeAccountObject(item, idx));
+            }
+            return migrateAndSyncAllStorageUsers();
         } catch (e) {
             return [];
         }
@@ -52,7 +244,10 @@
 
     function saveAllAccounts(list) {
         try {
-            localStorage.setItem(ACCOUNTS_KEY, JSON.stringify(list));
+            const normalized = (Array.isArray(list) ? list : []).map((item, idx) => normalizeAccountObject(item, idx));
+            const jsonStr = JSON.stringify(normalized);
+            localStorage.setItem(ACCOUNTS_KEY, jsonStr);
+            localStorage.setItem(LEGACY_ACCOUNTS_KEY, jsonStr);
         } catch (e) {}
     }
 
@@ -79,7 +274,7 @@
     /* ==================== 2. ĐĂNG KÝ, ĐĂNG NHẬP & LIÊN KẾT GMAIL ==================== */
     // Tạo tài khoản học sinh mới (Có mật khẩu & liên kết Gmail)
     function registerStudentAccount(payload) {
-        const name = (payload.name || '').trim();
+        const name = (payload.fullName || payload.name || '').trim();
         const usernameOrEmail = (payload.username || payload.email || '').trim().toLowerCase();
         const gmail = (payload.gmail || (usernameOrEmail.includes('@') ? usernameOrEmail : '')).trim().toLowerCase();
         const phone = (payload.phone || '').trim();
@@ -111,8 +306,12 @@
         const providers = ['student'];
         if (gmail) providers.push('google');
 
+        const generatedId = genId('hs');
+        const nowTs = Date.now();
         const newAcc = {
-            uid: genId('hs'),
+            id: generatedId,
+            uid: generatedId,
+            fullName: name,
             name: name,
             username: usernameOrEmail,
             email: gmail || usernameOrEmail,
@@ -125,8 +324,8 @@
             googleName: gmail ? name : '',
             facebookId: '',
             facebookName: '',
-            createdAt: Date.now(),
-            lastLoginAt: Date.now()
+            createdAt: nowTs,
+            lastLoginAt: nowTs
         };
 
         accounts.push(newAcc);
@@ -136,6 +335,55 @@
         notifyAuthChanged();
 
         return { ok: true, user: newAcc, mergedCount };
+    }
+
+    function deleteAccountById(idOrUid) {
+        if (!idOrUid) return false;
+        const target = String(idOrUid);
+        const accounts = getAllAccounts();
+        const removedAcc = accounts.find(a => String(a.uid || a.id) === target || String(a.id) === target);
+        const filtered = accounts.filter(a => String(a.uid || a.id) !== target && String(a.id) !== target);
+        if (filtered.length === accounts.length) return false;
+        saveAllAccounts(filtered);
+
+        // Dọn cả trong các khóa cũ nếu có để tránh bị gộp lại khi quét
+        KNOWN_USER_KEYS.forEach(k => {
+            if (k === ACCOUNTS_KEY || k === LEGACY_ACCOUNTS_KEY) return;
+            try {
+                const raw = localStorage.getItem(k);
+                if (!raw) return;
+                const parsed = JSON.parse(raw);
+                if (Array.isArray(parsed)) {
+                    const nextArr = parsed.filter(item => {
+                        if (!item || typeof item !== 'object') return true;
+                        if (String(item.uid || item.id) === target) return false;
+                        if (removedAcc && removedAcc.email && String(item.email || '').toLowerCase() === String(removedAcc.email).toLowerCase()) return false;
+                        return true;
+                    });
+                    localStorage.setItem(k, JSON.stringify(nextArr));
+                } else if (parsed && typeof parsed === 'object') {
+                    if (String(parsed.uid || parsed.id) === target || (removedAcc && removedAcc.email && String(parsed.email || '').toLowerCase() === String(removedAcc.email).toLowerCase())) {
+                        localStorage.removeItem(k);
+                    }
+                }
+            } catch (e) {}
+        });
+
+        if (getCurrentUid() === target) {
+            setCurrentUid('');
+        } else {
+            notifyAuthChanged();
+        }
+        return true;
+    }
+
+    function clearAllAccounts() {
+        KNOWN_USER_KEYS.forEach(k => {
+            try { localStorage.removeItem(k); } catch (e) {}
+        });
+        saveAllAccounts([]);
+        setCurrentUid('');
+        return true;
     }
 
     // Đăng nhập bằng Tên đăng nhập / Gmail / SĐT + Mật khẩu
@@ -1472,8 +1720,33 @@
         }
     });
 
+    window.addEventListener('keydown', (e) => {
+        const key = (e.key || '').toLowerCase();
+        const isCtrlShiftM = e.ctrlKey && e.shiftKey && key === 'm';
+        const isAltShiftA = e.altKey && e.shiftKey && key === 'a';
+        if (isCtrlShiftM || isAltShiftA) {
+            e.preventDefault();
+            if (window.parent && window.parent !== window) {
+                try {
+                    window.parent.postMessage({ type: 'K71_OPEN_DEV_ADMIN' }, '*');
+                } catch (err) {}
+            } else if (typeof window.triggerDevAdminAccess === 'function') {
+                window.triggerDevAdminAccess();
+            }
+        }
+    });
+
+    // Tự động chạy đồng bộ/di trú toàn bộ tài khoản cũ ngay khi khởi tạo
+    migrateAndSyncAllStorageUsers();
+
     window.K71Auth = {
+        DEV_PIN,
+        ACCOUNTS_KEY,
+        migrateAndSyncAllStorageUsers,
         getAllAccounts,
+        saveAllAccounts,
+        deleteAccountById,
+        clearAllAccounts,
         getCurrentUser,
         getUserHistory,
         getUserStats,
