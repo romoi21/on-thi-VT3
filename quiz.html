@@ -28,17 +28,17 @@
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Khởi tạo Dark/Light Mode ngay lập tức từ localStorage -->
+    <!-- Khởi tạo Dark/Light Mode ngay lập tức từ localStorage (Đồng bộ Slate Dark Mode mặc định) -->
     <script>
         (function() {
             try {
-                const savedQuizTheme = localStorage.getItem('k71_quiz_theme') || localStorage.getItem('k71_theme') || 'light';
-                if (savedQuizTheme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                    document.documentElement.classList.remove('light');
-                } else {
+                const savedQuizTheme = localStorage.getItem('k71_theme') || localStorage.getItem('k71_quiz_theme') || 'dark';
+                if (savedQuizTheme === 'light') {
                     document.documentElement.classList.remove('dark');
                     document.documentElement.classList.add('light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.remove('light');
                 }
             } catch (e) {}
         })();
@@ -272,148 +272,148 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- ==================== THANH TIẾN ĐỘ & ĐIỀU KHIỂN CỐ ĐỊNH TRÊN CÙNG (STICKY PROGRESS BAR) ==================== -->
-    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 shadow-sm">
+    <!-- ==================== THANH TIẾN ĐỘ & ĐIỀU KHIỂN KHI ĐANG LÀM BÀI (ẨN Ở MÀN HÌNH CẤU HÌNH ĐỂ TRÁNH LẶP HEADER) ==================== -->
+    <header id="quiz-internal-header" class="hidden sticky top-0 z-40 bg-white/95 dark:bg-slate-950/90 backdrop-blur border-b border-slate-200 dark:border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-            <!-- Bên trái: Tiêu đề / Thông tin đề -->
+            <!-- Bên trái: Thông tin đề đang làm -->
             <div class="flex items-center gap-3 min-w-0">
-                <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-extrabold text-sm shadow-sm shrink-0">
+                <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-extrabold text-xs shadow-sm shrink-0">
                     K71
                 </div>
                 <div class="min-w-0">
                     <h1 id="topbar-title" class="text-sm sm:text-base font-bold text-slate-900 dark:text-white truncate">
-                        Hệ Thống Luyện Thi Trắc Nghiệm
+                        Luyện Thi Trắc Nghiệm
                     </h1>
                     <p id="topbar-subtitle" class="text-xs text-slate-500 dark:text-slate-400 truncate">
-                        Chọn cấu hình đề thi hoặc khôi phục bài đang làm
+                        Đang làm bài
                     </p>
                 </div>
             </div>
 
-            <!-- Chính giữa (Hiện khi đang làm bài): Số câu đã làm & Đồng hồ đếm ngược -->
+            <!-- Chính giữa: Số câu đã làm & Đồng hồ đếm ngược -->
             <div id="topbar-exam-stats" class="hidden items-center gap-2 sm:gap-4">
-                <!-- Chuyển nhanh Chế độ Ôn tập / Thi thử ngay khi đang làm -->
-                <div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold">
+                <div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-900 p-1 rounded-lg border border-slate-200 dark:border-white/10 text-xs font-semibold">
                     <button type="button" id="live-mode-study" onclick="setQuizMode('study')" class="px-2.5 py-1 rounded-md transition">
-                        📖 Ôn tập
+                        Ôn tập
                     </button>
                     <button type="button" id="live-mode-exam" onclick="setQuizMode('exam')" class="px-2.5 py-1 rounded-md transition">
-                        ⏱ Thi thử
+                        Thi thử
                     </button>
                 </div>
 
-                <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-bold">
+                <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-semibold">
                     <span>Đã làm:</span>
-                    <span id="sticky-answered-count" class="text-blue-600 dark:text-blue-400">0/15</span>
+                    <span id="sticky-answered-count" class="text-blue-600 dark:text-blue-400 font-bold">0/15</span>
                 </div>
 
-                <div id="sticky-timer-badge" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 font-mono text-sm sm:text-base font-extrabold">
-                    <span>⏱</span>
+                <div id="sticky-timer-badge" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-600 dark:text-blue-400 font-mono text-sm sm:text-base font-bold">
                     <span id="timer-display">30:00</span>
                 </div>
             </div>
 
-            <!-- Bên phải: Tài khoản / Lịch sử / Nút Nộp bài / Thoát & Nút chuyển đổi Dark/Light Mode -->
+            <!-- Bên phải: Nút Nộp bài / Thoát -->
             <div class="flex items-center gap-2 shrink-0">
-                <!-- Nút Tài khoản Google / Facebook trên Header -->
-                <button type="button" id="quiz-user-btn" onclick="window.K71Auth && window.K71Auth.openLoginModal()" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-blue-50 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-slate-700 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-slate-700 text-xs sm:text-sm font-bold transition cursor-pointer">
-                    <span id="quiz-user-avatar" class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-extrabold flex items-center justify-center">👤</span>
-                    <span id="quiz-user-label" class="max-w-[120px] truncate">Đăng nhập GG/FB</span>
+                <button type="button" id="quiz-user-btn" onclick="window.K71Auth && window.K71Auth.openLoginModal()" class="hidden">
+                    <span id="quiz-user-avatar"></span>
+                    <span id="quiz-user-label"></span>
                 </button>
 
-                <button type="button" id="topbar-submit-btn" onclick="openSubmitConfirm()" class="hidden px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold shadow-sm transition cursor-pointer">
-                    ✓ Nộp bài
+                <button type="button" id="topbar-submit-btn" onclick="openSubmitConfirm()" class="hidden px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-semibold shadow-sm transition cursor-pointer">
+                    Nộp bài
                 </button>
-                <button type="button" id="topbar-exit-btn" onclick="exitExam()" class="hidden px-3 py-2 rounded-lg bg-rose-50 dark:bg-rose-950/50 hover:bg-rose-600 text-rose-600 dark:text-rose-400 hover:text-white border border-rose-200 dark:border-rose-800 text-xs sm:text-sm font-bold transition cursor-pointer">
+                <button type="button" id="topbar-exit-btn" onclick="exitExam()" class="hidden px-3.5 py-2 rounded-lg bg-transparent hover:bg-rose-500/10 text-rose-500 dark:text-rose-400 border border-rose-500/35 text-xs sm:text-sm font-semibold transition cursor-pointer">
                     Thoát
                 </button>
-
-                <!-- Nút chuyển đổi Dark / Light Mode cố định góc trên bên phải -->
-                <button type="button" id="theme-toggle-btn" onclick="toggleDarkMode()" title="Chuyển đổi giao diện Sáng / Tối" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition cursor-pointer">
-                    <span id="theme-icon-sun" class="hidden text-amber-400 text-base leading-none">☀️</span>
-                    <span id="theme-icon-moon" class="text-slate-700 text-base leading-none">🌙</span>
+                <button type="button" id="theme-toggle-btn" onclick="toggleDarkMode()" class="hidden">
+                    <span id="theme-icon-sun" class="hidden"></span>
+                    <span id="theme-icon-moon"></span>
                 </button>
             </div>
         </div>
 
         <!-- Thanh Progress Bar trực quan chạy dọc dưới Header -->
-        <div id="sticky-progress-track" class="hidden w-full h-1.5 bg-slate-200 dark:bg-slate-800 overflow-hidden">
+        <div id="sticky-progress-track" class="hidden w-full h-1 bg-slate-200 dark:bg-slate-800 overflow-hidden">
             <div id="sticky-progress-fill" class="h-full bg-blue-600 transition-all duration-300" style="width: 0%;"></div>
         </div>
     </header>
 
     <!-- ==================== MÀN HÌNH 1: CẤU HÌNH ĐỀ THI & CHẾ ĐỘ HỌC ==================== -->
-    <main id="setup-screen" class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8">
+    <main id="setup-screen" class="flex-1 max-w-5xl w-full mx-auto px-2 sm:px-4 py-2 sm:py-4">
         <!-- Banner Khôi phục bài đang làm dở (nếu có trong localStorage) -->
-        <div id="resume-banner" class="hidden mb-6 p-4 sm:p-5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div id="resume-banner" class="hidden mb-6 p-4 sm:p-5 rounded-2xl bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div class="flex items-start gap-3">
-                <span class="text-2xl">⚡</span>
+                <div class="w-9 h-9 rounded-lg bg-blue-600/15 text-blue-500 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+                </div>
                 <div>
-                    <h3 class="font-bold text-amber-900 dark:text-amber-300 text-sm sm:text-base">Phát hiện bài làm chưa hoàn thành!</h3>
-                    <p id="resume-info-text" class="text-xs sm:text-sm text-amber-800 dark:text-amber-400 mt-0.5">
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Phát hiện bài làm chưa hoàn thành</h3>
+                    <p id="resume-info-text" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
                         Hệ thống đã tự động lưu tiến độ của bạn trước khi tải lại trang.
                     </p>
                 </div>
             </div>
-            <div class="flex items-center gap-2 w-full sm:w-auto">
-                <button type="button" onclick="resumeSavedQuiz()" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm shadow-sm transition cursor-pointer">
-                    ▶ Tiếp tục làm bài
+            <div class="flex items-center gap-2.5 w-full sm:w-auto">
+                <button type="button" onclick="resumeSavedQuiz()" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-sm transition cursor-pointer">
+                    Tiếp tục làm bài
                 </button>
-                <button type="button" onclick="clearSavedQuizState()" class="px-3 py-2.5 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-700 text-xs font-semibold hover:bg-slate-100 transition cursor-pointer">
+                <button type="button" onclick="clearSavedQuizState()" class="px-3.5 py-2.5 rounded-lg bg-transparent text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-white/10 text-xs font-semibold hover:bg-white/5 transition cursor-pointer">
                     Xóa
                 </button>
             </div>
         </div>
 
-        <!-- Card chính: Cấu hình đề thi -->
-        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-8 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-200 dark:border-slate-700">
-                <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl shrink-0">
-                        📝
+        <!-- Card chính: Cấu hình đề thi (Viền mỏng tinh tế, đổ bóng mềm, không gian thoáng đãng) -->
+        <div class="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-white/10 rounded-2xl p-6 sm:p-9 shadow-xl shadow-slate-950/20">
+            <!-- Header Card: Tiêu đề + 2 Nút phụ dạng Outline tinh tế -->
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5 pb-7 mb-7 border-b border-slate-200 dark:border-white/10">
+                <div class="flex items-start sm:items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="clipboard-list" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
                             Cấu Hình Đề Thi Trắc Nghiệm
                         </h2>
-                        <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 mt-1">
-                            Chọn Khối lớp, Môn học, Giai đoạn và Chế độ học tập thông minh phù hợp với bạn.
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                            Lựa chọn Khối lớp, Môn học, Giai đoạn và Chế độ học tập phù hợp với mục tiêu ôn luyện của bạn.
                         </p>
                     </div>
                 </div>
 
-                <!-- Nút Lịch sử làm bài & Nút Ôn tập các câu hay sai -->
-                <div class="flex flex-wrap items-center gap-2">
-                    <button type="button" id="history-bank-btn" onclick="window.K71Auth && window.K71Auth.openHistoryModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 font-bold text-sm transition cursor-pointer">
-                        <span>📊 Lịch sử làm bài</span>
-                        <span id="history-count-badge" class="px-2 py-0.5 rounded-full bg-emerald-600 text-white text-xs font-extrabold">0</span>
+                <!-- 2 Nút phụ chuyển sang dạng Outline (Viền mỏng, không nền, chữ theo màu viền) -->
+                <div class="flex flex-wrap items-center gap-2.5 shrink-0">
+                    <button type="button" id="history-bank-btn" onclick="window.K71Auth && window.K71Auth.openHistoryModal()" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-transparent border border-emerald-500/45 hover:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold text-sm transition cursor-pointer">
+                        <i data-lucide="history" class="w-4 h-4"></i>
+                        <span>Lịch sử làm bài</span>
+                        <span id="history-count-badge" class="px-1.5 py-0.5 rounded-md bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 text-xs font-bold">0</span>
                     </button>
 
-                    <button type="button" id="wrong-bank-btn" onclick="startWrongQuestionsReview()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-rose-50 dark:bg-rose-950/50 hover:bg-rose-100 dark:hover:bg-rose-900/60 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800 font-bold text-sm transition cursor-pointer">
-                        <span>🔥 Ôn tập câu hay sai</span>
-                        <span id="wrong-bank-badge" class="px-2 py-0.5 rounded-full bg-rose-600 text-white text-xs font-extrabold">0</span>
+                    <button type="button" id="wrong-bank-btn" onclick="startWrongQuestionsReview()" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-transparent border border-rose-500/45 hover:bg-rose-500/10 text-rose-600 dark:text-rose-400 font-semibold text-sm transition cursor-pointer">
+                        <i data-lucide="flame" class="w-4 h-4"></i>
+                        <span>Ôn tập câu hay sai</span>
+                        <span id="wrong-bank-badge" class="px-1.5 py-0.5 rounded-md bg-rose-500/15 text-rose-600 dark:text-rose-300 text-xs font-bold">0</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Grid 3 cột bằng nhau: Khối lớp - Môn học - Giai đoạn -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
-                <div>
-                    <label for="grade-select" class="block text-sm sm:text-base font-bold text-slate-700 dark:text-slate-200 mb-2">
-                        🎓 Chọn Khối lớp
+            <!-- Grid Dropdown tỷ lệ hợp lý: Khối nhỏ nhất (3) - Môn vừa (4) - Giai đoạn lớn nhất (5) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 mb-8">
+                <div class="md:col-span-3">
+                    <label for="grade-select" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                        Khối lớp
                     </label>
-                    <select id="grade-select" class="w-full h-12 px-4 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white font-semibold text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 cursor-pointer">
+                    <select id="grade-select" class="w-full h-12 px-4 rounded-xl border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-slate-950/75 text-slate-900 dark:text-slate-100 font-medium text-sm sm:text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition cursor-pointer">
                         <option value="10">Khối 10</option>
                         <option value="11" selected>Khối 11</option>
                         <option value="12">Khối 12</option>
                     </select>
                 </div>
 
-                <div>
-                    <label for="subject-select" class="block text-sm sm:text-base font-bold text-slate-700 dark:text-slate-200 mb-2">
-                        📚 Chọn Môn học (10 môn)
+                <div class="md:col-span-4">
+                    <label for="subject-select" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                        Môn học (10 môn)
                     </label>
-                    <select id="subject-select" class="w-full h-12 px-4 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white font-semibold text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 cursor-pointer">
+                    <select id="subject-select" class="w-full h-12 px-4 rounded-xl border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-slate-950/75 text-slate-900 dark:text-slate-100 font-medium text-sm sm:text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition cursor-pointer">
                         <option value="toan">Toán học</option>
                         <option value="ly">Vật lí</option>
                         <option value="hoa">Hóa học</option>
@@ -427,11 +427,11 @@
                     </select>
                 </div>
 
-                <div>
-                    <label for="term-select" class="block text-sm sm:text-base font-bold text-slate-700 dark:text-slate-200 mb-2">
-                        📅 Giai đoạn kiến thức
+                <div class="md:col-span-5">
+                    <label for="term-select" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                        Giai đoạn kiến thức
                     </label>
-                    <select id="term-select" class="w-full h-12 px-4 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white font-semibold text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 cursor-pointer">
+                    <select id="term-select" class="w-full h-12 px-4 rounded-xl border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-slate-950/75 text-slate-900 dark:text-slate-100 font-medium text-sm sm:text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition cursor-pointer">
                         <option value="GK1">Giữa Học Kì 1 (GK1)</option>
                         <option value="CK1">Cuối Học Kì 1 (CK1)</option>
                         <option value="GK2">Giữa Học Kì 2 (GK2)</option>
@@ -440,54 +440,58 @@
                 </div>
             </div>
 
-            <!-- Chọn Chế độ làm bài: Chế độ Ôn tập vs Chế độ Thi thử -->
-            <div class="mb-7">
-                <label class="block text-sm sm:text-base font-bold text-slate-700 dark:text-slate-200 mb-3">
-                    ⚙️ Chọn Chế độ làm bài
+            <!-- Chọn Chế độ làm bài: Active sáng nhẹ bg-blue-500/10 + border màu chủ đạo, Inactive border xám mờ -->
+            <div class="mb-8">
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
+                    Chế độ làm bài
                 </label>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div id="mode-card-study" onclick="selectSetupMode('study')" class="p-4 rounded-xl border-2 border-blue-500 bg-blue-50/50 dark:bg-blue-950/30 cursor-pointer transition flex items-start gap-3.5">
-                        <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center text-lg shrink-0 mt-0.5">
-                            📖
+                    <div id="mode-card-study" onclick="selectSetupMode('study')" class="p-5 rounded-xl border border-blue-500 bg-blue-50/70 dark:bg-blue-500/10 ring-1 ring-blue-500/25 cursor-pointer transition flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-600/15 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="book-open" class="w-5 h-5"></i>
                         </div>
                         <div>
-                            <div class="font-bold text-slate-900 dark:text-white text-base flex items-center gap-2">
+                            <div class="font-bold text-slate-900 dark:text-white text-sm sm:text-base flex items-center gap-2 flex-wrap">
                                 <span>Chế độ Ôn tập</span>
-                                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-600 text-white font-semibold">Khuyên dùng khi học</span>
+                                <span class="text-[11px] px-2 py-0.5 rounded-md bg-blue-500/15 text-blue-600 dark:text-blue-400 font-semibold">Khuyên dùng</span>
                             </div>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
-                                Chọn đáp án sẽ báo <strong>Đúng (✓) / Sai (✕)</strong> và hiển thị <strong>Giải thích chi tiết</strong> ngay lập tức ở từng câu.
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+                                Chọn đáp án sẽ báo <strong class="text-slate-800 dark:text-slate-200">Đúng / Sai</strong> và hiển thị <strong class="text-slate-800 dark:text-slate-200">Giải thích chi tiết</strong> ngay lập tức ở từng câu.
                             </p>
                         </div>
                     </div>
 
-                    <div id="mode-card-exam" onclick="selectSetupMode('exam')" class="p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/40 cursor-pointer transition flex items-start gap-3.5">
-                        <div class="w-10 h-10 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center text-lg shrink-0 mt-0.5">
-                            ⏱
+                    <div id="mode-card-exam" onclick="selectSetupMode('exam')" class="p-5 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-slate-900/40 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer transition flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="timer" class="w-5 h-5"></i>
                         </div>
                         <div>
-                            <div class="font-bold text-slate-900 dark:text-white text-base">
+                            <div class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">
                                 Chế độ Thi thử (Phòng thi thật)
                             </div>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
-                                Ẩn đáp án đúng/sai trong lúc làm bài, tự động bật toàn màn hình và chỉ chấm điểm khi bấm <strong>Nộp bài</strong>.
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+                                Ẩn đáp án đúng/sai trong lúc làm bài, tự động bật toàn màn hình và chỉ chấm điểm khi bấm <strong class="text-slate-800 dark:text-slate-200">Nộp bài</strong>.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Thông tin tiện ích & Nút Bắt đầu -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-5 border-t border-slate-200 dark:border-slate-700">
-                <div class="flex flex-wrap gap-2 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400">
-                    <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">⏱ 30 phút</span>
-                    <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">📋 15 câu ngẫu nhiên</span>
-                    <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">⌨️ Phím tắt: 1-4 / A-D, ⬅ ➡</span>
-                    <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">💾 Tự lưu khi F5</span>
+            <!-- Footer Card: Thông số dạng text trơn màu xám cách nhau bằng dấu • + Nút Bắt Đầu ở góc phải -->
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 pt-6 border-t border-slate-200 dark:border-white/10">
+                <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                    <span>30 phút</span>
+                    <span class="text-slate-300 dark:text-slate-600">•</span>
+                    <span>15 câu ngẫu nhiên</span>
+                    <span class="text-slate-300 dark:text-slate-600">•</span>
+                    <span>Phím tắt: 1-4 / A-D, ← →</span>
+                    <span class="text-slate-300 dark:text-slate-600">•</span>
+                    <span>Tự lưu khi F5</span>
                 </div>
 
-                <button type="button" id="start-btn" class="px-7 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-base sm:text-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 cursor-pointer shrink-0">
-                    🚀 Bắt Đầu Làm Bài
+                <button type="button" id="start-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base shadow-lg shadow-blue-600/25 hover:shadow-blue-500/40 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer shrink-0">
+                    <span>Bắt Đầu Làm Bài</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
             </div>
         </div>
@@ -868,12 +872,14 @@
             quizMode = mode;
             const studyCard = document.getElementById('mode-card-study');
             const examCard = document.getElementById('mode-card-exam');
+            const activeCls = 'p-5 rounded-xl border border-blue-500 bg-blue-50/70 dark:bg-blue-500/10 ring-1 ring-blue-500/25 cursor-pointer transition flex items-start gap-4';
+            const idleCls = 'p-5 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-slate-900/40 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer transition flex items-start gap-4';
             if (mode === 'study') {
-                studyCard.className = 'p-4 rounded-xl border-2 border-blue-500 bg-blue-50/50 dark:bg-blue-950/30 cursor-pointer transition flex items-start gap-3.5';
-                examCard.className = 'p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/40 cursor-pointer transition flex items-start gap-3.5';
+                studyCard.className = activeCls;
+                examCard.className = idleCls;
             } else {
-                examCard.className = 'p-4 rounded-xl border-2 border-blue-500 bg-blue-50/50 dark:bg-blue-950/30 cursor-pointer transition flex items-start gap-3.5';
-                studyCard.className = 'p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/40 cursor-pointer transition flex items-start gap-3.5';
+                examCard.className = activeCls;
+                studyCard.className = idleCls;
             }
         }
 
@@ -1091,6 +1097,9 @@
         }
 
         function launchExamUI() {
+            const internalHeader = document.getElementById('quiz-internal-header');
+            if (internalHeader) internalHeader.classList.remove('hidden');
+
             document.getElementById('setup-screen').classList.add('hidden');
             document.getElementById('exam-screen').classList.remove('hidden');
             document.getElementById('exam-active-workspace').classList.remove('hidden');
@@ -1486,6 +1495,9 @@
             clearInterval(timerInterval);
             isExamActive = false;
             exitFullscreenMode();
+
+            const internalHeader = document.getElementById('quiz-internal-header');
+            if (internalHeader) internalHeader.classList.add('hidden');
 
             document.getElementById('exam-screen').classList.add('hidden');
             document.getElementById('setup-screen').classList.remove('hidden');

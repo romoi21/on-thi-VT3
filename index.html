@@ -12,7 +12,14 @@
     <script>
         (function() {
             try {
-                const savedColor = localStorage.getItem('k71_theme_color') || '#e58547';
+                if (!localStorage.getItem('k71_ui_slate_v3')) {
+                    const prev = (localStorage.getItem('k71_theme_color') || '').toLowerCase();
+                    if (!prev || prev === '#e58547') {
+                        localStorage.setItem('k71_theme_color', '#2563eb');
+                    }
+                    localStorage.setItem('k71_ui_slate_v3', '1');
+                }
+                const savedColor = localStorage.getItem('k71_theme_color') || '#2563eb';
                 const savedTheme = localStorage.getItem('k71_theme') || 'dark';
 
                 function hexToRgb(hex) {
@@ -32,18 +39,15 @@
 
                 const rgb = hexToRgb(savedColor);
                 const rgbStr = `${rgb.r}, ${rgb.g}, ${rgb.b}`;
-                const hoverHex = adjustBrightness(savedColor, -15);
+                const hoverHex = adjustBrightness(savedColor, -12);
 
                 const root = document.documentElement;
                 root.style.setProperty('--primary-color', savedColor);
                 root.style.setProperty('--primary-hover', hoverHex);
                 root.style.setProperty('--primary-rgb', rgbStr);
-                root.style.setProperty('--primary-light', `rgba(${rgbStr}, 0.14)`);
-                root.style.setProperty('--primary-glow', `rgba(${rgbStr}, 0.35)`);
-                root.style.setProperty('--sidebar-active-bg', `rgba(${rgbStr}, 0.16)`);
-                root.style.setProperty('--sidebar-active-text', savedColor);
+                root.style.setProperty('--primary-light', `rgba(${rgbStr}, 0.12)`);
+                root.style.setProperty('--primary-glow', `rgba(${rgbStr}, 0.3)`);
                 root.style.setProperty('--sidebar-active-indicator', savedColor);
-                root.style.setProperty('--sidebar-label', savedColor);
                 root.style.setProperty('--primary', savedColor);
                 root.style.setProperty('--accent-orange', savedColor);
 
@@ -55,34 +59,34 @@
     </script>
 
     <style>
-        /* ================= HỆ THỐNG BIẾN GIAO DIỆN TẬP TRUNG (CENTRALIZED THEME) ================= */
+        /* ================= HỆ THỐNG BIẾN GIAO DIỆN TẬP TRUNG (UNIFIED SLATE DARK MODE + PRIMARY BLUE) ================= */
         :root {
-            /* Biến màu chủ đạo toàn cầu */
-            --primary-color: #e58547;
-            --primary-hover: #cf7337;
-            --primary-rgb: 229, 133, 71;
-            --primary-light: rgba(var(--primary-rgb), 0.14);
-            --primary-glow: rgba(var(--primary-rgb), 0.35);
+            /* Màu chủ đạo duy nhất (Primary Blue-600) */
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-rgb: 37, 99, 235;
+            --primary-light: rgba(var(--primary-rgb), 0.12);
+            --primary-glow: rgba(var(--primary-rgb), 0.3);
 
-            /* Thanh Menu bên trái (Sidebar) */
-            --sidebar-bg: #141210;
-            --sidebar-border: #231d19;
-            --sidebar-hover: #1f1915;
-            --sidebar-active-bg: rgba(var(--primary-rgb), 0.16);
-            --sidebar-active-text: var(--primary-color);
+            /* Thanh Menu bên trái (Sidebar - Slate 950) */
+            --sidebar-bg: #020617;
+            --sidebar-border: rgba(255, 255, 255, 0.08);
+            --sidebar-hover: rgba(255, 255, 255, 0.04);
+            --sidebar-active-bg: rgba(255, 255, 255, 0.05);
+            --sidebar-active-text: #ffffff;
             --sidebar-active-indicator: var(--primary-color);
-            --sidebar-text: #ad9e92;
-            --sidebar-label: var(--primary-color);
-            --sidebar-width: 250px;
+            --sidebar-text: #94a3b8;
+            --sidebar-label: #64748b;
+            --sidebar-width: 256px;
 
-            /* Khung nội dung chính (Chế độ Tối mặc định) */
-            --bg-body: #0d0c0b;
-            --bg-card: #191614;
-            --bg-card-hover: #221c17;
-            --topbar-bg: #141210;
-            --text-main: #ede3da;
-            --text-muted: #9c8e82;
-            --border-color: #26201b;
+            /* Khung nội dung chính (Main Content - Slate 900) */
+            --bg-body: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #263449;
+            --topbar-bg: rgba(2, 6, 23, 0.85);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
             --border-highlight: rgba(var(--primary-rgb), 0.35);
 
             /* Biến tương thích */
@@ -90,44 +94,50 @@
             --accent-orange: var(--primary-color);
             --accent-glow: var(--primary-glow);
 
-            --radius-md: 12px;
-            --radius-sm: 8px;
-            --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.4);
-            --shadow-md: 0 6px 22px rgba(0, 0, 0, 0.55);
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.22);
+            --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.34);
         }
 
         /* Chế độ Sáng (Light Mode) */
         body.light-mode, html.light-mode body {
-            --bg-body: #f4f6fa;
+            --sidebar-bg: #f8fafc;
+            --sidebar-border: #e2e8f0;
+            --sidebar-hover: rgba(15, 23, 42, 0.04);
+            --sidebar-active-bg: rgba(var(--primary-rgb), 0.08);
+            --sidebar-active-text: #0f172a;
+            --sidebar-text: #64748b;
+            --sidebar-label: #94a3b8;
+            --bg-body: #f1f5f9;
             --bg-card: #ffffff;
             --bg-card-hover: #f8fafc;
-            --topbar-bg: #ffffff;
-            --text-main: #1e293b;
+            --topbar-bg: rgba(255, 255, 255, 0.9);
+            --text-main: #0f172a;
             --text-muted: #64748b;
             --border-color: #e2e8f0;
             --border-highlight: rgba(var(--primary-rgb), 0.25);
-            --sidebar-active-bg: rgba(var(--primary-rgb), 0.18);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.04);
+            --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        /* Tùy chỉnh thanh cuộn đồng bộ màu tối và màu chủ đạo */
+        /* Tùy chỉnh thanh cuộn đồng bộ Slate Dark Mode */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #141210;
+            background: var(--sidebar-bg);
         }
         ::-webkit-scrollbar-thumb {
-            background: #2b231d;
+            background: #1e293b;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
@@ -144,7 +154,7 @@
             transition: background-color 0.25s ease, color 0.25s ease;
         }
 
-        /* ================= SIDEBAR (THANH MENU BÊN TRÁI) ================= */
+        /* ================= SIDEBAR (THANH MENU BÊN TRÁI - SLATE 950) ================= */
         .sidebar {
             width: var(--sidebar-width);
             background-color: var(--sidebar-bg);
@@ -156,12 +166,11 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease;
         }
 
-        /* Logo thương hiệu đồng bộ gradient màu chủ đạo */
         .sidebar-brand {
-            padding: 22px 18px 16px 18px;
+            padding: 20px 18px 18px 18px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -173,48 +182,46 @@
             height: 38px;
             background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
             color: #ffffff;
-            border-radius: 9px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 1.05rem;
-            box-shadow: 0 4px 12px var(--primary-glow);
+            font-size: 1rem;
+            box-shadow: 0 4px 14px var(--primary-glow);
             transition: all 0.25s ease;
         }
 
         .brand-text h2 {
-            font-size: 0.95rem;
+            font-size: 0.94rem;
             font-weight: 700;
-            color: #f7ede5;
-            letter-spacing: 0.5px;
+            color: var(--text-main);
+            letter-spacing: 0.4px;
             line-height: 1.2;
         }
 
         .brand-text p {
-            font-size: 0.72rem;
-            color: #8c7b6f;
+            font-size: 0.73rem;
+            color: var(--sidebar-label);
             margin-top: 2px;
         }
 
-        /* Tiêu đề NAVIGATION đổi theo màu chủ đạo */
         .sidebar-nav-label {
-            font-size: 0.72rem;
+            font-size: 0.69rem;
             font-weight: 700;
-            letter-spacing: 1.8px;
+            letter-spacing: 1.6px;
             color: var(--sidebar-label);
             text-transform: uppercase;
-            padding: 22px 18px 8px 18px;
+            padding: 22px 20px 10px 20px;
             user-select: none;
-            transition: color 0.25s ease;
         }
 
-        /* Danh sách nút menu */
+        /* Danh sách nút menu tối giản & hiện đại */
         .sidebar-menu {
             display: flex;
             flex-direction: column;
-            gap: 3px;
-            padding: 0 8px;
+            gap: 4px;
+            padding: 0 12px;
             list-style: none;
             flex: 1;
         }
@@ -226,12 +233,13 @@
         .nav-item {
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 10px 16px;
-            border-radius: 10px;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border-left: 2px solid transparent;
             color: var(--sidebar-text);
             text-decoration: none;
-            font-size: 0.94rem;
+            font-size: 0.9rem;
             font-weight: 500;
             cursor: pointer;
             position: relative;
@@ -240,61 +248,49 @@
         }
 
         .nav-item svg {
-            width: 20px;
-            height: 20px;
-            stroke-width: 2;
+            width: 19px;
+            height: 19px;
+            stroke-width: 1.9;
             stroke: currentColor;
             fill: none;
             stroke-linecap: round;
             stroke-linejoin: round;
             flex-shrink: 0;
-            transition: stroke 0.18s;
+            transition: stroke 0.18s ease, color 0.18s ease;
         }
 
-        /* Hover menu */
+        /* Hover menu: sáng nhẹ lên */
         .nav-item:hover {
             background-color: var(--sidebar-hover);
-            color: #f0e6dc;
-        }
-        .nav-item:hover svg {
-            stroke: var(--primary-color);
+            color: var(--text-main);
         }
 
-        /* Active: Trạng thái được chọn đồng bộ màu chủ đạo */
+        .nav-item:hover svg {
+            stroke: var(--text-main);
+        }
+
+        /* Active: Chữ trắng sáng + Icon màu chủ đạo + Nền bg-white/5 + Viền 2px mép trái */
         .nav-item.active {
             background-color: var(--sidebar-active-bg);
             color: var(--sidebar-active-text);
             font-weight: 600;
+            border-left: 2px solid var(--sidebar-active-indicator);
+            border-radius: 0 8px 8px 0;
         }
 
         .nav-item.active svg {
-            stroke: var(--sidebar-active-text);
-        }
-
-        /* Chỉ báo vạch màu mép trái đổi theo màu chủ đạo */
-        .nav-item.active::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 24px;
-            background-color: var(--sidebar-active-indicator);
-            border-radius: 0 4px 4px 0;
-            box-shadow: 0 0 10px var(--primary-glow);
-            transition: all 0.25s ease;
+            stroke: var(--sidebar-active-indicator);
         }
 
         /* Chân trang Sidebar */
         .sidebar-footer {
-            padding: 16px 18px;
+            padding: 16px 20px;
             border-top: 1px solid var(--sidebar-border);
-            font-size: 0.78rem;
-            color: #7b6d63;
+            font-size: 0.76rem;
+            color: var(--sidebar-label);
         }
         .sidebar-footer strong {
-            color: #baa89b;
+            color: var(--sidebar-text);
         }
 
         /* ================= VÙNG NỘI DUNG CHÍNH (MAIN WRAPPER) ================= */
@@ -308,25 +304,27 @@
             background-color: var(--bg-body);
         }
 
-        /* Topbar điều hướng trên cùng */
+        /* Topbar duy nhất trên cùng: Breadcrumb (trái) & User Info (phải) */
         .topbar {
             background: var(--topbar-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 12px 28px;
+            min-height: 62px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 90;
-            box-shadow: var(--shadow-sm);
             transition: background-color 0.25s, border-color 0.25s;
         }
 
         .topbar-left {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }
 
         .btn-hamburger {
@@ -339,27 +337,87 @@
             color: var(--text-main);
         }
 
-        .topbar-title {
-            font-size: 1.12rem;
-            font-weight: 700;
-            color: var(--text-main);
+        .topbar-breadcrumb {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--text-muted);
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
+        .topbar-breadcrumb .bc-sep {
+            opacity: 0.45;
+            font-size: 0.85rem;
+        }
+
+        .topbar-breadcrumb .bc-current {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
         .topbar-right {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
-        /* Container chứa các view */
+        .topbar-user-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px 12px 5px 6px;
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-main);
+            cursor: pointer;
+            font-size: 0.84rem;
+            font-weight: 600;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .topbar-user-pill:hover {
+            border-color: var(--border-highlight);
+            background: var(--bg-card);
+        }
+
+        .topbar-logout-icon-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+
+        .topbar-logout-icon-btn:hover {
+            color: #f87171;
+            border-color: rgba(248, 113, 113, 0.4);
+            background: rgba(248, 113, 113, 0.08);
+        }
+
+        .topbar-logout-icon-btn svg {
+            width: 17px;
+            height: 17px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Container chứa các view - ưu tiên khoảng trắng thoáng đãng */
         .content-container {
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
-            padding: 26px 24px 60px 24px;
+            padding: 32px 28px 64px 28px;
         }
 
         /* Section View: Ẩn mặc định, hiển thị khi active */
@@ -412,7 +470,7 @@
 
         /* Banner Chào Mừng (Trang Chủ) */
         .hero-banner {
-            background: linear-gradient(135deg, #181512 0%, #241c16 100%);
+            background: linear-gradient(135deg, #020617 0%, #1e293b 100%);
             color: #ffffff;
             padding: 32px 28px;
             border-radius: var(--radius-md);
@@ -420,7 +478,7 @@
             box-shadow: var(--shadow-md);
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(var(--primary-rgb), 0.3);
+            border: 1px solid rgba(var(--primary-rgb), 0.28);
             transition: border-color 0.25s ease;
         }
 
@@ -817,7 +875,7 @@
         }
 
         .btn-doc-secondary {
-            background: #2b2622;
+            background: #1e293b;
             border: 1px solid var(--border-color);
         }
 
@@ -827,7 +885,7 @@
         }
 
         .btn-doc-secondary:hover {
-            background: #3a332d;
+            background: #334155;
             color: #ffffff !important;
         }
 
@@ -880,7 +938,7 @@
         }
 
         .iframe-toolbar {
-            background: #141210;
+            background: var(--sidebar-bg);
             border-bottom: 1px solid var(--border-color);
             padding: 11px 16px;
             display: flex;
@@ -2150,15 +2208,17 @@
 
     <!-- ================= VÙNG NỘI DUNG CHÍNH (ĐỒNG BỘ MÀU TỐI) ================= -->
     <div class="main-wrapper">
-        <!-- Topbar điều hướng trên cùng -->
+        <!-- Topbar điều hướng trên cùng duy nhất -->
         <header class="topbar">
             <div class="topbar-left">
                 <button class="btn-hamburger" onclick="toggleSidebar()" aria-label="Mở menu">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                 </button>
-                <div class="topbar-title" id="currentSectionTitle">
-                    🏠 Tổng Quan Cổng Ôn Tập
-                </div>
+                <nav class="topbar-breadcrumb" id="currentSectionTitle" aria-label="Breadcrumb">
+                    <span>Trang Chủ</span>
+                    <span class="bc-sep">›</span>
+                    <span class="bc-current">Tổng Quan</span>
+                </nav>
             </div>
             
             <div class="topbar-right" id="topbarAuthArea" style="display:flex; align-items:center; gap:10px;">
@@ -2439,19 +2499,10 @@
                 </div>
             </section>
 
-            <!-- ================= PHẦN 3: LUYỆN TRẮC NGHIỆM ================= -->
+            <!-- ================= PHẦN 3: LUYỆN TRẮC NGHIỆM (GỌN GÀNG, KHÔNG LẶP HEADER) ================= -->
             <section id="section-quiz" class="section-view">
-                <div class="card" style="padding-bottom: 16px;">
-                    <h2>📝 Khu Vực Luyện Tập Trắc Nghiệm (15 Câu / 30 Phút)</h2>
-                    <p class="card-desc">Lựa chọn Khối lớp, Môn học và Giai đoạn (GK1, CK1, GK2, CK2) để làm bài thi trực tiếp với hệ thống chấm điểm tức thì:</p>
-                </div>
-
-                <div class="iframe-container" id="quizIframeContainer">
-                    <div class="iframe-toolbar">
-                        <span>💡 Đề thi mô phỏng định dạng chuẩn của Bộ GD&ĐT</span>
-                        <a href="quiz.html?v=104" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Mở rộng trang mới ↗</a>
-                    </div>
-                    <iframe src="quiz.html?v=104" class="iframe-box" id="quizIframe" allow="fullscreen" allowfullscreen style="height: 840px;"></iframe>
+                <div id="quizIframeContainer" style="width: 100%; background: transparent;">
+                    <iframe src="quiz.html?v=107" class="iframe-box" id="quizIframe" allow="fullscreen" allowfullscreen style="height: 820px; background: transparent;"></iframe>
                 </div>
             </section>
 
@@ -2541,16 +2592,16 @@
 
                     <!-- Lưới 8 màu dựng sẵn -->
                     <div class="color-palette-grid">
-                        <!-- 1. Orange -->
-                        <button type="button" class="color-swatch-btn active" data-color="#e58547" onclick="applyThemeColor('#e58547')" title="Cam (Orange)">
-                            <span class="color-swatch-circle" style="background-color: #e58547;"></span>
-                            <span class="color-swatch-name">Cam / Orange</span>
-                            <span class="color-check-icon">✓</span>
-                        </button>
-                        <!-- 2. Blue -->
-                        <button type="button" class="color-swatch-btn" data-color="#2563eb" onclick="applyThemeColor('#2563eb')" title="Xanh Dương (Blue)">
+                        <!-- 1. Blue (Primary Mặc định) -->
+                        <button type="button" class="color-swatch-btn active" data-color="#2563eb" onclick="applyThemeColor('#2563eb')" title="Xanh Dương (Blue)">
                             <span class="color-swatch-circle" style="background-color: #2563eb;"></span>
                             <span class="color-swatch-name">Xanh / Blue</span>
+                            <span class="color-check-icon">✓</span>
+                        </button>
+                        <!-- 2. Orange -->
+                        <button type="button" class="color-swatch-btn" data-color="#e58547" onclick="applyThemeColor('#e58547')" title="Cam (Orange)">
+                            <span class="color-swatch-circle" style="background-color: #e58547;"></span>
+                            <span class="color-swatch-name">Cam / Orange</span>
                             <span class="color-check-icon">✓</span>
                         </button>
                         <!-- 3. Purple -->
@@ -2770,14 +2821,20 @@
     <!-- ================= SCRIPT ĐIỀU HƯỚNG VÀ HỆ THỐNG THEME TOÀN CẦU ================= -->
     <script>
         const titles = {
-            'overview': '🏠 Tổng Quan Cổng Ôn Tập',
-            'documents': '📚 Thư Mục Tài Liệu Môn Học',
-            'quiz': '📝 Khu Vực Luyện Tập Trắc Nghiệm',
-            'ielts': '🎓 Luyện Thi IELTS 4 Kỹ Năng (Cambridge & AI)',
-            'pomodoro': '⏰ Khu Vực Tự Học Pomodoro',
-            'team': '🚀 Ban Sáng Lập & Giới Thiệu K71',
-            'settings': '⚙️ Cài Đặt Giao Diện & Tiện Ích'
+            'overview': { parent: 'Trang Chủ', current: 'Tổng Quan' },
+            'documents': { parent: 'Học Tập', current: 'Tài Liệu Môn Học' },
+            'quiz': { parent: 'Luyện Tập', current: 'Trắc Nghiệm' },
+            'ielts': { parent: 'Luyện Tập', current: 'IELTS 4 Kỹ Năng' },
+            'pomodoro': { parent: 'Tiện Ích', current: 'Tự Học Pomodoro' },
+            'team': { parent: 'Giới Thiệu', current: 'Ban Sáng Lập K71' },
+            'settings': { parent: 'Hệ Thống', current: 'Cài Đặt' }
         };
+
+        function setTopbarBreadcrumb(parentLabel, currentLabel) {
+            const titleEl = document.getElementById('currentSectionTitle');
+            if (!titleEl) return;
+            titleEl.innerHTML = `<span>${parentLabel}</span><span class="bc-sep">›</span><span class="bc-current">${currentLabel}</span>`;
+        }
 
         const navKeys = ['overview', 'documents', 'quiz', 'ielts', 'pomodoro', 'team', 'settings'];
 
@@ -2811,10 +2868,9 @@
                 targetSection.classList.add('active');
             }
 
-            // Cập nhật tiêu đề Topbar
-            const titleEl = document.getElementById('currentSectionTitle');
-            if (titleEl && titles[sectionId]) {
-                titleEl.innerText = titles[sectionId];
+            // Cập nhật Breadcrumb trên Topbar duy nhất
+            if (titles[sectionId]) {
+                setTopbarBreadcrumb(titles[sectionId].parent, titles[sectionId].current);
             }
 
             // Lưu URL hash để tiện F5 hoặc chia sẻ link
@@ -3365,12 +3421,9 @@
             root.style.setProperty('--primary-color', hex);
             root.style.setProperty('--primary-hover', hoverHex);
             root.style.setProperty('--primary-rgb', rgbStr);
-            root.style.setProperty('--primary-light', `rgba(${rgbStr}, 0.14)`);
-            root.style.setProperty('--primary-glow', `rgba(${rgbStr}, 0.35)`);
-            root.style.setProperty('--sidebar-active-bg', `rgba(${rgbStr}, 0.16)`);
-            root.style.setProperty('--sidebar-active-text', hex);
+            root.style.setProperty('--primary-light', `rgba(${rgbStr}, 0.12)`);
+            root.style.setProperty('--primary-glow', `rgba(${rgbStr}, 0.3)`);
             root.style.setProperty('--sidebar-active-indicator', hex);
-            root.style.setProperty('--sidebar-label', hex);
             root.style.setProperty('--primary', hex);
             root.style.setProperty('--accent-orange', hex);
 
@@ -3616,12 +3669,12 @@
             if (mode === 'register') {
                 loginView.style.display = 'none';
                 registerView.style.display = 'block';
-                if (titleEl) titleEl.innerText = '✨ Đăng Ký Tài Khoản';
+                setTopbarBreadcrumb('Tài Khoản', 'Đăng Ký');
                 setTimeout(() => document.getElementById('cleanRegName')?.focus(), 50);
             } else {
                 registerView.style.display = 'none';
                 loginView.style.display = 'block';
-                if (titleEl) titleEl.innerText = '🔑 Đăng Nhập Hệ Thống';
+                setTopbarBreadcrumb('Tài Khoản', 'Đăng Nhập');
                 setTimeout(() => document.getElementById('cleanLoginIdentity')?.focus(), 50);
             }
 
@@ -3637,9 +3690,8 @@
             if (restoreHeaderTitle) {
                 const activeSec = document.querySelector('.section-view.active');
                 const secKey = activeSec ? activeSec.id.replace('section-', '') : 'overview';
-                const titleEl = document.getElementById('currentSectionTitle');
-                if (titleEl && titles[secKey]) {
-                    titleEl.innerText = titles[secKey];
+                if (titles[secKey]) {
+                    setTopbarBreadcrumb(titles[secKey].parent, titles[secKey].current);
                 }
                 document.querySelector('.main-wrapper')?.scrollTo({ top: 0, behavior: 'smooth' });
             }
@@ -3801,27 +3853,24 @@
 
             if (!user) {
                 area.innerHTML = `
-                    <button type="button" onclick="openAuthView('login')" class="btn-doc-secondary" style="padding: 8px 14px; font-size: 0.84rem; border-radius: var(--radius-sm);">
+                    <button type="button" onclick="openAuthView('login')" style="padding: 7px 14px; font-size: 0.84rem; font-weight: 600; border-radius: 8px; border: 1px solid var(--border-color); background: transparent; color: var(--text-main); cursor: pointer; transition: 0.2s;">
                         Đăng nhập
                     </button>
-                    <button type="button" onclick="openAuthView('register')" class="btn-doc-primary" style="padding: 8px 15px; font-size: 0.84rem; border-radius: var(--radius-sm);">
+                    <button type="button" onclick="openAuthView('register')" class="btn-doc-primary" style="padding: 7px 15px; font-size: 0.84rem; border-radius: 8px;">
                         Đăng ký
                     </button>
                 `;
             } else {
                 area.innerHTML = `
                     <div style="display:flex; align-items:center; gap:8px;">
-                        <button type="button" onclick="window.K71Auth && window.K71Auth.openHistoryModal()" title="Xem lịch sử làm bài" style="display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-main); cursor:pointer; font-size:0.84rem; font-weight:700;">
-                            <span class="k71-user-avatar" style="width:28px; height:28px; font-size:0.75rem; background:${user.color || 'var(--primary-color)'};">
+                        <button type="button" class="topbar-user-pill" onclick="window.K71Auth && window.K71Auth.openHistoryModal()" title="Xem lịch sử làm bài (${stats.totalTests} đề)">
+                            <span class="k71-user-avatar" style="width:26px; height:26px; font-size:0.72rem; background:${user.color || 'var(--primary-color)'};">
                                 ${window.K71Auth.getInitials(user.name)}
                             </span>
-                            <span style="max-width:140px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${user.name}</span>
-                            <span style="padding:2px 7px; border-radius:99px; background:rgba(var(--primary-rgb),0.18); color:var(--primary-color); font-size:0.74rem;">
-                                ${stats.totalTests} đề
-                            </span>
+                            <span style="max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${user.name}</span>
                         </button>
-                        <button type="button" onclick="handleHeaderLogout()" class="btn-doc-secondary" style="padding:7px 12px; border-radius: var(--radius-sm); font-size:0.82rem; font-weight:600; cursor:pointer;">
-                            Đăng xuất
+                        <button type="button" class="topbar-logout-icon-btn" onclick="handleHeaderLogout()" title="Đăng xuất" aria-label="Đăng xuất">
+                            <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
                         </button>
                     </div>
                 `;
@@ -3830,8 +3879,8 @@
 
         // Khởi tạo trang khi tải xong DOM
         window.addEventListener('DOMContentLoaded', () => {
-            // Đọc cấu hình Theme Color
-            const savedColor = localStorage.getItem('k71_theme_color') || '#e58547';
+            // Đọc cấu hình Theme Color (mặc định đồng bộ Blue-600 #2563eb)
+            const savedColor = localStorage.getItem('k71_theme_color') || '#2563eb';
             applyThemeColor(savedColor, false);
 
             // Đọc cấu hình Dark Mode
